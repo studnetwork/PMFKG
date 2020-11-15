@@ -149,28 +149,18 @@ Data je relacija **R(Radnik, Projekat, Zadatak, Broj_dana)**. Ako je primarni kl
 Odgovoriti na sledeća pitanja:
 <details>
   <summary><b>a) Da li radnici mogu raditi na više projekata?</b></summary>
-  <b>Rešenje:</b> 
-  
-  <b>Objašnjenje:</b> 
+  <b>Rešenje:</b></br> 
+  1. Da</br> 
+  2. Da, pod uslovom da svaki radnik ne radi na istom zadatku u okviru nekog drugog projekta</br> 
 </details>
 
 <details>
   <summary><b>b) Koliko radnika može raditi na jednom projektu?</b></summary>
-  <b>Rešenje:</b> 
-  
-  <b>Objašnjenje:</b> 
+  <b>Rešenje:</b></br> 
+   1. Beskonačno mnogo. Nema ograničenja</br> 
+   2. Onoliko koliki je broj zadataka. Broj radnika koji rade na jednom projektu zavisi od broja zadataka</br>
 </details>
 
 Ima li nekih posebnih ograničenja?
 
 **OBAVEZNO DATI PRIMER EKSTENZIJE, OBRAZLOŽENJE I NAVESTI OGRANIČENJA (AKO POSTOJE)!!!**
-
-
-Dropdown Template
----
-<details>
-  <summary><b>pitanje</b></summary>
-  <b>Rešenje:</b> 
-  
-  <b>Objašnjenje:</b> 
-</details>
