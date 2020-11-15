@@ -5,10 +5,7 @@
 Projekat je kreiran od strana nekolicine studenata Prirodno-matematičkog fakulteta u Kragujevcu. 
 
 # Korisni linkovi
-[Stranica fakulteta](https://www.pmf.kg.ac.rs/)
-
-[Stranica instituta za informatiku i matematiku](https://imi.pmf.kg.ac.rs/)
-
-[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Stranica fakulteta](https://www.pmf.kg.ac.rs/) </br>
+[Stranica instituta za informatiku i matematiku](https://imi.pmf.kg.ac.rs/) </br>
+[Mastering Markdown](https://guides.github.com/features/mastering-markdown/) </br>
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) </br>
