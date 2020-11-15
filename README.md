@@ -1,1 +1,3 @@
 # PMF
+
+![pmflogoGIF](pmflogo.gif)
