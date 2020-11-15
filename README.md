@@ -2,7 +2,7 @@
 <h2 align="center"><b>PMFKG - informatika</b></h2>
 
 # O projektu
-Projekat je kreiran od strana nekolicine studenata Prirodno-matematičkog fakulteta u Kragujevcu. 
+Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i saradnje između studenata Prirodno-matematičkog fakulteta u Kragujevcu. Projekat sadrži rešenja zadataka i skripte.
 
 # Korisni linkovi
 [Stranica fakulteta](https://www.pmf.kg.ac.rs/) </br>
