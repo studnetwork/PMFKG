@@ -4,4 +4,3 @@
 # O projektu
 Projekat je kreiran od strana nekolicine studenata Prirodno-matematičkog fakulteta u Kragujevcu. 
 
-[logo]: https://raw.githubusercontent.com/TodorovicSrdjan/PMFKG/master/pmflogo.gif pmflogoGIF
