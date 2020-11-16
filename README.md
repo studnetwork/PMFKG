@@ -3,8 +3,8 @@
 
 <p align="center">
 <a href="https://github.com/Produktivna-grupa/PMFKG/commits/master" alt="Commit history"><img src="https://img.shields.io/github/last-commit/Produktivna-grupa/PMFKG?color=green" ></a>
-<a href="https://github.com/Produktivna-grupa/PMFKG/issuese" alt="Open issues"><img src="https://img.shields.io/github/issues-raw/Produktivna-grupa/PMFKG.svg?color=green"></a>
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Produktivna-grupa/PMFKG?color=green">
+<a href="https://github.com/Produktivna-grupa/PMFKG/issues?q=is%3Aopen" alt="Open issues"><img src="https://img.shields.io/github/issues-raw/Produktivna-grupa/PMFKG.svg?color=green"></a>
+<a href="https://github.com/Produktivna-grupa/PMFKG/" alt="Contributors" <img src="https://img.shields.io/github/contributors/Produktivna-grupa/PMFKG?color=green"></a>
 <a href="https://opensource.org/licenses/MIT" alt="License: MIT"><img src="https://img.shields.io/github/license/Produktivna-grupa/PMFKG"></a>
 
 
