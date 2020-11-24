@@ -16,7 +16,7 @@ Neki od korisnih argumenata komande `pstree` su:</br>
 * `-a` - prikaži argumente komandne linije. Isključuje zbijanje procesa, ali ne i niti
 * `-c` - isključuje zbijanje identičih podstabala
 * `-h` - ističe trenutni proces i njegove naslednike (neki terminali ne podržavaju to isticanje)
-* `-H` - Slično kao -h, samo što ističe naveden proces
+* `-H` - Slično kao `-h`, samo što ističe naveden proces
 * `-p` - prikaži PID svakog procesa. Isključuje zbijanje procesa
 
 Primer primene:</br>
@@ -32,7 +32,7 @@ Prikaz svih procesa, statistike o njihovom korišćenju resursa i ostalih inform
 `top`
 ***
 Prikaz trenutno aktivnih procesa:</br>
-`ps -ef`
+`ps -ef`</br>
 `ps aux`
 ***
 Prikaz informacija međuprocesne komunikacije:</br>
