@@ -56,6 +56,6 @@ Korisni argumenti:</br>
 * `-u` ili `--summary` - prikazuje sumirane informacije o statusu
 * `--human` - prikazuje veličinu i formatu koji je lako razumljiv **utiče samo na `-l` i `--limits`**
 
-Obriši neki objekat međuprocesne komunikacije čiji je id `objID`:</br>
-`ipcrm objID`
+Obriši red za poruke čiji je msqid jednak `qID`:</br>
+`ipcrm -q qID`
 ***
