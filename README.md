@@ -12,15 +12,15 @@
 Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i saradnje između studenata Prirodno-matematičkog fakulteta u Kragujevcu. Projekat sadrži rešenja zadataka i skripte.
 
 # Linkovi ka materijalu
-[Druga godina - Zimski semestar](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md)</br>
-[Druga godina - Operativni sistemi 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D)</br>
+[Druga godina - Zimski semestar](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md)  
+[Druga godina - Operativni sistemi 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D)  
 [Druga godina - Baze podataka 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D)
 
 # Korisni linkovi
-[Stranica fakulteta](https://www.pmf.kg.ac.rs/) </br>
-[Stranica instituta za informatiku i matematiku](https://imi.pmf.kg.ac.rs/) </br>
-[Mastering Markdown](https://guides.github.com/features/mastering-markdown/) </br>
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) </br>
+[Stranica fakulteta](https://www.pmf.kg.ac.rs/)  
+[Stranica instituta za informatiku i matematiku](https://imi.pmf.kg.ac.rs/)  
+[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)  
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
 
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
