@@ -12,7 +12,7 @@
 Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i saradnje između studenata Prirodno-matematičkog fakulteta u Kragujevcu. Projekat sadrži rešenja zadataka i skripte.
 
 # Linkovi ka materijalu
-[Druga godina - Zimski semestar](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md)  
+[Druga godina - Zimski semestar](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D)  
 [Druga godina - Operativni sistemi 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D)  
 [Druga godina - Baze podataka 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D)
 

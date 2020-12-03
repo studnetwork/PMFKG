@@ -4,7 +4,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
-[Prvi kolokvijum](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/1.%20kolokvijum/)</br>
+[Prvi kolokvijum](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/1.%20kolokvijum/)  
 [Drugi kolokvijum](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/2.%20kolokvijum/)
 
 ## Domaći
@@ -21,6 +21,7 @@ o materijalu sa gradiva
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran
 
+[Moodle stranica predmeta](https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=34)  
 [Link ka folderu Ostalo](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Ostalo/)
 
 # Napomena

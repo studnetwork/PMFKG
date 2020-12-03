@@ -1,5 +1,5 @@
 # Lista komandi
-U ovom fajlu se nalazi lista komandi koje su spominjane na vežbama iz predmeta `Operativni sistemi 1`.
+U ovom fajlu se nalazi lista komandi koje su spominjane na vežbama iz predmeta [Operativni sistemi 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D).
 ***
 Informacije o nekoj komandi `comm`:  
 `man comm`
