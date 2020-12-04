@@ -28,4 +28,4 @@ Ova sekcija sadrži materijal koji nije sortiran
 Ukoliko primetite neku grešku bilo koga, uradite jednu od slećih stvari:
 * napravite "issue" sa opisom problema [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/issues/new)
 * kontaktirajte nekog od administratora: Srđan Todorović, Dragor Draganović, Mihajlo Janković
-* Ukoliko želite da dodate ili izmenite nešto, pošaljite "pull request" [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/compare)
+* ukoliko želite da dodate ili izmenite nešto, pošaljite "pull request" [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/compare)

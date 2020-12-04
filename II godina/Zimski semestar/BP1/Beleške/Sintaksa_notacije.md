@@ -1,7 +1,7 @@
 # Sintaksa notacije
 U ovom fajlu se nalazi objašnjene sintakse notacije na koju možemo naići u dokumentaciji raznih komandi  
   
-[**Notation rules**](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax): 
+[**Notation rules**](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax "Izvor"): 
 * Square brackets "[ ]" indicate optional clauses.
 * Parentheses "( )" indicate literal parentheses.
 * The vertical bar "|" indicates a logical OR.

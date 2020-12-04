@@ -26,10 +26,11 @@ o materijalu sa gradiva
 Ova sekcija sadrži materijal koji nije sortiran
 
 [Moodle stranica predmeta](https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27)  
+
 [//]: # ( COMMENT tekst: Link ka folderu Ostalo; Link: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo/ )
 
 # Napomena
 Ukoliko primetite neku grešku bilo koga, uradite jednu od slećih stvari:
 * napravite "issue" sa opisom problema [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/issues/new)
 * kontaktirajte nekog od administratora: Srđan Todorović, Dragor Draganović, Mihajlo Janković
-* Ukoliko želite da dodate ili izmenite nešto, pošaljite "pull request" [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/compare)
+* ukoliko želite da dodate ili izmenite nešto, pošaljite "pull request" [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/compare)

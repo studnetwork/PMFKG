@@ -3,21 +3,21 @@ U ovom fajlu se nalaze primeri specifičnih tipova zadataka i opis ideje za njih
 ## Prvi kolokvijum
 
 ### Odrediti *jedinstveni* i *najveći(najmanji)*
-**Primer:** Najveće jedinstvene ponude za svaki oglas (**idOglasa**, **ponudjenaCena**) </br>
+**Primer:** Najveće jedinstvene ponude za svaki oglas (**idOglasa**, **ponudjenaCena**)  
 ( Baze podataka 1 - prvi kolokvijum - 09.12.2019. )
 
-**Relacioni model:**</br>
-_**tip_vozila (idTipaVozila, naziv)**_ - Spisak svih tipova vozila.</br>
-_**marka_vozila (idMarkeVozila, naziv)**_ - Spisak svih marki vozila.</br>
+**Relacioni model:**  
+_**tip_vozila (idTipaVozila, naziv)**_ - Spisak svih tipova vozila.  
+_**marka_vozila (idMarkeVozila, naziv)**_ - Spisak svih marki vozila.  
 _**modeli_vozila (idModela, idTipaVozila, idMarkeVozila, nazivModela)**_ - Spisak svih modela vozila.</br>
-_**osobe (idOsobe, ime)**_ - Spisak svih osoba koje mogu biti vlasnici ili kupci vozila.</br>
-_**vozila(idVozila, idModela, kubikaža, snag, tipGoriva, godinaProizvodnje, idVlasnika)**_ - Spisak svih proizvedenih vozila.</br>
+_**osobe (idOsobe, ime)**_ - Spisak svih osoba koje mogu biti vlasnici ili kupci vozila.  
+_**vozila(idVozila, idModela, kubikaža, snag, tipGoriva, godinaProizvodnje, idVlasnika)**_ - Spisak svih proizvedenih vozila.  
 _**oglasi(idOglasa, idVozila, datumPostavljanja, datumZavršetka, početnaCena)**_ - Spisak svih vozila koja se prodaju. Oglas je aktivan u periodu 
-[datumPostavljanja - datumZavršetka].</br>
-_**ponude(idPonude, idOglasa, datumPonude, ponuđenaCena, idPonuđača)**_ - Spisak svih ponuda za vozila.</br>
+[datumPostavljanja - datumZavršetka].  
+_**ponude(idPonude, idOglasa, datumPonude, ponuđenaCena, idPonuđača)**_ - Spisak svih ponuda za vozila.   
 
 
-**Rešavanje:**</br>
+**Rešavanje:**  
 *Jedinstvenost redova* možemo dobiti tako što izbacimo redove koji imaju iste vrednost za posmatrani atribut. To je moguće postići korišćenjem Left/Right Join-a.
 Vrši se spajanje tabele sa samom sobom, npr. `t1 LEFT-JOIN t2`. Cilj je da se povežu redovi koji predstavljaju duplikate i da redovi koji su jedinstveni ostanu
 nepovezani. Nakon toga je potrebno izdvojiti redove koji imaju jedinstvene vrednost za posmatrani atribut. To činimo selekcijom redova po uslovu da neka od kolona
