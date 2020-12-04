@@ -1,5 +1,5 @@
 <p align="center"><a href="https://www.pmf.kg.ac.rs"><img src="https://raw.githubusercontent.com/TodorovicSrdjan/PMFKG/master/pmflogo.gif" width="150"></a></p> 
-<h2 align="center"><b>PMFKG - informatika</b></h2>
+<h2 align="center"><b>PMFKG - Informatika</b></h2>
 
 <p align="center">
 <a href="https://github.com/Produktivna-grupa/PMFKG/commits/master" alt="Commit history"><img src="https://img.shields.io/github/last-commit/Produktivna-grupa/PMFKG?color=green" ></a>
