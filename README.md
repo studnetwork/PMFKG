@@ -17,10 +17,10 @@ Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i sa
 [Druga godina - Baze podataka 1][bp1]
 
 # Korisni linkovi
-[Stranica fakulteta][imi stranica]
-[Stranica instituta za informatiku i matematiku][stranica fakulteta]
-[Mastering Markdown][mastering markdown]
-[Markdown Cheatsheet][markdown cheatsheet]
+[Stranica fakulteta][imi stranica]  
+[Stranica instituta za informatiku i matematiku][stranica fakulteta]  
+[Mastering Markdown][mastering markdown]  
+[Markdown Cheatsheet][markdown cheatsheet]  
 
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
