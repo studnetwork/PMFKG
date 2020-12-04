@@ -81,8 +81,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Saradnja reference)
 
-[saradnja]: https://github.com/Produktivna-grupa/PMFKG/Saradnja/README.md#Opis
-
+[saradnja]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/README.md#opis
 
 
 [//]: # (Licenca reference)
