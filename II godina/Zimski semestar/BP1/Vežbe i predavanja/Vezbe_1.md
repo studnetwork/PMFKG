@@ -9,7 +9,7 @@
 ### Zadatak 1
 Data je relacija **DNEVNIK(ucenik,predmet,ocena,datum)** sa sledećom ekstenzijom:
 
-![BP1-vezbe-slide1-z1](https://user-images.githubusercontent.com/65137355/99150597-9427be00-264a-11eb-8b58-bae1a9664817.png)
+![Tabela 1][BP1-vezbe-slide1-z1]
 
 Ako imaš u vidu isključivo datu ekstenziju ispitaj osobine jedinstvenosti i neredudantnosti na datim kolekcijama i navedi da li neka od kolekcija posedujeosobine ključa ili nadključa. Svaki odgovor obrazložiti!
 
@@ -33,9 +33,9 @@ Ako imaš u vidu isključivo datu ekstenziju ispitaj osobine jedinstvenosti i ne
 
 Data je relacija sledećom ekstenzijom:
 
-![BP1-vezbe-slide1-z2](https://user-images.githubusercontent.com/65137355/99151651-8fb2d380-2651-11eb-85af-e8da86c924b0.png)
+![Tabela 2][BP1-vezbe-slide1-z2]
 
-Navedene kolekcije atributa imaju osobine ključa, nadključa ili ni jedno ni drugo?Dati obrazloženje odgovora!!!
+Navedene kolekcije atributa imaju osobine ključa, nadključa ili ni jedno ni drugo? Dati obrazloženje odgovora!!!
 <details>
   <summary><b>a) (zadatak, broj_dana)</b></summary>
  <b>Rešenje:</b> Nadključ
@@ -142,9 +142,9 @@ Odgovori na sledeća pitanja uz obrazloženje:
 
 ***
 ### Zadatak 5
-Data je relacija **R(Radnik, Projekat, Zadatak, Broj_dana)**. Ako je primarni ključ</br>
-    1.PK(Radnik, Projekat)</br>
-    2.PK(Projekat, Zadatak)</br>
+Data je relacija **R(Radnik, Projekat, Zadatak, Broj_dana)**. Ako je primarni ključ  
+    1.PK(Radnik, Projekat)  
+    2.PK(Projekat, Zadatak)  
 
 Odgovoriti na sledeća pitanja:
 <details>
@@ -164,3 +164,18 @@ Odgovoriti na sledeća pitanja:
 Ima li nekih posebnih ograničenja?
 
 **OBAVEZNO DATI PRIMER EKSTENZIJE, OBRAZLOŽENJE I NAVESTI OGRANIČENJA (AKO POSTOJE)!!!**
+
+
+
+[//]: # (---------------------------------------------------------)
+
+[//]: # (-------------U ovom delu se nalaze reference-------------)
+
+[//]: # (---------------------------------------------------------)
+
+
+[//]: # (Reference za slike)
+
+[BP1-vezbe-slide1-z1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke/BP1-vezbe-slide1-z1.png
+
+[BP1-vezbe-slide1-z2]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke/BP1-vezbe-slide1-z2.png

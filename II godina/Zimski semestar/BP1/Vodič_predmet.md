@@ -4,33 +4,52 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
-[//]: # ( COMMENT tekst:TODO; link:https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi)
+[//]: # ( COMMENT tekst:Link ka folderu Kolokvijumi; link:[kolokvijumi])
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
-[Link ka folderu Vežbe i predavanja](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja)
+[Link ka folderu Vežbe i predavanja][vežbe i predavanja]
 
 ## Domaći
 Rešenja domaćih zadataka po godinama
 
-[//]: # ( COMMENT tekst:Link ka rešenjima domaćih zadataka; link:https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i)
+[//]: # ( COMMENT tekst:Link ka rešenjima domaćih zadataka; link:[domaći])
 
 ## Beleške
 Folder sa beleškama i materijalom koji može biti od koristi tokom učenja i spremanja kolokvijuma ili ispita. Mogu se naći i neki dodaci sa detaljnijim informacijama
 o materijalu sa gradiva
 
-[Link ka folderu sa beleškama](https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke)
+[Link ka folderu sa beleškama][beleške]
 
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran
 
-[Moodle stranica predmeta](https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27)  
+[Moodle stranica predmeta][stranica predmeta]
 
-[//]: # ( COMMENT tekst: Link ka folderu Ostalo; Link: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo/ )
+[//]: # ( COMMENT tekst: Link ka folderu Ostalo; Link: [ostalo] )
 
 # Napomena
 Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
-* napravite "issue" sa opisom problema [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/issues/new)
-* kontaktirajte nekog od administratora: Srđan Todorović, Dragor Draganović, Mihajlo Janković
-* ukoliko želite da dodate ili izmenite nešto, pošaljite "pull request" [klikni ovde](https://github.com/Produktivna-grupa/PMFKG/compare)
+* [napravite "issue"][new issue] sa opisom problema
+* kontaktirajte nekog od administratora: Srđan Todorović, Dragor Draganović, Mihajlo Janković  
+* ukoliko želite da dodate ili izmenite nešto, [pošaljite "pull request"][pull request]
+
+
+
+[//]: # (---------------------------------------------------------)
+
+[//]: # (-------------U ovom delu se nalaze reference-------------)
+
+[//]: # (---------------------------------------------------------)
+
+
+
+[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
+[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke
+[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i
+[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi
+[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
+[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
+[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja

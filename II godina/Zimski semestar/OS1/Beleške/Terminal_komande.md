@@ -1,5 +1,5 @@
 # Lista komandi
-U ovom fajlu se nalazi lista komandi koje su spominjane na vežbama iz predmeta [Operativni sistemi 1](https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D).
+U ovom fajlu se nalazi lista komandi koje su spominjane na vežbama iz predmeta [Operativni sistemi 1][os1].
 ***
 Informacije o nekoj komandi `comm`:  
 `man comm`
@@ -59,3 +59,16 @@ Korisni argumenti:
 Obriši red za poruke čiji je msqid jednak `qID`:  
 `ipcrm -q qID`
 ***
+
+
+
+[//]: # (---------------------------------------------------------)
+
+[//]: # (-------------U ovom delu se nalaze reference-------------)
+
+[//]: # (---------------------------------------------------------)
+
+
+
+
+[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
