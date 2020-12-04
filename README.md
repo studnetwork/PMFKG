@@ -22,8 +22,24 @@ Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i sa
 [Mastering Markdown][mastering markdown]  
 [Markdown Cheatsheet][markdown cheatsheet]  
 
+# Kontakt
+Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih linkova:
+* [Facebook grupa][fb]
+* [Discord server][discord]
+* Moodle, [slanjem private poruke][moodle chat] nekom od administratora:
+	* Srđan Todorović  
+	* Dragor Draganović  
+    * Mihajlo Janković
+	
+**Napomena:** komunikacija preko moodle-a je moguća samo između studenata koji su prijavljeni na isti kurs
+
+# Saradnja
+Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
+
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
+
+Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca].
 
 [//]: # (Trenutno, zbog nedovoljne informisanosti, u podeli "Licenca" biće navedeni tekst dok se ne konsultuje neko sa fakulteta; potrebno je informisati se da li je moguće ukloniti licencu i odlučiti da li sačuvati licencu i koja bi bila najprikladnija za projekat ukoliko se odluči njeno zadržavanje)
 
@@ -37,6 +53,16 @@ Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i 
 
 
 
+[//]: # (Materijal reference)
+
+[druga zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+
+[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
+[bp1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
+
+
 [//]: # (Korisni likovi reference)
 
 [imi stranica]: https://imi.pmf.kg.ac.rs/
@@ -45,11 +71,21 @@ Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i 
 [markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 
+[//]: # (Kontakt reference)
 
-[//]: # (Materijal reference)
+[fb]: https://www.facebook.com/groups/988381171505906
+[discord]: https://discord.gg/a2mZDuHF
+[moodle chat]: https://imi.pmf.kg.ac.rs/moodle/message/index.php?contactsfirst=1
 
-[druga zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[bp1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[//]: # (Saradnja reference)
+
+[saradnja]: https://github.com/Produktivna-grupa/PMFKG/Saradnja/README.md#Opis
+
+
+
+[//]: # (Licenca reference)
+
+[licenca]: https://opensource.org/licenses/MIT
+
