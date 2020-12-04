@@ -2,8 +2,8 @@
 U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
-[Operativni sistemi 1](os1)  
-[Baze podataka 1](bp1)
+[Operativni sistemi 1][os1]  
+[Baze podataka 1][bp1]
 # Korisni linkovi
 [Moodle stranica][moodle stranica]
 
