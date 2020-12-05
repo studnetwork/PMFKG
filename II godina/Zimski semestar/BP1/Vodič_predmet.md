@@ -9,7 +9,7 @@ Rešenja kolokvijuma raspoređena po godinama
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
-[Link ka folderu Vežbe i predavanja][vežbe i predavanja]
+[Link ka materijalu][vežbe i predavanja]
 
 ## Domaći
 Rešenja domaćih zadataka po godinama
@@ -52,4 +52,4 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja
+[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
