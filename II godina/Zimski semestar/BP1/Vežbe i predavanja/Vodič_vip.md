@@ -3,6 +3,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
+
 [Rešenja zadatke sa prvih vežbi i njihova objašnjenja][fajl1]
 
 ### Lekcije
@@ -24,16 +25,18 @@ Linkovi ka snimcima konsultacija:
 4. [Konsultacije 4][v-konsultacije-4] `Relaciona algebra - redovni kolokvijum 2018/2019, 3. sa redovnog 2015/2016`  
 
 ### Napomene
-[Zadatak sa 2. vežbi iz SQL-a(32:56)][v-lekcija-6] je moguće uraditi i sa funkcijom `DATENAME`.    
+[Zadatak sa 2. vežbi iz SQL-a (32:56)][v-lekcija-6] je moguće uraditi i sa funkcijom `DATENAME`.  
+
 **Postavka zadatka**:  
 	Za svaki ispitni rok ispisati koliko se u njemu polozilo ispita do sada.  
+	
 **Rešenje sa korišćenjem funkcije `DATENAME`**:  
-	```sql
-	select datename( month, Datump ) as 'Ispitni rok', count(*) as 'Broj polozenih ispita'
-	from prijave
-	where ocena > 5
-	group by datename( month, Datump )
-	```
+```sql  
+select datename( month, Datump ) as 'Ispitni rok', count(*) as 'Broj polozenih ispita'  
+from prijave  
+where ocena > 5 
+group by datename( month, Datump )  
+```
 
 ## Predavanja
 Linkovi do resursa koji se odnose na predavanja  
