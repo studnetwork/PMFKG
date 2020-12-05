@@ -45,9 +45,9 @@ Linkovi ka snimcima lekcija:
 3. [Predavanje 3][p-lekcija-3] `Modeli podataka`  
 4. [Predavanje 4][p-lekcija-4] `Modeli podataka`  
 5. [Predavanje 5-1][p-lekcija-5-1deo] `SQL`  
-6. [Predavanje 5-2][p-lekcija-5-2deo] `SQL`  
-7. [Predavanje 6-1][p-lekcija-6-1deo] `SQL`  
-8. [Predavanje 6-2][p-lekcija-6-2deo] `SQL`  
+   [Predavanje 5-2][p-lekcija-5-2deo] `SQL`  
+6. [Predavanje 6-1][p-lekcija-6-1deo] `SQL`  
+   [Predavanje 6-2][p-lekcija-6-2deo] `SQL`  
 
 ### Konsultacije
 
