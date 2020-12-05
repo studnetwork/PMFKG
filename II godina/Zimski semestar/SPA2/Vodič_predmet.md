@@ -55,8 +55,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/Ostalo
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
-
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=37
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
 
