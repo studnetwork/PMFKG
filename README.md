@@ -14,7 +14,7 @@ Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i sa
 # Linkovi ka materijalu
 [Druga godina - Zimski semestar][druga zimski]  
 [Druga godina - Operativni sistemi 1][os1]  
-[Druga godina - Baze podataka 1][bp1]
+[Druga godina - Baze podataka 1][bp1]  
 [Druga godina - Strukture podataka i algoritmi 2][spa2]
 
 # Korisni linkovi
