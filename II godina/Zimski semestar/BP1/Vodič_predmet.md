@@ -2,9 +2,11 @@
 U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 
 ## Kolokvijumi
-Rešenja kolokvijuma raspoređena po godinama
-
-[//]: # ( COMMENT tekst:Link ka folderu Kolokvijumi; link:[kolokvijumi])
+Rešenja kolokvijuma raspoređena po godinama  
+[Prvi kolokvijum][prvi kolokvijum]  
+[Drugi kolokvijum][drugi kolokvijum]  
+[Treci kolokvijum][treci kolokvijum]  
+[Spojena sva tri u jednom (popravni za 2014-15)][kombinovani kolovkijumi]
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
@@ -44,6 +46,14 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [//]: # (---------------------------------------------------------)
 
 
+
+[prvi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/1.%20kolokvijum
+
+[drugi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/2.%20kolokvijum
+
+[treci kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/3.%20kolokvijum
+
+[kombinovani kolovkijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/Kombinovani
 
 [ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
