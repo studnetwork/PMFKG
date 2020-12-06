@@ -32,10 +32,10 @@ Linkovi ka snimcima konsultacija:
 	
 **Rešenje sa korišćenjem funkcije `DATENAME`**:  
 ```sql  
-select datename( month, Datump ) as 'Ispitni rok', count(*) as 'Broj polozenih ispita'  
-from prijave  
-where ocena > 5 
-group by datename( month, Datump )  
+SELECT DATENAME( MONTH, Datump ) AS 'Ispitni rok', COUNT(*) AS 'Broj polozenih ispita'  
+FROM prijave  
+WHERE ocena > 5 
+GROUP BY DATENAME( MONTH, Datump )  
 ```
 
 ## Predavanja
