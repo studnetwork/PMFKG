@@ -51,6 +51,8 @@ Linkovi ka snimcima lekcija:
    [Predavanje 5-2][p-lekcija-5-2deo] `SQL`  
 6. [Predavanje 6-1][p-lekcija-6-1deo] `SQL`  
    [Predavanje 6-2][p-lekcija-6-2deo] `SQL`  
+7. [Predavanje 7][p-lekcija-7] `SQL`
+
 
 ### Konsultacije
 
@@ -138,7 +140,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [p-lekcija-6-2deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606143774271
 
-
+[p-lekcija-7]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606744257707
 
 [//]: # ( Ostalo reference )
 
