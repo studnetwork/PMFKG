@@ -1,0 +1,58 @@
+select
+*
+distinct
+as
+from
+where
+in
+( opt1, opt2, ... )
+between
+and
+or
+--
+'dve reci'
+like
+'nastavakNijeBitan%'
+is
+null
+not
+order by
+desc
+CONCAT( item1, item2, item3 )
+cast( kolona as tip[(arg)] )
+char(broj)
+varchar(broj)
+case
+when
+then
+end
+datepart( datepart, kolona )
+datediff( datepart, kolona1, kolona2 )
+datename( datepart, kolona )
+getdate()
+avg( arg [*1.0] )
+max( arg )
+min( arg )
+sum( arg )
+count(*)
+count(kolona)
+float
+use
+go
+==========  prvi SQL termin vezbe
+=================================
+any
+all
+having
+exists
+%deoUstringu%
+========== drugi SQL termin vezbe
+=================================
+TOP {broj} [ percent ]
+union all
+union
+[ type ] JOIN { neka_tabela } ON
+some
+[dve reci]
+==================== predavanje 6
+=================================

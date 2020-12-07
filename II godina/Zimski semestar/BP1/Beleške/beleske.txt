@@ -1,0 +1,65 @@
+kad se radi avg, trebalo bi da se argument pomnozi sa `1.0` ukoliko ne zelimo da rezultat bude celobrojan
+
+
+
+ugnjezdeni upiti(nekorelisani): jedan upit se koristi kao skup pa se proverava da li se neki upit (ne)nalazi u tom skupu; 
+ 
+ 
+
+nekolerisan = unutrasnji upit moze da se izvrsava sam za sebe
+
+`= any` == `in`
+
+kod ugnjezdenih upita, selekcija za `exists` nije bitna, ali jeste za `in`
+================vezbe sql kraj
+-----------------------------------------------------------------
+
+==================pocetak predavanje 6
+moguce je uraditi:
+	select count(distinct snast)
+	from prijave
+
+i broji koliko ima razlicitih vrednosti za sifru nastavnika ( bez null-a )
+
+
+
+
+ne moze da broji parove, npr:
+	select count(distinct indeks, upsian)
+	from prijave
+
+vec nekim trikom kao sto je:
+	select count(distinct concat(indeks,'/',upisan) )
+	from prijave
+
+
+
+	
+count(*) - ukljucuje i null vrenosti
+count( ostale_varijante ) - null vrednosti nisu ukljucene
+
+
+
+samo u ORDER BY moze da se koristi alias iz select-a
+
+
+
+nesto za GROUP BY ce verovatno biti na ispitu
+
+
+
+umesto '' string se moze zapisati i ununtar uglastim zagrada
+	select imes [Ime studenta]
+	from prijave
+	
+	
+trenutna verzija t-SQLa ne podrzava INTERSECT ALL i EXCEPT ALL ( koji se nalaze na prezentaciji )
+
+
+
+union all - ostavlja duplikate koji su nastali unijom
+union - ne ostavlja duplikate
+
+
+
+ukoliko se ugnjezdava upit unutar from klauzule, onda je potrebno da tabela dobijena tim upitom i njene kolone imaju ime
