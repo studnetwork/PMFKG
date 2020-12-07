@@ -25,6 +25,9 @@ Linkovi ka snimcima konsultacija:
 4. [Konsultacije 4][v-konsultacije-4] `Relaciona algebra - redovni kolokvijum 2018/2019, 3. sa redovnog 2015/2016`  
 
 ### Napomene
+Ukoliko imate problem sa povezivanjem sqllocaldb-a i SSMS-a, probajte da instalirate neku od [starijih vezija][ssms-prev] SSMS-a.  
+[SSMS 16.5.3][ssms-16] je testiran i radi bez problema.
+***
 [Zadatak sa 2. vežbi iz SQL-a (32:56)][v-lekcija-6] je moguće uraditi i sa funkcijom `DATENAME`.  
 
 **Postavka zadatka**:  
@@ -116,6 +119,11 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-konsultacije-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605693649917
 
+
+[//]: # ( Vezbe napomena reference )
+
+[ssms-prev]: https://docs.microsoft.com/en-us/sql/ssms/release-notes-ssms?view=sql-server-ver15#previous-ssms-releases
+[ssms-16]: https://docs.microsoft.com/en-us/sql/ssms/release-notes-ssms?view=sql-server-ver15#1653
 
 
 [//]: # ( Predavanje reference )
