@@ -63,3 +63,13 @@ union - ne ostavlja duplikate
 
 
 ukoliko se ugnjezdava upit unutar from klauzule, onda je potrebno da tabela dobijena tim upitom i njene kolone imaju ime
+
+
+
+`with` pravi privremenu tabelu. Moze da se koristi samo u upitu definisanom nakon njega
+
+
+
+
+`EXISTS` proverava da li je tabela prazna ili ne. Ukoliko nije vraca true, u suprotnom vraca false
+

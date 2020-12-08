@@ -49,10 +49,43 @@ exists
 ========== drugi SQL termin vezbe
 =================================
 TOP {broj} [ percent ]
-union all
+union all  
 union
 [ type ] JOIN { neka_tabela } ON
 some
 [dve reci]
 ==================== predavanje 6
 =================================
+with ime_viewa as
+ROW_NUMBER()
+OVER
+partition
+rollup()
+with cube
+pivot
+for
+values
+insert
+into
+drop table
+output
+inserted
+delete
+deleted
+delete from
+update
+set
+infornation_schema.TABLES
+infornation_schema.columns
+create
+alter
+remove
+add
+on primary
+schema
+default
+constraint
+primary key
+==================== predavanje 7
+=================================
+
