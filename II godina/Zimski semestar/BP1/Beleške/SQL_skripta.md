@@ -16,7 +16,7 @@
 
 
 **Zapis** - red  
-**Polje*** - kolona  
+**Polje** - kolona  
 
 Ovi pojmovi su pravilniji iz razloga što, pored osobina koje imaju red i kolona, imaju i podatke o njihovom kontekst - **metapodatke**. 
 
@@ -137,8 +137,14 @@ Iz tabele `Customers` prikazuje sve podatke sortirane po vrednosti za polje `Cou
 
 ***
 
+## CASE
+
+
+
 ## EXISTS  
 Upoređuje vrednosti podupita i filtrira ih unutar samog podupita. Prebrojava redove i ignoriše vrednosti podupita, **čak i ako se radi o `NULL` vrednosti**.
+
+***
 
 # Funkcije
 ## CONCAT
@@ -181,6 +187,7 @@ je moguće navesti unutar zagrada `()` još jedan dodatni parametar koji predsta
 
 Više o funkciji `CAST` možete pročitati na sledećem [linku][cast ms docs].
 
+***
 
 # Tipovi podataka
 
@@ -200,6 +207,8 @@ Slovo `n` u ovim tipovima ima značenje *national*.
 
 Više o tipovima podataka možete pročitati na sledećem [linku][tipovi podataka]
 
+***
+
 # Komande koje ne pripadaju SQL-u
 ## GO
 Ova komanda **nije** ključna reč SQL-a, već se koristi od klijentskih programa kao što je SQL Management Studio Editor. Predstavlja podrazumevani *batch separator* T-SQLa.  
@@ -211,7 +220,7 @@ Svaki `.sql` fajl je uglavnom jedan batch, ali kada korišćenjem komande `GO` d
 
 Batch se sastoji od naredbi koje predstavljaju sve naredbe koje su unete između prethodne i trenutne `GO` komande, između početka skripte i komade `GO` ili između ove komande i kraja skripte.
 
-'GO' mora biti jedina ključna reč u liniji u kojoj se koristi.
+`GO` mora biti jedina ključna reč u liniji u kojoj se koristi.
 
 Može biti neophodan u situacijama kada je potrebno da se neke naredbe izvrše u više batch-ova, naročito sa `ALTER` komandama, gde je moguće samo jedno izvršavanje po batch-u.
 
@@ -226,9 +235,18 @@ Ovaj batch koji je završen linijom `GO 7` će se sedam puta izvršiti. Kako se 
 
 ![Rezultat izvrsavanja][go count]
 
-Više o komandi `GO` možete pročitati na sledećim likovima:
+Više o komandi `GO` možete pročitati na sledećim likovima:  
 * [Stackoverflow post][go stackoverflow]  
 * [Microsoft dokumentacija][go ms docs]
+
+***
+
+# Ostalo
+Stringovi navode na dva načina:
+* između apostrofa `'string'`
+* između uglastih zagrada `[string]`
+
+Stringovi se mogu pisati i bez ikakvog navođenja, ali samo ukoliko se radi o jednoj reči, pa ukoliko želite da napravite string koji se sastoji od dve ili više reči potrebno je da koristite neki od navedenih načina.
 
 
 
@@ -255,14 +273,6 @@ Više o komandi `GO` možete pročitati na sledećim likovima:
 [//]: # ( Ostalo reference )
 
 [go]: ./SQL_skripta.md#go
-
-
-# Ostalo
-Stringovi navode na dva načina:
-* između apostrofa `'string'`
-* između uglastih zagrada `[string]`
-
-Stringovi se mogu pisati i bez ikakvog navođenja, ali samo ukoliko se radi o jednoj reči, pa ukoliko želite da napravite string koji se sastoji od dve ili više reči potrebno je da koristite neki od navedenih načina.
 
 
 
