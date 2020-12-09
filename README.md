@@ -47,6 +47,8 @@ Neke od kategorija:
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
 
+Licencom je obuhvaćen jedino materijal kreiran od strane studenata kao što su rešenja zadataka i beleške.
+
 Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca].
 
 [//]: # (Trenutno, zbog nedovoljne informisanosti, u podeli "Licenca" biće navedeni tekst dok se ne konsultuje neko sa fakulteta; potrebno je informisati se da li je moguće ukloniti licencu i odlučiti da li sačuvati licencu i koja bi bila najprikladnija za projekat ukoliko se odluči njeno zadržavanje)
