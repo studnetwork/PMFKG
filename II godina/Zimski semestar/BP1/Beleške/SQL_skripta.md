@@ -17,7 +17,7 @@
         * [DATEDIFF][datediff]
         * [DATENAME][datename]
         * [GETDATE][getdate]
-    * [Agregacione funkcije][agregacione funkcije]
+    * [Agregatne funkcije][agregatne-funkcije]
 * [Tipovi podataka][tipovi podataka]
 * [Komande koje ne pripadaju SQL-u][nonsql komande]
     * [GO][go]
@@ -548,7 +548,7 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 [datediff]: ./SQL_skripta.md#datediff
 [datename]: ./SQL_skripta.md#datename
 [getdate]: ./SQL_skripta.md#getdate
-[agregacione funkcije]: ./SQL_skripta.md#Agregacione-funkcije
+[agregatne funkcije]: ./SQL_skripta.md#Agregacione-funkcije
 
 
 [//]: # ( Ostalo reference )
