@@ -414,6 +414,294 @@ group by upisan
 ```
 </details>
 
+## Vežbe 2
+
+1. spisak nastavnika koji nisu angažovani.
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select *
+from nastavnici
+where Snast not in (select snast from Angazovanje)
+```
+</details>
+
+***
+
+2. svi studenti koji dolaze iz gradova iz kojih je doslo vise od 2 studenta
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select *
+from nastavnici
+where Snast not in (select snast from Angazovanje)
+```
+</details>
+
+***
+
+3. Broj indeksa, godina upisa, ocena studenata cije su ocene manje od svih ocena koje je dao nastavnik sa "s" u imenu. (ALL, ANY)
+<details>
+ <summary>Rešenje: prvi način</summary>
+
+```tsql
+select indeks, upisan, ocena
+from prijave
+where ocena < all (
+			select ocena 
+			from prijave where 
+			Snast = ANY (
+					select snast 
+					from Nastavnici 
+					where Imen like '%s%' 
+				    )
+		  )
+```
+</details>
+
+<details>
+ <summary>Rešenje: drugi način</summary>
+
+```tsql
+select indeks, upisan, ocena
+from prijave
+where ocena < all (
+			select ocena 
+			from prijave where 
+			Snast in (
+					select snast 
+					from Nastavnici 
+					where Imen like '%s%' 
+				 )
+		   )
+```
+</details>
+
+***
+
+4. spisak nastavnika i predmeta (samo sifre) koji dele predmet sa jos nekim
+<details>
+ <summary>Rešenje: prvi način</summary>
+
+```tsql
+select Snast, Spred
+from Angazovanje a1
+where Spred in (
+		select Spred
+		from Angazovanje a2
+		where a1.Snast <> a2.Snast
+	       )
+```
+</details>
+
+<details>
+ <summary>Rešenje: drugi način</summary>
+
+```tsql
+select a1.Snast, a1.Spred from Angazovanje a1
+where exists ( 
+		select * 
+		from Angazovanje a2 
+		where a1.Snast <> a2.Snast and a1.Spred = a2.Spred
+	     )
+```
+</details>
+
+***
+
+5. spisak nastavnika koji nisu angažovani
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select * from Nastavnici n
+where not exists (
+			select * f
+			rom Angazovanje a 
+			where a.Snast = n.Snast
+		 )
+```
+</details>
+
+***
+
+6. Spisak studenata koji imaju bar jedan polozen ispit
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select * from Studenti s
+where exists (
+		select * 
+		from Prijave p 
+		where ocena > 5 and s.Indeks = p.Indeks and p.Upisan = s.Upisan
+	     )
+```
+</details>
+
+***
+
+7. Spisak studenata koji imaju prosek veci od 7.5
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select * from Studenti s
+where exists (
+		select Indeks, Upisan 
+		from prijave
+		where ocena > 5 and s.Indeks = Indeks and s.Upisan = Upisan
+		group by Indeks, Upisan -- da li grupisanje moze da se izbaci ?!
+		having avg(ocena * 1.0) > 7.5
+	     )
+```
+</details>
+
+***
+
+# Vežbe 3
+
+1. Izlistati imena nastavnika i sifre predmeta koje predaju
+<details>
+ <summary>Rešenje: prvi način</summary>
+
+```tsql
+/*
+	Dekartov filtrirani
+*/
+
+select Nastavnici.Imen, Angazovanje.Spred
+from Nastavnici, Angazovanje
+where Nastavnici.Snast = Angazovanje.Snast
+```
+</details>
+
+<details>
+ <summary>Rešenje: drugi način</summary>
+
+```tsql
+/*
+	INNER JOIN
+*/
+
+select n.Imen, a.Spred
+from Nastavnici n join Angazovanje a on n.Snast = a.Snast
+
+/*
+	LEFT JOIN
+*/
+```
+</details>
+
+***
+
+2. Izlistati imena nastavnika i sifre predmeta koje predaju (u skupu trebaju da se nadju i nastavnici koji nisu angazovani)
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select n.Imen, a.Spred
+from Nastavnici n LEFT join Angazovanje a on n.Snast = a.Snast
+```
+</details>
+
+***
+
+3. spisak nastavnika koji nisu angazovani.
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select n.Snast 
+from Nastavnici n left join Angazovanje a on n.Snast = a.Snast
+where a.Snast is null
+```
+</details>
+
+***
+
+4. spisak nastavnika i predmeta (samo sifre) koji dele predmet sa jos nekim
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select a1.Snast, a1.Spred
+from Angazovanje a1 join Angazovanje a2 on a1.Spred = a2.Spred and a1.Snast <> a2.Snast
+```
+</details>
+
+***
+
+5. Izlistati imena nastavnika i NAZIVE predmeta koje predaju
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select n.Imen, p.NAZIVP
+from Nastavnici n join Angazovanje a on n.Snast = a.Snast
+				      join PREDMETI p on a.Spred = p.SPRED
+```
+</details>
+
+***
+
+6. Spisak brucosa koji imaju druga na fakultetu
+
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select s1.Imes, s2.Imes
+from Studenti s1 join Studenti s2 on 
+	(s1.Upisan = s2.Upisan and s1.Mesto = s2.Mesto and s1.Indeks != s2.Indeks)
+```
+</details>
+
+***
+
+7. Spisak studenata (indeks, upisan, ime studenta) koji imaju bar jedan polozen ispit
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select distinct s.Indeks, s.Upisan, s.Imes
+from Studenti s join Prijave p on s.Indeks = p.Indeks and s.Upisan = p.Upisan
+where p.Ocena > 5 
+```
+</details>
+
+***
+
+8. Spisak studenata koji imaju prosek veci od 7.5
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select s.Indeks, s.Upisan, avg(p.Ocena * 1.0)
+from Studenti s join Prijave p on s.Indeks = p.Indeks and s.Upisan = p.Upisan
+where p.Ocena > 5 
+group by s.Indeks, s.Upisan
+having avg(p.Ocena * 1.0) > 7.5
+```
+</details>
+
+***
+
+9. Maksimalna ocena za svaki predmet
+<details>
+ <summary>Rešenje</summary>
+
+```tsql
+select p2.Spred, p2.NAZIVP, max(ocena) 
+from prijave p1 join PREDMETI p2 on p1.Spred = p2.SPRED
+group by p2.NAZIVP, p2.Spred
+```
+</details>
+
+***
+
 
 
 [//]: # (---------------------------------------------------------)
