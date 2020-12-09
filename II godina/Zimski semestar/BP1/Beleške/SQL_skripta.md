@@ -17,7 +17,7 @@
         * [DATEDIFF][datediff]
         * [DATENAME][datename]
         * [GETDATE][getdate]
-    * [Agregatne funkcije][agregatne-funkcije]
+    * [Agregatne funkcije][agregatne funkcije]
 * [Tipovi podataka][tipovi podataka]
 * [Komande koje ne pripadaju SQL-u][nonsql komande]
     * [GO][go]
@@ -425,7 +425,7 @@ Više o `GETDATE` funkciji možete pročitati na sledećem [linku][getdate ms do
 
 ***
 
-## Agregacione funkcije
+## Agregatne funkcije
 
 Na osnovu kolekcije vrednosti vrše neki proračun i kao rezultat vraćaju jednu vrednost.
 
@@ -440,7 +440,7 @@ WHERE job_id = 9;
 
 Kao izrazi se mogu koristi samo u selekcionoj listi naredbe `SELECT` u unutrašnjem ili spoljašnjem upitu i u klauzuli `HAVING`
 
-Sve agregacione funkcije osim `COUNT` ignorišu `NULL` vrednosti.
+Sve agregatne funkcije osim `COUNT` ignorišu `NULL` vrednosti.
 
 ***
 
@@ -548,7 +548,7 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 [datediff]: ./SQL_skripta.md#datediff
 [datename]: ./SQL_skripta.md#datename
 [getdate]: ./SQL_skripta.md#getdate
-[agregatne funkcije]: ./SQL_skripta.md#Agregacione-funkcije
+[agregatne funkcije]: ./SQL_skripta.md#Agregatne-funkcije
 
 
 [//]: # ( Ostalo reference )
