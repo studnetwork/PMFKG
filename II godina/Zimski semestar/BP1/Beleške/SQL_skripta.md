@@ -1,18 +1,27 @@
 # Sadržaj
-* DML ( **D**ata **M**anagment **L**anguage )
+* [DML ( Data Managment Language )][dml]
     * [DISTINCT][distinct]
     * [BETWEEN][between]
     * [IN][in]
     * [LIKE][like]
     * [ORDER BY][order by]
+    * [CASE][case]
     * [EXISTS][exists]
-* DDL ( **D**ata **D**efinition **L**anguage )
-* DQL ( **D**ata **Q**uery **L**anguage )
-* Funkcije
-* Tipovi podataka
-* Komande koje ne pripadaju SQL-u
+* [DDL ( Data Definition Language )][ddl]
+* [DQL ( Data Query Language )][dql]
+* [Funkcije][funkcije]
+    * [CONCAT][concat]
+    * [CAST][cast]
+    * [Datumske funkcije][datumske funkcije]
+        * [DATEPART][datepart]
+        * [DATEDIFF][datediff]
+        * [DATENAME][datename]
+        * [GETDATE][getdate]
+    * [Agregacione funkcije][agregacione funkcije]
+* [Tipovi podataka][tipovi podataka]
+* [Komande koje ne pripadaju SQL-u][nonsql komande]
     * [GO][go]
-* Ostalo
+* [Ostalo][ostalo]
 
 
 **Zapis** - red  
@@ -135,14 +144,128 @@ Iz tabele `Customers` prikazuje sve podatke sortirane po vrednosti za polje `Cou
 
 ***
 
+## CASE
+Postoje dva načina korišćenja ove naredbe, `Simple CASE` i `Searched CASE`
+
+Obično se može naći u:  
+
+* naredbi `SELECT`
+* naredbi `DELETE`
+* naredbi `UPDATE`
+* klauzuli `SELECT`
+* klauzuli `ORDER BY`
+* klauzuli `HAVING`
+
+
+### Simple CASE
+
+Sintaksa:
+```
+CASE expression
+WHEN when_expression_1 THEN
+	result_1
+WHEN when_expression_2 THEN
+	result_2
+...
+ELSE
+	else_result
+END
+```
+`CASE` upoređuje izraz `expression` sa izrazima koji se nalaze između `WHEN` i `THEN` korišćenjem operatora `=` i ukoliko dođe do podudaranja, vraća se kao rezultat vrednost iz klauzule `THEN` ( odnosno jedan od `result_1`, `result_2`, ... )
+
+`ELSE` klauzula je opciona.
+
+Ukoliko nije došlo do podudaranja ni sa jednim izrazom, vraća se vrednost `ELSE` klauzule ukoliko je ona navedena, ukoliko nije vraća se `NULL`.
+
+Može se i dogoditi da dođe do podudaranja sa više izraza. U tom slučaju, vraća se vrednost prvog po redu izraza sa kojim je došlo do podudaranja.
+
+![CASE sa vise podudaranja][simple case podudaranje]
+
+Primer primene:  
+Pretpostavimo da je trenutna godina 2000. Tada za upit
+```
+SELECT 
+    first_name,
+    last_name,
+    hire_date,
+    CASE (2000 - YEAR(hire_date))
+        WHEN 1 THEN '1 year'
+        WHEN 3 THEN '3 years'
+        WHEN 5 THEN '5 years'
+        WHEN 10 THEN '10 years'
+        WHEN 15 THEN '15 years'
+        WHEN 20 THEN '20 years'
+        WHEN 25 THEN '25 years'
+        WHEN 30 THEN '30 years'
+    END aniversary
+FROM
+    employees
+ORDER BY first_name;
+```
+dobijamo rezultat  
+![Rezultat primera][simple case primena]  
+Možemo uočiti da poslednja tri radnika za vrednost polja `aniversary` imaju `NULL`. Kao što je već prethodno pomenuto, ukoliko ne dođe ni do jednog podudaranja i pritom klauzula `ELSE` nije definisana, naredba `CASE` će vratiti vrednost `NULL`.
+
+
+### Searched CASE
+
+Sintaksa:
+```
+CASE
+WHEN boolean_expression_1 THEN
+	result_1
+WHEN boolean_expression_2 THEN
+	result_2
+WHEN boolean_expression_3 THEN
+	result_3
+ELSE
+	else_result
+END;
+```
+
+Ponaša se isto kao i `Simple CASE`, jedina razlika je to što umesto poređenja, `Searched CASE` ispituje da li je neki uslov ispunjen i ukoliko jeste, vraća vrednost koja je određena za takvu sitaciju.
+
+Ukoliko se ne navede `ELSE` klauzula i ne dođe do ispunjavanja nekog uslova, vraća se `NULL`
+
+Ukoliko postoji više od jednog ispunjenog uslova, vraća se vrednost prvog po redu uslova koji je zadovoljen.
+
+Primer:  
+```
+SELECT 
+    first_name,
+    last_name,
+    CASE
+        WHEN salary < 3000 THEN 'Low'
+        WHEN salary >= 3000 AND salary <= 5000 THEN 'Average'
+        WHEN salary > 5000 THEN 'High'
+    END evaluation
+FROM
+    employees;
+```
+Rezultat navedenog primera:  
+![Rezultat primera searched case-a][searched-case-primena]
+
+Detaljnije informacije i navedene primere možete naći na sledećem [linku][case info]  
+Dokumentacija naredbe `CASE` se može naći na sledećem [linku][case ms docs].
+
+***
+
 ## EXISTS  
 Upoređuje vrednosti podupita i filtrira ih unutar samog podupita. Prebrojava redove i ignoriše vrednosti podupita, **čak i ako se radi o `NULL` vrednosti**.
 
 ***
 
+# DDL komande
+***
+
+# DQL komande
+***
+
 # Funkcije
 ## CONCAT
 Pretvara argumente u string i nakon toga ih spaja. Može imati najviše 254 argumenta. `NULL` argumente pretvara u prazan string. Argumenti koji predstavljaju brojeve se automatski pretvaraju u string. Obično se koristi za spajanje vrednosti kolona ili za spajanje nekog stringa na vrednost određene kolone.
+
+**Nije deo SQL standarda**
 
 Primer:  
 ```
@@ -183,6 +306,144 @@ Više o funkciji `CAST` možete pročitati na sledećem [linku][cast ms docs].
 
 ***
 
+# Datumske funkcije
+
+### DATEPART
+
+Koristi se za dobijanje određenog podatka nekog datuma. Kao rezultat vraća vrednost tipa `int`. 
+
+**Nije deo SQL standarda**
+
+Sintaksa:
+```
+DATEPART ( datepart , date )  
+```
+
+Argument `datepart` može biti neka od sledećih ključnih reči:
+
+
+* `YEAR`
+* `QUARTER`
+* `MONTH`
+* `DAYOFYEAR`
+* `DAY`
+* `WEEK`
+* `WEEKDAY`
+* `HOUR`
+* `MINUTE`
+* `SECOND`
+* `MILLISECOND`
+* `MICROSECOND`
+* `NANOSECOND`
+* `TYOFFSET`
+* `ISO_WEEK`
+
+( pored navedenih ključnih reči postoje i neki skraćeni oblici )
+
+Više o `DATEPART` funkciji možete pročitati na sledećim linkovima:  
+[sqltutorial DATEPART][datepart sqltutorial]  
+[MS dokumentacija funkcije][datepart ms docs]
+
+***
+
+### DATEDIFF
+
+Uzima kao argumente interval po kome će se vršiti upoređivanje, datum kada je nešto započeto i datum kada je to završeno i vraća kao rezultat razliku intervala ta dva datuma.
+
+**Nije deo SQL standarda**
+
+Sintaksa:
+```
+DATEDIFF(interval, date1, date2)
+```
+
+Može se naći u sledećim klauzulama:
+
+* `SELECT`
+* `WHERE`
+* `HAVING`
+* `GROUP BY`
+* `ORDER BY`
+
+Interval može biti neka od sledećih ključnih reči:
+
+* `YEAR`
+* `QUARTER`
+* `MONTH`
+* `DAYOFYEAR`
+* `DAY`
+* `WEEK`
+* `HOUR`
+* `MINUTE`
+* `SECOND`
+* `MILLISECOND`
+* `MICROSECOND`
+* `NANOSECOND`
+
+( pored navedenih ključnih reči postoje i neki skraćeni oblici )
+
+Više o `DATEDIFF` funkciji možete pročitati na sledećim linkovima:  
+[w3schools DATEDIFF()][datediff w3schools]  
+[MS dokumentacija funkcije][datediff ms docs]
+
+***
+
+### DATENAME
+Najčešće se koristi za predstavljanje imena meseca ili dana u nedelji na osnovu njihovog rednog broja. Ima slične mogućnosti kao i `DATEPART`, s tim što kao rezultat vraća string vrednost izabranog dela koja je tipa `nvarchar`. Jedna od specifičnijih mogućnosti jeste i vraćanje formata vremenske zone u obliku stringa.
+
+**Nije deo SQL standarda**
+
+Sintaksa:
+```
+DATENAME ( datepart , date )  
+```
+Primer:  
+![Primer korišćenja funkcije DATENAME][datename primer]
+
+Više o `DATENAME` funkciji možete pročitati na sledećem [linku][datename ms docs].
+
+***
+
+### GETDATE
+
+Vraća trenutni datum koji je dobijen pomoću operativnog sistema računara na kome je pokretnua instanca SQL Servera.
+
+**Nije deo SQL standarda**. 
+Sintaksa:
+```
+GETDATE()
+```
+
+Može se koristiti kao argument funkcije `DATEDIFF` za određivanje nekih vrednosti što se može videti u sledećem primeru:
+```
+SELECT Imes AS 'Ime studenta',
+	   DATEDIFF( YEAR, datr, GETDATE() ) AS 'Starost'
+FROM Studenti
+```
+
+Više o `GETDATE` funkciji možete pročitati na sledećem [linku][getdate ms docs].
+
+***
+
+## Agregacione funkcije
+
+Na osnovu kolekcije vrednosti vrše neki proračun i kao rezultat vraćaju jednu vrednost.
+
+Zbog toga što rade nad kolekcijom vrednosti često se koriste sa klauzulom `GROUP BY` naredbe `SELECT` jer `GROUP BY` deli rezultujuću kolekciju u grupe, nakon čega agregatna funkcija vraća jednu vrednost za svaku grupu. Naravno, mogu se koristiti i bez njih.
+
+Primer:  
+```
+SELECT COUNT(*)
+FROM employees
+WHERE job_id = 9;
+```
+
+Kao izrazi se mogu koristi samo u selekcionoj listi naredbe `SELECT` u unutrašnjem ili spoljašnjem upitu i u klauzuli `HAVING`
+
+Sve agregacione funkcije osim `COUNT` ignorišu `NULL` vrednosti.
+
+***
+
 # Tipovi podataka
 
 
@@ -199,7 +460,7 @@ Tipovi fiksne dužine zauzimaju dužinu koja je navedena kao maksimalna, bez obz
 
 Slovo `n` u ovim tipovima ima značenje *national*.
 
-Više o tipovima podataka možete pročitati na sledećem [linku][tipovi podataka]
+Više o tipovima podataka možete pročitati na sledećem [linku][char tipovi]
 
 ***
 
@@ -236,11 +497,14 @@ Više o komandi `GO` možete pročitati na sledećim likovima:
 ***
 
 # Ostalo
-Stringovi navode na dva načina:
+Stringovi navode na dva načina:  
+
 * između apostrofa `'string'`
 * između uglastih zagrada `[string]`
 
 Stringovi se mogu pisati i bez ikakvog navođenja, ali samo ukoliko se radi o jednoj reči, pa ukoliko želite da napravite string koji se sastoji od dve ili više reči potrebno je da koristite neki od navedenih načina.
+
+Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [linku][sql dialects].
 
 
 
@@ -252,6 +516,17 @@ Stringovi se mogu pisati i bez ikakvog navođenja, ali samo ukoliko se radi o je
 
 
 
+[//]: # ( Sadržaj reference )
+
+[dml]: ./SQL_skripta.md#DML-komande
+[ddl]: ./SQL_skripta.md#DDL-komande
+[dql]: ./SQL_skripta.md#DQL-komande
+[funkcije]: ./SQL_skripta.md#Funkcije
+[tipovi podataka]: ./SQL_skripta.md#Tipovi-podataka
+[nonsql komande]: ./SQL_skripta.md#Komande-koje-ne-pripadaju-SQL-u
+[ostalo]: ./SQL_skripta.md#Ostalo
+
+
 [//]: # ( DML reference )
 
 [distinct]: ./SQL_skripta.md#distinct
@@ -259,36 +534,78 @@ Stringovi se mogu pisati i bez ikakvog navođenja, ali samo ukoliko se radi o je
 [in]: ./SQL_skripta.md#in
 [like]: ./SQL_skripta.md#like
 [order by]: ./SQL_skripta.md#order%20by
+[case]: ./SQL_skripta.md#case
 [exists]: ./SQL_skripta.md#exists
 
 
+
+[//]: # ( Funkcije reference )
+
+[concat]: ./SQL_skripta.md#concat
+[cast]: ./SQL_skripta.md#cast
+[datumske funkcije]: ./SQL_skripta.md#Datumske-funkcije
+[datepart]: ./SQL_skripta.md#datepart
+[datediff]: ./SQL_skripta.md#datediff
+[datename]: ./SQL_skripta.md#datename
+[getdate]: ./SQL_skripta.md#getdate
+[agregacione funkcije]: ./SQL_skripta.md#Agregacione-funkcije
 
 
 [//]: # ( Ostalo reference )
 
 [go]: ./SQL_skripta.md#go
+[sql dialects]: https://en.wikibooks.org/wiki/SQL_Dialects_Reference
 
 
 
 [//]: # ( Reference iz teksta )
 
+[//]: # ( Reference slika )
+
 [distinct-agr]: ./distinct-agr.png
 [concat primer]: ./concat.png
 [go count]: ./go-count.png
+[simple case podudaranje]: ./simple-case-podudaranje.png
+[simple case primena]: ./simple-case-primena.png
+[searched-case-primena]: ./searched-case-primena.png
+[datename primer]: ./datename.png
+
+
+[//]: # ( Microsoft docs reference )
+
+[case ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?view=sql-server-ver15
+
+[concat ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/concat-transact-sql?view=sql-server-ver15
+
+[cast ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15
+
+[datepart ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver15
+
+[datediff ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql?view=sql-server-ver15
+
+[datename ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/datename-transact-sql?view=sql-server-ver15
+
+[getdate ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/getdate-transact-sql?view=sql-server-ver15
+
+[go ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go?redirectedfrom=MSDN&view=sql-server-ver15
+
+[use ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/use-transact-sql?view=sql-server-ver15
+
+
+[//]: # ( Vise informacija reference )
+
 [wildcard]: https://www.computerhope.com/jargon/w/wildcard.htm
 
 [wildcards w3schools]: https://www.w3schools.com/sql/sql_wildcards.asp
 
 [like w3schools]: https://www.w3schools.com/sql/sql_like.asp
 
-[concat ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/concat-transact-sql?view=sql-server-ver15
+[case info]: https://www.sqltutorial.org/sql-case/
 
-[cast ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15
+[datepart sqltutorial]: https://www.sqltutorial.org/sql-date-functions/sql-datepart/
 
-[tipovi podataka]: https://www.mssqltips.com/sqlservertip/4322/sql-server-differences-of-char-nchar-varchar-and-nvarchar-data-types/
+[datediff w3schools]: https://www.w3schools.com/SQl/func_sqlserver_datediff.asp
+
+[char tipovi]: https://www.mssqltips.com/sqlservertip/4322/sql-server-differences-of-char-nchar-varchar-and-nvarchar-data-types
 
 [go stackoverflow]: https://stackoverflow.com/questions/20711326/sql-server-what-are-batching-statements-i-e-using-go-good-for
-
-[go ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go?redirectedfrom=MSDN&view=sql-server-ver15
-
-[use ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/use-transact-sql?view=sql-server-ver15
