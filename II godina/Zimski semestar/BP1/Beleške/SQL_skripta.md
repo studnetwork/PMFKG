@@ -18,6 +18,7 @@
         * [DATENAME][datename]
         * [GETDATE][getdate]
     * [Agregatne funkcije][agregatne funkcije]
+        * [COUNT][count]
 * [Tipovi podataka][tipovi podataka]
 * [Komande koje ne pripadaju SQL-u][nonsql komande]
     * [GO][go]
@@ -28,6 +29,23 @@
 **Polje** - kolona  
 
 Ovi pojmovi su pravilniji iz razloga što, pored osobina koje imaju red i kolona, imaju i podatke o njihovom kontekst - **metapodatke**. 
+
+SQL naredba je kompletan skup klauzula koji vraća vrednost i završava se sa `;`
+
+Primer:  
+```
+SELECT Imes AS 'Ime studenta'
+FROM Studenti
+WHERE Mesto = 'Kragujevac';
+```
+Ceo ovaj kod predstavlja jednu SQL naredbu. Ova naredba je sačinjena od sledećih klauzula:  
+
+1. `SELECT Imes`
+2. `AS 'Ime studenta'`
+3. `FROM Studenti`
+3. `WHERE Mesto = 'Kragujevac'`
+
+**Napomena**: termini *naredba* i *klauzula* u nastavku teksta nisu ispravno korišćeni
 
 # DML komande
 
@@ -459,6 +477,31 @@ Sve agregatne funkcije osim `COUNT` ignorišu `NULL` vrednosti.
 
 ***
 
+### COUNT
+Ova funkcija broji zapise koji su vraćeni upitom. Povratna vrednost je tipa `int`
+
+Sintaksa:  
+```
+COUNT([ALL | DISTINCT] expression);
+```
+Ključna reč `ALL` je podrazumevna opcija pa iz tog razloga nije neophodno njeno navođenje.
+
+Kao argument funkcije se može navesti i `*`, čime se označava da će se brojiti svi zapisi, nezavisno od njihove vrednosti. To podrazumeva i `NULL`. Broje se i duplikati jer se brojanje ne vrši po vrednostima, već se samo prebrojavaju zapisi.
+
+Ukoliko se navede ključan reč `DISTINCT`, vrši se prebrojavanje zapisa na osnovu njihovih vrednosti. Kako `NULL` predstavlja vrednost koja nije poznata, utvrđivanje da li je vrednost nekog zapisa jedinstvena nije moguće. Dakle, ukoliko je navedena reč `DISTINCT`, prebrojavaju se sve jedinstvene vrednosti koje nisu `NULL`.
+
+`COUNT( ime_kolone )` broji zapise čije vrednosti nisu `NULL`
+
+`expression` ne može biti podupit ili agregatna funkcija
+
+Izrazi `COUNT(*)` i `COUNT(1)` su semantički isti i imaju isto vreme izračunavanja.
+
+Može se naći u klauzulama `SELECT`, `ORDER BY` i `HAVING`
+
+Više o `COUNT` funkciji možete pročitati na sledećim linkovima:  
+[sqltutorial count][sqltutorial count]  
+[MS dokumentacija funkcije][count ms docs]
+
 # Tipovi podataka
 
 
@@ -564,7 +607,7 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 [datename]: ./SQL_skripta.md#datename
 [getdate]: ./SQL_skripta.md#getdate
 [agregatne funkcije]: ./SQL_skripta.md#Agregatne-funkcije
-
+[count]: ./SQL_skripta.md#count
 
 [//]: # ( Ostalo reference )
 
@@ -588,6 +631,8 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 
 [//]: # ( Microsoft docs reference )
 
+[use ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/use-transact-sql?view=sql-server-ver15
+
 [case ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?view=sql-server-ver15
 
 [concat ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/concat-transact-sql?view=sql-server-ver15
@@ -602,9 +647,9 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 
 [getdate ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/getdate-transact-sql?view=sql-server-ver15
 
-[go ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go?redirectedfrom=MSDN&view=sql-server-ver15
+[count ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/count-transact-sql
 
-[use ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/use-transact-sql?view=sql-server-ver15
+[go ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go?redirectedfrom=MSDN&view=sql-server-ver15
 
 
 [//]: # ( Vise informacija reference )
@@ -621,6 +666,9 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 
 [datediff w3schools]: https://www.w3schools.com/SQl/func_sqlserver_datediff.asp
 
+[sqltutorial count]: https://www.sqltutorial.org/sql-aggregate-functions/sql-count/
+
 [char tipovi]: https://www.mssqltips.com/sqlservertip/4322/sql-server-differences-of-char-nchar-varchar-and-nvarchar-data-types
 
 [go stackoverflow]: https://stackoverflow.com/questions/20711326/sql-server-what-are-batching-statements-i-e-using-go-good-for
+  
