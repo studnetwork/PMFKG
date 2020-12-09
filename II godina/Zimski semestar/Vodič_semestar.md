@@ -4,7 +4,8 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 # Lista predmeta
 [Operativni sistemi 1][os1]  
 [Baze podataka 1][bp1]  
-[Strukture podataka i algoritmi 2][spa2]
+[Strukture podataka i algoritmi 2][spa2]  
+[Osnovi preduzetničkog menadžmenta][opm]  
 
 # Meeting linkovi
 [Operativni sistemi 1 - Predavanje][meeting-os1-p]  
@@ -39,18 +40,23 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [spa2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
+[opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
 
 [//]: # ( Meeting reference )
 
 [meeting-opm]: http://bbb.pmf.kg.ac.rs/b/sne-1um-5tv-wsg
 
+
 [meeting-spa2-p]: http://bbb.pmf.kg.ac.rs/b/bob-yyt-4xc
 
 [meeting-spa2-v]: https://classroom.google.com/c/MTQ5NzI1MzI3MzIw
 
+
 [meeting-bp1-p]: https://bbb.pmf.kg.ac.rs/b/ana-h6e-wsh-kfa
 
 [meeting-bp1-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=9173
+
 
 [meeting-os1-p]: http://bbb.pmf.kg.ac.rs/b/mil-mb4-qvc-l5u
 

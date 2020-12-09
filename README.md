@@ -15,7 +15,8 @@ Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i sa
 [Druga godina - Zimski semestar][druga zimski]  
 [Druga godina - Operativni sistemi 1][os1]  
 [Druga godina - Baze podataka 1][bp1]  
-[Druga godina - Strukture podataka i algoritmi 2][spa2]
+[Druga godina - Strukture podataka i algoritmi 2][spa2]  
+[Druga godina - Osnovi preduzetničkog menadžmenta][opm]  
 
 # Korisni linkovi
 [Stranica fakulteta][imi stranica]  
@@ -30,8 +31,8 @@ Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih li
 * Moodle, [slanjem private poruke][moodle chat] nekom od administratora:
 	* Srđan Todorović  
 	* Dragor Draganović  
-    * Mihajlo Janković
-	
+    * Mihajlo Janković  
+
 **Napomena:** komunikacija preko moodle-a je moguća samo između studenata koji su prijavljeni na isti kurs
 
 # Saradnja
@@ -69,6 +70,8 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [bp1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [spa2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
+[opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
