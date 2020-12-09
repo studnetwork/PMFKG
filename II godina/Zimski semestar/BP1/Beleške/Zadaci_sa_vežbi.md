@@ -2,7 +2,6 @@
 * [Vežbe 1][v1]
 * [Vežbe 2][v2]
 * [Vežbe 3][v3]
-* [Vežbe 4][v4]
 
 ## Vežbe 1
 
@@ -715,4 +714,3 @@ group by p2.NAZIVP, p2.Spred
 [v1]: ./Zadaci_sa_vežbi.md#Vežbe-1
 [v2]: ./Zadaci_sa_vežbi.md#Vežbe-2
 [v3]: ./Zadaci_sa_vežbi.md#Vežbe-3
-[v4]: ./Zadaci_sa_vežbi.md#Vežbe-4
