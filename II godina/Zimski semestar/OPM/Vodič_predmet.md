@@ -44,18 +44,18 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Kolokvijumi
+[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OPM/Kolokvijumi
 
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Ve%C5%BEbe%20i%20predavanja
+[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OPM/Ve%C5%BEbe%20i%20predavanja
 
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Doma%C4%87i
+[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OPM/Doma%C4%87i
 
 [//]: # ( beleške-future ce biti iskoriscen kada se napravi vodic_vip.md )
 [beleške-future]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Bele%C5%A1ke/Vodi%C4%8D_vip.md#vodi%C4%8D
 
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Bele%C5%A1ke
+[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OPM/Bele%C5%A1ke
 
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/opm/Ostalo
+[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OPM/Ostalo
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=471
 
