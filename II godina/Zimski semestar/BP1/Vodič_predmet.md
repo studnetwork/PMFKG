@@ -55,11 +55,16 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [kombinovani kolovkijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/Kombinovani
 
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i
-[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi
-[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
-[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
 [vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
+
+[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i
+
+[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke
+
+[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo
+
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
+
+[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
+
+[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
