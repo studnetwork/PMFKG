@@ -6,8 +6,8 @@
     * [LIKE][like]
     * [ORDER BY][order by]
     * [EXISTS][exists]
-* DDL
-* DQL
+* DDL ( **D**ata **D**efinition **L**anguage )
+* DQL ( **D**ata **Q**uery **L**anguage )
 * Funkcije
 * Tipovi podataka
 * Komande koje ne pripadaju SQL-u
@@ -107,8 +107,6 @@ Služi za ispitivanje stringova korišćenjem regularnih izraza (regex). Neki od
 `^`   predstavlja bilo koji karakter se ne nalazi u `[]`  
 `-`   predstavlja bilo koji karakter koji se nalazi u nekom opsegu. Koristi se unutar `[]`
 
-
-
 Primer:
 ```
 SELECT *
@@ -136,10 +134,6 @@ Iz tabele `Customers` prikazuje sve podatke sortirane po vrednosti za polje `Cou
 
 
 ***
-
-## CASE
-
-
 
 ## EXISTS  
 Upoređuje vrednosti podupita i filtrira ih unutar samog podupita. Prebrojava redove i ignoriše vrednosti podupita, **čak i ako se radi o `NULL` vrednosti**.
@@ -199,7 +193,7 @@ Više o funkciji `CAST` možete pročitati na sledećem [linku][cast ms docs].
 
 `varchar` predstavlja *Non-Unicode* stringove promenljive dužine
 
-`nvarchar` predstavlja i *Unicode* i *Non-Unicode* stringove promenljive dužine, pa zbog pokrivenosti *Unicode-a* zauzima duplo više memorije od `varchar`
+`nvarchar` predstavlja i *Unicode* i *Non-Unicode* stringove promenljive dužine, pa zbog pokrivenosti *Unicode-a* zauzima duplo više memorije od tipa `varchar`
 
 Tipovi fiksne dužine zauzimaju dužinu koja je navedena kao maksimalna, bez obzira stvarnu veličinu stringa, dok tilovi promeljive dužine zauzimaju samo onoliko memorije koliko je potrebno za skladištenje datog stringa.
 
