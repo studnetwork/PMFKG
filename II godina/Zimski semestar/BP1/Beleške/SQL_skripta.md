@@ -74,22 +74,26 @@ Ekvivalentno sledećem izrazu:
 ```
 leva_granica >= vrednost AND vrednost <= desna_granica
 ```
-**Napomena**: korišćenje ovde komande nije preporučljivo kada se radi sa podacima `DATETIME` tipa
 
-Primer:
+Potrebno je da vrednost `leva_granica` bude veća od vrednosti `desna_granica`. Ukoliko taj uslov nije ispunjen, kao rezultat se dobija prazna tabela. 
+
+**Napomena**: korišćenje ovde komande nije preporučljivo kada se radi sa podacima `DATETIME` tipa jer može doći do pogrešnog tumačenja. Razlog tome je što desna granica obuhvata samo trenutak u kome je započet novi dan `yyyy-mm-dd 00:00:00.000`, ali vreme koje protekne od tog trenutnka pa do kraja tog dana `yyyy-mm-dd 23:59:59.999` nije uključeno u ovaj interval.
+
+
+Sintaksa:
 ```
 SELECT column_name
 	FROM table_name
 	WHERE column_name BETWEEN value1 AND value2;
 ```
-Iz tabele `table_name` uzima sve zapise čija se vrednost polja `column_name`
-nalazi između vrednosti `value1` i vrednosti `value2`
+Iz tabele `table_name` uzima sve zapise čija se vrednost polja `column_name` nalazi između vrednosti `value1` i vrednosti `value2`
 
 ***
 
 ## IN  
 Ima istu funkciju kao i skupovni operator `in`. Proverava da li se neka vrednost nalazi u nekoj listi vrednost ( ili u vrednostima tabele podupita ).
 
+Sintaksa:  
 ```
 SELECT column_name
 FROM table_name
@@ -99,11 +103,14 @@ Iz tabele `table_name` uzima sve zapise cija se vrednost za polje `column_name` 
 
 `IN` radi tako što vrednost izraza koji se nalazi pre njega (u navedenom primeru to je `column_name`) upoređuje, korišćenjem operatora `=` sa svakom vrednošću iz liste vrednosti. Iz tog razloga, ako se u listi nalazi barem jedna `NULL` vrednost, zapis neće biti vraćen (čak i ako dođe do upoređivanja `NULL = NULL`)
 
-Kada se koristi za proveru vraćenih vrednosti iz podupita, `IN` vrši upoređivanje i, u skladu sa rezultatom, filtrira zapise spoljašnjeg upita.
-
-Iako je u nekim situacijama ekvivalent komandi `EXISTS`, ona se ipak razlikuju. Opis razlike možete pročitati [ovde][exists].
+Kada se koristi za proveru vraćenih vrednosti iz podupita, `IN` vrši upoređivanje i, zavisno od rezultata, filtrira zapise spoljašnjeg upita.
 
 Ekvivalentan je klauzuli `= ANY`
+
+Iako je u nekim situacijama ekvivalentan sa `EXISTS`, razlike ipak postoje. 
+
+Više o razlici `IN` i `EXISTS` možete pročitati na sledećem [linku][exists].
+
 
 ***
 
@@ -251,7 +258,15 @@ Dokumentacija naredbe `CASE` se može naći na sledećem [linku][case ms docs].
 ***
 
 ## EXISTS  
-Upoređuje vrednosti podupita i filtrira ih unutar samog podupita. Prebrojava redove i ignoriše vrednosti podupita, **čak i ako se radi o `NULL` vrednosti**.
+Broji koliko se zapisa nalazi u nekoj tabeli ( najčešće rezultatu podupita ) i ukoliko u njoj postoji barem jedan zapis vraća `TRUE`, u suprotnom vraća `FALSE`. 
+
+Obično se koristi se u sitacijama kada uz pomoć podupita selektujemo neke zapise. Tada se u podupitu pravi uslov po kome će biti filtrirani zapisi. Ako se vrati `FALSE` znači da uslov nije zadovoljen i tada ne dolazi do selekcije zapisa iz **spoljašnjeg** upita.
+
+Filrtiranje zapisa se vrši unutar podupita.
+
+Vrednosti koje se vrate podupitom za `EXISTS` **nisu bitne**. Jedino što je bitno je da li postoji barem jedan red ili ne. To znači da i `NULL` vrednost posmatra kao i bilo koju drugu, jer mu one svakako ništa ne znače.
+
+**Važna napomena:** greška koja se često pravi pri korišćenju ove komande je da se unutar podupita ne postavki nikakav uslov koji se odnosi sa jedan secifičan zapis, pa se prilikom svake iteracije proverava jedan te isti uslov: da li u rezultatu podupita postoji neki zapis. Zbog izostavljanja takvog uslova, za svaki zapis će razultat biti isti. Obično se to rešava tako što se osigura da su identifikatori entiteta jednaki ( tj. da se radi o istom entitetu ) pa se nakon toga zadaje uslov.
 
 ***
 
