@@ -37,6 +37,12 @@ Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih li
 # Saradnja
 Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
 
+Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
+
+[//]: # ( relativna adresa je koriscena za sliku )
+Neke od kategorija:  
+![Kategorije diskusija][categories]
+
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
 
@@ -77,7 +83,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [//]: # (Kontakt reference)
 
 [fb]: https://www.facebook.com/groups/988381171505906
-[discord]: https://discord.gg/a2mZDuHF
+[discord]: https://discord.gg/by9wC55xJ7
 [moodle chat]: https://imi.pmf.kg.ac.rs/moodle/message/index.php?contactsfirst=1
 
 
@@ -86,8 +92,11 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [saradnja]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/README.md#opis
 
+[discussions]: https://github.com/Produktivna-grupa/PMFKG/discussions
+
+[categories]: ./categories.png
+
 
 [//]: # (Licenca reference)
 
 [licenca]: https://opensource.org/licenses/MIT
-
