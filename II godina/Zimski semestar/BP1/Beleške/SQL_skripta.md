@@ -1,4 +1,5 @@
 # Sadržaj
+
 * [DML ( Data Managment Language )][dml]
     * [DISTINCT][distinct]
     * [BETWEEN][between]
@@ -19,6 +20,10 @@
         * [GETDATE][getdate]
     * [Agregatne funkcije][agregatne funkcije]
         * [COUNT][count]
+        * [AVG][avg]
+        * [MIN][min]
+        * [MAX][max]
+        * [SUM][sum]
 * [Tipovi podataka][tipovi podataka]
 * [Komande koje ne pripadaju SQL-u][nonsql komande]
     * [GO][go]
@@ -68,7 +73,8 @@ Nakon ove komande se često može pojaviti i komanda [GO][go].
 Više o komandi `USE` možete pročitati na sledećem [linku][use ms docs].
 
 
-## DISTINCT  
+## DISTINCT
+
 Koristi se za izbacivanje duplikata. Može se na naći kod komande `SELECT` ili unutar agregatnih funkcija.
 
 Primer pojavljivanja u `SELECT`-u:
@@ -87,7 +93,8 @@ FROM Studenti
 
 ***
 
-## BETWEEN  
+## BETWEEN
+
 Ekvivalentno sledećem izrazu:
 ```
 leva_granica >= vrednost AND vrednost <= desna_granica
@@ -108,7 +115,8 @@ Iz tabele `table_name` uzima sve zapise čija se vrednost polja `column_name` na
 
 ***
 
-## IN  
+## IN
+
 Ima istu funkciju kao i skupovni operator `in`. Proverava da li se neka vrednost nalazi u nekoj listi vrednost ( ili u vrednostima tabele podupita ).
 
 Sintaksa:  
@@ -132,7 +140,8 @@ Više o razlici `IN` i `EXISTS` možete pročitati na sledećem [linku][exists].
 
 ***
 
-## LIKE  
+## LIKE
+
 Služi za ispitivanje stringova korišćenjem regularnih izraza (regex). Neki od [wildcard-ova][wildcard] su:
 
 `%`   predstavlja nula, jedan ili više karaktera  
@@ -155,7 +164,8 @@ Više o pomenutim pojmovima možete pročitati na sledećim linkovima:
 
 ***
 
-## ORDER BY 
+## ORDER BY
+
 Sortira zapise po vrednostima kolona. Način sortiranja može biti rastući `ASC` ili opadajući `DESC`. Podrazumevana vrednost je `ASC`, tako da nije potrebno njeno navođenje.
 
 Primer:
@@ -166,10 +176,19 @@ ORDER BY Country DESC;
 ```
 Iz tabele `Customers` prikazuje sve podatke sortirane po vrednosti za polje `Country` u opadajućem poretku.
 
+Klauzula `ORDER BY` je jedna od retih klauzula naredbe `SELECT`, ako ne i jedina, koja  može koristiti nazive (*alias*) definisane u selekcionoj listi klauzule `SELECT`
+
+Primer:  
+```
+SELECT Imes AS 'Ime studenta'
+FROM studenti
+order by 'Ime studenta'
+```
 
 ***
 
 ## CASE
+
 Postoje dva načina korišćenja ove naredbe, `Simple CASE` i `Searched CASE`
 
 Obično se može naći u:  
@@ -184,7 +203,7 @@ Obično se može naći u:
 
 ### Simple CASE
 
-Sintaksa:
+Sintaksa:  
 ```
 CASE expression
 WHEN when_expression_1 THEN
@@ -207,7 +226,7 @@ Može se i dogoditi da dođe do podudaranja sa više izraza. U tom slučaju, vra
 ![CASE sa vise podudaranja][simple case podudaranje]
 
 Primer primene:  
-Pretpostavimo da je trenutna godina 2000. Tada za upit
+Pretpostavimo da je trenutna godina 2000. Tada za upit  
 ```
 SELECT 
     first_name,
@@ -234,7 +253,7 @@ Možemo uočiti da poslednja tri radnika za vrednost polja `aniversary` imaju `N
 
 ### Searched CASE
 
-Sintaksa:
+Sintaksa:  
 ```
 CASE
 WHEN boolean_expression_1 THEN
@@ -275,7 +294,8 @@ Dokumentacija naredbe `CASE` se može naći na sledećem [linku][case ms docs].
 
 ***
 
-## EXISTS  
+## EXISTS
+
 Broji koliko se zapisa nalazi u nekoj tabeli ( najčešće rezultatu podupita ) i ukoliko u njoj postoji barem jedan zapis vraća `TRUE`, u suprotnom vraća `FALSE`. 
 
 Obično se koristi se u sitacijama kada uz pomoć podupita selektujemo neke zapise. Tada se u podupitu pravi uslov po kome će biti filtrirani zapisi. Ako se vrati `FALSE` znači da uslov nije zadovoljen i tada ne dolazi do selekcije zapisa iz **spoljašnjeg** upita.
@@ -295,7 +315,9 @@ Vrednosti koje se vrate podupitom za `EXISTS` **nisu bitne**. Jedino što je bit
 ***
 
 # Funkcije
+
 ## CONCAT
+
 Pretvara argumente u string i nakon toga ih spaja. Može imati najviše 254 argumenta. `NULL` argumente pretvara u prazan string. Argumenti koji predstavljaju brojeve se automatski pretvaraju u string. Obično se koristi za spajanje vrednosti kolona ili za spajanje nekog stringa na vrednost određene kolone.
 
 **Nije deo SQL standarda**
@@ -312,6 +334,7 @@ Više o funkciji `CONCAT` možete pročitati na sledećem [linku][concat ms docs
 ***
 
 ## CAST
+
 Pretvara jedan tip podatka u drugi.
 
 Sintaksa:  
@@ -422,6 +445,7 @@ Više o `DATEDIFF` funkciji možete pročitati na sledećim linkovima:
 ***
 
 ### DATENAME
+
 Najčešće se koristi za predstavljanje imena meseca ili dana u nedelji na osnovu njihovog rednog broja. Ima slične mogućnosti kao i `DATEPART`, s tim što kao rezultat vraća string vrednost izabranog dela koja je tipa `nvarchar`. Jedna od specifičnijih mogućnosti jeste i vraćanje formata vremenske zone u obliku stringa.
 
 **Nije deo SQL standarda**
@@ -478,7 +502,8 @@ Sve agregatne funkcije osim `COUNT` ignorišu `NULL` vrednosti.
 ***
 
 ### COUNT
-Ova funkcija broji zapise koji su vraćeni upitom. Povratna vrednost je tipa `int`
+
+Ova funkcija broji zapise koji su vraćeni upitom (tj. nekog skupa zapisa ). Povratna vrednost je tipa `int`
 
 Sintaksa:  
 ```
@@ -502,10 +527,76 @@ Više o `COUNT` funkciji možete pročitati na sledećim linkovima:
 [sqltutorial count][sqltutorial count]  
 [MS dokumentacija funkcije][count ms docs]
 
+***
+
+### AVG
+
+Računa prosečnu vrednost neke kolekcije vrednosti.
+
+Sintaksa:
+```
+AVG([ALL|DISTINCT] expression)
+```
+Može se koristiti samo nad poljima koja imaju numeričke vrednosti.
+
+`NULL` vrednostima se ignorišu.
+
+Ključna reč `ALL` je podrazumevna opcija pa iz tog razloga nije neophodno njeno navođenje.
+
+Ukoliko se navede ključan reč `DISTINCT`, duplikati ne koriste za izračunavanje prosečne vrednosti.
+
+**Napomena**: ukoliko se koristi nad celobrojnim vrednostima, rezultat će takođe biti celobrojan. Decimalan rezultat možemo dobiti množenjem argumenta sa `1.0` kako bi se dobio decimalan argument, ili korišćenjem funkcije `CAST` kako bi se izvršilo njegovo pretvaranje u decimalan broj
+
+Više o `AVG` funkciji možete pročitati na sledećem [linku][avg ms docs]
+
+***
+
+### MIN
+
+Određuje najmanju vrednost neke kolekcije vrednosti. U slučaju da u kolekciji ne postoji ni jedna vrednost, vraća `NULL`
+
+Sintaksa:
+```
+MIN(column | expression)
+```
+Ignoriše `NULL` vrednosti.
+
+Ukoliko se traži najmanja vrednost za kolekciju koja je nekog karakter tipa, vraća onu vrednost koja se nalazi na poslednjem mestu u sortiranom nizu.
+
+***
+
+### MIN
+
+Određuje najveću vrednost neke kolekcije vrednosti. U slučaju da u kolekciji ne postoji ni jedna vrednost, vraća `NULL`
+
+Sintaksa:
+```
+MAX(column | expression)
+```
+Ignoriše `NULL` vrednosti.
+
+Ukoliko se traži najveća vrednost za kolekciju koja je nekog karakter tipa, vraća onu vrednost koja se nalazi na najvišem mestu u sortiranom nizu.
+
+***
+
+### SUM
+
+Sumira kolekciju vrednosti. Ukoliko je kolekcija prazna, vraća `NULL`
+
+Sintaksa:
+```
+SUM([ALL|DISTINCT] expression)
+```
+
+Može se koristiti samo nad vrednostima numeričkih tipova podataka.
+
+Ukoliko se navede ključna reč `DISTINCT`, duplikati ne ulaze u proračun sume.
+
 # Tipovi podataka
 
 
 ## Razlike između tipova char, nchar, varchar i nvarchar
+
 `char` predstavlja *Non-Unicode* stringove fiksne dužine
 
 `nchar` predstavlja i *Unicode* i *Non-Unicode* stringove fiksne dužine. Duplo više mesta zauzima od `char` pa iz tog razloga ima duplo manju dužinu od njega
@@ -523,7 +614,9 @@ Više o tipovima podataka možete pročitati na sledećem [linku][char tipovi]
 ***
 
 # Komande koje ne pripadaju SQL-u
+
 ## GO
+
 Ova komanda **nije** ključna reč SQL-a, već se koristi od klijentskih programa kao što je SQL Management Studio Editor. Predstavlja podrazumevani *batch separator* T-SQLa.  
 
 *Batch* je kolekcija od dve ili više SQL naredbe.
@@ -555,6 +648,7 @@ Više o komandi `GO` možete pročitati na sledećim likovima:
 ***
 
 # Ostalo
+
 Stringovi navode na dva načina:  
 
 * između apostrofa `'string'`
@@ -608,6 +702,12 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 [getdate]: ./SQL_skripta.md#getdate
 [agregatne funkcije]: ./SQL_skripta.md#Agregatne-funkcije
 [count]: ./SQL_skripta.md#count
+[avg]: ./SQL_skripta.md#avg
+[min]: ./SQL_skripta.md#min
+[max]: ./SQL_skripta.md#max
+[sum]: ./SQL_skripta.md#sum
+
+
 
 [//]: # ( Ostalo reference )
 
@@ -648,6 +748,8 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 [getdate ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/getdate-transact-sql?view=sql-server-ver15
 
 [count ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/count-transact-sql
+
+[avg ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/functions/avg-transact-sql?view=sql-server-ver15
 
 [go ms docs]: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go?redirectedfrom=MSDN&view=sql-server-ver15
 
