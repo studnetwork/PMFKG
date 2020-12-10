@@ -16,13 +16,15 @@ Linkovi ka snimcima lekcija:
 6. [Lekcija 6][v-lekcija-6] `SQL`  
 7. [Lekcija 7][v-lekcija-7] `SQL`  
 8. [Lekcija 8][v-lekcija-8] `SQL`  
+9. [Lekcija 9][v-lekcija-9] `SQL`  
 
 ### Konsultacije
-Linkovi ka snimcima konsultacija:
+Linkovi ka snimcima konsultacija:  
 1. [Konsultacije 1][v-konsultacije-1] `Relaciona algebra - regularni kolokvijum 2018/2019`  
 2. [Konsultacije 2][v-konsultacije-2] `Relaciona algebra - kolokvijuma 2017/2018, 5. 2015/2016`  
 3. [Konsultacije 3][v-konsultacije-3] `Relaciona algebra - redovni kolokvijum 2019/2020`  
 4. [Konsultacije 4][v-konsultacije-4] `Relaciona algebra - redovni kolokvijum 2018/2019, 3. sa redovnog 2015/2016`  
+
 
 ### Napomene
 Ukoliko imate problem sa povezivanjem sqllocaldb-a i SSMS-a, probajte da instalirate neku od [starijih vezija][ssms-prev] SSMS-a.  
@@ -99,6 +101,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-lekcija-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1603808042264
 
+
 [//]: # ( SQL, lekcija, 5-8 )
 
 [v-lekcija-5]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605017608891
@@ -109,6 +112,9 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-lekcija-8]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1606831464559
 
+[v-lekcija-9]: https://drive.google.com/file/d/13oMg6FVLrjG_BTDNbG6sl68aHJq-V6ME/view?usp=sharing
+
+
 [//]: # ( Relaciona algebra, konsultacije, 1-4 )
 
 [v-konsultacije-1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605268869834
@@ -118,6 +124,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [v-konsultacije-3]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605533452567
 
 [v-konsultacije-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605693649917
+
+[v-konsultacije-5]: 
 
 
 [//]: # ( Vezbe napomena reference )
