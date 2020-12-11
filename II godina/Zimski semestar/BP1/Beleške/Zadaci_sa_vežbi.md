@@ -46,9 +46,10 @@ from studenti
  <summary>Rešenje</summary>
 
 ```tsql
-select distinct mesto
+select distinct mesto, null       --as 'null vrednosti'
 from studenti
 ```
+Moguće je dodati alias i kolonama sa fiksnim vrednostima
 </details>
 
 ***
@@ -131,7 +132,7 @@ where datr is null
 
 ***
 
-11. Prikazati Studente koji NISU iz Kragujevca ili Kraljeva sortirane po imenu (od najmanjeg ka najvećem)
+11. Prikazati Studente koji NISU iz Kragujevca ili Kraljeva sortirane po imenu ( opadajuci poredak )
 <details>
  <summary>Rešenje</summary>
 
