@@ -434,9 +434,15 @@ where Snast not in (select snast from Angazovanje)
  <summary>Rešenje</summary>
 
 ```tsql
-select *
-from nastavnici
-where Snast not in (select snast from Angazovanje)
+select indeks, upisan, imes
+from studenti s1
+where exists
+(
+	select *
+	from studenti s2
+	group by mesto
+	having s1.mesto = s2.mesto and count(mesto) > 2
+)
 ```
 </details>
 
@@ -449,15 +455,17 @@ where Snast not in (select snast from Angazovanje)
 ```tsql
 select indeks, upisan, ocena
 from prijave
-where ocena < all (
-			select ocena 
-			from prijave where 
-			Snast = ANY (
-					select snast 
-					from Nastavnici 
-					where Imen like '%s%' 
-				    )
-		  )
+where ocena < all
+(
+	select ocena 
+	from prijave 
+    where Snast = ANY 
+    (
+		select snast 
+		from Nastavnici 
+		where Imen like '%s%' 
+    )
+)
 ```
 </details>
 
@@ -467,15 +475,17 @@ where ocena < all (
 ```tsql
 select indeks, upisan, ocena
 from prijave
-where ocena < all (
-			select ocena 
-			from prijave where 
-			Snast in (
-					select snast 
-					from Nastavnici 
-					where Imen like '%s%' 
-				 )
-		   )
+where ocena < all 
+(
+	select ocena 
+	from prijave
+    where Snast in
+    (
+		select snast 
+		from Nastavnici 
+		where Imen like '%s%' 
+    )
+)
 ```
 </details>
 
