@@ -416,14 +416,19 @@ group by upisan
 
 ## Vežbe 2
 
-1. spisak nastavnika koji nisu angažovani.
+1. spisak nastavnika koji nisu angažovani
 <details>
  <summary>Rešenje</summary>
 
 ```tsql
-select *
-from nastavnici
-where Snast not in (select snast from Angazovanje)
+select * 
+from Nastavnici n
+where not exists
+(
+	select *
+	from Angazovanje a 
+	where a.Snast = n.Snast
+)
 ```
 </details>
 
@@ -521,51 +526,38 @@ where exists (
 
 ***
 
-5. spisak nastavnika koji nisu angažovani
+5. Spisak studenata koji imaju bar jedan polozen ispit
 <details>
  <summary>Rešenje</summary>
 
 ```tsql
-select * from Nastavnici n
-where not exists (
-			select * f
-			rom Angazovanje a 
-			where a.Snast = n.Snast
-		 )
+select *
+from Studenti s
+where exists
+(
+	select * 
+	from Prijave p 
+	where ocena > 5 and s.Indeks = p.Indeks and p.Upisan = s.Upisan
+)
 ```
 </details>
 
 ***
 
-6. Spisak studenata koji imaju bar jedan polozen ispit
+6. Spisak studenata koji imaju prosek veci od 7.5
 <details>
  <summary>Rešenje</summary>
 
 ```tsql
 select * from Studenti s
-where exists (
-		select * 
-		from Prijave p 
-		where ocena > 5 and s.Indeks = p.Indeks and p.Upisan = s.Upisan
-	     )
-```
-</details>
-
-***
-
-7. Spisak studenata koji imaju prosek veci od 7.5
-<details>
- <summary>Rešenje</summary>
-
-```tsql
-select * from Studenti s
-where exists (
-		select Indeks, Upisan 
-		from prijave
-		where ocena > 5 and s.Indeks = Indeks and s.Upisan = Upisan
-		group by Indeks, Upisan -- da li grupisanje moze da se izbaci ?!
-		having avg(ocena * 1.0) > 7.5
-	     )
+where exists 
+(
+	select Indeks, Upisan 
+	from prijave
+	where ocena > 5 and s.Indeks = Indeks and s.Upisan = Upisan
+	group by Indeks, Upisan -- da li grupisanje moze da se izbaci ?!
+	having avg(ocena * 1.0) > 7.5
+)
 ```
 </details>
 
