@@ -617,7 +617,8 @@ from Nastavnici n LEFT join Angazovanje a on n.Snast = a.Snast
 
 ```tsql
 select n.Snast 
-from Nastavnici n left join Angazovanje a on n.Snast = a.Snast
+from Nastavnici n left join Angazovanje a
+        on n.Snast = a.Snast
 where a.Snast is null
 ```
 </details>
@@ -630,26 +631,29 @@ where a.Snast is null
 
 ```tsql
 select a1.Snast, a1.Spred
-from Angazovanje a1 join Angazovanje a2 on a1.Spred = a2.Spred and a1.Snast <> a2.Snast
+from Angazovanje a1 join Angazovanje a2
+        on a1.Spred = a2.Spred and a1.Snast <> a2.Snast
 ```
 </details>
 
 ***
 
-5. Izlistati imena nastavnika i NAZIVE predmeta koje predaju
+5. Izlistati imena nastavnika i nazive predmeta koje predaju
 <details>
  <summary>Rešenje</summary>
 
 ```tsql
 select n.Imen, p.NAZIVP
-from Nastavnici n join Angazovanje a on n.Snast = a.Snast
-				      join PREDMETI p on a.Spred = p.SPRED
+from Nastavnici n join Angazovanje a 
+                        on n.Snast = a.Snast
+			      join PREDMETI p 
+			            on a.Spred = p.Spred
 ```
 </details>
 
 ***
 
-6. Spisak brucosa koji imaju druga na fakultetu
+6. Spisak studenata koji su se iste godine upisali i dolaze iz istog mesta
 
 <details>
  <summary>Rešenje</summary>
@@ -676,17 +680,20 @@ where p.Ocena > 5
 
 ***
 
-8. Spisak studenata koji imaju prosek veci od 7.5
+8. Spisak studenata (indeks, upisa, ime ) koji imaju prosek veci od 7.5
 <details>
  <summary>Rešenje</summary>
 
 ```tsql
-select s.Indeks, s.Upisan, avg(p.Ocena * 1.0)
-from Studenti s join Prijave p on s.Indeks = p.Indeks and s.Upisan = p.Upisan
-where p.Ocena > 5 
-group by s.Indeks, s.Upisan
-having avg(p.Ocena * 1.0) > 7.5
+select imes as 'Ime studenta', p.upisan, avg( p.ocena * 1.0 ) as 'Prosek'
+from prijave p
+	join studenti s
+		on p.Indeks = s.Indeks and p.Upisan = s.Upisan
+where p.ocena > 5
+group by p.indeks, p.upisan, s.imes
+having avg( p.ocena * 1.0 ) > 7.5
 ```
+S obzirom da se u `group by`-u nalaze **sva polja ključa**, neće postojati druga kolona koja bi za ta polja imala različite vrednosti, pa iz tog razloga možemo navesti i polje `s.imes` jer ono neće uticati na formiranje grupa. 
 </details>
 
 ***
@@ -696,9 +703,11 @@ having avg(p.Ocena * 1.0) > 7.5
  <summary>Rešenje</summary>
 
 ```tsql
-select p2.Spred, p2.NAZIVP, max(ocena) 
-from prijave p1 join PREDMETI p2 on p1.Spred = p2.SPRED
-group by p2.NAZIVP, p2.Spred
+select pred.nazivp 'Naziv predmeta', max(prij.ocena) as 'Maksimalna ocena'
+from predmeti pred
+	left join prijave prij
+		on pred.spred = prij.spred
+group by pred.spred, pred.nazivp
 ```
 </details>
 
