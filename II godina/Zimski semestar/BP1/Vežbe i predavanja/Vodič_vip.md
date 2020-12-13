@@ -12,11 +12,11 @@ Linkovi ka snimcima lekcija:
 2. [Lekcija 2][v-lekcija-2] `Relaciona algebra`  
 3. [Lekcija 3][v-lekcija-3] `Relaciona algebra`  
 4. [Lekcija 4][v-lekcija-4] `Relaciona algebra - priprema za kolokvijum`  
-5. [Lekcija 5][v-lekcija-5] `SQL`  
-6. [Lekcija 6][v-lekcija-6] `SQL`  
-7. [Lekcija 7][v-lekcija-7] `SQL`  
-8. [Lekcija 8][v-lekcija-8] `SQL`  
-9. [Lekcija 9][v-lekcija-9] `SQL`  
+5. [Lekcija 5][v-lekcija-5] `SQL - uvod`  
+6. [Lekcija 6][v-lekcija-6] `SQL - podupiti`  
+7. [Lekcija 7][v-lekcija-7] `SQL - spajanje`  
+8. [Lekcija 8][v-lekcija-8] `SQL - priprema za kolokvijum`  
+9. [Lekcija 9][v-lekcija-9] `SQL - priprema za kolokvijum`  
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
