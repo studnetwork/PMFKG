@@ -374,13 +374,13 @@ group by Indeks, Upisan
 
 27. Za svaki ispitni rok ispisati koliko se u njemu položilo ispita do sada?  
 
-		    rbr_meseca, rok  
+	       rbr_meseca, rok  
 			1, Jan  
 			2, Feb  
 			6, Jun  
-		    8, Avg  
-		    9, Sept  
-		    10 Okt  
+		    	8, Avg  
+		    	9, Sept  
+		   	10, Okt  
 <details>
  <summary>Rešenje</summary>
 
@@ -709,6 +709,7 @@ from predmeti pred
 		on pred.spred = prij.spred
 group by pred.spred, pred.nazivp
 ```
+Svi predmeti se nalaze u tabeli `Predmeti`. Kako postoji mogućnost da ne postoji nijedna prijava za određeni predmet, umesto običnog spajanje koristićemo levo spajanje.
 </details>
 
 ***
