@@ -73,3 +73,13 @@ ukoliko se ugnjezdava upit unutar from klauzule, onda je potrebno da tabela dobi
 
 `EXISTS` proverava da li je tabela prazna ili ne. Ukoliko nije vraca true, u suprotnom vraca false
 
+
+
+sintaksa join-a:
+[tip] join on [uslovi]
+
+
+
+ukoliko se u group by-u nalazi kljuc, dodavanje drugog argumenta u group by nece promeniti razultat i omogucice dodavanje te kolone u select
+
+
