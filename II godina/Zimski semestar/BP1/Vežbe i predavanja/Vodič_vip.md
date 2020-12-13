@@ -63,7 +63,7 @@ Linkovi ka snimcima lekcija:
 
 ### Napomene
 
-## Ostalo  
+## Ostalo
 [Moodle stranica predmeta][stranica predmeta]
 
 # Napomena
@@ -125,7 +125,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-konsultacije-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605693649917
 
-[v-konsultacije-5]: 
 
 
 [//]: # ( Vezbe napomena reference )
