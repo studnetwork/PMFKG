@@ -15,8 +15,11 @@ Linkovi ka snimcima lekcija:
 5. [Lekcija 5][v-lekcija-5] `SQL - uvod`  
 6. [Lekcija 6][v-lekcija-6] `SQL - podupiti`  
 7. [Lekcija 7][v-lekcija-7] `SQL - spajanje`  
-8. [Lekcija 8][v-lekcija-8] `SQL - priprema za kolokvijum`  
-9. [Lekcija 9][v-lekcija-9] `SQL - priprema za kolokvijum`  
+8. [Lekcija 8][v-lekcija-8] `SQL - rešavanje prethodnih kolokvijuma`  
+9. [Lekcija 9][v-lekcija-9] `SQL - rešavanje prethodnih kolokvijuma`  
+10. [Lekcija 10][v-lekcija-10] `SQL - DDL, DML, funkcije, procedure`  
+11. [Lekcija 11][v-lekcija-11] `SQL - DDL, DML, procedure, trigeri`  
+
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
@@ -56,8 +59,9 @@ Linkovi ka snimcima lekcija:
    [Predavanje 5-2][p-lekcija-5-2deo] `SQL`  
 6. [Predavanje 6-1][p-lekcija-6-1deo] `SQL`  
    [Predavanje 6-2][p-lekcija-6-2deo] `SQL`  
-7. [Predavanje 7][p-lekcija-7] `SQL`
-
+7. [Predavanje 7][p-lekcija-7] `SQL`  
+8. [Predavanje 8][p-lekcija-8] `SQL - pogledi, procedure, funkcije, ...`  
+9. [Predavanje 9][p-lekcija-9] `SQL - normalizacija`
 
 ### Konsultacije
 
@@ -65,6 +69,7 @@ Linkovi ka snimcima lekcija:
 
 ## Ostalo
 [Moodle stranica predmeta][stranica predmeta]
+
 
 # Napomena
 Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
@@ -91,8 +96,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Relaciona algebra, lekcija, 1-4 )
 
-[v-sql.2-n1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605622411838
-
 [v-lekcija-1]: https://drive.google.com/file/d/1-YLFmPyby3KBFNJzi4C0mWatFr8spgWy/view?usp=sharing
 
 [v-lekcija-2]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1603199524673
@@ -104,26 +107,30 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( SQL, lekcija, 5-8 )
 
-[v-lekcija-5]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605017608891
+[v-lekcija-5]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605017608891 "10. Novembar 2020."
 
-[v-lekcija-6]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605622411838
+[v-lekcija-6]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605622411838 "17. Novembar 2020."
 
-[v-lekcija-7]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1606227128524
+[v-lekcija-7]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1606831464559 "24. Novembar 2020."
 
-[v-lekcija-8]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1606831464559
+[v-lekcija-8]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1606227128524 "1. Decembar 2020."
 
-[v-lekcija-9]: https://drive.google.com/file/d/13oMg6FVLrjG_BTDNbG6sl68aHJq-V6ME/view?usp=sharing
+[v-lekcija-9]: https://drive.google.com/file/d/13oMg6FVLrjG_BTDNbG6sl68aHJq-V6ME/view?usp=sharing "8. Decembar 2020."
+
+[v-lekcija-10]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1607954763195 "14. Decembar 2020."
+
+[v-lekcija-11]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1608043244227 "15. Decembar 2020."
 
 
 [//]: # ( Relaciona algebra, konsultacije, 1-4 )
 
-[v-konsultacije-1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605268869834
+[v-konsultacije-1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605268869834 "13. Novembar 2020"
 
-[v-konsultacije-2]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605524529205
+[v-konsultacije-2]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605524529205 "16. Novembar 2020."
 
-[v-konsultacije-3]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605533452567
+[v-konsultacije-3]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605533452567 "16. Novembar 2020."
 
-[v-konsultacije-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605693649917
+[v-konsultacije-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1605693649917 "18. Novembar 2020."
 
 
 
@@ -137,25 +144,29 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Relaciona algebra, lekcija, 1-4 )
 
-[p-lekcija-1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1602508184316
+[p-lekcija-1]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1602508184316 "12. Oktobar 2020."
 
-[p-lekcija-2]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1603113550682
+[p-lekcija-2]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1603113550682 "19. Oktobar 2020."
 
-[p-lekcija-3]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1603721323923
+[p-lekcija-3]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1603721323923 "26. Oktobar 2020."
 
 [//]: # ( SQL, lekcija, 5-6 )
 
-[p-lekcija-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1604325690729
+[p-lekcija-4]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1604325690729 "2. Novembar 2020."
 
-[p-lekcija-5-1deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1604933625785
+[p-lekcija-5-1deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1604933625785 "9. Novembar 2020."
 
-[p-lekcija-5-2deo]: https://imi.pmf.kg.ac.rs/imicloud/index.php/s/xhBf0OSk5rYFGnz
+[p-lekcija-5-2deo]: https://imi.pmf.kg.ac.rs/imicloud/index.php/s/xhBf0OSk5rYFGnz "9. Novembar 2020."
 
-[p-lekcija-6-1deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606140059438
+[p-lekcija-6-1deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606140059438 "23. Novembar 2020."
 
-[p-lekcija-6-2deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606143774271
+[p-lekcija-6-2deo]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606143774271 "23. Novembar 2020."
 
-[p-lekcija-7]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606744257707
+[p-lekcija-7]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1606744257707 "30. Novembar 2020."
+
+[p-lekcija-8]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1607350405616 "7. Decembar 2020."
+
+[p-lekcija-9]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1607689063875 "11. Decembar 2020."
 
 [//]: # ( Ostalo reference )
 
