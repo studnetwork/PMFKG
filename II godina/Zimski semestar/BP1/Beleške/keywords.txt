@@ -88,4 +88,31 @@ constraint
 primary key
 ==================== predavanje 7
 =================================
+create table
+insert into
+alter table
+drop column
+add {data_type}
+values
+identity(start_value, step_value)
+add constraint
+primary key
+foreign key references
+delete from
+update
+set
+
+create funtion f_name(@var1 date_type, ... )
+returns date_type
+begin
+end
+
+declare @var_name var_date_type
+return
+returns table
+exec
+output
+print
+==================== vezbe 14.12.20
+===================================
 

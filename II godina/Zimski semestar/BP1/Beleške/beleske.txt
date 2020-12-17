@@ -56,7 +56,7 @@ umesto '' string se moze zapisati i ununtar uglastim zagrada
 trenutna verzija t-SQLa ne podrzava INTERSECT ALL i EXCEPT ALL ( koji se nalaze na prezentaciji )
 
 
-
+identity == autonumber (access)
 union all - ostavlja duplikate koji su nastali unijom
 union - ne ostavlja duplikate
 
@@ -83,3 +83,14 @@ sintaksa join-a:
 ukoliko se u group by-u nalazi kljuc, dodavanje drugog argumenta u group by nece promeniti razultat i omogucice dodavanje te kolone u select
 
 
+nije potrebno navodjenje vrednosti prilikom koriscenja `insert into` za kolonu na kojoj je primenjen identity jer se to automatski dodaje
+
+
+nije moguce dodati vrednost za indentity kolonu koja ne odgovara vrednosti koja moze da se dobije sa step_value
+
+
+`delete from` brise red iz tabele
+
+
+
+fukcija vraca 1 vrednost, za vise koriste se procedure
