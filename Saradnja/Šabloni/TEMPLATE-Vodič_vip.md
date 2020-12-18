@@ -3,7 +3,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-
+[Tekst linka][v-fajl-1]
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -69,71 +69,83 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Vezbe reference )
 
-[v-lekcija-1]: 
 
-[v-lekcija-2]: 
+[//]: # ( linkovi na fajlovima )
 
-[v-lekcija-3]: 
+[v-fajl-1]: place.holder
 
-[v-lekcija-4]: 
 
-[v-lekcija-5]: 
+[v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-lekcija-6]: 
+[v-lekcija-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-lekcija-7]: 
+[v-lekcija-3]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-lekcija-8]: 
+[v-lekcija-4]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[v-lekcija-5]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[v-lekcija-6]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[v-lekcija-7]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[v-lekcija-8]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 
 
 [//]: # ( Konsultacije za vežbe reference )
 
-[v-konsultacije-1]: 
+[v-konsultacije-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-konsultacije-2]: 
+[v-konsultacije-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-konsultacije-3]: 
+[v-konsultacije-3]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[v-konsultacije-4]: 
+[v-konsultacije-4]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 
 
 [//]: # ( Vezbe napomene reference )
-[v-n-1]: 
+[v-n-1]: place.holder
 
 
 [//]: # ( Predavanje reference )
 
-[p-lekcija-1]: 
 
-[p-lekcija-2]: 
+[//]: # ( linkovi na fajlovima )
 
-[p-lekcija-3]: 
+[p-fajl-1]: place.holder
 
-[p-lekcija-4]: 
 
-[p-lekcija-5]: 
+[p-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000." "1. Mesec 2000."
 
-[p-lekcija-6]: 
+[p-lekcija-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[p-lekcija-7]: 
+[p-lekcija-3]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[p-lekcija-4]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[p-lekcija-5]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[p-lekcija-6]: place.holder "Datum odrzavanja: 1. Mesec 2000."
+
+[p-lekcija-7]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 
 [//]: # ( Konsultacije za predavanja reference )
 
-[p-konsultacije-1]: 
+[p-konsultacije-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[p-konsultacije-2]: 
+[p-konsultacije-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[p-konsultacije-3]: 
+[p-konsultacije-3]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
-[p-konsultacije-4]: 
+[p-konsultacije-4]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 
 
 [//]: # ( Predavanje napomene reference )
-[p-n-1]: 
+[p-n-1]: place.holder
 
 
 
