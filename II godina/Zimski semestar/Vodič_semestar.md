@@ -32,7 +32,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 
 
-[moodle stranica]: https://imi.pmf.kg.ac.rs/moodle/course/index.php?categoryid=97
+[//]: # ( Lista predmeta reference )
 
 [os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
@@ -41,6 +41,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [spa2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
 
 
 [//]: # ( Meeting reference )
@@ -63,3 +64,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [meeting-os1-v]: https://bbb.pmf.kg.ac.rs/b/fil-lu5-kjk-fag
 
 
+
+[//]: # ( Korisni linkovi reference )
+
+[moodle stranica]: https://imi.pmf.kg.ac.rs/moodle/course/index.php?categoryid=97
