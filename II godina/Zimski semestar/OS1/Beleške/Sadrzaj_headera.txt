@@ -1,0 +1,126 @@
+unistd.h
+----------------------------------------------------------
+FUN	pid_t getpid(void);
+FUN	pid_t getppid(void);
+FUN	pid_t fork(void);
+FUN	unsigned sleep(unsigned);
+
+TD	size_t
+TD	ssize_t
+TD	uid_t
+TD	pid_t 
+	
+signal.h
+----------------------------------------------------------
+FUN	void (*signal(int sig, void (*func)(int)))(int);
+FUN	int kill(pid_t pid, int sig);
+
+M_ARG	SIG_DFL
+M_ARG	SIG_IGN
+
+TD	pid_t
+TD	void   (*sa_handler)(int)
+
+M	SIGABRT
+M	SIGFPE
+M	SIGILL
+M	SIGINT
+M	SIGSEGV
+M	SIGTERM
+(ostali signali nisu zahtevani od strane ISO C standarda, ali vecina/svaka implementacija ih podrzava )
+
+
+sys/types.h ili types.h
+----------------------------------------------------------
+TD	pid_t
+TD	size_t
+TD	ssize_t
+
+
+sys/wait.h ili wait.h
+----------------------------------------------------------
+TD	pid_t
+
+SC	WCONTINUED
+SC	WNOHANG
+SC	WUNTRACED
+( ove simbolicke konstante se koriste kao argumenti u funkciji waitpid() )
+
+FUN	pid_t wait(int *stat_loc)
+FUN	pid_t waitpid(pid_t pid, int *stat_loc, int options)
+
+M	WEXITSTATUS
+M	WIFCONTINUED
+M	WIFEXITED	
+M	WIFSIGNALED
+M	WIFSTOPPED
+M	WSTOPSIG
+M	WTERMSIG
+( macro-i za analizu vrednosti status procesa )
+
+stdlib.h
+----------------------------------------------------------
+FUN	void exit(int status)
+FUN	void free(void *)
+FUN	void *realloc(void *, size_t);
+FUN	void *malloc(size_t);
+FUN	void *calloc(size_t, size_t);
+FUN	void *bsearch(const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+FUN	void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+
+M	EXIT_SUCCESS
+M	EXIT_FAILURE
+
+TD	size_t ( tip strukture definisane kao u <stddef.h> )
+TD	NULL   ( definisan kao u <stddef.h> )
+
+SC	WNOHANG
+SC	WUNTRACED
+
+M	WEXITSTATUS
+M	WIFEXITED
+M	WIFSIGNALED
+M	WIFSTOPPED
+M	WSTOPSIG
+M	WTERMSIG
+
+
+sys/msg.h
+-----------------------------------------------------
+FUN	int msgctl(int msqid, int cmd, struct msqid_ds *buf);
+FUN	int msgget(key_t key, int msgflg);
+FUN	int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);
+FUN	ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg);
+
+PD	pid_t
+PD	size_t
+PD	ssize_t
+PD	time_t
+
+SC	MSG_NOERROR
+
+Include-ovano iz sys/ipc.h
+-   -   -   -   -   -   -   -
+SC	IPC_CREAT
+SC	IPC_EXCL
+SC	IPC_NOWAIT
+SC	IPC_PRIVATE
+SC	IPC_RMID
+SC	IPC_SET
+SC	IPC_STAT
+
+FUN/M	key_t ftok(const char *, int);
+(funkcija, ali moye biti definisana i kao macro)
+
+TD	uid_t
+TD	gid_t
+TD	mode_t
+TD	key_t
+(definisano kao sto su u sys/types.h)
+
+===================================================================================
+FUN = funkcija
+M = marco
+M_ARG = marcro koji se koristi kao argument neke funkcije
+TD = tip ili tip napravljen typedef-om
+SC = simbolicka konstanta ( nesto slicno kao M_ARG )
