@@ -18,7 +18,7 @@ Linkovi ka snimcima konsultacija:
 
 ### Napomene
 
-**5. termin, 2. prezentacija**  
+#### 5. termin, 2. prezentacija  
 U rešenju sa prezentacije nedostaje "byrow = TRUE" kod kreiranja matrice A  
 
 Ispravna komanda:
