@@ -120,9 +120,12 @@
 # curve() - koristi se kada nemamo vrednosti za neku promenljivu
 
 # curve( izraz, from=, to= )
+# ( from i to se odnose samo na x-osu )
 #      ili
 # curve( izraz, xlim=c(gornja_granica, donja_granica), ylim=c(gornja_granica, donja_granica) )
 # moguce je kombinovati ova dva nacina ogranicavanja
+
+# umesto odredjivanja donje i gornje granice pomocu funkcija min() i max(), moze se iskoristiti funkcija range() koja za prosledjenu listu vraca najmanju i najvecu vrednots date liste u obliku vektora
 
 # ?curve - dokumentacija za funkciju curve
 
