@@ -1,0 +1,104 @@
+# c(item1, item2, ...) - funkcija koja pravi vektor od elemenata `item1`, `item2`, ...
+
+# razlika izmedju vektora i liste
+# vektor ima jedan tip podataka, a liste mogu sadrzati razlicite tipove podataka
+# lista moze sadrzati druge strukture kao elemente
+
+
+
+# seq( from= donja_granica, to= gornja_granica, by= razlima_izmedju_elemenata, length.out= broj_rezultata_koji_ce_se_pojaviti )
+ 
+
+
+
+# matrice su homogene, sadrze jedan tip podataka
+
+
+
+# iz konzole je moguce pretraziti dokumentaciju R-a koriscenjem
+# 1. komande `?kljucna_rec`
+# 2. komande `help(kljucna_rec)`
+
+
+
+# Data Frame
+
+# vektor vektora              -> matrica
+# lista listi(ili vektora)    -> data frame 
+
+# data frame je "matrica" sa razlictim podacima
+
+
+
+
+# matrica je pogodna za matematicke proracune
+# matrica je osnovna struktura
+# matrica uzima manje memorije od data frame-a ( skoro duplo manja )
+
+
+ 
+# dim(ime_data_framea) - vraca broj kolona i vrsta dataframe-a (tj. dataset-a)
+ 
+ 
+ 
+ 
+# data.frame( item1, item2, item3 ) - kreira data frame sa kolonama `item1`, `item2`, `item3`
+ 
+ 
+ 
+ 
+ 
+# neki_data_frame$naziv_kolone - vraca listu svih vrednosti za kolonu `naziv_kolone`
+ 
+ 
+ 
+# neki_data_frame["naziv_kolone"] - vraca dataframe svih vrednosti za kolonu `naziv_kolone`
+
+
+
+
+
+ 
+# neki_data_frame[indeks] - vraca filtrirani dataframe sa kolonom ciji je redni broj jednak `indeks`
+
+# neki_data_frame[, indeks] - vraca vektor (listu) sa vrednostima kolone ciji je redni broj jednak `indeks`
+ 
+# neki_data_frame[indeks, ] - vraca filtrirani dataframe sa redom ciji je redni broj jednak `indeks`
+
+# vrednosti odredjenog reda se ne mogu vratiti u obliku vektora jer vektor sadrzi vrednosti istog tipa, a to ne mora biti slucaj kod podataka nekog data frame reda
+
+ 
+ 
+ 
+ 
+ 
+# names() - vraca nazive svih kolona
+ 
+ 
+ 
+# attributes() - vraca nazive za sve kolone, vrste i naziv tipa date strukture
+ 
+ 
+ 
+# row.names() - vraca nazive svih vrsta
+
+
+
+# read.csv( file= "putanja/do/fajla.csv", header = boolean_vrednost ) 
+# vrednost za `header` zavisi od toga da li fajl ima header
+
+
+
+# head() - ispisuje pocetne podatke
+
+
+
+# tail() - ispisuje podatke sa kraja
+
+
+
+# ime_funkcije = function( par1, par2, par3, ... ) { telo_funkcije }
+
+
+
+
