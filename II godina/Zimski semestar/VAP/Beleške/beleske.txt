@@ -1,3 +1,9 @@
+
+##########
+5. termin
+##########
+
+
 # c(item1, item2, ...) - funkcija koja pravi vektor od elemenata `item1`, `item2`, ...
 
 # razlika izmedju vektora i liste
@@ -101,4 +107,81 @@
 
 
 
+
+
+
+##########
+6. termin
+##########
+
+
+
+
+# curve() - koristi se kada nemamo vrednosti za neku promenljivu
+
+# curve( izraz, from=, to= )
+#      ili
+# curve( izraz, xlim=c(gornja_granica, donja_granica), ylim=c(gornja_granica, donja_granica) )
+# moguce je kombinovati ova dva nacina ogranicavanja
+
+# ?curve - dokumentacija za funkciju curve
+
+# argument `n` ove funkcije omogucava istcrtavanje funkcije koriscenjem samo n tacaka
+
+# argument `add`, ukoliko je postavlje na TRUE, dodaje izraz na poslednji, tj. trenutno aktivni grafik
+
+# argument `col` sluzi za definisanje boje datog izraza (funkcije)
+
+# argumenti `xlab` i `ylab` predstavljaju nazive za labele za x i y osu respektivno
+
+# argument `type` predstavlja tip grafika
+# type='p'    -    tacke
+# type='l'    -    linije
+# type='b'    -    i tacke i linije
+# type='c'    -    prazne tacke povezane linijama
+# type='o'    -    
+# type='s'    -    linija u obliku stepenica ( "S" radi isto )
+# type='h'    -    vertikalne linije nalik na histogram
+# type='n'    -    ne formira ni tacke ni linije
+
+
+
+
+
+# ukoliko se grafik crta uz pomoc nekih unapred definisanih vrednosti koriste se funkcije plot() i lines()
+
+# plot()  -  crta grafik od vrednosti prosledjene liste
+
+# argumenti `type` i `col` imaju istu ulogu kao i istoimeni argumenti funkcije curve()
+
+# moguce je dati naslov i podnaslov grafiku koriscenjem funkcije title()
+# title() ima argumente `main` i `col.main`, gde se prvi odnosi na tekst koji ce biti prikazan kao naslov, a drugi na njegovu boju
+# pored spomenutih argumenata postoje i argumenti `sub` i `col.sub`, gde se prvi odnosi na tekst koji ce biti prikazan kao podnaslov, a drugi na njegovu boju
+
+# ?title - dokumentacija funkcije title ( moze se naci i u dokumentaciji za plot: ?plot
+
+
+# za razliku od curve(), funkcija plot() nema argument slican argumentu `add`, vec se za to koristi funkcija lines()
+
+# artument 'pch' funkcije lines() sluzi za definisnanje simbola koji ce predstavljati svaku tacku za datu liniju (funkciju)
+
+# ukoliko argument `ann` funkcije plot() nije postavljen na FALSE, moze doci do preklapanja default-nog naslova sa novim ( iz title() )
+# ako se naslov i podnaslov dodaju odmah unutar funkcije plot(), potrebno je da `ann` bude jedank TRUE
+# ako se ne dodaje unutar plot(), `ann` se postavlja na FALSE i oni se dodaju naknadno funkcijom title()
+
+
+# ?legend - dokumentacija za legendu
+
+
+# legend( x=1, y=14, c("lista", "lista1), col=c("blue","red"), pch=c(12,22) )
+# legenda ce se nalaziti na koordinati (1,14), pojavice se reci "lista" i "lista1" koje respektivno prestavljaju simbol sa brojem 12 obojen plavom bojom i simbol 22 obojen crvenom
+
+
+
+# box() - crta okvir oko grafika
+
+
+# moguce je postaviti i argument `axes` na FALSE. U tom slucaju ose nece postojati
+# ukoliko se ose ne navode pri kreiranju u funkciji plot(), gde je argument `axes` jedank FALSE, one se mogu dodati naknadno funkcijom axis()
+# axis( strana_ose, at = lista_vrednosti_koje_ce_se_pojaviti_na_osi, labels=lista_stringova_koji_ce_biti_ispisani_pored_vrednosti )
 
