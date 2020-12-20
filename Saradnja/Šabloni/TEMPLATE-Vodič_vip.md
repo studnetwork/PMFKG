@@ -117,7 +117,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [p-fajl-1]: place.holder
 
 
-[p-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000." "1. Mesec 2000."
+[p-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 [p-lekcija-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
