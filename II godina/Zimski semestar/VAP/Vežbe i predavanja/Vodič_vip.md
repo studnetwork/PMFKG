@@ -7,11 +7,13 @@ Linkovi do resursa koji se odnose na vežbe
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
+
 [//]: # ( 1. [Lekcija 1][v-lekcija-1] `Tema vežbi`   )
 
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
+
 [//]: # ( 1. [Konsultacije 1][v-konsultacije-1] `Tema  )
 
 ### Napomene
@@ -29,10 +31,12 @@ Linkovi do resursa koji se odnose na predavanja
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
+
 [//]: # ( 1. [Predavanje 1][p-lekcija-1] `Tema predavanja`  )
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
+
 [//]: # ( 1. [Konsultacije 1][v-konsultacije-1] `Tema konsultacija`   )
 
 ### Napomene
@@ -86,7 +90,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [p-fajl-1]: place.holder
 
 
-[p-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000." "1. Mesec 2000."
+[p-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 
 [//]: # ( Konsultacije za predavanja reference )
