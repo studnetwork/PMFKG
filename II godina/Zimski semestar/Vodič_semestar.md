@@ -6,6 +6,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [Baze podataka 1][bp1]  
 [Strukture podataka i algoritmi 2][spa2]  
 [Osnovi preduzetničkog menadžmenta][opm]  
+[Vizualizacija i analiza podataka][vap]  
 
 # Meeting linkovi
 [Operativni sistemi 1 - Predavanje][meeting-os1-p]  
@@ -42,6 +43,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
+[vap]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )
