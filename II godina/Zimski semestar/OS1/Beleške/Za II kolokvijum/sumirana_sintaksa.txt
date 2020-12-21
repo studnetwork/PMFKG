@@ -1,0 +1,107 @@
+//----------------#   Beleske   #----------------//
+
+
+---------------- //> Headeri <// ----------------
+#include <sys/shm.h> - za deljenu memoriju
+#include <sys/sem.h> - za semafore
+#include <sys/ipc.h> - inter process communication
+
+
+---------------- //> Deljena memeorija <// ----------------
+
+// kreiranje segmenta, #get
+int shmget(key, size, flag) => id segmenta / -1 za ne uspesnu alokaciju
+
+> key [key_t] - id deljenog memorijskog segmenta
+> size [size_t] - velicina segmenta u bajtovima
+> flag [int] - permisije | kreiranje
+
+
+// kacenje segmenta, #attach
+void *shmat(id, addr, flag) => adresa pocetka segmenta / -1 za error
+
+> id [int] - id segmenta
+> addr [const void *] - ??? (stavlja se NULL)
+> flag [int] - ??? (stavlja se 0)
+
+
+// odvajanje od segmenta, #detach
+int shmdt(addr) => 0 ako je uspesno / -1 za error
+
+> addr [const void *] - adresa pocetka segmenta
+
+
+// brisanje #controll
+int shmctl(id, cmd, buf) => 0 ako je uspesno / -1 za error
+
+> id [int] - id segmenta
+> cmd [int] - komanda, IPC_RMID obelezava za brisanje (brise se kad se svi procesi otkace)
+> buf [struct shmid_ds *] - ???, NULL za brisanje 
+
+
+---------------- //> Semafori <// ----------------
+
+//> kreiranje skupa semafora, #get
+int semget(key, n, flag) => id skupa semafora / -1 za error
+
+> key [key_t] - id skupa semafora
+> n [int] - broj semafora u skupu
+> flag [int] - permisije | kreiranje
+
+
+//> inicijalizacija i brisanje, #controll
+int semctl(id, num, cmd, /*arg*/) => -1 za error
+
+> id [int] - id skupa semafora
+> num [int] - redni broj semafora u skupu (broji se od 0)
+> cmd [int] - naredba koju treba izvrsiti nad izabranim semaforom
+> arg [union semun] - da li se koristi ili ne zavisi od naredbe
+
+
+// union semun - arg
+union semun: val, buf, array
+
+> val [int] - koristi se zamo za SETVAL naredbu
+> buf [struct semid_ds *] - koristi se za IPC_STAT i IPC_SET naredbe
+> array [ushort *] - koristi se za GETALL i SETALL naredbe
+
+
+// cmd naredbe
+> SETVAL - postavlja vrednost izabranog semafora na arg.val
+> GETVAL - vraca vrednost izabranog semafora
+> SETALL - postavlja vrednost svih semafora iz skupa na arg.array
+> GETALL - vraca vrednosti svih semafora iz skupa u arg.array
+> IPC_RMID - uklanja skup semafora ???
+
+
+//> operacije
+int semop(id, ops, n_ops) => ???
+
+> id [int] - id skupa semafora
+> ops [struct sembuf *] - pokazivac na niz operacija
+> n_ops [int] - broj operacija
+
+
+// struct sembuf - ops
+struct sembuf: sem_num, sem_op, sem_flg //vec definisana
+
+> sem_num [ushort] - redni broj semafora u skupu semafora
+> sem_op [short] - operacija
+> sem_flg [short] - flegovi operacija
+
+
+// sem_op
+1. sem_op < 0
+    - zauzima se |sem_op| resursa, tj. vrednost semafora se smanjuje za |sem_op|
+    - ili se proces BLOKIRA ako nema dovoljno resursa
+
+2. sem_op > 0
+    - oslobadja se sem_op resursa, tj. vrednost semafora se povecava za sem_op
+
+3. sem_op = 0
+    - proces se BLOKIRA dok vrednost semafora ne dostigne 0
+
+
+// sem_flg
+> IPC_NOWAIT - umesto da se proces blokira semop(...) vraca -1
+> SEM_UNDO - nakon kraja programa treba ponistiti efekat operacije
