@@ -18,7 +18,8 @@ Linkovi ka snimcima lekcija:
 8. [Lekcija 8][v-lekcija-8] `SQL - rešavanje prethodnih kolokvijuma`  
 9. [Lekcija 9][v-lekcija-9] `SQL - rešavanje prethodnih kolokvijuma`  
 10. [Lekcija 10][v-lekcija-10] `SQL - DDL, DML, funkcije, procedure`  
-11. [Lekcija 11][v-lekcija-11] `SQL - DDL, DML, procedure, trigeri`  
+11. [Lekcija 11][v-lekcija-11] `SQL - obnova funkcija i procedura; trigeri, kursori`  
+12. [Lekcija 11][v-lekcija-12] `SQL - obnova trigera; rešavanje III kol. 2015`  
 
 
 ### Konsultacije
@@ -61,7 +62,8 @@ Linkovi ka snimcima lekcija:
    [Predavanje 6-2][p-lekcija-6-2deo] `SQL`  
 7. [Predavanje 7][p-lekcija-7] `SQL`  
 8. [Predavanje 8][p-lekcija-8] `SQL - pogledi, procedure, funkcije, ...`  
-9. [Predavanje 9][p-lekcija-9] `SQL - normalizacija`
+9. [Predavanje 9][p-lekcija-9] `SQL - normalizacija`  
+10. [Predavanje 10][p-lekcija-10] `SQL - normalizacija`
 
 ### Konsultacije
 
@@ -121,6 +123,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-lekcija-11]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1608043244227 "15. Decembar 2020."
 
+[v-lekcija-12]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=7725d1ed6e451a3c61c78a15f041b5c3b8234128-1608645849890 "22. Decembar 2020."
 
 [//]: # ( Relaciona algebra, konsultacije, 1-4 )
 
@@ -167,6 +170,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [p-lekcija-8]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1607350405616 "7. Decembar 2020."
 
 [p-lekcija-9]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1607689063875 "11. Decembar 2020."
+
+[p-lekcija-10]: https://bbb.pmf.kg.ac.rs/playback/presentation/2.0/playback.html?meetingId=938c50b6b05309503772ecb3cd16492b1c875665-1608570613525  "21. Decembar 2020."
 
 [//]: # ( Ostalo reference )
 
