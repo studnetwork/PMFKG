@@ -4,11 +4,19 @@
 ##########
 
 
+
+
+
+
+
+
+
 # c(item1, item2, ...) - funkcija koja pravi vektor od elemenata `item1`, `item2`, ...
 
-# razlika izmedju vektora i liste
+# razlika izmedju vektora i liste:
+# ================================
 # vektor ima jedan tip podataka, a liste mogu sadrzati razlicite tipove podataka
-# lista moze sadrzati druge strukture kao elemente
+# lista moze sadrzati druge strukture kao elemente(?)
 
 
 
@@ -21,13 +29,17 @@
 
 
 
-# iz konzole je moguce pretraziti dokumentaciju R-a koriscenjem
+# iz konzole je moguce pretraziti dokumentaciju R-a koriscenjem:
+# ==============================================================
 # 1. komande `?kljucna_rec`
 # 2. komande `help(kljucna_rec)`
 
 
 
+
+
 # Data Frame
+
 
 # vektor vektora              -> matrica
 # lista listi(ili vektora)    -> data frame 
@@ -55,7 +67,6 @@
  
  
 # neki_data_frame$naziv_kolone - vraca listu svih vrednosti za kolonu `naziv_kolone`
- 
  
  
 # neki_data_frame["naziv_kolone"] - vraca dataframe svih vrednosti za kolonu `naziv_kolone`
@@ -167,7 +178,7 @@
 # za razliku od curve(), funkcija plot() nema argument slican argumentu `add`.
 # To se moze postici funkcijom lines()
 
-# artument 'pch' funkcije lines() sluzi za definisnanje simbola koji ce predstavljati svaku tacku za datu liniju (funkciju)
+# artument 'pch' funkcije lines() sluzi za definisnanje simbola koji ce predstavljati svaku (svaku (?) ) tacku za datu liniju (funkciju)
 
 # ukoliko argument `ann` funkcije plot() nije postavljen na FALSE, moze doci do preklapanja default-nog naslova sa novim ( iz title() )
 # ako se naslov i podnaslov dodaju odmah unutar funkcije plot(), potrebno je da `ann` bude jedank TRUE
@@ -234,13 +245,11 @@
 
 # Kategorijski tip podataka podrazumeva podatke koji se mogu podeliti u odredjene kategorije
 
-# npr. pol, vrsta studija, ...
-
 
 # radi preglednosti, umesto vektora, za predstavljanje ovih podataka koriste se funkcije table() i factor()
 
 
-# tabel(vektor) - predstavlja vrednosti vektora u tabelarnom obliku. Jedinstvene vrednosti predstavlja (kategorise) u kolonama, tj. prvoj vrsti, a broj njihovih ponavljanja (frekvencije) u redu ispod, na odgovarajucim mestima
+# tabel(vektor) - predstavlja vrednosti vektora u tabelarnom obliku. Po jedan primerak svake vrednosti predstavlja (kategorise) u kolonama, , a broj njihovih ponavljanja (frekvencije) u prvom redu, na odgovarajucim mestima
 
 
 # factor(vektor) - prikazuje sve kategorije ( nema ponavljanja, uzima se samo jedan primerak vrednosti )
@@ -263,8 +272,6 @@
 
 
 # pie( ) - kreiranje kruznog (pie) diagrama
-
-# names() - vraca nazive kategorija
 
 # ako zelimo da promenimo nazive kategorija to mozemo uciniti na sledeci nacin:
 # names( tabela ) = c( kat1, kat2, kat3, ... )
@@ -315,7 +322,10 @@
 # Za odredjivanje kvantila ispod koga se nalazi odredjen procenat podataka koristi se funkcija quantile()
 
 
-# quantile( vektor, .procenat ) 
+# quantile( vektor, .p ) 
+
+# primer za 30%: quantile( vektor, .30 ) 
+
 
 
 # summary() - daje kratak opis
@@ -368,7 +378,7 @@
 # interkvartilnu razliku, medijanu, netipične vrednosti, ekstremne vrednosti...
 
 
-# pravougaonik boxplot-a sadrzi 50% podataka ( IQR )
+# interkvartilna razlika - pravougaonik boxplot-a sadrzi 50% podataka ( IQR )
 
 # njegova leva granica predstavlja prvi kvartil( Q1 ), a desna treci kvartil( Q3 )
 
@@ -438,7 +448,7 @@
 
 
 
-# funkcija boxplot() ima i argumente:
+# funkcija barplot() ima i argumente:
 # ====================================
 # - `beside`: boolean vrednost, ukoliko je TRUE stubici se prikazuju jedan do drugog
 
@@ -446,22 +456,27 @@
 #                  vektor, ukoliko zelimo da sami odredimo sadrzaj legende
 
 
-# `y` - drugo mesto u kome je moguce proslediti podatke. Prvo mesto predstavlja `x` argument
-# ovi arugmenti se obicno ne navode vec im se podaci prosledjuju na osnovu njihove pozicije ( prve i druge )
+# - `y`: drugo mesto u kome je moguce proslediti podatke. Prvo mesto predstavlja `x` argument
+#         ovi arugmenti se obicno ne navode vec im se podaci prosledjuju na osnovu njihove pozicije ( prve i druge )
 
 
-# `x` argument predstavlja kategoriju, dok argument `y` predstavlja drugu kategoriju
-
-
-
+# - `x`: argument predstavlja kategoriju, dok argument `y` predstavlja drugu kategoriju
 
 
 
 
-# ukoliko zelimo da analiziramo zajedno i kontinualne i kategorijske podatke koristimo operator `~`
+
+
+
+
+
+
+# ukoliko zelimo da analiziramo zajedno i kontinualne i kategorijske podatke koristimo operator `~` i funkciju boxplot()
 
 
 # operator `~` deli bazu na kategorije i onda za svaku prikazuje raspodelu kontinualnih vrednosti/podataka
+
+# korisi se u boxplot() i lm()
 
 # primer primene:    boxplot( kontinualni ~ kategorijski )
 
@@ -578,7 +593,6 @@
 
 
 
-
 # coef( regresivni_model ) - vraca formulu
 
 
@@ -601,6 +615,8 @@
 # sto vise koeficijent tezi brojevima -1 i 1 to je koleracija jaca
 # sto vise koeficijent tezi broju 0 to je koleracija manja
 
+# tacnije, "Što je apsolutna vrednost koeficijenta korelacije bliža 1, to je regresiona veza jača"
+
 
 # -, tj. negativna korelacija predstavlja obrnutu proporciju, dok pozitivna predstavlja direktnu
 
@@ -618,17 +634,18 @@
 
 
 # pearsonov koeficijent korelacije
-cor( var1, var2 )
+# cor( var1, var2 )
 
 
 
 
 # spearmanov koeficijent korelacije
-x = rank( var1 )
-y = rank( var2 )
+# x = rank( var1 )
+# y = rank( var2 )
 
-cor( x, y )
+# cor( x, y )
 
+# ili samo cor( rank( var1 ), rank( var2 ) )
 
 
 
