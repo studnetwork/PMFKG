@@ -19,7 +19,7 @@ Linkovi ka snimcima lekcija:
 9. [Lekcija 9][v-lekcija-9] `SQL - rešavanje prethodnih kolokvijuma`  
 10. [Lekcija 10][v-lekcija-10] `SQL - DDL, DML, funkcije, procedure`  
 11. [Lekcija 11][v-lekcija-11] `SQL - obnova funkcija i procedura; trigeri, kursori`  
-12. [Lekcija 11][v-lekcija-12] `SQL - obnova trigera; rešavanje III kol. 2015`  
+12. [Lekcija 12][v-lekcija-12] `SQL - obnova trigera; rešavanje III kol. 2015`  
 
 
 ### Konsultacije
