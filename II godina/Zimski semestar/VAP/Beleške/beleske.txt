@@ -661,3 +661,57 @@
 
  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########
+9. termin
+##########
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# odredjivanje nekih karakteristika na osnovu grafika
+# ====================================================
+
+
+
+# medijana
+# pozicija se dobija tako sto se saberu se sve frekvencije pa se podele sa 2
+# nakon toga se samo odredi kojem intervalu bi pripadala dobijena pozicija
+
+
+
+# srednja vrednost
+# sabiraju se granice intervala i podele sa 2, nakon toga se svaka pomnozi sa svojom frekvencijom
+# sve te vrednosti se saberu, ta suma se podeli sa ukupnim brojem frekvenicija
+# i time se dobije vrednost priblizna srednjoj vrednosti
+
+
+
+
+
+
