@@ -3,7 +3,8 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-[Link ka materijalu][v-folder]
+[Link ka materijalu][v-folder]  
+[Termin 10: Rešenja zadataka iz "Zadaci - R.pdf"][v-fajl-1]  
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -67,6 +68,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-folder]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe
 
+[v-fajl-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe/Re%C5%A1enja%20zadataka/Termin%2010
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
