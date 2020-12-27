@@ -44,7 +44,7 @@ int shmctl(id, cmd, buf) => 0 ako je uspesno / -1 za error
 //> kreiranje skupa semafora, #get
 int semget(key, n, flag) => id skupa semafora / -1 za error
 
-> key [key_t] - id skupa semafora
+> key [key_t] - kljuc za kreiranje/povezivanje skupa semafora
 > n [int] - broj semafora u skupu
 > flag [int] - permisije | kreiranje
 
