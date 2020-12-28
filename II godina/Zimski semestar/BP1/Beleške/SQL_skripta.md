@@ -308,6 +308,15 @@ Vrednosti koje se vrate podupitom za `EXISTS` **nisu bitne**. Jedino što je bit
 
 ***
 
+## GROUP BY
+
+Opciona klauzula naredbe `SELECT`. Grupiše zapise tako što u jednu grupu postavlja sve zapise koji imaju iste vrednosti za navedena polja.
+
+Sintaksa:  
+```
+GROUP BY column1,
+```
+
 # DDL komande
 ***
 
