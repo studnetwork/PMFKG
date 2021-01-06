@@ -1,3 +1,11 @@
+/* spijun.c podrzava unos lokacija cije numerisanje pocinje sa 1 		*/
+
+/* spijun1.c sadrzi identican kod i predstavlja modifikaciju
+ * ovog koda koja je prilagodjena unosu tako da korisnik ne
+ * mora da unosi indekse lokacija (g de bi prva lokacija imala
+ * indeks 0 ) vec samo njihov redni broj                          		*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -124,8 +132,8 @@ int main() {
 		printf("%d ", dA[i]);
 	printf("\n");
 	* */
+	
 	return 0;
-
 }
 
 
