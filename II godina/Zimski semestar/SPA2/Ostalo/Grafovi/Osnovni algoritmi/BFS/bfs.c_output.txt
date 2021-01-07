@@ -1,0 +1,16 @@
+Putanja od 0 do 0:
+0 
+Putanja od 0 do 1:
+0 1 
+Putanja od 0 do 2:
+0 1 2 
+Putanja od 0 do 3:
+0 4 3 
+Putanja od 0 do 4:
+0 4 
+    0   1   2   3   4 
+  0 INF   1 INF INF   1 
+  1 INF INF   1 INF INF 
+  2 INF INF INF   1 INF 
+  3 INF   1 INF INF INF 
+  4 INF INF INF   1 INF 
