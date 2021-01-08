@@ -1,0 +1,143 @@
+Unesite broj cvorova i veza:
+Unesi veze:
+Tezinska matrica:
+INF  10  12 INF INF 
+INF INF   8 INF  30 
+INF INF INF  20  12 
+INF INF INF INF   3 
+INF INF INF INF INF 
+
+Matrica d:
+  0  10  12  32  24 
+INF   0   8  28  20 
+INF INF   0  20  12 
+INF INF INF   0   3 
+INF INF INF INF   0 
+
+Matrica predaka:
+INF   0   0   2   2 
+INF INF   1   2   2 
+INF INF INF   2   2 
+INF INF INF INF   3 
+INF INF INF INF INF 
+
+
+"Najkrace" putanje koje krecu iz cvora 0:
+Od 0 do 0
+===========
+0 
+
+Od 0 do 1
+===========
+0 1 
+
+Od 0 do 2
+===========
+0 2 
+
+Od 0 do 3
+===========
+0 2 3 
+
+Od 0 do 4
+===========
+0 2 4 
+
+
+"Najkrace" putanje koje krecu iz cvora 1:
+Od 1 do 0
+===========
+Ne postoji putanja od 1 do 0
+
+
+Od 1 do 1
+===========
+1 
+
+Od 1 do 2
+===========
+1 2 
+
+Od 1 do 3
+===========
+1 2 3 
+
+Od 1 do 4
+===========
+1 2 4 
+
+
+"Najkrace" putanje koje krecu iz cvora 2:
+Od 2 do 0
+===========
+Ne postoji putanja od 2 do 0
+
+
+Od 2 do 1
+===========
+Ne postoji putanja od 2 do 1
+
+
+Od 2 do 2
+===========
+2 
+
+Od 2 do 3
+===========
+2 3 
+
+Od 2 do 4
+===========
+2 4 
+
+
+"Najkrace" putanje koje krecu iz cvora 3:
+Od 3 do 0
+===========
+Ne postoji putanja od 3 do 0
+
+
+Od 3 do 1
+===========
+Ne postoji putanja od 3 do 1
+
+
+Od 3 do 2
+===========
+Ne postoji putanja od 3 do 2
+
+
+Od 3 do 3
+===========
+3 
+
+Od 3 do 4
+===========
+3 4 
+
+
+"Najkrace" putanje koje krecu iz cvora 4:
+Od 4 do 0
+===========
+Ne postoji putanja od 4 do 0
+
+
+Od 4 do 1
+===========
+Ne postoji putanja od 4 do 1
+
+
+Od 4 do 2
+===========
+Ne postoji putanja od 4 do 2
+
+
+Od 4 do 3
+===========
+Ne postoji putanja od 4 do 3
+
+
+Od 4 do 4
+===========
+4 
+
