@@ -50,7 +50,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [kolokvijumi-link-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Kolokvijumi/Drugi%20kolokvijum/2020-2021/Resenja%20studenata/test_primeri/
 
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Ve%C5%BEbe%20i%20predavanja
+[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md
 
 [domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/Doma%C4%87i
 
