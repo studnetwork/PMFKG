@@ -4,7 +4,8 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
-[Link ka folderu Kolokvijumi][kolokvijumi]
+[Link ka folderu Kolokvijumi][kolokvijumi]  
+[Test primeri - II kolokvijum][kolokvijumi-link-1]  
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
@@ -46,6 +47,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Kolokvijumi
+
+[kolokvijumi-link-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Kolokvijumi/Drugi%20kolokvijum/2020-2021/Resenja%20studenata/test_primeri/
 
 [vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/Ve%C5%BEbe%20i%20predavanja
 
