@@ -14,7 +14,9 @@ Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja za
 [Link ka materijalu][vežbe i predavanja]
 
 ## Domaći
-Rešenja domaćih zadataka po godinama
+Rešenja domaćih zadataka po godinama  
+  
+[Rešnja zadataka iz normalizacije sa foruma][normalizacija-forum]  
 
 [//]: # ( COMMENT tekst:Link ka rešenjima domaćih zadataka; link:[domaći])
 
@@ -46,6 +48,9 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [//]: # (---------------------------------------------------------)
 
 
+
+
+[normalizacija-forum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk/Resenja-DR460R
 
 [prvi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/1.%20kolokvijum
 
