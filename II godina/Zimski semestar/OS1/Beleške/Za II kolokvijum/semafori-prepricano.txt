@@ -1,0 +1,68 @@
+Semafori - Prepricano
+
+Ako procesi treba da pristupe istom resursu, npr nekoj zajednickoj memoriji, nikako ne mozemo da znamo ko ce kad da pristupi tom resursu i moze da dodje do toga da pristupe u isto/slicno vreme pa dolazi do nekih problema. Takav resurs (kod koga moze da se javi problem zbog vise procesa) se zove "kriticni region".
+
+primer problema:
+x = 10
+treba da se x poveca za 2
+- proces 1 hoce da poveca x za 1
+- proces 2 hoce da poveca x za 1
+ako to urade u isto vreme to ce izgledati ovako:
+- proces 1, uzima vrednost x (10), povecava za 1, i posle cuva rezultat u x
+- proces 2, uzima vrednost x (10), povecava za 1, i posle cuva rezultat u x
+na kraju ce x da bude 11, umesto 12, a to je nesto sto ne sme da se desi
+
+
+
+Da bi se ovakav problem resio, tj da bi smo mogli da obezbedimo to da resursu u jednom trenutku pristupa samo 1 proces, napravljeni su semafori.
+
+Semafori su objekti (strukture, ili sta vec) koji su isto kao neki resursi (memorija), ali OS ima mehamnizam da obezbedi da procesi mogu nesmetano da koriste semafore i da se ne javljaju problemi kao ovaj gore naveden.
+
+
+
+Kako semafori mogu da pomognu?
+
+Semafor u sebi cuva jedan ceo broj. Postoje ugradjene funkcije koje omogucavaju da se taj broj smanji ili poveca. To smanjivanje i povecavanje broja predstavlja informaciju da li je odredjeni resurs zauzet ili ne.
+
+Ako nekom resursu (kriticnom regionu) sme da pristupi samo jedan proces u jednom vremenskom periodu, vrednost semafora koji je zaduzen za taj resurs se postavlja na 1.
+Ukoliko proces u nekom trenutku zeli da pristupi tom resursu, on poziva ugradjenu funkciju koja radi sledece:
+a) ako je vrednost veca od 0 (tj. 1), semafor se smanjuje na 0 (smanjuje se za 1), i proces nastavlja sa sledecom instrukcijom
+b) ako je vrednost semafora 0, proces se stopira, i ceka (u nekoj vrsti reda, koji je automatski implementiran) dok se ta vrednost ne poveca (to povecavanje se desava cim proces koji radi nesto sa kriticnim regionom zavrsi posao, i pozove funkciju koja ce da poveca semafor)
+
+na taj nacin, proces koji je prvi dosao do poziva funkcije za zauzimanje resursa (ona koja smanjuje semafor) ce obezbetiti da jedino on pristupi tom resursu, a ostali ce morati da cekaju ako zele da pristupe tom istom resursu.
+
+napomena: Ako je prvobitna vrednost semafora npr 4, onda ce 4 procesa moci da pristupe odgovarajucem resursu, ukoliko se navede da smanjuju semafor za 1. Takodje moze biti definisano da proces kad poziva f-ju za smanjivanje semafora zeli da ga smanji za 4 npr, u tom slucaju ako je semafor < 4, onda ce se program stopirati (situacija pod b; 0 je u pitanju samo ako je semafor na pocetku 1, i smanjuje se za po 1)
+
+primer #1:
+potrebno je da vise procesa uvecaju promenljivu x
+definise se semafor koji ce da stiti x:
+    sem_x = 1
+
+svaki od od tih procesa bi trebalo da ima sledeci kod (pseudo-kod):
+    zauzmi_resurs(sem_x, -1) //sem_x = 0 (ako je sem_x bilo 1), niko ne sme pristupiti x-u vise
+    x++
+    oslobodi_resurs(sem_x, +1) //sem_x = 1, sad sme sledeci proces da pristupi x-u
+
+
+primer #2:
+postoji N procesa koji se zovu p, i oni treba da povecavaju promenljivu x (x je kriticni region), ali samo N puta (svaki p da poveca x za po 1), nakon toga proces q treba da procita sta pise u x, i da to ispise na stdout, nakon cega p procesi nastavljaju da povecavaju x na isti nacin, pa onda opet q da ispise, i tako u krug
+
+na pocetku se definisu 3 semafora koji stite x:
+    dodato = 0 //da bi se x povecalo samo N puta, nakon cega ce "dodato" biti N, pa q moze da smanji "dodato" na 0 (za N), i da ispise x
+    za_dodati = N //procesi p dodaju po 1 na x, sve dok ovo ne postane 0 (svaki put smanje "za_dodati" za 1)
+    mutex = 1 //mutex je naziv za semafor koji je ili 0 ili 1, a ovaj stiti x kao "sem_x" iz primera #1
+
+proces p:
+    zauzmi_resurs(za_dodati, -1) //za_dotati-- (ako > 0, u suprotnom to znaci da je red na q da radi ispis)
+    zauzmi_resurs(mutex, -1) //mutex = 0 (ako je mutex bilo 1), ni jedan proces p vise ne moze da pristupi x-u
+    x++
+    oslobodi_resurs(mutex, +1) //mutex = 1, sad moze sledeci proces p da pristupi x-u
+    oslobodi_resurs(dodato, +1) //dodato++, broj procesa p koji su zavrsili dodavanje na x se povecava za 1
+
+proces q:
+    zauzmi_resurs(dodato, -N) //ako je N procesa p dodalo po 1 na x, onda ce semafor "dodato" da se smanji na 0, u suprotnom q ceka dok se to ne desi
+    zauzmi_resurs(mutex, -1) //mutex = 0 (ako je mutex bilo 1), ni jedan proces vise ne moze da pristupi x-u
+    x++
+    oslobodi_resurs(mutex, +1) //mutex = 1, sad moze sledeci proces da pristupi x-u
+    oslobodi_resurs(za_dotati, +N) //za_dotati = N, sad procesi p mogu da nastave sa dodavanjem na x
+
