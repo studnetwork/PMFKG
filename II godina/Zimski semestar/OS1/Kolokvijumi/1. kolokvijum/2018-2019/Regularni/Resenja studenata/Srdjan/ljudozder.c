@@ -23,7 +23,7 @@ int main()
 	pid = getpid();
 	
 	key = ftok( "./brod.c", 'a' );
-	qid = msgget( key, IPC_CREAT | 0660 );
+	qid = msgget( key, IPC_CREAT | 0666 );
 
 	/* prijavi se za prevoz */
 	p.mtype = 'l' + 'j';

@@ -23,7 +23,7 @@ int main()
 	poruka p;
 
 	key = ftok( "./server.c", 'a' );
-	qid = msgget( key, IPC_CREAT | 0660 );
+	qid = msgget( key, IPC_CREAT | 0666 );
 
 	printf("Cekam prouke...\n");
 	while(1)

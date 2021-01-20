@@ -35,7 +35,7 @@ signal(SIGINT, sh );
 	int pidMisi[MAX_PUTNIKA];
 	
 	key = ftok( "./brod.c", 'a' );
-	qid = msgget( key, IPC_CREAT | 0660 );
+	qid = msgget( key, IPC_CREAT | 0666 );
 g = qid; /* debugging */
 	srand( time(NULL) );
 	while(1)
