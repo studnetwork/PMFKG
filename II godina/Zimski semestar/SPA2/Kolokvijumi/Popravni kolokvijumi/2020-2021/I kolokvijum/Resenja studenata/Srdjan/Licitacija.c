@@ -55,9 +55,9 @@ cvor *trazi( cvor *stablo, cvor **pret, int key ) /* drugi argument nije neophod
 void lrotacija( cvor **c )
 {
 	cvor *poml, *pomd;
+	
 	if( *c != NULL )
 	{
-		
 		poml = *c;
 		pomd = poml->desni;
 		
@@ -74,6 +74,7 @@ void lrotacija( cvor **c )
 void drotacija( cvor **c )
 {
 	cvor *poml, *pomd;
+	
 	if( *c != NULL )
 	{
 		pomd = *c;
@@ -152,8 +153,7 @@ void stampaj( cvor *c )
 	if( c->levi != NULL )
 		stampaj( c->levi );
 
-												/* za ispravku: printf("%d ", c->suma );*/
-	printf("%d(%d) ", c->suma, c->brPojav );	/* testiranje */
+	printf("%d(%d) ", c->suma, c->brPojav );
 	
 	if( c->desni != NULL )
 		stampaj( c->desni );
@@ -167,7 +167,7 @@ cvor *najcesca( cvor *c )
 	{
 		return c;
 	}
-	else 
+	else if( c->levi != NULL && c->desni != NULL )
 	{
 		cvor *levi, *desni;
 		
@@ -188,6 +188,20 @@ cvor *najcesca( cvor *c )
 			else
 				return desni;
 		}
+	}
+	else if( !c->levi )
+	{
+		if( c->brPojav > c->desni->brPojav )
+			return c;
+		else
+			return c->desni;
+	}
+	else
+	{
+		if( c->brPojav > c->levi->brPojav )
+			return c;
+		else
+			return c->levi;
 	}
 }
 
