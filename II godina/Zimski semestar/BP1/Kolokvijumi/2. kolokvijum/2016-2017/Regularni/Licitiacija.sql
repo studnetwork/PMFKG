@@ -1,6 +1,8 @@
-create database LICITACIJA
+create database LICITACIJA;
+go
 
-use LICITACIJA
+use LICITACIJA;
+go
 
 
 create table Clanovi
