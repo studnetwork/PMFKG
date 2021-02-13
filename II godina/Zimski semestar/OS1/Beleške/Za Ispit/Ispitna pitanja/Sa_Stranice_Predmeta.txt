@@ -1,0 +1,82 @@
+I - Pregled računarskog sistema
+1. Delovi računara
+2. Procesorski registri i instrukcijski ciklus
+3. Prekidi (Interrupts), višestruki prekidi
+4. Hijerarhija memorija
+5. Princip rada keš memorija
+6. U/I tehnike, DMA pristup
+7. Ciljevi operativnog sistema
+
+II - Pregled operativnih sistema
+8. Osnovni nivoi i usluge OS-a, uzroci evolucije OS-a
+9. Istorijat – serijska obrada, prosti sistemi paketne obrade
+10. Istorijat – multiprogramirani sistemi paketne obrade
+11. Istorijat – sistemi sa deljenjem vremena
+12. Dostignuća – procesi i upravljanje memorijom
+13. Dostignuća – upravljanje resursima, zaštita i bezbednost
+14. Dostignuća – distribuirani sistemi, klasteri, virtuelizacija
+15. Dostignuća – savremeni  OS-evi, Windows NT, Linux, sličnosti i razlike
+
+III - Procesi
+16. Definicije procesa, struktura upravljačkog bloka
+17. Stanja procesa - model sa 2 stanja
+18. Stanja procesa - model sa 5 stanja
+19. Kreiranje i terminacija procesa, redovi blokiranih procesa
+20. Stanja procesa - model sa 2 suspendovana stanja
+21. Elementi PCB-a
+22. Komutiranje moda i promena stanja procesa, izvršavanje funkcija OS-a
+
+IV - Niti, SMP i mikrokerneli
+23. Koncept i nadležnosti niti, primeri upotrebe
+24. Niti korisničkog nivoa
+25. Niti kernel nivoa
+26. SMP, Flynn-ova taksonomija, arhitekture paralelnih procesora
+27. Koncept mikrokernela
+
+V - Konkurentna obrada
+28. Ključni pojmovi konkurentnosti
+29. Primeri stanja trke, uzajamno delovanje procesa, kritična sekcija
+30. Algoritam striktne alternacije
+31. Kritična sekcija bez stroge alternacije
+32. Dekker-Petersenov algoritam
+33. Pekarski algoritam
+34. Hardverska realizacija k.s. - testset() i exchange()
+35. Opšti i binarni semafor
+36. Problem proizvođač/potrošač sa neograničenim baferom
+37. Problem proizvođač/potrošač sa ograničenim kružnim baferom
+38. Načini implementacije semafora39.Monitori
+40. Prosleđivanje poruka
+41. Problem čitaoci/pisci, rešenje preko semafora
+42. Problem čitaoci/pisci, rešenje preko poruka
+
+VI - Uzajamna blokada i gladovanje
+43. Definicija uzajamne blokade, joint progress dijagrami
+44. Blokada kod potrošnih resursa i resursa koji se mogu ponovo koristiti
+45. Grafovi alokacije resursa, uslovi za nastanak blokade
+46. Sprečavanje blokade
+47. Izbegavanje blokade - odbijanje pokretanja procesa
+48. Izbegavanje blokade - bankarski algoritam
+49. Otkrivanje blokade, oporavak od blokade
+50. Problem filozofa na večeri
+
+VII - Upravljanje memorijom
+51. Zahtevi od sistema za upravljanje memorijom
+52. Fiksno particionisanje
+53. Dinamičko particionisanje
+54. Partnerski sistem dodele memorije
+55. Relokacija, prosto straničenje
+
+VIII - Virtuelna memorija – hardverski mehanizmi
+56. Prosta segmentacija
+57. Koncept virtuelne memorije i princip lokalnosti
+58. Tabela stranica, šema u 2 nivoa
+59. Obrunuta tabela stranica
+60. TLB bafer
+61. Uticaj veličine stranice na performanse virt. memorije
+
+IX - Virtuelna memorija – mehanizmi OS-a
+62. Politika donošenja (fetch), politika smeštanja, koncepti politika zamene
+63. Osnovni algoritmi zamene
+64. Performanse algoritama zamene i baferovanje stranica
+65. Upravljanje rezidentnim skupom
+66. Politika čišćenja, nivo multiprogramiranja i suspenzija procesa
