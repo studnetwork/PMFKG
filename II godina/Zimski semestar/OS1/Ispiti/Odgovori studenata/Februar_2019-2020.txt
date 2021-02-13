@@ -1,9 +1,3 @@
---------------------------------
-    !!! Napomena !!!
-    Odgovori na ispitna pitanja su napisani od strane studenata, i njihova tacnost nije garantovana.
-    Studenti su pozvani na saradnju ukoliko zele da doprinesu unapredjivanju/azuriranju ovog dokumenta ili ukazu na greske/propuste koje primete.
---------------------------------
-
 # Februar 2019-2020 #
  
  1. Koja je osnovna jedinica prenosa izmedju glavne memorije i kesa?
@@ -76,3 +70,7 @@
 
 10. Navesti barem 3 nacina dodele memorije u racunarskom sistemu (particionisanje). Koje su mane svakog od ovih nacina?
   - ?
+
+
+--------------
+author: DR460R

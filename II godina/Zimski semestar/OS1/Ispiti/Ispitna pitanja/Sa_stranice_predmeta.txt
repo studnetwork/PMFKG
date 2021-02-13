@@ -1,3 +1,5 @@
+================ Ispitna pitanja okacena na stranici predmeta ================
+
 I - Pregled računarskog sistema
 1. Delovi računara
 2. Procesorski registri i instrukcijski ciklus

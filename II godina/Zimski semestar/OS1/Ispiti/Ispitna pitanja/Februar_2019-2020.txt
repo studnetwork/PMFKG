@@ -1,4 +1,5 @@
 # Februar 2019-2020 #
+
  1. Koja je osnovna jedinica prenosa izmedju glavne memorije i kesa?
  2. Navesti sva stanja procesa modela sa 7 stanja.
  3. Kojom komandom se listaju trenutno aktivni procesi na Linux-u?
@@ -9,5 +10,3 @@
  8. Po cemu je monitor kao instrument bolji od semafora?
  9. U kom trenutku dolazi do medjusobne blokade kod problema vecere filozofa?
 10. Navesti barem 3 nacina dodele memorije u racunarskom sistemu (particionisanje). Koje su mane svakog od ovih nacina?
-
-#  #
