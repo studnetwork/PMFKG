@@ -1,0 +1,13 @@
+# Januar 2018-2019 #
+
+ 1. Navesti barem 5 informacija koje stoje u upravljackom bloku procesa.
+ 2. Navesti svih 7 stanja procesa u modelu sa 7 stanja.
+ 3. Da li nit moze da ima sopstvene promenljive?
+ 4. Sta je osnovno ogranicenje Dekker-Petersonovog algoritma zbog koga je patentiran Pekarski algoritam?
+ 5. Navesti bar jedno ogranicenje medjusobnog iskljucenja pomocu testset()/excgange() sbog koga se uvode semafori.
+ 6. Po cemu se problem citalaca/pisaca razlikuje od problema medjusobnog iskljucenja?
+ 7. U kom trenutku kod problema vecere filozofa dolazi do uzajamne blokade.
+ 8. Navesti barem 3 nacina dodele memorije.
+ 9. Postoji li fragmentacija kod straniceja?
+10. Sta je to greska stranice (page fault)?
+11. Kada se javlja segmentation fault?

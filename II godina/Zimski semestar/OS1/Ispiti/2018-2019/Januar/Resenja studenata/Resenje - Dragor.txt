@@ -1,0 +1,40 @@
+# Januar 2018-2019 #
+
+ 1. Navesti barem 5 informacija koje stoje u upravljackom bloku procesa.
+  - PID, PPID, UID, State, Priority
+
+ 2. Navesti svih 7 stanja procesa u modelu sa 7 stanja.
+  - New, Ready, Ready/Suspend, Running, Blocked, Blocked/Suspend, Exit
+
+ 3. Da li nit moze da ima sopstvene promenljive?
+  - Moze
+
+ 4. Sta je osnovno ogranicenje Dekker-Petersonovog algoritma zbog koga je patentiran Pekarski algoritam?
+  - Dekker-Petersonov algoritam radi samo sa 2 konkurentna procesa, dok Pekarski radi sa proizvoljnim brojem procesa.
+
+ 5. Navesti bar jedno ogranicenje medjusobnog iskljucenja pomocu testset()/excgange() zbog koga se uvode semafori.
+  - Busy Wait
+
+ 6. Po cemu se problem citalaca/pisaca razlikuje od problema medjusobnog iskljucenja?
+  - Po tome sto nije potrebno da se svi procesi medjusobno iskljucuju.
+    Procesi citaoci mogu zajedno da pristupaju resursu, dok svaki pisac sme pristupiti iskljucivo sam.
+
+ 7. U kom trenutku kod problema vecere filozofa dolazi do uzajamne blokade.
+  - U trenutku kada svaki filozof kod sebe ima samo jednu viljusku, i to u istoj ruci kao i svi ostali.
+
+ 8. Navesti barem 3 nacina dodele memorije.
+  - ?
+
+ 9. Postoji li fragmentacija kod straniceja?
+  - Postoji unutrasnja fragmentacija koja je dovoljno mala da bude zanemarljiva.
+
+10. Sta je to greska stranice (page fault)?
+  - Kada postoji zahtev za odredjenom stranicom procesa koja u tom trenutku nije u RAM-u, vec na disku (tj. u swap fajlu ili particiji).
+
+11. Kada se javlja segmentation fault?
+  - Kada proces pokusa da pristupi memorijskom prostoru nekog drugog segmenta, pri tome nema dozvolu.
+
+
+
+------------
+author: DR460R
