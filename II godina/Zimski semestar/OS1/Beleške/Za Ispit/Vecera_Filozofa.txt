@@ -1,0 +1,31 @@
+================ Atomicno uzimanje viljuski ================
+
+#define N 5 //broj filozofa za stolom
+
+semaphore forks[N], x = 1; //mutex
+
+void filozof(int i)
+{
+    int l_fork = i;
+    int r_fork = (i+1) % N;
+
+    while()
+    {
+        think();
+
+        wait(x);
+        wait(forks[l_fork]);
+        wait(forks[r_fork]);
+        signal(x);
+        
+        eat();
+        
+        signal(forks[l_fork]);
+        signal(forks[r_fork]);
+    }
+}
+
+void main()
+{
+    parbegin(filozof(0), filozof(1), ... , filozof(N-1));
+}
