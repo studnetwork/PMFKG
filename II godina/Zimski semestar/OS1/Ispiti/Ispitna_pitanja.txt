@@ -1,4 +1,4 @@
-================ Ispitna pitanja okacena na stranici predmeta ================
+================ Ispitna pitanja koja su okacena na stranici predmeta ================
 
 I - Pregled računarskog sistema
 1. Delovi računara
