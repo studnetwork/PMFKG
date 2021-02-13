@@ -138,12 +138,15 @@ int bolt;
 
 void P(int i)
 {
-    while(!testset(bolt)); //Busy Wait
-    
-    /* kriticna sekcija */
-    
-    bolt = 0;
-    /* ostatak koda */
+    while(true)
+    {
+        while(!testset(bolt)); //Busy Wait
+        
+        /* kriticna sekcija */
+        
+        bolt = 0;
+        /* ostatak koda */
+    }
 }
 
 void main()
@@ -163,14 +166,17 @@ int bolt;
 
 void P(int i)
 {
-    int key = 1;
-    do exchange(bolt, key)
-    while(key != 0); //Busy Wait
-    
-    /* kriticna sekcija */
-    
-    bolt = 0;
-    /* ostatak koda */
+    while(true)
+    {
+        int key = 1;
+        do exchange(bolt, key)
+        while(key != 0); //Busy Wait
+        
+        /* kriticna sekcija */
+        
+        bolt = 0;
+        /* ostatak koda */
+    }
 }
 
 void main()
@@ -188,7 +194,7 @@ void main()
 
 ================ Semafori ================
 
-// to be continued ...
+// nastavice se ...
 
 
 
