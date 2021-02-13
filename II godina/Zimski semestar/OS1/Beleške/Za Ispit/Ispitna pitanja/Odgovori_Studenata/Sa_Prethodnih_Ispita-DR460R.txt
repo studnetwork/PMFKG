@@ -1,0 +1,78 @@
+--------------------------------
+    !!! Napomena !!!
+    Odgovori na ispitna pitanja su napisani od strane studenata, i njihova tacnost nije garantovana.
+    Studenti su pozvani na saradnju ukoliko zele da doprinesu unapredjivanju/azuriranju ovog dokumenta ili ukazu na greske/propuste koje primete.
+--------------------------------
+
+# Februar 2019-2020 #
+ 
+ 1. Koja je osnovna jedinica prenosa izmedju glavne memorije i kesa?
+  - Blok
+ 
+ 2. Navesti sva stanja procesa modela sa 7 stanja.
+  - New, Ready, Ready/Suspend, Running, Blocked, Blocked/Suspend, Exit
+ 
+ 3. Kojom komandom se listaju trenutno aktivni procesi na Linux-u?
+  - top
+
+ 4. Navesti barem 2 naredbe programskog jezika C cijim pozivom se sigurno blokira dati proces.
+  - scanf(), fopen()
+ 
+ 5. Napisati primer segmenta koda u C-u koji demonstrira vremensku lokalnost.
+  - Kod:
+
+    int i, n = N, x = 1;
+    for(i = 0; i < n; i++)
+    {
+        x = (x + i) * (i + 5);
+    }
+
+ 6. Po cemu je Pekarski algoritam napredniji od Dekker-Petersonovog?
+  - Po tome sto radi sa proizvoljnim brojem procesa.
+
+ 7. Kako biste samo pomocu instrukcije testset() ili exchange() izveli medjusobno iskljucenje?
+  - Kod:
+
+    #define N 16
+    int bolt;
+
+    // testset - verzija
+    void P(int i)
+    {
+        while(true)
+        {
+            while(!testset()); //Busy Wait
+            /* kriticna sekcija */
+            bolt = 0;
+            /* ostatak koda */
+        }
+    }
+
+    // exchange - verzija
+    void P(int i)
+    {
+        while(true)
+        {
+            int key = 1;
+            do exchange(bolt, key) while(key != 0); //Busy Wait
+            /* kriticna sekcija */
+            bolt = 0;
+            /* ostatak koda */
+        }
+    }
+
+    int main()
+    {
+        bolt = 0;
+        parbegin(P, N);
+    }
+
+ 8. Po cemu je monitor kao instrument bolji od semafora?
+  - ?
+
+ 9. U kom trenutku dolazi do medjusobne blokade kod problema vecere filozofa?
+  - Kada svaki filozof kod sebe ima jednu viljusku u istoj ruci kao i ostali.
+    Tada ni jedan od njih ne moze da krene da jede jer svaki ima samo jednu viljusku a druga se nalazi kod drugog filozofa.
+
+10. Navesti barem 3 nacina dodele memorije u racunarskom sistemu (particionisanje). Koje su mane svakog od ovih nacina?
+  - ?
