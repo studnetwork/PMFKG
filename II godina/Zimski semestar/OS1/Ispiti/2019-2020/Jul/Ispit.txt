@@ -1,0 +1,35 @@
+# Jul 2019-2020 #
+
+ 1. Nacrtati dijagram i objasniti kada se desavaju tranzicije izmedju razlicitih stanja u modelu procesa sa 5 stanja.
+ 2. Vreme pristupa kesu je 0.1 mikrosekunda, a glavnoj memoriji 1 mikrosekunda. Ako se 97% podataka koje CPU trazi nalaze u kesu, izracunati prosecnu brzinu pristupa.
+ 3. Napisati segment koda koji pomocu atomske instrukcije exchange() realizuje medjusobno iskljucenje.
+ 4. Sta znaci skracenica SMP? Sta SMP sistemi omogucavaju?
+ 5. Navesti koje vrste prekida postoje (3) i za svaku vrstu navesti barem jedan primer.
+ 6. Sta je stranica a sta okvir? Koji problem resavaju tabela stranica u 2 nivoa i obrnuta tabela stranica?
+ 7. Definisati sta je to stanje trke. Objasniti sopstvenim primerom.
+ 8. Data je realizacija kriticne sekcije sa strogom alternacijom:
+    
+    Process 0:
+    do {
+        while (turn != 0); //ulazna sekcija
+        /* kriticna sekcija */
+        turn = 1;
+        /* ostatak koda */
+    } while (true)
+
+    Process 1:
+    do {
+        while (turn != 1); //ulazna sekcija
+        /* kriticna sekcija */
+        turn = 0;
+        /* ostatak koda */
+    } while (true)
+
+    Koji sled dogadjaja dovodi do medjusobne blokade ova dva procesa?
+    U kojoj liniji koda se procesi blokiraju?
+
+ 9. Kako biste koriscenjem jednog mailbox-a i primitiva send() i receive() resili problem proizvodjaca i potrosaca sa neogranicenim baferom? Napisati psoudokod.
+10. Objasniti dijagram na slici i dati preporuku o optimalnom rezidentnom skupu.
+    <slika01.png>
+11. Navesti ekstenzije (tipove) fajlova u kojima se nalaze staticke i dinamicke biblioteke na Windows-u i na Linux-u. Zasto su dinamicke biblioteke upotrebljivije od statickih?
+12. Cemu sluzi i kako radi (cista) segmentacija? Skicirati dijagram prevodjenja adresa.
