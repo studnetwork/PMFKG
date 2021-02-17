@@ -1,6 +1,11 @@
 # Vodič
 U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 
+## Ispiti
+Rešenja ispita i materijal za pripremu
+
+[Link ka folderu Ispiti][ispiti]
+
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
@@ -39,6 +44,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [//]: # (---------------------------------------------------------)
 
 
+
+[ispiti]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Ispiti
 
 [prvi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/1.%20kolokvijum/ 
 
