@@ -1,0 +1,33 @@
+# Januar 2019-2020 #
+
+ 1. Kako bismo preko mehanizama poruka resili medjusobno iskljucenje? Na raspolaganju je jedan mailbox i primitive send(mailbox, msg) i recieve(mailbox, rcv)
+
+ 2. Po cemu se problem citalaca i pisaca razlikuje od problema medjusobnog iskljucenje? Dati primer gde se moze koristiti ova sema u okviru racunarskog sistema.
+
+ 3. Navesti sve uslove (4) za nastanak blokade.
+
+ 4. U kom trenutku operativni sistem pokrece bankarski algoritam, a u kom trenutku odbijanja pokretanja procesa?
+
+ 5. Nacrtatai uproscenu semu (sabirac, komparator) koja pokazuje kako se relativna adresa prevodi u fizicku.
+
+ 6. Navesti ekstenzije (tipove) fajlova u kojima se nalaze staticke i dinamicke biblioteke na Windows-u i na Linux-u. Zasto su dinamicke biblioteke upotrebljivije od statickih?
+
+ 7. Napisati primer segmenta koda u C-u koji demonstrira prostornu lokalnost. Objasniti.
+
+ 8. Iz cega se sastoji semafor? Kako se unutar njega realizuje medjusobno iskljucenje?
+
+ 9. Kako se definise rezidentni skup procesa?
+
+10. Dat je sledeci kod:
+
+    int flag[2];
+    flag[0] = flag[1] = 0;
+    do {
+        flag[i] = 1;
+        while(flag[j]);
+        /* kriticna sekcija */
+        flag[i] = 0;
+        /* ostatak koda */
+    } while (true);
+
+    Napraviti da ovaj kod radi medjusobno iskljucenje.
