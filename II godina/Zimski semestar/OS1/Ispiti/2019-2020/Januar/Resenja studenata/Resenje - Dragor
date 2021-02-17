@@ -5,13 +5,16 @@
   - Resenje:
 
     #define N 50
-    messagebox mbox;
+    mailbox mbox;
 
     void P(int i) {
         message msg;
-        recieve(mbox, msg);
-        /* kriticna sekcija */
-        send(mbox, msg);
+        while(true) {
+          recieve(mbox, msg);
+          /* kriticna sekcija */
+          send(mbox, msg);
+          /* ostatak koda */
+        }
     }
 
     int main() {
