@@ -1,0 +1,37 @@
+# Januar 2020-2021 #
+
+ 1. Da li se kod stranicenja javlja problem fragmentacije? Objasniti.
+ 2. Napisati segment koda koji pomocu atomske instrukcije testset() realizuje medjusobno iskljucenje.
+ 3. Navesti 3 osnovne politike upravljanja rezidentnim skupom.
+ 4. Sopstvenim primerom u programskom jeziku C objasniti pojam prostorne i vremenske lokalnosti.
+ 5. Kako biste koriscenjem jednog mailbox-a i primitiva send() i receive() resili problem proizvodjaca i potrosaca sa neogranicenim baferom? Napisati pseudokod.
+ 6. Kako radi algoritam casovnika koji sluzi za zamenu stranica?
+ 7. U kojim situacijama u modelu procesa sa 7 stanja moze da se desi prelazak iz stanja Running u Ready? A Running u Ready/Suspend?
+ 8. Navesti po jedan primer za 3 vrste prekida: (1) Prekid, (2) Zamka, (3) Poziv supervizora.
+ 9. Navesti osnovne algoritme zamene stranica u opadajucem redosledu po performansama.
+10. Navesti barem dve prednosti semafora u odnosu na hardversku realizaciju kriticnog regiona.
+11. Objasniti razliku izmedju neprekidnog i prekidnog rasporedjivaca.
+12. Navesti barem 5 elemenata PCB-a.
+13. Ispraviti dati pseudokod kako u resenju problema Vecere filozofa ne bi postojala mogucnost za uzajamnu blokadu:
+    Kod:
+    /* program  diningphilosophers */
+    
+    semaphore fork[5] = {1}
+    int i;
+
+    void philosopher(i)
+    {
+        while(true) {
+            think();
+            wait(fork[i]);
+            wait(fork[(i+1) mod 5]);
+            eat();
+            signal(fork[i]);
+            signal(fork[(i+1) mod 5]);
+        }
+    }
+
+    void main()
+    {
+        parbegin(philosopher(0), philosopher(1), philosopher(2), philosopher(3), philosopher(4));
+    }
