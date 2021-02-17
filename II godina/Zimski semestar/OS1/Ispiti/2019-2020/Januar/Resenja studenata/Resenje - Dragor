@@ -1,0 +1,107 @@
+# Januar 2019-2020 #
+
+ 1. Kako bismo preko mehanizama poruka resili medjusobno iskljucenje? Na raspolaganju je jedan mailbox i primitive send(mailbox, msg) i recieve(mailbox, rcv)
+
+  - Resenje:
+
+    #define N 50
+    messagebox mbox;
+
+    void P(int i) {
+        message msg;
+        recieve(mbox, msg);
+        /* kriticna sekcija */
+        send(mbox, msg);
+    }
+
+    int main() {
+        message msg = 1;
+        send(mbox, msg);
+        parbegin(P(0), P(1), ..., P(N-1));
+    }
+
+
+ 2. Po cemu se problem citalaca i pisaca razlikuje od problema medjusobnog iskljucenja? Dati primer gde se moze koristiti ova sema u okviru racunarskog sistema.
+
+    - Po tome sto postoje 2 tipa procesa koji u mogu pristupati kriticnom resursu, citaoci i pisci (oni koji citaju podatke i oni koji upisuju/menjaju). Vise citalaca moze zajedno da pristupi resursu, ali pisac mora pristupiti iskljucivo sam.
+    - Kod zastite bilo kakvog resursa, npr. promenljive, kojoj ce pristupati procesi od kojih se neki ponasaju kao citaoci a neki kao pisci. Primer kod kog je uvek situacija da resursu pristupaju citaoci i pisci je koriscenje fajlova, kod njih je podrazumevano da ce postojati citaoci i pisci.
+
+
+ 3. Navesti sve uslove (4) za nastanak blokade.
+
+  - Uzajamno iskljucenje (Samo 1 proces moze da koristi dati resurs u jednom trenutku)
+  - Zauzimanje i cekanje (Proces moze drzati resurse zauzetim dok ceka da mu se dodeli drugi resurs)
+  - Procesu se ne moze nasilno oduzeti resurs
+  - Moze se pojaviti kruzno cekanje
+
+
+ 4. U kom trenutku operativni sistem pokrece bankarski algoritam, a u kom trenutku odbijanja pokretanja procesa?
+
+  - ?
+
+ 5. Nacrtatai uproscenu semu (sabirac, komparator) koja pokazuje kako se relativna adresa prevodi u fizicku.
+
+  - ?
+
+ 6. Navesti ekstenzije (tipove) fajlova u kojima se nalaze staticke i dinamicke biblioteke na Windows-u i na Linux-u. Zasto su dinamicke biblioteke upotrebljivije od statickih?
+
+  - Windows
+        dinamicka: .dll
+        staticka: .lib
+  - Linux
+        dinamicka: .so
+        staticka: .a
+
+  - Dinamicke i staticke biblioteke se kompajliraju nezavisno od koda datog programa, ali linkovanjem staticke postaju deo izvrsnog koda programa (sto povecava velicinu programa), dok dinamicke ne postaju, vec su nezavisne od ostalih programa koji zele da koriste tu biblioteku.
+  - Jedan fajl biblioteke (.so, .dll) je dostupan svim programima, i njegova izmena/azurirane/ispravka greske ne zahteva ponovo linkovanje bilo kog programa sa tom bilbliotekom.
+
+ 7. Napisati primer segmenta koda u C-u koji demonstrira prostornu lokalnost. Objasniti.
+  
+  - Kod:
+    
+    int a[N], i;
+    for(i = 0; i < N; i++) {
+        /* radi nesto sa elementom a[i] */
+    }
+
+  - Prostorna lokalnost predstavlja ideju da ukoliko proces trazi nkeke podatke iz memorije, mozemo da predpostavimo da ce u buducnosti traziti podatke koji su u memoriji blizu ovog prvog ucitanog.
+  - Na primeru datog koda niz a predstavlja podatke koji su u memoriji jedan pred drugog, i onda kad se kodom u for petlji zatrazi podatak (element) a[0], mozemo da predpostavimo da ce uskoro traziti i one elemente koji slede u memoriji (tj. ostatak niza).
+
+
+ 8. Iz cega se sastoji semafor? Kako se unutar njega realizuje medjusobno iskljucenje?
+
+  - Semafor je struktura koja sadrzi dva elementa: vrednost (ceo broj) i red procesa
+  - Nad njim su definisane operacije (funkcije): wait i signal
+  - wait: smanjuje vrednost zeljenog semafora za 1, nakon cega, ukoliko je vrednost postala < 0, blokira proces (proces koji je pozvao wait f-ju) i stavlja ga na red cekanja koji se nalazi u semaforu.
+  - signal: povecava vrednost zeljenog semafora za 1, nakon cega aktivira prvi proces iz reda cekanja i sklanja ga iz reda.
+
+ 9. Kako se definise rezidentni skup procesa?
+
+  - Stranice datog procesa koje se u jednom trenutku nalaze u radnoj memoriji predstavljaju rezidentni skup procesa.
+
+10. Dat je sledeci kod:
+
+    int flag[2];
+    flag[0] = flag[1] = 0;
+    do {
+        flag[i] = 1;
+        while(flag[j]);
+        /* kriticna sekcija */
+        flag[i] = 0;
+        /* ostatak koda */
+    } while (true);
+
+    Napraviti da ovaj kod radi medjusobno iskljucenje.
+
+  - Resenje:
+
+    int flag[2], turn = 0; // <- Promena
+    flag[0] = flag[1] = 0;
+    do {
+        flag[i] = 1;
+        turn = j; // <- Promena
+        while(flag[j] && turn == j); // <- Promena
+        /* kriticna sekcija */
+        flag[i] = 0;
+        /* ostatak koda */
+    } while (true);
