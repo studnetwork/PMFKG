@@ -12,12 +12,9 @@
 Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i saradnje između studenata Prirodno-matematičkog fakulteta u Kragujevcu. Projekat sadrži rešenja zadataka i skripte.
 
 # Linkovi ka materijalu
-[Druga godina - Zimski semestar][druga zimski]  
-[Druga godina - Operativni sistemi 1][os1]  
-[Druga godina - Baze podataka 1][bp1]  
-[Druga godina - Strukture podataka i algoritmi 2][spa2]  
-[Druga godina - Osnovi preduzetničkog menadžmenta][opm]  
-[Druga godina - Vizualizacija i analiza podataka][vap]  
+[Druga godina - Zimski semestar][druga-zimski]    
+[Druga godina - Letnji semestar][druga-letnji]  
+
 
 # Korisni linkovi
 [Stranica fakulteta][imi stranica]  
@@ -66,17 +63,11 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Materijal reference)
 
-[druga zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[druga-zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[druga-letnji]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-[bp1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[spa2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
-
-[opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
-
-[vap]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [//]: # (Korisni likovi reference)
 
