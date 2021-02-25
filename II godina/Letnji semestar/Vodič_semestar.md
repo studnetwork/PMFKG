@@ -1,5 +1,8 @@
 # Vodič
-U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
+U ovom fajlu se nalaze informacije o letnjem semestru
+
+# Rasporedi časova
+[Softversko inženjerstvo][raspored-si]  
 
 # Lista predmeta
 [Računarske mreže][rm]  
@@ -33,6 +36,11 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [//]: # (-------------U ovom delu se nalaze reference-------------)
 
 [//]: # (---------------------------------------------------------)
+
+
+
+[//]: # ( Raspored reference )
+[raspored-si]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/Raspored/Raspored_casova_SI.ods
 
 
 
