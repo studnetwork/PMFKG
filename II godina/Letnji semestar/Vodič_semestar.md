@@ -41,7 +41,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 
 [//]: # ( Raspored reference )
 
-[raspored-si]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/Raspored/SI/
+[raspored-si]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Letnji%20semestar/Raspored/SI
 
 
 
