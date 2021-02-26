@@ -17,9 +17,9 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 [Računarske mreže - Vežbe][meeting-rm-v]  
   
 [Objektno-orjentisano programiranje - Predavanje][meeting-oop-p]  
-[Objektno-orjentisano programiranje - Vežbe][meeting-oop-v]  
+[Objektno-orjentisano programiranje - Vežbe (potrebna prijava)][meeting-oop-v]  
 
-[Praktikum iz operativnih sistema][meeting-pios]
+[Praktikum iz operativnih sistema (potrebna prijava)][meeting-pios]
 
 [Klijentske Web tehnologije - Vežbe][meeting-kwt-v]
 
@@ -67,7 +67,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 
 [meeting-oop-p]: http://bbb.pmf.kg.ac.rs/b/ana-kff-7tq
 
-[meeting-oop-v]: placeholder
+[meeting-oop-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=10138
 
 [meeting-pios]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=10116
 
