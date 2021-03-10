@@ -9,7 +9,7 @@
 
 
 # O projektu
-Projekat je kreiran od strane studenata u svrhu poboljšanja produktivnosti i saradnje između studenata Prirodno-matematičkog fakulteta u Kragujevcu. Projekat sadrži rešenja zadataka i skripte.
+Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
 
 # Linkovi ka materijalu
 [Druga godina - Zimski semestar][druga-zimski]    
