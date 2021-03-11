@@ -1,0 +1,99 @@
+2. čas, 10. slajd
+-----------------
+
+1. Data je sekvenca bajtova dobijena posle uokviravanja metodom prebrojavanja bajtova:
+		4 9 8 2 5 2 3 8 19 7 2 4 11 13 2 18 3 2 20
+Kako izgleda originalna sekvenca (kada se odstrane markeri okvira)?
+
+Rešenje:
+
+[4| 9 8 2 ] [5| 2 3 8 19 ] [7| 2 4 11 13 2 18] [3| 2 20]
+
+Otklanjaju se markeri okvira: 4, 5, 7, 3
+i dobija se originalna sekvenca: 9 8 2 2 3 9 19 2 4 11 13 2 18 2 20
+
+
+2. Data je sekvenca bajtova dobijena posle uokviravanja metodom prebrojavanja bajtova;
+		8 2 5 4 1 3 1 1 8 4 5 2 2 7 3 9 4 3 5 1
+Kako izgleda originalna sekvenca (kada se odstrane markeri okvira)?
+
+Rešenje:
+
+[8| 2 5 4 1 3 1 1 ] [8| 4 5 2 2 7 3 9 ] [4| 3 5 1 ]
+
+Kada se odstrane markeri: 8, 8, 4
+dobijamo originalnu sekvencu: 2 5 4 1 3 1 1 4 5 2 2 7 3 9 3 5 1
+
+
+----------------------------------------------------------------------------------------
+
+Slajd 13
+
+
+Primeri:
+1. Računar A šalje okvire računaru B i radi uokviravanje sa indikatorskim
+bajtom Y. Kontrolni karakter je predstavljen simbolom H. Niz bajtova
+koji dobija računar B je
+		YGOHYEIDYJDKKEDYJJLLHHEJMYDOHWPEYKFJHDKEDY
+Napisati kako izgledaju frejmovi posle obrade na računaru B?
+
+
+Rešenje:
+GOYEID JJLLHEJM KFJDKED
+
+
+
+2.
+Računar A šalje okvire računaru B i radi uokviravanje sa indikatorskim
+bajtom uz umetanje znakova. Dva paketa na računaru A su pre slanja
+predstavljeni sledećim nizom bajtova FFVEERTC i PHYOFEQW. Kao Flag
+bajt se koristi karakter F, a kao kontrolni karakter (ESC) se koristi E.
+Napisati kako izgleda pristgli niz bajtova na računaru B pre obrade.
+
+
+Rešenje:
+
+FEFEFVEEEERTCFFPHYOEFEEQWF
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+Slajd 15
+
+
+1.
+Niz bitova 0111101111101111110 treba da se prenese u sloju veze
+podataka. Kako taj niz izgleda posle umetanja bitova?
+
+Rešenje:
+
+0111111001111011111001111101001111110
+
+
+2.
+Dva računara A i B prilikom komunikacije koriste uokviravanje sa početnim i završnim
+indikatorom uz umetanje bitova. Računar B je od računara A primio sledeći niz bitova:
+		0x7E6FB57E7EF8F97E7EB7ED7E
+Kako izgledaju raspakovani paketi na računaru B?
+
+
+Rešenje:
+
+0x7E6FB57E7EF8F97E7EB7ED7E = 0111 1110 0110 1111 1011 0101 0111 1110 0111 1110 1111 1000 1111 1001 0111 1110 0111 1110 1011 0111 1110 1101 0111 1110
+
+011111100110111110110101011111100111111011111000111110010111111001111110101101111110110101111110
+
+
+
+01111110 011011111110101 01111110 | 01111110 11111001111101 01111110 | 01111110 1011 01111110 | 110101111110
+
+
+011011111110101 11111001111101 1011
+
+
+011011111110101111110011111011011 ==> 0xDFD7E7DB
+
+
+Kontačno rešenje: 0xDFD7E7DB 
