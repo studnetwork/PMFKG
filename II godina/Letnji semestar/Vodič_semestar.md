@@ -41,21 +41,21 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 
 [//]: # ( Raspored reference )
 
-[raspored-si]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Letnji%20semestar/Raspored/SI
+[raspored-si]: ./Raspored/SI
 
 
 
 [//]: # ( Lista predmeta reference )
 
-[rm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/RM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[rm]: ./RM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[oop]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[oop]: ./OOP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[pioop]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[pioop]: ./PiOOP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[pios]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[pios]: ./PiOS/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[kwt]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[kwt]: ./KWT/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
