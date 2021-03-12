@@ -26,7 +26,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[skracenica_naziva_predmeta]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/odi%C4%8D_predmet.md#vodi%C4%8D
+[skracenica_naziva_predmeta]: ./vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
@@ -38,7 +38,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 
 
-[//]: # ( Krisni linkovi reference )
+[//]: # ( Korisni linkovi reference )
 
 [moodle stranica]: https://imi.pmf.kg.ac.rs/moodle/course/index.php?categoryid={id_datog_predmeta}
 

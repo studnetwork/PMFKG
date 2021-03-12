@@ -27,6 +27,7 @@ Linkovi ka snimcima konsultacija:
 
 ## Predavanja
 Linkovi do resursa koji se odnose na predavanja  
+[Tekst linka][v-fajl-1]
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -110,6 +111,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Predavanje reference )
+[p-fajl-1]: place.holder
 
 
 [//]: # ( linkovi na fajlovima )
@@ -159,4 +161,4 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja
+
