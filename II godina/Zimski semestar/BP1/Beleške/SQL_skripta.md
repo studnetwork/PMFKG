@@ -729,13 +729,13 @@ Detaljnije informacije o razlikama u SQL dijalentima možete pronaći na ovom [l
 
 [//]: # ( Reference slika )
 
-[distinct-agr]: ./distinct-agr.png
-[concat primer]: ./concat.png
-[go count]: ./go-count.png
-[simple case podudaranje]: ./simple-case-podudaranje.png
-[simple case primena]: ./simple-case-primena.png
-[searched-case-primena]: ./searched-case-primena.png
-[datename primer]: ./datename.png
+[distinct-agr]: ./images/distinct-agr.png
+[concat primer]: ./images/concat.png
+[go count]: ./images/go-count.png
+[simple case podudaranje]: ./images/simple-case-podudaranje.png
+[simple case primena]: ./images/simple-case-primena.png
+[searched-case-primena]: ./images/searched-case-primena.png
+[datename primer]: ./images/datename.png
 
 
 [//]: # ( Microsoft docs reference )
