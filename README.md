@@ -17,10 +17,11 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 
 
 # Korisni linkovi
-[Stranica fakulteta][imi stranica]  
-[Stranica instituta za informatiku i matematiku][stranica fakulteta]  
+[Stranica fakulteta][stranica fakulteta]  
+[Stranica instituta za matematiku i informatiku][imi stranica]  
 [Mastering Markdown][mastering markdown]  
 [Markdown Cheatsheet][markdown cheatsheet]  
+[Markdown Editor][markdown editor]
 
 # Kontakt
 Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih linkova:
@@ -75,7 +76,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [stranica fakulteta]: https://www.pmf.kg.ac.rs/
 [mastering markdown]: https://guides.github.com/features/mastering-markdown/
 [markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
+[markdown editor]: https://github.com/retext-project/retext
 
 [//]: # (Kontakt reference)
 
