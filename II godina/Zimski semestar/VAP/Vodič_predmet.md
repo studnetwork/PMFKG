@@ -45,15 +45,15 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Kolokvijumi
+[kolokvijumi]: ./Kolokvijumi
 
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
+[vežbe i predavanja]: ./Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
 
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Doma%C4%87i
+[domaći]: ./Doma%C4%87i
 
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Bele%C5%A1ke
+[beleške]: ./Bele%C5%A1ke
 
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ostalo
+[ostalo]: ./Ostalo
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=215
 

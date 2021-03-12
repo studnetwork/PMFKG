@@ -53,7 +53,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-link-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Ve%C5%BEbe%20i%20predavanja/Grafovi/Osnovni%20algoritmi/
+[v-link-1]: ./Ve%C5%BEbe%20i%20predavanja/Grafovi/Osnovni%20algoritmi/
 
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
@@ -132,7 +132,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Ostalo reference )
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=37
 
 
 

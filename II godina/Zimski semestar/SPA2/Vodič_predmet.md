@@ -8,7 +8,7 @@ Rešenja kolokvijuma raspoređena po godinama
 [Test primeri - II kolokvijum][kolokvijumi-link-1]  
 
 ## Vežbe i predavanja
-Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
+Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, kao i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
 [Link ka folderu Vežbe i predavanja][vežbe i predavanja]
 
@@ -46,17 +46,17 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-[kolokvijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Kolokvijumi
+[kolokvijumi]: ./Kolokvijumi
 
-[kolokvijumi-link-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/SPA2/Kolokvijumi/Drugi%20kolokvijum/2020-2021/Resenja%20studenata/test_primeri/
+[kolokvijumi-link-1]: ./Kolokvijumi/Drugi%20kolokvijum/2020-2021/Resenja%20studenata/test_primeri/
 
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md
+[vežbe i predavanja]: ./Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md
 
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/Doma%C4%87i
+[domaći]: ./Doma%C4%87i
 
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/{skracenica_naziva_predmeta}/Bele%C5%A1ke
+[beleške]: ./Bele%C5%A1ke
 
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/{I|II|III|IV}%20godina/{Zimski|Letnji}%20semestar/{skracenica_naziva_predmeta}/Ostalo
+[ostalo]: ./Ostalo
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=37
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new

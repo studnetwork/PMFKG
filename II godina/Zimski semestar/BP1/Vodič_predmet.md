@@ -50,23 +50,23 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-[normalizacija-forum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk/Resenja-DR460R
+[normalizacija-forum]: ./Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk/Resenja-DR460R
 
-[prvi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/1.%20kolokvijum
+[prvi kolokvijum]: ./Kolokvijumi/1.%20kolokvijum
 
-[drugi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/2.%20kolokvijum
+[drugi kolokvijum]: ./Kolokvijumi/2.%20kolokvijum
 
-[treci kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/3.%20kolokvijum
+[treci kolokvijum]: ./Kolokvijumi/3.%20kolokvijum
 
-[kombinovani kolovkijumi]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Kolokvijumi/Kombinovani
+[kombinovani kolovkijumi]: ./Kolokvijumi/Kombinovani
 
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
+[vežbe i predavanja]: ./Ve%C5%BEbe%20i%20predavanja/Vodi%C4%8D_vip.md#vodi%C4%8D
 
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Doma%C4%87i
+[domaći]: ./Doma%C4%87i
 
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Bele%C5%A1ke
+[beleške]: ./Bele%C5%A1ke
 
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ostalo
+[ostalo]: ./Ostalo
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
 

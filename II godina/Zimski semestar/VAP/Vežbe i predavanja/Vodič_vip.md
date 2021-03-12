@@ -66,9 +66,9 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-folder]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe
+[v-folder]: ./Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe
 
-[v-fajl-1]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/VAP/Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe/Re%C5%A1enja%20zadataka/Termin%2010
+[v-fajl-1]: ./Ve%C5%BEbe%20i%20predavanja/Ve%C5%BEbe/Re%C5%A1enja%20zadataka/Termin%2010
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
@@ -116,4 +116,3 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja

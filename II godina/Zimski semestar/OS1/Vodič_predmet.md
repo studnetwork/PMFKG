@@ -45,15 +45,18 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-[ispiti]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Ispiti
+[ispiti]: ./Ispiti
 
-[prvi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/1.%20kolokvijum/ 
+[prvi kolokvijum]: ./Kolokvijumi/1.%20kolokvijum/
 
-[drugi kolokvijum]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Kolokvijumi/2.%20kolokvijum/
+[drugi kolokvijum]: ./Kolokvijumi/2.%20kolokvijum/
 
-[domaći]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Doma%C4%87i
-[beleške]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Bele%C5%A1ke
+[domaći]: ./Doma%C4%87i
+
+[beleške]: ./Bele%C5%A1ke
+
+[ostalo]: ./Ostalo
+
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=34
-[ostalo]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/OS1/Ostalo
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare

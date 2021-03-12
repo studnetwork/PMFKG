@@ -35,15 +35,15 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[os1]: ./OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[bp1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[bp1]: ./BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[spa2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[spa2]: ./SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[opm]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[opm]: ./OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[vap]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[vap]: ./VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )
