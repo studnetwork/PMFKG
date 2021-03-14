@@ -98,7 +98,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[fajl1]: ./Ve%C5%BEbe%20i%20predavanja/Vezbe_1.md#ve%C5%BEbe
+[fajl1]: ./Vezbe_1.md#ve%C5%BEbe
 
 [//]: # ( Relaciona algebra, lekcija, 1-4 )
 
@@ -198,4 +198,4 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja
+
