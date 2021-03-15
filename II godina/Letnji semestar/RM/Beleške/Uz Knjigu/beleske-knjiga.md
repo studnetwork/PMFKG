@@ -8,16 +8,12 @@
     - point-to-point networks
     - jednosmerno emitovanje (unicasting)
 
-> Kombinovana Mreza = Internetwork
-
 **Podela mreza po velicini:**
 1. Licna
 2. Lokalna
 3. Gradska
 4. Regionalna
 5. Internet
-
-> Internet je kombinovana mreza
 
 ---
 
@@ -77,6 +73,9 @@
 ---
 
 ### 1.2.6 | Kombinovane mreze
+
+> Kombinovana mreza = internetwork = internet
+> Internet (sa velikim 'I') je kombinovana mreza
 
 ---
 
