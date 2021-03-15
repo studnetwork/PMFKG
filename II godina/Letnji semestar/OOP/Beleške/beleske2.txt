@@ -1,0 +1,173 @@
+Datum odrzavanja: 08.03.2021.
+Predavac: Ana Kaplarević-Mališić
+Cas: 2
+=====================================
+
+Glavna ideja - razdvajanje implementacije od upotrebe nekog skupa podataka
+
+Definicija tipa i operacije nad njim se nazivaju implementacija.
+
+
+Programera koji koristi neki tip (klasu) ne zanima kako on radi, vec
+sta radi. To kako radi zanima samo onoga ko treba da napise taj tip
+
+
+
+Apstrakcija podataka je tehnika koja se zasniva na odvajanju interfejsa
+od implementacije
+
+
+Interfejs - granica izmedju dva dela preko koje se razmenjuju informacije;
+ono sto je dostupno drugima na koriscenje
+
+
+Osnovna ideja na kojoj se bazira OOP je Abstract Data Type (ADT)
+
+
+Kreiranje ADT-a se vrsi na sledeci nacin:
+1. umesto strukture podataka definisemo tip podataka
+
+			    data abstraction
+	struktura podataka ------------------> tip podatka
+
+2. krijemo podatke koji za korisnika nisu bitni ( information hiding )
+
+
+Ovime se apstrahuje jedan aspekt problema: implementacija tipa
+
+
+Apstrahovati znaci izbaciti iz posmatranja ono sto u datoj situaciji
+nije bitno
+
+
+
+Objekat je osnovni gradivni element OO resenja.
+
+Objekat je nosilace aktivnosti ( a ne klasa!!!)
+
+Objekat je instanca ( primerak ) tipa podataka (klase)
+
+Objekat pripada slozenom tipu. Sastoji se od enkapsuliranih podataka
+i funkcija
+
+
+podaci    == stanja objekta
+procedure == metode
+
+
+
+Object-Oriented Language i Object-Based Language nisu isto
+
+OBL imaju objekte kao i OOL, ali ne moraju da podrze koncepte kao sto su
+- nasledjivanje
+- ucaurivanje (information hiding)
+- polimorfizam
+
+
+
+Java je bila prvi jezik koja je koncept prenosivosti dobro implementirao
+
+
+Bajtkod je isti na svakoj masini, a Java VM se razlikuje od masine do masine
+
+Java bytecode moze da se koristi samo ukoliko masina ima instaliran
+Java Runtime Environment
+
+
+Java je cist OOL i kao takav ne dozvoljava da se bilo šta izvrši van 
+definicije klase
+
+
+Java insistira da se klasa koja sadrzi main metod zove isto kao i
+fajl u kome se nalazi
+
+
+
+Klasa predstavlja implementaciju tipa.
+
+
+Java je case sensitive
+
+Java je strogo tipiziran jezik ( u svakom trenutku za svaku promenljivu
+mora da se zna kom tipu pripada; za razliku od python-a )
+
+
+Redosled atributa i metoda (kao i konstruktor koji je specijalan tip
+metoda) nije bitan.
+
+
+Navodjenje povratnog tipa metoda je obavezno ( jer da nije tako ona bi
+se detektovala kao konstruktor )
+
+
+Ono sto return vraca mora biti odgovarajuceg (return) tipa
+
+
+
+Skup metoda - interface
+
+
+
+Overloading - definisanje vise razlicitih metoda, sve imaju isto ime, ali
+razlicit potpis
+
+
+Podrazumevni tip za decimalni broj je double. Ukoliko zelimo da literal
+bude float tip-a onda moramo da na kraj tog literala napisemo slovo f, kako
+bi smo kompajleru nazlacili da se radi o float podatku.
+
+
+(za overloading)
+Kada za prosledjene argumente ne postoji metod sa odgovarajucom sekvencom
+tipova onda se proverava da li postoji metod sa sekvenckom tipova koji su
+nadskup od tipa podatka koji je prosledjen. Ukoliko postoji onda se vrsi
+implicitna konverzija. Ako se dogodi da postoji vise takvih metoda, bira
+se ona ciji je skup dozvoljenih vrednosti manji (npr float, ako imamo 
+float i double ). Ukoliko ne postoji takav metod onda dolazi do greske
+
+
+Konstruktor je specijalna vrsta metoda koja se koristi iskljucivo pri
+konstrukciji objekta.
+
+Pozivaju se iskljucivo pri instanciranju objekta
+
+
+new operator radi dinamicku lokaciju prostora koji je potreban za dati
+objekat i neke pocetne inicijalizacije
+
+
+Primitivni brojevni tipovi su definisani kao oznaceni brojevi. Njihov
+naziv pocinje sa malim slovom. 
+
+Ukoliko su nam potrebni neoznaceni brojevi trebamo koristi wrapper-ske
+klase(?). Njihov naziv je isti kao i naziv odgovarajuceg primitivnog tipa, s
+tim sto za razliku od tih primitivnih tipova, nazivi wrapper-skih klasa
+pocinju velikim slovom
+
+
+Pretvaranje primitivnog tipa u odgovarajucu wrapper klasu naziva se
+autoboxing ili samo boxing. Suprotan proces se naziva unboxing
+
+nije dozvoljeno pravljenje promenljive u ugnjezdenom bloku koja ima isti
+naziv kao neka promenljiva tog bloka u kome se ugnjezdeni blok nalazi
+
+
+
+Inicijalizacija automatskih promenljivih je obavezna, tj. forsirana
+od strane kompajlera
+
+
+Na steku se cuvaju lokalne promenljive i parametri funkcija, dok se
+objekti cuvaju na heap-u
+
+
+
+Garbage Collector (GC) moze da obrise objekat samo kada vise ne postoji
+ni jedna referenca na taj objekat
+
+
+GC je nit koja proverava da li postoji objekat koji nije referenciran i
+uklanja ga ukoliko nije. Niskog je prioriteta
+
+
+

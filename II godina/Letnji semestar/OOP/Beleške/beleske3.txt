@@ -1,0 +1,73 @@
+Datum odrzavanja: 13.03.2021.
+Predavac: Ana Kaplarević-Mališić
+Cas: 3
+=====================================
+
+
+lokalne promenljive, reference i parametri metoda se cuvaju na steku
+
+sami objekti se nalaze na heap-u
+
+metode (koje nisu staticke) se nalaze u kodnom delu
+
+
+Objekti iste klase nemaju zasebno svaki svoj kod za metode koje su
+njihovom klasom podrazumevane vec postoji samo jedan primerak tog koda
+koji svaki od tih objekata koristi
+
+
+Posto svaki objekat koristi jedan te isti kod, kompajler ne zna nad kojim
+atributom se vrsi neka operacija jer svaki objekat sadrzi atribut sa istim.
+Iz tog razloga pri pozivu metode kompajler, zajedno sa argumentima
+koje prosledjuje objekat koji svoju metodu poziva, implicitno prosledjuje i
+referencu tog objekta. Na taj nacin znace se nad cijim atributom treba da se
+izvrse odredjene operacije definisane u tom nekom metodu. Ta referenca se
+naziva this
+
+
+this je implicitni parametar koji sadrzi adresu objekta ciji je metod pozvan
+
+
+this ima i jos jednu primenu u drugom kontekstu, a to je pozivanje konstrutora
+iz drugog konstruktora 
+
+Ovo se koristi iz 2 razloga:
+- zbog smanjenja koda
+- zbog prakticnosti jer ne moramo da ponovo obavljamo sve provere i operacije
+  koje smo obavili u prosirenom kostruktoru
+
+
+Onaj "uzi" konstruktor samo treba da prosledi podrazumevane vrednosti "sirem"
+konstruktoru
+
+
+
+redosled kljucnih reci static i public (ili nekog drugog modifikatora) nije
+bitan
+
+
+
+staticki podaci i metodi   = clanovi klase
+nestaticki podaci i metodi = clanovi objekata
+
+
+
+"ono sto je staticko je zajednicko za sve objekte iste klase"
+
+
+U Javi je moguce pozivati staticke metode preko reference
+objekta te klase, za razliku od C# u kome to nije moguce
+
+
+
+!!! Staticki metodi ne dobijaju this
+
+zbog toga nije moguce koristi nestaticke atribute ili metode
+( ukoliko nije prosledjena sama referenca nekog objekta toj statickoj metodi )
+
+
+
+new Test().x=5;   // ovo je moguce jer se vraca adresa pa se
+				  // preko te adrese pristupa atributu x
+
+
