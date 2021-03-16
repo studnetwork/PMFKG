@@ -1,0 +1,302 @@
+Datum: 22.02.2021.
+Predavac: Vladimir Cvjetković
+Cas: 1
+=============================
+
+Internet:
+- internet je globalna mreza
+- informacije su dostupne kroz razne servis
+- uglavnom se koristi client-server arhitektura
+- redje peer-to-peer
+- WWW (World Wide Web) - dominantni servisi
+
+
+Neki od broser-a:
+- IE
+- Mozilla Firefox
+- Mozilla Sea Monkey
+- Flock
+- Netscape
+- Google Chrome
+- Opera
+- Apple Safari
+
+
+1991 - Tim Berners Lee, zaposleni CERN-a dolazi na ideju da napravi sistem baziran na hypertext dokumentima
+
+Mosaic - jedan od prvih browser-a
+
+
+Firefox je direktni naslednik Netscape-a
+
+
+CSS = Cascading Style Sheets
+
+
+Prvih 20 godina Weba su bile burne ( razvoj )
+
+
+
+Camino - browser za mac racunare pre pojave safari-a
+
+
+MDN - Mozilla Developer Network
+( drugi izvor, referenca )
+
+
+
+
+Danas se cesto izgled web strane stavlja u prvi plan, iako je osnovna komponenta informativni
+sadrzaj. Semantika stavlja u drugi plan
+
+
+Ljudima su vise interesantniji sajtovi koji su fokusirani na sam izgled,
+sto otezava obradu i ekstrakciju informacija od strane masina
+
+
+Tim Berners-Lee, osnivac Web-a, danas je nezadovoljan danasnjim izgledom Web-a. Smatra da treba obratiti vecu
+paznju na semantiku. Ono sto je manje poznato je da je Tim BL osnivac i semantickog web-a ( na kome nije bitan
+izgled vec olaksavanje masini da razume o cemu se radi )
+
+
+Internet je nasao kao rezultat vojnog istrazivanja 50-tih godina 20. veka
+Cilj je bio stvaranje redudantne mreze otporne na unistenja
+
+
+
+Sustina je da je Packet switching zamenio tadasnjeg Circuit switcing
+
+
+CS je radio tako sto se preusmeravala komunikacija preko nekih centrala. Ukoliko bi se unistila ta centrala
+komunikacija ne bi bila moguca. Iz tog razloga je predlozen novi tip mreze, PS, po kome do toga ne moze da
+dodje zato sto su razlicita cvorista medjusobno povezana tako da postoji vise razlicitih puteva i ukoliko bi
+doslo do unistenja nekih cvorista, komunikacija bi mogla da se sprovede preko nekih drugih. 
+
+
+
+Vece poruke se dekompunuju u manje, pakete, koji se nezavisno salju, mogu da putuju razlicitim putevima, u
+razlicitom redosledu, a TCP/IP protokol obezbedjuje ispravnost komunikacije
+
+
+DEC = Digital Equipment Corporation
+
+
+
+Protokoli:
+- X25, vise se ne koristi zato sto je TCP/IP izabran
+
+
+ARPANET je prva TCP/IP mreza
+
+
+
+IPv4 - 4 bajta za adresu, tj. 32 bit-a; sto je 4 milijarde
+IPv6 - 6 bajta za adresu
+
+
+
+Tim BL 1989. predlaze globalni Hypertext sistem
+1990. pise prve sotvere za web, web server i web client
+Takodje je napisao i prvi browser, WorldWideWeb
+
+
+
+Neki od prvih Web browser-a:
+- ViolaWWW
+- MOSAIC
+- Netscape (direktan potomac MOSAIC-a)
+
+
+
+Kada se pojavio Web, broj korisnika interneta je naglo porastao
+
+
+"Internet niko nije planirao"
+Smatralo se da ce IPv4 adrese biti dovoljne 
+
+
+
+"Trik NAT-ovanja omogucava da se smanji potreba za vecim brojem adresa"
+
+
+Internet funkcionise zbog postovanja standarda
+
+
+5G mreza treba direktno da se iskoristi za komunikaciju izmedju masina i sa masinama jer omogucava brzu
+i pouzdanu komunikaciju bez potrebe za kablovima
+
+
+
+
+ISOC = Internet SOCiety
+- organizacija koja se bavi internet standardima, istrazivanjem, razvojem i buducnoscu interneta
+
+
+
+
+Principi projetokovanja (razvoja) web sajta sve vise podseca na projektovanje softvera
+
+
+Javascript - script je jezik za programiranje web strana, netipiziran jezik
+
+Tvorac Java Script-a Brendon Eich (kreirao ga je dok je radio u Netscape-u), trenutni CEO Brave browser-a
+
+JS se moze koristi i na serveru
+
+
+
+
+Informativna komponenta je sustina postojanja web sajta
+
+
+
+Faze projektovanja - model vodopada
+ Analysis
+ A	|     ( Requirement Specification )
+ |	v
+ |    Design
+ |	   |     ()
+ |	   v
+ |	Implementation
+ |                 |     ()
+ |                 v
+ |<-------------Testing
+ |                   |      ()
+ |                   v
+ |                  Delivery
+ |                        |     ()
+ |                        v
+ |<---------------------Operation
+ 	
+
+
+Idealni model, koji u praksi nikada nije zastupljen. Koristi se zbog svojih vrednosti, zbog objasnjavanja
+kako bi to trebalo da izgleda. Navedene su sve faze pri razvoju bilo kog softvera, pa time i web sajta
+
+Analiza - specifikacija zahteva; model sistema za koji se pravi sajt. Rezultat analize je model sistema
+koji se podrzava. Jos uvek nije radjeno nikakovo programiranje
+
+
+Dizajn - odnosi se na dizajn samog modela; "model se najcesce daje se uz pomoc dijagrama, to moze da bude
+neki tekst, ali najcesce su to dijagrami, moduli, celine koje mogu da se dekomponuju
+Zadatak dizajna je da napravi strukturu softvera koja ce biti odgovarajuca za model sistema.
+U ovoj fazi se jos uvek ne radi programiranje. "Tu imate softverske module. To je takozvano logicko 
+projektovanje. Gde jos uvek govorite o modulima, ali ne kazete sta cete da koristite, koju bazu podataka,
+koji jezik... Te neke konkretne stvari ostavljate za kraj."
+
+Kada se napravi struktura softvera, opet nemamo kod. Nakon toga se odlucuje kako ce to da se implementira
+
+
+Implementacija - "pisanje koda na osnovu modela softvera"
+
+
+Nakon toga dolazi testiranje.
+
+
+Ali u savremenom projektovanju, javlja se rapid prototyping.
+
+"Vec u fazi analize napravite prototip softvera koji cete da pokazete naruciocu da bi ste videli da li ste se drzali teme"
+
+
+U savremenom razvoju softvera izmedju faza se pravi nekakav prototip kojim bi se proverilo da li je rezultat faze bio
+zadovoljavajuci
+
+Ukoliko testiranje ne prodje kako treba vracamo se na neku od prethodnih faza ( reimplementiramo model, redizajniramo model ili ga odbacujemo )
+
+"Ako testiranje prodje kako treba imamo isporuku"
+
+
+Razvoj(Operation) - "To je eksplotacija sistema. Gde se sistem koristi". Dopuna sistema sa novim mogucnostima, funkcionalnostima
+
+
+"Nakon toga imamo povratnu spregu na gore, ka analizi. Zasto? Zato sto svaki sistem, koji je uspesan, mora da se menja jer
+ako nije uspesan on se jednostavno odbacuje i vise se ne koristi. Koristi se uspesna struktura, ali ona uvek mora da se menja
+kako zbog gresaka tako i zbog novih zahteva koji nisu postojali u vreme koncipiranje.
+
+
+
+Sve to sto vazi za softver vazi i za web sajt
+
+
+
+Napredniji - savremeniji model projektovanje je model fontane
+Osnovne faze su iste kao i kod modela vodopada. 
+
+"Kao sto se kod fontane voda sliva na razlicitim visinama tako i testiranje u ovom modelu moze da se dogodi izmedju faza"
+
+
+"Nikad se ne ceka da sve bude gotovo pa da se onda testira. U bilo kojoj fazi moze da dodje do testiranja i onda se vidi
+da li je potrebna neka korekcija ili moze da se ide dalje"
+
+
+
+
+Analiza
+=======
+- Zbog cega se web sajt pravi?
+- Kakvu poruku treba da prenese?
+- Koji/kakav sistem treba da se podrzava njime?
+
+Danas web sajt treba da bude remote user interface ka informacionom sistemu jer svaki veci web sajt prerasta
+u informacioni sistem
+
+
+U analizi ucestvuju:
+- narucioci 
+- sistemski analiticari (u teoriji; ne moraju da se razumeju u programiranje )
+- strucnjaci za izradu sajta (u praksi)
+  * web dizajneri
+  * programeri
+- korisnici (pozeljno)
+
+
+
+Uspesnost sajta => dugovecnost
+
+
+"Cim se duze vreme koristi odmah ga treba menjati"
+
+
+Dobra pocetna struktura = lako odrzavanje
+dobro projektovanje = dobra pocetka struktura
+
+
+"Nesto sto ima dobru strukturu moze da prihvati i dobre elemente, dok nesto sto nema dobru
+strukturu ne moze ni takvo da funkcionise, a kamoli da prihvati nesto novo, nadogradnju
+
+
+
+Alternativa ovakvom planskom pristupu je ad-hoc, prema potrebi
+
+"Sajt se napravi u jednom dahu, prema prilici, i tako se najbrze dolazi do pocetnih rezultata,
+ali na taj nacin se najcesce i ostaje na pocetnim rezultatima jer je mala verovatnoca da cemo
+jednim takvim pristupom doci do dobre strukture softvera. I, u takvom slucaju, lakse je od
+pocetka napraviti novu, dobru, strukturu nego staru losu"
+
+
+Duzina web strane nije limitirana. Ona moze da bude ogromna (sto nije preporucljivo)
+
+
+Struktura odredju vezu i raspored strana.
+
+
+"Korisnik ne treba da bude svestan [te] fizicke lokacije, cak stavise, ta fizicka struktura
+elemenata treba biti sakrivena od korisnika, ako ni zbog cega drugog odna zbog razloga bezbednosti
+
+
+Postoje 3 vrste sajtova:
+- staticki
+- interaktivni
+- dinamicki
+
+
+U pocetku su dominirale staticke stranice, sa malo slika, puno teksta, sa prakticno nikakvom
+interakcijom
+
+
+Struktura web sajta:
+- logicka struktura (struktura sa aspekta korisnika)
+- fizicka struktura (nevidljiva korisniku)
+
+
+

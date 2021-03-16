@@ -1,0 +1,308 @@
+Datum: 01.03.2021.
+Predavac: Vladimir Cvjetković
+Cas: 2
+=============================
+
+HTML (HyperText Markup Language) je jezik za opisivanje web strana
+Prenosi se preko HTTP-a (Hypertext Transfer Protocol) 
+
+Ekstenzija moze da bude .htm ili .html, i te dve ekstenzije se ne razlikuju
+
+HTML kod interpretira browser
+
+
+Zavrsni tagovi se mogu izostaviti, ali samo zato sto browser-i pokusavaju da
+pretpostave kako je kod trebao da radi. Po HTML-u to ne bi smelo da se radi i
+ne bi smo trebali da se oslanjamo na browser-e i njihovu mogucnost ispravljanja
+koda.
+
+Prazni elementi nemaju zavrsni tag. Preporucuje se da se na kraju praznog elementa
+stavi kosa crta ( '/' ) jer se moze desiti da browser-i u buducnosti striktnije
+postuju HTML standard ( ovakav njihov zapis sa kosom crtom je pravilan zapis )
+
+
+
+
+
+HTML elementi nisu case sensitive, ali W3C preporucuje koriscenje malih slova
+
+
+
+
+<!DOCTYPE html>		<-- nije html tag, time se oznacava verzija HTML-a
+
+
+
+
+Address bar:
+============
+Nasa HTML stranica otvorena preko servera:
+https://localhost/path
+ili
+https://127.0.0.1/path
+
+Nasa HTML stranica otvorena kao fajl:
+file:///path/to/file.html 		<-- (linux)
+file:///C:path/to/file.html 		<-- (win)
+
+
+
+
+<CTRL>+u            	<-- hotkey u browser-u za source code stranice
+
+
+
+
+U address bar-u: about:about	<-- spisak svih "about" adresa
+
+about:config		<-- spisak konfiguracija / podesavanja
+
+
+security.fileuri.strict_origin_policy:
+"ako je na true, neke stvari nece raditi iz fajla kao sto je npr. Ajax,
+ali ce raditi iz servera". To se moze resiti tako sto se postavi na false, ali nakon
+testiranja bi ga trebalo vratiti na true zbog bezbednosti na internetu
+
+
+
+
+"Kada vam konzola javi da nesto nije uredu, onda to treba ispraviti i proveriti"
+
+
+Inspect Element F12
+
+
+Kada se ucitava iz fajla u Network nece nista biti prikazano
+
+
+
+Wordpad / MS Word - Tekst procesor
+Notepad++         - Tekst edior
+NetBeans	  - IDE
+
+
+
+
+Web strana ima vidljivi i nevidiljivi deo.
+
+Nevidljivi predstavlja ono sto se nalazi u head elementu, a vidljivi ono sto se nalazi u body elementu
+
+
+
+U head-u se mogu naci sledeci tag-ovi:
+- title		<-- naslov web strane
+- base		<-- podrazumevana adresa
+- link		<-- resurs koji koristi web strana
+- meta		<-- informacije za browsere i masine
+
+
+
+<meta name="description" content="Articles about pets">
+<meta name="keywords" content="pets, dogs, cats">
+<meta charset="UTF-8">
+
+
+Pored navedenih atributa, meta tag moze sadrzati i:
+- author
+- viewport
+
+
+h1-h6 
+
+h1 - najveci
+h6 - najmanji
+
+
+
+Sintaksa komentara: <!-- neki tekst -->
+
+
+Horizontalna linija:
+<hr />
+
+
+Tagovi za formatiranje:
+- b
+- strong
+- i
+- em
+- mark
+- small
+- del
+- ins
+- sub
+- sup
+
+
+
+
+Tagovi koji nisu podrzani u HTML5:
+- center
+
+
+
+Computer formats:
+- code
+- kbd
+- samp
+- tt  ( HTML5 ga NE podrzava!!! )
+- var
+- pre
+- abbr
+- acronym ( HTML5 ga NE podrzava!!! )
+- address
+- bdo
+- blockquote
+- q
+- cite
+- dfn
+
+Tag <code> se koristi kada treba da se prikaze neki tekst koji predstavlja program
+
+
+Tag <kbd> se koristi kada zelimo da prikazemo nesto sto
+treba da se otkuca na tastaturi
+
+Tag <samp> koristimo kada zelimo da prikazemo nesto sto predstavlja
+izlaz nekog programa
+
+
+Tag <pre> predstavlja sadrzaj onako kako je napisan, vec formatiran
+
+Tag <abbr> se koristi i za skracenice i akronime
+
+
+Tag <acronym> ( HTML5 ga NE podrzava!!! )
+
+
+Tag <bdo> menja smer. Sadrzi atribut
+dir koji moze imati vrednosti:
+- "rtl"
+- "ltr"
+
+Ovaj atribut je neophodan, tj. moras se koristi ukoliko
+se koristi ovaj tag
+
+
+
+Element <table> definise tabelu. Ovaj tag ima atribut border koji
+odredjuje vidljivost linija tabele ( NIJE PREPORUCLJIVO njegovo koriscenje,
+vec treba koristiti atribut style umesto njega )
+
+
+
+Element <a> se koristi za obelezavanje hypertekst ( linkova ka nekoj strani
+ili ka nekom delu trenutne strane ).
+Naziv elementa <a> u potice od reci anchor
+
+
+Sadrzi atrubut href (skracenica od 'h'ypertext 'ref'erence )
+
+
+
+Element <body> sadrzi vidljivi deo strane.
+Sadrzi atribut bgcolor ( koricenje ovog atributa NIJE PREPORUCLJIVO, vec
+style="backgroud-color: boja" )
+
+
+
+
+primeri stilova elemenata:
+- style="font-size: 10px"
+- style="font-family: Times"
+- style="text-align: center"
+
+
+
+Elementi cija se upotreba ne preporucuje:
+- <center>				<-- centriranje sadrzaja
+- <font> i <basefont>   		<-- html fontovi
+- <s> i <strikeout>			<-- precrtavanje
+- <u>					<-- underline
+
+
+Atributi cija se upotreba ne preporucuje:
+- align					<-- definise polozaj elementa u kom je naveden
+- bfcolor				<-- boja pozadine
+- color					<-- boja teksta
+
+
+
+Font-ovi iz familije fontova courier su neproporcionalni font. Slova 
+imaju istu sirinu nezavisno od toga koliko im je potrebno
+Primer: i i w
+
+Obicno se koristi kada se navodi deo koda (programa).
+
+
+
+
+Na Web stanama treba koristiti fontove iz familije fontova Arial. On
+je proporcionalni font i nije serifni.
+
+
+Serivni fontovi imaju crtice na pocetcima i zavrsetcima slova (na krajevima)
+( "imaju horizontalne i vertikalne linije" )
+
+
+
+
+Sintaksa za komentar u CSS-u: /* neki komentar */
+
+
+
+Hyperlink je veza, referenca koja sadrzi adresu ka nekom resursu na web-u ili deo na trenutnoj stranici
+
+
+
+
+URI - Uniform Reresource Indentifier
+URL - Uniform Reresource Locator
+URN - Uniform Reresource Name
+
+
+
+URL adresa nekog domena:
+primer:
+https://www.pmg.kg.ac.rs/
+
+
+"URN sluzi za odredjivanje gde se nesto nalazi u okviru domena"
+primer: oglasna-tabla/ u
+https://www.pmg.kg.ac.rs/oglasna-tabla/
+
+
+URL + URN = URI
+
+
+
+http://name:password@webaddress:port/
+
+
+Bitno:
+======
+Podrazumevani (default-ni) port je 80.
+
+Ako se ne kuca port, podrazumeva se 80
+
+Ako se ne kuca @, podrazumeva se da se ne kuca name i password
+
+
+
+"Veoma bitna tema. Apsolutno i relativno adresiranje"
+
+
+Ako se adresira neka adresa koja se odnosi na drugi sajt onda je neophodno
+koriscenje URI-a u href-u.
+
+Ukoliko link ima isti URL kao i trenutna stranica moze se za href iskoristi
+URN kako bi se relativno adresirao dati resurs
+
+
+"Uvek treba, u okviru istog sajta, navesti minimalnu adresu tog drugog resursa
+jer onda citav sajt mozete da stavite na drugu URL adresu i sve ce da radi.
+Ako to niste radili, linkovi ce prestati da rade jer imaju u sebi stari URL"
+
+
+"Uvek, kad god je to moguce, koristite relativno adresiranje"
+
