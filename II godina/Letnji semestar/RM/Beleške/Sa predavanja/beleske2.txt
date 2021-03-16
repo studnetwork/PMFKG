@@ -1,0 +1,303 @@
+Datum odrzavanja: 02.03.2021.
+Predavac: Miloš Ivanović
+Cas: 2
+=====================================
+
+
+"Kada pricamo o protokolima, pricamo o horizontali"
+
+"Interfejs sloja ka visem sloju je vertikala, sta taj sloj pruza"
+
+
+
+Tok kretanja podataka
+svaki sloj dodaje "nesto svoje" ( header, trailer)
+Zbog toga se preko mreze prenosi i vise nego sto je poslato
+
+
+
+Referentni modeli
+-----------------
+- OSI ( Open Systems Interconnection )
+- TCP/IP ( Transmission Control Protocol / Internet Protocol )
+
+
+TCP/IP nastao sa pojavom interneta
+OSI se pojavio kasnije, ali nije zaziveo ( u prakticnom smislu kao TCP/IP )
+
+
+
+OSI - nastao 1983
+
+Postavljeni principi projektovanja:
+1. Treba napraviti novi sloj kada je potrebna nova apstrakcija
+2. Svaki sloj treba da ima jasno definisanu f-ju
+3. Funkciju svakog sloja treba izabrati imajuci u vidu definisanje
+   medjunarodno standardizovanih protokola
+4. Granice protokola treba napraviti tako da se minimizuje protoko
+   informacija
+5. Broj slojeva je balans izmedju jasnih razgranicenja funkcionalnosti
+   sa jedne strane i kompleksnosti sa druge strane
+
+
+Pojasnjenje:
+1. "nova apstrakcija je novi pojam, novi entitet"
+2. "jednom recenicom reci sta sloj radi"
+3. "treba imati u vidu ono sto je vec usvojeno kao standard i funkciju 
+   na osnovu toga difinisati defijiciju funkcije"
+4. "izmedju slojeva treba da tece minimalan visak informacija (headeri, trejleri, .. )
+5. "ne treba uvoditi nove slojeve koji ce se koristiti malo ili se nece u opste koristiti"
+
+
+
+Slojevi OSI modela:
+1. Fizicki sloj - zaduzen je da kroz neki fizicki medijum prenosi bitove
+
+2. Sloj veze podataka - omogucava da se bitovi pakuju u okvire i da se oni
+   prenose pouzdano. Takodje kontrolise tok ( brzinu komunikacije ).
+
+   U ovom trenutku, imamo pouzdanu komunikaciju, vezu izmedju dva racunara,
+   mrezu, ali samo za ta dva racunara
+
+3. Mrezni sloj - usmerava paket kroz mrezu
+
+   Ukoliko dodje do prekida jedne veze, usmerava paket kroz neku drugu vezu
+   Radi izmedju cvorova koji se nalaze izmedju ta dva racunara koji komuniciraju
+  ( tj, to su racunari preko kojih prolazi paket do onog drugog )
+   
+4. Transportni sloj - sluzi za poboljsavanje veze; obezbedjuje kvalitet
+   protoka paketa kroz mrezu (?)
+
+   Radi u racunarima koji komuniciraju ( posljaocu i primaocu )
+   "On vodi racuna i o tome da i ako se neki paket izgubi, zatrazi da se 
+   taj paket ponovo donese"
+
+5. Sloj sesije - uspostavljanje sesije
+
+6. Sloj prezentacije - vodi brigu o semantici
+
+7. Sloj aplikacije - "konkretna primena svega ovaga"; HTTP, email (SMTP),
+   
+
+Ponavljanje:
+1. Prenos bitoba ( pouzdanost nije bitna )
+2. Pouzdanost 2 entiteta koja su susenda u mrezi. 
+3. Pravljenje mreze
+4. Vodi racuna o redosledu paketa i kvalitetu usluge koji mrezni sloj pruza
+   Nalazi se u okviru OS-a 
+5. Otvaranje sesije
+6. "vodi se racuna o tome sta su ti fajlovi" (vodi racuna o sintaksi i 
+   semantici prenetih podataka)
+7. konkrentna primena (komunikacija sa korisnikom)
+
+
+
+TCP/IP               OSI
+Link Layer           Data Link Layer + Physical Layer
+Internet Layer       Network Layer
+		    >=Transport Layer<=
+Applicatop Layer     Session Layer + Presentation Layer + Application Layer
+
+
+TCP/IP - prakticni model
+OSI    - teorijski model 
+
+
+Razlike izmedju TCP/IP i OSI:
+- model OSI je prvo razvijen pa su onda napravljeni odgovarajuci protokoli, dok
+  je kod modela TCP/IP obrnuto, prvo su nastali protokoli pa je onda on razvijen
+  (bottom up pristup)
+
+- model OSI podrzava komunikaciju samo sa uspostavljanjem direktne veze, dok
+  model TCP/IP  podrzava i sa i bez uspostavljanja direktne veze
+  
+  komunikacija se obavlja u transportnom sloju
+
+
+
+OSI se samo spominje u teoriji
+
+
+Dijagram Trka slonova - dijagram kojim je prikazano kada treba doneti standard
+
+Ukoliko se standardi prave pre nego sto se istrazivanja zavrse, tj. ukoliko
+krenu da se prave prerano onda se kao rezultat dobijaju losi standardi jer
+sve jos uvek nije dobro istrazeno. 
+
+To se dogodilo i sa OSI modelom. Pocela je da se proizvodi operma, a ona je bila
+lose, stalno se kvarila, nije mogla da uspostavi dovoljao dobar kvalitet usluge
+
+
+Slicna stvar se dogadja i kada se prekasno donesu standardi. Investira se novac.
+Svaka firma ulaze novac  u proizvodnju proizvoda po necemu ( tom istrazivanju ),
+ali posto standardni jos uvek nisu doneti onda ce svako imati neki svoj standard
+(/implementaciju?) tako da bi svako donosio svoj standard sto vise ne bi ni 
+predstavljalo standard
+
+
+
+Kritika modela OSI:
+- losa sinhronizacija (problem koji je gore naveden)
+- previse kompleksan model ( neki slojevi nisu neophodni )
+- losa realizacija, tj. nizak kvalitet
+- losa politika: nametanje od strane vlade SAD i EU
+
+
+
+Kritika modela TCP/IP:
+- nema jasno razgranicene koncepte usluga, interfejsa i protokola
+- nije dovoljno uopsten ( npr. pomocu njega nije moguce opisati bluetooth )
+- sloj za povezivanje racunara s mrezom u stvari nije sloj, vec definicija
+  interfesa ka gornjem sloju
+- ne spominju se fizicki sloj i sloj veze podataka
+- mnogi protokoli aplikativnog sloja su uradjeni na brzinu
+
+  npr. ftp je bio diplomski rad studenata
+
+
+
+Model koji cemo koristiti na predmetu:
+
+Sloj aplikacije - konkretne aplikacije
+Transportni sloj - obezbedjivanje kvaliteta i rasporeda okvira
+Mrezni sloj - mreza, razmenjuju se paketi, rutiraju se
+Sloj veze podataka - okviri, kontrola gresaka i toka
+Fizicki sloj - bitovi
+
+
+iz OSI modela uzeta najniza dva sloja, a iz TCP/IP je uzeta ideja za aplikacioni
+
+
+
+
+
+Primeri nekih mreza:
+* internet
+* mreze sa uspostavljanjem direktne veze:
+    * X.25
+    * stafetni prenos okvira
+    * ATM
+* Ethernet
+* bezicni LAN - IEEE 802.11 (WiFi)
+
+
+Internet
+========
+
+- Pol Baran 1960. predlozio ideju
+- internet nije mreza, vec skup ogromnog broja razlicitih mreza koje koriste
+  neke iste usluke i protokole
+- prvo se zvao ARPANET (advanced research project agency)
+
+
+Do nastanka Web-a, jedina namena internata je bio email, diskusione grupe,
+remote kontorl, razmena fajlova (FTP). "Web je sve promenio"
+
+
+intranet - interna mreza
+
+
+virtuelno kolo
+
+ATM ( asynchronous Transfer Mode ) - telefonija
+Ukoliko se prekine veza izmedju dva cvorista kroz kojih je uspostavljena, ona
+se prekida. Ovaj sistem omogucava naplatne usluge. Prednost ovakve mreze
+je to sto je kvalitet veze garantovan. Ima strong redosled okvira
+
+
+
+Ethernet - jedan od najuspesnijih standarda. 30+ godina u upotrebi, uz minimalne
+izmene; 802.3
+
+
+
+Bezicne mreze - 802.11 ( -a, -b, -n, -ac )
+
+ac se trenutno koristi
+
+
+Problem 1: domet. Ukoliko imamo neka 3 racunara, gde je 2. racunar povezan sa
+1. i 3. racunarom. Ukoliko 1. salje nesto 2. racunaru, 3. to ne vidi tako da on
+moze da posalje podatke 2. racunaru sto moze dovesti do gubitka podataka
+
+
+Problem 2: odbijanje signala od prepreke rezultuje interferencijom i slabljenjem;
+	       moze da se dogodi da se signal oslabi
+
+Problem 3: veliki deo softvera nije svestan mobilnosti (nije toliko znacajan jer
+           je vecim delom i resen)
+
+
+
+Furijeva analiza
+================
+- rastavljanje sagnala na svoje sasatavne delove
+
+"Svaki signal se moze pretvoriti u zbir sinusoida"
+
+Osnovni signali - harmonici
+
+
+
+Propusni opseg - skup frekvencija koje mogu da prodju kroz neki medijum
+bez slabljenja.
+
+Sto je veci propusni opseg medijuma to je kvalitet primljenog signala bolji	
+
+ Svaki signal ima odredjenu frekvenciju i amplitudu
+
+
+Sto je duzi kabl, to je njegov propusni opseg manji
+
+
+
+Medijum frekvencije koje nisu u njegovom propusnom opsegu apsorbuju ili
+pretvaraju u neki oblik energije
+
+
+
+Nikvistova teorema
+------------------
+Propusni opseg je obelezen sa H.
+Svaki signal se moze u potpunosti rekonstruisati ako se uzrokuje frekvencijom
+od 2H uzoraka u sekundi
+
+
+Posledica ove teoreme:
+Ako se signal sastoji od V diskretnih naponskih nivoa, najveca brzina prenosa
+kroz kanal je: 
+			U_max [b/s] = 2 * H * log_2(V)
+
+
+Ova teorema se odnosi se samo na besumne kanale
+
+
+
+
+Senonova teorema
+----------------
+Na realnim medijumima javlja se termalni sum ( necistoce materijala/atomi 
+bakra vibriraju, stvarajuci neku frekvenciju koja predstavlja smetnju )
+Definise se odnosom korisnog signala i suma unutar medijuma S/N ( Signal to
+Noise ratio )
+
+Obicno se izrazava u decibelima kao 10 * log(S/N)       
+Koriste se decibeli jer je S/N prevelik broj
+
+
+Jednacina:
+	U_max[b/s] = H * log_2( 1 + S/N )
+
+
+
+
+Nikvistovom teoremom se odredjuje teorijsa granica, a Senonovom teoremom
+granica realnih medijuma
+
+
+
+I jedna i druga imaju primenu, iako se Nikvistova teorema odnosi na besumne
+kanale. U Nikvistovoj jednacini konfigurise broj naponskih nivoa V, dok
+u Senonovoj ne figurise.
+
+

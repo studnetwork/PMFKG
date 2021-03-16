@@ -1,0 +1,174 @@
+Datum odrzavanja: 23.02.2021.
+Predavac: Miloš Ivanović
+Cas: 1
+=====================================
+
+Istorija
+========
+
+20. vek - doba prikupljanja, distribuiranja i procesiranja informacija
+
+
+Optičko vlakno je odigralo veliku ulogu ( u poslednjih 20 godina ) u širenju broadband interneta
+
+
+
+Poslovne mreze
+- deljenje rsursa
+
+
+b2b - businesss to business
+
+protokol - jezik kojim uredjaji pricaju medjusobno
+
+
+kucne mreze
+
+DEC - Digital Equipment Coorporation
+"nema razloga da neko ima racunar kod kuca"
+
+
+Oblici e-commerce-a
+- B2C == Business-to-consumer
+- B2B == Business-to-Business
+- G2C == Government-to-consumer
+- C2C == Consumer-to-consumer
+- P2P == Peer-to-peer
+
+
+WAP protokol - uroscen protokol koji je trebao da donese Web na male uredjaje
+
+"responsive design" - kontrola sajta 
+
+Protokoli koje koriste mobilni uredjaju
+- WiFi ( 802.11 protokol, -a, -b, -n, -ac )
+- protokoli koje pruzaju mobilni operateri: GPRS/EDGE, 3G, 4G, 5G
+- NFC ( Near Field Controller )
+
+Drustveni aspekti
+
+
+
+Mrezni hardver
+switch, router, firewall, hub, mrezne kartice (interfejsi)
+
+
+- PAN ( personal area network ) - 1m
+	bluetooth, IRDA
+- LAN ( local area network ) - 10m-1km
+- MAN ( metropolitan area network ) - 10km
+- WAN ( wide area network ) - 100km-1000km
+- internet
+
+
+
+LAN
+---
+
+
+Ethernet IEEE 802.3
+Ethernet - dominantna zicana mreza
+
+802 - svi standardi za mreze
+
+Gbps ili Gb/s = gigabita po sekudni
+
+
+glavna problematika kod lokalnih mreza:
+- dogovaranje oko toga ko ce "da prica, a ko ce da cuti" 
+- ravnopravnost
+
+
+ruter odredjuje kako ce saobracaj povezanih mreza da tece
+
+
+MAN
+====
+
+bezicni IEEE 802.15 (WiMax) "i nije bas zaziveo"
+
+
+HFC - hybrid fiber coaxial
+
+
+
+Regionalnaa mreza (WAN)
+- sastoji se od nekih cvorista ( ruteri ) koja izmedju sebe imaju neke linkove 1-1
+
+
+Komunikaciona podmreza (subnet) je vlasnistvo telekomunikacionih kompanija, dok su racunari vlasnistvo korisnika
+
+
+Put kojim ce paket ici do servera koji treba da ga primi zavisi od routing protokola i od trenutne situacije mreze. Ako se prekine put preko kojeg je uspostavljana veza, paket ce ici drugim putem
+
+
+Bezicne mreze
+-------------
+
+Postoje 3 osnovne kategorije bezicnih mreza:
+- mreze za povezivanje sistema (npr bluetooth)
+- bezicne lokalne mreze ( IEEE 802.11 ) -g je do sada bio koriscen, a sada se koristi -ac koji koristi 5Ghz 
+- bezicne regionalne mreze ( GPRS/EDGE, UMTS, 5G, IEEE802.16 )
+
+
+kucne mreze
+-----------
+IoT - problem: sigurnost/bezbednost
+
+kombinovane mreze
+------------------
+najveca kombinovana mreza - internet
+
+
+
+
+Mreze su organizovane kao skup nekih slojeva (layer)
+
+Protokol je dogovor izmedju dva entiteta o nacinu na koji treba da tece komunikacija
+
+
+Hijerarhija protokola - osnovna ideja je da se funkcionalnosti rasporede u odredjene slojeve
+
+
+Izmedju svaka dva susenda sloja postoje interfejsi koji predstavljaju nacin na koji oni komuniciraju, tj. koje funkcionalnosti dati sloj obezbedjuje sloju iznad sebe
+
+
+
+Primer kojim je objasnjena opsta arhitektura mreze: filozof, prevodilac, sekretar. Pripadnici jednog sloja ( npr. prevodioci ) mogu da koriste i drugi protokol, sto nece
+uticatina ostale slojeve. Slojevi su nezavisni jedni od drugih, potrebno je samo da mogu da se povezu preko interfejsa. "nije bitno kako radi, nego sta radi"
+
+
+"interfejs je ono sta mi pruzamo, a protokol je kako smo se mi slozili da komuniciramo"
+
+
+Problematika projektovanja slojeva:
+- adresiranje
+- kontrola gresaka ( trejleri, checksum - kontrolna suma)
+- kontrola toka ( "superkomjuter->telefon", dogovor kontrole prenosa )
+- multipleksiranje i demultipleksiranje ( kombinovanje vise signala u jedan )
+- usmeravanje (rutiranje) ako je izabrana linija prekinuta, koristi se alternativna ( bira se tako da brzina bude najveca moguca )
+
+
+
+
+Postoje 2 vrste servisa:
+1. usluga sa uspostavljanjem direktne veze
+2. usluga bez uspostavljanja direktne veze
+
+
+objasnje
+1. "kao komunikacija telefonom" ( primer, HTTPS )
+2. datagram service, "kao slanje telegrama", DNS - domain name service; "trazi se ip, nema potrebe za uspostavljanje veze"
+
+
+osnovne funkcije - primitive
+
+
+
+Referentni modeli
+-----------------
+- OSI ( open standard interconnect )
+- TCP/IP ( prvo je on nastao )
+
+
+
