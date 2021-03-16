@@ -54,7 +54,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [ostalo]: ./Ostalo
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=33
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
