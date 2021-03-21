@@ -1,0 +1,6 @@
+Datum odrzavanja: 25.02.2021.
+Predavac: Nikola Andrijević
+Cas: 1
+=====================================
+
+a, abbr, bdo, body, br, code, div, del, h1-h6, head, html, ins, meta, pre, small, sub, sup, title

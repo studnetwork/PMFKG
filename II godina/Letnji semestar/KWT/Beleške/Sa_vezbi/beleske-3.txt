@@ -1,0 +1,253 @@
+Datum odrzavanja: 11.03.2021.
+Predavac: Jovana Arsović
+Cas: 3
+=====================================
+
+
+iframe = inline frame
+pravougaonig oblika
+
+
+Prazan iframe se pre koristio, ali je danas zastareo. Mnogi sajtovi
+su onemogucili da se njihovim stranicama na ovaj nacin pristupa. 
+Prvi razlog je to sto je ugozavao bezbednost korisnika jer je kreator sajta
+na kome se nalazi iframe mogao da dobije osetljive podatke korisnika koji
+su uneti na tom sajtu koji je otvoren preko iframe-a. Drugi razlog je bio to
+je to zastarelo
+
+
+
+<iframe src="URI" width="sirina" height="visina"></iframe>
+
+
+
+# Prazan iframe
+	<iframe name="ime_frejma" src="" width="sirina" height="visina"></iframe>
+	.
+	.
+	.
+	<a src="URI" target="ime_frejma">Link</a>
+
+
+Neki (nekolicina) sajtovi dozvoljavaju prikazivanje svojih stranica ako se izmedju URL-a i URN-a doda "/embed/"
+
+
+Neki karakteri su u HTML-u rezervisani. Npr. "<", ">", ...
+Browser bi mogao da pomesa te znakove u sadrzaju sa HTML tagovima npr.
+Zbog toga su uvedeni character entities koji prikazuju rezervisane karaktere (pored toga postoji par entiteta
+koji nisu vidljivi, ali imaju odredjenu funkciju kao sto je &nbsp; kojim se ne dozvoljava prebacivanje onoga sto
+sledi u novi red )
+
+
+Sintaksa entiteta:
+1: &ime_entiteta;
+2: &#broj_entiteta;
+
+
+NAPOMENA: koricenje imena entiteta nije podrzano u svim browser-ima, ali je zato podrzano koriscenje svih
+brojeva entiteta ( pouzdanije je koriscenje 2. sintakse )
+
+
+Primer:
+	<p>Entiteti &lt; &gt; &copy;</p>
+
+
+
+Forma:
+	<form action="" method="">
+		.
+		.
+		.
+	</form>
+
+
+<input type="tip_ulaza" name="naziv">
+
+
+
+<div style="float: left; text-align: right;"> 
+	Korisnicko ime: <input name="username" type="text"><br /> 
+	Sifra: <input name="pw" type="password"> 
+</div>
+
+
+div pravi konteiner koji zauzima neophodni prostor za komponente koje sadrzi
+( taj prostor je minimalan; potreban i dovoljan prostor )
+
+
+"text-align: right"	  <-- pomera tekst na desnu stranu, koliko je to moguce
+"float: left"         <-- postavlja ceo div u slobodan prostor sa leve strane
+
+
+
+labela:
+- omogucava preusmeravanje klika, npr. kada se klikne labela, pomocu atributa
+for mozemo preusmeriti taj klik na neki drugi element kao sto je input
+
+Sindaksa:
+	<label for="neki_id">sadrzaj</label>
+
+
+
+
+<input type="radio" id="neki_id" value="neka_vrednost">
+
+
+
+Ukoliko ne navedemo grupe radio button-a onda ce oni biti nezavisni, sto znaci
+da ce biti moguce selektovanje vise opcija istovremeno
+
+Ukoliko zelimo da se odabere samo jedana od nekoliko opcija, potrebno je da
+sve te opcije grupisemo istim imenom atributom name
+
+<input type="radio" name="neko_ime" id="neki_id" value="neka_vrednost">
+
+
+Ukoliko zelimo da nesto bude cekirano trebamo da dodamo u listu atributa
+rec "checked"
+
+Primer:
+	<input type="radio" name="neko_ime" id="neki_id" value="neka_vrednost" checked >
+
+
+
+Checkbox:
+	<input type="checkbox" name="neko_ime" value="neka_vrednost">
+
+
+Padajuca lista:
+	<select name="neko_ime">
+		<option name="neka_vrednost">sadrzaj2</option>
+		<option name="neka_vrednost" selected >sadrzaj2</option>
+	</select>                        A
+                                        |
+                                        |
+           ------------------------------
+           |
+Ovo se koristi kada hocemo da postavimo neku opciju kao pocetnu
+
+
+
+Podrucje za tekst:
+	<textarea rows="broj_redova" cols="broj_kolona">Ovde ide neki tekst	</textarea>
+
+tekst/sadrzaj ovog elementa je preformatiran(?)
+
+Postoje 2 nacina za kreiranje button-a:
+1: <input type="button" value="tekst button-a">
+2: <button type="button">sadrzaj koji ce se pojaviti na button-u</button>
+
+
+<fieldset>
+	<legend>Tekst koji predstavlja legendu</legend>
+	.
+	.
+	.
+</fieldset>
+
+
+U formi, atributom method se bira nacin prosledjivanja parametara.
+- get (salje preko URL-a; vidljivo korisniku)
+- post (salje u okviru u okviru svog tela; nevidljivo korisniku; koristi se za slanje
+  osetljivih podataka)
+
+
+<input type="submit" value="tekst submit button-a">
+
+
+metod get je brzi od metoda post
+
+
+primer koriscenja forme:
+	<form action="MAILTO:someone@mail.com"  method="post" enctype="text/plain">
+		.
+		.
+		.
+	</form>
+
+
+Input tipa email proverava ispravnost umetog email-a
+
+Sindaksa:
+	<input type="email" name="mail" placeholder="neki tekst">
+
+
+
+Ucitavanje fajla sa racunara:
+	<input type="file" name="neko_ime">		
+
+
+Dugme za vracanje sadrzaja forme na default-ne vrednosti:
+	<input type="reset" value="Reset"> 
+
+
+
+Ukoliko zelimo da u padajucoj listi imamo opcije koje su grupisane pod odredjenim
+imenom koristimo tag <optgroup>
+
+<select>
+	<optgroup label="ime grupe 1>
+		<option value="v1">Value 1</option>
+		<option value="v2">Value 2</option>
+	</optgroup>
+	<optgroup label="ime grupe 2>
+		<option value="v3">Value 3</option>
+		<option value="v4">Value 4</option>
+	</optgroup>
+</select>
+
+
+
+
+Pisanje HTML-a, tj. strukture stranice je odvojeno od samog stilozovanja (CSS).
+
+
+Stil stranice mozemo odvojiti u poseban fajl i onda ga primeniti na sledeci nacin:
+	<link rel="stylesheet" type="text/css" href="putanja/do/stila.css">
+
+
+
+Ukoliko u CSS-u navedemo ime nekog tag-a, onda ce se taj stil koji je za njega definisan
+biti primenjen na svakom mestu gde se taj tag primenjuje. Ukoliko to ne zelimo
+potrebno je da definisemo id ili klasu na koji ce se taj stil primenjivati
+
+
+za id:
+	#neki_id {
+		...
+	}
+
+za klasu:
+	.neka_klasa {
+		...
+	}
+
+
+
+div {
+	background-image: url("putanje/do/slike.jpg");
+	background-position: center center;		 <-- pozicija slike u onosu na x- i y- osu
+	background-repeat: no-repeat;            <-- ukoliko je slika mala, nece da se ponavlja
+}
+
+
+Pocetna pozicija slike je u gornjem desnom uglu div-a
+
+Ponavljanje slike po x-osi:
+	background-repeat: repeat-x
+( moguce vrednosti: y, no-repeat )
+
+
+Div koji ne sadrzi nista ima visinu 0
+
+CSS
+
+# background-attachment definise da li je pozadinske slike unutar viewport-a ili
+# ili se pomera sa blokom u kome se nalazi
+	background-attachment: fixed; 
+
+
+	background-size: cover;		<-- skalira sliku kako bi popunila konteiner
+
+
+<div class="ime_klase"></div>

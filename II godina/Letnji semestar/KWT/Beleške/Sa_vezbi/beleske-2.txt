@@ -1,0 +1,209 @@
+Datum odrzavanja: 04.03.2021.
+Predavac: Nikola Bačanin
+Cas: 2
+=====================================
+
+<img border="broj1" src="www.name.com" alt="neki tekst" width="broj2" height="broj3">
+
+<img src="relativno/adresiranje.png" alt="neki tekst" width="broj2" height="broj3">
+
+<img src="neka/slika.jpg" width="broj1" height="broj2" alt="neki tekst" usemap="#nekamapa">
+<map name="nekamapa">
+	<area shape="rect" coords="x1,y1,x2,y2" alt="neki tekst" href="link1">
+	<area shape="circle" coords="x3,y3,x4,y4" alt="neki tekst" href="link2">
+</map>
+
+
+
+
+<table border="1">
+	<!-- pocetak horizontalnog dela tabele -->
+	<tr>		
+		<th>Header 1</th>
+		<th>Header 2</th>
+	</tr>
+	<tr>
+		<td>Podatak 1</td>
+		<td>Podatak 2</td>
+	</tr>
+	<!-- Treci red, pocetak vertikalnog dela tabele -->
+	<tr>
+		<th>Vert header1</th>
+		<td>Vert podatak1</td>
+	</tr>
+	<tr>
+		<th>Vert header2</th>
+		<td>Vert podatak2</td>
+	</tr>
+</table>
+
+
+
+
+<table border="1">
+    <tr>
+        <th>Ime i prezime</th>
+    	<td>Petar Petrovic</td>
+    </tr>
+	<tr>
+		<th rowspan="2">Adresa</th>
+		<td>Cara Lazara 15.</td>
+	</tr>
+	<tr>
+		<td>Marka Markovica 46.</td>
+	</tr>
+</table>
+
+
+
+
+<table border="1">
+	<tr>
+		<th>Ime i prezime</th>
+		<td>Vladimir Cvjetković</td>
+	</tr>
+	<tr>
+		<th colspan="2">Učionice</th>
+	</tr>
+	<tr>
+		<td>A-II-1</td>
+		<td>A-II-25</td>
+	</tr>
+</table>
+
+
+
+<!-- cellspacing, vrednost se odnosi na broj piksela -->
+<table border="1" cellspacing="10">
+	.
+	.
+	.
+</table>
+
+
+
+
+<table border="1">
+	<colgroup>
+		<col span="2" style="background-color: red">
+		<col style="background-color: yellow">
+	</colgroup>
+
+	<tr>
+		<th>Prvi</th>
+		<th>Drugi</th>
+		<th>Treci</th>
+	</tr>
+
+	<tr>
+		<td>1.1</td>
+		<td>2.1</td>
+		<td>3.1</td>
+	</tr>
+
+	<tr>
+		<td>1.2</td>
+		<td>2.2</td>
+		<td>3.2</td>
+	</tr>
+
+</table>
+
+
+<thead>
+
+<tbody>
+
+<tfoot>
+
+
+
+
+
+<!-- neuredjena lista -->
+
+	<!-- svaka stavka predstavljena je obojenim krugom -->
+	<ul style="list-style-type: disc">
+		<li>list item 1</li>
+		<li>list item 2</li>
+	</ul>
+
+	<!-- svaka stavka predstavljena je kvadratom -->
+	<ul style="list-style-type: square">
+		<li>list item 1</li>
+		<li>list item 2</li>
+	</ul>
+
+
+	<!-- svaka stavka predstavljena je neobojenim krugom -->
+	<ul style="list-style-type: circle">
+		<li>list item 1</li>
+		<li>list item 2</li>
+	</ul>
+	
+	
+<!-- uredjena lista -->
+	<ol>
+		<li>item1</li>
+		<li>item2</li>
+	</ol>
+	
+	<-- type moze imati vrednosti: "1", "a", "A", "I", "i" -->
+	<ol type="1">
+		<li>item1</li>
+		<li>item2</li>
+	</ol>
+
+
+
+<!-- lista definicija -->
+	
+	<dl>
+		<dt>Kafa</td>
+			<dd>crno i vruce pice</dd>
+			
+		<dt>Mleko</dt>
+			<dd>belo i hladno pice</dd>
+	</dl>
+
+
+dt == definition term
+dd == definition description
+
+
+<style>
+            #header {
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 5px;
+            }
+            #nav {
+                line-height: 30px;
+                background-color: #eeeeee;
+                height: 300px;
+                width: 100px;
+                float: left;
+                padding: 5px;
+            }
+            #section {
+                width: 350px;
+                float: left;
+                padding: 10px;
+            }
+            #footer {
+                background-color: black;
+                color: white;
+                clear: both;
+                text-align: center;
+                padding: 5px;
+            }
+        </style>
+
+
+background-color == boja pozadine
+color            == boja teksta
+padding		 == odstojanje zadrzaja od okvira datog elementa
+float		 == 
+clear		 == 
+
