@@ -1,0 +1,412 @@
+Racunarska mreza - skup uredjaja koji su medjusobno provezani i mogu medjusobno da komuniciraju (dovoljna su 2 uredjaja)
+
+Oni mogu da budu povezani bakarnom zicom, optickim vlaknom ili bezicnom vezom
+
+Internet nije klasicna mreza vec skup ogromnog broja mreza
+
+WWW koherentan sistem koji korisnici vide kao jedinstven
+
+
+
+Potrebe zbog koji su nastale racunarske mreze:
+- deljenje resursa
+- deljenje podataka
+
+
+
+* Poslovne mreze
+* Kucne mreze
+
+
+Klasifikacija mreze prema velicini:
+- PAN (personal area network): 1m
+- LAN (local area network): 10m-1km
+- MAN (metropolitan area network): 10km
+- WAN (wide area network): 100km-1000km
+- Internet: 10 000km
+
+
+
+
+PAN - licna mreza
+=================
+- namenjene jednoj osobi
+- koriste se u kucnim uslovima
+- najmanjeg su dometa
+
+
+
+LAN - lokalne mreze
+===================
+- uglavnom unutar jednog organizacionog podrucja ( u okviru od par km )
+- mogu biti organizovane na 2 nacina: topologija magistra i topologija prstena
+
+kod topologije magistre koristi se jedan komunikacioni kanal za prenos podataka.
+U jednom trenutku samo jedan uredjaj samo moze koristi komunikacioni kanal za slanje podataka.
+To dovodi do problema kome ustupiti komunikacioni kanal za slanje i pristupanje mrezi
+
+
+MAN - gradska mreza
+===================
+- tipican primer: kablovska
+- do centralnog razvodnika (head end) se dovodi signal i odatle se posle preusmerava do
+  odredjenih cvorista (junction box) od kojih ide ka odredjenim domacinstvima 
+- veci stepen organizacije od LAN-a
+
+
+
+WAN - regionalne mreze
+======================
+- mogu obuhvatiti prostor cele jedne drzave ili kontinenta
+- uglavnom su organizovane "na drugaciji nacin". Predstavljaju skup podmreza zbog lakseg upravljanja podacima
+
+Kako bi lokalne mreze unutar regionalne mreze mogle da komuniciraju medjusobno neophodni su ruteri. Ruteri su usmerivaci
+koji odlucuju kojom linijom dalje da upute pristile podatke.
+
+
+
+
+Prema tehnologiji prenosa podataka mreze se dele na:
+1. mreze za neusmereno emitovanje (difuzno)
+2. mreze "od tacke do tacke" (peer-to-peer)
+
+Kao njihova potkategorija postoji i visesmerno emitovanje (multicasting)
+
+
+1. paket sadrzi adresu primaoca. Kada dospe do mreznog sloja, salje se svim
+   uredjajima u mrezi, a obradjuje ga samo onaj cija adresa se nalazi u tom
+   paketu. 
+
+   Ovakav tip prenosa podataka se koristi kod manjih mreza
+
+
+Postoji posebna adresa koja oznacava da je paket namenjen svakom uredjaju na
+mrezi (broadcast adresa)
+
+
+ ga samo onaj cija adresa se nalazi u tom
+   paketu. 
+
+   Ovakav tip prenosa podataka se koristi kod manjih mreza
+
+
+Postoji posebna adresa koja oznacava da je paket namenjen svakom uredjaju na
+mrezi (broadcast adresa)
+
+
+
+2. glavna ideja je trazenje najoptimalnije putanje. Glavnu ulogu imaju ruteri
+   koji usmeravaju paket ka njegovom odredistu. Paketi prolaze kroz druge uredjaje
+   kako bi dosao do svoje destinacije
+
+
+
+
+
+=====================
+Mrezni softver
+=====================
+
+
+Mreze se uglavnom organizuje kao skup slojeva/nivoa
+
+
+Odredjeni sloj jednog uredjaja komunicira sa odgovarajucim
+slojem drugog uredjaja. Ta komunikacija se obavlja preko
+definisanih protokola.
+
+
+Najnizi sloj predstavlja prenosni medijum i sluzi za grubo prenosenje
+binarnih vrednosti
+
+
+Slojevi iznad imaju zadatak da obezbede odredjene osobine/funkcionalnosti.
+
+
+"Protokol je medjusobni dogovor dva ravnopravna sloja dva uredjaja"
+
+
+Interfejs definise usluge koje nizi sloj nudi visem sloju na istom hostu
+
+
+Bitna osobina je to da su protokoli nezavisni jedni od drugih.
+
+
+Postoje ogranicenja velicine paketa. Ako je podatak veci od dozovoljene velicine
+on se deli na vise paketa. To je jedan od razloga zbog kojeg se pored samih podataka,
+paket sastoji i od nekih zaglavlja koja sadrze podatke za njihovo ponovno spajanje i slicno
+
+Takodje se mogu naci i podaci koji se koriste za proveru da li je doslo do neke greske i
+ta provera se obavlja u jednom od slojeva.
+
+
+
+Problemi koji se javljaju kod projektovanje slojeva:
+- adresiranje ( na jednoj mrezi se moze naci vise uredjaja )
+- kontrola gresaka 
+- kontrola toka ( sprecava zagusenje na komunikacionom kanalu kada npr. neki uredjaj ne moze da obradi sve sto mu stigne jer uredjaj
+- multipeksiranje i demultipleksiranje
+- usmeravanje
+
+
+
+Usluge sa uspostavljanjem direktne veze:
+- pouzdan tok poruka(podataka)
+- pouzdan tok bajtova
+- nepouzdana veze
+
+
+Usluge bez uspostavljanja direktne veze:
+- delovi podataka se salju nezavisno i ne mora
+  ju da stignu u istom redosledu
+- da bi smo znali da li su stigli do odredista
+  moramo da dodamo potvrdne odgovore kako bi posljalac 
+  znao da li moze da salje sledeci paket itd
+
+
+
+==================
+Referentni modeli
+==================
+
+Referentni model OSI ( Open Systems Interconnection )
+-----------------------------------------------------
+
+- danas se retko koristi, ali jos uvek vazi
+- koristi se za pri ucenju o mrezama jer je sveobuhvatan
+- ima 7 slojeva
+
+
+
+
+#### 1 - Fizicki sloj ( Physical )
+
+Uloga: prenos niza bitova preko komunikacionog kanala
+
+Osnovna jedinica prenosa: bit
+
+On ih samo prenosi, ne vodi racuna o njihovoj ispravnosti (tj. greskama).
+O tome vodi racuna sloj iznad njega
+
+
+
+
+#### 2 - Sloj veze podataka (Data link)
+
+- nalazi se iznad fizickog sloja
+
+Uloga: obezbedjivanje ispravnog slanja podatak, tj.
+       da li je podatak poslat ispravno
+
+Osnovna jedinica prenosa: frame
+
+Treba da pretvori komunikacionu liniju, za gornji sloj (mreznom), u
+transportnu liniju preko koje ce se prenositi bitovi bez gresaka.
+
+Posiljalac deli tok podataka u ovkire podataka (frame-ove).
+Ukoliko se radi o pouzdanoj usluzi onda primalac nakon toga salje
+okvir za potvrdu (acknowledgment frame)
+
+
+
+#### 3 - mrezni sloj ( Network )
+
+- nalazi se iznad sloja veze podataka
+
+Uloga: upravlja radom podmreze; usmeravanje paketa
+	   od izvorista do odredista
+
+Osnovna jedinica prenosa: packet
+
+Kod mreza sa difuznim emitovanjem ovaj sloj je tanak ili
+ni ne postoji
+
+
+#### 4 - transportni sloj ( Transport )
+
+- nalazi se iznad mreznog sloja
+
+Uloga: prihvata podatke od gornjih slojeva, grupise ih, deli, i
+prosledjuje ih mreznom sloju (koji je sloj ispod njega); 
+obrnuto vazi za onog koji prima podatke (?, zakljucak);
+skriva arhitekturu mreze
+
+Osnovna jedinica prenosa: TPDU
+
+
+
+#### 5 - sloj sesije ( Session )
+
+- nalazi se iznad transportnog sloja
+
+Uloga: omogucava korisnicima da medjusobno na razlicitim
+	   racunarima uspostave sesiju
+
+Osnovna jedinica prenosa: SPDU
+
+
+
+
+#### 6 - sloj prezentacije ( Presentation )
+
+- nalazi se iznad sloja sesije
+
+Uloga: bavi se sintaksom i semantikom podataka koji se prenose
+( za razliku od nizih slojeva )
+
+
+Osnovna jedinica prenosa: PPDU
+
+
+
+#### 7 - sloj aplikacije
+
+- nalazi se iznad sloja prezentacije
+
+Uloga: sadrzi protokole koji su orjentisani ka korisnicima
+
+Osnovna jedinica prenosa: APDU
+
+
+-------------------------------------------------------------------------
+
+============
+Fizicki sloj
+============
+
+Najnizi sloj
+
+
+Mediji preko kojih se prenose podaci cesto imaju neka ogranicenja
+
+
+Izvor, u opstem slucaju, ne generise bitove, vec signal od koga
+tek treba dobiti binarni niz
+
+
+
+Prema obliku signala po vremenu signali mogu biti:
+- diskretni
+- kontinualni
+
+Kontinualni signali su signali koji su definisani za svaki vremenski
+trenutak
+
+Diskretni signali su signali koji se dobijaju u odredjenim vremenskim
+intervalima ( diskretnim vremenskim trenucima )
+( nije bitno koliko su ti intervali mali )
+
+
+Prema mogucim vrednostima ampliture signali mogu biti:
+- analogni ( moze uzeti bilo koju vrednost )
+- digitalni
+
+
+Kod analognih, amplituda moze uzeti bilo koju vrednost.
+Kod digitalnih, amplituda moze uzeti tacno odredjenu vrednost
+	Binarni digitalni mogu uzeti samo nulu ili jedinicu
+
+
+Prema prirodi signali mogu biti:
+- deterministicki
+- slucajni (sohasticki)
+
+
+Deterministicki signali su oni signali za koje mozemo tacno odrediti
+vrednost u nekom sledecem trenutku; znamo kako se ponasaju
+To najcesce nisu prirodni signali
+
+Slucajni signali najcesce signali iz prirode i za njih ne mozemo odrediti
+vrednost u nekom sledecem trenutku
+( da bi se 
+
+
+
+Proces diskretizacije zavisi od osobina signala, pre svega od njegovog
+spektra
+
+
+
+
+
+Opste karakteristike medijuma (kanala)
+--------------------------------------
+
+Svaki kanal ima neke nedostatke:
+- slabljenje signala pri njegovom prenosu
+- poslati signal se izoblicava zbog ogranicenog propusnog opsega
+- javljaju se smetnje kao posledica rada uredjaja/opreme
+- dolazi do pojavljivanja sumova
+
+
+x(t)=x(t+T)        <-- funkcija x je periodicna
+njega perioda je T
+
+jedinica za frekvenciju: Hz (herc)
+	  jedinica za vreme: s  (sekunda)
+
+
+
+Amplituda je najveca vrednost za y
+
+
+Frekvencijski domen ( spektralni domen ) - na x-osi je
+frekvencija signala, a na y amplituda
+
+Amplitudski spektar
+
+
+
+Frekvencija = 1 / perioda
+
+
+Amplitude harmonika se crtaju kao vertikalne linije
+na grafiku koji predstavlja amplitudni spektar.
+
+Sirina spektra je rastojanje predstavlja opseg izmedju
+komponente sa najnizom i komponente sa najvecom ucestaloscu
+
+
+
+Osnovna ucestanost je najveci zajednici delilac svih
+signala
+
+
+
+Uvek se zbirom periodicnih signala dobija periodican signal
+
+
+
+
+Furijeva analiza
+----------------
+
+- radi se obrut proces od prethodno navedenog procesa
+
+- koristi se kako bi se slozen signal razvio na vise
+  prostih signala
+
+
+
+g(t) = c/2 + sum_(n=1)^inf(a_n * sin(2*pi*n*f*t) + sum_(n=1)^inf(b_n * cos(2*pi*n*f*t)
+
+
+c/2  samo pomera signal na y-osi ("jednosmerna komponenta)
+
+
+Ako je c/2 = 1, i ako se ammplituda signala krece od -1 do 1 onda ce je
+c/2 pomeriti za 1, tj. bice od 0 do 2
+
+
+
+n   <-- govori nam koji je harmonik
+
+
+
+
+a_n = (2/t) * inf_0^T g(t) * sin(2*pi*n*f*t)dt
+b_n = (2/t) * inf_0^T g(t) * cos(2*pi*n*f*t)dt
+c   = (2/t) * inf_0^T g(t) dt 
+
+
+
