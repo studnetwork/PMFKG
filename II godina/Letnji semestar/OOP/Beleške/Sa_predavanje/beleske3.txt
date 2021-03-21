@@ -1,0 +1,256 @@
+Datum odrzavanja: 16.03.2021.
+Predavac: Ana Kaplarević-Mališić
+Cas: 3
+=====================================
+
+Napomena: pod terminom "osobina" se podrazumevaju i atributi i metode
+
+OOL, za razliku od OBL, podrzavaju koncept nasledjivanja
+
+
+Pri modeliranju moze se uociti da pored nekog tipa koji smo definisali
+postoje i neki njegovi specijalni slucajevi. Ti slucajevi imaju
+karakteristike tog tip, ali pored njih imaju i neke svoje, dodatne
+karakteristike (stanja i ponasanja)
+
+
+Svi OOL podrzavaju code reuse - povno upotrebljavanje istog koda
+
+
+Ukoliko imamo 2 skupa podataka, prvi sa nekim osobinama i drugu sa tim
+istim osobinama uz dodatak nekih specijalnih koje su za njega bitne, 
+pri modeliranju mozemo da od tih skupova napravimo posebne klase gde
+svaka ima svoj primerak tih istih osobina. Ali, ukoliko podatke
+modeliramo na ovaj nacin moze doci do nekih problema. Jedan od njih je
+npr. situacija kada dodje do izmene tog opsteg tipa, tada tip koji
+je posedovao iste osobine kao taj opsti tip vise nece imati sve osobine
+tog opsteg tipa, vec one osobine koje je opsti tip imao pre izmene.
+
+Na taj nacin bi smo imali 2 klase sa istim informacijama, kod bi se
+ponavljao
+
+
+(Nasledjivanje)
+OOL omogucavaju da se definicija jedne klase izvede iz postojece
+
+
+Definicija nekog tip koji pripada nekom opstem tipu se izvodi tako sto
+se preuzimaju sve osobine opsteg tipa i onda se dodaju samo osobine
+koje ta opsta klasa nema, koje su karakteristicne za taj tip
+
+
+Navode se samo razlike, za sve ostalo se podrazumeva da je nasledjeno
+
+
+
+Klasa koja nasledjuje neku drugu se naziva izvedena, potklasa ili 
+dete-klasa
+
+
+Klasa koja biva prosirena, tj. cije se osobine nasledjuje izvedena klasa
+naziva se superklasom, natklasom ili roditeljskom klasom
+
+
+
+Svaka klasa moze imati neogranicen broj potklasa
+
+
+Potklase nisu ogranicene na promenljive, konstruktore i metode klase
+koju prosiruju (nasledjuju)
+
+
+Potklase mogu dodati neke nove promenljive i metode, ili predefinisati
+one metode koji su nasledjeni
+
+
+Sintaksa u Javi:
+	class B extends A
+	{
+		// telo klase B
+	}
+	
+A - super klasa
+B - izvedena klasa
+
+
+Kazemo da su objekti klase B vrsta objekta klase A, a za vezu klase B 
+sa klasom A kazemo da je tipa a-kind-of
+
+
+ 
+ 
+OOL se, prema tome koliko roditeljskih klasa podrzavaju, dele na:
+    - one koji podrzavaju jednostruko nasledjivanje ( Java, C# )
+    - one koji podrzavaju visestruko nasledjivanje
+    
+    
+Primer visestrukog:
+
+	class A extends B, C, D, E, F
+	{
+		// telo klase A
+	}
+
+Ideja kod ovog nasledjivanja je ista kao i kod samog nasledjivanja, da
+se sve osobine roditelja naslede, ali posto je moguce to izvesti klasu
+iz vise roditeljskih klasa onda moze doci do nekih konflikata, npr.
+isti podatak mogu da imaju dve razlicite klase i ako neka klasa
+nasledjuje i jednu i drugu imacemo problem sa tim podatkom
+
+
+
+OOL jezici koji podrzavaju jednostruko nasledjivanje po definiciji ne
+omogucavaju nasledjivanje sa vise roditelja, ali poseduju neke 
+mehanizme kojima se omogucava nasledjivanje  
+
+
+
+U Javi ne postoji klasa (osim klase Object) koja nema roditelja.
+
+Ukoliko za neku klasu nije navedena roditeljska klasa, podrazumeva se
+da je njena roditeljska klasa Object ( i ona se implicitno dodaje ) 
+
+
+
+Sve klase su direktno ili indirektno izvedene iz Object klase
+
+
+
+Metodi klase Object:
+- protected Object clone()
+- boolean equals( Object obj )
+- protected void finalize()
+- Class<?> getClass()
+- int hashCode()
+- void notify()
+- void notifyAll()
+- String toString()
+- void wait()           // ima jos 2 overload-ovane varijante
+
+
+
+
+Roditeljska klasa vec ima definisan konstruktore kojima se 
+inicijalizuju nasledjene vrednosti. Zbog toga, ukoliko bi smo mi u
+izvedenoj klasi definisali konstruktore koji se takodje bave time
+mi bi smo ponavljali kod identican kodu u roditeljskim konstruktorima,
+sto nije u skladu sa konceptom code reuse.
+
+Takodje, morali bi smo da menjamo izvrsimo izmene u svakoj izvedenoj
+klasi koja je nasledila roditeljsku klasu, ukoliko u toj roditeljskoj
+dodje do izmena
+
+
+
+Ti problemi se resavaju na sledeci nacin:
+izvedena klasa u svom konstruktoru poziva neki od konstruktora 
+roditeljske klase. Taj poziv predstavlja prvu komandu konstruktora
+svake izvedene klase.
+
+Ukoliko se eksplicitno ne uradi, vrsi se implicitno, pozivajuci
+default-ni konstruktor roditeljske klase
+
+
+"To se SIGURNO mora desiti"
+
+
+Sintaksa za pozivanje roditeljskog konstruktora:
+	super( [parametri...] );
+	
+
+
+
+=================
+kraj prvog snimka
+=================
+
+
+
+Definicija konstruktura iz nadklase je dostupan potklasi.
+
+
+Ukoliko neka roditeljska klasa nema definisan default-ni
+konstruktor, a njegova dete-klasa ga zove implicitno (nije naveden super)
+onda ce doci do kompajlerske greske
+
+
+
+Izvedena (dete-klasa) mora da pozove jedan od konstruktora svoje
+super klase (roditeljske klase), eksplicitno ili implicitno
+
+
+Sintaksa eksplicitnog poziva roditeljskog konstruktora:
+	super( [argumenti...] );
+	
+	
+Eksplicitni poziv roditeljskog konstruktora MORA da bude prva komanda
+u konstruktoru izvedne klase. Ukoliko se vrsi implicitni poziv,
+to ce svkako biti prva komanda koja ce se uraditi tako da nije bitno
+sta se nalazi na pocetku ( naravno tu sada postoji mogucnost da se zove 
+neki konstruktor same te klase pa u takvoj situaciji treba paziti na
+to da this bude prva komanda )
+
+
+
+Override - definisanje druge funkcionalnosti nekog nasledjenog metoda
+koji ima isti potpis kao i data metoda roditelja, ali razlicito telo
+
+
+
+Sem za pozivanje konstruktora, kljucna rec "super" se koristi i za 
+pristupanje nasledjenim atributima i metodama:
+	super.metod();
+	super.atirubt;
+
+
+Nasledjeni atributi i metode se zovu isto kao i u roditeljskoj klasi, i
+moguce im je pristupiti jedino preko uz pomoc uz pomoc reci "super".
+
+
+Ukoliko samo navedemo ime atributa koji se nalazi i u roditeljskoj i u
+izvedenoj klasi onda se podrazumeva da se misli na atribut izvedene klase
+
+
+
+"super ne trebate da shvatite kao kao referencu ili kljucnu rec, on sluzi
+da se kompajleru kaze da je taj atribut/metod nasledjen od roditeljske
+klase. To nema veze sa roditeljskom klasom, ne trazi se u njoj vec se trazi
+u definiciji tog objekta, a posto je ta klasa izvedena onda ce se u njenoj
+definiciji i pojaviti atributi i metode koje ima roditeljska klasa"
+
+
+
+
+
+Pri definisanju metoda moguce je koristi kljucnu rec final. Na taj naci bi
+smo oznacili da taj metod ne sme da se izmeni (prepise) ( override-uje )
+
+
+Ukoliko se koristi ispred varijable, oznacava da je ta varijabla moze da 
+dobije vrednost samo jednom. Na taj nacin definismo konstante
+
+
+Ukoliko se koristi ispred klase, oznacava da ta klasa ne moze biti nasledjena
+( ne mozemo kreirati izvedenu klasu iz nje )
+
+
+String klasa je final tipa
+
+
+Kljucna rec final takodje moze da se koristi ispred parametara metoda kako
+bi se zabranila njihova izmena
+
+
+
+Promenljiva tipa final ne mora da dobije vrednost pri deklaraciji, vec moze
+da dobije vrednost bilo kada, ali to moze da se uradi samo jednom
+
+
+
+
+Ukoliko ispred reference nekog objekta stoji kljucna rec final, mi mozemo da 
+menjamo atribute tog objekat. To mozemo da uradimo zato sto se ne menja sadrzaj
+same promenljive, sto je referenca/adresa tog objektam, vec sadrzaj nekog
+njegovog atributa. Referenca ce biti ista iako promenimo nesto u objektu koji
+ona referencira
+

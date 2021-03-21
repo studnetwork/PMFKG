@@ -1,6 +1,6 @@
 Datum odrzavanja: 08.03.2021.
 Predavac: Ana Kaplarević-Mališić
-Cas: 2
+Cas: 1
 =====================================
 
 Glavna ideja - razdvajanje implementacije od upotrebe nekog skupa podataka
