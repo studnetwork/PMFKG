@@ -1,0 +1,365 @@
+Datum: 08.03.2021.
+Predavac: Vladimir Cvjetković
+Cas: 3
+=============================
+
+Ako se u href-u unese samo URL, onda ce se otvoriti podrazumevna strana
+
+Ona se najcesce oznacava sa intex.htm(l), kako bi web serveri mogli da prepoznaju
+da se radi o strani, tako da nije potrebno navodjenje samog fajla u adresi.
+
+To ime moze da bude i default, ali to moze da utice na neka podesavanja servera
+
+
+Ukoliko se resurs koji zelimo relativno da adresiramo nalazi u folderu iznad
+onda se koriste 2 tacke, npr. "../folder_iznad/resurs"
+
+
+Na produkcionim serverima prikaz u kome se vidi fizicka struktura sajta je 
+najcesce zabranjen. Oni mogu da se konfigurisu tako da obican korisnik tome
+ne moze da pristupi, osim ako ne zna tacno sta trazi. To se radi pre svega
+zbog bezbednosti.
+
+
+Inspect Element > Network
+- favicon.ico 		<-- "favorite icon"; nalazi se pored title-a
+
+
+Inspect Element > Network > Response
+- preview ( moze da se vidi izgled strane )
+- moze da se vidi sta je browser dobio, kakav odgovor mu je stigao od stranice
+( payload )
+
+
+
+Inspect Element > Network > Headers
+
+HTTP zaglavnja koja browser salje
+
+"kada koristite server vi ste u dobitku jer mozete da pratite mrezni saobracaj"
+
+
+HTML Links - atribut "target" moze da ima sledece vrednosti:
+- "_self"      = default. Otvara link u istom prozoru/tabu u kome je kliknut
+- "_blank"     = otvara link u novom prozoru ili tabu
+- "_parent"    = otvara link u roditeljskom okviru
+- "_top"       = otvara link najvisem (roditeljskom) tabu/prozoru/okviru
+- "okvira1" = otvara link u okviru "okvir1"
+
+
+
+"Za navigaciju na vasem sajtu nikada se ne trebate osloniti na strelice levo i
+desno [strelice u gornjem levom uglu browsera]. Morate resiti navigaciju pomocu
+konkretnih linkova na vasem sajtu. Ukoliko imate neki link koji je van vaseg 
+sajta najbolje bi bilo da ga otvorite preko "_blank" u novom tabu. Tako da kada 
+zatvorite tu stranicu, vasa stranica ostaje"
+
+"Na taj nacin nemate problema sa navigacijom. Onako bi ste morali sa back da se 
+vracate"
+
+
+Link bookmark - oznaka preko koje mozete brzo da dodjete do neke strane (dela)
+
+Kreira se dodavanjem atributa "id" u nekom elementu.
+
+Nakon toga mozemo da se referenciramo na njega postavljanjem simbola # ispred
+imena, tj. vrednosti bookmarka
+
+Primer:
+
+<p id="p1">Neki tekst</p>
+.
+.
+.
+<a href="#p1">Vrati se na Neki tekst</a>
+
+
+
+To je moguce i uraditi uz pomog taga <a>, ali se to ne preporucuje.
+Primer:
+
+<a name="p2">Neki drugi tekst</a>
+.
+.
+.
+<a href="#p2">Idi na Neki drugi tekst</a>
+
+
+
+Ako se u referenci nalazi samo URI neke stranice onda ce nas link odvesti na
+pocetak te straica, ali se na taj URI doda i neka njegova oznaka, ispred koje
+stoji simbol "#" onda ce nas ta referenca odvesti direktno do te oznake na 
+navedemom URI-u
+
+
+Ukoliko link predstavlja neki dokument (koji nije HTML fajl) onda ce browser pri
+uraditi jednu od dve stvari:
+- ponudice da se fajl preuzme
+- ponudice da se fajl otvori preko podrazumevanog programa
+
+To se ne odnosi PDF-ove jer browseri imaju posebne 
+
+
+
+Link za slanje mail-a. Kada se klikne otvara se mail klijent. Moguce je definisati
+i sta ce se automatski popuniti
+
+
+
+"img" element je prazan prazan element. Ima atribut "src" u kojem se navodi
+adresa slike.
+
+"Ukoliko se slika nalazi u okviru vaseg domena onda obavezno koristite relativno
+adresiranje. Ukoliko nije, onda morate korisiti staticu, ali imajute na umu da
+ukoliko taj sajt nije dostupan ili ukoliko ukloni sliku onda se nece videti"
+
+
+"Treba voditi racuna, ukoliko koristite neku sliku, o copyright-u"
+
+
+Pored atributa "src", <img> ima i atribut "alt". U njemu se navodi tekst koji
+ce se prikazati ukoliko slika ne moze da se prikaze. On je takodje koristan
+za ljude koji imaju problema sa vidom. Uredjaji koji se nazivaju screen 
+reader obradjuju html stranu i onda citaju korisnicima sadrzaj. S obzirom
+da slika tom uredjaju nije od velike koristi, atribut "alt" omogucava kreatoru
+sajta da tim korisnicima ukratko opise sadrzaj same slike
+
+
+<img src="slika1.jpg" alt="opis slike u kratkim crtama">
+
+
+<img> moze imati i atribute "width" i "height" kojima se definisu respektivno
+sirina i visina same slike. 
+
+Navodjenjem oba atributa mozemo narusiti odnos/proporciju same slike, docice
+do njene deformacije
+
+Zbog toga se preporucuje koriscenje samo jedne dimenzije, jer ce se druga
+automatski podesiti tako da proporcija ostane ista
+
+
+Ova dva atributa je moguce zameniti atributom "style". Preporucuje se njegovo
+koriscenje jer ukoliko je stil vec negde definisan (npr. u head-u ), a pored toga
+su iskoriscena i ova dva elementa za istu stvar, "style" ce nadjacati njih i onda
+to moze proci neprimeceno
+
+
+Razlika izmedju njih i "styla" je to sto se u "style"-u navode i jedinice, dok
+se u njima ne navode i podrazumeva se da je jedinica pixel (px)
+
+
+Referenciranje slika radi na isti nacin kao i sa ostalim fajlovima
+
+
+
+Slika kao pozadina elementa:
+- pre se koristio atribut "background" ( NE preporucuje se njegovo koriscenje )
+
+
+Slika kao link:
+	<a href="neki_link"><img src="slika1.jp"></a>
+
+
+.asp strana = aktivna strana
+
+asp = Active Server Pages
+
+Generise ih server. "Aktivne stranice server prvo procesira, a onda ih vraca
+kao HTML"
+
+
+
+"I klijent i server mogu da generisu dinamicki sajt"
+
+
+Preporucljiv nacin za postavljanje pozadinske slike je uz pomoc stila
+	<div style="background-image: url('putanja/do/slike.jpg')"
+
+
+
+Stil je moguce definisati i u tagu <style> unutar head-a.
+
+
+Iako je smanjivanje dimenzija slike moguce odraditi pomocu podesavanja dimenzija
+slike, to nije bas pogodno jer "onda to browser skupa placa jer on mora citavu
+originalnu sliku da ucita, pa da onda uradi softverski resize". Zbog toga je
+bolja opcija da se slika prvo smanji na odgovarajucu dimenziju pa da se kao 
+takva samo iskoristi na web strani jer bi se time ubrzalo ucitavanje stranice
+
+
+Ukoliko je slika mala ( u odnosu na dimenzije elementa za cije pozadinu je
+postavljena ) ona ce se ponavljati
+
+Da bi se to ponavljanje sprecilo, koristimo css:
+	background-repeat: no-repeat
+
+
+
+Ranije (pre CCS-a) su se tabele bez vidljivih linija koristile za pozicioniranje 
+elemenata na HTML strani
+
+Danas ih treba isklucivo koristiti za tabelarno prikazivanje podataka. Za
+pozicioniranje se koristi CSS
+
+
+
+Tabela se definise elementom <table>
+
+Tabela se sastoji od vrsta i kolona.
+Vrste se definisu elementom <tr> ( == Table Row )
+
+Vrste se sastoje od polja.
+Polja se definisu sa elementom <td> ( == Table Data )
+
+
+Sadrzaj <td> elementa moze da bude i tabela
+
+
+Ranije se koristio atribut "border" kako bi se devinisala debljina i sama
+vidljivost linja koje cine tablu. Sada treba koristi stil (CSS)
+
+
+<table border="1">
+	<tr>
+		<td>Row 1, cell 1</td>
+		<td>Row 1, cell 2</td>
+	</tr>
+	<tr>
+		<td>Row 2, cell 1</td>
+		<td>Row 2, cell 2</td>
+	</tr>
+</table>
+
+
+Ukoliko se ne definise atribut border ili stil tabele onda okviri tabele
+nece biti vidljivi
+
+
+U tabeli se koristi i element <th> (== Table Heading)
+
+
+U slucaju kada neko polje nema sadrzaj desvalo se da se u nekim pretrazivacima
+iscrta okvir tog polja, dok se u drugim to nije desavalo.
+
+Da bi smo obezbedili njegovo iscrtavanje, u to bolje unosimo no-breaking
+space entitet koji se ne prikazuje.
+
+Sintaksa no-breaking space-a == &nbsp;
+
+On predstavlja "hard" razmak. On se razlikuje od obicnog razmaka. Pretrazivaci
+ignorisu beline nakon prvog pojavljivanja. Ukoliko zelimo da ih navedemo, tj.
+da ih ne ignorise, koristimo no-breaking space
+
+
+Unutar elemenata tabele moguce je koristi atribut "colspan". Njime se
+definise koliko kolona ce obuhvatati dati element
+
+primer:
+	<th colspan="2">Telephone</th>
+
+
+Moguce je takodje i definisati koliko ce vrsta obuhvatati dati element uz
+pomoc atributa "rowspan"
+
+primer:
+	<th rowspan="2">Telephone</th>
+
+
+
+Za bojenje pozadine tabele koristio se atribut "bgcolor". Njegovo koriscenje
+se ne preporucuje! (koristi CSS)
+
+
+primer:
+	<table border="1" bgcolor="red">
+		.
+		.
+		.
+	</table>
+
+
+
+
+
+
+
+
+Stari nacin
+
+<table background="slika1.jpg">
+	.
+	.
+	.
+</table>
+
+-------------------------------------
+
+
+Novi nacin
+
+<table style="background-image: url('slika1.jpg')">
+	.
+	.
+	.
+</table>
+
+
+
+
+CSS za elemente koji se odnose na tabelu:
+	width: procenat%	<-- definise koliko procenat sirine ce tabelazauzimati
+	
+	( ukoliko width postavimo na 100%, tabela ce zauzimati citavu strnu i
+	  uvecavace se sa povecanjem sirine stranice tako da tabela uvek zauzima
+	  celu sirinu stranice )
+
+	border: 1px solid black;	<-- iscrtavanje okvira oko elementa
+
+	(takodje postoje i border-left, border-right, border-top, border-bottom)
+
+	border-collapse: collapse 	<-- spajanje okvira polja i tabele
+
+	padding: 30px	<-- rastojanje izmedju sadrzaja celije i okvira te celije je 30px
+
+	
+	border-spacing: 15px	<-- prostor izmedju okvira (tj. celija)
+
+
+text-align: center; ( moze imati i vrednosti: right, left, justify )
+
+
+"Ako vam treba naslov tabele onda obavezno koristite caption jer ce taj
+captio biti najlakse smesten"
+
+<caption> definise naslov elemenata kao sto su slike, tabele, ...
+
+primer:
+	<table>
+		<caption>Naslov tabele</caption>
+		.
+		.
+		.
+	</table>
+
+
+
+
+
+
+Tabela ima i atribut "cellspacing" kojim se definise rastojanje 
+izmedju celija. Takodje, poseduje i atribut "frame" kojim se definise
+kako ce izgledati ovkir tabele. On moze imati vrenosti:
+- box
+- border
+- above
+- below
+- left
+- right
+
+
+Ova 2 atributa ne treba koristi, oni su se pre koristili (koristiti CSS!!!)
+
+
+
+
+
