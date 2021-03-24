@@ -1,3 +1,5 @@
+# II kolokvijum, 02.12.2017.
+
 #ZADATAK 1 -----------------------------------------------------------
 lista=scan(nmax=10)
 b=which(lista<mean(lista))

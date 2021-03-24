@@ -1,3 +1,5 @@
+# II kolokvijum, 24. decembar 2019.
+
 #ZADATAK 1 -----------------------------------------------------------
 #a
 lista=scan(nmax=20)
