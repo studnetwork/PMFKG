@@ -1,0 +1,216 @@
+================ Vezbe #01 | 23.02.2021. ================
+
+echo "string"
+echo -n "string" //bez \n na kraju
+echo -e "string" //posmatraj i specijalne karaktere (npr. \n)
+
+pwd //print working directory
+
+ls
+ls <path>
+
+ls -l //long list
+ls -a //izlistaj i skrivene fajlove
+
+ls -la //ili -al
+
+ll (ne posotji svuda)
+
+cd //change directory
+cd - //idi na prethodni direktkorijum
+
+./
+../
+
+mkdir <name>
+
+touch <name>
+
+file <filename> //vraca tip fajla
+
+cat <filename> //concatenate
+head -<number> <filename> //prvih ...
+tail -<number> <finename> //poslednjih ...
+
+cp <file> <destionation> //copy
+rm <file> //remove
+mv <file> <destionation> //move
+
+cp -r <dir> //rekurzivno (pune direktorijume)
+rm -r <dir>
+rmdir <dir> //brise prazan direktorijum
+
+* //jocker (bilo sta)
+? //bilo koj jedan karakter
+[a] //karakter a
+[a-z] //karakteri od a do z
+
+find <dir>
+
+which <command> //vraca putanju
+
+whereis <command>
+-b //binary
+-m //man
+
+apropos <command>
+
+alias <al>=<command>
+alias <al>="<command>"
+
+
+
+
+================ Vezbe #02 | 09.03.2021. ================
+
+wc = word count -> broj linija, broj reci, broj karaktera
+args: -c -w -l (character, word, line)
+
+Redirect:
+>> =append
+> =overwrite
+
+Pipeline:
+|
+
+ps = procesi
+top
+
+== Promenljive ==
+* system vars
+* user vars
+    promenljiva traje koliko traje i sesija
+
+Globalna:
+export VAR=value
+unset VAR
+echo $VAR
+
+Lokalna:
+var=value
+unset var
+echo $var
+
+"`com`" - komanda unutar stringa
+
+Oznake:
+$ -promenljiva
+`` -komanda
+"" -string (omogucava upotrebu specijalnih karaktera: ``, $)
+'' -string (specijalne karaktere posmatra kao string: ``, $)
+
+
+== Regex ==
+-E = extended regular expresion (npr: {})
+
+sta:
+. -bilo koj 1 karakter
+[] -jedan od karaktera iz skupa
+
+koliko:
+* -0 ili vise odredjenih karaktera (npr: a*, .*)
+? -0 ili jednom
+{2} -broj puta
+{2,4} -broj puta iz opsega
+{2,} -toliko ili vise puta
+{2+} -toliko ili vise puta
+
+gde:
+^ -pocinje sa
+$ - zavrsava se sa
+
+specijalni:
+() -blok
+| -ili
+\ -za specijalne znakove (escape character)
+
+
+
+
+================ Vezbe #03 | 16.03.2021. ================
+
+popis korisnika: /etc/passwd
+    user:pass(x):uid:gr_id:opis:/home/user:def_shell
+    npr.  uesr1:x:1001:
+
+popis gupa: /etc/group
+    naziv:x:id:user1,user2
+    
+usr sifre - hash: /etc/shadow
+group sifre - hash: /etc/gshadow
+
+------
+
+> ADD/REM
+useradd
+adduser
+deluser
+
+> Info
+who - active users logins
+id - 
+
+
+**** NEDOVRSENO
+
+
+
+
+================ Vezbe #04 | 23.03.2021. ================
+
+     me  gr  other
+-    --- --- ---
+type rwx rwx rwx 
+
+type:
+    l //symlink
+    d //dir
+    - //file
+
+> chmod
+        -x
+        -r
+        -w
+        
+        +x
+        +r
+        +w
+        
+        =rwx
+        
+        u+x //za user-a
+        g+x //za grupu
+        o+x //za other
+        a+x //za all -razlikuje se od obicnog bez a
+        
+        000 // u g o
+        ...
+        777
+        
+Sticky
+        
+suid //set user identification | proces -> nasledjuje prava vlasnika
+sgid //set group identification | proces -> nasledjuje prava grupe
+sticky bit //nekada je sluzio da se proces ne zavrsi nakon zavrsavanja, nego da se zalepi za ram neko vreme
+
+        000 // suid sgid sticky
+        ...
+        111
+        tj. | 0 -> 7
+        
+        7777 -> rwsrwsrwt
+        ^         ^  ^  ^
+        
+        7000 -> --S--S--T
+        ^         ^  ^  ^
+         
+        chmod 
+              u+s
+              g+s
+              +t
+              
+              u+s
+              g+s
+              +t
+              
+
