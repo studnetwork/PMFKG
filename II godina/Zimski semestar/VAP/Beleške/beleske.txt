@@ -1,0 +1,717 @@
+
+##########
+5. termin
+##########
+
+
+
+
+
+
+
+
+
+# c(item1, item2, ...) - funkcija koja pravi vektor od elemenata `item1`, `item2`, ...
+
+# razlika izmedju vektora i liste:
+# ================================
+# vektor ima jedan tip podataka, a liste mogu sadrzati razlicite tipove podataka
+# lista moze sadrzati druge strukture kao elemente(?)
+
+
+
+# seq( from= donja_granica, to= gornja_granica, by= razlima_izmedju_elemenata, length.out= broj_rezultata_koji_ce_se_pojaviti )
+ 
+
+
+
+# matrice su homogene, sadrze jedan tip podataka
+
+
+
+# iz konzole je moguce pretraziti dokumentaciju R-a koriscenjem:
+# ==============================================================
+# 1. komande `?kljucna_rec`
+# 2. komande `help(kljucna_rec)`
+
+
+
+
+
+# Data Frame
+
+
+# vektor vektora              -> matrica
+# lista listi(ili vektora)    -> data frame 
+
+# data frame je "matrica" sa razlictim podacima
+
+
+
+
+# matrica je pogodna za matematicke proracune
+# matrica je osnovna struktura
+# matrica uzima manje memorije od data frame-a ( skoro duplo manja )
+
+
+ 
+# dim(ime_data_framea) - vraca broj kolona i vrsta dataframe-a (tj. dataset-a)
+ 
+ 
+ 
+ 
+# data.frame( item1, item2, item3 ) - kreira data frame sa kolonama `item1`, `item2`, `item3`
+ 
+ 
+ 
+ 
+ 
+# neki_data_frame$naziv_kolone - vraca listu svih vrednosti za kolonu `naziv_kolone`
+ 
+ 
+# neki_data_frame["naziv_kolone"] - vraca dataframe svih vrednosti za kolonu `naziv_kolone`
+
+
+
+
+
+ 
+# neki_data_frame[indeks] - vraca filtrirani dataframe sa kolonom ciji je redni broj jednak `indeks`
+
+# neki_data_frame[, indeks] - vraca vektor (listu) sa vrednostima kolone ciji je redni broj jednak `indeks`
+ 
+# neki_data_frame[indeks, ] - vraca filtrirani dataframe sa redom ciji je redni broj jednak `indeks`
+
+# vrednosti odredjenog reda se ne mogu vratiti u obliku vektora jer vektor sadrzi vrednosti istog tipa, a to ne mora biti slucaj kod podataka nekog data frame reda
+
+ 
+ 
+ 
+ 
+ 
+# names() - vraca nazive svih kolona
+ 
+ 
+ 
+# attributes() - vraca nazive za sve kolone, vrste i naziv tipa date strukture
+ 
+ 
+ 
+# row.names() - vraca nazive svih vrsta
+
+
+
+# read.csv( file= "putanja/do/fajla.csv", header = boolean_vrednost ) 
+# vrednost za `header` zavisi od toga da li fajl ima header
+
+
+
+# head() - ispisuje pocetne podatke
+
+
+
+# tail() - ispisuje podatke sa kraja
+
+
+
+# ime_funkcije = function( par1, par2, par3, ... ) { telo_funkcije }
+
+
+
+
+
+
+##########
+6. termin
+##########
+
+
+
+
+# curve() - koristi se kada nemamo vrednosti za neku promenljivu
+
+# curve( izraz, from=, to= )
+# ( `from` i `to` se odnose samo na x-osu )
+#      ili
+# curve( izraz, xlim=c(gornja_granica, donja_granica), ylim=c(gornja_granica, donja_granica) )
+# moguce je kombinovati ova dva nacina ogranicavanja
+
+# umesto odredjivanja donje i gornje granice pomocu funkcija min() i max(), moze se iskoristiti funkcija range() koja za prosledjenu listu vraca najmanju i najvecu vrednots date liste u obliku vektora
+
+# ?curve - dokumentacija za funkciju curve
+
+# argument `n` ove funkcije omogucava istcrtavanje funkcije koriscenjem samo n tacaka
+
+# argument `add`, ukoliko je postavlje na TRUE, dodaje izraz na poslednji, tj. trenutno aktivni grafik
+
+# argument `col` sluzi za definisanje boje datog izraza (funkcije)
+
+# argumenti `xlab` i `ylab` predstavljaju nazive za labele za x i y osu respektivno
+
+# argument `type` predstavlja tip grafika
+# type='p'    -    tacke
+# type='l'    -    linije
+# type='b'    -    i tacke i linije
+# type='c'    -    prazne tacke povezane linijama
+# type='o'    -    
+# type='s'    -    linija u obliku stepenica ( "S" radi isto )
+# type='h'    -    vertikalne linije nalik na histogram
+# type='n'    -    ne formira ni tacke ni linije
+
+
+
+
+
+# ukoliko se grafik crta uz pomoc nekih unapred definisanih vrednosti koriste se funkcije plot() i lines()
+
+# plot()  -  crta grafik od vrednosti prosledjene liste
+
+# argumenti `type` i `col` imaju istu ulogu kao i istoimeni argumenti funkcije curve()
+
+# moguce je dati naslov i podnaslov grafiku koriscenjem funkcije title()
+# title() ima argumente `main` i `col.main`, gde se prvi odnosi na tekst koji ce biti prikazan kao naslov, a drugi na njegovu boju
+# pored spomenutih argumenata postoje i argumenti `sub` i `col.sub`, gde se prvi odnosi na tekst koji ce biti prikazan kao podnaslov, a drugi na njegovu boju
+
+# ?title - dokumentacija funkcije title ( moze se naci i u dokumentaciji za plot: ?plot
+
+
+# za razliku od curve(), funkcija plot() nema argument slican argumentu `add`.
+# To se moze postici funkcijom lines()
+
+# artument 'pch' funkcije lines() sluzi za definisnanje simbola koji ce predstavljati svaku (svaku (?) ) tacku za datu liniju (funkciju)
+
+# ukoliko argument `ann` funkcije plot() nije postavljen na FALSE, moze doci do preklapanja default-nog naslova sa novim ( iz title() )
+# ako se naslov i podnaslov dodaju odmah unutar funkcije plot(), potrebno je da `ann` bude jedank TRUE
+# ako se ne dodaje unutar plot(), `ann` se postavlja na FALSE i oni se dodaju naknadno funkcijom title()
+
+
+# ?legend - dokumentacija za legendu
+
+
+# legend( x=1, y=14, c("lista", "lista1), col=c("blue","red"), pch=c(12,22) )
+# legenda ce se nalaziti na koordinati (1,14), pojavice se reci "lista" i "lista1" koje respektivno prestavljaju simbol sa brojem 12 obojen plavom bojom i simbol 22 obojen crvenom
+
+
+
+# box() - crta okvir oko grafika
+
+
+# moguce je postaviti i argument `axes` na FALSE. U tom slucaju ose nece postojati
+# ukoliko se ose ne navode pri kreiranju u funkciji plot(), gde je argument `axes` jedank FALSE, one se mogu dodati naknadno funkcijom axis()
+# axis( strana_ose, at = lista_vrednosti_ispod_kojih_se_pojavljuje_crtica_na_osi, labels=lista_stringova_koji_ce_biti_ispisani_ispod_vrednosti )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########
+7. termin
+##########
+
+
+
+
+
+
+
+
+
+
+
+# Tipovi podataka u R-u
+
+
+# Postoje 3 tipa podataka:
+# =========================
+# kategorijski
+# diskretni numericki
+# kontinualni numericki
+
+
+
+# Kategorijski tip podataka podrazumeva podatke koji se mogu podeliti u odredjene kategorije
+
+
+# radi preglednosti, umesto vektora, za predstavljanje ovih podataka koriste se funkcije table() i factor()
+
+
+# tabel(vektor) - predstavlja vrednosti vektora u tabelarnom obliku. Po jedan primerak svake vrednosti predstavlja (kategorise) u kolonama, , a broj njihovih ponavljanja (frekvencije) u prvom redu, na odgovarajucim mestima
+
+
+# factor(vektor) - prikazuje sve kategorije ( nema ponavljanja, uzima se samo jedan primerak vrednosti )
+
+
+
+# barplot( ) - pravi bar diagram za svaki prosledjeni podatak
+
+
+# barplot( table(vektor) ) - pravi bar diagram za svaku kategoriju
+
+
+# barplot( tabela, names = c(ime1, ime2, ime3), col = c('red', 'blue','green'), border = 'black' )
+# pored navedenih postoje jos neki argumenti, neki su vec korisceni kod izrade grafika
+
+# stubici su postavljeni po default-u vertikalno. Ukoliko je potrebno da budu postavleni horizontalno argument `horiz` se postavlja na TRUE
+
+# ukoliko u tabeli ima vise vrsta, one ce predstavljati broj stubica
+
+
+
+# pie( ) - kreiranje kruznog (pie) diagrama
+
+# ako zelimo da promenimo nazive kategorija to mozemo uciniti na sledeci nacin:
+# names( tabela ) = c( kat1, kat2, kat3, ... )
+
+
+# pie( tabel, col( 'red', 'green', 'blue', 'white', ), radius = 1 )
+
+# najveca vrednost za argument `radius` je 1
+
+
+# promena naziva svakog dela diagrama moze se izvrsiti i pomocu argumenta `labels`
+
+
+
+# round() - zaokruzuje neki izraz na ceo broj
+
+# rainbow( broj ) - vraca vektor koji ima prosledjeni broj boja duga ( u obliku stringa )
+
+
+# library( plotrix )
+
+# pie3D() - isto sto i pie() samo sto je diagram prikazan kao 3d objekat 
+
+
+
+
+# diskretni
+
+
+# var - varijansa
+# sd - standardno odstupanje
+
+# Neka je `n` broj podataka.
+# varijansa = ( 1 / ( n - 1 ) ) * sum_{1}^n( (x_i - mean(x) )^2 )
+# standardno odstupanje = ( ( 1 / ( n - 1 ) ) * sum_{i=1}^n( (x_i - mean(x) )^2 )  ) ^ (1/2)
+# tj. = varijansa ^ ( 1/2 )
+
+
+# Kvantil je vrednost ispod koje se nalazi odredjeni procenat podataka
+
+# Specijalni slucaj su kvartili i oni su vrednosti ispod kojih se nalazi 25%, 50% ili 75% podataka
+
+# Kvartil ispod kojeg se nalazi 25% podataka naziva se prvi kvartil
+# Kvartil ispod kojeg se nalazi 50% podataka naziva se drug kvartil ili medijana
+# Kvartil ispod kojeg se nalazi 75% podataka naziva se treci kvartil
+
+
+# Za odredjivanje kvantila ispod koga se nalazi odredjen procenat podataka koristi se funkcija quantile()
+
+
+# quantile( vektor, .p ) 
+
+# primer za 30%: quantile( vektor, .30 ) 
+
+
+
+# summary() - daje kratak opis
+
+# U slucaju da se prosledi vektor vraca informacije o:
+# ====================================================
+# - minimalnoj vrednosti
+# - prvom quvartilu
+# - srednjoj vrednosti
+# - medijani
+# - trecem kvartilu
+# - maksimalnoj vrednosti
+
+
+
+# cut(vektor, breaks=) - za svaku vrednost vraca opseg kojem pripada
+# argument `breaks` moze dobiti samo jedan skalar i u tom slucaju bi se napravilo toliko jednakih opsega
+# ukoliko mu se dodeli vektor tada ce vrednosti tog vektora predstavljati granicne vrednosti opsega
+
+
+
+
+
+# za pregledan prikaz velike kolicine podataka koristi se histogram
+
+# hist( vektor ) - funkcija koja izradjuje histogram
+
+
+# rug( vektor ) - ispod histograma crticom obelezava vrednosti koje se nalaze u datom opsegu
+
+# zbog toga sto se moze dogoditi da se u vektoru nadju iste vrednosti, moze doci do preklapanja crtica
+
+# Kako bi smo imali uvid u to gde je gustina podataka veca, pre koriscenja funkcije rug() potrebno je
+# modifikovati podatke funkcijom jitter()
+
+
+# jitter( vektor ) - neznatno menja vrednosti podataka kako bi se sprecilo preklapanje crtica
+# prilikom koriscenja funkcije rug()
+
+
+# ispravan nacin koriscenja funckije rug():
+
+# rug( jitter( podaci ) )
+
+
+
+
+
+# Boxplot služi da grafički prikaže informacije o skupu koji se analizira: kvartile,
+# interkvartilnu razliku, medijanu, netipične vrednosti, ekstremne vrednosti...
+
+
+# interkvartilna razlika - pravougaonik boxplot-a sadrzi 50% podataka ( IQR )
+
+# njegova leva granica predstavlja prvi kvartil( Q1 ), a desna treci kvartil( Q3 )
+
+# crtice ( "----" ) se prostiru do vecih vertikalnih linija sa leve i desne strane
+# i njihova duzina moze maksimalno biti:
+# =======================================
+# Q1 - 1.5 * IQR           za levu stranu
+# Q3 + 1.5 * IQR           za desnu stranu 
+
+
+# ukoliko postoje neke vrednosti koje prelaze ove dve crte one ce se
+# smatrati netipicnim vrednostima i bice obelezene praznom tackom 
+# nazivaju se outliners
+
+
+# medijana je graficki prikazana vertikalnom linijom unutar bloka ( IQR ) i predstavlja mesto
+# na kome je gustina podataka najveca
+
+
+
+# za prikazivanje i histograma i boxplota na jednom diagramu koristi se funkcija simple.hist.and.boxplot()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########
+8. termin
+##########
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# prop.table( ) - prikazuje podatke po njihovoj frekvenciji na razumljiviji i pregledniji nacin od tabela, tj. table()
+
+# ukoliko se kao argument proslede samo podaci prikazace se frekvencija za svaku vrednost
+
+# ukoliko se navede kao drugi element 1, prikazace se frekvencije po vrstama
+# a ukoliko se navede kao drugi element 2, prikazace se frekvencije po kolonama
+
+
+
+
+
+
+# funkcija barplot() ima i argumente:
+# ====================================
+# - `beside`: boolean vrednost, ukoliko je TRUE stubici se prikazuju jedan do drugog
+
+# - `legend.text`: boolean vrednost, ukoliko je TRUE kreira se legenda sa ozakama za svaku kategoriju
+#                  vektor, ukoliko zelimo da sami odredimo sadrzaj legende
+
+
+# - `y`: drugo mesto u kome je moguce proslediti podatke. Prvo mesto predstavlja `x` argument
+#         ovi arugmenti se obicno ne navode vec im se podaci prosledjuju na osnovu njihove pozicije ( prve i druge )
+
+
+# - `x`: argument predstavlja kategoriju, dok argument `y` predstavlja drugu kategoriju
+
+
+
+
+
+
+
+
+
+
+# ukoliko zelimo da analiziramo zajedno i kontinualne i kategorijske podatke koristimo operator `~` i funkciju boxplot()
+
+
+# operator `~` deli bazu na kategorije i onda za svaku prikazuje raspodelu kontinualnih vrednosti/podataka
+
+# korisi se u boxplot() i lm()
+
+# primer primene:    boxplot( kontinualni ~ kategorijski )
+
+
+
+
+
+
+# kada poredimo dve kontinualne vrednosti moze se dogoditi da rasponi nisu isti. Iz tog razloga potrebo
+# je predstaviti grafike tako da se mogu lako porediti. Za to koristimo funkciju scale()
+
+
+# scale(vektor) - vraca skaliran vektor `vektor` i obliku tabele
+
+# skaliranje vektora se vrsti tako sto se se od svake vrednosti (zasebno) oduzme srednja vrednost pa se nakon toga podeli standardnom devijacijom
+
+
+# nakon koriscenja funkcije scale( vektor ) da bi smo dobili samo vektor sa podacima potrebno
+# je da zatrazimo prvu kolonu na sledeci nacin: scale( vektor )[ , 1 ]
+
+
+
+
+
+
+
+
+
+
+# Gustina raspodele predstavlja verovatnoću da će promenljiva uzeti neku vrednost, i preko
+# nje je moguće vršiti analizu nekog skupa podataka
+
+# pokazuje "koliko su gusto rasporedjeni podaci"
+
+# density( vektor ) - funkcija raspodele gustine vektora `vektor`
+
+
+# vrh funkcije je uvek odredjen medianom i/ili srednjom vrednoscu
+
+
+# "ova funkcija odredjuje verovatnocu da ce promenljiva uzeti neku vrednost"
+
+
+# ako se porede dve funkcije raspodele gustine potrebno je skalirati vektore da bi se
+# resio problem sa razlicitim rasponima. To se postize na sledeci nacin
+# plot( density( scale( vekt1 )[,1] ) )
+# lines( density( scale( vekt2 )[,1] ) )
+
+
+# ukoliko se zakljucak o odstupanju ovog grafickog poredjenja razlikuje od porednjenja
+# samih standardnih devijacija, razlog za to moze biti neki od outlier-a
+
+
+
+
+
+
+
+# analiza podataka se, pored koriscenja funkcije raspodele gustine i boxplot-ova,
+# moze obaviti i pomocu tackastog diagrama ( scatter plot ).
+
+
+# scatter plot je obican default-ni plot ( type = p ) i mozemo ga iscrtati na sledeci nacin
+# plot( vektor )
+
+
+
+# ovim diagramom se "najbolje vidi da li su podaci u linearnoj vezi"
+
+
+
+# koristi se za procenjivanje nekih vrednosti na osnovu informacija o pravoj koja se dobija
+# analizom grafika
+
+
+
+# "x-osa bi trebala da predstavlja nezavisnu promenljivu, a y-osa zavisnu"
+
+
+# regresivni model predstavlja formulu, tj. linearnu funkciju kojom se moze vrsiti
+# predikcija nekih vrednosti na osnovu baze
+
+# lm( zavisna ~ nezavisna ) - funkcija koja se koristi za fitovanje ( pravi regresivni model )
+
+# lm vraca sledecu tabelu:
+# (Intercept)	nazavisna
+#  neka_vred	neka_druga_vred
+
+# formula za izracunavanje: zavisna = nezavisna * neka_druga_vred + neka_vred
+
+
+
+
+# rezidual - odstupanje vrednosti modela od stvarne vrednosti
+
+
+
+
+
+# abline() - funkcija koja iscrtava regresivnu pravu na osnovu povratnih informacija funkcije lm(), tj. regresivnog modela
+
+
+
+# simple.lm(nezavisna, zavisna) - radi sve isto sto radi i lm(), s tim sto ujedno
+#  i iscrtava regresivnu pravu na plot ( nije potrebno koriscenje f-je abline() )
+
+
+# simple.lm() se nalazi u paketu `UsingR`
+
+
+# ima argument `show.residuals` kojim se prekazuju dodatni diagrami vezani za reziduale
+
+
+
+
+
+# coef( regresivni_model ) - vraca formulu
+
+
+
+
+
+# resid() - vraca vektor sa vrednostima reziduala
+
+
+
+
+
+
+# za proveravanje tacnosti aproksimacije, tj. jacine korelacije
+# koriste se pearsenov i spearmanov koeficijent relacije
+
+# domen koeficijenta je [-1,1]
+
+
+# sto vise koeficijent tezi brojevima -1 i 1 to je koleracija jaca
+# sto vise koeficijent tezi broju 0 to je koleracija manja
+
+# tacnije, "Što je apsolutna vrednost koeficijenta korelacije bliža 1, to je regresiona veza jača"
+
+
+# -, tj. negativna korelacija predstavlja obrnutu proporciju, dok pozitivna predstavlja direktnu
+
+
+# "ako raste jedan raste i drugi" - pozitivna korelacija
+# "ako raste jedan drugi opada" - negativna korelacija
+
+
+
+# razlika izmedju pearsonovog i spearmanovog koeficijenta korelacije je u
+# tome sto se kod spearmanovog koeficijenta prvo pronadje rank promenljivih
+# uz pomoc funcije rank(), pa se nakon toga koristi funkcija cor()
+
+
+
+
+# pearsonov koeficijent korelacije
+# cor( var1, var2 )
+
+
+
+
+# spearmanov koeficijent korelacije
+# x = rank( var1 )
+# y = rank( var2 )
+
+# cor( x, y )
+
+# ili samo cor( rank( var1 ), rank( var2 ) )
+
+
+
+# identify( ) - identifikacije odredjene tacke na plot-u i vraca ih u obliku vektora
+
+#  koristi se za dobijanje indeksa netipicnih vrednosti ( outliner-a )
+
+
+
+# identify( nezavisna, zavisna, n = broj_tacaka_koje_ce_se_izabrati )
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########
+9. termin
+##########
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# odredjivanje nekih karakteristika na osnovu grafika
+# ====================================================
+
+
+
+# medijana
+# pozicija se dobija tako sto se saberu se sve frekvencije pa se podele sa 2
+# nakon toga se samo odredi kojem intervalu bi pripadala dobijena pozicija
+
+
+
+# srednja vrednost
+# sabiraju se granice intervala i podele sa 2, nakon toga se svaka pomnozi sa svojom frekvencijom
+# sve te vrednosti se saberu, ta suma se podeli sa ukupnim brojem frekvenicija
+# i time se dobije vrednost priblizna srednjoj vrednosti
+
+
+
+
+
+
