@@ -32,9 +32,9 @@ OSI - nastao 1983
 Postavljeni principi projektovanja:
 1. Treba napraviti novi sloj kada je potrebna nova apstrakcija
 2. Svaki sloj treba da ima jasno definisanu f-ju
-3. Funkciju svakog sloja treba izabrati imajuci u vidu definisanje
-   medjunarodno standardizovanih protokola
-4. Granice protokola treba napraviti tako da se minimizuje protoko
+3. Funkciju svakog sloja treba izabrati imajući u vidu definisanje
+   međunarodno standardizovanih protokola
+4. Granice protokola treba napraviti tako da se minimizuje protok
    informacija
 5. Broj slojeva je balans izmedju jasnih razgranicenja funkcionalnosti
    sa jedne strane i kompleksnosti sa druge strane
@@ -43,8 +43,8 @@ Postavljeni principi projektovanja:
 Pojasnjenje:
 1. "nova apstrakcija je novi pojam, novi entitet"
 2. "jednom recenicom reci sta sloj radi"
-3. "treba imati u vidu ono sto je vec usvojeno kao standard i funkciju 
-   na osnovu toga difinisati defijiciju funkcije"
+3. "treba imati u vidu ono sto je vec usvojeno kao standard i na osnovu
+    toga definisati funkcije"
 4. "izmedju slojeva treba da tece minimalan visak informacija (headeri, trejleri, .. )
 5. "ne treba uvoditi nove slojeve koji ce se koristiti malo ili se nece u opste koristiti"
 
@@ -62,13 +62,13 @@ Slojevi OSI modela:
 3. Mrezni sloj - usmerava paket kroz mrezu
 
    Ukoliko dodje do prekida jedne veze, usmerava paket kroz neku drugu vezu
-   Radi izmedju cvorova koji se nalaze izmedju ta dva racunara koji komuniciraju
-  ( tj, to su racunari preko kojih prolazi paket do onog drugog )
+   Radi izmedju cvorista (racunara) preko kojih prolazi paket od posiljaoca
+   do primaoca
    
 4. Transportni sloj - sluzi za poboljsavanje veze; obezbedjuje kvalitet
    protoka paketa kroz mrezu (?)
 
-   Radi u racunarima koji komuniciraju ( posljaocu i primaocu )
+   Radi u racunarima koji komuniciraju ( deo je OS-a racunara koji treba da posalje/primi paket )
    "On vodi racuna i o tome da i ako se neki paket izgubi, zatrazi da se 
    taj paket ponovo donese"
 
@@ -76,12 +76,12 @@ Slojevi OSI modela:
 
 6. Sloj prezentacije - vodi brigu o semantici
 
-7. Sloj aplikacije - "konkretna primena svega ovaga"; HTTP, email (SMTP),
+7. Sloj aplikacije - "konkretna primena svega ovaga"; HTTP, email (SMTP)
    
 
 Ponavljanje:
-1. Prenos bitoba ( pouzdanost nije bitna )
-2. Pouzdanost 2 entiteta koja su susenda u mrezi. 
+1. Prenos bitova ( pouzdanost nije bitna )
+2. Pouzdanost prenosa izmedju 2 entiteta koja su susenda u mrezi. 
 3. Pravljenje mreze
 4. Vodi racuna o redosledu paketa i kvalitetu usluge koji mrezni sloj pruza
    Nalazi se u okviru OS-a 
@@ -95,8 +95,8 @@ Ponavljanje:
 TCP/IP               OSI
 Link Layer           Data Link Layer + Physical Layer
 Internet Layer       Network Layer
-		    >=Transport Layer<=
-Applicatop Layer     Session Layer + Presentation Layer + Application Layer
+Transport Layer      Transport Layer
+Application Layer    Session Layer + Presentation Layer + Application Layer
 
 
 TCP/IP - prakticni model
@@ -186,12 +186,12 @@ Internet
 
 - Pol Baran 1960. predlozio ideju
 - internet nije mreza, vec skup ogromnog broja razlicitih mreza koje koriste
-  neke iste usluke i protokole
+  neke iste usluge i protokole
 - prvo se zvao ARPANET (advanced research project agency)
 
 
 Do nastanka Web-a, jedina namena internata je bio email, diskusione grupe,
-remote kontorl, razmena fajlova (FTP). "Web je sve promenio"
+remote control, razmena fajlova (FTP). "Web je sve promenio"
 
 
 intranet - interna mreza
@@ -200,7 +200,7 @@ intranet - interna mreza
 virtuelno kolo
 
 ATM ( asynchronous Transfer Mode ) - telefonija
-Ukoliko se prekine veza izmedju dva cvorista kroz kojih je uspostavljena, ona
+Ukoliko se prekine veza izmedju dva cvorista kroz koje je uspostavljena, ona
 se prekida. Ovaj sistem omogucava naplatne usluge. Prednost ovakve mreze
 je to sto je kvalitet veze garantovan. Ima strong redosled okvira
 
@@ -215,8 +215,9 @@ Bezicne mreze - 802.11 ( -a, -b, -n, -ac )
 
 ac se trenutno koristi
 
+Problemi bezicnih mreza:
 
-Problem 1: domet. Ukoliko imamo neka 3 racunara, gde je 2. racunar povezan sa
+Problem 1: domet. Kada imamo neka 3 racunara, gde je 2. racunar povezan sa
 1. i 3. racunarom. Ukoliko 1. salje nesto 2. racunaru, 3. to ne vidi tako da on
 moze da posalje podatke 2. racunaru sto moze dovesti do gubitka podataka
 
@@ -231,11 +232,11 @@ Problem 3: veliki deo softvera nije svestan mobilnosti (nije toliko znacajan jer
 
 Furijeva analiza
 ================
-- rastavljanje sagnala na svoje sasatavne delove
+- rastavljanje sagnala na njegove sasatavne delove
 
 "Svaki signal se moze pretvoriti u zbir sinusoida"
 
-Osnovni signali - harmonici
+Harmonici - osnovni signali (komponente signala)
 
 
 
@@ -244,7 +245,7 @@ bez slabljenja.
 
 Sto je veci propusni opseg medijuma to je kvalitet primljenog signala bolji	
 
- Svaki signal ima odredjenu frekvenciju i amplitudu
+Svaki signal ima odredjenu frekvenciju i amplitudu
 
 
 Sto je duzi kabl, to je njegov propusni opseg manji

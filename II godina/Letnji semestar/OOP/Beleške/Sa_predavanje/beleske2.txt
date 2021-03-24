@@ -17,9 +17,9 @@ koji svaki od tih objekata koristi
 
 
 Posto svaki objekat koristi jedan te isti kod, kompajler ne zna nad kojim
-atributom se vrsi neka operacija jer svaki objekat sadrzi atribut sa istim.
-Iz tog razloga pri pozivu metode kompajler, zajedno sa argumentima
-koje prosledjuje objekat koji svoju metodu poziva, implicitno prosledjuje i
+atributom se vrsi neka operacija jer svaki objekat sadrzi atribut sa istim
+nazivom. Iz tog razloga pri pozivu metode kompajler, zajedno sa argumentima
+koje prosledjuje objekat pri pozivu svoje metode, implicitno prosledjuje i
 referencu tog objekta. Na taj nacin znace se nad cijim atributom treba da se
 izvrse odredjene operacije definisane u tom nekom metodu. Ta referenca se
 naziva this
@@ -29,7 +29,8 @@ this je implicitni parametar koji sadrzi adresu objekta ciji je metod pozvan
 
 
 this ima i jos jednu primenu u drugom kontekstu, a to je pozivanje konstrutora
-iz drugog konstruktora 
+iz drugog konstruktora (pozivaju se za jedan objekat; ne moze konstruktor jednog
+objekta pozivati konstruktor drugog)
 
 Ovo se koristi iz 2 razloga:
 - zbog smanjenja koda
@@ -63,11 +64,15 @@ objekta te klase, za razliku od C# u kome to nije moguce
 !!! Staticki metodi ne dobijaju this
 
 zbog toga nije moguce koristi nestaticke atribute ili metode
-( ukoliko nije prosledjena sama referenca nekog objekta toj statickoj metodi )
+( ukoliko nije prosledjena sama referenca nekog objekta toj statickoj metodi
+kao argument/parametar )
 
 
-
-new Test().x=5;   // ovo je moguce jer se vraca adresa pa se
-				  // preko te adrese pristupa atributu x
-
-
+	.
+	.
+	.
+	new Test().x=5;   // ovo je moguce jer se vraca adresa pa se
+					  // preko te adrese pristupa atributu x
+	.
+	.
+	.

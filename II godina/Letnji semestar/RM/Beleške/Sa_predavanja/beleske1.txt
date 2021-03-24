@@ -107,7 +107,7 @@ Bezicne mreze
 
 Postoje 3 osnovne kategorije bezicnih mreza:
 - mreze za povezivanje sistema (npr bluetooth)
-- bezicne lokalne mreze ( IEEE 802.11 ) -g je do sada bio koriscen, a sada se koristi -ac koji koristi 5Ghz 
+- bezicne lokalne mreze ( IEEE 802.11 ) -n je do sada bio koriscen, a sada se koristi -ac koji koristi 5Ghz 
 - bezicne regionalne mreze ( GPRS/EDGE, UMTS, 5G, IEEE802.16 )
 
 
@@ -130,7 +130,7 @@ Protokol je dogovor izmedju dva entiteta o nacinu na koji treba da tece komunika
 Hijerarhija protokola - osnovna ideja je da se funkcionalnosti rasporede u odredjene slojeve
 
 
-Izmedju svaka dva susenda sloja postoje interfejsi koji predstavljaju nacin na koji oni komuniciraju, tj. koje funkcionalnosti dati sloj obezbedjuje sloju iznad sebe
+Izmedju svaka dva susenda sloja postoje interfejsi koji predstavljaju nacin na koji slojevi komuniciraju, tj. koje funkcionalnosti dati sloj obezbedjuje sloju iznad sebe
 
 
 

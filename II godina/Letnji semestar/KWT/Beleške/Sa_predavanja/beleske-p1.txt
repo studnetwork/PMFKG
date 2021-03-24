@@ -59,7 +59,7 @@ paznju na semantiku. Ono sto je manje poznato je da je Tim BL osnivac i semantic
 izgled vec olaksavanje masini da razume o cemu se radi )
 
 
-Internet je nasao kao rezultat vojnog istrazivanja 50-tih godina 20. veka
+Internet je nastao kao rezultat vojnog istrazivanja 50-tih godina 20. veka
 Cilj je bio stvaranje redudantne mreze otporne na unistenja
 
 
@@ -203,7 +203,7 @@ zadovoljavajuci
 
 Ukoliko testiranje ne prodje kako treba vracamo se na neku od prethodnih faza ( reimplementiramo model, redizajniramo model ili ga odbacujemo )
 
-"Ako testiranje prodje kako treba imamo isporuku"
+"Ako testiranje prodje kako treba, imamo isporuku"
 
 
 Razvoj(Operation) - "To je eksplotacija sistema. Gde se sistem koristi". Dopuna sistema sa novim mogucnostima, funkcionalnostima
@@ -251,7 +251,7 @@ U analizi ucestvuju:
 
 
 
-Uspesnost sajta => dugovecnost
+Uspesnost sajta = dugovecnost
 
 
 "Cim se duze vreme koristi odmah ga treba menjati"
@@ -261,7 +261,7 @@ Dobra pocetna struktura = lako odrzavanje
 dobro projektovanje = dobra pocetka struktura
 
 
-"Nesto sto ima dobru strukturu moze da prihvati i dobre elemente, dok nesto sto nema dobru
+"Nesto sto ima dobru strukturu moze da prihvati i nove elemente, dok nesto sto nema dobru
 strukturu ne moze ni takvo da funkcionise, a kamoli da prihvati nesto novo, nadogradnju
 
 
@@ -271,17 +271,17 @@ Alternativa ovakvom planskom pristupu je ad-hoc, prema potrebi
 "Sajt se napravi u jednom dahu, prema prilici, i tako se najbrze dolazi do pocetnih rezultata,
 ali na taj nacin se najcesce i ostaje na pocetnim rezultatima jer je mala verovatnoca da cemo
 jednim takvim pristupom doci do dobre strukture softvera. I, u takvom slucaju, lakse je od
-pocetka napraviti novu, dobru, strukturu nego staru losu"
+pocetka napraviti novu, dobru, strukturu nego popravljati staru losu"
 
 
 Duzina web strane nije limitirana. Ona moze da bude ogromna (sto nije preporucljivo)
 
 
-Struktura odredju vezu i raspored strana.
+Struktura odredjuje vezu i raspored strana.
 
 
 "Korisnik ne treba da bude svestan [te] fizicke lokacije, cak stavise, ta fizicka struktura
-elemenata treba biti sakrivena od korisnika, ako ni zbog cega drugog odna zbog razloga bezbednosti
+elemenata treba biti sakrivena od korisnika, ako ni zbog cega drugog onda zbog razloga bezbednosti
 
 
 Postoje 3 vrste sajtova:

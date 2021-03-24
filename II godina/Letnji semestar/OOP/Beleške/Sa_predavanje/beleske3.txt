@@ -14,7 +14,7 @@ karakteristike tog tip, ali pored njih imaju i neke svoje, dodatne
 karakteristike (stanja i ponasanja)
 
 
-Svi OOL podrzavaju code reuse - povno upotrebljavanje istog koda
+Svi OOL podrzavaju code reuse - ponovno upotrebljavanje istog koda
 
 
 Ukoliko imamo 2 skupa podataka, prvi sa nekim osobinama i drugu sa tim
@@ -23,11 +23,11 @@ pri modeliranju mozemo da od tih skupova napravimo posebne klase gde
 svaka ima svoj primerak tih istih osobina. Ali, ukoliko podatke
 modeliramo na ovaj nacin moze doci do nekih problema. Jedan od njih je
 npr. situacija kada dodje do izmene tog opsteg tipa, tada tip koji
-je posedovao iste osobine kao taj opsti tip vise nece imati sve osobine
+je posedovao iste osobine kao opsti tip vise nece imati sve osobine
 tog opsteg tipa, vec one osobine koje je opsti tip imao pre izmene.
 
-Na taj nacin bi smo imali 2 klase sa istim informacijama, kod bi se
-ponavljao
+Na taj nacin bi smo takodje imali 2 klase sa istim informacijama,
+kod bi se ponavljao
 
 
 (Nasledjivanje)
@@ -36,7 +36,7 @@ OOL omogucavaju da se definicija jedne klase izvede iz postojece
 
 Definicija nekog tip koji pripada nekom opstem tipu se izvodi tako sto
 se preuzimaju sve osobine opsteg tipa i onda se dodaju samo osobine
-koje ta opsta klasa nema, koje su karakteristicne za taj tip
+koje taj opsti tip nema, one koje su karakteristicne za njega ("uzi" tip)
 
 
 Navode se samo razlike, za sve ostalo se podrazumeva da je nasledjeno
@@ -63,7 +63,7 @@ Potklase mogu dodati neke nove promenljive i metode, ili predefinisati
 one metode koji su nasledjeni
 
 
-Sintaksa u Javi:
+Sintaksa za nasledjivanje u Javi:
 	class B extends A
 	{
 		// telo klase B
@@ -92,20 +92,20 @@ Primer visestrukog:
 	}
 
 Ideja kod ovog nasledjivanja je ista kao i kod samog nasledjivanja, da
-se sve osobine roditelja naslede, ali posto je moguce to izvesti klasu
+se sve osobine roditelja naslede, ali posto je moguce izvesti klasu
 iz vise roditeljskih klasa onda moze doci do nekih konflikata, npr.
-isti podatak mogu da imaju dve razlicite klase i ako neka klasa
-nasledjuje i jednu i drugu imacemo problem sa tim podatkom
+isti atribut mogu da imaju dve razlicite klase i ako neka klasa
+nasledjuje i jednu i drugu imacemo problem sa tim atributom
 
 
 
 OOL jezici koji podrzavaju jednostruko nasledjivanje po definiciji ne
 omogucavaju nasledjivanje sa vise roditelja, ali poseduju neke 
-mehanizme kojima se omogucava nasledjivanje  
+mehanizme kojima se omogucava nasledjivanje i za vise od jedne klase
 
 
 
-U Javi ne postoji klasa (osim klase Object) koja nema roditelja.
+U Javi ne postoji (osim klase Object) klasa koja nema roditelja.
 
 Ukoliko za neku klasu nije navedena roditeljska klasa, podrazumeva se
 da je njena roditeljska klasa Object ( i ona se implicitno dodaje ) 
@@ -136,9 +136,8 @@ izvedenoj klasi definisali konstruktore koji se takodje bave time
 mi bi smo ponavljali kod identican kodu u roditeljskim konstruktorima,
 sto nije u skladu sa konceptom code reuse.
 
-Takodje, morali bi smo da menjamo izvrsimo izmene u svakoj izvedenoj
-klasi koja je nasledila roditeljsku klasu, ukoliko u toj roditeljskoj
-dodje do izmena
+Takodje, morali bi smo da izvrsimo izmene u svakoj izvedenoj klasi koja
+je nasledila roditeljsku klasu, ukoliko u toj roditeljskoj dodje do izmena
 
 
 
@@ -166,29 +165,25 @@ kraj prvog snimka
 
 
 
-Definicija konstruktura iz nadklase je dostupan potklasi.
+Definicija konstruktura iz natklase je dostupna potklasi.
 
 
 Ukoliko neka roditeljska klasa nema definisan default-ni
 konstruktor, a njegova dete-klasa ga zove implicitno (nije naveden super)
-onda ce doci do kompajlerske greske
+ili eksplicitno, onda ce doci do kompajlerske greske
 
 
 
 Izvedena (dete-klasa) mora da pozove jedan od konstruktora svoje
 super klase (roditeljske klase), eksplicitno ili implicitno
-
-
-Sintaksa eksplicitnog poziva roditeljskog konstruktora:
-	super( [argumenti...] );
 	
 	
 Eksplicitni poziv roditeljskog konstruktora MORA da bude prva komanda
 u konstruktoru izvedne klase. Ukoliko se vrsi implicitni poziv,
-to ce svkako biti prva komanda koja ce se uraditi tako da nije bitno
+to ce svkako biti prva komanda koja ce se izvrsiti tako da nije bitno
 sta se nalazi na pocetku ( naravno tu sada postoji mogucnost da se zove 
-neki konstruktor same te klase pa u takvoj situaciji treba paziti na
-to da this bude prva komanda )
+neki konstruktor same te klase pa u takvoj situaciji treba obratiti paznju
+na to da this bude prva komanda )
 
 
 
@@ -204,7 +199,7 @@ pristupanje nasledjenim atributima i metodama:
 
 
 Nasledjeni atributi i metode se zovu isto kao i u roditeljskoj klasi, i
-moguce im je pristupiti jedino preko uz pomoc uz pomoc reci "super".
+moguce im je pristupiti jedino uz pomoc reci "super".
 
 
 Ukoliko samo navedemo ime atributa koji se nalazi i u roditeljskoj i u
@@ -226,8 +221,8 @@ Pri definisanju metoda moguce je koristi kljucnu rec final. Na taj naci bi
 smo oznacili da taj metod ne sme da se izmeni (prepise) ( override-uje )
 
 
-Ukoliko se koristi ispred varijable, oznacava da je ta varijabla moze da 
-dobije vrednost samo jednom. Na taj nacin definismo konstante
+Ukoliko se koristi ispred varijable, oznacava da ta varijabla moze dobiti
+vrednost samo jednom. Na taj nacin definismo konstante
 
 
 Ukoliko se koristi ispred klase, oznacava da ta klasa ne moze biti nasledjena
@@ -248,9 +243,8 @@ da dobije vrednost bilo kada, ali to moze da se uradi samo jednom
 
 
 
-Ukoliko ispred reference nekog objekta stoji kljucna rec final, mi mozemo da 
-menjamo atribute tog objekat. To mozemo da uradimo zato sto se ne menja sadrzaj
-same promenljive, sto je referenca/adresa tog objektam, vec sadrzaj nekog
-njegovog atributa. Referenca ce biti ista iako promenimo nesto u objektu koji
-ona referencira
+Ukoliko je referenca nekog objekta definisana kao final, mi mozemo da menjamo
+atribute tog objekat. To mozemo da uradimo zato sto se ne menja sadrzaj same
+promenljive, sto je referenca/adresa tog objektam, vec sadrzaj nekog njegovog
+atributa. Referenca ce biti ista iako promenimo nesto u objektu koji ona referencira
 

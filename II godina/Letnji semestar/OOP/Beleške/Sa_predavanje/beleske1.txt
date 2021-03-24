@@ -27,8 +27,8 @@ Osnovna ideja na kojoj se bazira OOP je Abstract Data Type (ADT)
 Kreiranje ADT-a se vrsi na sledeci nacin:
 1. umesto strukture podataka definisemo tip podataka
 
-			    data abstraction
-	struktura podataka ------------------> tip podatka
+	                    data abstraction
+    struktura podataka ------------------> tip podatka
 
 2. krijemo podatke koji za korisnika nisu bitni ( information hiding )
 
@@ -114,7 +114,7 @@ razlicit potpis
 
 Podrazumevni tip za decimalni broj je double. Ukoliko zelimo da literal
 bude float tip-a onda moramo da na kraj tog literala napisemo slovo f, kako
-bi smo kompajleru nazlacili da se radi o float podatku.
+bi smo kompajleru naznacili da se radi o float podatku.
 
 
 (za overloading)

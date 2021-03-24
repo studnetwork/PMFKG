@@ -228,7 +228,7 @@ Atributi cija se upotreba ne preporucuje:
 
 
 
-Font-ovi iz familije fontova courier su neproporcionalni font. Slova 
+Font-ovi iz familije fontova courier su neproporcionalni font-ovi. Slova 
 imaju istu sirinu nezavisno od toga koliko im je potrebno
 Primer: i i w
 
