@@ -1,0 +1,421 @@
+Datum odrzavanja: 09.03.2021.
+Predavac: Miloš Ivanović
+Cas: 3
+=====================================
+
+Fizicki medijumi za prenos podataka:
+- upredena parica
+- koaksijalni kabl
+- opticki kabl
+
+
+Upredena parica (twisted pair)
+------------------------------
+
+Upredena parica kao sto joj samo ime kaze predstavlja kabl u kome su zice,
+svaka obavijena izolatoro, upredene jedne oko drugih. Postoji vise takvih parova
+u okviru samo kabla.
+
+
+Provodnici su upredeni za sto bi u slucaju da se postavljene paralelno doslo
+do stvaranja magnetnog polja. To utice na druge parove provodnika, a i na sam
+taj par, tako sto indukuje struju i time stvara dodatni sum
+
+
+Kako bi se to izbeglo, ti provodnici se uredaju kako bi se ta magnetna polja 
+ponistila i time smanjio sum
+
+
+Danas se koriste sledeci tipovi upredenih parica:
+- UTP-3 (unshielded twisted pair; 16MHz)
+- UTP-5 (100MHz)
+- Cat 5 (250MHz)
+- Cat 6 (600MHz)
+
+
+Unshielded znaci da nije oklopljena, da nema metalni oklop
+
+Cat == Category ( upradena parica kategorije x )
+
+Sto je kategorija veca, to su su ti provodnici gusce upredeni, pa je samim tim
+i kabl deblji
+
+
+
+Koriste se u telefoniji i za lokalne mreze
+
+
+Krim kljesta sluze za postavljanje prikljucaka na krajevima kabla
+
+
+
+
+
+Koaksijalni kabl
+----------------
+
+Koristi se za kablovsku televiziju i antenske sisteme.
+
+
+Postoje 2 brste:
+* 50-omski
+* 75-omski
+
+
+Propusni opseg je oko 1GHz ( 10 puta bolji do UTP-5, sto se tice propusnog opsega )
+
+Njegova prednost u odnosu na UTP je posedovanje oklopa.
+
+Bakarna zica je obavijena izolatorom, pa oko nje bakarnu mrezicu i nakon toga opet
+izolator
+
+
+Bakarna mrezica stvara Faradejev kavez. Na taj nacin se sprecava da spoljasnja
+magnetna polja naprave smetnju i sum.
+
+
+
+Opticko vlakno
+--------------
+
+atenuacija - slabljenje signala i njegovo rasipanje
+
+
+Doslo je do revolucije u telekomunikaciji pojavom optickog vlakna.
+
+
+Racunari su se ubrzali u periodu od 1981. do 2013. godine 600 puta. Za to vreme
+mreze su se ubrzale sa 56 kbps do 273 Gbit/s, tj. 5 miliona puta
+
+
+Refrakcija - prelamanje
+
+Refleksija - odbijanje zraka
+
+
+Kada se predje odredjeni ugao upada svetlost iz gusce u redju sredinu, desava se da
+se svetlos odbije i vrati u tu guscu sredinu.
+
+
+Postoje jednorezimsko i viserezimsko vlakno
+
+
+Kod jednorezimskog prolazi jedan zrak, dok kod viserezimskog se moze propustati
+vise zraka istovremeno pod razlicitim uglom
+
+
+Opticko vlakno se sastoji od jezgra koje je stakleno, to staklo mora da bude veoma
+cisto i oko toga se nalazi izolacija, omot
+
+
+Viserezimska vlakna su deblja od jednorezimskih.
+
+
+Koriste se za razlicite namene
+
+
+
+"Atenuacija je slabljenje zraka svelosti u optickom vlaknu"
+
+
+Moze se izraziti kao:
+
+Atenuacija[dB] = 10 * log_10 ( propustenaSnaga / ulaznaSnaga )
+
+
+
+
+
+Poredjenje optickog vlakna i bakarne zice
+------------------------------------------
+
+Repetitor - uredjaj koji radi u fizickom sloju, samo pojacava signal koji primi i
+            salje ga dalje
+
+1.
+Zbog male atenuacije optickog vlakna, repetitori se postavljaju na svakih 50km, dok
+se kod bakarne zice oni moraju postavljati na svaka 5km
+
+Danas se postavljaju repetitori i na 100km (opticko vlakno)
+
+
+2. opticka vlakna su neosetljiva (otporna) na naponske udare
+
+
+3. opticka vlakna su tanka i laka 
+( 1000 upredenih parica ima masu 8t, dok 2 vlakna imaju masu od 100kg, a mnogo
+veci kapacitet )
+
+
+4. Opticka vlakna su sigurnija. Ukoliko se preko bakarne zice salje signal koji
+nije kriptovan(npr. HTTP), moguce je prisluskivanje tako sto se postavi solenoid oko
+kabla i onda moze da se snimi ono sto prolazi kroz taj kabl
+
+
+
+Mane optickog vlakna:
+- osetljivost ( ako se prekine moze da se nastavi, ali dolazi do velikog slabljenja)
+- cena opreme
+
+
+
+
+
+Bezicni prenos podataka - elektromagnetni spektar
+-------------------------------------------------
+
+
+radio talasi	~	10^4  -  10^8
+mikro talasi	~	10^8  -  10^10 ( mikrotalasna, wifi, mobilni telefon, ... )
+infrared	~	10^12 -  10^14 ( nevidljivi; daljinski upravljac, ... )
+vidljiva svetl. ~	400-700 nm ( deo se koristi za opticka vlakna )
+UV		~	10^15 -  10^16 ( deo se koristi u optickim vlaknima )
+X-ray		~	10^16 -  10^22 ( jonizujuce zracenje; ne koristi se )
+Gamma ray	~	10^22 -        ( jonizujuce zracenje; ne koristi se )
+
+
+Veza talasne duzine i frekvencije:
+talasnaDuzina*frekvencija = brzinaSvetlosti
+
+
+
+Radio talasi
+------------
+
+100-200MHz
+
+Nize frekvencije (AM):
+VLF (very low frequency)
+LF  (low frequency)
+MF  (medium frequency)
+
+
+Vise frekvencije:
+HF  (high frequency)
+VHF (very high frequency)
+UHF (ultra high frequency)
+
+
+Radio-talasi sa visim frekvencijama pocinju da podsecaju na svetlost,
+prostiru se pravolinijski
+
+
+Zbog toga je potrebna "opticka vidljivost" prema predajniku kako bi
+signal mogao da se primi
+
+
+
+
+Nize frekvencije se odbijaju od jonosfere, mogu da se savijaju preko reljefa
+jer imaju talasnu duzinu od nekoliko desetina metara.
+
+
+
+
+Radio-talasi nisu pogodni za prenos podataka zbog toga sto su njihove
+frekvencije male, propusni opseg je veoma mali i ima dosta smetnji u
+radio difuziji.
+
+
+
+Mikrotalasi
+===========
+
+Talasi sa frekvencijom iznad 100MHz se skoro prostiru pravilonijski, 
+pocinju da lice na svetlnost. Ne mogu da se savijaju na reljefu, vec je
+potrebna opticka vidljivost izmedju predajnika.
+
+
+
+Ranije su se koristili za telekomunikacije, npr. za 2 telekomunikacione
+centrale.
+
+
+Zbog toga sto bi bilo dosta skuplje da se centrale povezu preko koaksijalnog
+kabla ( telekomunikaciona kompanija bi morala da plati pravo na prolaz kroz
+zemljiste svakom vlasniku kroz cije zemljiste kabl prolazi ), komunikacija
+centrala je obavljana mikrotalasima, postavljanjem tornjema visine od 100m
+na svakih 80km.
+
+
+
+Problemi:
+1. Multipath fading (slabljenje zbog razlicitih putanja; zbog odbijanja)
+2. Talase ~ 4GHz (talasna duzina oko 1cm) apsorbuje kisa, zato sto objekti
+   slicnih dimenzija kao sto je talansa duzina signala mogu da apsorbuju
+   taj singal
+3. Ponestalo je slobodnih frekvencija (3 algoritma za izbog) 
+
+   a) izbor za miss
+   b) algoritam slucajnog izbora
+   c) "para vrti gde burgija nece" - ko najvise ponudi, on dobija
+
+
+
+
+Infracrveni i milimentarski talasi
+-----------------------------------
+
+Koriste se u vrlo ogranicenom domenu za prenos podataka
+
+
+Ponasaju se kao svetlost, samo sto se ne vide
+
+
+Imaju mali domet i lose prolaze kroz prepreke
+
+
+
+Prenos podataka vidljivom svetloscu
+-----------------------------------
+
+Koristi se kod optickih vlakana
+
+
+Mozese koristi za prenos podatak i bez optickog vlakna pomocu lasera i 
+fotodetektora. Potrebna je opticka vidljivost. Mane:
+- mora dobro da se fokusira
+- smetnje (atmosferske struje; toplota ga deformise)
+
+
+Komunikacioni sateliti
+
+Koristi se za interkontinentalni saobracaj (telefonski npr.) i televiziju
+decenijama
+
+
+Prvi telekomunikacioni satelit Telstar, 1962. god.
+
+
+Komunikacioni sateliti mogu pokriti vece povrsine zato sto imaju vecu
+opticku vidljivost
+
+
+Satelit obicno radi kao repetitor, primi signal, pojaca ga i onda ga posalje
+(sastoje se od tanspondera, gde je svaki zaduzen za odredjeni deo EM spektra)
+
+
+
+Satelit moze da emituje u sirokom snopu ili strogo fokusiranom 
+(rezim savijene cevi - bent pipe)
+
+
+
+Johan Kepler - III Keplerov zakon:
+Period obilaska je proporcionalan poluprecniku orbite na stepen 3/2
+
+T ~ R^(3/2)
+
+
+--
+
+LEO (Low Earth Orbit)
+250-2000km
+Obilazak oko zemlje u ovoj orbiti traje oko 90min
+Latencija = 1-7ms
+
+Nakon ove orbite nalazi se (nizi) Van Allen-ov pojas koji je veoma opasan.
+Sastoji se od naelektrisanih cestica. To dovodi do kvara opereme pa se zbog
+toga u tom pojasu ne postavljaju sateliti
+
+U njoj se nalazi medjunarodna svemirska stanica na 400km iznad Zemljine povrsine
+
+--
+
+MEO (Medium Earth Orbit)
+2000-35786
+35-85ms
+
+Iznad MEO nalazi se visi Van Allen-ov pojas koji takodje sadrzi naelektrisane
+cestice
+
+Dovoljna su 10 satelita u MEO da bi se pokrila cela zemlja. 
+
+U ovoj orbiti se nalaze navigacioni satelitski sitemi, GPS i GLONASS
+Procesom triangulacije omogucavaju da se za svaku tacku na Zemlji odredimo
+koordinate i nadmorsku visinu
+
+--
+
+Latencija = 270ms
+
+Iznad gornjeg Van Allen-ovog pojasa malazi se GEO (Geostationary Equatorial Orbit; "geostacionarna orbita")
+
+GEO je karakteristican po tome sto na visini od 35800km period obilaska
+oko zemlje je jedan dan, sto znaci da sa Zemlje izgleda kao da stoji
+
+
+Ova orbita je danas prilicno zagadjena. Dovoljna su samo 3 satelita u ovoj
+orbiti da bi se pokrila citava zemlja.
+
+
+
+
+
+Poredjenje satelitskih i optickih veza
+--------------------------------------
+
+- GEO sateliti imaju kasnjenje signala od 250-300ms
+
+- Jedno opticko vlakno ima vecu propusnu od svih ikada lansiranih satelita.
+Razlog za to je pre svega to sto sateliti koriste bezicni prenos. 
+
+
+- Sateliti su bolji kod difuznog emitovanja.
+
+Sateliti su za televiziju dobri zato sto se signal prenosi samo u jendom smeru
+
+
+- sateliti su bolja opcija na ruralnom i negostoljubivom terenu
+
+
+- sateliti su pogodni u situacijama kada komunikacioni sistem treba da se
+uspostavi veoma brzo ( npr. u ratu )
+
+
+
+
+
+
+Javna komutirana telefonska mreza
+---------------------------------
+
+Postoji od 1876., kada je Aleksander Grejm Bel patentirao telefon
+
+
+"Taj njegov telefon je odmah bio prihvacen ne samo zato sto je bio
+naucnih vec i biznismen, pa je odmah otvorio svoju kompaniju 
+Bell Labs, koja je bila prva telefonska kompanija"
+
+Ta njegova telefonska mreza je bila organizovan tako sto je 
+postojala centrala koja je korisnika usmeravala ka drugom korisniku.
+Preko nje je isla sva komunikacija na mrezi. 
+
+Bel je tokom svog zivota uspeo da napravi i drugi tip mreze, gde
+umesto jedne glavne centrale postoji vise takvih centrala, a one
+su povezane sa manjim centralama na koje su povezani korisnici.
+
+Danas telefonska mreza isto tako izgleda. Izmedju glavnih centrala
+je optika veceg kapaciteta, izmejdu glavih centrala i manjih centrala
+je optika manjeg kapaciteta, a izmedju te manje centrale i korisnika
+je upredena parica
+
+
+Sve centrale su digitalne. Svaki analogni signal se pretvara u digitalni
+tako sto se u vremenskim odeljcima sempluje jacina signala i predstavlja
+serijom bitova. To se zove kodiranje
+( to se desava u centralama na koje su povezani korisnici )
+
+
+
+Modem - pretvara analogni signal u digitalni, i obrnuto
+
+
+Digitalni signal se ne prenosi od korisnika do centrale, jer
+nije jednostavno preneti digitalni signal, potrebno je dosta harmonika,
+sto za medijum sa manjim propusnim opsegom kao sto je upredena parica
+nije pogodno
+
+
+
+
