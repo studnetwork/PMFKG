@@ -158,6 +158,8 @@ id -
 
 ================ Vezbe #04 | 23.03.2021. ================
 
+> Permisije:
+
      me  gr  other
 -    --- --- ---
 type rwx rwx rwx 
@@ -187,8 +189,8 @@ type:
         ...
         777
         
-Sticky
-        
+> Specijalne permisije:
+
 suid //set user identification | proces -> nasledjuje prava vlasnika
 sgid //set group identification | proces -> nasledjuje prava grupe
 sticky bit //nekada je sluzio da se proces ne zavrsi nakon zavrsavanja, nego da se zalepi za ram neko vreme
