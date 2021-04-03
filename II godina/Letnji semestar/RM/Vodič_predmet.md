@@ -6,6 +6,9 @@ Rešenja kolokvijuma raspoređena po godinama
 
 [//]: #([Link ka folderu Kolokvijumi][kolokvijumi] )
 
+[Teorijska pitanja sa 1. i 2. termina][kviz]
+
+
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, kao i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
@@ -44,6 +47,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [//]: # (---------------------------------------------------------)
 
 
+[kviz]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=560#RM
 
 [kolokvijumi]: ./Kolokvijumi
 

@@ -3,7 +3,8 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-[2. čas : rešenja primera][v-fajl-1]
+[1. čas : rešenja primera][v-fajl-1]  
+[2. čas : rešenja primera][v-fajl-2]
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -58,8 +59,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-fajl-1]: ./v_2_resenja_primera.txt
-
+[v-fajl-1]: ./v_1_resenja_primera.md
+[v-fajl-2]: ./v_2_resenja_primera.txt
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
@@ -137,7 +138,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Ostalo reference )
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=35
 
 
 
