@@ -167,7 +167,7 @@ osnovne funkcije - primitive
 
 Referentni modeli
 -----------------
-- OSI ( open standard interconnect )
+- OSI ( open systems interconnection )
 - TCP/IP ( prvo je on nastao )
 
 

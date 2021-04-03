@@ -13,7 +13,7 @@ Upredena parica (twisted pair)
 ------------------------------
 
 Upredena parica kao sto joj samo ime kaze predstavlja kabl u kome su zice,
-svaka obavijena izolatoro, upredene jedne oko drugih. Postoji vise takvih parova
+svaka obavijena izolatorom, upredene jedne oko drugih. Postoji vise takvih parova
 u okviru samo kabla.
 
 
@@ -37,7 +37,7 @@ Unshielded znaci da nije oklopljena, da nema metalni oklop
 
 Cat == Category ( upradena parica kategorije x )
 
-Sto je kategorija veca, to su su ti provodnici gusce upredeni, pa je samim tim
+Sto je kategorija veca, to su ti provodnici gusce upredeni, pa je samim tim
 i kabl deblji
 
 
@@ -57,7 +57,7 @@ Koaksijalni kabl
 Koristi se za kablovsku televiziju i antenske sisteme.
 
 
-Postoje 2 brste:
+Postoje 2 vrste:
 * 50-omski
 * 75-omski
 
@@ -66,8 +66,8 @@ Propusni opseg je oko 1GHz ( 10 puta bolji do UTP-5, sto se tice propusnog opseg
 
 Njegova prednost u odnosu na UTP je posedovanje oklopa.
 
-Bakarna zica je obavijena izolatorom, pa oko nje bakarnu mrezicu i nakon toga opet
-izolator
+Bakarna zica je obavijena izolatorom, pa oko nje bakarna mrezica i nakon je sve to
+opet obavijeno izolatorom
 
 
 Bakarna mrezica stvara Faradejev kavez. Na taj nacin se sprecava da spoljasnja
@@ -154,7 +154,7 @@ kabla i onda moze da se snimi ono sto prolazi kroz taj kabl
 
 
 Mane optickog vlakna:
-- osetljivost ( ako se prekine moze da se nastavi, ali dolazi do velikog slabljenja)
+- neotpornost na savijanje ( ako se prekine moze da se nastavi, ali dolazi do velikog slabljenja)
 - cena opreme
 
 
@@ -357,7 +357,7 @@ Poredjenje satelitskih i optickih veza
 
 - GEO sateliti imaju kasnjenje signala od 250-300ms
 
-- Jedno opticko vlakno ima vecu propusnu od svih ikada lansiranih satelita.
+- Jedno opticko vlakno ima vecu propusnu moc od svih ikada lansiranih satelita.
 Razlog za to je pre svega to sto sateliti koriste bezicni prenos. 
 
 
@@ -384,7 +384,7 @@ Postoji od 1876., kada je Aleksander Grejm Bel patentirao telefon
 
 
 "Taj njegov telefon je odmah bio prihvacen ne samo zato sto je bio
-naucnih vec i biznismen, pa je odmah otvorio svoju kompaniju 
+naucnik vec i biznismen, pa je odmah otvorio svoju kompaniju 
 Bell Labs, koja je bila prva telefonska kompanija"
 
 Ta njegova telefonska mreza je bila organizovan tako sto je 
@@ -396,7 +396,7 @@ umesto jedne glavne centrale postoji vise takvih centrala, a one
 su povezane sa manjim centralama na koje su povezani korisnici.
 
 Danas telefonska mreza isto tako izgleda. Izmedju glavnih centrala
-je optika veceg kapaciteta, izmejdu glavih centrala i manjih centrala
+je optika veceg kapaciteta, izmedju glavih centrala i manjih centrala
 je optika manjeg kapaciteta, a izmedju te manje centrale i korisnika
 je upredena parica
 
