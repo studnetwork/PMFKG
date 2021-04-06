@@ -2,9 +2,11 @@
 U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 
 ## Kolokvijumi
-Rešenja kolokvijuma raspoređena po godinama
+Rešenja kolokvijuma 
 
-[//]: #([Link ka folderu Kolokvijumi][kolokvijumi] )
+[//]: #(raspoređena po godinama)
+
+[Link ka folderu Kolokvijumi][kolokvijumi]
 
 [Teorijska pitanja sa 1. i 2. termina][kviz]
 
