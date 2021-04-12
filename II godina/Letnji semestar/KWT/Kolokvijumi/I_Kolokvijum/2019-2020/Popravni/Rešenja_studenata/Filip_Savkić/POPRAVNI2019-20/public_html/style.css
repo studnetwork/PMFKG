@@ -1,0 +1,164 @@
+body
+{
+    width:940px;
+    margin:0 auto;
+    background-image: url("images/background.jpg");
+}
+h1
+{
+    margin:10px 0px;
+    letter-spacing: -2px;
+    color:white;
+    font: normal 300% 'News Cycle', Arial, sans-serif;
+    text-shadow:2px 2px gray;
+}
+h1>span
+{
+    color:cornflowerblue;
+    text-shadow:0px 0px;
+}
+h2
+{
+    margin:0px 0px 20px 0px;
+    letter-spacing: -2px;
+    color:white;
+    font: normal 195% 'News Cycle', Arial, sans-serif;
+    text-shadow:2px 2px gray;
+}
+#meni
+{
+    background-image: url("images/transparent.png");
+    border-radius: 10px;
+    margin-bottom:20px;
+}
+ul
+{
+    background-color: #7380A0;
+    border-radius:5px 5px 0px 0px;
+    overflow: hidden;
+    list-style-type: none;
+    margin:0;
+    padding:5px 10px;
+}
+li
+{
+    float:left;
+}
+li a
+{
+    display:block;
+    text-align:center;
+    font: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    font-weight:bold;
+    color:white;
+    text-decoration: none;
+    margin:0px 20px;
+}
+a
+{
+    padding:5px 15px;
+    border-radius:5px;
+}
+a:hover
+{
+    background-color: #0043A8;
+}
+.active
+{
+    background-color: #0043A8;
+}
+#slika1
+{
+    margin:15px;
+    width:96.5%;
+    object-fit:cover;
+}
+#naslov
+{
+    float:left;
+    margin:0 15px;
+    position:absolute;
+    font-size:150%;
+    font: 'News Cycle',Arial, Helvetica, sans-serif;
+}
+#a
+{
+    position: relative;
+    height:auto;
+}
+#slika2
+{
+    float:left;
+    width:120px;
+    height:120px;
+    margin: 0px 25px;
+    opacity: 0.50;
+}
+#t1
+{
+    position: justify;
+    padding-top:30px;
+    margin-right: 25px;
+    font: normal, 13px ,Arial, Helvetica, sans-serif;
+}
+table,th,td
+{
+    border:black 2px solid;
+    border-collapse: collapse;
+}
+table,#red
+{
+    border:0px;
+}
+table
+{
+    display:inline-block;
+    float:left;
+    margin-left:25px;
+    margin-top:0px;
+}
+td,th
+{
+    padding:5px 10px;
+    text-align: center;
+}
+#prazno
+{
+    border:0px;
+}
+#t2
+{
+    margin-top:85px;
+    margin-right: 25px;
+    padding-left:370px;
+    font: normal, 13px ,Arial, Helvetica, sans-serif;
+}
+#blok2
+{
+    margin-bottom:50px;
+}
+.box
+{
+    display:inline-block;
+    border:1px solid gray;
+    border-radius:10px;
+    width:300px;
+}
+
+.dugme
+{
+    margin:5px;
+    background-color: blue;
+    color:white;
+    text-align:center;
+    padding:5px;
+    border-radius:10px;
+}
+#footer
+{
+    text-align:center;
+    background-image: url("images/transparent.png");
+    border-radius: 10px;
+    padding:5px 50px 30px;
+}

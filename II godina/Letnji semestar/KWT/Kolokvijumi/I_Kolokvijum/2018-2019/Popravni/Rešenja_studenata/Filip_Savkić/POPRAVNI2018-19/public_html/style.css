@@ -1,0 +1,169 @@
+#wrapper
+{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+    background-image:url("images/siteBacground.png");
+}
+#meni h1
+{
+    
+    color:gray;
+    font-family: "Arvo",serif;
+    padding:5px 0px 0px 10px;
+}
+#meni h1>span
+{
+    color:#D01818;
+}
+#meni
+{
+    margin:0 10px 2px 20px;
+}
+#meni .navbar
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-image: url("images/menuBackground.jpg");
+}
+#meni .navbar li
+{
+    float: left;
+    font-size:14px;
+    font-family: "Arvo",serif;
+}
+#meni .navbar li a
+{
+    display:block;
+    padding:10px 20px;
+    color:gray;
+    text-decoration:none;
+}
+#meni .navbar .activated a
+{
+    background-image: url("images/menuActive.jpg");
+    color:white;
+}
+#meni .navbar li a:hover
+{
+    background-image: url("images/menuActive.jpg");
+    color:gray;
+}
+#meni .navbar li a:active
+{
+    background-image: url("images/menuActive.jpg");
+    color:white;
+}
+#content
+{
+    margin:0 10px 2px 40px;
+}
+#content-box
+{
+    background-color: #E9E9E9;
+    margin:0 0px 2px -20px;
+}
+#content-box .kol1
+{
+    color:gray;
+    width:250px;
+    display: inline-block;
+    text-align:justify;
+    padding:0 0 20px 40px;
+}
+#naslov
+{
+    font-family: "Arvo",serif;
+    color:#D01818;
+    font-size:25px;
+    font-weight:900;
+}
+.kol1>p
+{
+    font-family: "Arvo",serif;
+    font-size: 14px;
+}
+.kol1>.dugme
+{
+    margin-left:20px;
+    padding:7px 10px;
+    background-color:red;
+    color:white;
+    border:none;
+}
+#content #podnaslov
+{
+    color:#D01818;
+    font-weight:bolder;
+}
+#content #txt1
+{
+    text-align:justify;
+    margin-top:25px;
+    width:510px;
+    font-family: "Arvo",serif;
+    color:gray;
+    font-size: 14px;
+}
+#content img
+{
+    float:left;
+    margin:0 30px 35px 10px;
+    width:140px;
+}
+#content .kol2
+{
+    width:210px;
+    text-align:justify;
+    display:inline-block;
+    vertical-align: top;
+    color:gray;
+    margin:0 20px 20px 0;
+    font-family: "Arvo",serif;
+    font-size: 14px;
+}
+.content-parttwo
+{
+    float:left;
+    margin-right:10px;
+}
+.content-parttwo #podnaslov2
+{
+    color:#D01818;
+    font-weight:bolder;
+    position:relative;
+    left:23px;
+}
+.content-parttwo .linkovi
+{
+    list-style-image: url("images/p.png");
+    line-height:30px;
+}
+.content-parttwo .linkovi li
+{
+    font-size:14px;
+    font-family: "Arvo",serif;
+}
+.content-parttwo .linkovi li a
+{
+    color:#008BCE;
+    text-decoration:none;
+}
+.clear
+{
+    clear:both;
+}
+#footer
+{
+    padding:30px 50px;
+    color:gray;
+    border-top:1px solid #E9E9E9;
+}
+#footer>a
+{
+    color:#008BCE;
+}
+
+

@@ -1,0 +1,160 @@
+body
+{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#header
+{
+    background-image: url("images/tooplate_header.jpg");
+    background-repeat:no-repeat;
+    padding:10px 50px;
+}
+#header .navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top:22px;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+  font-size:13px;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  color:red;
+}
+
+.navbar li a:hover {
+  background-color: red;
+  color:white;
+}
+.navbar .activated a
+{
+    background-color: red;
+    color:white;
+}
+#header h1
+{
+    font-family: "Lucida Bright", sans-serif;
+    font-size:34px;
+    color:#eebc25;
+    font-weight:normal;
+    margin-bottom:0;
+}
+#header h2
+{
+    font-family: "Lucida Bright", sans-serif;
+    font-weight:normal;
+    color:white;
+    font-size:18px;
+    margin-top:0;
+    font-style:italic;
+}
+#header .lista
+{
+    display:inline-block;
+    list-style-image:url("images/tooplate_list.png");
+    color:#eebc25;
+    margin:10px 30px 60px 0px;
+    line-height: 30px;
+    font-size:14px;
+}
+#telo
+{
+    margin:0;
+    padding:30px 20px;
+    background-color:#ccc;
+}
+#telo table
+{
+    position:relative;
+    left:10px;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+#telo th
+{
+    background-color: #333;
+    padding:5px 80px 5px 0px;
+    text-align: center;
+    color:white;
+}
+#telo .sivo
+{
+    background-color: #ccc;
+}
+#telo tr
+{
+    background-color: white;
+}
+#telo td
+{
+    padding:5px 80px 5px 0px;
+    text-align: center;
+    color:black;
+}
+#telo .kol1
+{
+    padding:5px 300px 5px 20px;
+    text-align:left;
+}
+#telo .box
+{
+    width: 960px; 
+    margin-bottom: 40px;
+    overflow: auto;
+}
+#telo .textbox
+{
+    float:left;
+    width:283px;
+    text-align:justify;
+    margin:10px;
+}
+#telo .textbox p
+{
+    font-style:italic;
+}
+#telo .textbox p a
+{
+    color:darkgoldenrod;
+}
+#telo .box img
+{
+        float: left;
+        margin-left: -51px;
+        margin-right:50px;
+}
+#telo .textbox h1
+{
+        font-size: 24px; 
+	font-weight: 700; 
+	margin-bottom: 20px;
+}
+#footer
+{
+    background-color:#333;
+    color:white;
+    text-align:center;
+    padding:10px 40px;
+}
+#footer a
+{
+    display:inline-block;
+    color:white;
+}
+::-webkit-scrollbar 
+{
+  color:white;
+}
+::-webkit-scrollbar-thumb
+{
+  background-image: url("images/tooplate_body.png");
+}

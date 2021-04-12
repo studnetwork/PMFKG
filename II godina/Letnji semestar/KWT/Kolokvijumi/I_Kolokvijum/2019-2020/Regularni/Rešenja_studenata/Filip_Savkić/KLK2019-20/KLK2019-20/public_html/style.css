@@ -1,0 +1,166 @@
+body
+{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+nav
+{
+    overflow:auto;
+}
+.navbar
+{
+    margin-bottom:150px;
+    list-style:none;
+}
+.link
+{
+    float:right;
+}
+.slika1
+{
+    position:absolute;
+    width:150px;
+    height:150px;
+}
+a
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    text-decoration:none;
+    display:block;
+    color:orange;
+    padding:20px 20px 20px 20px;
+    margin-top:30px;
+}
+a:hover
+{
+    color:#5d5d5d;
+}
+a.active
+{
+    color:#5d5d5d;
+}
+.slika2
+{
+    width:100%;
+    position:relative;
+}
+#text
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    position:absolute;
+    top:340px;
+    left:510px;
+    border:1px black solid;
+    background-color:khaki;
+    padding:20px 45px 20px 20px;
+    font-weight:bold;
+}
+.box
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    width:280px;
+    display:inline-block;
+    height:100px;
+    vertical-align: top;
+    padding:0 15px;
+}
+.box>h2
+{
+    font-family:"Arial, Helvetica, sans-serif";
+    text-transform:uppercase;
+    text-align: center;
+    color:darkslategrey;
+    margin-bottom:0px;
+}
+th
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    text-align:left;
+    color:#fe9b00;
+}
+table,td
+{
+    border: #fe9b00 1px solid;
+    border-collapse: collapse;
+}
+td
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    padding-right:43px;
+    letter-spacing:0px;
+}
+.benefits
+{
+    list-style-image: url('images/sep02.gif');
+    line-height:20px;
+}
+.benefits
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    width:250px;
+    word-wrap:break-word;
+    text-align:justify;
+    letter-spacing: 1px;
+    word-spacing: -1px;
+}
+#box
+{
+    position:relative;
+    line-height:20px;
+    font:12px, "Arial, Helvetica, sans-serif";
+    top:50px;
+    word-wrap:break-word;
+    padding:0 50px;
+    letter-spacing:1px;
+    word-spacing: 3px;
+    text-align:justify;
+}
+.deo2
+{
+    height:100%;
+    margin-bottom:360px;
+}
+.slike
+{
+    display:inline-block;
+    margin:10px 260px 40px 0px;
+}
+.glavna
+{
+    position:relative;
+}
+.sporedna
+{
+    margin-left:-70px;
+    position:absolute;
+    top:1170px;
+}
+#copyright
+{
+    background-color:#e2e2e2;
+    margin-top:20px;
+    width:100%;
+    height:100px;
+}
+#copy
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    position:relative;
+    bottom:-10px;
+    text-align: center;
+    vertical-align:middle;
+}
+#sajt
+{
+    font:12px, "Arial, Helvetica, sans-serif";
+    display:inline-block;
+    padding:0px;
+}
+h2
+{
+    font-family:"Arial, Helvetica, sans-serif";
+    text-transform:uppercase;
+    color:darkslategrey;
+}
+

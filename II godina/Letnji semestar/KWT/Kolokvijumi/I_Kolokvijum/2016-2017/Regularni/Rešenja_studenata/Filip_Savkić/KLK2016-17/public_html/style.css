@@ -1,0 +1,252 @@
+body
+{
+    margin:0;
+    padding:0;
+    background-color:#394251;
+    position:relative;
+}
+.meni
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:978px;
+}
+.meni .navbar
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+.meni .navbar li
+{
+    float:left;
+    font-family: Verdana;
+    padding:20px 15px;
+    font-size:14px;
+    border-left:1px solid white;
+    border-right:1px solid white;
+}
+.meni .navbar li a
+{
+    color:white;
+    text-transform:uppercase;
+    text-decoration:none;
+    display:inline-block;
+}
+.meni .navbar .active a
+{
+    color:#82B440;
+}
+.meni .navbar li a:hover
+{
+    color:#82B440;
+}
+.meni .navbar li a:active
+{
+    color:#82B440;
+}
+.header
+{
+    position:relative;
+    margin-top:-28px;
+    background-image:url("images/nature.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:550px;
+}
+.header .header-text
+{
+    font-family: Georgia;
+    font-size:14px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    top:150px;
+    width:978px;
+}
+.header-text h1
+{
+    color:white;
+    font-weight:400;
+    font-size:40px;
+}
+.header-text h2
+{
+    color:white;
+    font-weight:300;
+    width:400px;
+}
+#dugme1
+{
+    background-color: #82B440;
+    padding:15px 20px;
+    text-transform: uppercase;
+    color:white;
+    border:none;
+}
+#dugme1:hover
+{
+    background-color:transparent;
+    border:1px solid white;
+}
+#dugme2
+{
+    background-color: white;
+    padding:15px 20px;
+    text-transform: uppercase;
+    color:#82B440;
+    border:none;
+}
+#dugme2:hover
+{
+    background-color:transparent;
+    border:1px solid white;
+}
+.header img
+{
+    width:70px;
+    position:absolute;
+    right:200px;
+    bottom:-30px;
+}
+.body #gallery
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:978px;
+}
+#gallery .imgbox
+{
+    color:#888888;
+    font-family: Verdana;
+    font-size:14px;
+    background-color:white;
+    width:300px;
+    float:left;
+    margin:40px 20px 40px 0;
+}
+.imgbox img
+{
+    width:300px;
+    margin-bottom:0;
+}
+.imgbox .naslov
+{
+    padding-left:20px;
+    font-size:20px;
+}
+#slika
+{
+    position:relative;
+    left:20px;
+}
+.imgbox .boxtxt
+{
+    padding-left:20px;
+    padding-right:20px;
+}
+.clear
+{
+    clear:both;
+}
+.body #calendar
+{
+    background-color: white;
+}
+#calendar #items
+{
+    overflow:auto;
+    margin-left:auto;
+    margin-right:auto;
+    width:765px;
+}
+#calendar table
+{
+    float:left;
+    margin-top:20px;
+    margin-right:15px;
+    margin-bottom:10px;
+    border:1px #888888 solid;
+}
+#calendar table,th,td
+{
+    border:1px #888888 solid;
+    border-collapse:collapse;
+}
+th
+{
+    border:2px solid white;
+    color:white;
+    background-color:#394251;
+    padding:5px;
+}
+td
+{
+    color:#888888;
+    padding:5px;
+}
+#calendar p
+{
+    width:760px;
+    color:#888888;
+    font-family: Verdana;
+    font-size:14px;
+    line-height: 1.6;
+    text-align:justify;
+}
+#tdf
+{
+    color:black;
+}
+.body #form
+{
+    padding-top:40px;
+    padding-bottom:40px;
+    margin-left:auto;
+    margin-right:auto;
+    width:978px;
+}
+#form #naslov
+{
+    font-size:20px;
+    text-transform: uppercase;
+    color:white;
+    margin-bottom:40px;
+}
+#form .polje
+{
+    width:300px;
+    padding:5px;
+    margin-bottom:15px;
+    background-color:#024260;
+    color:white;
+}
+#form #submit
+{
+    background-color: #82B440;
+    font:Verdana;
+    font-size:14px;
+    text-transform: uppercase;
+    padding:5px 10px;
+    border:none;
+    color:white;
+}
+.footer
+{
+    border-top:1px solid #024260;
+    margin-left:auto;
+    margin-right:auto;
+    width:978px;
+    display:block;
+}
+.levo
+{
+    color:#888888;
+    float:left;
+}
+.desno
+{
+    color:#888888;
+    float:right;
+}

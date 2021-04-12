@@ -1,0 +1,181 @@
+Datum odrzavanja: 16.03.2021.
+Predavac: Miloš Ivanović
+Cas: 4
+=====================================
+
+Dial Up
+Kod njega je frekvencija izmedju modema do manje centrale 4k Hz
+Provajder je povezan analognim modemima
+Danas je to zastarelo, ne koristi se vise
+
+
+Digitalni sigal je veoma "tezak" za prenos jer uglasti delovi("coskovi")
+zahtevaju mnogo harmonika. Nije ih jednostavno reprodukovati sinusnim
+funkcijama jer zahtevaju veoma niske frekvencije, tj. veoma visoke
+harmonike. Takvi harmonici bi se izgubili na vecim udaljenostima
+
+Zbog toga se koristi modem. On prevodi digitalni signal u analogni, koji
+se moze lako preneti jer ne zahteva visoke harmonike
+
+Modem = MODulation/DEModulation
+
+Modem radi sledece:
+
+Uzima neki talas (harmonik). Taj talas se naziva noseci talas.
+
+Nakon toga, ga modulise, tj. kodira nule i jedinice.
+
+Jedna od modulacija je ASK ( apmlitude manipulation ). Kod ove modulacije
+nule i jedinice se kodiraju na taj nacin sto se jedinica kodira nekom vecom
+apmlitudom, dok se nula kodira nekom manjom amplitudom.
+Ova modulacija se oznacava i sa AM
+
+Ovo predstavlja MOD deo.
+
+
+Drugi nacin modulacije je FKS ( frequency modulation - FM ), tj. frekventna
+modulacija. Kod ovog nacina noseci talas se modulise tako sto se jedinice
+i nule kodiraju razlicitim frekvencijama. Npr. za kodiranje jedinice se
+bira veca frekvencija, a za nulu manja
+
+
+Trecin nacin modulacije PSK ( phase manipulation ), tj. fazna modulacija.
+Kod ove modulacije kodiranje se vrsi tako sto se menja faza talasa
+(kada se faza promeni, menja se trenutna vrednost; ako je bila 0 postaje 1,
+ako je bila 1 postaje 0 i ostaje u tom stanju dok ne dodje do sledece promene
+faze)
+
+
+
+U praksi svi modemi uzorkuju 2400 puta u sekind (baud-a)
+
+
+U modemima se koristi kombinacija AM i PM zbog dobrih performansi
+
+Prikazuje se pomocu konstilacionih dijagrama
+
+Tokom svakog baud-a salje se po jedan simbol
+
+
+QPSK ( Quadrature Phase Shift Keying ) - cetiri fazna pomaka (tj. QAM4)
+kodira 2 bita 
+
+Tacke predstavljaju fazne pomake
+
+Kodira se s desne na levu ( kao kvadranti kod trigonometrijskog kruga )
+01   |   00
+     |
+-----|------
+     |
+10   |    01
+
+
+Ako je brzina uzorkovanja 2400 baud-a i ako je koriscen QPSK, brzina modema
+2400 Hz * 2 b = 4800 bps
+
+
+
+QAM-16
+Ima 16 tacaka u konstalacionom dijagramu. Kod nekih se razlikuje i amplituda.
+Kodira 4 bita
+
+2400*4=9600
+
+
+QAM-126
+kodira 6 bita
+
+
+
+"Bilo je zgodnije zbog elektronike da se ovaj konstalacioni diagram zarodira"
+
+
+V.32bis standard
+
+
+Broj tacaka ogranicen je jer ako tacke budu previse gusto postavljene, tj. ako
+budu previse blizu jedna drugoj ona elektronika nece moci da da ih raspozna,
+ograniceni smo Senonovom granicom. Kada su one blizu, ne mozemo znati kojoj
+tacki da prepisemo ono sto smo detektovali jer zbog ostupanja koje postoji zbog
+suma, dolazi do dvosmislenosti i nemogucnosti ispravnog detektovanja
+
+
+
+Maksimalna brzina koja moze da se postigne pomocu Dial up-a ( sto potvrdjuje i
+teorija ) je 33.6 kbps
+
+
+
+ADSL
+Asinhrona digitalna pretplacnika linija ( en. Asynchronous Digital Subscriber Line )
+
+
+
+Sto je veca udaljenost od telefonske centrale, to je kapacitet linije (tj.
+maksimalna koja se moze postici) manji
+
+
+"Ovi korisnici koje zive na 1-1.5 km od centrale mogu da koriste kapacitet linije
+daleko veci, oko 1-1.1 MHz"
+
+Ovakav propusni opseg nam omogucava da postavimo 256 nezavisnih kanala od po
+4.3 kHz. To je kao da smo postavili 256 razlicitih (dial up) modema. 
+
+Donji deo se koristi za telefoniju, za razgovor fiksnim telefonom, 0-4 kHz
+Srednji deo kanala za upstream, od korisnika ka provajderu, 26-138 kHz
+Preostali deo kanala za downstream, od provajdera ka korisnicima, 138-1100 kHz
+( jer korisnici imaju vecu potrebu download-om od upload-a )
+
+
+
+Iz tog razloga se naziva asinhrono, jer brzina prenosa nije ista od provajdera ka
+korisnicima i od korisnika ka provajderu
+
+
+
+POTS - Plain Old Telephone Service
+
+
+"Dobra stvar kod ADSL-a je to sto moze da vam se garantuje ovaj protok jer vi
+imate sopstvenu liniju do telefonske centrale, vi ni sa kim ne delite ovaj 
+saobracaj"
+
+"Svako od pretplatnika ima upredenu paricu to centrale"
+
+
+Za razdvajanje telefonskog saobracaja od interneta, koristi se uredjaj koji
+se zove splitter
+
+
+
+Prednos podataka kablovskom mrezom
+
+Najcesce se koristi HFC (postoje retki slucajevi gde se povezuju domacinstva sa
+optickim kablom)
+
+
+Stanice su povezane optikom, stanica se dalje povezuje sa domacinstvima preko
+koaksijalnog kabla koji domacinstva dele
+
+
+U telefoniji svako domacinstvo ima svoju upredenu paricu, ne deli se protok
+
+
+Kod kabla je malo teze garantovati protok, pa se cesto moze videti "protok do
+toliko", to znaci da su sve komsije iskljcene u tom trenutku.
+
+
+
+Jos jedna "mana" kabla je to sto se on deli pa postoji mogucnost da se saobracaj
+procita od drugih korisnika (komsija) koji dele taj kabl
+
+
+
+"Kablovski modem radi isto kao i Dialup model, isto kao i ADSL mode, samo sto je
+pitanje broja kanala koji su dostupni"
+
+
+Frekventni opsezi su podeljeni prema nameni
+
+
+38:10

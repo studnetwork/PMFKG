@@ -1,0 +1,189 @@
+body
+{
+    background-image:url("images/background.jpg");
+}
+.wrapper
+{
+    width:940px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:5px;
+    background-image:url("images/transparent.png");
+}
+.header
+{
+    width:940px;
+    margin-left:auto;
+    margin-right:auto;
+}
+h1
+{
+    text-shadow:2px 2px gray;
+    margin-bottom: 10px;
+    font: normal 300% 'News Cycle', Arial, sans-serif;
+    color:white;
+}
+h1>span
+{
+    color:blue;
+}
+h2
+{
+    text-shadow:2px 2px gray;
+    margin:0;
+    padding:0;
+    font: normal 200% 'News Cycle', Arial, sans-serif;
+    color:white;
+}
+.meni
+{
+    padding:0;
+    list-style-type:none;
+    overflow:hidden;
+    background-color:#7380A0;
+    border-radius:5px 5px 0 0;
+}
+.meni li
+{
+    float:left;
+    margin:10px;
+}
+.meni li a
+{
+    display:inline-block;
+    padding:7px 20px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+.meni li a:hover
+{
+    background-color:#0043A8;
+}
+.active a
+{
+    background-color:#0043A8;
+}
+.site-body
+{
+    margin:15px;
+}
+.site-body img
+{
+    width:100%;
+}
+#pt1
+{
+    position: relative;
+    height:auto;
+    margin-bottom:90px;
+}
+#pt1 #naslov
+{
+    position:absolute;
+    bottom:60px;
+    font-size:150%;
+    font-weight:500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#pt1 img
+{
+    float:left;
+    width:120px;
+    height:120px;
+    margin: 0px 25px;
+}
+#pt1 p
+{
+    padding-top:30px;
+    margin-right: 25px;
+    font-weight:normal;
+    font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom:30px;
+}
+#pt2 table
+{
+    margin:0 25px;
+    float:left;
+}
+table,th,td
+{
+    border:2px solid black;
+    border-collapse: collapse;
+}
+table,#red
+{
+    border:0px;
+}
+#prazno
+{
+    border:0px;
+}
+#pt3
+{
+    height:150px;
+}
+#pt3 .box1
+{
+    border : 1px dashed black;
+    padding:5px;
+    border-radius:5px;
+    position:relative;
+    width:300px;
+    float:left;
+}
+#pt3 .box2
+{
+    border : 1px dashed black;
+    padding:5px;
+    border-radius:5px;
+    position:absolute;
+    width:300px;
+    bottom:20px;
+    left:840px;
+}
+#pt3 .box3
+{
+    border : 1px dashed black;
+    padding:5px;
+    border-radius:5px;
+    position:relative;
+    width:300px;
+    float:right;
+}
+.box1>p
+{font: normal 13px Arial, Helvetica, sans-serif;}
+.box2>p
+{font: normal 13px Arial, Helvetica, sans-serif;}
+.box3>p
+{font: normal 13px Arial, Helvetica, sans-serif;}
+.dugme
+{
+    margin-top:10px;
+    padding:5px;
+    border-radius:5px;
+    color:white;
+    background-color:blue;
+    border:0px;
+}
+.wrapper,.footer
+{
+    margin-top:30px;
+}
+.footer
+{
+    padding:10px 100px 60px 100px;
+}
+nav
+{
+    text-align:center;
+}
+nav a
+{
+        font : normal 13px Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+
