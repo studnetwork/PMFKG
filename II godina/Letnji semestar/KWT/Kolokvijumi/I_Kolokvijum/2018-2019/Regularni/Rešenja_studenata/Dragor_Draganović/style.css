@@ -1,0 +1,286 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+    font-family: "Lucida Bright", sans-serif;
+    
+    background-image: url("images/tooplate_body.png");
+    background-repeat: repeat-x;
+}
+
+#container
+{
+    width: 960px;
+    margin: auto;
+}
+
+
+/* --- Header --- */
+
+#header
+{
+    height: 402px;
+    
+    background-image: url("images/tooplate_header.jpg");
+    background-repeat: no-repeat;
+}
+
+#header *[title]
+{
+    padding: 10px 0 26px 0;
+    
+}
+
+/* navbar */
+
+#header *[navbar]
+{
+    margin: 0;
+    padding: 0;
+}
+
+#header *[navbar] ul
+{
+    margin: 0;
+    padding: 0;
+    
+    font-size: 0;
+    
+    list-style: none;
+    color: red;
+}
+
+#header *[navbar] ul li
+{    
+    display: inline-block;
+    
+    margin: 0;
+    padding: 0;
+    
+    font-size: initial;
+    font-weight: bold;
+}
+
+#header *[navbar] ul li :hover
+{
+    color: white;
+    background-color: red;
+}
+
+#header *[navbar] ul li[home] a
+{
+    color: white;
+    background-color: red;
+}
+
+#header *[navbar] ul li a
+{
+    margin: 0;
+    padding: 8px 15px;
+    
+    text-decoration: none;
+    color: inherit;
+}
+
+/* description */
+
+#header *[checks] *[title]
+{
+    margin: 0;
+    padding: 40px 0 0 0;
+    
+    font-size: 34px;
+    
+    color: #eebc25;
+}
+
+#header *[checks] *[subtitle]
+{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    
+    color: white;
+}
+
+/* checks */
+
+#header *[checks]
+{
+    margin: 0;
+    padding: 0;
+}
+
+#header *[checks] ul
+{
+    display: inline-block;
+    
+    margin: 0;
+    padding: 20px 30px;
+    
+    vertical-align: top;
+    
+    list-style: url("images/tooplate_list.png");
+    font-size: 14px;
+    color: #eebc25;
+}
+
+#header *[checks] ul li
+{
+    /*display: inline;*/
+    
+    line-height: 26px
+}
+
+
+/* --- Content --- */
+
+#content
+{
+    padding : 40px 0;
+}
+
+#content table
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    font-size: 13px;
+    text-align: center;
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#content table td
+{
+    border: none;
+}
+
+
+#content table tr[dark]
+{
+    background-color: #ccc;
+}
+
+#content table tr[header]
+{
+    line-height: 25px;
+    font-size: 13px;
+    color: white;
+    
+    background-color: #333;
+}
+
+#content table *[first]
+{
+    padding-left: 20px;
+    text-align: left;
+}
+
+#content table td img
+{
+    margin: 0;
+    padding: 0;
+    
+    vertical-align: middle;
+}
+
+/* paragraphs */
+
+#parahraphs
+{
+    margin: 0;
+    padding-top: 20px;
+    
+    font-size: 13px;
+    font-style: italic;
+    
+}
+
+#parahraphs *[kol]
+{
+    display: inline-block;
+    width: 33%;
+    
+    vertical-align: top;
+}
+
+#parahraphs span
+{
+    /*padding-bottom: 30px;*/
+    
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#parahraphs div[par]
+{
+    display: inline-block;
+    margin-right: 20px;
+    padding-top: 18px;
+    
+    
+    text-align: justify;
+}
+
+#parahraphs img
+{    
+    float: left;
+    position: relative;
+    z-index: -1;
+    
+    left: -40px;
+    top: 5px;
+}
+
+#parahraphs a
+{
+    color: orangered;
+    font-weight: bold;
+}
+
+
+/* --- Footer ---*/
+
+#footer
+{   
+    color: white;
+    text-align: center;
+    
+    background-color: #333;
+}
+
+#footer span
+{
+    display: block;
+    padding: 15px 0;
+}
+
+#footer a
+{
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

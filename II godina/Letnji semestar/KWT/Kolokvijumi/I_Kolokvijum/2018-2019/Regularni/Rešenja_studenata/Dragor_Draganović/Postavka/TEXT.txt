@@ -1,0 +1,29 @@
+PARAMETERS: ******************************
+******************************************
+
+Sirina: 960px;
+
+font-family: "Lucida Bright", sans-serif;
+
+meni: font=13px
+
+Specialized Hosting Platform: 34px #eebc25
+Most Reliable Hosting on the web: 18px
+
+Unlimited Disk Space: 14px
+
+TABELA:
+
+header boja: #333, font: 13px
+sledeci red: #ccc
+
+What You Get: 24px
+******************************************
+******************************************
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan venenatis turpis, ac porta tortor posuere cursus. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam finibus velit ac venenatis consectetur. 
+Vestibulum gravida fringilla massa, in ornare enim ultrices ac. Phasellus congue tincidunt ullamcorper. Integer dapibus velit a nunc posuere euismod. 
+Vestibulum ac lorem eget dui ultricies hendrerit vitae sed nisl. 
+Ut mollis, mauris posuere tristique dignissim, quam nisi tristique ligula, eget egestas lorem diam quis diam. 
+Nunc quis commodo nisl. Validate XHTML and CSS.

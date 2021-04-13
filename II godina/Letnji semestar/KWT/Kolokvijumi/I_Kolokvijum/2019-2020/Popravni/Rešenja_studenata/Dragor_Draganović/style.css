@@ -1,0 +1,263 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    
+    background-image: url("slike/background.jpg");
+}
+
+#container
+{
+    width: 940px;
+    margin: auto;
+    padding: 0;
+    
+    font: normal 13px Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px white;
+}
+
+[line-height]
+{
+    line-height: 1.7em;
+}
+
+/* --- Header --- */
+
+#header
+{
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+#header span
+{
+    font: normal 300% 'News Cycle', Arial, sans-serif;
+}
+
+#header [white]
+{
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#header [blue]
+{
+    margin: 0 5px;
+    
+    color: #3566fc;
+    text-shadow: 1px 1px white;
+}
+
+#header [sub]
+{
+    margin: 10px 0;
+    
+    font-size: 190%;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+
+/* --- Navbar --- */
+
+#navbar
+{
+    padding: 8px 20px;
+    
+    background-color: #7380A0;
+    border-radius: 10px 10px 0 0;
+}
+
+#navbar ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navbar li
+{
+    display: inline-block;
+}
+
+#navbar a
+{
+    display: inline-block;
+    padding: 8px 20px;
+    margin-right: 10px;
+    
+    font: normal 15px Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 -1px black;
+}
+
+#navbar a:hover
+{
+    background-color: #0043A8;
+    border-radius: 8px;
+}
+
+#navbar ul li:first-child a
+{
+    background-color: #0043A8;
+    border-radius: 8px;
+}
+
+
+/* --- Content --- */
+
+#content
+{
+    margin: 0;
+    padding: 20px;
+    
+    background-image: url("slike/transparent.png");
+    border-radius: 0 0 10px 10px;
+}
+
+#content [banner]
+{
+    width: 100%;
+}
+
+#content [welcome]
+{
+    position: relative;
+    margin: 30px 0 0 10px;
+}
+
+#content [welcome]::after
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Welcome */
+
+#content [welcome] [logo]
+{
+    float: left;
+    height: 130px;
+}
+
+#content [welcome] [title]
+{
+    display: inline-block;
+    position: absolute;
+    
+    clear: both;
+    
+    left: -10px;
+    top: -8px;
+    
+    font: normal 250% 'News Cycle', Arial, sans-serif;
+}
+
+#content [welcome] [text]
+{
+    position: relative;
+    top: 50px;
+    left: 10px;
+}
+
+
+/* Table */
+
+#content [money]
+{
+    padding: 100px 0 0 10px;
+}
+
+#content [money]::after
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#content [money] [table]
+{
+    display: inline-block;
+    width: 34%;
+    height: 11em;
+    margin: 10px 25px 0 0;
+    
+    float: left;
+}
+
+#content [money] [table] table
+{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+#content [money] [table] td, #content [money] [table] th
+{
+    border: 2px solid black;
+    font: normal 14px Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#content [money] [table] th
+{
+    font-weight: bold;
+}
+
+#content [text]
+{
+    vertical-align: top;
+}
+
+
+/* Blocks */
+
+#content [boxes]
+{
+    margin: 50px 0 20px 0;
+    text-align: justify;
+}
+
+.box
+{
+    display: inline-block;
+    width: 280px;
+    
+    margin: 0 5px 0 0;
+    padding: 5px;
+    
+    text-align: left;
+    
+    border: 1px dashed grey;
+    border-radius: 5px
+}
+
+
+/* --- Footer --- */
+
+#footer
+{
+    margin: 30px 0 30px 0;
+    padding: 20px;
+    height: 40px;
+    
+    text-align: center;
+    
+    background-image: url("slike/transparent.png");
+    border-radius: 10px;
+}
+
+#footer a
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#footer span
+{
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+text na vrhu: 0.5 poen
+Header crni: 1.5 poen
+Meni: 2 poena
+Header text i lista: 2 poena
+Slika servera: 2 poena
+Tabela: 2.5 poena
+3 kolone: 3 poena
+Slika GrayHost: 2 poena
+Footer: 0.5 poen
+---------------------------
+UKUPNO: 16 poena
+
+
+
+

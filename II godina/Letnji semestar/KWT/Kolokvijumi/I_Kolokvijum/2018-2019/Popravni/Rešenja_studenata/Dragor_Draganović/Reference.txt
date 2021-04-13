@@ -1,0 +1,9 @@
+crvena boja za naslove: #D01818
+sirina: 960px;
+
+siva pozadina: #E9E9E9
+
+boja linkova: #008BCE
+
+font-family: "Arvo",serif;
+font-size: 14px;
