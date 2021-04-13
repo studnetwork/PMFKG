@@ -1,0 +1,179 @@
+body {
+  background-image: url("images/background.jpg");
+  font: normal 13px Arial, Helvetica, sans-serif;
+  color: black;
+  
+}
+
+#container {
+  width: 940px;
+  margin: auto;
+}
+
+#header {
+  padding: 10px;
+  text-shadow: 1px 1px black;
+}
+
+#header h1 {
+  margin: 0px;
+  color: white;
+  font-weight: bold;
+  font: normal 300% 'News Cycle', Arial, sans-serif;
+}
+
+#header h2 {
+  margin: 0px;
+  color: white;
+  font: normal 200% 'News Cycle', Arial, sans-serif;
+}
+
+#header span {
+  color: #1a599c;
+  text-shadow: 1px 1px white;
+}
+
+#nav ul {
+  background-color: #7380A0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-shadow: 1px -0.5px black;
+  font-weight: bold;
+}
+
+#nav ul li {
+  display: inline;
+}
+
+#nav ul li a {
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 15px;
+  margin: 8px 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+#nav ul li a:hover {
+  background-color: #0043A8;
+}
+
+#nav ul li a.active {
+  background-color: #0043A8;
+}
+
+#content {
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#feature {
+  margin-bottom: 20px;
+}
+
+#feature img {
+  width: 100%;
+  margin: auto;
+}
+
+
+#content {
+  background-image: url("images/transparent.png");
+}
+
+#content div.panel1 {
+  position: relative;
+  margin-bottom: 60px
+}
+
+#content div.panel1 h1 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#content div.panel1 img {
+  position: absolute;
+  top: 6px;
+  left: 10;
+  height: 110px;
+  float: left;
+  z-index: -1;
+}
+#content div.panel1 p {
+  padding-left: 152px;
+}
+
+#content div.panel2  {
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+#content div.panel2 table {
+  float: left;
+  margin-right: 30px;
+}
+
+#content div.panel2 table, #content div.panel2 th, #content div.panel2 td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+#content div.panel2 td {
+  padding: 3px 15px
+}
+
+#content div.panel2 p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+#content div.columns  {
+  overflow: hidden;  
+  width: 99.99%;
+  margin: auto;
+}
+
+#content div.columns div.col {
+  width: 30.8%;
+  margin: 5px;
+  float: left;
+  padding: 5px 5px 15px;
+  border: 1px dotted black;
+  border-radius: 5px;
+  line-height: 1.5
+}
+
+#footer {
+  background-image: url("images/transparent.png"); 
+  border-radius: 5px;
+  margin: 25px 0px;
+}
+
+#footer ul {
+  text-align: center;
+  list-style: none;
+  padding: 5px 10px 20px;
+}
+
+#footer ul li {
+  display: inline;
+}
+
+#footer ul li::before {
+  content: " | ";
+}
+
+#footer ul li:first-of-type::before {
+  content: "";
+}
+
+#footer ul li a {
+  display: inline;
+  color: darkblue;
+  text-decoration: none;
+}

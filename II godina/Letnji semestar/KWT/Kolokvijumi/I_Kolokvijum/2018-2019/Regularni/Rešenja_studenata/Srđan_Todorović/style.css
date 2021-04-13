@@ -1,0 +1,149 @@
+body {
+  background-image: url("images/tooplate_body.png");
+  background-repeat: repeat-x;
+  font-family: "Lucida Bright", sans-serif;
+  margin-top: 0;
+}
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+/*============ HEADER ==================*/
+
+#header {
+  background-image: url("images/tooplate_header.jpg");
+  height: 400px;
+}
+
+#header img {
+  padding-top: 10px;
+}
+
+#header > h1 {
+  color: #eebc25;
+  font-size: 34px;
+  margin: 30px 0 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+#header > h2 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  color: white;
+}
+
+/*============ NAVIGATION ==================*/
+#nav ul {
+  list-style: none;
+  margin: 25px 0 0;
+  padding: 0;
+  font-size: 0px;
+}
+
+#nav ul li {
+  display: inline;
+}
+
+#nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: red;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+#nav ul li a:hover {
+  background-color: red;
+  color: white;
+}
+
+/*============ FEATURES ==================*/
+
+#header > ul {
+  list-style-image: url("images/tooplate_list.png");
+  width: 480px;
+}
+
+#header > ul li {
+  color: #eebc25;
+  margin: 0 40px 10px 0;
+  width: 200px;
+  float: left;
+  font-size: 14px;
+}
+
+
+/*============ TABLE ==================*/
+
+#container > table {
+  border: 2px solid gray;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#container > table tr:nth-child(even) {
+  background-color: #ccc;
+}
+
+#container > table th {
+  background-color: #333;
+  color: white;
+  font-size: 13px;
+}
+
+#container > table, #container > table th, #container > table td {
+  border-collapse: collapse;
+}
+
+#container > table td, #container > table th {
+  padding: 5px
+}
+
+.center-text {
+  text-align: center;
+}
+
+
+/*============ COLUMNS ==================*/
+
+#container div.cols {
+  width: 100%;
+  margin:0 auto;
+}
+
+#container div.col {
+  float: left;
+  width: 31%;
+  padding-left: 30px;
+}
+
+#container div.col:first-child {
+  padding-left: 0px;
+}
+
+#container div.col > h1 {
+  font-size: 24px;
+  /*font-weight: normal;*/
+}
+
+#container div.col > p {
+  text-align: justify;
+  font-style: italic;
+}
+#container div.col img {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  left: -50px;
+  z-index: -1;
+}
+
+#container div.col a {
+  color: coral;
+}

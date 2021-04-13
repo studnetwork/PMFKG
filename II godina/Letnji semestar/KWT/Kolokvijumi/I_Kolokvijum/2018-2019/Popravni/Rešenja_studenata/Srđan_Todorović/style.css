@@ -1,0 +1,205 @@
+h1 {
+  color: #D01818;
+}
+
+a {
+  color: #008BCE;
+}
+
+hr {
+  clear: both;
+  color: lightgray;
+}
+
+body {
+  font-family: "Arvo",serif;
+  font-size: 14px;
+  background-image: url("images/siteBackground.png");
+}
+
+/*=========================== HEADER ===================================*/
+
+#header {
+  color: darkgray;
+  font-size: 200%;
+  padding: 10px 10px 25px
+}
+
+#header span {
+  color: #D01818;
+}
+
+/*=========================== CONTAINER ===================================*/
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+/*=========================== NAV ===================================*/
+
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/menuBackground.jpg");
+  border-bottom: 3px solid white;
+}
+
+#nav ul li {
+  display: inline;
+}
+
+#nav ul li a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 30px;
+  color: gray;
+  text-transform: uppercase;
+  
+}
+
+#nav ul li a.active {
+  background-image: url("images/menuActive.jpg");
+  color: white;
+  position: relative;
+  top: 2px
+}
+
+/*=========================== COLUMNS ===================================*/
+
+#cols-3 {
+  background-color: #E9E9E9;
+  padding-bottom: 30px;
+  margin-top: 5px;
+  color: grey;
+}
+
+#cols-3:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#cols-3 div.col-3 {
+  width: 30%;
+  float: left;
+  padding: 15px
+}
+
+#cols-3 div.col-3 span {
+  background-color: #D01818;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 3px;
+  position: relative;
+  top: 10px;
+  left: 30px
+}
+
+/*=========================== CONTENT ===================================*/
+
+#content {
+  margin-bottom: 20px
+}
+
+#content:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*=========================== text-section ===================================*/
+#content div.text-section {
+  color: grey;
+  float: left;
+  width: 65%;
+  padding: 15px 25px;
+}
+
+#content div.text-section h1 {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#content div.text-section img {
+  float: left;
+  margin: 15px 30px 40px 15px;
+  line-height: 1.5;
+}
+
+#content div.text-section p {
+  line-height: 1.5;
+  padding: 0;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+/*=========================== cols-2 ===================================*/
+
+#content div.cols-2 {
+  float: left;
+  width: 65%;
+  padding-right: 60px;
+}
+
+
+#content div.cols-2:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#content div.col-2 {
+  float: left;
+  width: 43%;
+  text-align: justify;
+  padding-right: 25px;
+  line-height: 1.5;
+  color: grey;
+}
+
+
+/*=========================== LINKS ===================================*/
+
+#link-section {
+  float: right;
+  width: 25%;
+  padding-top: 10px;
+  margin-right: 5px;
+}
+
+#link-section h1 {
+  font-size: 100%;
+}
+
+#link-section:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#link-section ul {
+  list-style-image: url("images/p.png");
+  margin: 0;
+  padding: 0;
+  line-height: 2.2;
+  padding-right: 2px;
+}
+
+#link-section ul li a {
+  text-decoration: none;
+}
+
+
+/*=========================== LINKS ===================================*/
+
+#footer {
+  clear: both;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  color: gray;
+}
