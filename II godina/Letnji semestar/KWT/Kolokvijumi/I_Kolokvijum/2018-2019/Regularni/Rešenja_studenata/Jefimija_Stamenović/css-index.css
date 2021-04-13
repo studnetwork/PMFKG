@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on  : 12.april 2021
+    Author      : Jefimija Stamenovic
+    Created for : CSS za regularni I kolokvijum 2018/2019
+*/
+html,body{
+    margin:0;
+    padding:0;
+}
+body{
+    background-image:url('images/tooplate_body.png');
+    background-repeat:repeat-x;
+    margin:0px; 
+    padding:0px;
+    font-family: 'Lucida Bright',sans-serif;
+    font-size: 13px; 
+    width: 100%; 
+}
+#container{
+    margin:auto; 
+    width:960px;
+}
+#header{
+   position:relative; 
+   align-content: center; 
+   background-image:url('images/tooplate_header.jpg'); 
+   background-repeat: no-repeat; 
+   width: 960px;
+   height: 400px;
+   margin:0 auto;
+   padding:0; 
+   top:0; 
+}
+#logo{
+    position:relative; 
+    top:20px;
+    background-image:url('images/tooplate_logo.png');
+    background-repeat: no-repeat; 
+    width: 150px;
+    height: 30px;
+}
+#navbar{
+    position:relative; 
+    margin-top: 40px;
+}
+#navbar ul{
+    position:relative;
+    display:inline; 
+    padding:0px; 
+    margin:0px; 
+}
+#navbar li{
+    display:inline;
+    list-style-type:none; 
+    position:relative;
+    text-transform: capitalize;
+    text-align:center; 
+}
+#navbar li a{
+    display: block; 
+    float:left; 
+    color: red;
+    padding: 7px 16px; 
+    margin-right:10px;  
+}
+#navbar li a:hover{
+    display: block; 
+    float:left; 
+    color: white;
+    background-color:red;
+    padding: 7px 16px; 
+}
+#header-content{
+    width:inherit; 
+    margin-top:30px; 
+    clear:both; 
+    float:left; 
+    color: #eebc25;
+    text-transform:capitalize; 
+}
+#header-content h1{
+    font-size:34px;
+    padding:0px;
+    margin:0px; 
+}
+#header-content h2{
+    font-size:18px;
+    color: white; 
+    font-style: italic;
+    padding-top:0; 
+    margin:0px;
+}
+#header-content ul{
+    position:relative; 
+    float: left; 
+    margin-top:20px; 
+    margin-right:40px;
+}
+#header-content li{
+    width: 185px;
+    list-style-image:url('images/tooplate_list.png');
+    font-size: 14px;
+    margin-left:0; 
+    margin-bottom:10px; 
+}
+#header-content li span{
+    text-transform: uppercase; 
+}
+#menu{
+    clear: both;
+    width:960px;
+    margin:auto; 
+}
+#menu table{
+    position:relative;
+    margin-top: 50px; 
+    border: 1px solid black;
+    border-collapse: collapse; 
+    width:100%; 
+}
+#menu table th,#menu table td{
+    width: 20%; 
+    height: 20px; 
+    font-size: 13px; 
+    text-align: center; 
+}
+
+#menu table th{
+   color: white;  
+   text-align:center;
+   background-color:#333;
+}
+#menu table tr th:first-child,#menu table tr td:first-child{
+   width:40%;
+   text-align:left;
+   padding-left:10px; 
+}
+#menu table tr:nth-child(even){
+   background-color:#ccc;
+}
+#columns{
+    position:relative; 
+    width: inherit;
+    height: 500px; 
+}
+.col{
+    
+    position:relative;
+    float:left; 
+    width:30%; 
+    margin-right: 25px; 
+    height:inherit; 
+}
+.col h1{
+    text-align: left; 
+    font-size: 24px; 
+    text-transform:capitalize; 
+    color:inherit; 
+}
+#imglogo{
+    float:left; 
+    position:relative;
+    left: -50px; 
+    top: 0px; 
+    z-index: -1;
+    background-image:url('images/tooplate_logo.png');
+    background-repeat: no-repeat; 
+    width: 150px;
+    height: 40px;
+}
+
+.col p{
+    position:relative;
+    text-align:justify;
+    font-style:italic;
+    line-height: 20px; 
+}
+.col span{
+    color:orange; 
+    text-decoration: underline; 
+}
+#footer{
+    clear:both;
+    position:relative; 
+    width: 100%; 
+    margin-top:20px; 
+    padding: 10px 0; 
+    text-align: center;
+    color: white; 
+    background-color:#333; 
+    bottom: 0; 
+}
+#footer span{
+   font-weight: bold;
+   text-decoration:underline;
+}

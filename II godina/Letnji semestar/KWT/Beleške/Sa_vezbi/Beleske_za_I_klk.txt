@@ -1,0 +1,97 @@
+Autor: Jefimija Stamenović
+
+HTML tagovi 
+HEAD
+<title> - naziv fajla u kartici 
+<meta name = "author" content = ""> - ko je autor fajla 
+<meta charset = "UTF-8"> - ukljucivanje UTF-8
+BODY 
+<sub> - subscript 
+<sup> - supercript 
+<pre> - prikazuje tekst onakav kakav je zapisan u kodu(sa razmacima, novim redovima...)
+<code> - ako hocemo da zapisemo neki kod na stranici, on mora da bude citljiviji, drugacijeg formata
+<abbr> - akronimi odnosno sta znaci neka skracenica
+<bdo dir ="rtl"> - pise tekst u obrnutom redosledu
+<del> - ako hocemo da tekst bude precrtan jednom linijom
+<small> - smanjuje tekst 
+<a href = "" tagret="_blank"> - otvara link u novom tabu 
+<img src = "" alt = "" border = "1"> - alt oznacava sta ce da pise ako ne moze da pronadje 
+										putanju do te slike ili ako slika ne postoji
+										border postavlja okvir oko slike
+Mapiranje slike i povezivanje sa drugim slikama										
+<p>
+    Link za sliku <br> 
+    <a href = "https://imi.pmf.kg.ac.rs/" target="_blank">
+        <img border = "3" src = "images/imi.jpg" width = "60" height = "60" alt = "IMI">
+    </a>
+</p>
+<p>
+        <img src = "images/planets.gif" width="145" height="126" alt = "Planets" usemap="#planetmap">
+           <map name = "planetmap">
+               <area shape="rect" coords="0,0,82,126" alt = "Sun" href="images/sun.gif">
+               <area shape="circle" coords="90,58,3" alt = "Mercury" href="images/mercury.gif">
+               <area shape="circle" coords="124,51,8" alt="Venus" href = "images/venus.gif">
+           </map>
+</p>
+
+ TABELA 
+ 
+<tr> - jedan red u tabeli 
+<th> - header tabele
+<td> - celija; ide u okviru <tr>
+<th rowspan = "2"> - spaja dve celije u jednu 
+<table border = "1" cellspacing = "10"> - border oznacava okvir tabele
+										  cellspacing oznacava razmak izmedju celija
+<colgroup>  - navodi se odmah posle <table> i definise izgled kolona
+    <col span="2" style = "background-color: red"> - span se primenjuje na navedeni broj kolona zaredom
+    <col style = "background-color: yellow">
+</colgroup>
+<thead style="color: green"> - grupisanje header-a i njegovo stilizivoanje
+	<tr>
+		<th>Mesec: </th>
+		<th>Usteda: </th>
+	</tr>
+</thead>
+ <tfoot style="color:red"> - grupisanje footer-a i njegovo stilizovanje
+    <tr>
+		<td>Suma: </td>
+		<td>180$</td>
+	</tr>
+</tfoot>
+ <tbody style="color:blue"> - grupisanje tela tabele i njegovo stilizovanje
+	<tr>  
+		<td>Januar </td>
+		<td>180$</td>
+	</tr>
+</tbody>
+
+LISTE 
+
+Neuredjena lista
+<ul style ="list-style-type: square"> - list-style-type definise oblik nabrajanja
+    <li>Kafa</li>						
+    <li>Kuvano vino</li>
+    <li>Vruca rakija</li>
+</ul>
+
+Uredjena lista
+<ol type="A"> 			- type definise izgled nabrajanja		
+    <li>Kafa</li>			
+    <li>Kuvano vino</li>
+    <li>Vruca rakija</li>
+</ol>
+
+Lista definicija
+<dl>
+    <dt>Kafa</dt>
+        <dd>Toplo i crno pice</dd>
+    <dt>Mleko</dt>
+        <dd>Belo i hladno pice</dd>
+</dl>
+
+STYLE 
+	padding - razmak od sledeceg bloka
+	line-height - visina linije 
+	float - plutanje bloka 
+	clear: both - cisti blokove ispred njega, tj. nece da ga stavi u red sa ostalima; 
+				  ne dozvoljava elementima da plutaju

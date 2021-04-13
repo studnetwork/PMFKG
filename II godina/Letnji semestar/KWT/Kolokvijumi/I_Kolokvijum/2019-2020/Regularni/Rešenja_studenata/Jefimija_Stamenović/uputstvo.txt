@@ -1,0 +1,35 @@
+Font: 12px, "Arial, Helvetica, sans-serif"
+Visina linije: 20px
+
+Boja slova i okvira, prvog linka: #5d5d5d
+Narandzasta: #fe9b00
+linkovi na hover: #5d5d5d
+Zuta: #FFFF9D
+boja footer-a: #e2e2e2
+
+sirina: 960px
+
+
+
+Tekst:
+
+
+home 	about us 	portfolio	services	blog	contact us
+
+Tekst na slici
+
+about us
+Client Web Technologies
+HTML	Content of web pages
+CSS		Layout of web pages
+
+our Benefits
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa.
+Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem lobortis scelerisque. Praesent eget consequat
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa.
+
+testimonials
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem lobortis scelerisque.
+
+our portfolio
+Copyright © 2015 Institut za matematiku i informatiku - All Rights Reserved

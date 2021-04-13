@@ -1,0 +1,19 @@
+wrapper 1
+meni + imi slika 3
+slika informatika + tekst na slici 2
+----------------------------
+content 7
+	tri kolone 2
+	tabela 1
+	lista  1.5
+	centriran tekst 1.5
+	formatiranje 1
+----------------------------
+galerija 2
+footer 1
+
+
+
+**************************
+6 + 7 + 3 = 16 ***********
+**************************

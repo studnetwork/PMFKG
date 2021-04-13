@@ -1,0 +1,15 @@
+PMF Kragujevac font: normal 300% 'News Cycle', Arial, sans-serif
+font: normal 13px Arial, Helvetica, sans-serif;
+boja slova crna
+
+background.jpg - "kora" pozadina za sajt
+transparent.png - za pozadinu dela koji ima tekst.
+
+pozadina menija: #7380A0
+Home i hover: #0043A8
+font: Arial, Helvetica, sans-serif, boldirano
+
+sirina: 940px
+
+
+

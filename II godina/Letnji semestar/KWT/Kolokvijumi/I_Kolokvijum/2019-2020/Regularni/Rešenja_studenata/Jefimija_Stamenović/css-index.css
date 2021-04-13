@@ -1,0 +1,168 @@
+/* 
+    Created on  : 11.04.2021.
+    Author      : Jefimija Stamenovic
+    Created for : CSS za I popravni kolokvijum 
+*/
+
+body{
+    margin:auto; 
+    width:960px; 
+    font-size:12px; 
+    color:#5d5d5d; 
+    font-family:'Arial', 'Helvetica', sans-serif; 
+    line-height: 20px; 
+}
+#header{
+    position: relative;
+    margin-top: 40px; 
+    height: 200px; 
+    width:100%; 
+    background-color: white; 
+    border-bottom: 2px solid #5d5d5d; 
+}
+#imi{
+    height:inherit;
+    width:200px; 
+    float:left; 
+    background-image: url('images/imi.jpg'); 
+    background-size: contain; 
+}
+#rect{
+   position:absolute; 
+   bottom: 100px; 
+   left: 30px; 
+   background-color: #FFFF9D;
+   padding:10px 50px 10px 10px; 
+   text-transform: uppercase; 
+   font-weight:bold; 
+   color: black; 
+}
+#navbar{
+    float:right; 
+    width: 650px;
+    height:inherit; 
+}
+#navbar ul{
+    top:50%; 
+    position:relative; 
+    list-style-type: none;
+    margin-left: 10px; 
+}
+#navbar ul li{
+    display:inline; 
+    margin:0px 30px 0px 30px; 
+    color: #fe9b00;
+    text-transform:uppercase;
+}
+
+#navbar ul li:first-child{
+   color:#5d5d5d;  
+}
+
+#main{
+    width:100%;
+}
+
+#main #panel{
+    position: relative; 
+    background-image: url('images/inf.jpg'); 
+    background-size: contain; 
+    width: 930px;
+    height: 340px;
+    margin:10px auto;
+    padding-bottom: 10px; 
+}
+#main #columns{
+    position:relative;
+    margin: 10px 0px; 
+    width:100%;  
+    padding-top:20px;  
+}
+#main .col{
+    width: 30%; 
+    position:relative;
+    margin:20px 15px; 
+    float:left; 
+}
+#main .col h2{
+    text-align: center;
+    font-weight:bold; 
+    text-transform: uppercase;
+    padding-bottom: 10px; 
+    border-bottom: 5px solid #5d5d5d;
+}
+#main table{
+    position:relative; 
+    padding-top: 10px; 
+    border-collapse: collapse;
+    text-align: left; 
+    width: 100%; 
+}
+#main table th,#main table td{
+  border:1px solid #fe9b00;  
+  width: 33%; 
+  height: 25px;
+  padding-left: 5px;
+ 
+}
+#main table th[colspan="2"],#main table td[colspan="2"]{
+   width: 66%; 
+}
+#main table th{
+    color: #fe9b00; 
+    font-weight:bold; 
+}
+
+.col{
+    text-align: justify; 
+}
+.col ul li{
+    list-style-image: url('images/sep02.gif'); 
+    list-style-type: none; 
+    padding-bottom: 10px; 
+} 
+
+.col p{
+    padding: 10px 40px;
+    word-spacing: 3px; 
+}
+#portfolio
+{
+   clear:both; 
+   border-top: 1px solid #5d5d5d;
+   padding-top: 10px; 
+   width: 100%; 
+   height: 100px; 
+}
+#portfolio h2{
+   font-weight:bold; 
+   text-transform: uppercase;
+   padding-bottom: 10px;  
+}
+#imgcol{
+    float:left;
+    position:relative; 
+    width: 40%; 
+    height: 170px;
+    margin-right:80px; 
+}
+#imgcol img:nth-child(2){
+    position:relative;
+    bottom: 70px;  
+    left: 160px;
+}
+#footer
+{
+    clear:both; 
+    
+    width: 100%; 
+    border-top: 2px solid #5d5d5d;
+    background-color: #e2e2e2;
+    margin-bottom: 50px; 
+    text-align: center;
+    padding: 70px 0;
+}
+
+#footer span{
+   color: #fe9b00; 
+}

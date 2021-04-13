@@ -1,0 +1,182 @@
+/* 
+    Created on  : 13.04.2021.
+    Author      : Jefimija Stamenovic
+    Created for : Css-popravni kolokvijum 2018/2019
+*/
+html,body{
+    padding: 0px;
+    margin: auto;
+    width: 960px;
+    color: grey;
+    font-family: "Arvo",serif;
+    font-size: 14px;
+    background-image:url('images/siteBackground.png'); 
+    background-repeat:repeat;  
+}
+
+h1,h2,h3{
+    color: #D01818; 
+}
+h1{
+    position:relative;
+    padding-top: 10px; 
+    padding-left:10px; 
+}
+h1 span{
+    color: grey;
+}
+#navbar{
+    position:relative; 
+    margin:10px 0 0 0; 
+    padding: 0; 
+    background-image:url('images/menuBackground.jpg'); 
+    background-repeat:repeat-x;  
+    height: 40px;
+    width: inherit; 
+    border-bottom:1px solid white;
+}
+#navbar ul{
+    position:relative; 
+    float:left; 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0;
+    height:inherit; 
+}
+#navbar li{
+    position:relative;
+    display:inline;
+    color:gray;
+    text-transform: uppercase; 
+    text-align: center; 
+    height:inherit; 
+}
+#navbar li a{
+    position:relative; 
+    display:block; 
+    float:left;
+    height:inherit; 
+    padding: 12px 30px;
+}
+#navbar li a:hover{
+    position: relative; 
+    display:block;
+    float:left;
+    background-image:url('images/menuActive.jpg'); 
+    background-repeat:repeat-x;
+    padding: 12px 30px;
+    color:white; 
+}
+#banner{
+    clear: both; 
+    position:relative; 
+    background-image:url('images/headerPic.jpg'); 
+    height: 360px; 
+    width: inherit;
+    margin:0;
+    padding:0; 
+}
+#container{
+    position:relative; 
+    width:inherit;
+    margin:0;
+    padding:0;
+}
+#uppercolumns{
+   position:relative; 
+   width:inherit;
+   background-color: #e9e9e9; 
+   height: 210px;
+}
+#uppercolumns .col{
+   position:relative; 
+   float:left; 
+   margin: 10px 30px;
+   padding:0px 10px; 
+   width:25%;
+}
+#uppercolumns .col p{
+    text-align: justify;
+    word-spacing: 6px;
+}
+#uppercolumns .col input[type="button"]{
+   position:relative; 
+   background-color:red;
+   color:white; 
+   padding:5px 20px; 
+   text-align: center; 
+   margin-left: 20px; 
+}
+#general{
+    clear: both;
+    margin:0; 
+    padding-top:10px; 
+    padding-left:30px;
+    width: 100%;
+}
+#general #text{
+    position:relative;
+    float:left; 
+    padding: 0;
+    margin: 0; 
+    width: 60%; 
+}
+#general #text img{
+    position:relative;
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    float:left; 
+    margin: 0; 
+}
+#general #text p{
+    position:relative; 
+    margin-top:40px; 
+    line-height: 20px;
+    text-align: justify;
+    padding:0;
+}
+#general #columns{
+   position:relative; 
+   float:left; 
+   width:60%;
+   margin:0; 
+   padding:0; 
+}
+#general #columns .col{
+   position:relative; 
+   float:left;
+   padding: 0; 
+   margin-right:20px;  
+   width:40%;
+}
+#general #columns .col p{
+    text-align: justify;
+}
+
+#links{
+    position:relative;
+    float:right;
+    width: 30%; 
+    padding:0; 
+    margin:0; 
+}
+
+#links ul{
+    padding:0; 
+    margin:0;
+}
+#links li{
+    list-style-image: url('images/p.png');
+    padding-bottom:10px;
+}
+#links a,#footer a{
+    color:#008BCE;
+}
+#footer{
+    clear:both; 
+    text-align: center; 
+    padding-top:20px;
+    margin-bottom: 10px;
+    border-top:1px solid lightgrey; 
+}

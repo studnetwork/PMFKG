@@ -1,0 +1,15 @@
+wrapper 1
+meni 3
+slika informatika 1
+content 12
+	tri kolone - 2
+	format za tri kolone - 1 za text + 1 za dugmice = 2
+	
+	dve kolone - 2
+	    slika levo 1.5
+		dve kolone 2
+		    format texta - 1
+	
+	lista  1.5
+	
+footer 1

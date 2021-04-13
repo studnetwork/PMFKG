@@ -1,0 +1,16 @@
+INFORMATIKA:
+
+pozadina sajta: 1 poen
+wrapper (sajt): 1.5 poen
+tekst iznas slike: 1.5 poen
+meni: 2 poena
+slika-header: 1 poen
+plavi prozor: 2 poena
+slika IMI: 1.5 poen
+Dve kolone: 1 poen
+tabela: 2 poena
+boxes: 1.5 poen + 1 poen za pomereni box
+footer: 1 poen
+Tekst i fontovi: 1 poen
+
+---------------------------------------
