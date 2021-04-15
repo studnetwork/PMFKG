@@ -57,6 +57,34 @@ p16: zbir je 3, a p16 je 0 => greška
 Pozicija greške: 2+16=18  
 Greška se nalazi na bitu sa rednim brojem 18, tj. bitu koji smo invertovali
 
+
+
+### 3. Pošiljalac treba da pošalje niz bitova vrednosti 1011101010111010 koristeći Hamingov kod. Napisati tok bitova koji se stvarno šalje. Ako je 4. bit sa desne strane greškom invertovan dokazati da primalac detektuje ovu grešku.
+
+1011101010111010
+
+[1][0]1[1]011[0]1010101[1]11010
+
+Tok bitova koji će biti poslat:
+101101101010101111010
+
+Invertovanje 4. bita sa desne strane:
+10110110101010111**0**010
+
+Provera:
+p1: zbir je 7, a p1 je 1 => ispravno
+
+p2: zbir je 5, a p2 je 0 => greška
+
+p4: zbir je 5, a p4 je 1 => ispravno
+
+p8: zbir je 4, a p8 je 0 => ispravno
+
+p16: zbir je 2, a p16 je 1 => greška
+
+Pozicija greške: 2+16=18
+Greška se nalazi na bitu sa rednim brojem 18, tj. bitu koji smo invertovali
+
 ---
 
 ## Cyclic Redundancy Check (CRC)
