@@ -96,4 +96,4 @@ Rešenje:
 011011111110101111110011111011011 ==> 0xDFD7E7DB
 
 
-Kontačno rešenje: 0xDFD7E7DB 
+Konačno rešenje: 0xDFD7E7DB 
