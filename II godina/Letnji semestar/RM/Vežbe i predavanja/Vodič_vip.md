@@ -5,7 +5,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 Linkovi do resursa koji se odnose na vežbe  
 [1. termin : rešenja zadataka sa prezentacije][v-fajl-1]  
 [2. termin : rešenja zadataka sa prezentacije][v-fajl-2]  
-[4. termin : rešenja zadataka sa prezentacije][v-fajl-4]  
+[3. termin : rešenja zadataka sa prezentacije][v-fajl-3]  
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -62,7 +62,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [v-fajl-1]: ./v_1_resenja_primera.md
 [v-fajl-2]: ./v_2_resenja_primera.txt
-[v-fajl-4]: ./v_4_resenja_primera.md
+[v-fajl-3]: ./v_3_resenja_primera.md
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
