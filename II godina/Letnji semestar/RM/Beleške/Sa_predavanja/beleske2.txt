@@ -118,7 +118,7 @@ Razlike izmedju TCP/IP i OSI:
 OSI se samo spominje u teoriji
 
 
-Dijagram Trka slonova - dijagram kojim je prikazano kada treba doneti standard
+Dijagram Trka sa slonovima - dijagram kojim je prikazano kada treba doneti standard
 
 Ukoliko se standardi prave pre nego sto se istrazivanja zavrse, tj. ukoliko
 krenu da se prave prerano onda se kao rezultat dobijaju losi standardi jer
