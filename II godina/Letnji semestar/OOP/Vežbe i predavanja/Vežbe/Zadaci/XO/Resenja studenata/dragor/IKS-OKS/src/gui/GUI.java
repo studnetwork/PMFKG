@@ -66,6 +66,7 @@ public class GUI extends JFrame
 			for(int i = 0; i < N; i++) {
 				btnFields[i][j].setText("");
 				btnFields[i][j].setEnabled(true);
+				btnFields[i][j].setIcon(null);
 			}
 		}
 	}
@@ -73,11 +74,6 @@ public class GUI extends JFrame
 	public void setLabelStatus(String text)
 	{
 		lblStatus.setText(text);
-	}
-	
-	public void dissableFieldBtnObj(Object obj)
-	{
-		((FieldButton)obj).setEnabled(false);
 	}
 	
 	public boolean isYesOnDialog(String message, String title)

@@ -4,6 +4,8 @@ import gui.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+
 
 public class GameXO
 {
@@ -27,16 +29,17 @@ public class GameXO
 					state = game.play(x, y);
 				}
 				catch (Exception e) {
-					System.out.println("Neuspesno odigran potez!");
-					System.out.println(e.getMessage());
+					System.out.println("Neuspesno odigran potez!"); // DEBUG
+					System.out.println(e.getMessage()); // DEBUG
 					return;
 				}
 				
-				String text = (game.getLastTurn() == Field.X)? "X" : ((game.getLastTurn() == Field.O)? "O" : "");
-				((ReadWriteString)event.getSource()).write(text);
-				gui.dissableFieldBtnObj(event.getSource());
+				String sign = (game.getLastTurn() == Field.X)? "X" : ((game.getLastTurn() == Field.O)? "O" : "");
+				//((ReadWriteString)event.getSource()).write(sign);
+				((HasIcon)event.getSource()).setIcon(new ImageIcon("./img/"+sign+".png"));
+				((CanBeDissabled)event.getSource()).dissable();
 				
-				System.out.println(text + " PLAYED!");
+				System.out.println(sign + " PLAYED!"); // DEBUG
 				
 				handleState(state);
 			}
@@ -49,7 +52,7 @@ public class GameXO
 			public void actionPerformed(ActionEvent event) {
 				handleState(game.newGame());
 				gui.clearButtons();
-				System.out.println("RESET!");
+				System.out.println("RESET!"); // DEBUG
 			}
 		};
 		
@@ -80,6 +83,6 @@ public class GameXO
 		
 		handleState(game.newGame());
 		gui.clearButtons();
-		System.out.println("RESET!");
+		System.out.println("RESET!"); // DEBUG
 	}
 }

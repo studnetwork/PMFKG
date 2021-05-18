@@ -1,8 +1,9 @@
 package gui;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class FieldButton extends JButton implements ReadWriteString, HasGridPosition
+public class FieldButton extends JButton implements ReadWriteString, HasGridPosition, HasIcon, CanBeDissabled
 {
 	private int posX;
 	private int posY;
@@ -31,5 +32,16 @@ public class FieldButton extends JButton implements ReadWriteString, HasGridPosi
 	@Override
 	public void write(String text) {
 		setText(text);
+	}
+	
+	@Override
+	public void setIcon(ImageIcon icon) {
+		super.setIcon(icon);
+	}
+	
+	@Override
+	public void dissable() {
+		setEnabled(false);
+		
 	}
 }
