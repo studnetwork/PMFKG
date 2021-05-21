@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="width: 800px; margin: 30px auto">
+            <div
+               style="padding: 20px; border: 3px solid red; border-radius: 8px">
+                <span id="tekst">Niko nije nepobediv, pa i Novak Đoković! Navikao nas je naš najbolji teniser, posebno u poslednjih godinu dana, da ređa pobede i osvaja turnire, međutim, u Monte Karlu se "sapleo". Već na startu takmičenja, u 2-om kolu, poražen je od 55-og igrača na svetskoj rang listi, Čeha Jiržija Veselog. Ovo je dokaz da niko nije nepobediv. Mnogo puta u karijeri mi se dogodilo da izgubim i ovo nije prvi put. S druge strane, malo stvari je bilo pozitivno u današnjem meču za mene. Igrao sam veoma, veoma loše.</span>
+                 
+                 <br/>
+                 <input type="button" onclick="analiziraj()" 
+                        value="Analiza teksta" style="margin: 40px 0">
+                 <br/>
+                 
+                 <span id="rezultat"></span>
+                 
+            </div>
+
+
+            <ul>
+                <li>Svaku rečenicu teksta staviti u poseban red.</li>
+                <li>Na kraju svake rečenice dodati 3 zvezdice.</li>
+                <li>Svako pojavljivanje reči "nepobediv" boldirati i prebaciti u uppercase.</li>
+                <li>Iz svake rečenice uzeti podstring dužine 5, počevši od 10. karaktera, i dodati ga u poslednji red teksta.</li>
+            </ul>
+        </div>
+        
+        <script>
+            function analiziraj() {
+                var tekst = document.getElementById("tekst").innerHTML;
+                var recenice = tekst.split(/[.!]\s/);
+                var kraj = '<b style="color: red;">Egzibicije za kraj :D</b>';
+                
+                var x = document.getElementById("rezultat");
+                
+                x.innerHTML = "";
+                for (var i = 0; i < recenice.length; i++) {
+                    kraj += " " + recenice[i].substr(9,5) + "|";
+                    x.innerHTML += recenice[i].replace(/nepobediv/g,"<b>"+"nepobediv".toUpperCase()+"</b>")+" ***<br\>";
+                }
+                x.innerHTML += kraj;
+            }
+        </script>
+    </body>
+</html>
