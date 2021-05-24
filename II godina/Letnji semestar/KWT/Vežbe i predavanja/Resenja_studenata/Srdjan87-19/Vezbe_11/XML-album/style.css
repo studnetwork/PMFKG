@@ -1,0 +1,17 @@
+
+#tabela, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+#tabela > td {
+    text-align: left;
+}
+
+#tabela, #info {
+    float: left;
+}
+
+#info {
+    padding: 10px;
+} 
