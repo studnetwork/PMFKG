@@ -25,7 +25,8 @@ o materijalu sa gradiva
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran
 
-[Moodle stranica predmeta][stranica predmeta]  
+[Moodle stranica predmeta][stranica predmeta]
+  
 [//]: # ( [Link ka folderu Ostalo][ostalo] )
 
 # Napomena
