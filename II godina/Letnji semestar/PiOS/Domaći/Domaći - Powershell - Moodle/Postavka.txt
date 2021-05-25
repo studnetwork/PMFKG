@@ -1,0 +1,10 @@
+# https://imi.pmf.kg.ac.rs/moodle/mod/assign/view.php?id=8813
+# Datum pristupa: 25. Maj 2021.
+
+1.)
+
+Napisati powershell skriptu (zad1.ps1) koja prima promenljiv broj parametara (minimalno 3). Prva dva parametra predstavljaju putanje do direktorijuma, dok ostali parametri definišu listu ekstenzija. Skripta treba da iskopira sve datoteke koje imaju neku od zadatih ektenzija iz foldera zadatog kao prvi parametar u folder koji je zadat kao drugi parametar na sledeći način: Za svaku zadatu ekstenziju za koju postoji neka datoteka kreira se novi folder koji nosi naziv ekstenzije, a potom se u njega kopiraju sve datoteke sa tom ekstenzijom. Skripta treba da proveri postojanje zadatih direktorijuma, minimalni broj parametara, kao i da direktorijum zadat kao prvi parametar ne bude isti kao direktorijum zadat kao drugi parametar.
+
+2.)
+
+Napisati powershell skriptu (zad2.ps1) koja preko komande linije prima jedan argument, putanju do tekstualnog fajla FAJL. Skripta treba da upiše u fajl FAJL koliko fajlova iz trenutnog direktorijuma su readOnly, a koliko nisu. Od svih fajlova koji nisu readOnly u fajl FAJL ispiše ime, veličinu i datum kreiranja onih fajlova koji su kreirani u poslednjih mesec dana. Ako fajl FAJL postoji izbrisati ga. Ako nije prosleđen odgovarajući broj parametara ispisati poruku i prekinuti izvršenje skripte. 
