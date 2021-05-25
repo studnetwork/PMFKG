@@ -1,0 +1,60 @@
+#labels, #inputs {
+    float: left;
+}
+
+#labels {
+    padding-right: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container {
+    width: 900px;
+    margin:auto;
+    margin-top: 30px;
+}
+
+#search {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px 5px 5px 100px;
+    /*background-color: blue;*/
+    background: rgba(0, 0, 255, 0.6);
+    text-shadow: None;
+    /*opacity: 0.5;*/
+}
+
+#results {
+    overflow:hidden;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    text-shadow: None;
+    background: rgba(0, 0, 255, 0.6);
+}
+
+#tabela {
+    float:left;
+    width: 60%;
+}
+
+table {
+    width:100%;
+    background-color: wheat;
+    color: darkred;
+    text-align: center;
+}
+
+table, tr, td {
+    border: 1px solid darkred;
+}
+
+#right {
+    float:left;
+    width: 30%;
+    padding-left: 5%;
+}
+
+

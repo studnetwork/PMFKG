@@ -1,0 +1,90 @@
+<students>
+  <student id="100026">
+    <name>Joe Average</name>
+    <age>1996-01-01</age>
+    <country>USA</country>
+    <major>Biology</major>
+    <courses>
+        <course>Math</course>
+        <course>Biology</course>
+    </courses>
+  </student>
+  <student id="100078">
+    <name>Jack Doe</name>
+    <age>1999-01-01</age>
+    <country>UK</country>
+    <major>Physics</major>
+    <courses>
+        <course>Math</course>
+        <course>XML</course>
+        <course>Physics</course>
+        <course>Statistics</course>
+    </courses>	
+  </student>
+  <student id="100079">
+    <name>Pera Peric</name>
+    <age>1995-01-01</age>
+    <country>SRB</country>
+    <major>Math</major>
+    <courses>
+        <course>Serbian</course>
+        <course>XML</course>
+        <course>Qwant</course>
+    </courses>	
+  </student>
+  <student id="100080">
+    <name>Mika Hakinnen</name>
+    <age>1997-01-01</age>
+    <country>FIN</country>
+    <major>Physics</major> 
+    <courses>
+        <course>Analysis</course>
+        <course>Web design</course>
+        <course>Methods</course>
+    </courses>	
+  </student>
+  <student id="100081">
+    <name>Laza Kostic</name>
+    <age>1999-01-01</age>
+    <country>SRB</country>
+    <major>Computer science</major>
+    <courses> 
+        <course>Numerical analysis</course>
+        <course>Simulation</course>
+        <course>OOP</course>	
+    </courses>
+  </student>
+  <student id="100082">
+    <name>Misa Kovac</name>
+    <age>1999-01-01</age>
+    <country>MNE</country>
+    <major>Computer science</major> 
+    <courses>
+        <course>Math</course>
+        <course>Web security</course>
+        <course>Parallel programming</course>
+    </courses>	
+  </student>
+  <student id="100083">
+    <name>Dragisa Vukovic</name>
+    <age>1998-01-01</age>
+    <country>MNE</country>
+    <major>Physics</major>
+    <courses>
+        <course>Math</course>
+        <course>Dynamics</course>
+        <course>Experiments</course>
+    </courses>	
+  </student>
+  <student id="100084">
+    <name>Milutin Milanovic</name>
+    <age>1996-01-01</age>
+    <country>SRB</country>
+    <major>Math</major>
+    <courses>
+        <course>Complex functions</course>
+        <course>Numerical methods</course>
+        <course>English 1</course>
+    </courses>
+  </student>
+</students>

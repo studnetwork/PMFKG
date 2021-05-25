@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/second.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="script.js"></script>
+    </head>
+    <body onload="loadXML(), search()">
+        <div id="container">
+            <h2>Studenti</h2>
+            <div id="prikaz" style="clear:both;">
+                <div id="search">
+                    <div id="unosMajor" style="display: inline;">
+                        Smer:
+                        <select id="selectMajor">    
+                        </select>
+                    </div>
+                    <div id="unosAge" style="display: inline; margin-left: 30px;">
+                        Godine:
+                        <input id="txtAge" type="text" onkeyup="search()"/>
+                    </div>
+                </div>
+                <div id="results">
+                    <div id="tabela">
+                    </div>
+                    <div id="right">
+                        <div id="kursevi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

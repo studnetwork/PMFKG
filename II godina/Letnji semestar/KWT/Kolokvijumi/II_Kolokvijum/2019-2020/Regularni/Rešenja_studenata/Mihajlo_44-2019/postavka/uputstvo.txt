@@ -1,0 +1,16 @@
+Na pocetku se prikazuje tabela sa knjigama iz fajla books.xml.
+
+Knjige mogu da se cekiraju i smeste u korpu. Trenutno stanje korpe je prikazano
+u tabeli sa desne strane. Prikazana je i ukupna cena knjiga u korpi.
+
+Check/uncheck knjige automatski azurira korpu i cenu. Takodje, na dnu stranice se
+prikazuju preporucene knjige na osnovu sadrzaja korpe. Podaci o povezanim knjigama se
+nalaze u fajlu books_1.xml.
+
+Knjige mogu da se filtriraju po naslovu (videti video). U polje za pretragu je
+dozvoljeno upisati svaki karakter osim cifara. Pri upisu cifre se prikazuje poruka greske.
+
+Korpa ostaje sacuvana bez obzira da li su sve knjige iz korpe trenutno prikazane u tabeli.
+
+Ako se knjiga cekira, zatim pretragom nestane iz tabele pa se vrati, ona se ponovo
+prikazuje cekirana (videti video).

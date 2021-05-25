@@ -1,0 +1,10 @@
+Nacin bodovanja nije konacan!
+
+Combobox: 4
+Prikaz tabele za izabranu vrednost: 6
+
+Provera godina: 4
+
+Ispis imena i prezimena: 2
+Ispis kurseva: 4
+

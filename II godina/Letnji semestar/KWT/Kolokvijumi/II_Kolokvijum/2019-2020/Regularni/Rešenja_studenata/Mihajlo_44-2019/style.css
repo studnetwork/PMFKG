@@ -1,0 +1,75 @@
+/* 
+    Document   : style
+    Created on : Jun 15, 2014, 10:23:59 PM
+    Author     : Mihailo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+h2 {
+    text-align: center;
+}
+
+#container {
+    width: 900px;
+    margin:auto;
+    margin-bottom: 400px;
+}
+
+#search {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+#unosNaziva {
+    width:50%;
+    float:left;
+}
+
+#preporuke {
+    width:50%;
+    float:right;
+}
+
+#results {
+    overflow:hidden;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    background-color: lightblue;
+    position: relative;
+}
+
+#recomm{
+    overflow:hidden;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    background-color: lightblue;
+    position: relative;
+    display: none;
+}
+
+#tabela {
+    float:left;
+    width: 45%;
+}
+
+table {
+    width:100%;
+    background-color: wheat;
+    color: darkred;
+}
+
+table, tr, td {
+    border: 1px solid darkred;
+}
+
+#desc {
+    float:left;
+    width: 45%;
+    padding-left: 5%;
+}
+

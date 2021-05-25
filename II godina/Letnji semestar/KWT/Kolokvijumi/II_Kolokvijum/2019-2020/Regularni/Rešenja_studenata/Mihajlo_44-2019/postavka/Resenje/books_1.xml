@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<catalog>
+   <book>
+      <author>Obrenovic, Mihailo</author>
+      <title>XML Developer's Guide - Advanced</title>
+      <genre>Computer</genre>
+      <related>bk101</related>
+   </book>
+   <book>
+      <author>Martin</author>
+      <title>The game of thrones</title>
+      <genre>Fantasy</genre>
+      <related>bk102</related>
+   </book>
+   <book>
+      <author>Corets, Eva</author>
+      <title>Maeve Ascendant</title>
+      <genre>Fantasy</genre>
+      <related>bk102</related>
+   </book>
+</catalog>
