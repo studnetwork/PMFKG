@@ -54,24 +54,24 @@ function prikaziInfo(i) {
     
     info.innerHTML = text;
     
-    if( info.innerHTML != "" ) {
-        var button = document.createElement("button");
-        
-        button.innerHTML = "&lt;&lt";
-        button.onclick = function() {
-            prikaziInfo( cds.length * (i==0) + i - 1 );
-        };
-        
-        info.appendChild(button);
-        
-        button = document.createElement("button");
-        
-        button.innerHTML = "&gt;&gt";
-        button.onclick = function() {
-            prikaziInfo( (i+1) % cds.length );
-        };
-        
-        info.appendChild(button);
-    }
+    
+    var button = document.createElement("button");
+    
+    button.innerHTML = "&lt;&lt";
+    button.onclick = function() {
+        prikaziInfo( cds.length * (i==0) + i - 1 );
+    };
+    
+    info.appendChild(button);
+    
+    button = document.createElement("button");
+    
+    button.innerHTML = "&gt;&gt";
+    button.onclick = function() {
+        prikaziInfo( (i+1) % cds.length );
+    };
+    
+    info.appendChild(button);
+
 }
              
