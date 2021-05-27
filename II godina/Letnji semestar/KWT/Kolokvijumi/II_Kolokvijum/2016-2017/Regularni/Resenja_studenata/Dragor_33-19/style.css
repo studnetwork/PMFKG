@@ -1,0 +1,108 @@
+
+#wrapper
+{
+    width: 1100px;
+    margin: auto;
+}
+
+#login, #prikaz, #logout
+{
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+}
+
+#login {
+    overflow: hidden;
+    width: 33%;
+}
+
+#labels, #inputs {
+    float: left;
+}
+
+#loginButton {
+    clear:both;
+}
+
+#labels {
+    padding-right: 10px;
+}
+
+#prikaz
+{
+    overflow:hidden;
+}
+
+#filteri {
+    width: 15%;
+    float: left;
+    padding-left: 2%
+}
+
+#tabela {
+    float: left;
+    width: 40%;
+    padding-left: 3%;
+}
+
+table {
+    width:100%;
+    background-color: white;
+}
+
+table, tr, td {
+    border: 1px solid darkred;
+}
+
+#detalji {
+    float:left;
+    width: 35%;
+    padding-left: 3%;
+    padding-right: 2%;
+    padding-top: 2%;
+    bottom: 2%;
+}
+
+/*-----*/
+
+#detailsImage
+{
+    height: 220px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+#detailsTitle
+{
+    padding-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#detailsAuthor, #detailsAuthor > span
+{
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.detTag
+{
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.detTag > span
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#prep
+{
+    font-size: 20px;
+    font-weight: bold;
+}

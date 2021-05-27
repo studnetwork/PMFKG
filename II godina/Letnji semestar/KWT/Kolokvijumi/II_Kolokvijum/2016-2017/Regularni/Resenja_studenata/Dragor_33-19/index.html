@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="login">
+                <div id="labels">
+                    <div>Korisničko ime:</div>
+                    <div>Lozinka:</div>
+                </div>
+                <div id="inputs">
+                    <div><input id="inpUser" type="text"></div>
+                    <div><input id="inpPass" type="password"></div>
+                </div>
+                <div id="loginButton">
+                    <button id="logujSe">Uloguj se</button>
+                </div>
+                <div id="greska" hidden style="color: red;">
+                    GRESKA!
+                </div>
+            </div>
+            
+            <div id="logout" hidden>
+                <p>Dobrodosli, <span id="welcomeUser"></span></p>
+                <div id="logoutButton">
+                    <button id="izlogujSe">Izloguj se</button>
+                </div>
+            </div>
+            
+            <div id="prikaz">
+                <div id="filteri">
+                    <p style="font-weight:bold">Odaberite žanr:</p>
+                    <div id="checkboxes">
+                        
+                    </div>
+                    <div id="cene">
+                        <p style="font-weight:bold">Maksimalna cena:</p>
+                        <select id="selCena">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option selected="selected">50</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="tabela"></div>
+                <div id="detalji">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="script.js"></script>
+    </body>
+</html>
