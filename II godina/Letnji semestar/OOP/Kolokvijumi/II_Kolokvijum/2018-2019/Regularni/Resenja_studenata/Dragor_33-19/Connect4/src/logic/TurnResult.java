@@ -2,5 +2,5 @@ package logic;
 
 public enum TurnResult
 {
-	WIN, NONE, ERROR;
+	WIN, NONE, ERROR, DRAW;
 }

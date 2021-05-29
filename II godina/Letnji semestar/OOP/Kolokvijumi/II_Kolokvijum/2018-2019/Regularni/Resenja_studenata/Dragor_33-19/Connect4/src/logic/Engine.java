@@ -54,8 +54,12 @@ public class Engine
 			else yelTurns++;
 			
 			if(CheckWin(i, c)) return TurnResult.WIN;
-		
+			
 			onTurn = (onTurn == Ball.RED)? Ball.YELLOW : Ball.RED;
+			
+			if(redTurns + yelTurns == width * height)
+				return TurnResult.DRAW;
+			
 			return TurnResult.NONE;
 		}
 		

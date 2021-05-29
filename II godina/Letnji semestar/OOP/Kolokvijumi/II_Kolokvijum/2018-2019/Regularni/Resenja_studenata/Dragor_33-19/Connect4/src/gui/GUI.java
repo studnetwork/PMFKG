@@ -159,8 +159,21 @@ public class GUI extends JFrame
 		// Check Game State (WIN)
 		if(turnResult == TurnResult.WIN)
 		{
-			System.out.println("WIN" + engine.getOnTurn());
+			System.out.println("WIN " + engine.getOnTurn());
 			String message = "Pobednik je " + ((engine.getOnTurn() == Ball.RED)? "Crveni" : "Zuti") + "\n";
+			message += "Novu igru zelite li Vi?";
+			String title = "Na zalost, kraj je igre ...";
+			if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION)) {
+				init();
+			}
+			else {
+				System.exit(0);
+			}
+		}
+		else if(turnResult == TurnResult.DRAW)
+		{
+			System.out.println("DRAW");
+			String message = "Nereseno je.\n";
 			message += "Novu igru zelite li Vi?";
 			String title = "Na zalost, kraj je igre ...";
 			if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION)) {
