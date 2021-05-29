@@ -91,7 +91,7 @@ public class Engine
 		//System.out.println("count: " + count);
 		if(count == 4) return true;
 		
-		// Diagonal (/)
+		// Diagonal (\)
 		count = 1;
 		for(int i = r-1, j = c-1; j >= 0 && i >= 0 && count < 4 && table[i][j] == onTurn; j--, i--) count++;
 		for(int i = r+1, j = c+1; j < width && i < height && count < 4 && table[i][j] == onTurn; j++, i++) count++;
