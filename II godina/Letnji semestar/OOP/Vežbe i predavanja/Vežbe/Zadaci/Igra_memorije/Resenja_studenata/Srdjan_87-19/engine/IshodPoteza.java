@@ -1,0 +1,10 @@
+package engine;
+
+public enum IshodPoteza {
+	CEKAJ_DRUGI_POTEZ,
+	NEPOKLAPANJE,
+	POKLAPANJE,
+	NEMOGUC_POTEZ,
+	ODIGRAN_POTEZ,
+	KRAJ
+}
