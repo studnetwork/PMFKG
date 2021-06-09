@@ -22,6 +22,8 @@ do
 		exit 2
 	fi	
 
+	# ispravnija varijanta: 
+	# find "$dir" -type f -print0 | while IFS= read -r -d '' file 
 	find "$dir" -type f | while read file
 	do
         basename=$(basename "$file")
