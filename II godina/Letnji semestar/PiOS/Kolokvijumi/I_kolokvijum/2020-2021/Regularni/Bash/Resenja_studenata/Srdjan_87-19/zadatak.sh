@@ -26,7 +26,7 @@ do
 	# find "$dir" -type f -print0 | while IFS= read -r -d '' file 
 	find "$dir" -type f | while read file
 	do
-        basename=$(basename "$file")
+		basename=$(basename "$file")
 		if [[ $file == *."$ext" ]]; then
 			grep -E "^[A-Z].*\.$" "$file" >> "./$basename"
 			rm "$file"

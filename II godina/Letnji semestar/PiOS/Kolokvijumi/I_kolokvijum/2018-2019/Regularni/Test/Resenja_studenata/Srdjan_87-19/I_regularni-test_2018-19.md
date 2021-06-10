@@ -20,9 +20,9 @@ d. /etc/gshadow
 
 Sadrži informacije o korisničkim nalozima:  
 * username  
-* lične podatke o korisniku  
 * ID korisnika   
 * ID korisnikove primarne grupe  
+* lične podatke o korisniku  
 * putanju do ličnog direktorijuma korisnika  
 * putanju do shell interpretera  
 
@@ -70,12 +70,12 @@ b. mkfs -t ext4 -l /tmp/list /dev/hda2
 
 #### a. `cp -r /etc/* /tmp/oldconfig`
 
-Kopira sav sadržaj direktorijuma `/etc` (i njegovih poddirektorijuma)  u direktorijum `/tmp/oldconfig``
+Kopira sav sadržaj direktorijuma `/etc` (i njegovih poddirektorijuma)  u direktorijum `/tmp/oldconfig`)
 
 
 #### b. `mkfs -t ext4 -l /tmp/list /dev/hda2`
 
-Kreira fajl sistem tipa `ext4` sa inicijalizovanom listom neispravnih blokova `/temp/list` na particiji `/dev/hda2`
+Kreira fajl sistem tipa `ext4` sa inicijalizovanom listom neispravnih blokova `/tmp/list` na particiji `/dev/hda2`
 
 ---
 
@@ -100,20 +100,20 @@ chmod -R 760 zadatiDirektorijum
 ```
 DIR
 |----------dir1
-|			|----------file1
-|		  	|
-|			\----------dir2
-|						|----------file2
-|						|
-|						\----------file3						  
+|           |----------file1
+|           |
+|           \----------dir2
+|                       |----------file2
+|                       |
+|                       \----------file3						  
 |
 |
 |
 |----------file4
 |
 \----------dir3
-			|----------file5
-			\----------file6
+            |----------file5
+            \----------file6
 ```
 
 ---
@@ -131,8 +131,8 @@ DIR
 * `[0-9]{4}` - odgovara delu `gggg`  
 
 * `((0[1-9]|(1|2)[0-9]|3(0|1))\.(0[1-9]|1[0-2])\.)` - odgovara početnom delu prvog formata  
-	* izgled uz upotrebu prethodno navedenih regularnih izraza: `(dd\.mm\.)`  
+	* uprošćena reprezentacija uz upotrebu prethodno navedenih izraza: `(dd\.mm\.)`  
 
 * `((0[1-9]|1[0-2])/(0[1-9]|(1|2)[0-9]|3(0|1))/)` -  odgovara početnom delu drugog formata  
-	* izgled uz upotrebu prethodno navedenih regularnih izraza: `(mm/dd/)`  
-* uprošćena reprezentacija kompletnog izraza: `^((dd\.mm\.)|(mm/dd/))gggg$`  
+	* uprošćena reprezentacija uz upotrebu prethodno navedenih izraza: `(mm/dd/)`  
+* uprošćena reprezentacija kompletnog regularnog izraza: `^((dd\.mm\.)|(mm/dd/))gggg$`  
