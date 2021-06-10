@@ -17,12 +17,14 @@ fi
 
 ext='txt'
 
-sorted=$(find "$1" -maxdepth 1 -type f -name "*.$ext" | sort -d )
+files=$(find "$1" -maxdepth 1 -type f -name "*.$ext" )
 
-echo "$sorted" | head -2 | while read file; do
+echo "$files" | head -2 | while read file; do
+    file=$(sort -d "$file")
 	awk '!/^-?[0-9]+\.[0-9]+.*[0-9]+\.[0-9]+$/' "$file" >> "$2"
 done
 
-echo "$sorted" | tail -2 | while read file; do
+echo "$files" | tail -2 | while read file; do
+    file=$(sort -d "$file")
 	awk '!/^-?[0-9]+\.[0-9]+.*[0-9]+\.[0-9]+$/' "$file" >> "$2"
 done
