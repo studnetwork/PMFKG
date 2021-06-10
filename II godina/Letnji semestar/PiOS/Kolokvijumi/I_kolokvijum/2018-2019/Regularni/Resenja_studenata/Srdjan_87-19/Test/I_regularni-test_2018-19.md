@@ -1,6 +1,11 @@
-### 1. Navesti komponente kernela operativnog sistema Linux. (?)
+### 1. Navesti komponente kernela operativnog sistema Linux.
 
----
+* **upravljanje procesima** - kreira procese i omogućava višeprocesni rad (multitasking)
+* **upravljanje memorijom** - kontroliše dodeljivanje memorije i swap prostora procesima, kernelskim komponentama kao i bafersko keširanje
+* **upravljanje fajl sistemima** (VFS, Virtual File System)
+* **apstrakcija mrežnih servisa**
+* **podrška za hardverske uređaje**, podrška za različite sisteme datoteka, podrška za TCP/IP…
+
 
 ### 2. Objasniti čemu služe sledeći fajlovi:
 
@@ -51,7 +56,7 @@ Sadrži sigurnosne podatke o grupi:
 
 * naziv grupe  
 * enkriptovanu lozinku  
-* listu administratora grup  
+* listu administratora grupe  
 * listu korisnika grupe  
 
 ---
