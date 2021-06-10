@@ -3,7 +3,7 @@
 
       | max primarnih | max extended
 :---: | :---:         | :---: 
-MBR   | 4             | proizvoljno mnogo
+MBR   | 4             | 1
 GTP   | 128           | proizvoljno mnogo
 
 
@@ -59,7 +59,7 @@ Ispisuje informacije u long formatu svih fajlova koji počinju sa `b‐wx`
 
 ---
 
-### 5. Koje je pravo potrebno nad direktoriijumom za prikazivanje njegovog detaljnog listinga (`ls – l`)
+### 5. Koje je pravo potrebno nad direktorijumom za prikazivanje njegovog detaljnog listinga (`ls –l`)
 
 Execute (`x`)
 
@@ -68,5 +68,5 @@ Execute (`x`)
 ### 6. Napisati komandu koja dodaje novog korisnika pod imenom os1user. Pravo ime ovog korisnika je Operativni Sistemi 1. Ovaj nalog je potreban do 22. Januara 2015. Primarna grupa kojoj pripada je informatika, a sekundarna drugagodina. Ime shell‐a koji se koristi je Bourne Again shell (bash). Ako se ne prijavi na nalog u periodu od 25 dana, nalog će biti blokiran.
 
 ```
-sudo useradd -c "Operativni Sistemi 1" -e "2015-01-22" -g "informatika" -g "drugagodina" -s "/bin/bash" -f 25 os1user
+sudo useradd -c "Operativni Sistemi 1" -e "2015-01-22" -g "informatika" -G "drugagodina" -s "/bin/bash" -f 25 os1user
 ```
