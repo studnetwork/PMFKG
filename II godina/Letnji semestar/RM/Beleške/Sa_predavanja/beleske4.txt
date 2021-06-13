@@ -9,7 +9,7 @@ Provajder je povezan analognim modemima
 Danas je to zastarelo, ne koristi se vise
 
 
-Digitalni sigal je veoma "tezak" za prenos jer uglasti delovi("coskovi")
+Digitalni signal je veoma "tezak" za prenos jer uglasti delovi("coskovi")
 zahtevaju mnogo harmonika. Nije ih jednostavno reprodukovati sinusnim
 funkcijama jer zahtevaju veoma niske frekvencije, tj. veoma visoke
 harmonike. Takvi harmonici bi se izgubili na vecim udaljenostima
@@ -17,7 +17,7 @@ harmonike. Takvi harmonici bi se izgubili na vecim udaljenostima
 Zbog toga se koristi modem. On prevodi digitalni signal u analogni, koji
 se moze lako preneti jer ne zahteva visoke harmonike
 
-Modem = MODulation/DEModulation
+Modem = MOdulation/DEModulation
 
 Modem radi sledece:
 
@@ -30,10 +30,10 @@ nule i jedinice se kodiraju na taj nacin sto se jedinica kodira nekom vecom
 apmlitudom, dok se nula kodira nekom manjom amplitudom.
 Ova modulacija se oznacava i sa AM
 
-Ovo predstavlja MOD deo.
+Ovo predstavlja MO deo.
 
 
-Drugi nacin modulacije je FKS ( frequency modulation - FM ), tj. frekventna
+Drugi nacin modulacije je FSK ( frequency modulation - FM ), tj. frekventna
 modulacija. Kod ovog nacina noseci talas se modulise tako sto se jedinice
 i nule kodiraju razlicitim frekvencijama. Npr. za kodiranje jedinice se
 bira veca frekvencija, a za nulu manja
@@ -94,7 +94,7 @@ V.32bis standard
 
 
 Broj tacaka ogranicen je jer ako tacke budu previse gusto postavljene, tj. ako
-budu previse blizu jedna drugoj ona elektronika nece moci da da ih raspozna,
+budu previse blizu jedna drugoj ona elektronika nece moci da ih raspozna,
 ograniceni smo Senonovom granicom. Kada su one blizu, ne mozemo znati kojoj
 tacki da prepisemo ono sto smo detektovali jer zbog ostupanja koje postoji zbog
 suma, dolazi do dvosmislenosti i nemogucnosti ispravnog detektovanja
@@ -111,8 +111,7 @@ Asinhrona digitalna pretplacnika linija ( en. Asynchronous Digital Subscriber Li
 
 
 
-Sto je veca udaljenost od telefonske centrale, to je kapacitet linije (tj.
-maksimalna koja se moze postici) manji
+Sto je veca udaljenost od telefonske centrale, to je kapacitet linije manji
 
 
 "Ovi korisnici koje zive na 1-1.5 km od centrale mogu da koriste kapacitet linije

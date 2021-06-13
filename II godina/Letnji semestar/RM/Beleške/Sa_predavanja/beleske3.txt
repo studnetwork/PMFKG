@@ -22,15 +22,15 @@ do stvaranja magnetnog polja. To utice na druge parove provodnika, a i na sam
 taj par, tako sto indukuje struju i time stvara dodatni sum
 
 
-Kako bi se to izbeglo, ti provodnici se uredaju kako bi se ta magnetna polja 
+Kako bi se to izbeglo, ti provodnici se upredaju kako bi se ta magnetna polja 
 ponistila i time smanjio sum
 
 
 Danas se koriste sledeci tipovi upredenih parica:
 - UTP-3 (unshielded twisted pair; 16MHz)
 - UTP-5 (100MHz)
-- Cat 5 (250MHz)
-- Cat 6 (600MHz)
+- Cat 6 (250MHz)
+- Cat 7 (600MHz)
 
 
 Unshielded znaci da nije oklopljena, da nema metalni oklop
@@ -62,7 +62,7 @@ Postoje 2 vrste:
 * 75-omski
 
 
-Propusni opseg je oko 1GHz ( 10 puta bolji do UTP-5, sto se tice propusnog opsega )
+Propusni opseg je oko 1GHz ( 10 puta bolji od UTP-5, sto se tice propusnog opsega )
 
 Njegova prednost u odnosu na UTP je posedovanje oklopa.
 
@@ -93,8 +93,8 @@ Refrakcija - prelamanje
 Refleksija - odbijanje zraka
 
 
-Kada se predje odredjeni ugao upada svetlost iz gusce u redju sredinu, desava se da
-se svetlos odbije i vrati u tu guscu sredinu.
+Kada se predje odredjeni ugao upada svetlosti iz gusce u redju sredinu, desava se da
+se svetlost odbije i vrati u tu guscu sredinu.
 
 
 Postoje jednorezimsko i viserezimsko vlakno
@@ -132,24 +132,23 @@ Poredjenje optickog vlakna i bakarne zice
 Repetitor - uredjaj koji radi u fizickom sloju, samo pojacava signal koji primi i
             salje ga dalje
 
-1.
-Zbog male atenuacije optickog vlakna, repetitori se postavljaju na svakih 50km, dok
-se kod bakarne zice oni moraju postavljati na svaka 5km
+1. Zbog male atenuacije optickog vlakna, repetitori se postavljaju na svakih 50km, dok
+   se kod bakarne zice oni moraju postavljati na svaka 5km
 
-Danas se postavljaju repetitori i na 100km (opticko vlakno)
+   Danas se postavljaju repetitori i na 100km (opticko vlakno)
 
 
 2. opticka vlakna su neosetljiva (otporna) na naponske udare
 
 
 3. opticka vlakna su tanka i laka 
-( 1000 upredenih parica ima masu 8t, dok 2 vlakna imaju masu od 100kg, a mnogo
-veci kapacitet )
+   ( 1000 upredenih parica ima masu 8t, dok 2 vlakna imaju masu od 100kg, a mnogo
+   veci kapacitet )
 
 
 4. Opticka vlakna su sigurnija. Ukoliko se preko bakarne zice salje signal koji
-nije kriptovan(npr. HTTP), moguce je prisluskivanje tako sto se postavi solenoid oko
-kabla i onda moze da se snimi ono sto prolazi kroz taj kabl
+   nije kriptovan(npr. HTTP), moguce je prisluskivanje tako sto se postavi solenoid oko
+   kabla i onda moze da se snimi ono sto prolazi kroz taj kabl
 
 
 
@@ -165,13 +164,13 @@ Bezicni prenos podataka - elektromagnetni spektar
 -------------------------------------------------
 
 
-radio talasi	~	10^4  -  10^8
-mikro talasi	~	10^8  -  10^10 ( mikrotalasna, wifi, mobilni telefon, ... )
-infrared	~	10^12 -  10^14 ( nevidljivi; daljinski upravljac, ... )
-vidljiva svetl. ~	400-700 nm ( deo se koristi za opticka vlakna )
-UV		~	10^15 -  10^16 ( deo se koristi u optickim vlaknima )
-X-ray		~	10^16 -  10^22 ( jonizujuce zracenje; ne koristi se )
-Gamma ray	~	10^22 -        ( jonizujuce zracenje; ne koristi se )
+radio talasi         10^4  -  10^8
+mikro talasi         10^8  -  10^10 ( mikrotalasna, wifi, mobilni telefon, ... )
+infrared             10^12 -  10^14 ( nevidljivi; daljinski upravljac, ... )
+vidljiva svetl.      400   -  700nm ( deo se koristi za opticka vlakna )
+UV                   10^15 -  10^16 ( deo se koristi u optickim vlaknima )
+X-ray                10^16 -  10^22 ( jonizujuce zracenje; ne koristi se )
+Gamma ray            10^22 -        ( jonizujuce zracenje; ne koristi se )
 
 
 Veza talasne duzine i frekvencije:
@@ -314,16 +313,17 @@ LEO (Low Earth Orbit)
 Obilazak oko zemlje u ovoj orbiti traje oko 90min
 Latencija = 1-7ms
 
+U njoj se nalazi medjunarodna svemirska stanica na 400km iznad Zemljine povrsine
+
 Nakon ove orbite nalazi se (nizi) Van Allen-ov pojas koji je veoma opasan.
 Sastoji se od naelektrisanih cestica. To dovodi do kvara opereme pa se zbog
 toga u tom pojasu ne postavljaju sateliti
 
-U njoj se nalazi medjunarodna svemirska stanica na 400km iznad Zemljine povrsine
 
 --
 
 MEO (Medium Earth Orbit)
-2000-35786
+2000-35786km
 35-85ms
 
 Iznad MEO nalazi se visi Van Allen-ov pojas koji takodje sadrzi naelektrisane
@@ -337,12 +337,12 @@ koordinate i nadmorsku visinu
 
 --
 
+Iznad gornjeg Van Allen-ovog pojasa nalazi se GEO (Geostationary Equatorial Orbit; "geostacionarna orbita")
+
 Latencija = 270ms
 
-Iznad gornjeg Van Allen-ovog pojasa malazi se GEO (Geostationary Equatorial Orbit; "geostacionarna orbita")
-
 GEO je karakteristican po tome sto na visini od 35800km period obilaska
-oko zemlje je jedan dan, sto znaci da sa Zemlje izgleda kao da stoji
+oko Zemlje je jedan dan, sto znaci da sa Zemlje izgleda kao da stoji
 
 
 Ova orbita je danas prilicno zagadjena. Dovoljna su samo 3 satelita u ovoj

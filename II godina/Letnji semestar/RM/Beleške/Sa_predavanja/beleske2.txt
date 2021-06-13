@@ -232,7 +232,7 @@ Problem 3: veliki deo softvera nije svestan mobilnosti (nije toliko znacajan jer
 
 Furijeva analiza
 ================
-- rastavljanje sagnala na njegove sasatavne delove
+- rastavljanje signala na njegove sasatavne delove
 
 "Svaki signal se moze pretvoriti u zbir sinusoida"
 
@@ -292,7 +292,7 @@ Jednacina:
 
 
 
-Nikvistovom teoremom se odredjuje teorijsa granica, a Senonovom teoremom
+Nikvistovom teoremom se odredjuje teorijska granica, a Senonovom teoremom
 granica realnih medijuma
 
 
