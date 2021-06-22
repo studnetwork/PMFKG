@@ -87,9 +87,9 @@ Primer:
 
 
 Ako se u referenci nalazi samo URI neke stranice onda ce nas link odvesti na
-pocetak te straica, ali se na taj URI doda i neka njegova oznaka, ispred koje
+pocetak te stranica, ali se na taj URI doda i neka njegova oznaka, ispred koje
 stoji simbol "#" onda ce nas ta referenca odvesti direktno do te oznake na 
-navedemom URI-u
+navedenom URI-u
 
 
 Ukoliko link predstavlja neki dokument (koji nije HTML fajl) onda ce browser pri
@@ -97,8 +97,8 @@ uraditi jednu od dve stvari:
 - ponudice da se fajl preuzme
 - ponudice da se fajl otvori preko podrazumevanog programa
 
-To se ne odnosi PDF-ove jer browseri imaju posebne 
-
+To se ne odnosi PDF-ove jer browseri imaju posebne dodatke koji omogucavaju
+njihvo ucitavanje direktno u browser-u
 
 
 Link za slanje mail-a. Kada se klikne otvara se mail klijent. Moguce je definisati
@@ -110,11 +110,11 @@ i sta ce se automatski popuniti
 adresa slike.
 
 "Ukoliko se slika nalazi u okviru vaseg domena onda obavezno koristite relativno
-adresiranje. Ukoliko nije, onda morate korisiti staticu, ali imajute na umu da
-ukoliko taj sajt nije dostupan ili ukoliko ukloni sliku onda se nece videti"
+adresiranje. Ukoliko nije, onda morate korisiti staticko, ali imajute na umu da
+ukoliko taj sajt nije dostupan ili ukoliko ukloni sliku onda se nece videti kod vas"
 
 
-"Treba voditi racuna, ukoliko koristite neku sliku, o copyright-u"
+"Treba voditi racuna ukoliko koristite neku sliku i o copyright-u"
 
 
 Pored atributa "src", <img> ima i atribut "alt". U njemu se navodi tekst koji
@@ -131,16 +131,16 @@ sajta da tim korisnicima ukratko opise sadrzaj same slike
 <img> moze imati i atribute "width" i "height" kojima se definisu respektivno
 sirina i visina same slike. 
 
-Navodjenjem oba atributa mozemo narusiti odnos/proporciju same slike, docice
+Navodjenjem oba atributa mozemo narusiti odnos/proporciju same slike, doci ce
 do njene deformacije
 
 Zbog toga se preporucuje koriscenje samo jedne dimenzije, jer ce se druga
 automatski podesiti tako da proporcija ostane ista
 
 
-Ova dva atributa je moguce zameniti atributom "style". Preporucuje se njegovo
+Ova dva atributa je moguce zameniti atributom "style". Ne preporucuje se njegovo
 koriscenje jer ukoliko je stil vec negde definisan (npr. u head-u ), a pored toga
-su iskoriscena i ova dva elementa za istu stvar, "style" ce nadjacati njih i onda
+su iskoriscena i ova dva atributa za istu sliku, "style" ce nadjacati njih i onda
 to moze proci neprimeceno
 
 
@@ -157,7 +157,7 @@ Slika kao pozadina elementa:
 
 
 Slika kao link:
-	<a href="neki_link"><img src="slika1.jp"></a>
+	<a href="neki_link"><img src="slika1.jpg"></a>
 
 
 .asp strana = aktivna strana
@@ -195,10 +195,10 @@ Da bi se to ponavljanje sprecilo, koristimo css:
 
 
 
-Ranije (pre CCS-a) su se tabele bez vidljivih linija koristile za pozicioniranje 
-elemenata na HTML strani
+Ranije (pre CSS-a) su se za pozicioniranje 
+elemenata na HTML strani koristile tabele bez vidljivih linija  
 
-Danas ih treba isklucivo koristiti za tabelarno prikazivanje podataka. Za
+Danas ih treba iskljucivo koristiti za tabelarno prikazivanje podataka. Za
 pozicioniranje se koristi CSS
 
 
@@ -241,7 +241,7 @@ U tabeli se koristi i element <th> (== Table Heading)
 U slucaju kada neko polje nema sadrzaj desvalo se da se u nekim pretrazivacima
 iscrta okvir tog polja, dok se u drugim to nije desavalo.
 
-Da bi smo obezbedili njegovo iscrtavanje, u to bolje unosimo no-breaking
+Da bi smo obezbedili njegovo iscrtavanje, u to polje unosimo no-breaking
 space entitet koji se ne prikazuje.
 
 Sintaksa no-breaking space-a == &nbsp;
@@ -307,9 +307,9 @@ Novi nacin
 
 
 CSS za elemente koji se odnose na tabelu:
-	width: procenat%	<-- definise koliko procenat sirine ce tabelazauzimati
+	width: procenat%	<-- definise koliko procenata sirine ce tabela zauzimati
 	
-	( ukoliko width postavimo na 100%, tabela ce zauzimati citavu strnu i
+	( ukoliko width postavimo na 100%, tabela ce zauzimati citavu stranu i
 	  uvecavace se sa povecanjem sirine stranice tako da tabela uvek zauzima
 	  celu sirinu stranice )
 
@@ -329,7 +329,7 @@ text-align: center; ( moze imati i vrednosti: right, left, justify )
 
 
 "Ako vam treba naslov tabele onda obavezno koristite caption jer ce taj
-captio biti najlakse smesten"
+caption biti najlakse[najbolje] smesten"
 
 <caption> definise naslov elemenata kao sto su slike, tabele, ...
 
@@ -348,7 +348,7 @@ primer:
 
 Tabela ima i atribut "cellspacing" kojim se definise rastojanje 
 izmedju celija. Takodje, poseduje i atribut "frame" kojim se definise
-kako ce izgledati ovkir tabele. On moze imati vrenosti:
+kako ce izgledati okvir tabele. On moze imati vrenosti:
 - box
 - border
 - above
