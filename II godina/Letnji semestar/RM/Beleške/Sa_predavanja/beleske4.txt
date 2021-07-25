@@ -4,7 +4,8 @@ Cas: 4
 =====================================
 
 Dial Up
-Kod njega je frekvencija izmedju modema do manje centrale 4k Hz
+Kod njega je frekvencija izmedju modema do manje centrale ogranicena 
+na 4 kHz
 Provajder je povezan analognim modemima
 Danas je to zastarelo, ne koristi se vise
 
@@ -29,7 +30,7 @@ Jedna od modulacija je ASK ( apmlitude manipulation ). Kod ove modulacije
 nule i jedinice se kodiraju na taj nacin sto se jedinica kodira nekom vecom
 apmlitudom, dok se nula kodira nekom manjom amplitudom.
 Ova modulacija se oznacava i sa AM
-
+ 
 Ovo predstavlja MO deo.
 
 
@@ -59,6 +60,7 @@ Tokom svakog baud-a salje se po jedan simbol
 
 QPSK ( Quadrature Phase Shift Keying ) - cetiri fazna pomaka (tj. QAM4)
 kodira 2 bita 
+(ima 4 kombinacije koje se mogu predstaviti sa 2 bita: 00,01,10,11)
 
 Tacke predstavljaju fazne pomake
 
@@ -67,7 +69,7 @@ Kodira se s desne na levu ( kao kvadranti kod trigonometrijskog kruga )
      |
 -----|------
      |
-10   |    01
+10   |    11
 
 
 Ako je brzina uzorkovanja 2400 baud-a i ako je koriscen QPSK, brzina modema
@@ -94,17 +96,19 @@ V.32bis standard
 
 
 Broj tacaka ogranicen je jer ako tacke budu previse gusto postavljene, tj. ako
-budu previse blizu jedna drugoj ona elektronika nece moci da ih raspozna,
+budu previse blizu jedna drugoj onda elektronika nece moci da ih raspozna,
 ograniceni smo Senonovom granicom. Kada su one blizu, ne mozemo znati kojoj
 tacki da prepisemo ono sto smo detektovali jer zbog ostupanja koje postoji zbog
-suma, dolazi do dvosmislenosti i nemogucnosti ispravnog detektovanja
+termickog suma, dolazi do dvosmislenosti i nemogucnosti ispravnog detektovanja
 
 
 
 Maksimalna brzina koja moze da se postigne pomocu Dial up-a ( sto potvrdjuje i
 teorija ) je 33.6 kbps
 
-
+Postoji mogucnost da se postigne veca brzina tako sto ce se na drugom kraju nece
+koristiti modem. Time se izbegava dodatno konvertovanje signala iz analognog u
+digitalni i obrnuto, sto omogucava povecanje maksimalne brzina na 56kbps
 
 ADSL
 Asinhrona digitalna pretplacnika linija ( en. Asynchronous Digital Subscriber Line )
@@ -120,19 +124,23 @@ daleko veci, oko 1-1.1 MHz"
 Ovakav propusni opseg nam omogucava da postavimo 256 nezavisnih kanala od po
 4.3 kHz. To je kao da smo postavili 256 razlicitih (dial up) modema. 
 
-Donji deo se koristi za telefoniju, za razgovor fiksnim telefonom, 0-4 kHz
+Donji deo se koristi za telefoniju, za razgovor fiksnim telefonom (POTS), 0-4 kHz
 Srednji deo kanala za upstream, od korisnika ka provajderu, 26-138 kHz
 Preostali deo kanala za downstream, od provajdera ka korisnicima, 138-1100 kHz
 ( jer korisnici imaju vecu potrebu download-om od upload-a )
-
 
 
 Iz tog razloga se naziva asinhrono, jer brzina prenosa nije ista od provajdera ka
 korisnicima i od korisnika ka provajderu
 
 
-
 POTS - Plain Old Telephone Service
+
+
+
+Deo 4-26 kHz se ne koristi kako bi se omogucilo bolje razdvajanje telefonskog 
+saobracaja od internet saobracaja
+
 
 
 "Dobra stvar kod ADSL-a je to sto moze da vam se garantuje ovaj protok jer vi
@@ -147,7 +155,7 @@ se zove splitter
 
 
 
-Prednos podataka kablovskom mrezom
+Prednos podataka kablovskom mrezom (CATV)
 
 Najcesce se koristi HFC (postoje retki slucajevi gde se povezuju domacinstva sa
 optickim kablom)
@@ -160,21 +168,309 @@ koaksijalnog kabla koji domacinstva dele
 U telefoniji svako domacinstvo ima svoju upredenu paricu, ne deli se protok
 
 
-Kod kabla je malo teze garantovati protok, pa se cesto moze videti "protok do
-toliko", to znaci da su sve komsije iskljcene u tom trenutku.
+"Kod kabla je malo teze garantovati protok, pa se cesto moze videti 'protok do
+toliko', to znaci da su sve komsije iskljcene u tom trenutku."
 
 
 
 Jos jedna "mana" kabla je to sto se on deli pa postoji mogucnost da se saobracaj
-procita od drugih korisnika (komsija) koji dele taj kabl
+procita od drugih korisnika (komsija) koji dele taj kabl ukoliko nije sifrovan
 
 
 
-"Kablovski modem radi isto kao i Dialup model, isto kao i ADSL mode, samo sto je
-pitanje broja kanala koji su dostupni"
+"Kablovski modem radi isto kao i Dialup model, isto kao i ADSL modem, samo je
+pitanje koji je broja kanala koji su dostupni"
 
 
 Frekventni opsezi su podeljeni prema nameni
 
 
-38:10
+Malo je drugacija raspodela nego kod ADSL-a
+
+
+CATV obicno koristi kabl propusnog opsega oko 750 MHz.
+
+Za prenos podataka koriste se 2 opsega:
+  5-42  MHz za upstream
+550-750 MHz za downstream
+
+
+U downstram opsegu se koristi QAM-64 ili QAM-256 modulacija na kanalim sirine 6 ili 8 MHz
+
+Ako je sirina kanala 6 MHz i ako je noseci talas moduliran sa QAM-64, dobija se
+brzina od 36 Mbps (po takvom kanalu)
+
+
+Za upstream se koristi QPSK jer je taj frekventni opseg dosta zagadjen
+
+
+Jedina razlika izmedju CATV i ADSL modema je to sto se kod CATV modem mora da ima 
+neku logiku kojom se resava problem deljenja propusnog opsega izmedju vise korisnika
+(dinamicka raspodela kanala)
+
+
+
+Multipleksiranje je kombinovanje u jedan signal
+Demultipleksiranje je obrnuto, analiza kombinovanog signala na polazne signale
+
+
+Signali se multipleksiraju jer je to efikasnije resenje od pojedinacnog sprovodjenja
+svakog optickog kabla. Ukoliko bi se svaki sprovodio pojedinacno postojali bi dodatni
+troskovi zakupljivanja zemljista kroz koje bi proalzili, prokopavanje zemljista bi
+za svaki bi takodje predstavljalo trosak (to i predstavlja veci deo troska pri sprovodjenju
+optickih kablova), itd..
+
+
+Multipleksiranje podelom frekcencije (FDM - Frequency Devision Multiplexing) - frekventni
+opseg se podeli na disjunktne kanale, tako sto se signal svakog korisnika pomeri za neku
+vrednost i onda se svi ti signali superponiraju (saberu), cime se obezbedjuje zaseban
+deo propusnog opsega za svakog korisnika
+
+
+Takav skup kanala, tj. multipreksiranih signala naziva se grupa.
+
+Te grupe se dalje grupisu u supergrupe, a supergrupe u maticne grupe, a one u neke vece itd
+
+
+Ako dodje do greske pri multipleksiranju, moze doci do mesanja saobracaja izmedju kanala
+(crosstalk)
+
+
+Postoji i varijanta FDM koja se koristi iskljucivo u optici - WDM (Wavelength Division 
+Multiplexing)
+
+
+Koristi se viserezimsko opticko vlakno. Signali se pomocu ogledala usmeravaju tako da 
+ulaze u opticko vlakno pod razlicitim uglom. Izlaze kao (jedan) kompozitni signal (zrak).
+Nakon toga se propustanjem kroz prizmu, zbog razlicitih indeksa prelamanja razdvajaju se
+talasne duzine i time se dobijaju polazni signali (zraci)
+
+
+Repetiror se postavlja na svakih 1000 km
+
+
+
+
+Multipleksiranje podelom vremena - TDM (Time Devision Multiplexing)
+
+Sempluje se 8000 puta (po Nikvistovoj teoremi jer je propusni opseg 4 kHz). Po uzorku se
+prenese 7 bitova za podatke i 1 kontrolni bita
+
+
+U SAD i Japanu koristi se nosilac T1, po kome se multipleksira 24 govornih kanala.
+
+Jedan frejm ima 193 bita, 192 za podatke i 1 koji predstavlja marker okvira (naizmenicno
+menja vrednosti 0 i 1). Ukupna brzina je 1.544 Mbps
+
+
+4 T1 nosioca se multipleksira u T2 nosilac, nekoliko T2 nosioca u T3 nosilac itd..
+
+
+Diferencijalna impulsno-kodna modulacija:
+
+Posto za 125 mikrosekundi zvuk ne moze da se promeni za neku veliku vrednost, moze se
+pamtiti samo razlika vrednosti izmedju trenutnog i prethodnog stanja. Time se moze umesto
+7 bitova prenositi 5 bitova, cime se smanjuje velicina saobracaja koji treba da se prenese.
+(razlika +/- 16)
+
+
+Delta modulacija umesto odstupanje od 16, dozvoljava odstupanje od +/- 1
+Kod ove modulacije moze doci do gubitaka ukoliko dodje do nagle / strmije promene signala
+
+
+
+------------------
+Sloj veze podataka
+------------------
+
+
+Sloj veze podataka ( DLL - Data Link Layer )
+
+Namena: postizanje pouzdane i efikasne komunikacije izmedju 2 susenda racunara
+
+Treba mreznom sloju da obezbedi pouzdanu i efikasnu uslugu prednosa bitova
+
+Obicno je ugradjen u sam hardver, tacnije mrezni kontroler (NIC - network interface cotroller)
+
+
+Osnovna jedinica prenosa je okvir (frame)
+
+
+Funkcije sloja veze podataka: 
+- obrada gresaka pri prenosu (error control)
+- upravljanje tokom podataka (flow control)
+
+
+Okvir cine zaglavlje (header), polje za podatke (payload field) i zavrsnog dela (trailer)
+
+Paket se iz mreznog sloja pakuje se u payload field.
+
+
+Header sadrzi odredjene kontrolne informacije.
+
+Trailer sadrzi kod za kontrolu gresaka
+
+
+Sloj veze podataka mreznom sloju nudi sledece usluge:
+1. prenos podataka bez uspostavljanja direktne veze, bez potvrde o prijemu
+2. prenos podataka bez uspostavljanja direktne veze, sa potvrdom o prijemu
+3. prenos podataka sa uspostavljanjem direktne veze, sa potvrdom o prijemu
+
+
+1. usluga se koristi u savremenom Ethernet-u jer predstavlja pouzdanu zicanu vezu, koja
+nema puno smetnji
+
+Kod bezicnih veza situacija je drugacija, jer je kod njih veza nepouzdana, pa je zbog toga
+potrebna potvrda o prijemu
+
+
+Kod optickih veza nije takodje potrebna potvrda o prijemu jer su takve veze veoma pouzdane,
+pa nije potrebno koristiti usluge sa potvrdom o prijemu
+
+
+U ruterima se odvijaju odredjeni procesi kojima se odredjuje na koju stranu, tj. mrezni
+interfejs ce saobracaj da se uputi
+
+
+DLL je ugradjen u firmware mreznog uredjaja (NIC)
+
+
+Usluge:
+1. uokviravanje
+2. kontrola gresaka
+3. kontrola toka
+
+
+
+Prva ideja za uokviravanje okvira je bila razgranicavanje praznim vremenskim intervalom,
+ali ona nije pogodna iz vise razloga. Prvi je to sto ta pauza na uredjaju koji prima
+te okvire moze da ima vise tumacenja, tj. uzroka: razgranicavanje okvira, nepostojanje
+saobracaja ili pojava smetnje. Drugi razlog su performanse. Medijum ne bi bio efikasno
+iskoriscen jer za vreme pauze ne bi bio koriscen
+
+
+
+
+Metode uokviravanja:
+1. prebrojavanje znakova
+2. indikatorski bajtovi uz umetanje bajtova
+3. indikatorski bajtovi uz umetanje bitova
+4. narusavanje kodiranja fizickog sloja
+
+
+prebrojavanje znakova
+---------------------
+- problem: sinhronizacija == ako uredjaj kojem se salju podaci izgubi korak, ne moze
+  da se vrati na pravi toka
+
+
+
+
+indikatorski bajtovi uz umetanje bajtova
+------------------------------------------
+- naziva se jos i "byte stuffing" ili "character stuffing"
+- protokol PPP (Point to Point Protocol) ga koristi
+- indikatorski bajt ili znak (flag) se postavlja na pocetak i na kraj okvira
+- ako se flag nalazi kao deo podatka onda se escape-uje ESC karakterom
+- ESC karakter se takodje escape-uje ako predstavlja deo podatka
+- problem: ti bajtovi, tj. znaci se tumace kao ASCII znaci. Problem nastaje kada podaci
+  nisu ASCII; (Kodira se sa Base64)
+
+
+indikatorski bajtovi uz umetanje bitova
+-----------------------------------------
+- naziva se jos i "bit stuffing" 
+- indikatorski bajt = 01111110
+- ako se u delu za podatke pojavi indikatorski bajt onda se nakon 5. jedinice dodaje 0,
+  koju pri prijemu odbacuje racunar kojem se podaci salju
+  
+
+  
+narusavanje kodiranja fizickog sloja
+--------------------------------------
+- koristi se fizicki sloj kako bi se napravila granica izmedju okvira
+- uvodi se posebna voltaza koja bi predstavljala granicu ili se kreira uz pomocu
+  visoka-visoka ili niza-niza voltaza za fizicki bit kod modulacija koje koriste
+  dva fizicka bita za predstavljanje jednog bit-a podatka
+  
+  
+
+DLL svojom 2. uslugom omogucava da se okviri ispravno i pravim redosledom, isporuce
+mreznom sloju primaoca
+
+
+Pouzdanost isporuke se utvrdjuje potvrdom koju primalac salje posiljaocu, kako bi on znao
+sta se dogodilo sa tom isporukom
+
+
+Postoji mogucnost da posiljalac vecno ceka potvrdu ako dodje do gubitaka okvira jer
+primalac nece biti svestan tog dogadjaja pa je nece ni poslati pozitivni ili negativnu
+potvrdu.
+
+Zbog toga se uvodi tajmer. Kada prodje vreme koje je potrebno da okvir stigne i da se 
+potvrda dobije, tajmer se zaustavlja i posiljalac salje okvir ponovo.
+
+
+Postoji mogucnost da uredjaj na drugom kraju primi okvir, ali da se potvrda izgubi. Tajmer 
+ce da istekne jer potvrda nije stigla, pa ce posiljalac ce opet poslati paket sto dovodi 
+do prijema tog istog okvira i njegovo ponovnog prosledjivanja mreznom sloju drugog 
+racunara.
+
+
+Taj problem se resava dodeljivanjem rednog broja (sequence number) svakom okviru. Tada
+ce primalac povecati redni broj okvira koji ocekuje pa nece primiti ponovljeni okvir
+
+
+
+
+
+Kontrola toka
+-------------
+
+Ukoliko posiljalac brze salje okvire nego sto primalac moze da ih obradi dolazi do
+zaguzenja, a time i do gubitka okvira. Iz tog razlog DLL ima uslugu kontrole toga. Ova
+usluga nije karakteristicna nuzno za ovaj sloj, ali zbog bolje optimizacije pozeljno je da 
+se nalazi u ovom sloju.
+
+
+Postoje 2 vrste pristupa:
+1. upravljanje tokom na osnovu povratnih informacija (feedback-based flow control)
+2. upravljanje tokom zasnovano na ogranicenju brzine (rate-based flow control)
+
+
+1. pristup moze da se realizuje npr. tako sto ce primalac "reci" posiljaocu da moze da
+posalje n okvira i da nakon toga saceka potvrdu kako bi mogao da nastavi dalje da salje
+okvire
+
+2. pristup se ne nikada koristi u DLL, vec u visim slojevima. Ruteri/svicevi mogu 
+automatski da se odrede brzinu komunikacije tako sto ce se uzeti brzina onog uredjaja
+koji je sporiji (najmanja zajednicka vrednost)
+
+
+
+
+
+Obrada gresaka
+--------------
+
+Postoje 2 strategije za obradu gresaka:
+
+1. kodovi za ispravljanje gresaka (error-correcting codes), gde se salje visak podataka
+   koji primaocu omogucavaju da zakljuci sta su bili ispravni podaci (koriste se u 
+   bezicnim mrezama zbog velike zastupljenosti sumova)
+   
+2. kodovi za otkrivanje gresaka (error-detecting codes), omogucavaju detektovanje gresaka,
+   ali ne i zakljucivanje poslate sekvence bitova. Koriste se npr. kod Ethernet-a. Koriste
+   se samo za otkrivanje da li greska postoji i ako postoji zahteva se ponovno slanje 
+   okvira
+   
+1. strategija je isplativija u nepouzdanim vezama, dok je 2. isplativija u pouzdanim vezama
+
+U nepouzdanim vezama (npr. bezicnim mrezama sa visokim sumom) je isplativije da se isprave
+greske zato sto bi pri ponovnom slanju okvira postojala velika sansa da i on sadrzi gresku
+pa bi bilo potrebno ponovo slati okvir sve dok ne uspe da se posalje bez greske sto bi 
+zagusilo kanal i smanjilo efikasnost prenosa
+
+Greske se obicno desavaju u rafalima i takve greske se nazivaju burst errors
+
+Retko kada se dogodi da greska bude samo da jednom bitu
