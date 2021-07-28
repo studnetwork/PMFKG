@@ -25,7 +25,7 @@ protokol - jezik kojim uredjaji pricaju medjusobno
 kucne mreze
 
 DEC - Digital Equipment Coorporation
-"nema razloga da neko ima racunar kod kuca"
+"nema razloga da neko ima racunar kod kuce"
 
 
 Oblici e-commerce-a
@@ -40,7 +40,7 @@ WAP protokol - uroscen protokol koji je trebao da donese Web na male uredjaje
 
 "responsive design" - kontrola sajta 
 
-Protokoli koje koriste mobilni uredjaju
+Protokoli koje koriste mobilni uredjaji
 - WiFi ( 802.11 protokol, -a, -b, -n, -ac )
 - protokoli koje pruzaju mobilni operateri: GPRS/EDGE, 3G, 4G, 5G
 - NFC ( Near Field Controller )
