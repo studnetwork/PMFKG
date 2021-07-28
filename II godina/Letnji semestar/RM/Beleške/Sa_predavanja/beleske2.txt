@@ -11,7 +11,7 @@ Cas: 2
 
 
 Tok kretanja podataka
-svaki sloj dodaje "nesto svoje" ( header, trailer)
+svaki sloj dodaje "nesto svoje" ( header, trailer )
 Zbog toga se preko mreze prenosi i vise nego sto je poslato
 
 
@@ -125,11 +125,11 @@ krenu da se prave prerano onda se kao rezultat dobijaju losi standardi jer
 sve jos uvek nije dobro istrazeno. 
 
 To se dogodilo i sa OSI modelom. Pocela je da se proizvodi operma, a ona je bila
-lose, stalno se kvarila, nije mogla da uspostavi dovoljao dobar kvalitet usluge
+losa, stalno se kvarila, nije mogla da uspostavi dovoljao dobar kvalitet usluge
 
 
 Slicna stvar se dogadja i kada se prekasno donesu standardi. Investira se novac.
-Svaka firma ulaze novac  u proizvodnju proizvoda po necemu ( tom istrazivanju ),
+Svaka firma ulaze novac u proizvodnju proizvoda po necemu ( tom istrazivanju ),
 ali posto standardni jos uvek nisu doneti onda ce svako imati neki svoj standard
 (/implementaciju?) tako da bi svako donosio svoj standard sto vise ne bi ni 
 predstavljalo standard
@@ -202,7 +202,7 @@ virtuelno kolo
 ATM ( asynchronous Transfer Mode ) - telefonija
 Ukoliko se prekine veza izmedju dva cvorista kroz koje je uspostavljena, ona
 se prekida. Ovaj sistem omogucava naplatne usluge. Prednost ovakve mreze
-je to sto je kvalitet veze garantovan. Ima strong redosled okvira
+je to sto je kvalitet veze garantovan. Ima strog redosled okvira
 
 
 
@@ -252,15 +252,15 @@ Sto je duzi kabl, to je njegov propusni opseg manji
 
 
 
-Medijum frekvencije koje nisu u njegovom propusnom opsegu apsorbuju ili
-pretvaraju u neki oblik energije
+Medijum frekvencije koje nisu u njegovom propusnom opsegu apsorbuje ili
+pretvara u neki oblik energije
 
 
 
 Nikvistova teorema
 ------------------
 Propusni opseg je obelezen sa H.
-Svaki signal se moze u potpunosti rekonstruisati ako se uzrokuje frekvencijom
+Svaki signal se moze u potpunosti rekonstruisati ako se uzorkuje frekvencijom
 od 2H uzoraka u sekundi
 
 
@@ -270,7 +270,7 @@ kroz kanal je:
 			U_max [b/s] = 2 * H * log_2(V)
 
 
-Ova teorema se odnosi se samo na besumne kanale
+Ova teorema se odnosi samo na besumne kanale
 
 
 
