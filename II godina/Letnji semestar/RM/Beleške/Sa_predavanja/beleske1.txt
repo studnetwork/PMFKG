@@ -92,7 +92,7 @@ HFC - hybrid fiber coaxial
 
 
 
-Regionalnaa mreza (WAN)
+Regionalna mreza (WAN)
 - sastoji se od nekih cvorista ( ruteri ) koja izmedju sebe imaju neke linkove 1-1
 
 
@@ -108,7 +108,7 @@ Bezicne mreze
 Postoje 3 osnovne kategorije bezicnih mreza:
 - mreze za povezivanje sistema (npr bluetooth)
 - bezicne lokalne mreze ( IEEE 802.11 ) -n je do sada bio koriscen, a sada se koristi -ac koji koristi 5Ghz 
-- bezicne regionalne mreze ( GPRS/EDGE, UMTS, 5G, IEEE802.16 )
+- bezicne regionalne mreze ( GPRS/EDGE, UMTS, 5G, IEEE 802.16 )
 
 
 kucne mreze
