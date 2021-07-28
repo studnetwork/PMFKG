@@ -89,7 +89,7 @@ kodira 6 bita
 
 
 
-"Bilo je zgodnije zbog elektronike da se ovaj konstalacioni diagram zarodira"
+"Bilo je zgodnije zbog elektronike da se ovaj konstalacioni diagram zarotira"
 
 
 V.32bis standard
@@ -155,7 +155,7 @@ se zove splitter
 
 
 
-Prednos podataka kablovskom mrezom (CATV)
+Prenos podataka kablovskom mrezom (CATV)
 
 Najcesce se koristi HFC (postoje retki slucajevi gde se povezuju domacinstva sa
 optickim kablom)
