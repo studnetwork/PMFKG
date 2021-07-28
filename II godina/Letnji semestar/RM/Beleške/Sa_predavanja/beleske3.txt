@@ -14,10 +14,10 @@ Upredena parica (twisted pair)
 
 Upredena parica kao sto joj samo ime kaze predstavlja kabl u kome su zice,
 svaka obavijena izolatorom, upredene jedne oko drugih. Postoji vise takvih parova
-u okviru samo kabla.
+u okviru samog kabla.
 
 
-Provodnici su upredeni za sto bi u slucaju da se postavljene paralelno doslo
+Provodnici su upredeni zato sto bi u slucaju da su postavljene paralelno doslo
 do stvaranja magnetnog polja. To utice na druge parove provodnika, a i na sam
 taj par, tako sto indukuje struju i time stvara dodatni sum
 
@@ -233,7 +233,7 @@ centrale.
 Zbog toga sto bi bilo dosta skuplje da se centrale povezu preko koaksijalnog
 kabla ( telekomunikaciona kompanija bi morala da plati pravo na prolaz kroz
 zemljiste svakom vlasniku kroz cije zemljiste kabl prolazi ), komunikacija
-centrala je obavljana mikrotalasima, postavljanjem tornjema visine od 100m
+centrala je obavljana mikrotalasima, postavljanjem tornjeva visine od 100m
 na svakih 80km.
 
 
@@ -243,7 +243,7 @@ Problemi:
 2. Talase ~ 4GHz (talasna duzina oko 1cm) apsorbuje kisa, zato sto objekti
    slicnih dimenzija kao sto je talansa duzina signala mogu da apsorbuju
    taj singal
-3. Ponestalo je slobodnih frekvencija (3 algoritma za izbog) 
+3. Ponestalo je slobodnih frekvencija (3 algoritma za izbor)
 
    a) izbor za miss
    b) algoritam slucajnog izbora
@@ -252,7 +252,7 @@ Problemi:
 
 
 
-Infracrveni i milimentarski talasi
+Infracrveni i milimetarski talasi
 -----------------------------------
 
 Koriste se u vrlo ogranicenom domenu za prenos podataka
@@ -271,7 +271,7 @@ Prenos podataka vidljivom svetloscu
 Koristi se kod optickih vlakana
 
 
-Mozese koristi za prenos podatak i bez optickog vlakna pomocu lasera i 
+Moze se koristi za prenos podatak i bez optickog vlakna pomocu lasera i 
 fotodetektora. Potrebna je opticka vidljivost. Mane:
 - mora dobro da se fokusira
 - smetnje (atmosferske struje; toplota ga deformise)
@@ -387,7 +387,7 @@ Postoji od 1876., kada je Aleksander Grejm Bel patentirao telefon
 naucnik vec i biznismen, pa je odmah otvorio svoju kompaniju 
 Bell Labs, koja je bila prva telefonska kompanija"
 
-Ta njegova telefonska mreza je bila organizovan tako sto je 
+Ta njegova telefonska mreza je bila organizovana tako sto je 
 postojala centrala koja je korisnika usmeravala ka drugom korisniku.
 Preko nje je isla sva komunikacija na mrezi. 
 
