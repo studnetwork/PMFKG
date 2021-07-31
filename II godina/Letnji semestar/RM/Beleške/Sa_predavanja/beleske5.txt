@@ -7,11 +7,11 @@ Model - uproscena slika realnosti
 
 
 Pretpostavke modela koji cemo izucavati:
-1. svaki sloj se odigrava poseban proces
+1. za svaki sloj se odigrava poseban proces
 2. uredjaj A zeli da posalje racunaru B dugacak niz bitova koristeci pouzdanu
    direktnu vezu
 3. racunari rade besprekorno ( greske nastaju samo u njihovoj komunikaciji )
-4. mrezni sloj uvek ima paket za slanje
+4. mrezni sloj uvek ima paket za slanje (kasnije se odbacuje)
 
 
 
@@ -27,17 +27,17 @@ Dogadjaji koji mogu da se dese:
 1. cksum_error
 2. frame_arrival
 3. timeout
+4. network_layer_ready
 
 
-Redni broj okvira moze da bude u opsegu od 0 do MAX_SEQ-1
+Redni broj okvira moze da bude u opsegu od 0 do MAX_SEQ
 
 
-makro inc() inkrementira redni broj i vraca ga na 0 ako dodje do maksimuma
-to je makro zato sto se nalazi u kriticnoj sekciji. Da je funkcija to bi dosta uticalo
-na performanse
+Makro inc() inkrementira redni broj i vraca ga na 0 ako dodje do maksimuma. inc() je makro
+zato sto se nalazi u kriticnoj sekciji. Da je funkcija to bi uticalo na performanse
 
 
-postoji nekoliko vrsta okvira:
+Postoji nekoliko vrsta okvira:
 1. data
 2. ack(nowladgment) - pozitivna potvrda
 3. nak, tj. n(egative)a(c)k(nowladgment) - negativna potvrda
@@ -70,7 +70,7 @@ bafer prepuni ili kada se oslobodni prostor na njemu nakon tog punjanja
 Protokol za neogranicen jednosmeran prenos podataka (utopija)
 -------------------------------------------------------------
 - najjednostavniji protokol koji je potpuno nerealan
-- obezbedjuje prenos u samo jednom smeru
+- obezbedjuje prenos samo u jednom smeru
 - pretpostavlja se da greska ne moze da se pojavi na komunikacionom kanalu
 - pretpostavlja se da prijemnik moze beskonacno brzo da obradjuje podatke koji mu pristizu
 - pretpostavlja se da su baferi neogranicene velicine
@@ -98,12 +98,12 @@ Nema kontrolu toka, kao ni kontrolu greske. Jedino sto radi je uokviravanje
 
 
 
-Simplex protokola (stop & wait)
+Simplex protokol (stop & wait)
 --------------------------------
 - vazi sve sto i kod protokola "utopia" osim pretpostavke da primalac moze
    (beskonacno brzo??) da obradi sve sto mu posiljalac posalje
 - umesto odbacene pretpostavke uvodi se feedback flow control; posiljalac moze da
-  salje okvire samo ako mu primalac javi da je moze da ih obradi
+  salje okvire samo ako mu primalac posalje signal (prazan okvir) za to
 - primalac nakon obrade salje prazan okvir (dummy frame) kako bi posiljaoca obavestio
   da moze da nastavi sa slanjem okvira
   
@@ -121,9 +121,9 @@ Dodatak u odnosu na protokol "utopia" cine
 
 
 To sto je protokol "jednosmeran" ne znaci da se saobracaj koji
-prolazi kroz medijum tece u jednom smeru vec da se prenos
+prolazi kroz medijum tece samo u jednom smeru vec da se prenos
 podataka odvija samo u jednom smeru, dok drugi saobracaj koji
-se npr. odnose na kontrolu komunikacije mogu kretati i u drugom
+se npr. odnosi na kontrolu komunikacije moze kretati i u drugom
 smeru. Ovaj nacin "jednosmerne" komunikacije naziva se simplex
 
 
@@ -134,18 +134,24 @@ smeru. Ovaj nacin "jednosmerne" komunikacije naziva se simplex
 Simplex protokol za slanje podataka bucnim kanalom ( PAR / ARQ )
 ----------------------------------------------------------------
 - nadogradnja stop & wait protokola kod koje se odbacuje pretpostavka da je komunikacioni
-  kanal besuman, tj. da ne moze doci do greske
+  kanal besuman, tj. da ne moze doci do greske pri prenosu okvira
 - pretpostavlja se da hardver ume da izracuna kontrolni zbir
-- uvodi se tajmer kako posiljalac ne bi cekao beskonacno dugo na potvrdu koja se izgubila
+- uvodi se tajmer kako posiljalac ne bi cekao beskonacno dugo u slucaju da se okvir izgubio
+  na putu do primaoca ili u slucaju da se potvrda o prijemu izgubi
 - ukoliko se okvir primi, a potvrda izgubi dolazi do duplog prijema. Zbog toga se uvodi
   broj sekvence, tj. redni broj okvira
-- zove se i jednobitni protokol jer se u jednom trenutku na medijumu nalazi samo jedan
-  okvir, 0 ili 1 (kao i protokoli 1,2 i 4)
+- zove se i jednobitnim protokolom jer se u jednom trenutku na medijumu nalazi samo jedan
+  okvir, 0 ili 1 (protokoli 1, 2 i 4 su takodje 1-bitni)
 - uvode se varijable "next_frame_to_send" i "frame_expected" koji se inicijalizaciju na 0
 
 
 
 Sender:
+
+moze da primi 2 vrste dogadjaja:
+1. frame_arrival
+2. cksum_error
+3. timeout
 
 nakon slanja okvira ukljucuje se njegov tajmer i funkijom "wait_for_event" ceka se na
 neki dogadjaj (blokira se proces)
@@ -153,10 +159,12 @@ neki dogadjaj (blokira se proces)
 kada se neki dogadaj dogodi dolazi do odblokiranja procesa i proveravanja do kog 
 dogadjaja je doslo
 
-ako se dogodio "frame_arrival", znaci da je doslo do nekog dogadjaja, uzima se okvir
-iz fizickog sloja i proverava se da li je okvir koji je poslat uspesno stigao. 
+ako se dogodio "frame_arrival", znaci da je neki okvir stigao, uzima se iz fizickog sloja i 
+proverava da li se potvrda u njemu poklapa sa "next_frame_to_send", tj. sa rednim brojem 
+okvira koji je poslednji poslat.
 
-Ukoliko jeste iz mreznog sloja se uzima naredni okvir i "next_frame_to_send" se inkrementira (posto se radi o 1-bitnom protokolu to inkremetiranje daje isti rezultat
+Ukoliko jeste uspesno dostavljen, iz mreznog sloja se uzima naredni okvir i "next_frame_to_send" 
+se inkrementira (posto se radi o 1-bitnom protokolu to inkremetiranje daje isti rezultat
 kao i invertovanje)
 
 
@@ -169,18 +177,15 @@ moze da primi 2 vrste dogadjaja:
 2. cksum_error
 
 
-Bokira se i ceka neki od dogadjaja.
+Blokira se i ceka neki od dogadjaja.
 
 Ako je u pitanju "frame_arrival" uzima okvir iz fizickog sloja i proverava da li je to
-okvir koji je ocekivao. Ako jeste salje se mreznom sloju i inkrementira se "frame_expected"
-a ukoliko nije to se ne radi sto omogucava da se mreznom sloju primaoca ne posalje 2 puta
+okvir koji je ocekivao. Ako jeste salje se mreznom sloju i inkrementira se "frame_expected",
+a ukoliko nije onda ga ne salje sto omogucava da se mreznom sloju primaoca ne posalje 2 puta 
 isti okvir
 
-
-Dalje se inicijalizuje kontrolni okvir koji ce da se posalje posiljaocu i njegova varijabla
-koja sadrzi redni broj okvira koji se potvrdjuje dobija vrednost. 
-
-Nakon toga kontrolni okvir se salje posiljaocu.
+Dalje se inicijalizuje kontrolni okvir koji ce da se posalje posiljaocu i nakon toga kontrolni 
+okvir se salje posiljaocu.
 
 
 Ukoliko je se dogodio "cksum_error", nista se ne desava, kod u petlji krece ponovo da se
@@ -212,16 +217,16 @@ Protokoli kliznih prozora (sliding window)
 
 1-bitni protokol kliznih prozora 
 --------------------------------
-- jednobitni protokol (prvi protokol iz ove klase, ostali nisu)
+- jednobitni protokol (za razliku od ostalih protokola kliznih prozora)
 - promena u odnosu na PAR protokol je to sto se omogucava dvosmerna komunikacija; duplex
 - ne koristi 2 procedure, vec jednu i za posiljaoca i za primaoca
 - uvode se slepovanje i klizni prozori
 
 Uvodi se tehnika koja se naziva slepovanje (piggybacking). Posto okviri imaju i deo za
 potvrdu unutar sebe, mogu se iskoristiti tako sto ce se umesto slanja praznog okvira sa
-potvrdom slati i podaci sa koje drugi uredjaj treba da posalje prvom. Drugi racunar ceka 
-neko vreme da od svog mreznog sloja dobije okvir za slanje i tada sa tim podacima salje
-potvrdu o prijumu okvira prvom racunaru. 
+potvrdom slati okvir sa potvrdom i podacima koje drugi racunar salje prvom. Drugi racunar 
+ceka neko vreme da od svog mreznog sloja dobije okvir za slanje i tada sa tim podacima 
+salje potvrdu o prijumu prvom racunaru. 
 
 Ukoliko drugi uredjaj nakon nekoliko milisekundi ne dobije od svog mreznog sloja okvir za
 prvi, on ce poslati prazan okvir sa potvrdom jer ukoliko bi previse cekao onda bi tajmer
@@ -229,19 +234,20 @@ istekao i doslo bi do ponovnog slanja sto bi obesmislilo ovu tehniku.
 
 
 
-Prozori predstavljaju redne brojeve (sequence numbers) okvira sa kojima okvir trenutno radi
+Prozori predstavljaju redne brojeve (sequence numbers) okvira sa kojima protokol trenutno
+radi
 
 
 Npr. kod posiljaoca to bi bio okvir koji tek treba da se posalje, tj. "next_frame_to_send"
 kao i okviri koji su vec poslati, ali za njih potvrda jos nije stigla
 
 
-Kod posiljaoca to su redni brojevi okvira koje u tom trenutku moze da primi
+Kod posiljaoca to su redni brojevi okvira koje u tom trenutku on moze da primi
 
 
 
 Prozor posiljaoca je zatvoren ako se obe granice poklapaju (graficki prikaz prozora)
-Kada posalje okvir njegov prozor se otvara, tj. jedna od tih granica se pomera za jedno 
+Kada posalje okvir njegov prozor se otvara, tj. gornja granica se pomera za jedno 
 polje, tj. prozor.
 
 
@@ -249,8 +255,9 @@ Prozor primaoca je u pocetku otvoren. Kada primi okvir obe granice se pomeraju z
 prozor. Prozor kod njega predstavlja "frame_expected"
 
 
-Kada posiljalac dobije potvrdu, leva granica se pomera za jedno polje/prozor, tj. taj 
-prozor se zatvara i granice se nalaze na istom mestu
+Kada posiljalac dobije potvrdu, donja granica se pomera za jedno polje/prozor, tj. taj 
+prozor se zatvara i granice se nalaze na istom mestu (osim kod protokola kod kojih se
+u isto vreme salje vise okvira)
 
 
 
@@ -271,15 +278,15 @@ Dogadjaji koji mogu da se dogode su: "frame_arrival", "cksum_error" i "timeout"
 
 
 Ukoliko je "frame_arrival", okvir se uzima iz fizickog sloja i proverava se da li je
-je on ocekivan. Ukoliko jeste uzima se paket koji je upakovan u njemu i prosledjuje se
-mreznom sloju pa se inkrementira "frame_expected", tj. pomera prozor "primaoca". Ukoliko
-pristigli paket nije onaj koji je ocekivan nista se ne dogadja.
+on taj okvir cija se potvrda ocekuje. Ukoliko jeste uzima se paket koji je upakovan u njemu 
+i prosledjuje se mreznom sloju pa se inkrementira "frame_expected", tj. pomera prozor za 
+prijem. Ukoliko pristigli paket nije onaj koji je ocekivan nista se ne dogadja.
 
 
 Dalje se proverava da li je potvrda koja je deo pristiglog okvira potvrda za okvir koji je
 dati uredjaj prethodno poslao, tj. da li je jednaka vrednosti "next_frame_to_send".
 Ukoliko jeste uzima se paket iz mreznog sloja i inkrementira se "next_frame_to_send", tj.
-pomera prozor "posiljaoca". Ukoliko nije niste se ne desava
+pomera prozor za slanje. Ukoliko nije niste se ne desava
 
 
 
@@ -295,11 +302,10 @@ poslao)
 
 
 I jedan i drugi uredjaj u ovom protokolu izvrsavaju kod za inicijalizaciju, ali samo jedan
-ce moci prvi da to odradi. Ako se i desi da oba u istom trenutku izvrse kod
-
+ce prvi to odraditi. 
 
 Ako dodje do lose sinhronizacije, tj. ako i uredjaj A salje uredjaju B okvir u isto vreme
-kada uredjaj B salje uredjaju A okvir doci ce do kasnjenja potvrda, pa time i do slanja
+kada uredjaj B salje uredjaju A okvir, doci ce do kasnjenja potvrda pa time i do slanja
 duplikata. U ovakvom slucaju dolazi do smanjenja performansi, ali ne moze da dodje do
 slanja duplikata mreznom sloju
 
@@ -307,19 +313,25 @@ slanja duplikata mreznom sloju
 
 Protokol tipa "vrati se N" (go-back-N)
 --------------------------------------
+- visebitni protokol
+- duplex
+- odbacuje se pretpostavka da mrezni sloj uvek ima nesto za slanje
+  (pretpostavka samog modela)
+- uvodi se NAK
 
 U 1-bitnom protokolu kliznih prozora postoji mogucnost da se u jednom trenutku prenosi 
 najvise 1 okvir. Dok se ne potvrdi prijem tog okvira posiljalac nece nista raditi (
 osim ponovnog slanja ). Ukoliko je prenos sa jednog kraja da drugi spor, posiljalac bi
 cekao blokiran veoma dugo, besposlen.
 
+[ Kod prenosa podataka geostacionarnim satelitom, posiljalac je blokiran 96% vremena ]
+
 
 Iskoriscenost linije je I / ( I + b * R ), gde je b brzina kanala, I velicina okvira u 
 bitovima, a R ukupno vreme prolaska vezom (round-trip)
 
 
-
-Resenje ovog problema je omogucavanje da se vise okvira salje u sto vreme, tako da dok 
+Resenje ovog problema je omogucavanje da se vise okvira salje u isto vreme, tako da dok 
 posiljalac ceka potvrdu on salje okvire. 
 
 
@@ -328,9 +340,9 @@ Ovaj protokol se zove "vrati se N" zato sto se, ukoliko dodje do greske, okviri 
 salju od mesta na kojem je doslo do greske, tj. "vraca" se N okvira.
 
 
-To se desava zbog toga sto primalac ima samo jedan prozor, a mora da primi okviri redom, pa
-je jedini nacin da se to pravilo zadovolji ponavljanje poslednjih N bitova, tj. svih okvira
-od okvira na kojem je nastala greska.
+To se desava zbog toga sto primalac ima samo jedan prozor, a mora da primi okvire redom, pa
+je jedini nacin da se to pravilo zadovolji ponovno slanje poslednjih N okvira, tj. svih 
+okvira od okvira na kojem je nastala greska.
 
 
 
@@ -341,7 +353,7 @@ prosiren, dok je broj prozora primaoca ostao isti.
 Ako posiljalac ne primi potvrdu za neki okvir, a primi za okvire koji slede nakon njega
 onda ce posiljalac prihvatiti i taj okvir iako za njega nije stigla potvrda jer posiljalac
 ne moze da dobije potvrdu nekog narednog okvira ako taj ovkir pre toga nije obradjen;
-Mora da dobije potvrdu za trenutni da bi presao na naredni
+Primalac ne salje potvrdu za radni okvir ako njegov prethodnik nije vec primljen
 
 
 Postoji i NAK (Negative Acknowledgement) koji je opcioni. Ukoliko se koristi moze da 
