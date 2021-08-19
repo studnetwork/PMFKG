@@ -228,9 +228,10 @@ potvrdom slati okvir sa potvrdom i podacima koje drugi racunar salje prvom. Drug
 ceka neko vreme da od svog mreznog sloja dobije okvir za slanje i tada sa tim podacima 
 salje potvrdu o prijumu prvom racunaru. 
 
-Ukoliko drugi uredjaj nakon nekoliko milisekundi ne dobije od svog mreznog sloja okvir za
+[ Ukoliko drugi uredjaj nakon nekoliko milisekundi ne dobije od svog mreznog sloja okvir za
 prvi, on ce poslati prazan okvir sa potvrdom jer ukoliko bi previse cekao onda bi tajmer
-istekao i doslo bi do ponovnog slanja sto bi obesmislilo ovu tehniku.
+istekao i doslo bi do ponovnog slanja sto bi obesmislilo ovu tehniku. Primenjuje se tek kod
+protokola sa selektivnim ponavljanjem ]
 
 
 
@@ -353,7 +354,7 @@ prosiren, dok je broj prozora primaoca ostao isti.
 Ako posiljalac ne primi potvrdu za neki okvir, a primi za okvire koji slede nakon njega
 onda ce posiljalac prihvatiti i taj okvir iako za njega nije stigla potvrda jer posiljalac
 ne moze da dobije potvrdu nekog narednog okvira ako taj ovkir pre toga nije obradjen;
-Primalac ne salje potvrdu za radni okvir ako njegov prethodnik nije vec primljen
+Primalac ne salje potvrdu za naredni okvir ukoliko njegov prethodnik nije vec primljen
 
 
 Postoji i NAK (Negative Acknowledgement) koji je opcioni. Ukoliko se koristi moze da 
@@ -374,11 +375,20 @@ Na kanalu moze istovremeno biti najvise MAX_SEQ okvira, a ne
 MAX_SEQ+1. 
 
 
-[ ako je MAX_SEQ=7, onda u prozoru imamo numerisane okvire sa 
-  0,1,2,3,4,5,6,7; na kanalu se u istom trenutku ne moze naci svih
-  8 okvira, vec 7 ]
+ako je MAX_SEQ=7, onda u prozoru imamo numerisane okvire sa 
+0,1,2,3,4,5,6,7; na kanalu se u istom trenutku ne moze naci svih
+8 okvira, vec 7
 
   
-Ukoliko bi se prenosilo svih 8 okvira, postojala bi mogucnost da 
+Ukoliko bi se prenosilo svih 8 okvira, postojala bi mogucnost da potvrda za okvir iz prethodnog 
+prozora potvrdi sve neuspesno poslate okvire iz narednog. Npr. ukoliko se potvrde svi okviri
+iz prethodnog prozora onda ce kod primaoca frame_expected biti 0, a pri piggybacking-u za potvrdu
+ce se slati njegov prethodnik, 7. Ukoliko posaljemo sve okvire iz narednog prozora i svi se izgube,
+pri piggybacking-ovajnu potvrde postavice se prethodnik od onog okvira koji se ocekuje i tada 
+dolazi do dvosmislene situacije: posiljalac nece znati da li primalac salje potvrdu za okvir iz
+prethodnog prozora zato sto ni jedan iz novog nije primljen ili mu salje potvrdu za poslednji
+okvir novog prozora sto bi znacilo da su svi okviri tog prozora uspesno primljeni
 
--5
+
+Zbog toga se salje 1 manje okvir, kako bi se znalo kada se nista ne potvrdjuje ukoliko je doslo
+do greske
