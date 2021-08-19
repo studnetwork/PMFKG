@@ -1,0 +1,372 @@
+Datum odrzavanja: 30.03.2021.
+Predavac: Miloš Ivanović
+Cas: 6
+=====================================
+ 
+Protokoli DLL-a su obicno implementirani hardverski (ugradjeni u NIC)
+
+
+Potokol "vrati se N" je nepogresiv i u situacijama kada tajmer nije ispravno podesen.
+U tim slucajevima performanse ce biti lose, ali nece doci do gresaka kao sto je gubitak
+okvira ili slanje istog okvira mreznog sloju vise puta.
+
+
+U ovom protokolu se pretpostavlja da uvek postoji povratni saobracaj kojim mogu da se
+slepaju okviri (ta pretpostavka se odbacuje u narednom protokolu)
+
+
+Tajmeri se ne realizuju kao lista/niz zasebnih tajmera koje treba proveravati u petlji,
+vec su organizovani u pointerskoj listi tako da se pamti samo vremenska razlika izmedju
+njihovih isteka, tj. broj tick-ova real-time casovnika koji ima svaki uredjaj.
+
+Kada prodje dati broj tikova najstarijeg okvira (prvog okvira koji je poslat) onda se
+okida procedura za dati dogadjaj koja salje ponovo dati okvir, tajmer tog okvira se 
+skida sa liste i na njegovo mesto, na pocetku liste, dolazi tajmer za sledeci okvir.
+
+Kada se salje novi okvir, njegov tajmer se nadovezuje na kraj pointerske liste.
+
+
+
+
+
+
+-------------------------------------------------------
+Protokol sa selektivnim ponavljanjem (selective repeat)
+-------------------------------------------------------
+
+
+protokol "vrati se n" trosi previse propusnog opsega ukoliko su greske ceste.
+
+
+Kod bucnih kanala, kao sto je prenos kod wifi-a, ako se neki okvir raniji okvir ne 
+privhati, a prihvati se neki kasniji onda se kod "vrati se N" protokola ti ispravni
+okviri takodje odbacuju jer je prozor primaoca 1, a on mora da prihvati okvire u 
+ispravnom redosledu. U ovom slucaju ti ispravni okviri bice odbaceni, ali ukoliko
+se neispravan okvir sada ispravno posalje i primi postoji mogucnost da oni naredni 
+okviri koji su prosloga puta ispravno poslati sada ne budu jer postoji mogucnost da
+ce oni biti tada ostaceni. To moze dosta da smanji iskoriscenost medijuma, tj. da
+smanji iskoriscenost propusnog opsega jer se odbacuju ispravno preneti okviri koji
+u nekom narednom prenosu mozda nece biti tako uspesni.
+
+Zbog toga se prosiruje prozor primaoca (njegov buffer vise nije 1). Time se omogucava
+da ispravni okviri budu sacuvani dok se oni neispravni ne posalju ponovo, na osnovu cega
+je protokol i dobio ime.
+
+
+
+Kod ovom protokola imamo slican problem kao i kod protokola "vrati se N". Ukoliko se
+dogode redom sledeci dogadjaji:
+1. posiljalac posalje svih 7 okvira
+2. primalac primi sve te okvire, salje njihove potvrde i pomera prozor
+3. potvrde kasne
+4. tajmeri tih okvira isticu pa ih posiljalac salje ponovo
+5. posiljalac prima potvrde, pomera svoj prozor i salje nove okvire
+
+U ovoj situaciji primalac je vec poslao svom mreznom sloju sve okvire iz prve transmisije, 
+ali u drugoj, posto je pomerio svoj prozor, ocekivace okvire 7, 0, 1, 2, 3, 4, 5, i posto
+nema dodatnih provera on ce ponovo poslate okvire od 0 do 5 prihvatiti kao okvire iz novog
+prozora i oni ce se cuvati u prozoru (buffer-u) primaoca. Primalac ocekuje okvir sa brojem
+sekvence 7. Posiljalac posto je primio potvrde za okvire 0-6, pomera svoj rpozor i salje
+okvire 7, 0, 1, 2, 3, 4, 5. Cim primi okvir sa brojem sekvence 7 odmah ga salje mreznom 
+sloju. Nakon toga proverava da li ima primljen sledeci okvir, 0. Primecuje da ga ima i
+onda njega takodje salje mreznom sloju, zajedno sa ostalim okvirima od 1 do 5. Kao sto
+se moze primetiti, mreznom sloju primaoca su poslati duplikati iz prve transmisije.
+Primalac ne moze da zna da li su potvrde izgubljene (ili kasno primljene) ili uspesno
+primljene. Kada on pomeri svoj prozor, dolazi do preklapanja novih validnih sekvenci i
+starih sekvenci. Zbog toga se velicina prozora ogranicava na ( MAX_SEQ+1 ) / 2. Time se
+izbegava preklapanje ispravnih sekvenci prilikom pomeranja prozora kod primaoca.
+
+Tada ce se po istom principu poslati okviri 0-3, prozor primaoca ce se pomeriti i 
+ocekivace okvire 4-7, tako da nece doci do primanje okvira koji su ponovo poslati.
+
+
+
+U protokolu "selective repeat" odbacuje se pretpostavka da "primalac" uvek ima nesto za 
+slanje, zbog cega je uvek bilo moguce piggyback-ovati potvrde. Zbog toga se uvodi
+acknowlengement timer koji se okida ukoliko nakon nekog vremena nema povratnog saobracaja 
+i tada se salje samo prazan okvir sa potvrdom
+
+
+
+NAK okvir nije obavezan i ukoliko se izgubi to nece prestavljati problem jer ce u tom 
+slucaju tajmer za dati okvir isteci pa ce se ponovo poslati. On samo omogucava da se
+okvir brze retransmituje nego sto bi se to inace desilo bez koriscenja NAK-a.
+
+
+U ovom protokolu se uvodi i promenljiva "no_nak" u kojoj se cuva informacija da li je za
+dati ovkir vec poslat nak. Time se izbegava slanje vise nak-ova koje moze da dovede do 
+nepotrebnih zahteva za retransmisiju istog izgubljenog okvira.
+
+
+
+
+----------------------
+
+PPP - Point-to-Point Protocol
+
+
+Koriste ga kucni ruteri. Povezivanjem sa provajderom putem PPP, kucni ruter dobija 
+privremenu javnu IP adresu
+
+
+
+PPP obezbedjuje sledece funkcije:
+1. metodu za uokviravanje (koristi byte stuffing)
+2. protokol za upravljanje vezom (Link Control Protocol, LCP) - povezivanje,
+   pogovarenje, proveravanje komunikacionih opcija
+3. dogovaranje opcija mreznog sloja - nakon 2., uspostavlja se NCP (Network
+   Control Protocol) i tada ruter od provajdera dobija mrezne parametre od kojih je
+   najvazniji IP adresa
+   
+   
+
+   
+   
+Polje za adresu obicno uvek ima sve jedinice (broadcast) jer se prenosi samo jednom 
+pointa na drugi. Postoji samo zbog kompatibilnosti
+
+
+   
+Kod njega se obicno u polju Control nalazi vrednost 00000011, sto znaci da su okviri
+nenumerisani. Numerisanje okvira nije potrebno jer se za prenos koriste pouzdane 
+komunikacione linije kao sto su zicani medijumi.
+
+
+Payload moze da bude varijabilne duzine, do dogovorenog maksimuma
+
+
+
+
+[uspostavljanje veze]
+
+
+
+
+
+
+
+=========================================
+Podsloj za upravljanje pristupom medijuma
+( Media Access Control - MAC )
+==========================================
+
+
+
+U lokalnim mrezama, vise stanice deli isti medijum. Ukoliko neka stanica pokusa da posalje
+okvir dok neka druga transmituje svoj okvir oba okvira ce se ostetiti, tj. doci ce do 
+kolizije. Topologija magistrale
+
+
+
+
+Kod lokalnih mreza se ne koristi multipleksiranje jer to ne bi bilo ekfikasno, za razliku
+od regionalnih mreza u kojima jeste.
+
+
+
+Mreze se mogu svrstati u dve kategorije:
+- P2P (od tacke do tacke); uglavnom regionalne mreze
+- sa difuznim emitovanjem; uglavnom lokalne mreze
+
+
+kod difuznog emitovanja, clanovi mogu da "vide" saobracaj drugih clanova
+
+
+
+Deljeni kanali se nazivaju Multi-access channels ili Random-access channels
+
+
+Protokoli koji odredjuju ko je naredni korisnik deljenog kanala nazivaju se protokolima
+za upravljanje pritupa medijumu (MAC).
+
+
+
+
+
+Staticko dodeljivanje kanala
+----------------------------
+
+Kod statickog dodeljivanja kanala, propusni opseg kanal se deli na onoliko delova koliko
+ima korisnika, ili se svakom korisniku da koristi kanal odredjeno fiksno vreme nakon kojeg
+ce se kontrola predati sledecem i tako ciklicno.
+
+
+Ovaj pristup, multipleksiranje, u lokalnim mrezama ne iskoriscava efikasno dostupni  propusni opseg jer ukoliko samo jedan korisnik koristi mrezu, on ce biti ogranicen samo
+na svoj deo, iako niko drugi ne koristi preostale delove propusnog opsega. Takodje, 
+ukoliko se kanal vremenski deli, ukoliko vecina korisnika nista ne prima i ne salje, njima
+ce se ipak dodeljivati pristup medijumu iako im nije potreban, sto sprecava druge,
+koji imaju sta da salju i primaju, da koriste medijum.
+
+
+Zbog navedenih razloga, kao i zbog promeljivog broja korisnika, multipleksiranje nije
+efikasan pristup za dodeljivanje kanala.
+
+
+Vreme zadrzke T moze se izracunati primenom Poasonove raspodele
+
+
+Neka je 
+sa C obelezena brzina kanala u bitovima po sekundi,
+sa lambda brzina pristizanja okvira po sekudni i
+sa 1/mi srednja vrednost duzine okvira
+
+Tada je formula za izracunavanje vremenske zadrske:
+
+    T = 1 / ( mi * C - lambda )
+    
+    
+    
+mi * C predstavlja brzinu osluzivanja (service rate), izrazava se u broju ovkira u sekundi
+ 
+ 
+ 
+Ako se kanal podeli na N nezavisnih FDM potkanala dobija se:
+
+
+    T = 1 / (mi * (C/N) - lambda / N ) = N / ( mi * C - lambda ) = NT
+    
+    
+To znaci da ce prosecno kasnjenje povecati N puta i to pokazuje zasto se u lokalnim 
+mrezama ne koristi FDM sistem
+
+
+Isto vazi i za TDM
+
+
+Umesto njih koristi se dinamicko dodeljivanje kanala
+
+
+
+
+
+
+
+
+Dinamicko dodeljivanje kanala
+-------------------------------
+
+Osnovne pretpostavke modela:
+
+a. Model sadrzi N nezavisnih stanica koje generisu ovkrie za slanje brzinom od lambda
+   okvira po sekundi. Kada stanica generise okvir onda se blokira sve dok ne bude uspesno
+   poslat
+
+b. Pretpostavka o jedinstvenom kanalu: za sve komunikacije na raspolaganju je samo jedan
+   kanal
+
+c. Pretpostavka o sukobljavanju: ako se dva okvira istovremeno emituju dolazi do kolizije.
+   Takvi okviri se moraju ponovo poslati
+
+d. Trenutak kada se salje okvir
+    1. Neprekidan vremenski tok: okvir se moze poslati u bilo kom trenutku
+
+    2. Raspodeljeno vreme: vreme je raspodeljeno u intervale odredjene duzine i samo se na 
+       krajevima tih intervala moze emitovati
+
+e. Oskuskivanje
+    1. Oskuskivanje kanala na nosiocu podataka: pre nego sto posalje okvir, stanica 
+       ispituje da li je kanal slobodan. Ako ustanovi da nije, ceka dok se ne oslobodi
+    
+    2. Nema osluskivanja kanala na nosiocu podataka: stanica ne proverava da li je kanal
+       prazan pre nego sto posalje okvir. Kasnije se proverava da li je prenos uspesno
+       obavljen
+       
+       
+       
+       
+       
+       
+       
+Cist Aloha protokol
+-------------------
+d1
+e2
+
+Norman Abramson, Havaiji
+
+Postojao je samo jedan racunar i vise terminala.
+
+
+Osnovna ideja protokola je da korisnici uvek emituju ukoliko imaju neke podatke za slanje
+Ukoliko slanje nije bilo uspesno, ponavlja se sve dok se taj okvir uspesno ne emituje.
+
+
+Jedinicno vreme prenosa okvira se definise kao vreme koje je potrebno da bi se poslao 
+standardni okvir fiksne duzine (= duzina okvira na slici)
+
+
+
+Pretpostavlja se da beskonacan broj korisnika generise nove okvire sledeci Poasonovu
+distribuciju sa N proizvedenih okvira tokom jedinicnog vremena prenosa okvira. Ako
+je N > 1, onda ti korisnici generisu okvire brze nego sto sistem moze da ih obradi
+pa dolazi do sukobljavanja. Pozeljno je zato da 0<N<1
+
+
+Pored okvira koje stanice (korisnici) generisu postoje i salju se i okviri koji 
+moraju ponovo da se posalju zato sto je doslo do sukobljavanja. Zbir svih okvira, 
+novih generisanih okvira i ponovljenih tokom jedinicnog vremena prenosa okvira
+obelezava se sa G.
+
+
+vazi: G>=N
+
+
+Pri niskom opterecenju G je priblizno jednako N, dok je pri visokom G >> N
+
+
+
+Protok podataka S se dobija kao prozvod 
+opterecenja G i
+verovatnoce uspesnosti slanja P_0
+
+
+    S = G*P_0
+    
+
+P_0 u stvari predstavlja verovatnocu da se tokom jedinicnog vremena prenosa okvira nece poslati ne ni jedan drugi okvir
+
+
+
+
+Prema Poasonovoj formuli verovatnoca da ce se k novih okvira generisati tokom slanja okvira:
+
+    Pr[k] = ( G^k * e^(-G) ) / k!
+    
+    
+S obzirom da nam je potrebna verovatnoca da se nece generisati ni jedan okvir, k zamenjujemo sa 0 i dobijamo:
+
+    Pr[k] = e^(-G)
+    
+    
+tj. verovatnocu da se nece generisati ni jedan okvir tokom jedinicnog vremena prenosa okvira
+
+
+
+Ranjivi deo u kome moze doci do kolozije je 2 * t_0 jer ukoliko se izmedju t_0 i (t_0 + t) generise novi okvir
+onda ce se njegov kraj preklopiti sa obojenim okvirom, a ukoliko se generise izmedju (t_0 + t) i (t_0 + 2 * t)
+onda ce doci do preklapanja pocetka tog okvira i obojenog okvira. U oba slucaja to preklapanje dovodi do kolizije
+
+t_0 - jedinicno vremen prenosa okvira
+
+
+Zbog ovoga, potrebno je da se odredi verovatnoca za ceo taj ranjivi period, 2 * jedinicno vreme prenosa okvira,
+pa se umesto G u formuli pise 2G:
+
+
+    Pr[k] = ( (2G)^0 * e^(-2G) ) / 0! = ( 2^0 * G^0 * e^(-2G) ) / 1 = 1 * 1 * e^(-2G) = e^(-2G)
+    
+    
+
+Na kraju, dobijamo da je ukupan protok jedank: 
+    S = G * e^(-2G)
+    
+    
+    
+Ekstremum ove funkcije jednacine/funkcije se dobija u za vrednost G=1/2, tj. 0.5. Za tu vrednost S je jednako 1/(2*e)
+
+
+Maksimalne performanse se dobijaju u trenuktu kada se generise polovina okvira za vreme jedinicnog vremena 
+prenosa okvira. Ukoliko se generise vecom brzinom od te vrlo brzo ce doci do zagusenja.
+
+
+Iskoriscenost kanala, tj. efikasnost algoritma je 18%
