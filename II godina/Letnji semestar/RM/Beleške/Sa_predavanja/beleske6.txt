@@ -23,6 +23,9 @@ Kada prodje dati broj tikova najstarijeg okvira (prvog okvira koji je poslat) on
 okida procedura za dati dogadjaj koja salje ponovo dati okvir, tajmer tog okvira se 
 skida sa liste i na njegovo mesto, na pocetku liste, dolazi tajmer za sledeci okvir.
 
+[ pri svakom tiku real-time casovnika dekrementuje se broj tikova tajmera koji se
+  nalazi na vrhu liste ]
+
 Kada se salje novi okvir, njegov tajmer se nadovezuje na kraj pointerske liste.
 
 
@@ -43,15 +46,13 @@ privhati, a prihvati se neki kasniji onda se kod "vrati se N" protokola ti ispra
 okviri takodje odbacuju jer je prozor primaoca 1, a on mora da prihvati okvire u 
 ispravnom redosledu. U ovom slucaju ti ispravni okviri bice odbaceni, ali ukoliko
 se neispravan okvir sada ispravno posalje i primi postoji mogucnost da oni naredni 
-okviri koji su prosloga puta ispravno poslati sada ne budu jer postoji mogucnost da
+okviri koji su proslog puta ispravno poslati sada ne budu jer postoji mogucnost da
 ce oni biti tada ostaceni. To moze dosta da smanji iskoriscenost medijuma, tj. da
 smanji iskoriscenost propusnog opsega jer se odbacuju ispravno preneti okviri koji
-u nekom narednom prenosu mozda nece biti tako uspesni.
+u nekom narednom prenosu mozda nece biti opet uspesno preneti.
 
 Zbog toga se prosiruje prozor primaoca (njegov buffer vise nije 1). Time se omogucava
-da ispravni okviri budu sacuvani dok se oni neispravni ne posalju ponovo, na osnovu cega
-je protokol i dobio ime.
-
+da ispravni okviri budu sacuvani dok se oni neispravni ne posalju ponovo
 
 
 Kod ovom protokola imamo slican problem kao i kod protokola "vrati se N". Ukoliko se
@@ -66,7 +67,7 @@ U ovoj situaciji primalac je vec poslao svom mreznom sloju sve okvire iz prve tr
 ali u drugoj, posto je pomerio svoj prozor, ocekivace okvire 7, 0, 1, 2, 3, 4, 5, i posto
 nema dodatnih provera on ce ponovo poslate okvire od 0 do 5 prihvatiti kao okvire iz novog
 prozora i oni ce se cuvati u prozoru (buffer-u) primaoca. Primalac ocekuje okvir sa brojem
-sekvence 7. Posiljalac posto je primio potvrde za okvire 0-6, pomera svoj rpozor i salje
+sekvence 7. Posiljalac posto je primio potvrde za okvire 0-6, pomera svoj prozor i salje
 okvire 7, 0, 1, 2, 3, 4, 5. Cim primi okvir sa brojem sekvence 7 odmah ga salje mreznom 
 sloju. Nakon toga proverava da li ima primljen sledeci okvir, 0. Primecuje da ga ima i
 onda njega takodje salje mreznom sloju, zajedno sa ostalim okvirima od 1 do 5. Kao sto
@@ -113,7 +114,7 @@ privremenu javnu IP adresu
 PPP obezbedjuje sledece funkcije:
 1. metodu za uokviravanje (koristi byte stuffing)
 2. protokol za upravljanje vezom (Link Control Protocol, LCP) - povezivanje,
-   pogovarenje, proveravanje komunikacionih opcija
+   dogovarenje, proveravanje komunikacionih opcija
 3. dogovaranje opcija mreznog sloja - nakon 2., uspostavlja se NCP (Network
    Control Protocol) i tada ruter od provajdera dobija mrezne parametre od kojih je
    najvazniji IP adresa
@@ -122,8 +123,10 @@ PPP obezbedjuje sledece funkcije:
 
    
    
-Polje za adresu obicno uvek ima sve jedinice (broadcast) jer se prenosi samo jednom 
-pointa na drugi. Postoji samo zbog kompatibilnosti
+Polje za adresu obicno uvek ima sve jedinice (broadcast) jer se prenosi samo jednog 
+point-a na drugi. Postoji samo zbog kompatibilnosti
+[ salje se broadcast, ali posto je to mreza od 2 stanice onda se salje samo stanici 
+  na drugom kraju kabla ]
 
 
    
@@ -191,7 +194,8 @@ ima korisnika, ili se svakom korisniku da koristi kanal odredjeno fiksno vreme n
 ce se kontrola predati sledecem i tako ciklicno.
 
 
-Ovaj pristup, multipleksiranje, u lokalnim mrezama ne iskoriscava efikasno dostupni  propusni opseg jer ukoliko samo jedan korisnik koristi mrezu, on ce biti ogranicen samo
+Ovaj pristup, multipleksiranje, u lokalnim mrezama ne iskoriscava efikasno dostupni 
+propusni opseg jer ukoliko samo jedan korisnik koristi mrezu, on ce biti ogranicen samo 
 na svoj deo, iako niko drugi ne koristi preostale delove propusnog opsega. Takodje, 
 ukoliko se kanal vremenski deli, ukoliko vecina korisnika nista ne prima i ne salje, njima
 ce se ipak dodeljivati pristup medijumu iako im nije potreban, sto sprecava druge,
@@ -223,7 +227,7 @@ mi * C predstavlja brzinu osluzivanja (service rate), izrazava se u broju ovkira
 Ako se kanal podeli na N nezavisnih FDM potkanala dobija se:
 
 
-    T = 1 / (mi * (C/N) - lambda / N ) = N / ( mi * C - lambda ) = NT
+    T_n = 1 / (mi * (C/N) - lambda / N ) = N / ( mi * C - lambda ) = NT
     
     
 To znaci da ce prosecno kasnjenje povecati N puta i to pokazuje zasto se u lokalnim 
@@ -247,7 +251,7 @@ Dinamicko dodeljivanje kanala
 
 Osnovne pretpostavke modela:
 
-a. Model sadrzi N nezavisnih stanica koje generisu ovkrie za slanje brzinom od lambda
+a. Model sadrzi N nezavisnih stanica koje generisu okvire za slanje brzinom od lambda
    okvira po sekundi. Kada stanica generise okvir onda se blokira sve dok ne bude uspesno
    poslat
 
@@ -263,8 +267,8 @@ d. Trenutak kada se salje okvir
     2. Raspodeljeno vreme: vreme je raspodeljeno u intervale odredjene duzine i samo se na 
        krajevima tih intervala moze emitovati
 
-e. Oskuskivanje
-    1. Oskuskivanje kanala na nosiocu podataka: pre nego sto posalje okvir, stanica 
+e. Osluskivanje
+    1. Osluskivanje kanala na nosiocu podataka: pre nego sto posalje okvir, stanica 
        ispituje da li je kanal slobodan. Ako ustanovi da nije, ceka dok se ne oslobodi
     
     2. Nema osluskivanja kanala na nosiocu podataka: stanica ne proverava da li je kanal
@@ -323,7 +327,8 @@ verovatnoce uspesnosti slanja P_0
     S = G*P_0
     
 
-P_0 u stvari predstavlja verovatnocu da se tokom jedinicnog vremena prenosa okvira nece poslati ne ni jedan drugi okvir
+P_0 u stvari predstavlja verovatnocu da se tokom jedinicnog vremena prenosa okvira nece 
+poslati ne ni jedan drugi okvir
 
 
 
@@ -333,7 +338,8 @@ Prema Poasonovoj formuli verovatnoca da ce se k novih okvira generisati tokom sl
     Pr[k] = ( G^k * e^(-G) ) / k!
     
     
-S obzirom da nam je potrebna verovatnoca da se nece generisati ni jedan okvir, k zamenjujemo sa 0 i dobijamo:
+S obzirom da nam je potrebna verovatnoca da se nece generisati ni jedan okvir, k zamenjujemo
+sa 0 i dobijamo:
 
     Pr[k] = e^(-G)
     
@@ -342,15 +348,16 @@ tj. verovatnocu da se nece generisati ni jedan okvir tokom jedinicnog vremena pr
 
 
 
-Ranjivi deo u kome moze doci do kolozije je 2 * t_0 jer ukoliko se izmedju t_0 i (t_0 + t) generise novi okvir
-onda ce se njegov kraj preklopiti sa obojenim okvirom, a ukoliko se generise izmedju (t_0 + t) i (t_0 + 2 * t)
-onda ce doci do preklapanja pocetka tog okvira i obojenog okvira. U oba slucaja to preklapanje dovodi do kolizije
+Ranjivi deo u kome moze doci do kolozije je 2 * t_0 jer ukoliko se izmedju t_0 i (t_0 + t) 
+generise novi okvir onda ce se njegov kraj preklopiti sa obojenim okvirom, a ukoliko se 
+generise izmedju (t_0 + t) i (t_0 + 2 * t) onda ce doci do preklapanja pocetka tog okvira i 
+obojenog okvira. U oba slucaja to preklapanje dovodi do kolizije
 
 t_0 - jedinicno vremen prenosa okvira
 
 
-Zbog ovoga, potrebno je da se odredi verovatnoca za ceo taj ranjivi period, 2 * jedinicno vreme prenosa okvira,
-pa se umesto G u formuli pise 2G:
+Zbog ovoga, potrebno je da se odredi verovatnoca za ceo taj ranjivi period, 2 * jedinicno 
+vreme prenosa okvira, pa se umesto G u formuli pise 2G:
 
 
     Pr[k] = ( (2G)^0 * e^(-2G) ) / 0! = ( 2^0 * G^0 * e^(-2G) ) / 1 = 1 * 1 * e^(-2G) = e^(-2G)
@@ -362,11 +369,13 @@ Na kraju, dobijamo da je ukupan protok jedank:
     
     
     
-Ekstremum ove funkcije jednacine/funkcije se dobija u za vrednost G=1/2, tj. 0.5. Za tu vrednost S je jednako 1/(2*e)
+Ekstremum ove funkcije jednacine/funkcije se dobija u za vrednost G=1/2, tj. 0.5. Za tu 
+vrednost S je jednako 1/(2*e)
 
 
-Maksimalne performanse se dobijaju u trenuktu kada se generise polovina okvira za vreme jedinicnog vremena 
-prenosa okvira. Ukoliko se generise vecom brzinom od te vrlo brzo ce doci do zagusenja.
+Maksimalne performanse se dobijaju u trenuktu kada se generise polovina okvira za vreme 
+jedinicnog vremena prenosa okvira. Ukoliko se generise vecom brzinom od te vrlo brzo ce 
+doci do zagusenja.
 
 
 Iskoriscenost kanala, tj. efikasnost algoritma je 18%
