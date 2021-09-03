@@ -1,0 +1,62 @@
+en
+
+conf t
+
+no ip domain-lookup
+
+ho R4
+
+in f0/0
+
+ip ad 99.3.6.4 255.255.255.240
+
+no sh
+
+in f0/1
+
+id ad 99.3.5.4 255.255.255.248
+
+no sh
+
+in loopback1
+
+ip ad 172.17.1.4 255.255.255.0
+
+in loopback2
+
+ip ad 172.17.2.4 255.255.255.0
+
+in loopback3
+
+ip ad 172.17.3.4 255.255.255.0
+
+CTRL + Z
+
+sh ip in br
+
+ping 99.3.5.1
+
+ping 172.17.1.4
+
+ping 172.17.2.4
+
+ping 172.17.3.4
+
+ping 99.3.6.3
+
+sh ip ro
+
+conf t
+
+router rip
+
+network 99.3.5.0
+
+network 99.3.6.0
+
+network 172.17.1.0
+
+network 172.17.2.0
+
+network 172.17.3.0
+

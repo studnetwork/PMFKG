@@ -1,0 +1,101 @@
+ 
+R1
+---
+en
+conf t
+no ip domain lookup
+ho R1
+int f0/1
+id ad 99.1.1.1 255.255.128
+no sh
+in f0/0
+ip ad 99.2.2.1 255.255.128.0
+no sh
+in 1/0
+ip ad 99.3.3.1 255.255.128.0
+no sh
+in loopback1
+ip ad 12.12.0.1 255.224.0.0
+end
+ping 12.12.0.1
+
+---
+R2
+---
+
+en
+conf t
+no ip do lo
+ho R2
+in f0/0
+ip ad 99.1.1.2 255.255.128.0
+no sh
+in f0/1
+ip ad 99.4.4.2 255.255.128.0
+no sh
+end
+ping 99.1.1.1
+
+---
+R3
+---
+
+en
+conf t
+hostname R3
+no ip do lo
+in f0/0
+ip ad 99.2.2.3 255.255.128.0
+no sh
+in f0/1
+ip ad 99.5.5.3 255.255.128.0
+no sh
+end
+ping 99.2.2.1
+
+
+---
+R4
+---
+
+en
+conf t
+ho R4
+no ip do lo
+in f0/0
+ip ad 99.3.3.4 255.255.128.0
+no sh
+in f0/1
+ip ad 99.6.6.4 255.255.128.0
+no sh
+end
+ping 99.3.3.1
+
+---
+R5
+---
+
+en
+conf t
+ho R5
+no ip do lo
+in f0/0
+id ad 99.5.5.5 255.255.128.0
+no sh
+in f0/1
+ip ad 99.4.4.5 255.255.128.0
+no sh
+in f1/0
+ip ad 99.6.6.5 255.255.128.0
+no sh
+in loopback1
+ip ad 173.99.0.5 255.240.0.0
+end
+ping 99.4.4.2
+ping 99.5.5.3
+ping 99.6.6.4
+ping 173.99.0.5
+
+======
+29 min
+======
