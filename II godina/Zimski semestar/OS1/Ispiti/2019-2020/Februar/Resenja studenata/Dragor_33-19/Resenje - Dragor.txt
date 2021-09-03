@@ -35,7 +35,7 @@
     {
         while(true)
         {
-            while(!testset()); //Busy Wait
+            while(!testset(i)); //Busy Wait
             /* kriticna sekcija */
             bolt = 0;
             /* ostatak koda */

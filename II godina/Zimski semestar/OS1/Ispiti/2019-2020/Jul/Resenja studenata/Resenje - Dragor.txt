@@ -7,9 +7,9 @@
  2. Vreme pristupa kesu je 0.1 mikrosekunda, a glavnoj memoriji 1 mikrosekunda. Ako se 97% podataka koje CPU trazi nalaze u kesu, izracunati prosecnu brzinu pristupa.  
   
   - Racun:
-    vp = 0.1µs * 0.97 + 1µs * 0.03 = 0.127 [µs]  //prosecno vreme pristupa
-    bp = 1/vp = 7.87*(10^6) [1/s]  //prosecna brzina pristupa
-
+    vp = 0.1µs * 0.97 + ( 0.1µs + 1µs ) * 0.03 = 0.13 [µs]  //prosecno vreme pristupa
+    bp = 1/vp = 7.69*(10^6) [1/s]  //prosecna brzina pristupa
+( potrebno je ponovo preracunati ) 
 
  3. Napisati segment koda koji pomocu atomske instrukcije exchange() realizuje medjusobno iskljucenje.
 
@@ -37,7 +37,7 @@
 
  4. Sta znaci skracenica SMP? Sta SMP sistemi omogucavaju?
 
-  - SMP: "Symetric Multy-Processing"
+  - SMP: "Symmetric MultiProcessing"
   - Omogucavaju istovremeno izvrsavanje vise procesa na vise procesora u sklopu jednog racunarskog sistema
 
  5. Navesti koje vrste prekida postoje (3) i za svaku vrstu navesti barem jedan primer.
@@ -51,8 +51,10 @@
 
  6. Sta je stranica a sta okvir? Koji problem resavaju tabela stranica u 2 nivoa i obrnuta tabela stranica?
 
-  - ?
-
+  Stranica je jedao deo nekog procesa.
+  Okvir je raspoloziv deo memorije kome moze da se dodeli stranica
+  - 
+  
  7. Definisati sta je to stanje trke. Objasniti sopstvenim primerom.
 
   - Situacija ciji ishod zavisi od redosleda izvrsavanja procesa koj nije regulisan, vec zavisi samo od toga kada dispecer dodeli cpu top procesu.
@@ -126,8 +128,8 @@
         dinamicka: .so
         staticka: .a
 
-  - Dinamicke i staticke biblioteke se kompajliraju nezavisno od koda datog programa, ali linkovanjem staticke postaju deo izvrsnog koda programa (sto povecava velicinu programa), dok dinamicke ne postaju, vec su nezavisne od ostalih programa koji zele da koriste tu biblioteku.
-  - Jedan fajl biblioteke (.so, .dll) je dostupan svim programima, i njegova izmena/azurirane/ispravka greske ne zahteva ponovo linkovanje bilo kog programa sa tom bilbliotekom.
+  - Dinamicke i staticke biblioteke se kompajliraju nezavisno od koda datog programa, ali linkovanjem staticke postaju deo izvrsnog koda programa (sto povecava velicinu programa), dok loadovanjem dinamicke ne postaju, vec su nezavisne od ostalih programa koji zele da koriste tu biblioteku.
+  - Dinamicka biblioteka (.so, .dll) je dostupna svim programima, i njega izmena/azurirane/ispravka greske ne zahteva kompajliranje citavog programa za razliku od izmene staticke biblioteke
 
 
 12. Cemu sluzi i kako radi (cista) segmentacija? Skicirati dijagram prevodjenja adresa.
