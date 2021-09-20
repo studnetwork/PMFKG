@@ -21,7 +21,7 @@ Rešenja domaćih zadataka po godinama
 Folder sa beleškama i materijalom koji može biti od koristi tokom učenja i spremanja kolokvijuma ili ispita. Mogu se naći i neki dodaci sa detaljnijim informacijama
 o materijalu sa gradiva
 
-[Link ka folderu sa beleškama][beleške]
+[//]: # ( [Link ka folderu sa beleškama][beleške] )
 
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran

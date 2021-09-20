@@ -3,8 +3,10 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-[Grafovi: Osnovni algoritmi][v-link-1]  
 
+[Grafovi: Osnovni algoritmi][opste-link-1]  
+
+[Implementacije različitih struktura podataka i algoritama][opste-link-2]
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -53,9 +55,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-link-1]: ./Ve%C5%BEbe%20i%20predavanja/Grafovi/Osnovni%20algoritmi/
-
-
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
 [v-lekcija-2]: place.holder "Datum odrzavanja: 1. Mesec 2000."
@@ -87,6 +86,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Vezbe napomene reference )
+
 [v-n-1]: place.holder
 
 
@@ -126,15 +126,16 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Predavanje napomene reference )
-[p-n-1]: place.holder
 
+[p-n-1]: place.holder
 
 
 [//]: # ( Ostalo reference )
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=37
 
-
+[opste-link-1]: ./Ve%C5%BEbe%20i%20predavanja/Grafovi/Osnovni%20algoritmi/
+[opste-link-2]: ./Ve%C5%BEbe%20i%20predavanja/Ostalo
 
 [//]: # ( Napomena reference )
 
