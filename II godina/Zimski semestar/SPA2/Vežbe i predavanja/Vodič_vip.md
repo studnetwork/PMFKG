@@ -133,9 +133,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [//]: # ( Ostalo reference )
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=37
-
-[opste-link-1]: ./Ve%C5%BEbe%20i%20predavanja/Grafovi/Osnovni%20algoritmi/
-[opste-link-2]: ./Ve%C5%BEbe%20i%20predavanja/Ostalo
+[opste-link-1]: ./Grafovi/Osnovni%20algoritmi/
+[opste-link-2]: ./Ostalo
 
 [//]: # ( Napomena reference )
 
