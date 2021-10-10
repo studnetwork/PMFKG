@@ -75,7 +75,7 @@ Postoje 3 načina razvoja informacionih sistema / aplikacije:
 
 Outsourcing je unajmljivanje druge firme za obavljanje određene poslovne
 aktivnosti ili procesa. Uglavnom se vrši transferom zaposlenih, tj.
-zaposleni te drugi firme pružaju uslugu firmi koja ih je unajmila
+zaposleni te druge firme pružaju uslugu firmi koja ih je unajmila
 
 
 Selfsourcing je interni razvoj i podrška nekog procesa ili IT sistema
@@ -159,18 +159,18 @@ Modeliranje informacionog sistema
 Potrebno je izraditi model koji odgovara delovima poslovnog sistema
 
 
-Model je apstrakcija ili reprezentacija dela stvarnog sveta
+Model je apstrakcija / reprezentacija dela stvarnog sveta
 
 
-Ukoliko se kreira novi informacioni sistem onda se određuje neki
+Ukoliko se kreira novi informacioni sistem onda se projektuje po uzoru neki
 postojeći sistem koji se koristi za slične potrebe ili se razvoj
 započinje sa izradom logičkog modela
 
 
 
-Model je potrebno opisati situaciju u kojoj neki događaj iz spoljašnje 
-sredine okida neki proces koji se nalazi u određenom stanju i od starog
-stanja formira novo stanje
+Modelom je potrebno opisati situaciju u kojoj neki događaj iz spoljašnje 
+sredine okida neki proces sistama koji se nalazi u određenom stanju i od
+starog stanja formira novo stanje
 
 
 [ Suština
@@ -219,7 +219,7 @@ u sistemu, ali ne mogu transformisati ulazne podatke. Ono što gotovo svaki sist
 ima (u kome je zaposlena barem jedna osoba) je zakon o radu. To su uvek neka 
 pravila, pravna načela koja kontrolišu sistem.
 "Kontrolne strelice kontrolišu kako, kada i da li će se neka aktivnost izvesti,
-odnosno kakvi če biti izlazi"
+odnosno kakvi će biti izlazi"
 
 
 Mehanizmi su izvori koji izvode aktivnosti, a ne troše se kao što su npr. ljudi,
@@ -288,7 +288,8 @@ na više procesa koji međusobno interaguju.
 
 
 Princip ograničenja složenosti definiše granice broja blokova tako da je donja 
-granica 2, a gornja 6.
+granica 2, a gornja 6. (2 je donja granice jer bi u suprotnom dati dijagram u stvari
+bio kontekstni diajgram)
 
 
 Klikom na dati proces u tabu <<Actvities>> moguće je dekomponovati dati proces
@@ -296,7 +297,7 @@ odabirom opcije <<Decompose>>.
 
 
 Nakon dekompozicije neophodno je da strelice koje potiču od roditeljskog (nadređenog)
-dijagrama budu povezana na odgovarajućim način sa njegovim potprocesima.
+dijagrama budu povezana na odgovarajući način sa njegovim potprocesima.
 
 
 Pojava uglastih zagrada oko određene strelice označava da se dati izlaz ne
