@@ -1,0 +1,257 @@
+Datum održavanja: 05.10.2021.
+Predavač: Svetozar Rančić
+Čas: 1
+=====================================
+
+Softversko inženjerstvo je disciplina koja se bavi svim aspektima
+proizvodnje softvera (gde se fokus postavlja na rad u timu )
+
+
+istraživanje tržišta i studija izvodljivosti ->
+odlučivanje ->
+kreiranje specifikacije ->
+kreiranje arhitekture ->
+dizajniranje potsistema ->
+implementacija ->
+isporuka ->
+vremensko održavanje sistema
+
+
+
+
+Softver je računarski program i pridružena dokumentacija
+
+
+Postoje 2 kategorije:
+- softver koji se kreira za određenog kupca
+- softver koji se kreira za neko tržište
+
+
+
+Atributi dobrog softvera su:
+- pružanje potrebnih funkcionalnosti
+- dobre performanse
+- pogodan za održavanje
+- pouzdan
+- upotrebljiv, tj. lak za upotrebu
+
+
+
+
+Osnovne aktivnosti softverskog inženjerstva:
+- specifikacija
+- razvoj (osmišljavanje i implementacija arhitekture)
+- validacija i verifikacija (provera saglasnosti sa specifikacijom)
+- evolucija (kreiranje novih verzija)
+
+
+CS vs SE
+Računarske nauke se fokusiraju na teoriju i osnove.
+Softversko inženjerstvo se fokusira na praktične aspekte razvoja i
+isporuku upotrebljivog softvera
+
+
+
+Sistemski inženjering se odnosi na ceo siste, i na softver i na hardver
+koji će ga izvršavati; bavi se svim aspektima; procesni inženjering
+
+
+
+
+Aktivnosti u modelu vodopada:
+1. Definisanje zahteva
+2. Dizajn sistema i softvera
+3. implementacija i testiranje jedinica
+4. Integracija i sistemsko testiranje
+5. Operacija i održavanje
+
+
+
+Arhitekturni dizajn je dizajnerski proces koji je orjentisan ka 
+indentifikaciji podsistema koji oblikuju sistem i radnog okvira
+za upravljanje i komunikaciju podsistema.
+
+
+Rezultat arhitekturnog dizajna je arhitektura softvera
+
+
+Arhitektura predstavlja vezu između specifikacije i dizajna softvera
+
+
+
+
+Projektni uzorci su uzorci koji su nezavisni od konkretne 
+implementacione tehnologije. 
+
+"Rešenja koja su se dokazala kao dobra u praksi. Pokazalo se da
+nisi svi problemi u potpunosti različiti i da postoje sličnosti 
+i u ulogama klasa. Takva rešenja koja se mogu uočiti u praksi i 
+koja se ponavljaju nayivaju se projektni uzorci"
+
+
+
+Projektni uzorci su sami po sebi mikroarhitektura jer sadrže
+strukturum, nekoliko klasa koje među sobom sarađuju, ali nisu
+dovoljno velike kompleksnosti da bi se nazvali podsistemom.
+
+
+
+Uzorci se klasifiku ju po nameni i po domenu.
+
+
+
+Najjednstavnija kategorija uzoraka su idiomi, tj.
+uzorci najnižeg nivao apstrakcije
+
+
+
+Projektni uzorci su nezavisni od programskog jezika, tj.
+ukoliko su objektno-orjentisani onda ih je moguće realizovati
+
+
+Idiomi su veoma zavisni od konkretne implementacije
+
+
+
+
+C# je razvijen od strane Microsoft-a.
+
+
+CLI - Command Line Interface
+CIL - Common Intermediate Language
+CLR - Common Language Runtime
+CTS - Common Type System
+
+
+Imao je sličnu ideju kao Java. Pojavio se nakon nje.
+
+
+
+Zasnovan na jezicima Java i C++, sa dodacima
+
+
+Ima .Net arhitekturu, koja nije klasična prevodilačku arhitekturu
+(kao npr. C++), već je uložen napor da se ostvari prenosivost Jave
+uz dodatnu mogućnost izvršavanja nekih drugih jezika od strane iste
+Runtime mašine.
+
+
+
+C# je dizajniran od strane Andersa Hejlsberga (koji je dizajnirao i
+Turbo Pascal, Delphi, C# i TypeScript)
+
+
+
+C# je strogo tipiziran jezik
+
+
+
+Namenjen je kreiranju softverskih komponenti pogodnih za distribuirano
+okruženje
+
+
+
+Ima podršku internacionalizacije (radi sa Unicode karakterima)
+
+
+
+C# vs C++
+C# omogućava brži razvoj aplikacije
+C++ je brži (pruža bolje performanse, tj. veću brzinu izvršenja)
+
+
+
+Jezici koji predstavljaju deo .Net tehnologije:
+- VB.NET (visual basic)
+- C++
+- C#
+- Perl
+- E# (nalazi se na listi "mrtvih", napuštenih ili merge-ovanih projekata)
+- ...
+
+
+
+Svi ti jezici koriste CLS.
+
+Mogu da rade sa web servisima.
+
+Imaju korisničke interfejse.
+
+Mogu da rade sa podacima i XML-om
+
+Na nižem nivou postoji osnovna biblioteka klasa i ispod nje
+je CLR koji ima sličanu ulogu kao Java virtualnoj mašina (?), 
+izvršava kod datih jezika
+
+
+
+Ideja Microsoft-a pri kreiranju C# bila je da se kreira pandan
+Javi, što je zahtevalo i kreiranje sistema koji bi omogućio izvršavanje
+istog programa na različitim platformama i sistemima.
+
+
+Visual C# (?)
+
+
+
+Mono je open-source implementacija Microsoft .NET razvojnog okvira.
+Dostupan i na Linux sistemima
+
+
+DotGNU Portable.NET je implementacija Microsoft .NET razvojnog okvira
+koja predstavlja zamenu delove ovog razvojnog okvira koji nisu slobodan
+softver.
+
+
+Xamarin je platforma koja pruža alate i biblioteke za razvoj aplikacija
+za više različitih platformi. Implementira CLI i CLS
+
+
+
+JIT - Just in Time (kod se prevodi tokom izvršavanja )
+
+
+JVM ~ CLR
+
+
+
+Uloga CLR-a je da transformiše CIL (međukod) u aseblerske
+instrukcije za konkretnu hardversku arhitekturu
+
+
+Taj način prevođenja smanjuje inicijalno više košta u pogledu
+performansi, ali pomoću keširanja rezultat tog prevođenja može
+iskoristi u budućnosti radi bržeg izvršavanja u budućnosti
+
+
+
+Karakteristika svih .NET jezika je da se mogu prevoditi u isti CIL
+
+
+Svaki od tih jezika koristi samo podskup CIL-a
+
+
+CLS je najmanji zajednički podskup
+
+
+
+Prevođenje
+===========
+
+Kod u nekom od .NET jezika se prevodi u CIL, a to dalje CLR
+izvršava, prevodi i asemblira u mašinski kod koji može da se
+izvršava na konkretnom procesoru
+
+
+
+Program se nalazi na disku. Da bi se učitao potreban je loader.
+Klasa koja igra ulogu loader se nalazi u sastavu CLR-a
+
+
+CLR je Microsoft-ova implementacija CLI-a (Common Language Infrastructure)
+
+
+CLR je implementacija koja zavisi od platforme
+
+
+39:00
