@@ -1,0 +1,308 @@
+Datum održavanja: 05.10.2021.
+Predavač: Lana Miljković
+Čas: 1
+=====================================
+
+
+
+Konsultacije mogu biti dosta korisne pri izradi projekta
+Asistent / profesor može da ukaže da moguće probleme i
+proveri kvalitet
+
+
+Prvo se zakazuje kod asistenta pa onda kod profesora ukoliko
+asistent kaže da je rad dobar
+
+
+
+Podatak je neobrađena misaona činjenica.
+
+
+Informacija predstavlja obrađen podatak koji donosi novo znanje
+
+
+Sistem je skup objekata i njihovih veza
+(postoji interakcija između tih objekata)
+
+
+Svojstva tih objekata se nazivaju atributima
+
+
+Sistem se mora posmatrati u odnosu na njegovo okruženje
+
+
+Informacioni sistem je sistem u kome se veze između objekata i
+veze sistema sa okolinom ostvaruju razmenom informacija
+
+
+
+Karakteristike sistema:
+- postoji u nekoj sredini
+- ograničen je i granice definišu skup objekata koji će se
+  u tom sistemu posmatrati
+- njegova interakcija sa okruženjem se sastoji od skupa ulaznih
+  i izlaznih dejstava
+- dejstvo okoline na dati sistem naziva se ulaz
+- dejstvo sistema na okolinu naziva se izlaz
+
+
+
+Cilj informacionog sistema je da se obradom prikupljenih podataka
+dobiju informacije radi njihovog transformisanja u znanje za specifičnu
+(poslovnu) namenu
+
+
+
+Primeri informacionih sistema:
+- geografski informacioni sistem
+- bankarski informacioni sistem
+- tehnički informacioni sistem
+- informacioni sistem za neku kliniku
+- ...
+Ovo je jedno od čestih pitanja koja se pojavljuju na kolokvijumu
+
+
+
+[ često dolazi na kolokvijumu
+
+Postoje 3 načina razvoja informacionih sistema / aplikacije:
+- Outsourcing
+- Insourcing
+- Selfsourcing
+]
+
+[ često dolazi na kolokvijumu
+
+Outsourcing je unajmljivanje druge firme za obavljanje određene poslovne
+aktivnosti ili procesa. Uglavnom se vrši transferom zaposlenih, tj.
+zaposleni te drugi firme pružaju uslugu firmi koja ih je unajmila
+
+
+Selfsourcing je interni razvoj i podrška nekog procesa ili IT sistema
+od strane zaposlenih koji imaju znanja da sami razviju aplikaciju
+
+
+
+Insourcing je suprotno od outsourcing-a. Zaposleni neke druge firme
+se dovode u datu firmu kako bi pružali određenu uslugu, tj. kako bi
+radili na nekom internom procesu ili aktivnosti
+]
+
+
+
+Jedna od bitnijih stvari je definisanje poslovne strategije i ciljeva.
+Na osnovu strategijskih ciljeva definišu se poslovni ciljevi i određuju
+zadaci, kojima će poslovni sistem u nekom razdoblju ispuniti svoju misiju.
+
+
+[ nije neophodno pamtiti
+
+Te strategije i ciljevi trebaju da daju odgovor na pitanja:
+- šta se želi postići? (prepoznatljivost, kvalitet, prihodi)
+- kako to postići? (promenom organizacije, poboljšanjem sistema 
+  administracije, plasiranje na nekom novom tržištu)
+- kako ostvariti povećanje proizvodnje? ( ulaganjem u nove proizvodne
+  tehnologije uz istovremeno zadržavanje kvaliteta)
+- kako osigurati zadovoljstva i radne sposobnosti? 
+  ( radne sposobnosti doškolovanjem zaposlenih i mogućnostima napredovanja )
+]
+
+
+
+Strategije i planiranje razvoja informacionog sistema:
+01. Definisanje poslovne strategije
+02. Planiranje razvoja informacionog sistema
+03. Pokretanje projekta
+04. Snimanje stanja
+05. Planiranje projekta
+06. Izveštaj o projektu
+07. Određivanje poslovnih ciljeva
+08. Uzroci i posledice problema, ciljevi i ograničenja
+09. Modeliranje postojećeg sistema
+10. Planiranje informacionog sistema
+
+
+Firme često preskaču sve korake pre 09. što dovodi do dosta problema. Čak i kada
+ih ne preskoče, dešava se da ih ne odrade dovoljno dobro i da postoje neki propusti
+što takođe dovodi do problema.
+
+
+Ključni učesnici su:
+1. Stakeholders - finansijeri; oni kojima treba proizvodne
+2. Business owner - osoba koja komunicira sa stakeholder-ima i product owner-ima
+3. Product owner - realizuje u development team-u ono za šta ga je zadužio business
+  owner
+4. (ukoliko se radi po scram-u) Scrum master - zadužen da rad developer-a upravlja
+  organizuje po scrum-u
+5. Development team - najčešće ga čine: UX Designer, Architect, Programmer, Database
+  Engineer, Tester
+  (veoma je korisno kada u timu postoji svaka od ovih uloga)
+  
+
+
+
+  
+Budžet se često prekoračuju (66% projekata prekorači budžet)
+
+
+8/10 radnika kaže da biznis i IT nisu sinhronizovani
+
+
+Projekti koji koriste agilnu metodologiju su uspešniji
+
+
+
+  
+Modeliranje informacionog sistema
+=================================
+
+Potrebno je izraditi model koji odgovara delovima poslovnog sistema
+
+
+Model je apstrakcija ili reprezentacija dela stvarnog sveta
+
+
+Ukoliko se kreira novi informacioni sistem onda se određuje neki
+postojeći sistem koji se koristi za slične potrebe ili se razvoj
+započinje sa izradom logičkog modela
+
+
+
+Model je potrebno opisati situaciju u kojoj neki događaj iz spoljašnje 
+sredine okida neki proces koji se nalazi u određenom stanju i od starog
+stanja formira novo stanje
+
+
+[ Suština
+
+Pri modelovanju informacionog sistema cilj je projektovati sve (koliko je
+to moguće) iz realnog sveta u model
+]
+
+
+
+IDEF0 - metodologija za modelovanje informacionog sistema, tj. po def.
+"Tehnika modeliranja zasnovana na kombinaciji grafike i teksta prikazanih
+na organizacioni i sistemski način"
+
+
+Sastoji se od hijerarhijskog niza dijagrama, gde je na najvišem nivou 
+dijagram koji se naziva kontekstni dijagram, nakon kojeg slede 
+dekompozicioni nivoi kojima se sve što se više ulazi u dupinu sa
+dekompozicijom detaljnije opisuje sistem.
+
+
+Grafički prikaz IDEF0 modela čine pravougaonici i strelice, kao i njihovi 
+nazivi
+
+
+Cilj je predstaviti procese u datom sistemu. 
+Proces se prikazuje jednim pravougaonikom.
+
+
+
+Kod IDEF0 dijagrama bitno je sa koje strane se strelice nalaze (za razliku od DFD)
+
+Sa leve strane su ulazi, sa desne izlazi, gore su kontrole, a dole mehanizmi
+
+
+
+Ulazne informacije predstavljaju sva dejstva spoljašnje okoline na informacioni
+sistem. Sve te strelice predstavljaju informacije (?), one ulaze u informacioni
+sistem, u njemu se transformišu i na kraju se generiše izlaz.
+"Ulazne strelice predstavljaju materijal ili informaciju koja se koristi ili
+transformiše radi definisanja izlaza"
+
+
+Kontrole kontroliše procese unutar informacionog sistema. Utiču na aktivnosti
+u sistemu, ali ne mogu transformisati ulazne podatke. Ono što gotovo svaki sistem
+ima (u kome je zaposlena barem jedna osoba) je zakon o radu. To su uvek neka 
+pravila, pravna načela koja kontrolišu sistem.
+"Kontrolne strelice kontrolišu kako, kada i da li će se neka aktivnost izvesti,
+odnosno kakvi če biti izlazi"
+
+
+Mehanizmi su izvori koji izvode aktivnosti, a ne troše se kao što su npr. ljudi,
+operma, mašine, ...
+
+
+
+
+
+
+Pri modelovanju IDEF0 dijagrama prvo se kreira kontekstni dijagram koji jednim 
+pravougaonikom prikazuje čitav informacioni sistem. 
+
+
+Nakon toga se dati pravougaonik razlaže međusobno povezane potprocese, pa će
+se na sledećem nivou sistem biti detaljnije prikazan.
+
+
+Na kraju se generiše stablo aktivnosti. 
+ 
+
+Povratne strelice (strelice koje predstavljaju izlaz) mogu biti ulaz, kontrola 
+ili mehanizam nekog drugog procesa. Ovo ne može naći na kontekstnom dijagramu,
+ali može da nekom njegovom podnivou.
+
+
+
+Skrivene strelice su strelice koje su podešene tako da ne mogu biti viđene 
+na nadređenom ili podređenom dekompozicionom dijagramu. Označava se zagradama
+oko vrha strelice.
+
+
+
+
+
+AllFusion Process Modeler
+=========================
+
+
+Forma za unos naziva procesa se dobija dvoklikom (dok je aktivan <<Pointer Tool>>)
+na pravugaonik koji ga predstavlja.
+
+
+
+Strelicu nije moguće kreirati sa bilo kog mesta, već samo sa neke komponente
+(pravougaonika, strelice, ...) ili sa ivica radnog papira/dijagrama.
+
+Strelice se kreiranje pomoću <<Precedence Arrow Tool>> koji se nalazi među dostupnim
+alatima. Izvorišna tačka strelice se postavlja jednim klikom na neku od prethodno 
+navedenih lokacija.
+
+
+
+Imenovanje strelice se vriši dvoklikom na datu strelicu, dok je aktivan 
+<<Pointer Tool>>
+
+
+
+
+Prezentacija
+=============
+
+
+Dijagram dekompozicije je dijagram koji se dobija kada se neki dijagram dekomponuje 
+na više procesa koji međusobno interaguju.
+
+
+Princip ograničenja složenosti definiše granice broja blokova tako da je donja 
+granica 2, a gornja 6.
+
+
+Klikom na dati proces u tabu <<Actvities>> moguće je dekomponovati dati proces
+odabirom opcije <<Decompose>>.
+
+
+Nakon dekompozicije neophodno je da strelice koje potiču od roditeljskog (nadređenog)
+dijagrama budu povezana na odgovarajućim način sa njegovim potprocesima.
+
+
+Pojava uglastih zagrada oko određene strelice označava da se dati izlaz ne
+nalazi u roditeljskom dijagramu
+
+
+Prvo je potrebno definisati sve ulaze i izlaze, a oni će se automatski generisati
+na ostalim relevantni nivoima dekompozicije.
+
