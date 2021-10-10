@@ -12,8 +12,11 @@
 Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
 
 # Linkovi ka materijalu
-[Druga godina - Zimski semestar][druga-zimski]    
+[Druga godina - Zimski semestar][druga-zimski]  
 [Druga godina - Letnji semestar][druga-letnji]  
+
+[Treća godina - Zimski semestar][treca-zimski]  
+[Treća godina - Letnji semestar][treca-letnji]  
 
 
 # Korisni linkovi
@@ -67,6 +70,11 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [druga-zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 [druga-letnji]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+
+
+[treca-zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/III%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+
+[treca-letnji]: https://github.com/Produktivna-grupa/PMFKG/blob/master/III%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 
 
