@@ -1,0 +1,72 @@
+Datum održavanja: 04.10.2021.
+Predavač: Nenad Stefanović
+Čas: 1
+=====================================
+
+33-35% IT projekata bude uspešno
+
+Uspešan projekat znači da je:
+- završen na vreme
+- u okviru budžeta
+- urađeno sve što je planirano ( naziva se obim ili kvalitet posla )
+
+
+Projekti su se pre pravili ad-hoc i zbog toga je oko 15% projekata
+bilo uspešno
+
+
+
+Inforamcioni sistemi i tehnologije mogu da doprinesu da kompanija:
+- bude konkurentnija / opstane na tržištu
+- stekne veći broj kupaca
+- smanji troškove
+- uveća prodaju
+- ...
+
+
+Postoje više različitih metoda razvoja informacionih sistema, ali 
+ni jedna nije idealna i treba proceniti koja je u najpogodnija u 
+zavisnosti od okruženja, poslovne kulture, timova i nekih drugih faktora
+
+
+Izjava od radu (statement of work) je jedan od prvih dokumenata koji se 
+kreira na nekom projektu.
+
+Nakon toga sledi: specifikacija, zahteva, modeliranje, upoznavanje sa
+sistemom, kreiranje baze, korisničkog interfejsa, ...
+
+
+
+Forward Engineering - automatsko generisanje koda na osnovu modela
+
+
+Moguće je pomoću Case alata generisati DDL (Data Definition Language) 
+kod za odgovarajući RDBS, tj. generisati potreban kod za kreiranje
+čitave base
+
+
+
+Objedninjeni jezik za modeliranje (UML) sadži skoro sve potrebne dijagrame
+za modeliranje jednog sistema, za razliku od nekih drugih notacija kao 
+što su IDEF0, DFD i drugih koji su dobri za neku specifičnu oblast
+modeliranja
+
+
+
+Tradicionalni pristup informacionim sistemima sagledava ceo sistem kao
+skup zasebnih funkcija, a ne kao jedan proces sačinjen od nekih manjih
+potprocesa što za posledicu ima loš rad samog sistema i negativan uticaj
+na razvoj i uspešnost samog projekta.
+
+
+
+Uloge informacionog sistema:
+- upravljanje podacima
+- upravljanje procesima
+- izveštavanje (daje potrebno informacije)
+
+
+Sistem mora da ima ulaz i izlaz, ako to nema nije proces pa ni sistem
+
+
+Ulaz u informacioni sistem su podaci, a izlaz informacija
