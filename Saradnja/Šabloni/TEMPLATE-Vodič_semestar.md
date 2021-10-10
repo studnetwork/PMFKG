@@ -26,7 +26,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[skracenica_naziva_predmeta]: ./vodi%C4%8D_predmet.md#vodi%C4%8D
+[skracenica_naziva_predmeta]: ./{skracenica_naziva_predmeta}/vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
