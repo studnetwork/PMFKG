@@ -24,7 +24,8 @@ Softver je računarski program i pridružena dokumentacija
 
 Postoje 2 kategorije:
 - softver koji se kreira za određenog kupca
-- softver koji se kreira za neko tržište
+- softver koji se kreira za neko tržište (ne zna se unapred ko će
+  biti kupac)
 
 
 
@@ -52,7 +53,7 @@ isporuku upotrebljivog softvera
 
 
 
-Sistemski inženjering se odnosi na ceo siste, i na softver i na hardver
+Sistemski inženjering se odnosi na ceo sistem, i na softver i na hardver
 koji će ga izvršavati; bavi se svim aspektima; procesni inženjering
 
 
@@ -61,7 +62,7 @@ koji će ga izvršavati; bavi se svim aspektima; procesni inženjering
 Aktivnosti u modelu vodopada:
 1. Definisanje zahteva
 2. Dizajn sistema i softvera
-3. implementacija i testiranje jedinica
+3. Implementacija i testiranje jedinica
 4. Integracija i sistemsko testiranje
 5. Operacija i održavanje
 
@@ -69,7 +70,7 @@ Aktivnosti u modelu vodopada:
 
 Arhitekturni dizajn je dizajnerski proces koji je orjentisan ka 
 indentifikaciji podsistema koji oblikuju sistem i radnog okvira
-za upravljanje i komunikaciju podsistema.
+(framework) za upravljanje i komunikaciju podsistema.
 
 
 Rezultat arhitekturnog dizajna je arhitektura softvera
@@ -86,7 +87,7 @@ implementacione tehnologije.
 "Rešenja koja su se dokazala kao dobra u praksi. Pokazalo se da
 nisi svi problemi u potpunosti različiti i da postoje sličnosti 
 i u ulogama klasa. Takva rešenja koja se mogu uočiti u praksi i 
-koja se ponavljaju nayivaju se projektni uzorci"
+koja se ponavljaju nazivaju se projektni uzorci"
 
 
 
@@ -96,12 +97,12 @@ dovoljno velike kompleksnosti da bi se nazvali podsistemom.
 
 
 
-Uzorci se klasifiku ju po nameni i po domenu.
+Uzorci se klasifikuju po nameni i po domenu.
 
 
 
 Najjednstavnija kategorija uzoraka su idiomi, tj.
-uzorci najnižeg nivao apstrakcije
+uzorci najnižeg nivoa apstrakcije
 
 
 
@@ -130,7 +131,7 @@ Imao je sličnu ideju kao Java. Pojavio se nakon nje.
 Zasnovan na jezicima Java i C++, sa dodacima
 
 
-Ima .Net arhitekturu, koja nije klasična prevodilačku arhitekturu
+Ima .NET arhitekturu, koja nije klasična prevodilačka arhitektura
 (kao npr. C++), već je uložen napor da se ostvari prenosivost Jave
 uz dodatnu mogućnost izvršavanja nekih drugih jezika od strane iste
 Runtime mašine.
@@ -138,7 +139,7 @@ Runtime mašine.
 
 
 C# je dizajniran od strane Andersa Hejlsberga (koji je dizajnirao i
-Turbo Pascal, Delphi, C# i TypeScript)
+Turbo Pascal, Delphi i TypeScript)
 
 
 
@@ -161,7 +162,7 @@ C++ je brži (pruža bolje performanse, tj. veću brzinu izvršenja)
 
 
 
-Jezici koji predstavljaju deo .Net tehnologije:
+Jezici koji predstavljaju deo .NET tehnologije:
 - VB.NET (visual basic)
 - C++
 - C#
@@ -199,8 +200,8 @@ Dostupan i na Linux sistemima
 
 
 DotGNU Portable.NET je implementacija Microsoft .NET razvojnog okvira
-koja predstavlja zamenu delove ovog razvojnog okvira koji nisu slobodan
-softver.
+koja predstavlja zamenu zvaničnog razvojnog okvira u obliku slobondog
+softvera
 
 
 Xamarin je platforma koja pruža alate i biblioteke za razvoj aplikacija
@@ -215,13 +216,13 @@ JVM ~ CLR
 
 
 
-Uloga CLR-a je da transformiše CIL (međukod) u aseblerske
+Uloga CLR-a je da transformiše CIL (međukod) u asemblerske
 instrukcije za konkretnu hardversku arhitekturu
 
 
-Taj način prevođenja smanjuje inicijalno više košta u pogledu
-performansi, ali pomoću keširanja rezultat tog prevođenja može
-iskoristi u budućnosti radi bržeg izvršavanja u budućnosti
+Taj način prevođenja inicijalno više košta u pogledu performansi, ali 
+pomoću keširanja rezultat tog prevođenja može iskoristi u budućnosti 
+radi bržeg izvršavanja što negira te početne troškove
 
 
 
@@ -239,7 +240,7 @@ Prevođenje
 ===========
 
 Kod u nekom od .NET jezika se prevodi u CIL, a to dalje CLR
-izvršava, prevodi i asemblira u mašinski kod koji može da se
+izvršava(?), prevodi i asemblira u mašinski kod koji može da se
 izvršava na konkretnom procesoru
 
 
@@ -254,4 +255,70 @@ CLR je Microsoft-ova implementacija CLI-a (Common Language Infrastructure)
 CLR je implementacija koja zavisi od platforme
 
 
-39:00
+CLI ( Common Language Infrastructure ) je infrastruktura koja omogućava
+razvoj i povezivanje komponenti iz više jezika
+
+
+
+Sastoji se od 4 komponente:
+- Common Type System (CTS), tj. zajedničkog sistem tipova podataka
+- Meta-podatke koji ne zavise od jezika (nije bitan izvorni jezik)
+- Common Langauge Specification (CLS), tj. zajedničku specifikaciju koja
+  predstavlja ponašanje koje svi jezici iz .NET okruženja trebaju da slede
+  kako bi bili saglasni
+- Virtual Execution System (VES) "sistem koji sve to treba da izvrši"
+
+
+
+Common Type System specificira tipove koji su definisani i njihovo ponašanje
+
+
+Tip podatka (slično klasi u Java-i) može da sadrži nula ili više članova:
+- Field (podatke)
+- Method
+- Property ("način da se kontrolisano pristupa poljima")
+- Event ("događaj ili rukovanje događajem")
+
+
+Takođe specificira i pravila vidljivosti i pristupa članovima tipa:
+- Private
+- Family
+- Family and Assembly
+- Assembly
+- Family or Assembly
+- Public
+
+
+Poslednji skup pravila koji definiše Common Type System su pravila o
+životnom veku objekta, nasleđivanju i proveri jednakosti (vrši se
+pomoću System.Object)
+
+
+Kao i Java, C# podržava samo jednostruko nasleđivanje i na vrhu hijerarhije
+se nalazi tip Object. Mehanizam višestrukog nasleđivanja je takođe rešen
+na sličan način: uvođenjem interfejsa
+
+
+
+CTS definiše System.Int32 kao intedžer od 4 bajta i u C# njegov alias 
+je int.
+
+Još jedan primera alias-a nekog tipa podataka je string za tip podatka
+System.String
+
+
+
+Tipovi podataka se klasifikuju u 2 grupe:
+- vrednostne tipove (value types)
+- referentne tipove (reference types)
+
+
+
+U vrednostne spadaju: integrisani tipovi, tipovi definisani od strane korisnika
+i enumeracije
+
+
+U referentne spadaju: poiterski tipovi, interfejsni tipovi, nizovi, klasni tipovi
+(User-Defined Classes, Boxed Value Types, Delegates)
+
+45:40
