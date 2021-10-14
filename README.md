@@ -16,7 +16,8 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 [Druga godina - Letnji semestar][druga-letnji]  
 
 [Treća godina - Zimski semestar][treca-zimski]  
-[Treća godina - Letnji semestar][treca-letnji]  
+
+[//]: # ([Treća godina - Letnji semestar][treca-letnji]  )
 
 
 # Korisni linkovi
