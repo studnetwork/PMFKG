@@ -1,0 +1,191 @@
+Datum održavanja: 06.10.2021.
+Predavač: Vladimir Cvjetković
+Čas: 1
+=====================================
+
+PHP (Hypertext PreProcessor - jezik opšte namene; uglavnom se 
+                              koristi za Web programiranja
+
+
+
+ASP.NET - Microsoft-ova serverska tehnologija. Radi na .NET 
+          framework-u
+
+
+Node.js - javascript platforma; javascript na serveru
+          
+
+    
+Prvi web server na svetu je osmislio i implementirao Tim Bearners
+Lee sa saradnicima 1990
+
+
+
+Serversko vs klijnetsko programiranje
+-------------------------------------
+
+
+Klijentski kod je javno dostupan i može se jednostavno videti i
+iskopirati. Postoji mogućnost da se koristi uglifly kako bi se
+Javascript kod učinio manje čitljivijim
+
+
+
+Obrada podataka na klijentu se primenjuje kada na primer podaci
+trebaju da se provere pre slanja serveru. 
+
+
+Animacije i vizuelni efekti na web strani su nemogući bez klijentskog
+programiranja
+
+
+
+Klijentsko okruženje ima razna ograničenja iz bezbednostnih razloga.
+Jedan od primera je sandbox-ing kojim se svaki tab izoluju od dugih
+tabova
+
+Takođe, neki uređaji imaju limitirane resurse što znači da za pristup
+fajlovima, bazi podataka, IoT hardveru kao i za razne složene i 
+zahtevne operacije klijentsko okruženje nije pogodna opcija
+
+
+Zbog tih razloga neophodan je server.
+
+Serverski kod je za razliku od klijentskog nedostupan korisniku koji
+može da vidi samo rezultat obrade podataka koje server šalje
+
+
+
+Tehnologije za serversko web programiranje:
+
+
+PHP:                            PHP, NetBeans, Nodepad++, Apache, MySQL
+ASP.NET (Active Server Pages):  ASP.NET, Virtual Studio, Internet
+                                Information Server, MS SQL Server
+NodeJS (js na serveru):         Node.js, VSCode, Express, MongoDB
+
+
+
+
+WAMP - Windows, Apache, PHP i MySQL; program koji instalira i 
+konfiguriše navedene programe
+
+
+XAMPP - Apache + MariaDB + PHP + Perl
+
+
+
+MS Information Server nije aktiviran nakon instalacija Windows-a. 
+Da bi se aktivirao neophodan je administratorski pristup.
+Za aktivaciju potrebno je otići na putanju:
+Control Panel > Programs > Programs and Features
+Klilom na "Turn Windows features on or off" otvara se forma
+u kojoj je moguće aktivirati "Internet Information Services"
+
+
+
+Pomoću IIS-a moguće je jednostavno kreirati virtuelne foldere
+
+
+
+C:\inetpub\wwwroot
+
+
+
+Internet Information Services (IIS) Manager
+
+
+
+Sintaksa:
+    <?php kod; ?>
+
+Završna oznaka nije obavezna, ali nije loša praksa pisati je
+
+Kod se nalazi između tih oznaka (upitnika)
+
+
+PHP kod može da se ubaci u HTML. 
+
+
+f-ja phpinfo() generiše stranicu sa informacijama o php-u i
+samom serveru
+
+
+
+Ako je neko uspe da prođe firewall i ako zna simboličku ili
+brojčanu (IP) adresu on će moći da pristupi delovima IIS-a
+kojima ne bi smeo da pristupi
+
+
+
+Za instaliranje PHP-a na IIS koristi se Microsoft Web platform
+Installer (on se može naći u Start Menu ili na Home stranici
+ISS-a u sekciji Managment)
+
+
+
+
+NodeJS je JavaScript platforma slična JVM
+
+Koristi se iz CLI-a
+
+Omogućava izvršavanje JavaScript-a CLI-a
+
+Za izvršavanje nije potreban browser
+
+Postoji veliki broj modula koji se instaliraju sa NPM-om
+(Node Package Manager)
+
+Web Express je modul koji implementira web server
+
+Socket.IO modul implementira http komunikaciju preko socket-a
+
+serialport modul za serijsku USB komunikaciju
+
+
+
+
+node -v
+
+php -v
+
+
+node
+REPL - Request Evaluete Print Loop
+
+
+
+ 
+PHP
+----
+
+Skript jezik koji može da se izvršava i na web serveru, ali i
+iz CLI-a
+
+
+Nije tipiziran, kao i JavaScript
+
+Takođe ima sličnu sintaksu kao JavaScript
+
+
+Svaka naredba mora da se završava sa ; jer u suprotnom kod ne 
+bi mogao da se izvrši
+
+
+Postoji nezavisnost od operativnog sistema
+
+
+PHP REPL:
+    php -a
+    
+    
+Nakon pisanja komande potrebno je proslediti signal za kraj
+unosa, za Windows je to CTRL+Z
+
+
+
+NetBeans pronalazi projekte u htdocs folderu
+
+
+
+    
