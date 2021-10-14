@@ -2,8 +2,11 @@
 U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
-[Informacioni sistemi 1][is1]  
 [Dizajn softvera][ds]  
+[Informacioni sistemi 1][is1]  
+[Uvod u veštačku inteligenciju][uvi]  
+[Web programiranje 1][wp1]  
+
 
 [//]: # ( # Meeting linkovi )
 
@@ -22,9 +25,10 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[is1]: ./IS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [ds]: ./DS/Vodi%C4%8D_predmet.md#vodi%C4%8D
-
+[is1]: ./IS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[uvi]: ./UVI/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[wp1]: ./WP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [//]: # ( Meeting reference )
 
