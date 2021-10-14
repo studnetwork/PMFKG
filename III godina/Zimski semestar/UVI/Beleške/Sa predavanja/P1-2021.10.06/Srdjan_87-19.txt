@@ -1,0 +1,364 @@
+Datum održavanja: 06.10.2021.
+Predavač: Višnja Simić
+Čas: 1
+=====================================
+
+Veštačka inteligencija ima za cilj da osposobi mašine
+da obavljaju zadatke koji su namenjeni ljudima i
+omogućava da mašine uče iz iskustva i prilagođavaju
+novim ulazima (ova 2 načina nisu jedini načini na koji
+je moguće osposobiti mašinu za obavljanje spomenutih 
+zadataka)
+
+
+Danas je postala biznis, dosta se koristi u privredi
+
+
+Velika ulaganja u AI istraživanja dolaze iz biznis sfere
+i za cilj imaju poboljšanja proizvoda i usluga
+
+
+
+Istorijat
+---------
+
+1943. godine nastaje model veštačkog neurona, 
+Warren McCulloch i Walter Pitts su pokazali su kako može
+da se izmodelira jedan neuron, način na koji izvršava neke
+osnovne logičke operacije (AND i OR) i na koji način bi
+se slali signali između takvih neurona
+
+
+
+1956.
+Za zvanični začetak veštačke inteligencije smatra se letnja
+radionica na Dartmouth Collage-u čija je ideja bila 
+okupljanje istraživača iz oblasti vešatačke inteligencije
+na 2 meseca radi razmenjivanja ideja. Rezultat te redionice
+je bio termin veštička inteligencija
+Njege posledice bila su velika očekivanja
+
+Allen Newell i Herber Simon su pokušali da razviju program
+koji može rešiti bili koji problem. Na kraju su zaključili
+da nije moguće stvoriti takav program
+
+
+1973. AI winter
+Period u kome su redukovana finansiranja i u kome se izgubilo
+interesovanje za veštačku inteligenciju jer prethodna velika
+očekivanja nisu ispunjena
+
+
+"The spirit is willing but the flash is weak"
+-> "The vodka is good, but the meat is rotten"
+
+1981. fokus sa stvaranja programa koji može rešiti problem 
+opšteg tipa je prebačen stvaranje programa za rešavanje 
+problema iz neke uže oblasti. Dolazi do komercijalnih uspeha
+ekspertnih sistema. Prvi je bio R1 u DEC-u 1982. i namena mu
+je bila konfigurisanje komponenti računara
+
+
+
+Istraživači se okreću metodama koje su inspirisani prirodom
+To se pokazalo kao ispravan pravac razmišljanja
+
+
+
+1997. Deep Blue
+AI koji je pobedio Kasparova u šahu
+
+
+
+
+2011. IBM Watson, superračunar kompanije IBM pobeđuje u
+američkom kvizu Jeopardy
+
+
+[ često se pojavljuje na ispitu
+
+2012. rađaju se Deep NN (duboke neuronske mreže)
+Tvorac je Geoffrey Hinton (Džefri Hinton).
+Njegov rad dovodi proboja veštačke inteligencija.
+]
+
+
+Mašinsko učenje predstavlja podskup veštačke inteligencije. 
+Koristi se veliki skup podataka kako bi se računari 
+primenom određenih algoritama naučili da daju predikcije
+
+
+
+Duboko učenje (Deep Learning) je podskup mašinskog učenja.
+Kod njega se koriste duboke neuronske mreže kako bi se 
+izimitirale neke logičke operacije koje se dešavaju u
+mozgu i kako bi se time mašine naučile da obavljaju neke
+specifične poslove. Te mreže koriguju same sebe kako bi
+se poboljšala uspešnost
+
+
+
+
+Artificial General Intelligence - još uvek ne postoji.
+Cilj je kreiranje softvera koji ima nešto slično 
+covekovoj sposobnosti da se prilagodi različitim 
+okruženjima i zadacima i da primenjuje stečena znanja
+iz jedne oblasti na drugu
+
+
+
+
+Postoje različti stavovi o tome šta znači posedovati
+veštačku inteligenciju.
+
+
+Definicije se ili bave procesom razmišljanja ili
+procesom ponašanja
+
+Definicije VI:
+1. Mašine razmišljaju kao ljudsko biće
+2. Mašine razmišljaju racionalno
+3. Mašine postupaju kao ljudsko biće
+4. Mašine postupaju racionalno
+
+
+
+
+
+Ponašanje kao ljudsko biće
+--------------------------
+
+U osnovi ove definicije je pristup Alana Tjuringa
+veštačkoj inteligenciji
+
+
+
+Alan Tjuring je 1950. godine osmislio test koji daje
+zadovoljavajuću definiciju inteligencije koji se naziva
+Tjuringov test (Turing test)
+
+
+
+Test se sastoji od niza pitanja koja ispitivač postavlja
+računaru i čoveku. Ideja testa je da nakon određenog 
+vremena ispitivač pokuša da odredi koji set odgovora je
+dao čovek, a koji računar. Ukoliko računar uspe da zavara
+ispitivača smatralo bi se da je prošao test.
+
+
+Da bi računar zavarao ispitivača potrebno je da poseduje
+sledeće sposobnosti:
+- predstavljanje znanja
+- zaključivanje
+- obrada prirodnog jezika
+- mašinsko učenje
+
+
+Potpuni Tjuringov test zaheva i:
+- računarsko viđenje (computer vision)
+- robotiku
+
+
+
+
+
+
+
+
+Razmišljanje kao čovek
+----------------------
+
+
+Da bi se proverilo da li mašina razmišlja kao čovek
+potrebno je razumeti kako čovek razmišlja
+
+
+To se može učiniti na 2 načina:
+- introspekcijom (razmišljanjem o mislima )
+- psihološkim eksperimentima
+
+
+General Problem Solver
+
+
+
+
+Racionalno razmišljanje:
+------------------------
+
+
+Ima korene još u staroj Grčkoj kada su grčki filozofi,
+pre svega Aristotel, pokušali da naprave sistematizaciju
+ispravnog razmišljanja, pravila po kojima čovek rezonuje
+
+
+
+Primena logičkog zaključivanja u veštačkoj inteligenciji
+se pokazala kao jako dobra za rešavanje određenih 
+problema i oponašanja ljudskog načina razmišljanja
+
+
+Problem se javnja kod neformalnog zaključivanja
+
+
+
+
+Racionalno postupanje
+---------------------
+
+
+Zasnovano na racionalnim agentima.
+
+
+Agent je računarski program koji može da opaža koji može
+da opaža svoje okruženje i da deluje na njega.
+
+
+Racionalni agent je agent koji deluje tako da ostvaruje
+najbolji ishod ili kada je to neizvesno, najbolji očekivani
+ishod
+
+
+
+
+Mnoge naučne discipline su doprinele razvoju veštačke
+inteligencije.
+
+
+Filozofija         - logika, način zaključivanja
+Matematika         - aparat za razvoj velikog broja metoda VI
+Ekonomija          - formalna teorija, teorija odlučivanja
+                     maksimizacije profita, Markovljevi 
+                     procesi odlučivanja
+Neuroscience       - način na koji mozak obrađuje informacije
+Psihologija        - kako ljudi misle i deluju
+Računarska tehnika - kako napraviti dovoljno efikasan računar
+
+
+
+
+
+
+Agenti
+-------
+
+Pod agentom se podrazumeva bilo šta što svoju okolinu spoznaje
+pomoću senzora, i na nju deluje preko aktuatora
+
+Primeri: čovek, robot, softver
+
+
+Sekvenca opažaja (percept sequence), tj. istorija opažaja nekog
+agenta je sve što taj agent u toku vremena (od nekog trenutka) opazi
+
+
+
+Njegov odabir akcija koje će primeniti na okolinu u svakom trenutku
+zavisi od čitave istorije opažaja koju je imao
+
+
+Vacuum-cleaner world
+
+
+
+Ponašanje agenta je opisano funkcijom agenta koja preslikava istoriju
+opažaja u delovanje, tj. akciju
+
+
+"Funkcija agenta opisuje ponašanje agenta kao algoritamski opis, a
+kada se realizuje ta funkcija onda se realizuje program agenta"
+
+
+Funkcija agenta je apstraktan matematički opis
+
+Program agenta je konkretna realizacija funkcije agenta, koja se
+izvršava u nekom fizičkom sistemu
+
+
+
+
+
+Koncept racionalnosti
+----------------------
+
+
+Racionalni agent - agent koji uvek radi pravu stvar
+
+
+Agent se može smatrati racionalnim ako za svaku moguću sekvencu
+opažaja on bira akcije koje očekivano maksimizuju njegovu meru
+performanse i pritom okruženje prolazi kroz stanja koja su
+zadovoljavajuća
+
+
+Mera performanse vrednuje ponašanje agenta u okruženju
+
+
+
+Ne postoji tačno jedna mera performanse kojom je moguće vrednovati
+sve agente na svim zadacima
+
+
+
+Šta je racionalno u datom trenutku zavisi od:
+- mere performanse
+- prethodnog znanja o okruženju
+- mogućih akcija
+- opažajne sekvence do posmatranog trenutka
+
+
+
+"Racionalnost ne znači uspeh po svaku cenu jer agent deluje na bazi
+onoga što prikupi preko senzora"
+
+
+On može da bude neuspešan iako jeste racionalan jer ako ne dobije 
+sve relevantne informacije o svojoj okolini on neće biti u stanju da
+odabere najpovoljniju akciju
+
+
+
+
+
+Okruženje zadatka su problemi za koje agenti predstavljaju rešenje
+
+
+Okruženje u kome agent deluje i okruženje zadatka nisu isto.
+
+
+Okruženje zadatka čine mere performanse agenta, (fizičko) okruženje,
+senzori i aktuatori 
+
+
+
+Okruženje zadatka se opisuje pomoću 4 parametra:
+- Performance
+- Environment
+- Actuators
+- Sensors
+
+ili skraćeno PEAS
+
+
+ 
+
+[ Мoguće pitanje na usmenom delu ispita:
+
+Dati PEAS opis za dati primer agenta
+
+]
+
+
+U primeru automatizovanog taksija deo okruženja predstavlja i 
+mušterija.
+Neki od aktuatora su: mikrofon za primanje komandi od strane 
+mušterije, ekran na kome bi se klijentu saopštavale informacije o
+putovanju
+
+
+
+
+3. snimak
+
+
+
