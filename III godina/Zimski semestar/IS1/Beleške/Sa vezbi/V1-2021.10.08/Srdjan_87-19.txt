@@ -6,7 +6,7 @@ Predavač: Lana Miljković
 
 
 Konsultacije mogu biti dosta korisne pri izradi projekta
-Asistent / profesor može da ukaže da moguće probleme i
+Asistent / profesor može da ukaže na moguće probleme i
 proveri kvalitet
 
 
@@ -52,6 +52,7 @@ dobiju informacije radi njihovog transformisanja u znanje za specifičnu
 (poslovnu) namenu
 
 
+[ Ovo je jedno od čestih pitanja koja se pojavljuju na kolokvijumu
 
 Primeri informacionih sistema:
 - geografski informacioni sistem
@@ -59,7 +60,7 @@ Primeri informacionih sistema:
 - tehnički informacioni sistem
 - informacioni sistem za neku kliniku
 - ...
-Ovo je jedno od čestih pitanja koja se pojavljuju na kolokvijumu
+]
 
 
 
@@ -79,8 +80,8 @@ zaposleni te druge firme pružaju uslugu firmi koja ih je unajmila
 
 
 Selfsourcing je interni razvoj i podrška nekog procesa ili IT sistema
-od strane zaposlenih koji imaju znanja da sami razviju aplikaciju
-
+od strane zaposlenih koji imaju znanja da samostalno razviju aplikaciju
+uz minimalnu tehničku pomoć od strane drugih lica koja nisu deo te firme
 
 
 Insourcing je suprotno od outsourcing-a. Zaposleni neke druge firme
@@ -128,15 +129,15 @@ ih ne preskoče, dešava se da ih ne odrade dovoljno dobro i da postoje neki pro
 
 
 Ključni učesnici su:
-1. Stakeholders - finansijeri; oni kojima treba proizvodne
+1. Stakeholders - finansijeri; oni kojima treba proizvod
 2. Business owner - osoba koja komunicira sa stakeholder-ima i product owner-ima
 3. Product owner - realizuje u development team-u ono za šta ga je zadužio business
-  owner
-4. (ukoliko se radi po scram-u) Scrum master - zadužen da rad developer-a upravlja
-  organizuje po scrum-u
+   owner
+4. (ukoliko se radi po Scrum-u) Scrum master - zadužen da rad developer-a upravlja
+   i organizuje po Scrum-u
 5. Development team - najčešće ga čine: UX Designer, Architect, Programmer, Database
-  Engineer, Tester
-  (veoma je korisno kada u timu postoji svaka od ovih uloga)
+   Engineer, Tester
+   (veoma je korisno kada u timu postoji svaka od ovih uloga)
   
 
 
@@ -169,15 +170,12 @@ započinje sa izradom logičkog modela
 
 
 Modelom je potrebno opisati situaciju u kojoj neki događaj iz spoljašnje 
-sredine okida neki proces sistama koji se nalazi u određenom stanju i od
+sredine okida neki proces sistema koji se nalazi u određenom stanju i od
 starog stanja formira novo stanje
 
 
-[ Suština
-
 Pri modelovanju informacionog sistema cilj je projektovati sve (koliko je
 to moguće) iz realnog sveta u model
-]
 
 
 
@@ -207,19 +205,24 @@ Sa leve strane su ulazi, sa desne izlazi, gore su kontrole, a dole mehanizmi
 
 
 
-Ulazne informacije predstavljaju sva dejstva spoljašnje okoline na informacioni
+Ulazne informacije (ulazi) predstavljaju sva dejstva spoljašnje okoline na informacioni
 sistem. Sve te strelice predstavljaju informacije (?), one ulaze u informacioni
 sistem, u njemu se transformišu i na kraju se generiše izlaz.
 "Ulazne strelice predstavljaju materijal ili informaciju koja se koristi ili
 transformiše radi definisanja izlaza"
 
 
-Kontrole kontroliše procese unutar informacionog sistema. Utiču na aktivnosti
+
+
+Kontrole kontrolišu procese unutar informacionog sistema. Utiču na aktivnosti
 u sistemu, ali ne mogu transformisati ulazne podatke. Ono što gotovo svaki sistem
-ima (u kome je zaposlena barem jedna osoba) je zakon o radu. To su uvek neka 
-pravila, pravna načela koja kontrolišu sistem.
+ima (u kome je zaposlena barem jedna osoba) je zakon o radu. 
+
+Kontrole su uvek neka pravila, pravna načela koja kontrolišu sistem.
 "Kontrolne strelice kontrolišu kako, kada i da li će se neka aktivnost izvesti,
 odnosno kakvi će biti izlazi"
+
+
 
 
 Mehanizmi su izvori koji izvode aktivnosti, a ne troše se kao što su npr. ljudi,
@@ -230,26 +233,27 @@ operma, mašine, ...
 
 
 
+
 Pri modelovanju IDEF0 dijagrama prvo se kreira kontekstni dijagram koji jednim 
 pravougaonikom prikazuje čitav informacioni sistem. 
 
 
-Nakon toga se dati pravougaonik razlaže međusobno povezane potprocese, pa će
+Nakon toga se dati pravougaonik razlaže međusobno povezane podprocese, pa će
 se na sledećem nivou sistem biti detaljnije prikazan.
 
 
 Na kraju se generiše stablo aktivnosti. 
  
 
-Povratne strelice (strelice koje predstavljaju izlaz) mogu biti ulaz, kontrola 
-ili mehanizam nekog drugog procesa. Ovo ne može naći na kontekstnom dijagramu,
-ali može da nekom njegovom podnivou.
+Povratne strelice (strelice koje predstavljaju izlaz nekog procesa) mogu biti 
+ulaz, kontrola ili mehanizam nekog drugog procesa. Ovo se ne može naći na 
+kontekstnom dijagramu, ali može da nekom njegovom podnivou.
 
 
 
 Skrivene strelice su strelice koje su podešene tako da ne mogu biti viđene 
-na nadređenom ili podređenom dekompozicionom dijagramu. Označava se zagradama
-oko vrha strelice.
+na nadređenom ili podređenom dekompozicionom dijagramu. Označava se običnim 
+zagradama oko vrha strelice.
 
 
 
@@ -273,14 +277,14 @@ navedenih lokacija.
 
 
 
-Imenovanje strelice se vriši dvoklikom na datu strelicu, dok je aktivan 
+Imenovanje strelice se vrši dvoklikom na datu strelicu, dok je aktivan 
 <<Pointer Tool>>
 
 
 
 
 Prezentacija
-=============
+------------
 
 
 Dijagram dekompozicije je dijagram koji se dobija kada se neki dijagram dekomponuje 
@@ -289,21 +293,21 @@ na više procesa koji međusobno interaguju.
 
 Princip ograničenja složenosti definiše granice broja blokova tako da je donja 
 granica 2, a gornja 6. (2 je donja granice jer bi u suprotnom dati dijagram u stvari
-bio kontekstni diajgram)
+bio kontekstni dijagram; gornja je 6 kako se ne bi dijagram previše zakomplikovao)
 
 
-Klikom na dati proces u tabu <<Actvities>> moguće je dekomponovati dati proces
-odabirom opcije <<Decompose>>.
+Klikom na dati proces u tabu <<Activities>> moguće je dekomponovati dati proces
+odabirom opcije <<Decompose>>
 
 
 Nakon dekompozicije neophodno je da strelice koje potiču od roditeljskog (nadređenog)
-dijagrama budu povezana na odgovarajući način sa njegovim potprocesima.
+dijagrama budu povezana na odgovarajući način sa njegovim podprocesima.
 
 
 Pojava uglastih zagrada oko određene strelice označava da se dati izlaz ne
 nalazi u roditeljskom dijagramu
 
 
-Prvo je potrebno definisati sve ulaze i izlaze, a oni će se automatski generisati
-na ostalim relevantni nivoima dekompozicije.
+Prvo je potrebno definisati sve ulaze i izlaze na kontekstnom dijagramu, a oni će se 
+automatski generisati na ostalim relevantni nivoima dekompozicije.
 
