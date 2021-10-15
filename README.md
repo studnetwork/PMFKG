@@ -39,7 +39,7 @@ Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih li
 **Napomena:** komunikacija preko moodle-a je moguća samo između studenata koji su prijavljeni na isti kurs
 
 # Saradnja
-Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
+Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
 
 Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
 
