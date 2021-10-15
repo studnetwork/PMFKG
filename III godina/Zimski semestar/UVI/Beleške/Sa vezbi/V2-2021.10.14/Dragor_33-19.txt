@@ -1,0 +1,85 @@
+== Ekspertski sistem ==
+(Sistemi bazirani na znanju)
+
+- Pocetak vestacke inteligencije
+- 90ih godina
+- Simulacija ljudskog razmisljanja
+
+- Ekspertiza == misljenje eksperta
+- Heuristike == metode koje vode ka resenju, ali ga ne garantuju
+
+
+            Cinjenice (Istina)
+               +--->----v 
+               |        _______________
+               ^        [Baza znanja]
+          Korisnik      [Mehanizam 
+               ^        zakljucivanja]
+               |        _______________
+               +--<------'
+            Ekspertize (Zakljucci)
+
+
+Osnovni koncepti:
+- Prikupljanje znanja
+- Predstavljanje znanja
+- Zakljucivanje
+- Objasnjavanje
+
+Cinjenica -> Zakljucak (Ulancavanje unapred)
+Zakljucak -> Cinjenica (Ulancavanje unazad)
+    Primer: AI koji igra XO, izabere rezultat koji mu odgovara
+            i zakljuci koje poteze treba da odigra
+
+* Cinjenice su RELACIJE
+* Pravila - Pravila kako resiti problem
+
+-- Komponente ES-a --
+- Korisnicki interfejs (interakcija sa sistemom)
+- Sistem prikupljanja znanja ()
+- Baza znanja, sadrzi znanje kodirano pravilima
+- Radna memorija (sadrzi sve trenutno aktuelne cinjenice)
+- Mehanizam zakljucivanja (Interface engine, izvrsava pravila po nekom prioritetu)
+- Sistem za objasnjavanje
+
+
+-- [Pravila] --
+
+RULE_NAME: IF <uslov> THEN <akcija>
+
+** else ne postoji
+
+** Ako se pravila izvrsavaju odredjenim redosledom onda to nije ES
+   (algoritam (if-ovi i else-ovi) imaju taj redosled)
+
+** ES NIJE ALGORITAM
+
+** U ES se sve resava sa leve strane pravila (u uslovu)
+   u suprotnom to lici na algoritam
+
+
+-- [Ciklus zakljucivanja] --
+
+- Interface engine prolazi kroz bazu znanja gde su pobrojana pravila i pronalazi pravila ciji su uslovi zadovoljeni
+- Pravila koja su zadovoljena smestaju se u egentu i nazivaju aktivirana pravila
+- Razresavanje konflikta, od svih aktivirqanih pravila bira se ono koje ce se izvrsiti, ili po prioritetu (ako je razlicit), ili po principu steka
+- Izvrsenje pravila (firing), pokrece se THEN deo iz pravila i uklanja se iz agende
+- Azurira se agenda, uklanjaju se i dodaju odgovarajuca pravila
+- *Ciklus pocinje ispocetka
+
+
+== Experta ==
+(Biblioteka za ekspertske sisteme u Pythonu)
+
+-- Cinjenice --
+
+klasa Fact
+primer: fact = Fact('jabuka', 25, 'a') -uredjene cinjenice
+-koristimo ih samo kao flagove
+
+Fact <- Osoba
+osoba = Osoba(
+    ime = "Ime prezime",
+    godine = 22
+)
+
