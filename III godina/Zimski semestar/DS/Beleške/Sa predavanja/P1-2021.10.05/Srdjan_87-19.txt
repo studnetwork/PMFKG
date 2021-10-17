@@ -11,7 +11,7 @@ istraživanje tržišta i studija izvodljivosti ->
 odlučivanje ->
 kreiranje specifikacije ->
 kreiranje arhitekture ->
-dizajniranje potsistema ->
+dizajniranje podsistema ->
 implementacija ->
 isporuka ->
 vremensko održavanje sistema
@@ -92,7 +92,7 @@ koja se ponavljaju nazivaju se projektni uzorci"
 
 
 Projektni uzorci su sami po sebi mikroarhitektura jer sadrže
-strukturum, nekoliko klasa koje među sobom sarađuju, ali nisu
+strukturu, nekoliko klasa koje među sobom sarađuju, ali nisu
 dovoljno velike kompleksnosti da bi se nazvali podsistemom.
 
 
@@ -122,6 +122,7 @@ CLI - Command Line Interface
 CIL - Common Intermediate Language
 CLR - Common Language Runtime
 CTS - Common Type System
+CLS - Common Langauge Specification
 
 
 Imao je sličnu ideju kao Java. Pojavio se nakon nje.
@@ -134,7 +135,7 @@ Zasnovan na jezicima Java i C++, sa dodacima
 Ima .NET arhitekturu, koja nije klasična prevodilačka arhitektura
 (kao npr. C++), već je uložen napor da se ostvari prenosivost Jave
 uz dodatnu mogućnost izvršavanja nekih drugih jezika od strane iste
-Runtime mašine.
+runtime mašine.
 
 
 
@@ -167,6 +168,7 @@ Jezici koji predstavljaju deo .NET tehnologije:
 - C++
 - C#
 - Perl
+- F#
 - E# (nalazi se na listi "mrtvih", napuštenih ili merge-ovanih projekata)
 - ...
 
@@ -216,13 +218,13 @@ JVM ~ CLR
 
 
 
-Uloga CLR-a je da transformiše CIL (međukod) u asemblerske
+Uloga CLR-a je da transformiše CIL-a (međukod) u asemblerske
 instrukcije za konkretnu hardversku arhitekturu
 
 
 Taj način prevođenja inicijalno više košta u pogledu performansi, ali 
 pomoću keširanja rezultat tog prevođenja može iskoristi u budućnosti 
-radi bržeg izvršavanja što negira te početne troškove
+radi bržeg izvršavanja što donekle negira te početne troškove
 
 
 
@@ -232,7 +234,7 @@ Karakteristika svih .NET jezika je da se mogu prevoditi u isti CIL
 Svaki od tih jezika koristi samo podskup CIL-a
 
 
-CLS je najmanji zajednički podskup
+CLS je najmanji zajednički podskup svih .NET jezika
 
 
 
@@ -273,7 +275,7 @@ Sastoji se od 4 komponente:
 Common Type System specificira tipove koji su definisani i njihovo ponašanje
 
 
-Tip podatka (slično klasi u Java-i) može da sadrži nula ili više članova:
+Tip podatka (C# pandan klasi u Java-i) može da sadrži nula ili više članova:
 - Field (podatke)
 - Method
 - Property ("način da se kontrolisano pristupa poljima")
@@ -318,7 +320,435 @@ U vrednostne spadaju: integrisani tipovi, tipovi definisani od strane korisnika
 i enumeracije
 
 
-U referentne spadaju: poiterski tipovi, interfejsni tipovi, nizovi, klasni tipovi
+U referentne spadaju: pointerski tipovi, interfejsni tipovi, nizovi, klasni tipovi
 (User-Defined Classes, Boxed Value Types, Delegates)
 
-45:40
+Boxed Value Types - pandan wrapper-skim klasama u Javi
+
+
+
+
+
+
+Specifijakcija definiše:
+- kada metodi mogu biti pozvani
+- kada su pozvani konstruktori
+- podskup dozvoljenih tipova u CTS
+
+
+
+
+Za klasu čija su polja saglasna sa CTS kaže se da je saglasna ili kompatabilna
+sa CTS
+
+
+
+CLS nekompatibilni tipovi u C#-u su:
+- uint
+- sbyte
+- short
+- ushort
+- ulong
+
+
+
+
+Managed code se ne prevodi u mašinski kod već u posredni jezik (u slučaju .NET-a
+to je CIL) koji se interpretira i izvršava od strane nekog servisa u nekom okviru
+koji rukuje memorijom ili nitima
+
+
+Kod .NET-a kod je uglavnom Managed code
+
+
+
+Unmanaged code se prevodi u mašinski kod i izvršava se direktno od strane OS-a  
+( .dll )
+
+
+
+Native code je kod koji je preveden za neku određenu arhitekturu, tj. procesor i 
+njegov set instrukcija. 
+
+
+
+
+Bittable types u MS .NET-u označavaju tipove podataka koji imaju istu 
+reprezentaciju u memoriji i u za managed i za unmanaged code 
+(imaju istu bitovsku reprezentaciju) 
+
+
+Bittable termin koji je specifičan za .NET
+
+
+Kopiranje memorije se takođe onzačava i kao blok transfer, što je skraćeno bit blit
+(od naziva hardvera koji takav transfer obavlja koji se naziva blitter).
+
+
+Podaci ovih tipova se ne prebacuju reč po reč, već se prebacuju kao ceo blok jednom
+instrukcijom, što je brže
+
+
+
+Podaci zavisno od arhitekture procesora mogu biti u little-endian ili big-endinan
+formatu. Tipovi koji nisu bittable moraju da se transformišu u odgovarajući format
+koji je pogodan za interoperatibilnost (kako bi se znalo šta se očekuje (?) )
+
+Transformacija podataka u format pogodan za njihovo pamćenje ili prenos naziva
+se marshalling
+
+
+
+Jednodimenzioni nizovi bittable tipova su takođe bittable
+
+
+
+Assemblies
+----------
+
+Kod sadržan u fajlovima se zove "assemblies" (?)
+
+To može predstavljati:
+- kod i metapodatke
+- .exe ili .dll fajlove
+
+
+Za izvršavanje je potrebna klasa sa statičkom Main metodom
+
+
+Vrste asemblija:
+- lokalni: dostupan je lokalno, nije dostupan drugima 
+- deljiv (shared): poznata je njegova lokacija, dostupan je u okviru keša globalno
+                   dostupnih asembija ( GAC - Global Assembly Cache )
+- strong names: koristi se kriptografska zaštita; autentifikacija se vrši proverom
+                heš vrednosti
+                
+
+PE - Portable Executable file
+
+
+Struktura PE-a:
+- PE header (polazna adresa i druga inicijalna podešavanja )
+- MS Intermediate Language instrukcije ili native instrukcije
+- Metapodaci (tabela tipova, atributi i sigurnosni podaci)
+
+
+
+Svaki Assembly ima manifest. U manifestu se nalaze informacije o tipovima, 
+informacije o zavisnostima datom assembly-a i informacije o verziji ili autoru
+
+Takođe, svaki Assembly poseduje i Intermediate Language kod
+
+
+
+Ključna reč using je isto što i import-u u javi
+
+
+Svaka klasa može da se definiše u prostoru imena (namespace). Uvedeni su kako 
+bi se izbegli konflikti u imenovanju klasa. 
+
+Namespace može u sebi sadržati drugi namespace
+
+
+
+Ukoliko klasa eksplicitno ne navede klasu koju nasleđuje onda se podrazumeva
+da nasleđuje Object klasu i to se dešava implicitno
+
+
+
+Console.Write("arg 1 {0}, arg 2 {1}", 1, 2); // evaluira se samo jednom
+
+sintaksa je: {index[,alignment][:formatString]}
+
+Primer: 
+    Console.WriteLine("{0:D}  {1,8:X}", 502, 546);
+
+Rezultat:
+502       222
+    
+D i X specificiraju format
+
+8 kaze kolika je duzina. Pošto heksadekadna reprezentacija broja 546 ima
+samo 3 karaktera, ostatak se popunjava belinama (pad-uje)
+
+
+
+Niz je objekat, ne samo niz vrednosti određenog tipa (kao što je npr. u C-u)
+
+System.Array
+
+
+
+Provera granica se radi pri svakom pristupu
+
+
+Primeri:
+ int [] a = new int [10];
+ int [] c = new int [3] {1,2,3};
+ int [] d = {1,2,3,4};
+ 
+ // Jagged array
+ // višedimenzioni nizovi mogu da pamte različit broj elemenata
+ int [][] e = new int[2][];
+ e[0] = new int[100];
+ e[1] = new int[1];
+ 
+ 
+ 
+Članovi niza se pamte na heap-u
+
+
+Višedimenzioni nizovi se pamte po vrstama
+Fortran je primer jezika koji pamti po kolonama
+
+
+
+Ima i višedimenzione nizove koje se pamte sekvencijalno
+
+JIT prevodilac izračunava offset radi pristupa
+
+
+
+Primeri:
+    int [,] ar1 = new int[10,30];
+    ar1[3,7] = 137;
+    
+    
+    int [,] ar2 = new int[2,3] { {1,2,3}, {4,5,6} };
+    
+
+
+Moguće je definisati ponašanje operatora za pristup članovima niz neke klase,
+slično kao i kod C++
+    public string this[ int a, double b] {
+        ...
+    }
+    
+    
+
+Propertiji get i set:
+
+    get { return x };
+    set { this.x = x };
+    
+    
+
+Interfejsi mogu da imaju Properties i Events
+
+
+Postoji foreach naredba za kontrolu toka
+
+
+
+Moguće je redefinisati operatora, što kod Jave ne postoji
+
+
+Takođe postoje:
+- strukture
+- enum-i
+- delegati
+- unifikacija tipa (type unification)
+- nasleđivanje
+- polimorfizam
+
+
+Članovi tipa mogu biti:
+- konstante
+- polja
+- metode
+- operatori
+- konstruktori
+- destruktori
+- propertiji
+- indekseri
+- dogadjaji
+
+
+Za razliku od C++ nema header fajlova, sve se najčešće nalazi u jednom fajlu
+Tipovi podataka se uvoze upotrebom asembija (dll-a)
+
+
+Refleksija ( Type Reflection ) - "isto kao i kod Jave, moguće je učitati tip
+podatka"
+Pruža metoda za pristup metapodacima klase u toku izvršenja kao i metode za
+ispitivanje i promenu načina ponašanja klase u toku izvršavanja
+
+
+
+
+Automatizovano je upravljanje memorijom. Poseduje Garbage Collector
+Nema pointere kao C++
+
+
+Dodate su i konstrukcije jezika pomoću kojih se implementiraju poznati koncepti:
+- iteratori: foreach i yield
+- enkapsulacija i pristup: property
+- funcijski pokazivači / funktori: delegati
+- posmatrač uzorka dizajna (observer desing pattern): event-i
+- Aspekt-oriented programming - atributi
+- elementi funkcijskog programiranja - LINQ i anonimni metodi
+
+
+
+Uslovni iskazi se moraju evaluirati na bool vrednosti
+
+
+
+Nema pointera, koristi se operator "." za pristup namespace-u, polju ili metodi
+
+
+Sva polja su inicijalizovana od strane CLR, na nulu za vrednosne i na null
+za reference tipove (slično kao i kod Jave)
+
+
+switch nema "propadanje" kroz iskaze, tj. nije moguće izostaviti break, 
+osim u slučaju kada dati case radi isto što radi i drugi case (i taj drugi 
+takođe prati ista pravila, pa krajnji mora da ima break)
+
+
+Argument switch-a može, za razliku od C-a koji prihvata samo int, biti bool,
+enum, integralni tip ili string
+
+
+Izraz mora biti svrsishodan, izrazi kao što je
+    a==b;
+nisu ispravni
+
+
+
+
+"Imamo kontrolu toka kod asembliranja" (?)
+
+
+
+
+Float-point tipovi:
+- float
+- double
+- decimal
+
+
+Tekstualni tipovi:
+- char
+- string
+
+Tekstulani tipovi koriste Unicode (karakter se predstavlja sa 16 bita)
+
+
+Strukture su vrednostni tipovi, ne mogu da se nasleđuju.
+Primer jedne strukture je System.Decimal
+
+
+Stringovi su nepromenljvi objekti, za razliku od stringova u C++
+
+Pri izmeni stringa, on se ne menja, već se pravi njegova nova kopija
+na kojoj su primenjene date izmene
+
+
+GC ih lako briše, optimalno je jer se u memoriji nalazi onoliko
+stringova koliko je potrebno. Jedan isti string se može koristi
+od strane više objekata. Određuju se pomoću hash funkcija.
+Kod C++ to ne bi moglo da se uradi zato što su stringovi mutable 
+pa ta bi se pri svakom pristupu hash stringa izračunavao ponovo
+
+
+
+Navođenje simbola @ ispred string literala omogućava pisanje
+stringa u više linija i ne zahteva escape-ovanje specijalnih
+karaktera. Jedini izuzetak jesu navodnici koji se escape-uju
+navođenjem dodatnih navodnika:
+    string quote = @"Jon said, ""This will work,"" - and it did!";
+
+
+
+Za razliku od C++, svaka instanca mora biti inicijalizovana
+(kao i kod Jave). Ukoliko se neinicijalizovana promeljiva
+koristi na nekom mestu doći će do kompajlerske greške
+
+
+
+Defaultn-a vrednost za string je string bez karaktera, tj. ""
+
+
+Kreiranje promenljive nekog tipa u stvari kreira promenljivu
+koja referiše na neku memorijsku lokaciju, slično kao i u Javi
+
+
+
+Vrednostni tipovi su takođe klase koje nasleđuju klasu
+System.ValueType, ali se ove klase posebno tretiraju u runtime-u
+
+
+Referenciranje je moguće jedino ako se box-uju, tj. upakuju
+u odgovarajuće referencne tipove. Suprotan proes se naziva
+unboxing
+
+
+// boxing
+int a = 137;
+object o = a;
+
+// unboxing
+int b = (int)o;
+
+
+
+U C++ kao parametar funckije promenljiva može da se prenese kao:
+- vrednost
+- pokazivač
+- referenca (razlika u odnosu na pokazivče je samo sintaksa)
+
+
+    
+Ključne reči ref i out prosleđuju varijablu kao referencu.
+
+
+Kod prosleđivanja uz navođenja ključne reči ref mora da postoji validna
+instanca (null je validna vrednost) ili vrednostni tip.
+
+
+out parametar:
+- ne mora da bude inicijalizovana pre poziva jer se zahteva
+  da se inicijalizacija izvrši u samoj funkciji
+- kompajler proverava da li u svakom toku unutar funkcije
+  dolazi do inicijalizacije i u suprotnom javlja grešku
+  
+  
+ref i out parametri se tretiraju isto pri kompajliranju, ali
+se tretiraju različito tokom izvršavanja
+
+
+Promenljiv broj parametra, sintaksa:
+ void f( params tip[] var );
+ 
+Mora biti poslednji argument u listi kako bi se moglo odrediti 
+koji parametri pripadaju tom nizu parametara, a koji ne. 
+Nakon parametra sa modifier-om params ne može postojati ni jedan
+drugi parametar. 
+
+
+
+
+foreach se koristi za iteriranje kroz kolekciju, sintaksa:
+    foreach( tipClana nazivIteratora in nazivKolekcije ) 
+    { ... }
+    
+    
+Iskazi koji omogućavaju prekid izvršenja u C#:
+- break
+- continue
+- goto ( ne preporučuje se )
+- return
+- throw
+
+
+Od C# 3.0 postoji mogućnost: 
+- da se tipovi deklarišu implicitno korišćenjem ključne reči var
+
+  kompajler na osnovu "desne strane" određuje kojeg bi tipa promenljiva
+  trbala da bude
+ 
+  ovo poboljšava čitljivost koda pri inicijalizaciji kompleksnih tipova
+  
+- korišćenja LINQ (anonimnih klasa)
+
