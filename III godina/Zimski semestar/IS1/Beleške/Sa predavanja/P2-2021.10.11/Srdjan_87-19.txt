@@ -1,0 +1,238 @@
+Datum održavanja: 11.10.2021.
+Predavač: Nenad Stefanović
+Čas: 2
+=====================================
+
+
+I u praksi je pokazano da metodološki pristup projektovanju
+informacionog sistema daje bolje rezultate od ad-hoc pristupa
+
+
+Više od polovine grešaka (54%) se otkrije nakon programiranje i
+testiranja. Greške koje su otkrivene u krajnjim faza su duplo 
+skuplje od grešaka koje se utkriju u ranim fazama.
+
+Skoro polovina grešaka u softveru (45%) je vezana za faze 
+definisanja zahteva i projektovanje. Takve greške se dalje
+propagiraju i time uvećavaju
+
+
+Kada se uvode novi IS, gotovi "erpovi", najčešće se kompanije 
+tada transformišu, redizajniraju ili vrše potpuni reinženjering
+svojih aktivnosti/procesa. Razlog nije samo prilagođavanje 
+softveru, već i to što se taj softver ima već ugrađene najbolje
+prakse po pitanju realizacije nekih procesa, menažmenta, ...
+
+
+
+Većina grešaka u fazi analize zahteva (77%) nastaje usled netačnih
+informacija, nekozistentnosti, previd i dvosmislenost.
+"Korisnik misli jedno, a mi drugo"
+Poželjno je da se nakon definisanja specifikacija i zahteva prođe 
+kroz njih, modele i slično kako bi se utvrdilo da li su ispravno
+definisani čime bi se eliminisale neke od potencijalnih grešaka
+u samom startu
+
+
+Problem velikog broja neuspešnih projekata je to što se pokrenu iz
+pogrešnih razloga. Uvek je potrebno imati u vidu poslovnu potrebu.
+Cilj informacionog sistema je da pomogne onome za koga se pravi da
+efikasnije i efektivnije obavlja svoj posao
+
+Svaki IS ima neke konkretne ciljeve koji moraju da budu u skladu sa
+IT strategijom, koja mora biti u skladu sa poslovnom strategijom
+
+
+
+Projekat je nešto što ima tačno definisan početak i kraj, nešto što
+koristi resurse, ljude i slično, ima rezultat rada koji treba da bude
+neka novina za datu kompaniju
+
+
+
+ACM (Association for Computing Machinery) definiše osnovne 
+kompentencije koje jedan "IS stručnjak" treba da ima
+
+
+[ (?)
+
+1.Business Continuity - zadatak je da se obezbedi pružanje IT usluga
+                        u meri koja je neophodna za funkcionisanje
+                        datog sistema
+                        (oporavak posle katastrofe, backup-ovi, ...)
+                      
+2. Upravljanje podacima, informacijama, sadržaja i dokumentima
+
+3. Arhitektura kompanije - opis informacionog sistema, kako su 
+                           komponente uklopljene i kako sve to
+                           funkcioniše kao jedna celina
+                           
+                           bitno je u startu definisati dobru
+                           arhitekturu sistema, koja je skalabilna,
+                           i da se dobro uklapa sa radom drugih 
+                           sistema i partnerskim sistemima
+                           
+                           
+4. Etička pitanja, privatnost podataka, bezbednost, ...
+   
+   Bitno je da se podacima klijenata upravlja u skladu sa zakonskim
+   regulativama
+
+5. Mogu da pruže konkurentsku prednost; 
+   
+   ostvarivanje strateških ciljeva
+
+   CRM (Client Relationship Managment)
+   
+   
+   
+6. Pomoć pri razvoju novih tehnologija i usluga
+                           
+   PLM (Product Lifecycle Managment)
+
+7. Održavanje, upravljanje sistema i operacije u njemu
+
+8. Rukovođenje IS - skup skernica kako iskoristiti sistem na najbolji
+                    mogući način kako bi se ostvario najbolji efekat
+                    na poslovne procese i funkcionisanje neke 
+                    organizacije
+                    
+                    
+9. IT infrastruktura 
+
+
+
+Individualne kompetencije
+
+1. krtičko razmišljanje
+2. dobra usmena komunikacija
+3. pregovaranje
+4. dobra pisana komunikacija
+5. matematička i statistička kompentencija
+6. rešavanje problema
+7. dobro snalaženje u timu
+8. liderstvo
+
+Specifične kompentencije za određene oblasti ili domene
+
+1. znanja iz određenih oblasti
+
+]
+
+
+
+CASE alati - Computer Aided Software Engineering alati
+Omogućavaju modeliranje sistema i generisanje dela kod aplikacije
+
+
+Nekad je bolje i ne implementirati sistem nego ga implementirati pa
+zausatviti proizvodnju i tok rada što može predstavljati mnogo veći
+gubitak
+
+
+
+SAP i MS Dynamics
+
+
+
+Karakteristike informacijskog doba:
+1. Došlo je do razvoja društva zasnovanog na informacijama
+   
+   Danas su informacije najvažniji resurs
+   
+   Što firma ima više podataka i informacija toliko bolje može i da
+   donosi odluke
+   
+2. Izvlačenje koristi od informacionih tehnologija
+
+3. Transformacija procesa rada u cilju povećanja produktivnosti
+
+   To se može biti uvođenje IS ili nekog drugog sistema
+   
+4. Revizija poslovne prakse
+
+5. IT utiče na poslovni uspeh
+
+   Može da nam da informacije koje mogu da se iskoriste pri donošenju
+   poslovnih odluka kao što je npr. određivanje tražne
+   
+   
+6. Ugrađene informaciona tehnologija
+
+   IoT uređaji omogućavaju prikupljanje podataka koji pre nisu bili
+   dostupni. Ti podaci se mogu generisati velikom brzinom pa mogu 
+   zahtevati i Big Data sisteme, ali se na kraju dobijaju informacije
+   koje mogu biti od velikog značaja
+   
+   
+Uticaji informacionih tehnologija na poslovno okruženje:
+- mobilnost
+
+  predviđa se da će sve više radne snage biti mobilno pa IS trebaju
+  da podrže tu mobilnost
+
+- Big Data
+
+  Količina podataka se sve više uvećava
+  
+  "tri slova v": 
+  * Volume (količina)
+  * Velocity (brzina generisanja) - zahtevaju se sistemi koji mogu
+                                    da obrade podake koji brzo
+                                    pristužu
+  * Variety (raznolikost) - podaci dolaze od različitih izvora,
+                            u različitim formatima i mogu biti
+                            struktuirani, polustruktuirani ili
+                            nestruktuirani
+                            
+
+- računarstvo u oblaku
+
+  podaci su sigurniji na Cloud-u u odnosu na lokalno skladištenje
+  (lokalna kopija se može izgubiti usled neke katastrofe ili otkaza,
+  fizički napad je lakše izvesti u odnosu na fizički napad na servere
+  nekog od pružaoca Cloud usluga)
+  
+  
+  S druge strane, postoje i mane kao što su pitanje privatnosti i
+  sigurnosti. Primer je kompanija Zoom koja je bila predmet mnogih
+  kritika po pitanju privatnosti i bezbednosti krajnjih korisnika
+  što je rezultovalo zabranom korišćenja u nekoliko zemalja
+  (Amerika, Velika Britanija, Australija, Novi Zeland, ... )
+  
+  [ dodatak
+  
+  Neke zemlje kao što su Kina i Rusija, ne dozvoljavaju nekim 
+  servisima (npr. Rusija Facebook-u) da podaci njihovih građana
+  budu skladišteni i obrađivani na nekom serveru koji se ne nalazi
+  u toj zemlji
+  ]
+  
+  Postoji više tipova usluga koje Cloud pruža:
+  * IaaS (Infrastructure as a Service)
+  * PaaS (Platform as a Service)
+  * SaaS (Software as a Service )
+  
+  Prednosti Cloud-a:
+  * remote control
+  * efikasno korišćenje resursa
+  * skalabilnost
+  * manji troškovi (jer se plaća onoliko koliko se koristi)
+  
+- digitalni sadržaj
+
+  Dolazi do sve veće digitlalizacije i kreiranje sve digitalnog 
+  sadržaja npr. slike, dokumenato, audio, video, IoT, ...
+  
+
+- društveno umrežavanje
+
+  Društvene mreže u bliznisu za dobijanje informacija ekstraktovanjem
+  i obradom tih nestruktuiranih podataka iz njih
+  
+- nauka o podacima
+
+- automatizacija
+
+  IS omogućavaju automatizaciju ili poluautomatizaciju procesa i
+  aktivnosti
