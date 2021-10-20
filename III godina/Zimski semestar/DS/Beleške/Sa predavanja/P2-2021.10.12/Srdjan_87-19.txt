@@ -1,0 +1,284 @@
+Datum održavanja: 12.10.2021.
+Predavač: Svetozar Rančić
+Čas: 2
+=====================================
+
+
+OO koncepti
+-----------
+
+Objekti su entiteti
+
+Klase su grupacije objekata, njihove kategorije
+
+Instanca je jedan, pojedinačni objekat, tj. jedan njegov primerak
+
+Skup vrednosti zajedno sa akcijama koje mogu da se izvedu nad njima naziva
+se apstrakovani tip podatka
+
+Enkapsulacija predstavlja grupisanje, tj. obuhvatanje podataka i akcija nad
+njima u jednu celinu (smeštanje metoda i podataka u jedan tip) na taj način
+da su pristup i vidljivost kontrolisani kako bi se od korisnika sakrila
+implementacija i, za njega, nepotrebni detalji
+
+
+
+Interfejs - dobro definisan ugovor o saradnji
+
+Interfejs je sačinjen od skupa funcijskih članova
+(akcije koje su sastavni deo tog ugovora)
+
+
+Tipovi su organizovani u hijerarhije
+
+
+Polimorfizam - "izvršavanje neke aktivnost bez da znamo
+                eksplicitni tip podatka"
+                
+                Sposobnost korišćenja objekta bez poznavanja
+                tačnog tipa
+                
+Tri glavne vrste polimorfizma:
+- nasleđivanje
+- interfejsi
+- refleksija
+
+
+Radi ponovne upotrebe i olakšanja razvoja sistemi trebaju
+biti labavo povezani, tj. njihove zavisnosti treba svesti
+na minimum. Zavisnosti nije uvek moguće ukloniti
+
+Minimalizacija zavisnosti omogućava:
+- lakše testiranje jer postji manje interakcija sa 
+  drugim klasama
+- promena jedne klase neće uticati na klasu koja bi zavisila
+  od nje
+- višestruko korišćenje
+
+
+
+Interfejs je takođe tip.
+
+Njegove članice mogu biti:
+- metodi
+- propertiji
+- indeksere
+- događaje
+
+
+Klasa koja implementira interfejs mora da podrži sve delove
+ugovora
+
+
+Interfejsi ne obezbeđuju implementaciju (u njima se ne može
+naći definicija metode) već to radi klasa koja ga implementira
+
+
+
+Mogu da obezbede polimorfizam.  
+
+
+Interfejsi mogu da se implementiraju na 2 načina:
+- implicitno: od klase koja ga implementira se zahteva da
+              implementira sve metode i one imaju public
+              vidljivost
+- eksplicitno: klasa koja ga implementira ne podržava sve 
+               delove ugovora, već samo neke. Metode su
+               private vidljivosti
+        
+Preko referencne promenljive tipa nekog interfejsa je moguće
+pristupiti samo onim metodima koji su navedeni u datom 
+interfejsu
+        
+Sintaksa implementacije interfejsa:
+    ... class Klasa : NazivInterfejsa { ... }
+    
+I jedan i drugi tip implementacije ima ovaj deo.
+
+Eksplicitna implementacija pored toga zahteva i navođenje
+interfejsa ispred metoda koji želimo da eksplicitno
+implementiramo. Sintaksa za ovaj dodatak je:
+    ... NazivInterfejsa.NazivMetoda( ... ) { ... }
+    
+Primer:
+ void IDelete.Delete() {...}
+        
+        
+Eksplicitni interfejsi su korisni kada ne želimo da 
+implementiramo sve metode u interfejsu već samo
+neke
+
+Omogućava restrikciju pristupa koju implicitni interfejsi
+nemaju
+        
+        
+[ dodato            
+            
+Eksplicitno implementiranje interfejsa omogućava skrivanje
+metoda iz interfejsa od korisnika koji pristupa koristi
+ne koristi referencnu varijablu koja je tipa tog interfejsa.
+U suštini, metodama koje su definisane u interfejsu je moguće
+pristupiti samo preko varijable koja je tipa tog interfejsa.
+Varijable date klase neće moći da vidi te metode koji su
+u klasi eksplicitno implementirani
+
+Ne preporučuje se korišćenje ovakvih implementacija ukoliko
+postoji potreba za više apstrakcija. Umesto toga se 
+preporučuje korišćenje ISP-a (Interface segregation principle),
+tačnije, kreiranje novog interfejsa za svaku apstrakciju
+(apstrakcija se može smatrati skupom svih elemenata koji su
+dostupni korisniku)
+
+
+Situacija u kojoj su pogodni je kada je potrebno sakriti neke
+metode od klase koja implementira interfejs (svojstvom eksplicitno
+implementiranih metoda koje kaže da su takvi metodi private) i
+i onda prikazati druge pomoću klasnih funkcijskih članica (metoda)
+]
+
+
+
+
+
+Strukture su vrednostni tipovi
+
+Mogu da implementiraju interfejse
+
+Mogu sadržati:
+- podatke
+- funkcije
+- definicije tipova
+
+
+Struktura može da nasledi samo System.ValueType
+(Sealed Class)
+
+Strukture nemaju destruktor za razliku od klasa
+
+Korisnik ne može da definiše konstruktor bez
+parametara
+
+
+
+Poređenje C# i C++ struktura:
+1.
+    C++: isto je što i klasa, ali su joj članovi public
+    C# : korisnički definisan vrednostni tip 
+
+2. 
+    C++: može biti alocirana na hipu, steku ili kao članica klase
+    C# : može biti alocirana na       steku ili kao članica klase
+    
+3.
+    C++: njene članice su uvek public
+    C# : njene članice mogu biti public, internal ili private
+    
+    
+
+Sintaksa za definisanje strukture:
+    ... struct NazivStrukture { ... }
+    
+    
+
+    
+Potpuni potpisi metoda propertija nisu neophodni jer se podrazumeva
+su onog tipa kojeg je i članica za koju se taj properti definiše
+
+
+
+Konvencija je da se nazivi polja pišu malim slovom, a njihovi 
+propertiji isto, sa velikim slovom ili isto kao i samo polje uz
+dodata karaktera "_" ispred toga naziva
+
+
+
+
+
+Podaci i metode koji su članice same klase koriste ključnu reč static
+(slična priča kao i u Javi)
+
+
+
+Singleton (jedinka) - dizan šablon, predstavlja jedinstven objekat 
+                      koji je član klase. Instancira se samo jednom
+                      
+                      
+Primer implementacije:
+
+public class SoundManager {
+    private static SoundManager instance;
+    
+    public static SoundManager Instance { // staticki properti
+        get { return instance; }
+    }
+    
+    private static SoundManager() { // privatni staticki konstruktor 
+                                    // koji se samo jednom poziva, 
+                                    // pri ucitavanju klase
+        instance = new SoundManager();
+    }
+    
+    private SoundManager() {...}  // konstruktor koji poziva staticki
+                                  // konstruktor
+}
+
+
+
+Implementacija zavisi od mogućnosti i pogodnosti jezika
+
+
+
+Asembli predstavlja celinu koja se dobija povezivanjem
+klasa od strane linker-a
+
+
+Modifikatori pristupa:
+- public: dostupno je svima
+- private: dostupno samo unutar datog tipa
+- protected: dostupno samo unutar datog tipa ili tipovima koji su 
+             izvedeni iz njega
+- internal: dospuno je unutar asemblija
+- protected internal: dostupno je unutar datog tipa, tipovima izvedenim
+                      iz njega ili unutar asembija
+                      
+     
+     
+     
+Polja, metodi i događaji klasa su podrazumevano private
+
+Podrazumevana vrednost modifier-a je internal
+
+Metodi i događaji interfejsa su podrazumevano (implicitno) javni
+
+
+Iako nije potrebno navoditi modifikatore to se ipak preporučuje 
+
+
+
+Apstraktne klase se ne mogu instancirati
+
+Može sadržati i apstraktne i neapstraktne metode
+
+Čista apstraktna klasa (pure abstract class) nema implementaciju
+ni za jedan metod
+
+
+Zamišljene su kao bazne klase jer postoje slučajevi u kojima
+nije poznato neko podrazumevano ponašanje
+
+
+Zapečaćene klase (sealed klase) se ne može naslediti
+
+Ne može biti apstraktna klasa
+
+
+Postoje 2 razloga za pravljenje ovakvih klasa:
+- prevencija nenamernog nasleđivanja
+- pozivi virtualnih funkcija mogu da se rezolviraju u vreme 
+  prevođenja što ubrzava izvršenje koda
+  (nije potrebno pretraživati tabele virt. funkcija)
+  
+  
+prvi snimak
+
+
