@@ -31,8 +31,9 @@ Javascript kod učinio manje čitljivijim
 
 
 
-Obrada podataka na klijentu se primenjuje kada na primer podaci
-trebaju da se provere pre slanja serveru. 
+Obrada podataka na klijentu se primenjuje kada, na primer, podaci
+trebaju da se provere pre slanja serveru (kako bi se smanjio broj
+poziva ka serveru)
 
 
 Animacije i vizuelni efekti na web strani su nemogući bez klijentskog
@@ -71,7 +72,7 @@ WAMP - Windows, Apache, PHP i MySQL; program koji instalira i
 konfiguriše navedene programe
 
 
-XAMPP - Apache + MariaDB + PHP + Perl
+XAMPP - X (nezavisan od os, cross platform) + Apache + MariaDB + PHP + Perl
 
 
 
@@ -187,5 +188,5 @@ unosa, za Windows je to CTRL+Z
 NetBeans pronalazi projekte u htdocs folderu
 
 
-
+htdocs je root folder za Apache server
     

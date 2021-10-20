@@ -118,7 +118,8 @@ Idiomi su veoma zavisni od konkretne implementacije
 C# je razvijen od strane Microsoft-a.
 
 
-CLI - Command Line Interface
+CLI - Command Line Interface 
+      ili Common Language Infrastructure (drugi pojam)
 CIL - Common Intermediate Language
 CLR - Common Language Runtime
 CTS - Common Type System
@@ -183,7 +184,7 @@ Imaju korisničke interfejse.
 Mogu da rade sa podacima i XML-om
 
 Na nižem nivou postoji osnovna biblioteka klasa i ispod nje
-je CLR koji ima sličanu ulogu kao Java virtualnoj mašina (?), 
+je CLR koji ima sličanu ulogu kao Java virtualnoj mašina, 
 izvršava kod datih jezika
 
 
@@ -657,7 +658,7 @@ Navođenje simbola @ ispred string literala omogućava pisanje
 stringa u više linija i ne zahteva escape-ovanje specijalnih
 karaktera. Jedini izuzetak jesu navodnici koji se escape-uju
 navođenjem dodatnih navodnika:
-    string quote = @"Jon said, ""This will work,"" - and it did!";
+    string quote = @"Jon said, ""This will work"" - and it did!";
 
 
 
@@ -667,7 +668,7 @@ koristi na nekom mestu doći će do kompajlerske greške
 
 
 
-Defaultn-a vrednost za string je string bez karaktera, tj. ""
+Default-na vrednost za string je string bez karaktera, tj. ""
 
 
 Kreiranje promenljive nekog tipa u stvari kreira promenljivu
@@ -677,10 +678,11 @@ koja referiše na neku memorijsku lokaciju, slično kao i u Javi
 
 Vrednostni tipovi su takođe klase koje nasleđuju klasu
 System.ValueType, ali se ove klase posebno tretiraju u runtime-u
+(i predstvljaju Sealed Class-e)
 
 
 Referenciranje je moguće jedino ako se box-uju, tj. upakuju
-u odgovarajuće referencne tipove. Suprotan proes se naziva
+u odgovarajuće referencne tipove. Suprotan proces se naziva
 unboxing
 
 
