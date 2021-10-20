@@ -1,0 +1,233 @@
+Datum održavanja: 13.10.2021.
+Predavač: Andreja Živić
+Čas: 1
+=====================================
+
+
+Web server - računar koji pruža usluge drugim računarima
+
+
+WampServer
+
+
+Sources Folder je folder čiji su fajlovi koji je dostupan web serveru
+
+
+Project URL - putanja koja će biti otvorena u browseru nakon pokretanja
+
+
+Default-ni port za localhost je 80
+
+
+PHP se može biti sadržan u HTML fajlu
+
+
+Postojanje više web servera za svaku aplikaciju je bolja opcija u odnosu
+na postojanje jedanog server koji opslužuje sve te aplikacije
+
+
+
+Sve što se nalazi u "www" je dostupno nekom udaljenom računaru
+
+
+Promena boje Tray icon-a označava da su potrebni serveri pokrenuti
+
+
+Web server traži index.html ili index.php kada se navede URL stranice
+
+Ukoliko je potreban neki drugi resurs potrebno je to eksplicitno navesti
+
+
+
+PHP kod se nalazi između "<?php" i "?>
+
+
+Komanda za štampanje: echo
+
+Primer:
+    echo "neki tekst"
+    
+    
+Slično kao i bash-u, promenljive počinju sa $
+
+Primer:
+    $promeljniva = 10
+
+
+
+Nije tipiziran
+
+
+slozeni tipovi: nizovi, objekti, ...
+
+
+specijalni tipovi: null, baza podataka, ... (?)
+
+
+Ispis adresa promenljivih nije moguć, ali je moguće
+pristupiti vrednosti adrese na koju ona pokazuje
+
+
+Adresa se dobija slično kao i u C-u:
+    &$promenljiva
+    
+
+Operator za konkatanaciju je tačka (".")
+
+Primer:
+    $str1 = "string1 ";
+    $str2 = "string2";
+    
+    $str = $str1 . $str2;
+    
+    echo $str;
+    
+Rezultat:
+    string1 string2
+    
+    
+Ukoliko se string sabira sa int-om neće doći do konkatanacije
+već će se izvršiti implicitna konverzija stringa u int
+
+
+Pristup elementu niza (ili stringa):
+    $promenljiva[0];
+    
+
+    
+Primeri (u oba primera nista nece biti ispisano):
+
+    $a = false;
+    echo "$a"
+
+    
+    $a = is_int("nesto");
+    echo "$a"
+    
+    
+    
+is_int($promenljiva) - proverava da li je data promenljiva tipa int
+is_string($promenljiva) - proverava da li je data promenljiva tipa string
+
+HTML input-i mogu da se obuhvate u celinu tagom "form".
+
+Tag form ima atribute "action" i "method"
+Atribut action predstavlja adresu kojoj će podaci biti poslati,
+dok atribut method predstavlja metod HTTP zahteva
+
+
+Klikom na input element tipa "submit" dolazi do slanja unetih podataka
+
+
+
+GET metod se najčešće koristi za zahtevanje podataka sa servera ili
+slanje nekih neosetljivih (privatnih) podataka
+
+Šalje se kao "rečnik", tj. skup parametara koji predstavljaju parove
+oblika ključ-vrednost. Između parova se postavlja simbol "&", a
+parovi se zapisuju sa: ključ=vrednost.
+
+Sve to kada se spoji na kraju bude URL enkodirano
+
+
+POST metod se koristi kada se šalju osetljivi podaci kao što su
+email, password, PIN, ...
+
+
+
+Nazivi globalnih promenljivih počinju sa znakom "_"
+
+
+Pristup vrednostima iz zahteva:
+    $_Naziv-metoda['naziv-ključa]
+    
+Primer:
+    $_GET['username']
+    
+
+    
+[ dodatno
+
+Ukoliko se PHP kod u HTML kodu ne procesira onda je potrebno
+promeniti ekstenziju tog fajla u .php ili dodati .html fajl kao
+tip fajla u kome će PHP biti interpretiran na sledeći način:
+
+1. Klik na Tray icon WAMP server-a
+2. Odabir opcije "Apache"
+3. U otvorenom podmeniju bira se "httpd.conf"
+4. CTRL+F, za prolanaženje linije: AddType application/x-httpd-php .php
+5. Ispod ili iznad date linije dodati:
+        AddType application/x-httpd-php .html
+6. Klik na Tray icon WAMP server-a
+7. Odabir opcije "Restart All Services"
+
+]
+
+
+
+Nazivi input polja i to da li će se naći u HTTP zahtevu zavisi od 
+postojanja "name" atributa u njima i od vrednosti koja se u njemu
+nalazi
+
+
+
+
+POST metod ne šalje podatke kao URL parametre već se
+oni nalaze u telu HTTP zahteva
+
+
+
+
+Neki HTTP metodi:
+- GET
+- POST
+- PUT
+- DELETE
+- OPTIONS
+- ...
+
+
+
+
+Funkcija isset($promenljiva) proverava da li je vrednost
+date promenljive set-ovana
+
+
+
+Nije preporučljivo navoditi URL i apsolutnu adresu resursa
+jer ukoliko dođe do njihove promene potrebno je menjati te 
+adrese na odgovarajuće na svakom mestu na kome su korišćene
+
+
+Primer:
+    ... 
+    <form action="index.php>
+    ...
+    
+Umesto "index.php" u prethodnom primeru moguće je uraditi 
+sledeće:
+    ...
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>">
+    ...
+
+        
+$_SERVER['PHP_SELF'] sadrži putanju do resursa (fajla) u kome
+se dati kod izvršava
+
+
+
+Status codes:
+100-200 informacioni
+200-300 uspešni
+300-400 redirect
+400-500 klijentske greške (problem sa zahtevom)
+500+ serverske greške
+
+
+
+PHP kod se izvršava na serveru
+
+U Browser-u se interpretira CSS i izvršava JS
+
+
+Web server (npr. Apache) obrađuje zahteve
