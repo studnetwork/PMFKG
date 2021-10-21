@@ -6,6 +6,9 @@ Predavač: Vladimir Cvjetković
 PHP (Hypertext PreProcessor - jezik opšte namene; uglavnom se 
                               koristi za Web programiranja
 
+    Pravi naziv:
+        PHP: Hypertext Preprocessor 
+                              
 
 
 ASP.NET - Microsoft-ova serverska tehnologija. Radi na .NET 
@@ -101,6 +104,7 @@ Sintaksa:
     <?php kod; ?>
 
 Završna oznaka nije obavezna, ali nije loša praksa pisati je
+(?)
 
 Kod se nalazi između tih oznaka (upitnika)
 
@@ -121,7 +125,7 @@ kojima ne bi smeo da pristupi
 
 Za instaliranje PHP-a na IIS koristi se Microsoft Web platform
 Installer (on se može naći u Start Menu ili na Home stranici
-ISS-a u sekciji Managment)
+IIS-a u sekciji Managment)
 
 
 
@@ -130,7 +134,7 @@ NodeJS je JavaScript platforma slična JVM
 
 Koristi se iz CLI-a
 
-Omogućava izvršavanje JavaScript-a CLI-a
+Omogućava izvršavanje JavaScript-a
 
 Za izvršavanje nije potreban browser
 
@@ -169,7 +173,7 @@ Nije tipiziran, kao i JavaScript
 Takođe ima sličnu sintaksu kao JavaScript
 
 
-Svaka naredba mora da se završava sa ; jer u suprotnom kod ne 
+Svaka naredba mora da se završava sa ";" jer u suprotnom kod ne 
 bi mogao da se izvrši
 
 
@@ -189,4 +193,8 @@ NetBeans pronalazi projekte u htdocs folderu
 
 
 htdocs je root folder za Apache server
+
+
+WAMP postavlja root folder za Apache server na folder "www"
+koji se nalazi u folderu same instalacije WAMP-a
     
