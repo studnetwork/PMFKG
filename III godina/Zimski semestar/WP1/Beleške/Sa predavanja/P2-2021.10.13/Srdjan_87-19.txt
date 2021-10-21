@@ -1,0 +1,434 @@
+Datum održavanja: 13.10.2021.
+Predavač: Vladimir Cvjetković
+Čas: 2
+=====================================
+
+
+PHP se najčešće koristi za serversko programiranje, ali se
+može koristiti i za programiranje desktop aplikacija pomoću
+PHP-GTK
+
+
+PHP je kreiran 1994
+
+
+Prvobitno se zvao Personal Home Page, ali je kasnije naziv
+promenjen
+
+
+
+U ranom razvoju PHP-a sintaksa je bila takva da je php kod
+bio sadržan u HTML komentaru, za razliku od današnje kod 
+koje se kod nalazi između "<?php" i "?>"
+
+
+
+Server može da procesira PHP kod jedino ako je instalirana
+PHP ekstenzija na serveru
+
+
+
+PHP kod (program) neće raditi ukoliko se izostavi ";" nakon
+komande ili ukoliko neko drugo sintaksno pravilo nije
+ispoštovano
+
+
+
+Sintaksa za komentare:
+// sintaksa za komentar u jednoj liniji
+# drugi primer sintakse za komentar u jednoj liniji
+/*
+   vise
+   linijski
+   komentar
+*/
+
+
+
+PHP promenljive počinju sa $, npr. $promenljiva
+
+
+Dozvoljeni znaci za naziv promenljive:
+- mala i velika slova engleske abecede
+- cifre 0-9
+- znak "_"
+
+Naziv promenljive ne može početi brojem
+
+Nazivi su case sensitive
+
+
+Deklaracija tipova promenljivih je implicitna, slabo je tipiziran.
+Postoji neka tipizacija, javlja se npr. kod parametara funkcija
+
+
+
+Operator konkatanacije je tačka ("."), zbog čega se za operator 
+pristup članicam objekta koristi strelica
+
+
+
+Postoji 4 vrste stringova:
+- "tip stringa koji prikazuje sadržaj promenljive"
+- 'tip stringa koji ne prikazuje sadržaj promenljive'
+- heredoc, primer: 
+            <<<END
+                a
+                b
+                c
+            \n
+            END;
+- nowdoc (od PHP 5.3.0), primer:
+            <<<'EOD'
+            Example of string spanning multiple lines
+            using nowdoc syntax. Backslashes are always treated literally,
+            e.g. \\ and \'.
+            EOD;
+            
+    
+Primer:
+    $a = 1
+    $b = $a
+    $a = 2
+
+    echo "a=$a, b=$b"
+
+    
+Rezultat:
+    a=2, b=1
+    
+    
+    
+Rad sa referencama, primer:
+    $a = 1
+    $b = &$a
+    $a = 2
+
+    echo "a=$a, b=$b"
+
+    
+Rezultat:
+    a=2, b=2
+    
+
+
+Pomoću echo se generiše izlaz u PHP-u
+
+
+Promenljive se mogu navesti bilo gde u kodu
+
+
+
+Postoje 3 oblasti vidljivosti:
+- local
+- global
+- static
+
+
+Global scope
+- promenljive nisu vidljive u funkcijama
+
+
+Local scope
+- promenljive unutar funkcija nisu dostupne u globalnom scope-u
+
+
+Moguće je koristiti globalnu promenljivu u funkciji korišćenjem
+ključne reči global
+
+Primer:
+    $x = 5;
+    
+    function test() {
+        global $x;
+        
+        $x = 6;
+    }
+    
+
+Postoji i PHP (asocijativan) niz $GLOBALS, koji je definisan u 
+PHP-u (builtin) preko koga je moguće pristupiti svim globalnim 
+promenljivama
+
+Primer:
+    $x = 5;
+    $y = 6;
+    
+    function test() {
+        $GLOBALS['y'] = $GLOBALS['x'];
+    }
+    
+
+    
+Static scope
+- klučnom rečju static se lokalna promenljiva označava kao statična
+- statična promenljiva ostaje u memoriji i nakon izlazka iz funkcije
+
+
+
+print i echo su jezičke konstrukcije, tj. nisu funkcije
+
+
+Mogu da se pišu sa i bez zagrada, tj.
+echo ili echo() i print ili print()
+
+
+
+echo ne vraća nikakvu vrednost, a print uvek vraća 1
+
+
+echo prihvata više argumenata, dok print prihvata samo jedan
+
+
+
+
+Tipovi podataka:
+- String
+- Integer
+- Float
+- Double
+- Array
+- Object
+- NULL
+- Resource (promenljiva kojoj je dodeljen resurs, a resurs može da
+            referenca na neki fajl, bazu podataka, string, ...)
+            
+            
+
+Od PHP 7.0.0 nema restrikcija na dužinu stringa za 64-bitne sisteme.
+Starije verzije i 32-bitni imaju tu restrikciju, gde je maksimalna
+dužina stringa do 2GB
+
+
+
+PHP implementira string kao niz bajtova
+
+Nema informacije o tome kako se ti bajtovi pretvaraju u znake pa je
+taj zadatak ostavljen programeru
+
+
+
+Pošto PHP ne specificira encoding za stringove, stringovi u njemu 
+onog encoding-a u kome je pisana PHP skripta (kod). Zato se
+preporučuje da se skripta piše u UTF-8 encoding-u
+
+
+
+Integer može biti zadat u različitim brojevnim sistemima:
+    dekadno: 8
+    binarno: 0b1000
+    oktalno: 010
+    heksadekadno: 0x8
+    
+    
+Primer:
+    echo 0x10;
+    
+Rezultat:
+    16
+    
+    
+Funkcija var_dump($promenljiva) vraća tip i sadržaj promenljive
+
+
+Intedžer je signed, ne može početi sa nulom (jer se tako obeležava
+oktalna reprezentacija broja)
+
+
+Sve brojevne reprezentacije mogu opciono da imaju znakove "+" i "-"
+(ispred sebe)
+
+
+
+Float može da se prikaže i u decimalnoj i u eksponencijalnoj formi
+
+Preciznost je do 14 decimala
+
+
+
+
+Boolean može imati vrednosti true i false, i one su case-insensitive
+
+
+
+Rezultat logičkih izraza je boolean tipa i to se prosleđuje kontrolnim
+strukturama pa nije neophodno proveravati vrednost izraza, tj.
+
+    $bul = false;
+    if( $bul == TRUE ) {
+        ...
+    }
+    
+" == TRUE" deo nije neophodan
+
+
+
+
+Niz je niz vrednosti. 
+Sintaksa:
+    $niz = array( "var1", "var2", "var3");
+    
+    
+
+Niz je u stvari uređena mapa koja definiše veze između ključeva i njihovim
+vrednostima.
+
+Može da se tretira kao niz, lista (vektor), heš tabela, rečnik, kolekcija,
+stek, red, itd..
+
+
+
+Element niza takođe biti niz i nije neopthodno da ti nizovi imaju isti
+broj elemenata
+
+
+
+Primer niza:
+    $arr = array(
+        "foot" => "bar",
+        "bar" => "foo",
+    );
+    
+
+Od PHP 5.4 moguće je i:
+    $arr = array[
+        "foot" => "bar",
+        "bar" => "foo",
+    ];
+
+
+Ključ može biti intedžer ili string vrednost, dok vrednost može biti
+bilo kog tipa
+
+
+Ključ će biti konvertovan u intedžer ukoliko:
+- je string koji sadrži validan decimalan broj koji ne počinje sa +
+- je float (razlomački deo se odbacuje i uzima se samo ceo deo)
+- je boolean; true se konvertuje u 1, a false u 0
+- ...
+
+
+
+
+
+PHP objekat
+
+class Naziv {
+    // stari način za definisanje konstruktora
+    function Naziv() {
+        $this->polje = 3;
+    }
+}
+
+
+// kreiranje objekta
+$objekat = new Naziv();
+
+
+
+Neinicijalizovane promenljive imaju vrednost NULL
+
+
+Ukoliko se promenljiva prosledi funkciji unset(), njena vrednost 
+biće NULL
+
+
+
+
+null je tip u PHP-u, a njegova jedina vrednost je konstanta NULL
+koja je case-insensitive
+
+
+
+type juggling
+
+Primer:
+    $foo = "1";
+    $foo *= 2;   // nakon ovoga $foo sadrži int(2)
+
+
+Primer:
+    // konvertuje onaj deo koji može, što je u ovom slučaju 10, a
+    // ostatak stringa se odbacuje
+    $foo = 5 * "10 neki string";
+    
+    echo $foo
+
+Rezultat:
+    50
+    
+    
+
+Stringovi su mutable:
+    $str = "car";
+    $str[0] = "b";
+    echo $str 
+
+Rezultat:
+    bar
+    
+    
+
+Primer:
+    $f = 1,5; // sintaksa greška jer se kao decimalni zarez koristi .
+    
+
+Primer:
+    // pretvara se u float(1) jer konvertuje sve dok
+    // ne dođe do nekog znaka koji nije deo broja
+    // dok ostatak odbaciju
+    $f = (float) '1,5'; 
+
+    
+    
+
+    
+Primer:
+    echo (int) ( (0.1+0.7) * 10 )
+    
+Ovo daje kao rezultat int(7) zato što 0.1 + 0.7 nije 0.8 već
+7.999999... pa (int) odbaci decimalni deo i uzme samo ceo deo
+
+
+
+strlen - funkcija koja daje broj karaktera u stringu
+
+str_word_count - funkcija koja daje broj reči u stringu
+
+strrev - funkcija koja vraća inverzni string od onog koji je prosleđen
+
+strpos($str1, $sample) - funkcija koja određuje poziciju drugog argumenta
+                         u stringu koji je prosleđen kao prvi
+
+str_replace($trazeniStr, $zamenskiStr, $stringUkomeSeMenja) - pojavljivanja 
+        prvog string argumenta u trecem string argumentu menja sa stringom
+        iz drugog argumenta
+        
+        
+
+Konstante su nazivi prostih vrednosti koje se ne mogu menjati
+
+Pišu se bez $ oznake na početku
+
+Globalne su
+
+Definišu se sa:
+    define("naziv", vrednost, isCaseInsensitive)
+    
+    
+Primer:
+    define("GREETING", "Hi", true);
+    
+
+Drugi način definisanja koji je podržan od PHP 5.3.0 je:
+    const KONSTANTA = "neki string";
+    
+
+
+Od PHP 5.6.0 pri definisanju konstante sa const, vrednost je moguće
+postaviti drugu konstantu ili niz
+
+
+Od PHP 7 pri definisanju konstante sa define moguće kao vrednost
+postaviti niz
+
