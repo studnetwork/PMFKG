@@ -1,4 +1,4 @@
-Datum održavanja: 06.10.2021.
+Datum održavanja: 07.10.2021.
 Predavač: Višnja Simić
 Čas: 1
 =====================================
@@ -358,7 +358,327 @@ putovanju
 
 
 
-3. snimak
+Primeri: 
+
+Softverski agent koji određuje dijagnozu pacijenta
+
+    Mere performanse: tačnost, ozdravljenje
+    Okruženje: pacijent, bolničko osoblje
+    Aktuatori: ekran, dijagnoze, tretmani
+    Senzori: Tastatura / dokumenti, otkrića, odgovori pacijenta
+    
+    
+
+    
+Robot koji identifikuje i klasifikuje delove
+    
+    Mere performanse: broj pravilno klasifikovanih delova, brzina
+    Okruženje: delovi, traka, kontejneri sa klasifikovanim
+               delovima
+    Aktuatori: robotska šaka
+    Senzori: kamera, senzori na toj ruci
+    
+    
+
+Kontroler u rafineriji nafte
+
+    Mere performanse: čistoća i kvalitet naftnog derivata, da ga
+                      ima što više i budu ispunjeni svi 
+                      bezbednostni zahtevi
+    Okolina: rafinerija, radnici
+    Aktuatori: ventili dotoka, pumpe, grejači, ekrani
+    Senzori: temperatura, pritisak, kvalitet derivata
+    
+    
+    
+Interaktivnik tutor engleskom
+
+    Mere performanse: rezultat učenika na testu
+    Okruženje: učenici, agencija za testiranje
+    Aktuatori: ekrani za prikazivanje vežbi, sugestije, ispravke
+    Senzori: tastatura, mikrofon
+    
+    
+
+    
+    
+Lakoća realizacije agenta zavisi od osobina okruženja zadatka
 
 
+Osobine okruženja zadatka:
+- obzervabilnost (potpuno ili delimično)
+  
+  Odnosi se na to da li senzori (ne) detektuju sve aspekte od 
+  važnosti za izbor akcije, pri čemu važnost zavisi od mere
+  performansi
+  
+  Part-picking robot ima potpuno obzervabilno okruženje, dok 
+  autonomni taksi ima delimično jer npr. akcije drugih učesnika u
+  saobraćaju ne mogu da se predvide
+
+- broj agenata (jednoagentno ili višeagentno)
+
+  jednoagentno okruženje je okruženje u kome jedan agent deluje
+  na okolinu, dok u višeagentnom deluje više njih
+  
+  Primer jednoagentnog je part-picking robot, a višeagentnog
+  autonomni taksi (drugi učesnici u saobraćaju su takođe agenti)
+  
+  Kod višeagentnog okruženja je veoma bitno to da li se radi o
+  kompetativnom ili kooperativnom okruženju
+  
+  Igra šah je primer kompetetivnog okrženja
+  
+  
+- određenost sledećeg stanja okruženja na osnovu trenutnog 
+  (determinističko ili stohastičko)
+  
+  Odnosi se na to da li je sledeće stanje okruženja (ne)određeno
+  trenutnim stanje i akcijom koju vrši agent
+  
+  
+  Ako je sledeće stanje okruženja potpuno određeno trenutnim 
+  stanjem i akcijama koje agenat izvrši onda je to okruženje
+  determinističko, u suprotnom, ono je stohastičko
+  
+  
+  Agent koji se nalazi u potpuno obzervabilnom determinističkom
+  okruženju ima dosta olakšan zadatak u poređenju sa nekim 
+  drugim kombinacijama ovih osobina. Part-picking robot se
+  nalazi u takvom okruženju
+  
+  
+- zavisnost od akcija iz prethodne epizode
+  (epizodno ili sekvencijalno)
+  
+  Odnosi se na zavisnost od akcija koje su preduzete u prethodnim
+  epizodama
+  
+  
+  Kod epizodnog okruženja agentovo iskustvo je podeljeno u epizode
+  Sledeća epizoda ne zavisi od akcija koje je preduzeo u 
+  prethodnoj epizodi. Svi klasifikacioni zadaci agenata su 
+  epizodni. 
+  
+  Primer je part-picking robot kod koga prva epizoda 
+  (klasifikacija prvog dela) ne utiče na drugu (klasifikaciju
+  narednog dela koji se pojavi na traci).
+  
+  Kod autonomnog vozila, okruženje je sekvencijalno
+  
+  Drugi primer sekvencijalno okruženje je šah, gde svaki sledeći
+  potez zavisi od prethodnog
+  
+  
+- promenljivost okruženja (statičko ili dinamičko)
+
+  Odnosi se na to da li se okruženje menja dok agent odlučuje
+  svoju sledeću akciju
+    
+
+  Kod primera sa šahom, ukoliko se igra bez sata onda je 
+  okruženje statičko, ali ukoliko se igra sa satom onda je
+  okruženje dinamičko
+  
+  
+  Autonomno vozilo - dinamičko
+  Rešavanje ukrštenih reči - statičko
+  
+  
+- diskretno ili kontinualno
+
+  stanje okruženja i način tretiranja vremena
+  
+  Ako se posmatraju koraci kod igranje šaha onda se može reći
+  da je tu okruženje diskretno jer se događaji vrše potez za
+  potezom. Part-picking robot je drugi primer jer on kasifikuje
+  deo po deo.
+  
+  Primer kontinualnog okruženja je autonomno vozilo kod koga su
+  akcije kontinualne, nemaju sekvencijalne korake (promena brzine,
+  promena smera, ...; višestruko je kontinualno )
+
+  
+
+
+  
+Primer determinističkog i višeagentnog okruženja može biti šah
+  
+  
+  
+
+Pogledati primeri iz knjige.
+
+
+
+
+Programi agenta
+---------------
+
+Program agenta realizuje funkciju agenta
+
+
+Zadatak veštačke inteligenicije je da projektuje programe agenta
+koji realizuju funkciju agenta
+(tj. da izvrši preslikavanje opažaja ka akcijama)
+
+
+
+Program se izvršava na nekom računarskom uređaju koji poseduje
+senzore i aktuatore i to nazivamo arhitektura
+
+
+Agent je sačinjen od arhitekture i programa, tj. njegov program
+se izvršava na nekoj arhitekturi
+
+
+On prima neke opažaje i onda na bazi rezultata, pomoću svojih
+aktuatora, deluje na okolinu
+
+
+
+
+Vrste agenata (u odnosu na način realizacije):
+1. jednostavni refleksni agenti
+2. agenti zasnovani na cilju
+3. agenti zasnovani na korisnosti
+4. agenti koji uče
+
+Agenti su raspoređeni od najjednostavnijeg do najkompleksnijeg
+(najboljeg)
+
+
+Jednostavni refleksni agenti
+----------------------------
+
+Najprostija vrsta agenata.
+
+Biraju svoje akcije na osnovu trenutnog opažaja, potpuno ignorišu 
+prethodnu istoriju
+
+
+Primer takvog agenta je agent iz primera Vacuum-cleaner world
+čija je funkcija zasnovana ta tabeli. Njegova odluka se bazira
+samo na trenutnoj lokaciji i tome da li je ona prljava ili ne
+
+
+
+Opaža okolinu, uočava kakvo je trenutno stanje okoline i u odnosu
+na neka neka unapred definisana pravila on odlučuje o tome šta 
+treba da uradi
+
+
+Može biti uspešan jedino ukoliko ispravna odluka može biti 
+donesena na osnovu trenutnog opažaja, tj. samo ukoliko je
+sredina u potpunosti obzervabilna
+
+
+"On je uspešan samo ukoliko ima odgovarajuće pravilo koje može da
+primeni za trenutno stanje okoline"
+
+
+
+Funkcija refleksnog agenta prima opažaje i vraća akciju
+Pravila već postoje, u if-then obliku
+Prihvata opažaj, interpretira ga i na bazi interpretaciej tog
+opažaja shvatiti kakvo je stanje okoline
+Traži pravilo čiji se uslovi podudaraju sa trenutnim stanjem 
+okoline
+Kada pronađe to pravilo izvršava zaključivanje na osnovu njega i
+kao rezultat tog zaključivanje će se dobiti akcija koja treba
+da se preduzme 
+
+
+
+
+
+
+Refleksni agent zasnovan na modelu
+----------------------------------
+
+Prati svoje unutrašnje stanje koje zavisi od prethodnog stanja
+
+Za razliku od jednostavnog refleksnog agenta, ne zaboravlja
+svoju istoriju opažaja
+
+
+Pomoću senzora prihvata informacije o tome kakvo je trenutno 
+stanje u okolini, čuva to stanje, primećuje koje su se promene
+desile u odnosu na prethodno stanje i da sagleda koje akcije u 
+tom slučaju treba da primeni
+
+
+"On praktično ima model sveta, odnosno znanje o tome kako sveta
+funkcioniše"
+
+
+
+
+
+
+Agent zasnovan na cilju
+-----------------------
+
+ 
+Znanje o trenutnom stanju okruženja nije uvek dovoljno da bi se
+donela ispravna odluka o sledećoj akciji
+
+
+"Vrlo često je potrebno agentu postaviti neki cilj i sprovoditi
+njegove akcije tako da on dođe do cilja"
+
+
+ 
+Predstavlja nadogradnju refleksnog agent zasnovanog na modelu jer
+on razmatra šta će se dogoditi u okruženju nakon što primeni neku
+akciju i da li će to biti u skladu sa njegovim ciljem i akciju
+izvršava ako ga ona približava njegovom cilju
+
+
+
+Moraju obaviti neku vrstu pretrage kako bi utvrdili na koji način
+mogu najlakše da dođu do svog cilja ili mogu upotrebiti planiranje 
+
+
+
+
+
+
+
+Agenti zasnovani na korisnosti
+------------------------------
+
+
+Pored toga što ima cilj, on treba da ga ispuni što je efikasnije
+moguće
+
+
+ 
+ 
+
+Agenti koji uče
+---------------
+
+Najsloženija vrsta agenata
+
+
+Agent, dok opaža svoju okolinu i primenjuje neke akcije na nju,
+primećuje kako se okolina menja pod njegovim dejstvom i ima
+kritički stav prema svom ponašanju (uočava kakve su njegove
+performanse bile i trudi se da, menjajući svoje ponašanje, 
+poboljša svoje performanse). Prilagođava svoje ponašanje kako bi
+imao što bolje performanse u okruženju u kome deluje
+
+
+Sa slajda:
+"Učenje dozvoljava agentu da funkcioniše u okruženjima koja su za
+njega u početku bila nepozana i postane kompetentniji nego što mu
+je njegovo početno znanje dozvoljavalo"
+
+
+ 
+ 
+Spam filter - agent zasnovan na korisnosti (2 mere korisnosti, gde
+              jedna ima veću težinu od druge)
+              
 
