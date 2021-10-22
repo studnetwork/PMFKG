@@ -43,6 +43,7 @@ koji može rešiti bili koji problem. Na kraju su zaključili
 da nije moguće stvoriti takav program
 
 
+
 1973. AI winter
 Period u kome su redukovana finansiranja i u kome se izgubilo
 interesovanje za veštačku inteligenciju jer prethodna velika
@@ -52,12 +53,13 @@ očekivanja nisu ispunjena
 "The spirit is willing but the flash is weak"
 -> "The vodka is good, but the meat is rotten"
 
+
+
 1981. fokus sa stvaranja programa koji može rešiti problem 
-opšteg tipa je prebačen stvaranje programa za rešavanje 
+opšteg tipa je prebačen na stvaranje programa za rešavanje 
 problema iz neke uže oblasti. Dolazi do komercijalnih uspeha
 ekspertnih sistema. Prvi je bio R1 u DEC-u 1982. i namena mu
 je bila konfigurisanje komponenti računara
-
 
 
 Istraživači se okreću metodama koje su inspirisani prirodom
@@ -83,8 +85,11 @@ Njegov rad dovodi proboja veštačke inteligencija.
 ]
 
 
-Mašinsko učenje predstavlja podskup veštačke inteligencije. 
-Koristi se veliki skup podataka kako bi se računari 
+
+
+
+Mašinsko učenje (Machine Learning) predstavlja podskup veštačke
+inteligencije. Koristi se veliki skup podataka kako bi se računari
 primenom određenih algoritama naučili da daju predikcije
 
 
@@ -100,10 +105,9 @@ se poboljšala uspešnost
 
 
 Artificial General Intelligence - još uvek ne postoji.
-Cilj je kreiranje softvera koji ima nešto slično 
-covekovoj sposobnosti da se prilagodi različitim 
-okruženjima i zadacima i da primenjuje stečena znanja
-iz jedne oblasti na drugu
+Cilj je kreiranje softvera koji ima nešto slično čovekovoj 
+sposobnosti da se prilagodi različitim okruženjima i zadacima, i 
+da primenjuje stečena znanja iz jedne oblasti na drugu
 
 
 
@@ -120,7 +124,6 @@ Definicije VI:
 2. Mašine razmišljaju racionalno
 3. Mašine postupaju kao ljudsko biće
 4. Mašine postupaju racionalno
-
 
 
 
@@ -157,9 +160,6 @@ sledeće sposobnosti:
 Potpuni Tjuringov test zaheva i:
 - računarsko viđenje (computer vision)
 - robotiku
-
-
-
 
 
 
@@ -210,20 +210,22 @@ Racionalno postupanje
 Zasnovano na racionalnim agentima.
 
 
-Agent je računarski program koji može da opaža koji može
-da opaža svoje okruženje i da deluje na njega.
+Agent je računarski program koji može da opaža svoje okruženje
+i da deluje na njega.
 
 
 Racionalni agent je agent koji deluje tako da ostvaruje
 najbolji ishod ili kada je to neizvesno, najbolji očekivani
 ishod
 
+---
+
+
 
 
 
 Mnoge naučne discipline su doprinele razvoju veštačke
 inteligencije.
-
 
 Filozofija         - logika, način zaključivanja
 Matematika         - aparat za razvoj velikog broja metoda VI
@@ -406,7 +408,7 @@ Lakoća realizacije agenta zavisi od osobina okruženja zadatka
 
 
 Osobine okruženja zadatka:
-- obzervabilnost (potpuno ili delimično)
+- obzervabilnost (potpuno ili delimično obzervabilno)
   
   Odnosi se na to da li senzori (ne) detektuju sve aspekte od 
   važnosti za izbor akcije, pri čemu važnost zavisi od mere
@@ -433,8 +435,8 @@ Osobine okruženja zadatka:
 - određenost sledećeg stanja okruženja na osnovu trenutnog 
   (determinističko ili stohastičko)
   
-  Odnosi se na to da li je sledeće stanje okruženja (ne)određeno
-  trenutnim stanje i akcijom koju vrši agent
+  Odnosi se na to da li je sledeće stanje okruženja biti (ne)određeno
+  trenutnim stanjem i akcijom koju vrši agent
   
   
   Ako je sledeće stanje okruženja potpuno određeno trenutnim 
@@ -564,8 +566,8 @@ samo na trenutnoj lokaciji i tome da li je ona prljava ili ne
 
 
 Opaža okolinu, uočava kakvo je trenutno stanje okoline i u odnosu
-na neka neka unapred definisana pravila on odlučuje o tome šta 
-treba da uradi
+na neka unapred definisana pravila on odlučuje o tome šta treba da
+uradi
 
 
 Može biti uspešan jedino ukoliko ispravna odluka može biti 
@@ -580,8 +582,8 @@ primeni za trenutno stanje okoline"
 
 Funkcija refleksnog agenta prima opažaje i vraća akciju
 Pravila već postoje, u if-then obliku
-Prihvata opažaj, interpretira ga i na bazi interpretaciej tog
-opažaja shvatiti kakvo je stanje okoline
+Prihvata opažaj, interpretira ga i na bazi interpretacije tog
+opažaja shvata kakvo je stanje okoline
 Traži pravilo čiji se uslovi podudaraju sa trenutnim stanjem 
 okoline
 Kada pronađe to pravilo izvršava zaključivanje na osnovu njega i
@@ -593,7 +595,7 @@ da se preduzme
 
 
 
-Refleksni agent zasnovan na modelu
+Refleksni agent zasnovan na modelu (?)
 ----------------------------------
 
 Prati svoje unutrašnje stanje koje zavisi od prethodnog stanja
@@ -604,7 +606,7 @@ svoju istoriju opažaja
 
 Pomoću senzora prihvata informacije o tome kakvo je trenutno 
 stanje u okolini, čuva to stanje, primećuje koje su se promene
-desile u odnosu na prethodno stanje i da sagleda koje akcije u 
+desile u odnosu na prethodno stanje i sagledava koje akcije u 
 tom slučaju treba da primeni
 
 
@@ -672,7 +674,7 @@ imao što bolje performanse u okruženju u kome deluje
 
 Sa slajda:
 "Učenje dozvoljava agentu da funkcioniše u okruženjima koja su za
-njega u početku bila nepozana i postane kompetentniji nego što mu
+njega u početku bila nepoznata i postane kompetentniji nego što mu
 je njegovo početno znanje dozvoljavalo"
 
 
