@@ -1,0 +1,396 @@
+Datum održavanja: 21.10.2021.
+Predavač: Višnja Simić
+Čas: 2
+=====================================
+
+
+Svet blokova, 1970. godine, Terry Winograd 
+Program iz ranog perioda procesiranje prirodnog jezika.
+
+Korisnik komunicira sa programom na prirodnom jeziku kako bi
+mu zadavao komande koje bi program izvršavao pomeranjem 
+objekata
+
+
+
+Procedura sveta blokova:
+
+PUT-ON: postavlja jedan blok na drugi
+GET-SPACE: napravi mesta na ciljnom bloku
+GRASP: uzimanje bloka koji treba da se pomeri
+MOVE: pomeranje bloka
+UNGRASP: spuštanje na ciljni blok
+CLEAR-TOP: premeštanje blokova koji se nalaze iznad ciljanog
+           bloka
+GET-RID-OF: uklanjanje bloka koji se nalazi iznad ciljanog
+
+MAKE-SPACE: napraviti mesto na vrhu ciljnog bloka
+
+
+
+PUT-ON <-----------------------------------------
+||||                                             \
+|||\                                             |
+||| ----> GET-SPACE ------> MAKE-SPACE ---       |
+|||                                       \      |
+||\                                        |     |
+|| ------> GRASP ---------> CLEAR-TOP      |     | 
+||           |                 |           |     |
+||           |                 |           |     |
+||           \                 V           /     |
+||            ------------> GET-RID-OF <---      |
+||                             |                 |
+||                             |                 |
+||                             \                 |
+||                              ----------------/
+|\
+| -------> MOVE
+|
+ \
+  -------> UNGRASP
+  
+  
+  
+  
+  
+  
+AND-OR stablo
+-------------
+jedna akcija se može razgranavati na akcije koje se sve moraju
+izvršiti (AND) ili se razgranava na više akcija od kojih samo
+jedna mora da se izvrši (OR)
+
+(ovo stablo je isto što i Goal tree)
+
+Agent dok rešava problem premeštanja kreće od osnovnog 
+(kranjeg cilja), tj. Hard problem, i razlaže ga na podciljeve
+(Sipmler problem)
+
+
+Ovakvim procesom, gde svaki problem razlaže na neki manji i 
+tako rekruzivno, dobija se stablo ciljeva (goal tree)
+
+Rešavanjem tih razloženih problema rešava se i glavni problem
+
+
+
+
+Goal tree
+---------
+
+Koren stabla je glavni cilj
+
+Grane vode ka akcijama, tj. podciljeivma koje je potrebno
+ostvariti da bi bio postignut nadcilj
+
+
+Listovi su ciljevi koji su zadovoljeni bez potrebe da se
+realizuju podciljevi. Nalaze se u krajnjim čvorovima stabla
+
+
+Stabla ciljeva sadrže ciljeve koji se ostvaruju:
+- ako se ostvare svi njihovi podciljevi (AND)
+- ako se ostvari barem jedan njihov podcilj (OR)
+
+
+
+
+Kretanje kroz goal tree sveta blokova:
+zašto? uz stablo
+kako? niz stablo
+
+
+
+
+
+
+
+Ekspertni sistemi
+-----------------
+
+
+Koncentrisanje na određeno domensko znanje slično kao što i
+eksperti deluju u svojim oblatima i u njima ostvaruju velike
+uspehe
+
+
+Ideja je bila napraviti računarski program koji poseduje 
+znanje iz nekog uskog domena i na osnovu tog znanja vrši
+zaključivanje, a kao posledica nastaje pomoć koja je pomoć
+koja je potrebna ljudima
+
+
+Cilj je bio smanjiti troškove firmi koje su zahtevale
+angažovanje ljudskih eksperata. Umesto da u svakom momentu
+kada im je bio potreban savet eksperta oni firma njega
+angažuje, ona bi ga angažovala samo jednom kako bi se
+"ekstrakovala" njegovo znanje i zapisala u obliku koji je
+pogodan za računar nakon čega bi računar mogao da rezonuje
+na osnovu datih znanja
+
+
+Def
+"Ekspertni sistem je računarski program koji reprezentuje
+znanje i zaključuje na osnovu znanja iz nekog uskog domena
+u cilju rešavanja problema i davanja saveta"
+
+
+
+Ekspet - osobja koja poseduje znanje ili veštine koje su
+većini ljudi nepoznate ili nedostupne
+
+
+
+Kod prvih ekspertni sistema znanje se isključivo preuzimalo
+od eksperata dok je danas moguće koristiti knjige, časopise 
+i slično. Zbog toga se termini "ekspertni sistemi" i "sistemi
+bazirani na znanju" koriste kao sinonimi.
+
+
+
+
+
+Karakteristike ekspertnih sistema:
+- simuliraju ljudsko razmišljanje o problemu
+- rezonuju na osnovu reprezentacije ljudskog znanja;
+  
+  najčešći vid te reprezentacije jesu pravila
+  
+- probleme rešavaju korišćenjem heuristika ili aproksimacija
+  koje ne garantuju uspeh (za razliku od algoritamskih metoda)
+  
+- ograničeni na neki specifički domena
+
+
+Pošto su često zasnovani na pravilima, nazivaju se još i
+sistemi produkcionih pravila
+
+
+
+
+strukture podataka + algoritmi = program
+
+znanje + zaključivanje = ekspertni sistem
+
+
+
+
+Postupak identifikacije životinje na osnovu tvrdnji o njenim
+osobinama dovodi to kreiranje AND-OR stabla. 
+
+Za razliku od sveta blokova, u ovom primeru se simulira
+inteligentno ponašanje kroz proces zaključivanja
+
+
+
+Tvrdnje ka zaključcima = zaključivanje unapred 
+(odgovara na pitanje zašto)
+                                                
+                                                
+Od zaključaka ka tvrdnjama = zaključivanje unazad
+(dokazivanje hipoteze)
+
+
+
+
+
+
+Predstavljanje znanja pomoću pravila
+-------------------------------------
+
+tvrdnja (assertions) - svetlo_je_crveno
+
+
+Pravilo:
+    IF `svetlo_je_crveno` THEN `stani`
+
+
+Deo `svetlo_je_crveno` ima sledeće nazive:
+- antecedent
+- uslov
+- leva strana (left hand side)
+
+
+Deo `stani` ima sledeće nazive:
+- kosekvent
+- desna strana (right hand side)
+
+
+
+Da bi se došlo do zaključka nekog pravila potrebno je da 
+postoji tvrdnja koja se poklapa sa uslovom pravila
+
+
+
+Uslovi i zaljučci mogu da se pišu prirodnim jezikom
+
+
+
+
+
+Sistem produkcionih pravila
+---------------------------
+
+Sistem radi sa skupom pravila i skupom tvrdnji
+
+Tvrdnja je izjava (iskaz) da je nešto tačno
+
+
+p1: IF `kiša` THEN `staza_mokra`
+
+p2: IF `prskalica` THEN `staza_mokra`
+
+p3: IF `staza_mokra` THEN `staza_klizava`
+
+
+
+Ako imamo tvrdnju da pada kiša onda možemo zaključiti da je
+staza mokra, a na osnovu toga da je staza klizava. 
+Ovaj način zaključivanja se naziva zaključivanje unapred
+(forward chaining)
+
+
+Ako je staza klizava onda možemo da pretpostavimo da je
+mokra, a odatle da je ili padala kiša ili da je prskalica
+uključena. To se naziva zaključivanje unazad (
+fackward chaining). Traže se dokazi za hipoteze
+
+
+Ovaj sistem ide redom kroz listu tvrdnji i vrši njihovo
+uparivanje sa uslovima pravila, tj. proverava da li je to
+neko pravilo zadovoljeno datim skupom tvrdnji 
+
+
+Ukoliko ista tvrdnja može da se upari sa dva pravila onda će
+se izvršiti oba (u zavisnosti od konfiguracije samog sistema)
+
+
+Pravila obično stvaraju nove tvrdnje konsekvente, ali mogu
+i da brišu postojeće tvrdnje
+
+
+
+
+Razlika između činjenice i tvrdnje:
+Činjenica je nešto što je uvek tačno, iskaz čija tačnost je neupitna
+i neosporiva.
+
+Tvrdnja je iskaz da je nešto činjenica, ali to ne mora biti tačno, tj.
+to ne mora biti tačno iako iskaz govori da jeste
+
+
+Činjenica ne može biti netačna, dok tvrdnja može
+
+
+
+[ pitanje za usmeni deo
+
+U ekspertnim sistemima znanje se kodira pravilima. Ekspertsko znanje
+se predstavlja pomoću pravila (ne pomoću tvrdnji)
+]
+
+
+Tvrdnje su neka trenutna opažanja o svetu
+
+Pravila se nalaze u bazi znanja
+
+[ pitanje za usmeni deo
+
+Šta je baza znanja?
+Baza znanja je baza pravila kojima je kodirano znanje o problemu koji se
+rešava datim ekspertnim sistemom
+]
+
+
+Ekspertni sistem se satoji od dve osnovne komponente:
+- baze znanja (knowledge base)
+- mehanizma zaključivanja (inference engine)
+
+
+Korisnik pomoću interfejsa pruža tvrdnje
+
+Mehanizam zaključivanja na osnovu tvrdnji i baze znanja vrši 
+zaključivanje čiji je rezultat ekspertiza (zaključak) koji se vraća
+korisniku putem interfejsa
+
+
+
+[ pitanje za usmeni deo
+
+Nacrtati strukturu ekspertnog sistema
+
+                         --------------------
+                        |                    |
+                        |   ---------------  |
+             Tvrdnja    |  |  Baza znanja  | |
+---------  -----------> |   ---------------  |
+Korisnik |              |                    |
+---------  <----------- |   ---------------  |
+            Ekspertiza  |  |   Mehanizam   | |
+                        |  | zaključivanja | |
+                        |   ---------------  |
+                        |                    |
+                         --------------------
+                        
+]
+
+
+
+Glavne komponente ekspertnog sistema:
+1. user interface
+2. sistem za prikupljanje znanja
+3. baza znanja
+4. radna memorija
+5. Mehanizam zaključivanja
+6. sistem za objašnjavanje
+              
+              
+Sistem za objašnjavanje je veoma bitana komponenta jer nije sam zaključak
+ono što je jedino bitno, već i način na koji se došlo do njega
+
+
+Radna memorija sadrži tvrdnje
+
+
+Agenda je lista svih pravila koja su zadovoljena tvrdnjama koje su
+u radnoj memoriji. 
+
+Redosled izvršenja tih pravila zavisi od odabranog načina razrešavanja 
+konflikta
+
+
+
+
+Ciklus mehanizma za zaključivanje
+---------------------------------
+
+Mehanizam za zaključivanje prvo pronalazi u bazi zanja
+sva pravila čiji su uslovi zadovoljeni tvrdnjama iz
+radne memorije i sva ta pravila se smeštaju na agentu.
+
+Ta pravila se nazivaju aktivirana pravila
+
+Pravila su u agenti poređana po prioritetu
+
+Bira se pravilo najvećeg prioriteta među aktiviranim
+pravilima i ono se izvršava, tj. okida ( en. fire )
+
+
+Rezultat tog izvršavanja je ili neka nova tvrdnja koja
+se dodaje u listu tvrdnji ili uklanjanje nekih 
+postojećih tvrdnji.
+
+
+Nakon izvršavanja jednog pravila, agenda se lista
+tvrdnji (dodaju se nove ili se ukanjaju neke postojeće)
+
+
+To zahteva i ažuriranje agente. Ovaj čitav proces se
+odvija sve dok ima pravila za izvršenje, tj. dok 
+postoje pravila pravila u agendi za izvršenje
+
+
+
+
+
+
