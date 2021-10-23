@@ -1,0 +1,242 @@
+Datum održavanja: 19.10.2021.
+Predavač: Srđan Nikolić
+Čas: 2
+=====================================
+
+
+U Javi nije moguće proslediti proste tipove po referenci.
+U C# to je moguće i postoji par načina za relizacuje toga
+
+
+Segmentation Fault u C-u je Null Pointer Exception u
+Javi i C#
+
+
+
+
+View > Solution Explorer
+
+
+
+Ukoliko se navede simbol @ ispred string literala onda
+je moguće pisati ga u više linija, a pored toga, nije
+potrebno escape-ovati specijalne karaktere
+
+Primer korišćenja može biti pisanje SQL upita ili
+neke putanje 
+
+
+
+Getter i Setter metode u Javi su metode koriste se zbog
+enkapsulacije
+
+
+Getter-i i setter-i omogućavaju bolju kontrolu koda zato
+što omogućavaju da se određena akcija promeni na jednom mestu
+ukoliko je to potrebno, bez izmena na svim mestima na kojima
+bi se inače pojavio da oni nisu korišćeni. Kada dođe do potrebe
+za izmenom, izmeniće se samo kod getter-a/setter-a, a ostatak
+programa će ostati isti.
+
+
+
+U C# to se obavlja pomoću svojstava (property-a).
+
+Na osnovu konteksta poziva/pristupa, svojstvo određuje da li
+je potrebno da se pozove get ili set.
+
+Prvi način korišćenja svojstva je njegovo korišćenje u
+funcijskom obliku. Kreira se tako što se navede blok koda
+koji će predstavljati funkciju koja će se izvršiti zavisno
+od konteksta pristupa.
+
+Sintaksa:
+    modifikatori tip NazivSvojstva {
+        get {
+            ...
+        }
+        
+        set { 
+            ...
+        }
+    }
+
+set funkcija ima internu promenljivu "value" u kojoj se
+nalazi prosleđena vrednost, tj. vrednost na koju je 
+korisnik želeo da postavi dato svojstvo
+
+Ovakvo svojstvo se ne čuva u memoriji (kao promenljiva)
+Koristi neku privatnu promenljivu unutar klase za čuvanje
+podatka
+
+
+
+Drugi način korišćenja je u obliku promenljive. Čuva se
+u memoriji kao promenljiva
+
+Sintaksa:
+    modifikatori tip NazivSvojstva {
+        modifikator get;
+        modifikator set;
+    }
+    
+NAPOMENA: samo jedna od ove dve funkcije mоže da poseduje
+modifikator! Ne mogu obe da ga poseduju zato što onda samo
+svojstvo ne bi imalo nikakvu svrhu
+
+
+
+Ako je npr. neka od ovih funkcija svojstva privatna ona 
+neće moći da se koristi izvan klase, ali se može koristiti
+unutar nje
+
+
+
+Svojstvo mora da ima modifier public (?)
+
+
+get i set metode imaju kao podrazumevanu vidljivost public
+
+
+Promenljive inače imaju kao podrazumevanu vidljivost private
+
+
+
+Funkcije svojstva ne mogu da imaju karakteristike oba 
+oblika, tj. ili obe imaju telo ili ga ni jedan nema. 
+
+Javlja se kompajlerska greška ukoliko jedna funckija nema 
+telo ( vitičaste zagrade ), a druga ga ima 
+
+
+
+
+Parcijalne klase
+----------------
+
+Omogućavaju da se jedna klasa nalazi u više fizičkih 
+fajlova, tj. definicije metoda se nalaze u jednom fajlu, 
+a deklaracije u drugom
+
+
+Na ovaj način se klasa podeli na više fizičkih fajlova, a
+sam objekat će imati sve te osobine pri instanciranju
+
+
+Označava se ključnom rečju (modifikatorom) partial
+
+
+Kao i u Javi, this nije neophodno pisati ukoliko ne postoji
+promenljiva/metoda sa istim imenom, tj. u situaciji kada
+postoji dvosmislenost.
+
+
+
+Metod ToString vraća string, ne štampa ga
+
+
+
+Promenljive mogu da se šalju po referenci navođenjem ključne
+reči ref ispred njih, npr:
+    swap( ref x, ref y );
+    
+    
+Metod takođe mora da koristi datu ključnu reč kako bi se znalo
+da se radi o referenci:
+    static void swap( ref int x, ref int y );
+    
+
+BITNO: kada se promenljive prosleđuju po referenci upotrebom
+       ključne reči ref, neophodno je je pre slanja ta
+       promenljiva inicijalizovana. Ref zahteva da promenljiva
+       
+
+
+       
+       
+Drugi način prosleđivanja reference je pomoću ključne reči out.
+
+U ovom slučaju promenljiva ne mora biti inicijalizovana zato
+što se zahteva da se to uradi u samoj metodi. Ako je već bila
+inicijalizovana onda će se overwrite-ovati ta vrednost sa onom
+koja će se dodeliti u datoj metodi. 
+"Ona se šalje sa ciljem da se u metodi inicijalizuje"
+
+
+Kao i kod ref, potrebno je navesti ključnu reč out pri pozivu
+i u potpisu metoda, ispred naziva promenljive
+
+
+
+
+
+C# ima mogućnost predaje argumenata po imenu. 
+Primer:
+    Math.Pow( x:2, y:5 );
+    Math.Pow( y:5, x:2 );
+    
+
+    
+Koristi se kada metoda ima dosta parametara koji su većinom 
+nule ili null (opcioni), tj. kako se ne bi tražilo mesto
+na kome neki član treba da stoji
+
+
+
+
+Overloading je moguć i u C#
+
+
+
+
+Modifikator internal omogućava vidljivost u dll-u (tačnije
+u celom asembliju (?) )
+
+
+
+Enumi su isti kao u C-u
+
+U pozadini stoj int, ali je to moguće promeniti, npr:
+    enum NekiEnum : byte { ... }
+
+
+
+On je tip kao i klasa, pa ga je moguće definisati i van neke
+klase
+
+
+
+Prvi element ima vrednost 0. Kreće od nule pa se uvećava za
+1 za svakog narednog člana. Ukoliko naiđe na neki koji je
+eksplicitno definisan, onda se nastavlja od te vrednosti to
+uvećavanje za 1
+
+
+
+Automatsko utvrđivanje tipa - var
+
+
+
+Anonimni tipovi
+---------------
+
+Nemaju predefinisane članice ili klasu. Kreiraju se prilikom
+instanciranja i pošto pošto se ne zna kojeg su tipa čuvaju
+se u var promenljivoj
+
+
+Koriste se kada je potrebno definisati neki objekat za neku
+posebnu upotrebnu, koji se neće koristiti na više mesta
+(što je slučaj kod klasa i razlog za njihovo kreiranje)
+
+
+Primer:
+    var tacka = new { X = 4, Y = 7, Z = -2 };
+    Console.WriteLine( tacka.X );
+    
+
+
+
+
+
+
