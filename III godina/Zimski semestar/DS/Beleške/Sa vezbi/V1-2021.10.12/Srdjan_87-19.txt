@@ -26,7 +26,7 @@ Dinamičko vezivanje
                  
 DLL (Dynamic Link Library) - dinamička biblioteka na windows sistemima
 
-Deljeni objekat na Linux sistemima : shared object (.so)
+Deljena biblioteka (objekat) na Linux sistemima : shared object (.so)
 
 
 Java kod se kompajlira u .class fajlove
@@ -34,7 +34,7 @@ Java kod se kompajlira u .class fajlove
 class fajlovi sadrže bytecode
 
 Izvršni Java fajlovi su jar fajlovi (.jar)
-
+(sadrži sve fajlove koji su potrebni za izvršavanje programa)
 
 
 Console.ReadLine()
@@ -48,19 +48,19 @@ string ili String
 
 
 
-U projektnom folderu se nalaze folderi Debug i Release
+U projektnom folderu se nalazi bin folder, a u njemu folderi Debug i Release
 
-Release sadrži produkcioni build, dok debug sadrži kod koji je još u
-fazi razvoja
-
-
-U VS Studio-u može da se odabere neki od ova 2 profila
+Release sadrži produkcioni build, dok debug sadrži build koji je još u
+fazi razvoja, tj. koji se testira
 
 
+U VS Studio-u moguće je odabrati neki od ova 2 profila
 
-VS Studio, kao i drugi napredni IDE-evi , ima mogućnost debugging-a, 
+
+
+VS Studio, kao i drugi napredni IDE-evi, ima mogućnost debugging-a, 
 mogućnost da se prikaže sadržaj promenljivih, zaustavi izvršavanje, 
-izvršava komanda po komanda i slično..
+izvršavanje komandu po komandu i slično..
 
 
 Kada je selektovan Release profil nije moguće izvršavati kod uz debugging
@@ -69,26 +69,26 @@ Kada je selektovan Release profil nije moguće izvršavati kod uz debugging
 Kada se kod izvrši bez debugging-a, ignorisaće se brakepoint-i
 
 
-U Javi postoji fizička (file system) paketa
+U Javi postoji fizička (file system) zavisnost paketa
 
 
 C# import-uje biblioteke korišćenjem ključne reči using. 
 
 
 C# nema pakete kao Java, već namespace-ove koji za razliku od paketa
-ne zavisi od fajl sistema
+ne zavise od fajl sistema, tj. fizičke lokacije/putanje 
 
 
 Namespace omogućava i definisanje klasa sa istim imenom tako što bi se
-one definisale u 2 različita namespace-a
+one definisale u 2 različita namespace-a (što i paketi omogućavaju u
+Javi)
 
 
-Ukoliko želimo u negde da koristimo klase koje se nalaze u različitim
-namespace-ovima i isto se zovu, dodajemo naziv namespace-a ispred 
-naziva date klase (tamo gde se koriste)
-
-namespace1.klasa
-namespace2.klasa
+Ukoliko želimo negde da koristimo klase koje se nalaze u različitim
+namespace-ovima i isto se zovu, dodajemo nazive namespace-ova ispred 
+naziva datih klasa (tamo gde se koriste):
+    namespace1.klasa
+    namespace2.klasa
 
 
 
@@ -116,9 +116,9 @@ Kada je program spreman za isporuku build-uje se u Release profilu i
 isporučuju se exe fajlovi zajendo sa dll fajlovima (ukoliko postoje)
 
 
-Jedan od prednosti korišćenja dll-ova je to što nije potrebno celog
-projekta ukoliko se izvrši izmena u samom dll-u. Dovoljno je da se taj
-dll ponovo kompajlira i dostavi klijentu
+Jedan od prednosti korišćenja dll-ova je to što nije potrebno 
+kompajliranje celog projekta ukoliko se izvrši izmena u samom dll-u.
+Dovoljno je da se taj dll ponovo kompajlira i dostavi klijentu
 
 
 Još jedna od prednosti deljenih biblioteka je to što one ne moraju da
@@ -128,10 +128,10 @@ biblioteka učitava u memoriju, a onda više programa može da je koristi
 
 
 
-Kod statičkog linovanja to se pakuje u jedan fajl, exe fajl. Sve deljene
-biblioteke ulaze u stastav tog exe fajla. Ukoliko bude potrebno da se
-izmeni nešto u takvom programu onda bi bilo potrebno kompajlirati ceo
-projekat ponovo
+Kod statičkog linkovanja to se pakuje u jedan fajl, exe fajl. Sve 
+korišćene deljene biblioteke ulaze u sastavu tog exe fajla. Ukoliko bi
+se izmenilo nešto u takvom programu onda bi bilo potrebno kompajlirati 
+ceo projekat ponovo
 
 
 
@@ -154,7 +154,8 @@ Pozivanje konstruktora roditeljske klase:
     
 
 
-Implementacija interfejsa nema neku posebnu sintaksu kao u Javi, primer:
+Implementacija interfejsa nema neku posebnu sintaksu kao što ima u Javi,
+primer:
     ...
     class Klasa : IInterfejs, RoditeljskaKlasa, Iinterfejs {
         ...
@@ -170,7 +171,7 @@ Prepisivanje metoda je moguće jedino ukoliko je taj metod virtuelni
 Prepisivanje u C# nije isto kao i u Javi jer su kod nje svi metodi
 podrazumevano virtuelni, dok u C# nisu
 
-Metod je virtuelni ako je metod deklarisan kao virtuelan, apstraktan ili
+Metod je virtuelni ako je deklarisan kao virtuelan, apstraktan ili
 ukoliko je prepisan
 
 
@@ -188,7 +189,7 @@ foreach( var item in lista ) {
 
 Ključna reč var može da se koristi u metodama, ne može se koristi nad
 poljima klase i može se koristiti samo ukoliko je poznato koji će se tip
-dodeliti toj promenljivoj jer se na osnovu toga određuje i njen tip.
+dodeliti toj promenljivoj jer se na osnovu toga određuje njen tip.
 
 Koristi se za skraćivanje zapisa pri deklaraciji promenljivih
 
@@ -224,9 +225,9 @@ Primer:
 Opcioni parametri se mogu iskoristi i u situacijama kada je potrebno
 privremeno rešiti neki problem, gde metode nisu lepo dizajnirane i 
 slično, tako što bi se dodao opcioni parametar. Svi pozivi date metode
-koji se nalaze u datom programu će ostati neizmenjeni, a dodatni 
-parametar će se prosleđivati po potrebi
+koji se nalaze u programu će ostati neizmenjeni, a dodatni parametar 
+će se prosleđivati po potrebi
 
 
-Pandan za javinom "..." (varijabilan broj argumenata) u C# je ključa
+Pandan za Javinom "..." (varijabilan broj parametara) u C# je ključa
 reč params
