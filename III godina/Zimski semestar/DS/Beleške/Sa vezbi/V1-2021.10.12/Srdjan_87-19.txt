@@ -1,0 +1,232 @@
+Datum održavanja: 12.10.2021.
+Predavač: Srđan Nikolić
+Čas: 1
+=====================================
+
+
+.NET framework
+
+
+Za Javu JDK, za C# SDK (Software Development Kit)
+
+
+Početak programa predstavlja Main funkcija, kao i u Javi
+
+
+
+Solution Explorer
+    References - reference na biblioteke koje mogu da se koriste; 
+                 pri kreiranju projekta, tu se nalaze samo reference
+                 na biblioteke iz .NET framework-a
+                 
+                 
+
+                 
+Dinamičko vezivanje
+                 
+DLL (Dynamic Link Library) - dinamička biblioteka na windows sistemima
+
+Deljeni objekat na Linux sistemima : shared object (.so)
+
+
+Java kod se kompajlira u .class fajlove
+
+class fajlovi sadrže bytecode
+
+Izvršni Java fajlovi su jar fajlovi (.jar)
+
+
+
+Console.ReadLine()
+Console.WriteLine("neki string")
+
+
+
+Za tip string je moguće koristiti i malo i veliko slove S:
+string ili String
+
+
+
+
+U projektnom folderu se nalaze folderi Debug i Release
+
+Release sadrži produkcioni build, dok debug sadrži kod koji je još u
+fazi razvoja
+
+
+U VS Studio-u može da se odabere neki od ova 2 profila
+
+
+
+VS Studio, kao i drugi napredni IDE-evi , ima mogućnost debugging-a, 
+mogućnost da se prikaže sadržaj promenljivih, zaustavi izvršavanje, 
+izvršava komanda po komanda i slično..
+
+
+Kada je selektovan Release profil nije moguće izvršavati kod uz debugging
+
+
+Kada se kod izvrši bez debugging-a, ignorisaće se brakepoint-i
+
+
+U Javi postoji fizička (file system) paketa
+
+
+C# import-uje biblioteke korišćenjem ključne reči using. 
+
+
+C# nema pakete kao Java, već namespace-ove koji za razliku od paketa
+ne zavisi od fajl sistema
+
+
+Namespace omogućava i definisanje klasa sa istim imenom tako što bi se
+one definisale u 2 različita namespace-a
+
+
+Ukoliko želimo u negde da koristimo klase koje se nalaze u različitim
+namespace-ovima i isto se zovu, dodajemo naziv namespace-a ispred 
+naziva date klase (tamo gde se koriste)
+
+namespace1.klasa
+namespace2.klasa
+
+
+
+U okviru jednog solution-a može postojati više projekata i njihove 
+reference će biti dostupne u okviru datog solution-a
+
+
+
+DLL fajlovi nisu izvršni fajlovi, već biblioteke koje se nalaze u 
+posebnim fajlovima
+
+
+
+Namaspace-ovi definisani u projektima/asembilijam nisu podrazumevano
+vidljivi drugim projektima/asembijima. Da bi bili vidljivi potrebno
+je da se doda referenca u References > Projects
+
+
+
+Nakon kompajliranja projekta, ukoliko je pisan i dll, kreiraće se i
+poseban fajl sa ekstenzijom dll
+
+
+Kada je program spreman za isporuku build-uje se u Release profilu i
+isporučuju se exe fajlovi zajendo sa dll fajlovima (ukoliko postoje)
+
+
+Jedan od prednosti korišćenja dll-ova je to što nije potrebno celog
+projekta ukoliko se izvrši izmena u samom dll-u. Dovoljno je da se taj
+dll ponovo kompajlira i dostavi klijentu
+
+
+Još jedna od prednosti deljenih biblioteka je to što one ne moraju da
+se učitavaju za svaki program zasebno ukoliko ih ti programi poseduje
+(interno), već više programa može da je koristi. Samo se jedna takva
+biblioteka učitava u memoriju, a onda više programa može da je koristi
+
+
+
+Kod statičkog linovanja to se pakuje u jedan fajl, exe fajl. Sve deljene
+biblioteke ulaze u stastav tog exe fajla. Ukoliko bude potrebno da se
+izmeni nešto u takvom programu onda bi bilo potrebno kompajlirati ceo
+projekat ponovo
+
+
+
+Sintaksa za nasleđivanje:
+
+    class dete : roditelj {
+        ...
+    }
+
+    
+
+Pozivanje konstruktora roditeljske klase:
+
+    ...
+    
+    public Klasa(...) : base() {
+        ...
+    }
+    ...
+    
+
+
+Implementacija interfejsa nema neku posebnu sintaksu kao u Javi, primer:
+    ...
+    class Klasa : IInterfejs, RoditeljskaKlasa, Iinterfejs {
+        ...
+    }
+
+
+Nasleđivanje i implementiranje interfejsa koristi istu sintaksu
+
+
+Prepisivanje metoda je moguće jedino ukoliko je taj metod virtuelni
+
+
+Prepisivanje u C# nije isto kao i u Javi jer su kod nje svi metodi
+podrazumevano virtuelni, dok u C# nisu
+
+Metod je virtuelni ako je metod deklarisan kao virtuelan, apstraktan ili
+ukoliko je prepisan
+
+
+
+Generička lista:
+    List<Tip> naziv = new List<Tip>();
+    
+    
+
+foreach( var item in lista ) {
+    ...
+}
+
+
+
+Ključna reč var može da se koristi u metodama, ne može se koristi nad
+poljima klase i može se koristiti samo ukoliko je poznato koji će se tip
+dodeliti toj promenljivoj jer se na osnovu toga određuje i njen tip.
+
+Koristi se za skraćivanje zapisa pri deklaraciji promenljivih
+
+
+
+    
+Postavljanje default-ne vrednosti i definsanje opcionog parametra je
+podržano u C#:
+    void primer( int a, object o=null) {
+        ...
+    }
+
+Ovo omogućava pozivnanje date funkcije sa ili bez opcionog parametra,
+npr:
+    primer( 5 );
+    primer( 10, new Object() );
+
+
+Primer:
+    int sum( int a, int b = 0, int c = 0 ) {
+        return a + b + c;
+    }
+    
+    ...
+    
+    sum( 1 );
+    sum( 5, 10 );
+    sum( 1, 5, 10 );
+    
+    
+    
+    
+Opcioni parametri se mogu iskoristi i u situacijama kada je potrebno
+privremeno rešiti neki problem, gde metode nisu lepo dizajnirane i 
+slično, tako što bi se dodao opcioni parametar. Svi pozivi date metode
+koji se nalaze u datom programu će ostati neizmenjeni, a dodatni 
+parametar će se prosleđivati po potrebi
+
+
+Pandan za javinom "..." (varijabilan broj argumenata) u C# je ključa
+reč params
