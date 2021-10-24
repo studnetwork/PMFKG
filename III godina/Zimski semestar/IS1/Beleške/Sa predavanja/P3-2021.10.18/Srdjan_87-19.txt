@@ -1,0 +1,471 @@
+Datum održavanja: 18.10.2021.
+Predavač: Nenad Stefanović
+Čas: 3
+=====================================
+
+
+"Kako smo došli tu gde jesmo"
+
+Thomas Friedman - The World is Flat
+
+Definiše 3 perioda globalizacije:
+- 1.0 (od 1492 do 1800)
+- 2.0 (od 1800 do 2000)
+- 3.0 (od 2000 do danas)
+
+
+
+Globalizacija 1.0
+=================
+
+Počinje otkrićem Amerike
+
+Naglasak je bio na posedovanju zemljišta, prirodnim resursima,
+vojsci, ...
+
+Otkrivale su se nove zemlje, zauzimali prostori
+
+Svet se polako povezuje
+
+
+Globalizacija 2.0
+=================
+
+Prvi deo
+--------
+
+Počinje industrijalizacija
+
+
+Parne mašine
+
+
+Polako se smanjuje prostorna komponenta
+
+
+Ljudi i roba se trasportuju brže nego što je to pre 
+bilo moguće
+
+
+Mašine su omogućile da se proizvodnja bude obimnija,
+brža i jeftinija
+
+
+Naglasak je bio na tome da se proizvodi brži i jeftinije
+
+
+"Možete da dobijete automobil bilo koje boje ako je crne
+boje" - Henry Ford 
+
+
+Danas se tako prati takav model. Primer jednog modela je 
+model koji je implementirala kompanija Dell, build-to-order
+ili make-to-order
+
+"Kupci traže ono što je skrojeno po njihovim potrebama"
+
+
+Vizija Michael Dell-a je bila da kupcima ponudi 
+personalizovani računar, što u to vreme nije postojalo. 
+Kompanije koje su pravile računare su prodavale računare
+sa predefinisanim komponentama
+
+
+Dell je imao prednost u odnosu na konkurenciju, tj. 
+first-mover advantage
+
+
+Njihov model je imao problem sa brzinom dostave.
+Druge komapnije su mogle odmah da ponude gotov računar,
+dok je Dell morao da sastavi neki računar po porudžbini
+a zatim da ga dostavi. Problem je rešen potpunom
+integracijom lanca snabdevajna
+
+
+Ceo lanac treba da se prilagodi tražnji. Onaj ko je u
+maloprodaji on direktno vidi tu tražnju. Distributer,
+velikobrodaja i sl. ne vide tu tražnju jer nisu u
+direktnom kontaktu sa kupcima i oni jedino mogu da vide
+tu tražnu preko maloprodaje. Dok informacija o tražnji
+dođe do onih koji su poslednja karika u tom lancu
+te informacije su donekle zastarele
+
+
+Primeri primene informacionih sistema:
+1. Walmart koji je koristio satelitsku vezu za
+   sakupljanje podataka iz svojih prodavnica kako bi
+   se predvidela potražnja kupaca. To im je omogućilo
+   da unapred ugovore nabavku date robe od dobavljača
+   čime su osigurali svoju ponudu, dok je njihova
+   konkurenija ostala bez ili sa nedovoljno robe
+   zbog toga što dobavljač ima svoje proizvodne
+   mogućnosti
+   
+2. City bank koji je korišćenjem Cloud Computing 
+   servisa uspeo 10+ puta brže da pripremi i otvori 
+   svoje filijale (u IT smislu) od svoih konkurenata
+   i time su brže ulazili na neko tržiše i osvajali
+   novo klijente
+   
+
+
+Dell je jedna od prvih kompanija koja je uvela koncept
+ATP (Available-To-Promise)
+
+
+Drugi deo
+---------
+
+Ova druga faza je karakterisana uvođenjem novih 
+komunikacionih informacionih tehnologija poput
+satelitskog prenosa, raznih prenosivih uređaja
+
+Optički kablovi
+
+
+
+Globalnizacija 3.0
+==================
+
+Mogućnost komunikacije u ralnom vremenu
+
+Vremenska i prostorna dimenzija su se anulirali
+
+---
+
+
+
+Količina podataka veoma brzo raste, skoro pa eksponencijalno
+
+
+
+Thomas Friedman je definisao 10 pokretača globalizacije,
+tj. događaja koji su uzrokovali prelaz u 3. fazu globalizacije:
+1. Pad Berlinskog zida
+3. S
+
+
+Pad Berliskog zida
+------------------
+
+
+Male firma mogu da izađu na globalno tržište, ali ta mogućnost
+je dostupna i njihovoj konkurenciji
+
+
+Krajem '80tih, početkom '90tih, dolazi do početka informacione
+revolucije, lični računari postaju dostupni sve većem broju
+ljudi, manjim firmama 
+
+
+Postojali su razni legacy sistemi koji koriste zastarele ili
+proprietary protokole koji su veoma teški za integraciju i
+razmenu podataka i veoma nezgodni za povezivanje sa drugim
+sistemima
+
+
+Došlo je i do političkih promena, neki savezi su se raspadali,
+drugi se stvarali, ..
+
+
+
+Netscape izlazi na tržište
+---------------------------
+
+Pojavljuje se grafički web browser NetScape i tada ljudi 
+počinju masovno da koriste Internet.
+
+
+Lični računari počinju da se umrežavaju
+
+
+Internet servisi
+
+
+Uvode se otvoreni protokoli i standardi
+
+
+dot com bubble - poslovni model servisa u ranim danima web-a
+                 nije bio održiv. Poslovalo skoro pa bez prihoda,
+                 investitori su počeli da se povlače i na kraju
+                 je ostao mali broj kompanija koje su kasnije
+                 postale veoma profitabilne zato što su njihovi 
+                 investitori bili strpljivi
+
+                 
+                 
+Workflow (radni tok) softver ili middleware ili BDMS je sotver
+za upravljanje radnim tokovima
+
+
+Procesni pristup - posmatraju se aktivnosti u okviru jedno,
+                   kompletnog softvera (što je drugačiji pristup
+                   od tradicionalnog pristupa gde se svaka 
+                   organizaciona ili funkcionalna celina 
+                   posmatraju odvojeno)
+                   
+
+Omogućava interoperabilnost između različitih IT sistema
+organizacija
+
+
+
+Ovaj softver ima mogućnost da prima poruke. Te poruke mogu biti
+slate i primane pomoću raznih protokola. Mora da ima vrlo pouzdan
+sistem slanja i primanja poruke.
+
+
+Moraju da postoje protokoli preko koji se različiti sistemi mogu
+povezivati, kao i neki standardni formati kako bi ti sistemi 
+mogli da obrade podatke i transformišu date poruke u drugi format 
+
+
+
+Orkestracija je automatizovana konfiguracija, koordinacija i 
+upravljanje računarskim sistemima i softverom
+
+
+
+UDDI
+
+
+Omogućava automatizaciju ili poluautomatizaciju
+
+
+
+
+
+Napredkom Internet tehnologija, povećanjem protoka, 
+omogućeno je i da korisnicima da publikuju svoje
+informacije, dokumenta, multimedijalne sadržaje, ...
+
+
+
+
+Pojavljuju se pokreti slobodnog (free/libre) i 
+otvorenog koda (open source)
+
+
+
+
+ERP paketi otvorenog koda:
+- OpenBravo
+- Adempiere
+- Odoo
+
+
+
+Prednosti otvorenog koda:
+- mogućnost izmene softvera 
+  * prilagođavanje softvera za sopstvene potrebe
+  * laška integracija jer moguće lako izmeniti 
+    softver kako bi se mogao povezati sa drugim 
+    sistemima
+  * ispravljanje greške u programu, nije potrebno
+    čekati na vendora da on to ispravi, ilu ukoliko
+    firma više ne posluje moguće je ažurirati dati
+    softver za interne potrebe
+- transparentnost
+- unapređivanje koda i testiranje od strane drugih ljudi
+
+
+Mane otvorenog koda:
+- otvorenost koda može biti i prednost i mana. Kod je
+  dosutpan svima pa postoji mogućnost da neko primeti
+  grešku i onda je zloupotrebi
+- neodrživ biznis model
+- kompanije se često ne odlučuju za sotverska rešenja 
+  otvorenog koda jer njihov proizvođač dovoljan broj ljudi 
+  za ispunjavanje nekih zahteva koje ta kompanija može
+  da zatraži. Zahtevaju određene garancije kao što su
+  podrška tokom njihovog korišćenja datog softvera,
+  garancija razvoja tog softvera tokom vremena (u smislu
+  korišćenih tehnologija)
+  
+  
+
+  
+  
+Outsourcing je poslovni model po kome kompanija neke svoje 
+operacije, najčešće one koje nisu primarne za nju, izmesti,
+tj. da na realizaciju drugoj kompaniji
+
+
+
+Y2K problem - '80tih / '90tih programeri su pisali broj godine
+               sa 2 cifre kako bi uštedeli resurse. Do 
+               preoblema dolazi kada je potrebno prikazati 
+               godine nakon 1999 jer je bi godina "00" mogla
+               da se tumači na 2 načina. Došlo je do potrebe za
+               velikim brojem programera koji bi mogli da poprave
+               stare neispravne programe. Outsource-ovao se veliki 
+               broj programera iz Kine
+               
+               
+Outsorcing-om se na neki način prenosi rizik na firmu koja će da 
+pruži tu uslugu.
+
+
+
+Prednosti outsorcing-a:
+- smanjenje troškova (plaća se samo kada treba nešto
+      da se odradi, umesto da se plaća puno radno 
+      vreme ukoliko to nije potrebno)
+- kvalitet servisa
+  (bolje će dati posao uraditi oni koji su specijalizovani
+  za datu oblast neko neki tim programera firme)
+- pristup specijalizovanim znanjima i veštinama
+- ugovorna obaveza
+- smanjen rizik 
+- eliminisani ili smanjeni problemi sa resursima
+  (kadrom, kapacitetom, ...)
+  
+  
+
+Outsorcing je posledica globalizacije i globalne 
+konkurencije
+
+
+
+Mane outsorcing-a:
+- komunikacijske prepreke (vremenske zone, različiti jezici
+- manja kontrola (iako je ta neka kompanija obavezana 
+      ugovorom, ukoliko ona ne ispuni dati ugovor doći će do
+      gubitaka jer će to možda uticati na lanac snabdevanja,
+      poslovanje, ...
+- društvena odgovornost (ljudi koji su pružali te usluge nakon
+     završetka projekta ostaju bez posla)
+     
+     
+
+
+Offshoring je izmeštanje operacije u neku drugu zemlju radi
+pogodnijih uslova poslovanja (jeftinija radna snaga, manji 
+porezim, bolji uslovi poslovanja, ...)
+
+
+
+
+U praksi se pokazalo da je bolje prođu one kompanije koje
+rade i sarađuju u lancu snabdevanja nego one koje gledaju
+samo na sebe
+
+
+
+
+Mogu npr. da nadomeste gubitke jedne drugima, jer ako rade
+zajedno onda i ceo lanac postaje profitabilniji pa samim 
+tim i kompanije koje učestvuju u njemu
+
+
+VMI - Vendor Menagment Inventory
+Omogućavanje pristupa proizvođaču tako da može da vidi 
+samo informacije koje se tiču njegovog proizvoda, dok
+data firma ne mora da obavlja neke procese kao što su
+naručivanje, ... 
+I jedna i druga strana imaju koriste
+
+
+
+Životni ciklus proizvoda je danas kraći nego što je
+pre bio. 
+Akcenat je na stalnom razvoju novih proizvoda
+
+
+
+SCM (Supply Chain Managment) je upravljanej mnoštvom 
+odnosa duž lanca snabdevanja
+
+
+
+Nivoi transformacije organizacije neke kompanije:
+- funkcionalna optimizacija (svaka za sebe)
+- optimizacija proesa (proces u kome sadržane fun. celine)
+- optimizacija tržišta
+- optimizacija mreže snabdevanja
+
+
+
+
+Insourcing predstavlja angažovanje neke druge firme za
+obavljanje nekog poslovnog procesa, ali unutar same te
+firme koja angažuje drugu.
+
+
+
+
+Postoji mnoštvo podataka i njih je potrebno obraditi
+
+Poželjna je inteligentna pretraga kojom se svi podaci
+mogu pretraživati iako su deo različitih sistema.
+"Ide se na to da pretraga bude inteligentna"
+
+
+Veliki broj nestruktuiranih podataka
+
+Pretraga po kategorijama sadržaja
+
+
+
+
+Definicije informacionog sistema:
+- pruža ubradu transakcija i podršku pri odlučivanju
+- svi oblici prikupljanja, skladištenja, preuzimanja,
+  obrade i razmene informacija koji koriste donosiocu
+  odluka
+- obuhvata hardver, softver, ljude i podatke, procedure
+  i podatke
+
+  
+Data warehouse - posebna vrsta baze podataka koja omogućava
+                 integraciju podataka iz različitih izvora
+                 koji se skladište u toj bazi. Koriste šeme
+                 koje omogućavaju lakšu analizu podataka
+                 
+                 Kaže se još da su višedimenzioni
+                 
+
+Statistika kaže da pre 50% podataka nije odgovarajućeg 
+kvaliteta
+
+
+
+
+
+Funkcije informacionih sistema:
+- sladištenje i preuzimanje
+- prenos 
+- beleženje
+- obrada
+- generisanje
+
+
+
+
+Osnovne vrste obrade podataka:
+- kasifikacija
+- sortiranje
+- agregacija 
+- kalkulacija
+- selektovanje
+
+
+
+
+
+Prednosti informacionih sistema:
+- brzina
+- doslednost
+- preciznost
+- pouzdanost
+
+
+
+
+Sposobnosti informacionog sistema:
+- brzo izvršavanje intezivni izračunavanja
+- pružanje brze i tačne komunikacije i saradnje
+  između organizacija
+- efikasno sladištenje velike količine podataka
+- omogućavanje brzog i jeftinog pristupa informacijama
+
