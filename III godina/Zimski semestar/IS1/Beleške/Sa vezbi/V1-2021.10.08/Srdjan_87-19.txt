@@ -271,7 +271,7 @@ na pravugaonik koji ga predstavlja.
 Strelicu nije moguće kreirati sa bilo kog mesta, već samo sa neke komponente
 (pravougaonika, strelice, ...) ili sa ivica radnog papira/dijagrama.
 
-Strelice se kreiranje pomoću <<Precedence Arrow Tool>> koji se nalazi među dostupnim
+Strelice se kreiranju pomoću <<Precedence Arrow Tool>> koji se nalazi među dostupnim
 alatima. Izvorišna tačka strelice se postavlja jednim klikom na neku od prethodno 
 navedenih lokacija.
 

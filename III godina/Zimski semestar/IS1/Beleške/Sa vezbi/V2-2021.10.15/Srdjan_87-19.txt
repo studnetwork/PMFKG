@@ -1,0 +1,49 @@
+Datum održavanja: 15.10.2021.
+Predavač: Lana Miljković
+Čas: 2
+=====================================
+
+IDEF0
+
+Funkcija je predstavljena kao pravougaoik.
+Funkcija predstavlja proces / aktivnost
+
+Nazivaju se aktivnim glagolima
+
+
+Input može biti podatak, informacija, materijal koji
+predstavlja ulaz funkcije. Input se uvek nalazi na levoj
+strani funkcije. Na samoj stre
+
+
+Output može biti podatak, informacija ili materijal koji
+predstavlja izlaz funkcije. Strelica ide od desne stranice
+
+
+Mehanizmi su resursi, alati, metodi i sredstvlja koji 
+omogućavaju izvršavanje date funkcije. Strelica idi iz
+iz spoljašnosti ka donjoj stranici funkcije
+(resursi koji se ne troše)
+
+
+Kontrola je nešto što usmerava, reguliše i ograničava
+funkciju
+
+
+[ za kol
+
+poželjno je da bude što detaljniji dijagram
+
+Pogledati bazu "Proces rada preduzeća" zbog njegovog
+detaljnog opisa
+
+Teorijski deo je sa predavanja. Biće spomenuto šta
+je bitno
+
+Za IDEF0 je važno da postoji sve što je spomenuto u tekstu,
+a sve van toga je opciono
+]
+
+
+
+2. klip
