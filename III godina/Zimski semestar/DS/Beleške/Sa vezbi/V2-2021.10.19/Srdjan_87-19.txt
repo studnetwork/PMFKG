@@ -34,7 +34,7 @@ enkapsulacije
 Getter-i i setter-i omogućavaju bolju kontrolu koda zato
 što omogućavaju da se određena akcija promeni na jednom mestu
 ukoliko je to potrebno, bez izmena na svim mestima na kojima
-bi se inače pojavio da oni nisu korišćeni. Kada dođe do potrebe
+bi se inače pojavila da oni nisu korišćeni. Kada dođe do potrebe
 za izmenom, izmeniće se samo kod getter-a/setter-a, a ostatak
 programa će ostati isti.
 
@@ -149,7 +149,8 @@ da se radi o referenci:
 BITNO: kada se promenljive prosleđuju po referenci upotrebom
        ključne reči ref, neophodno je je pre slanja ta
        promenljiva inicijalizovana. Ref zahteva da promenljiva
-       
+       bude inicijalizovana pre nego što njena referenca bude
+       prosleđena
 
 
        
@@ -201,7 +202,7 @@ U pozadini stoj int, ali je to moguće promeniti, npr:
 
 
 
-On je tip kao i klasa, pa ga je moguće definisati i van neke
+On je tip kao i klasa(?), pa ga je moguće definisati i van neke
 klase
 
 

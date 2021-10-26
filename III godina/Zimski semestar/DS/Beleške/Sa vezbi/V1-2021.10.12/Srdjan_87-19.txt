@@ -171,8 +171,8 @@ Prepisivanje metoda je moguće jedino ukoliko je taj metod virtuelni
 Prepisivanje u C# nije isto kao i u Javi jer su kod nje svi metodi
 podrazumevano virtuelni, dok u C# nisu
 
-Metod je virtuelni ako je deklarisan kao virtuelan, apstraktan ili
-ukoliko je prepisan
+Metod je moguće prepisati ukoliko je deklarisan kao virtuelan, apstraktan
+ili ukoliko je prepisan
 
 
 
