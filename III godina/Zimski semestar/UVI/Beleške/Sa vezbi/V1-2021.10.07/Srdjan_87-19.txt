@@ -1,0 +1,516 @@
+Datum održavanja: 07.10.2021.
+Predavač: Lazar
+Čas: 1
+=====================================
+
+
+Nije neophodna anaconda, može se koristi i običan python
+
+
+
+Da bi se kod izvršio u nekom virtuelnom okruženju (virtual
+environment-u) potrebno je da se pri njegovom kreiranju
+navede i interpreter koji će se koristiti
+
+
+
+
+# komentar
+
+"""
+multi
+line
+comment
+"""
+
+
+_ izvršava prethodnu komandu
+
+
+
+Zarezom se odbajaju elementi torke
+
+    1,2,3
+    
+    daje
+    
+    (1,2,3)
+    
+    
+    
+type(tip) - vraća tip date promenljie
+
+
+Python je objektni jezik
+
+Tipovi ne moraju eksplicitno da se navode
+
+
+Logički operatori:
+- jednakost: ==
+- veće: >
+- manje: <
+- i: and
+- ili: or
+- negacija: not
+
+
+
+5. je float literal
+
+
+
+dir(x) - vraća listu naziva svih metoda koje su vezane za
+         datu instancu
+         
+
+U pythonu ne postoje modifieri, nije moguće definisati 
+privatnu metodu npr.
+
+Zbog toga postoji konvencija / standard imenovanja kojim
+se taj nedostatak može nadomestiti
+
+
+Privatni metodi se označavaju tako što na poletu i na njihovom
+kraju postoje 2 znaka "_", a ugrađeni metodi na sličan način
+s time što je se koristi samo 1 takav znak sa obe strane
+
+
+
+help(x) - opis metode / docs
+
+
+
+string.lower(), string.upper()
+
+
+len(niz)
+
+
+Simbol ; deli 2 naredbe koje su napisane u jednoj liniji
+
+
+
+assert logicki_izraz, "Error message"
+
+
+
+Python ne podrzava konkatanaciju stringa sa nekim drugim 
+tipom (npr. intom)
+
+Konverzija nekog tipa u string:
+    str(x)
+    
+    
+    
+Try/catch blok:
+
+try:
+    kod
+expect TypeError as e:
+    handling
+    
+
+    
+    
+print(poruka)
+
+
+
+Kreiranje liste:
+    lista = [ e,l,e,m,e,n,t,i ];
+    
+
+    
+    
+Python podrzava negativno indeksiranje
+
+
+
+lista.append(x) - dodaje x ako el. liste "lista"
+
+
+lista.pop() - izacuje poslednji element iz liste
+
+
+Elementi liste ne moraju biti istog tipa
+
+
+Element liste moze biti lista
+
+
+
+podrzava "slicing", tj. uzimanje jednog dela liste izmedju
+2 elementa
+
+
+lista[1:] - vraca sve el. od el. sa indeksom 1 pa do kraja
+
+
+lista.reverse() - menja redosled elemenata; prvi postaje 
+                  poslednji, poslednji prvi, itd..
+                  
+                  
+sorted(lista) - vraca listu sacinjenu od sortiranih elemenata
+                liste "lista" (koja nije modifikovana f-jom)
+                
+                
+                
+Kreiranje torke:
+    torka = (el1, el2, el3)
+    
+    
+
+Torka dobija vrednosti samo pri inicijalizaciji i nakon toga
+nije moguće promeniti njene vrednosti
+
+
+
+Python sadrži tip "set"
+
+Kod sukova nema ponavljanja elemenata 
+
+
+el in neki_skup # provera da li je "el" sadržan u skupu
+
+
+skup.add(x) - dodavanje elementa u skup
+
+
+Ne postoji redosled u skupu
+
+
+set('string') # pravi skup od date kolekcije, tj.
+              # u slučaju stringa elementi te kolekcije su
+              # karakteri koji ga sačinjavaju
+              
+              
+skup1 & skup2 # presek skupova
+
+
+skup1 - skup2 # razlika
+
+
+skup1 | skup2 # unija
+
+
+
+
+Kreiranje rečnika:
+    recnik = { "kljuc1" : 1, "kljuc2" : 2, "Kljuc3" : 3 }
+    
+
+Pristup:
+    recnik["Kljuc3"]
+    
+    
+del recnik[kljuc1] # brisanje para ključ-vrednost
+
+
+
+Redosled u navođenju ključeva nije bitan
+
+
+
+recnik.items() # vraća listu parova ključ-vrednost koji su
+               # torke
+               
+recnik.keys()  # vraća listu ključeva u rečniku
+
+
+recnik.values() # vraća listu vrednosti u rečniku
+
+
+
+range(from,to,step) - kreiranje liste
+
+
+map( funkcija, lista ) - primenjuje funkciju na svaki el. liste
+
+
+lambda funkcija je funkcija koja se piše u jednoj liniji i anonimna je. Sintaksa lambda x: naredbe
+
+
+Funkcija map ne vraća listu, već neki specifičan objekat za tu
+funkciju. Ukoliko želimo da dobijemo listu od toga koristi se:
+    list(resultat)
+
+
+
+filter( funkcija, lista ) - vraća listu elemenata date liste
+                            koji su filtrirani pomoću 
+                            prosleđene funkcije
+                            
+                            
+
+                            
+                            
+Kreiranje liste (funkcijski pristup):
+    lista = [ x for x in neka_lista ]
+    
+    lista = [ x*x for x in neka_lista if logicki_izraz ]
+
+    
+
+    
+    
+for petlja u pythonu se ne ponaša kao for petlje u drugim 
+jezicima, već kao foreach petlja (iterira po elementima liste)
+
+
+for el in lista:
+    nesto
+
+
+
+for i in range(len):
+    nesto
+    
+
+
+Python podržava korišćenje ključne reči elif umesto if else
+
+
+Ključna reč pass omogućava kreiranje bloka u kome ne postoji
+ni jedna komanda što je posledica kreiranja blokova pomoću
+belina, a ne nekim simbolima kao što su vitičaste zagrade
+
+
+
+
+
+Definisanje funkcije:
+    def funkcija(argument):
+        naredbe_tela
+        
+        
+Svaka funkcija u python-u ima povratnu vrednost
+
+
+
+Python podžava opcione / default-e parametre. Ukoliko se
+opcioni parametar ne navede onda se koristi njegova default-na
+vrednost
+
+
+
+
+Kreiranje klase:
+    class Naziv:
+        kod
+        
+        
+Nasleđivanje:
+    class Dog(Animal):
+        kod
+        
+        
+        
+Dokumentacija se piše u multiline komentaru ispod onoga
+što se želi dokumentovati
+
+
+
+
+Za razliku od drugih objektnih jezika, u Python-u promenljive
+definisane u klasnom scope-u predstavljaju promenljive
+same klase (staticke promenljive), a ne promenljive instance
+
+
+
+Definisanje konstruktora:
+    def __init__( self, parametri.. ):
+        ...
+        
+        
+Primer:
+    def __init__( self, name, money ):
+        self.name = name
+        self.money = money
+        
+
+Ključna reč self predstavlja referencu instance, slično kao
+this u Javi
+
+
+print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2.3)
+
+
+Metode instance moraju da sadrže parametar self u svom potpisu
+
+self se ne prosleđuje kao argument, već se implicitno dodaje
+
+
+
+
+Promenljive instance se deklarišu/definišu tokom dodele.
+Moguće je kreirati promenljivu instance i nakon definisanja
+cele klase:
+    class klasa:
+        def __init__(self):
+            pass
+            
+    k = klasa()
+    k.promenljiva_instance = 5
+    print( k.promenljiva_instance )
+    
+    
+
+Unutar definicije klase, promenljivama instance se pristupa
+preko ključne reči self:
+    def neki_metod(self):
+        self.promenljiva_instance = 10
+
+
+Klasnim/statičkim promenljivama se pristupa tako što se
+navede naziv same klase nakon koga slede tačka i naziv date
+promenljive:
+    klasa.klasna_promenljiva
+    
+    
+    
+    
+Za instanciranje ne postoji ključna reč kao što postoji u nekim
+jezicima (npr. new), već potrebno samo napisati naziv klase i
+zagrade nakon njega:
+    klasa = Klasa()
+    
+    
+
+Pristup nadklasi se vrši pomoću ključne reči super
+
+
+
+U pythonu je moguće metodi proslediti neograničen broj 
+argumenata korišćenjem args i kvargs
+
+kvargs skraćeno od key-value arguments
+
+Definiše se na sledeći način:
+    def metod( *args, **kvargs ):
+        print( kvargs[ args[5] ] )
+        
+Parametar args sadrži listu naziva svih prosleđenih argumenata,
+a kvargs predstavlja uređene parove (torke) koji su u obliku:
+(ključ,vrednost) pa je moguće pristupiti određenoj vrednosti
+na osnovu ključa iz args
+
+
+
+Python podržava prosleđivanje argumenata pomoću imena parametra
+
+
+
+Stringovi mogu da se množe
+
+
+string.split(sep) # deli string po stringu "sep"
+
+
+sep.join(delovi) # kreira string spajanjem delova dodavanjem
+                 # separatora "sep" između njih 
+                 
+                 
+
+                
+Python uvek radi sa referencama, isto kao i Java
+
+
+
+
+Kopiranje elemenata liste:
+    kopija = list(neka_lista)
+    
+    import copy
+    kopija = copy.copy(neka_lista) # kopira samo vrednosti što
+                                   # znači da kopira i 
+                                   # vrednosti referenci na
+                                   # neke objekte, a ne i sam
+                                   # objekat
+                            
+    kopija = copy.deepcopy(neka_lista) # kompletno kopiranje
+    
+    
+
+
+    
+Dve liste mogu sabiranjem da se spoje u jednu veću, kao i 
+korišćenjem metode extend
+
+
+
+Vrednosti za ključeve rečnika moraju biti vrednosti koje su
+hashable (što npr. liste ne mogu da budu jer su promenljive)
+
+
+for key in sorted( recnik.key() ):
+    ...
+    
+ 
+ 
+# ovo omogućava zatvaranje stream-a nakon njegovog korišćenja
+# slično using-u u C#
+# f je wrapper koji omogućava pristup
+with open(naziv_fajla, 'r') as f:
+    for line in f:
+        ...
+        
+        
+f.write("str") # upisuje string u fajl, bez dodavanja \n
+
+
+string.strip() # omogućava brisanje belina na početku i kraju
+               # stringa
+               
+               
+
+
+Virtuelno okruženje omogućava kreiranje istog okruženja na
+različitim računarima. Kreira se spisak paketa i onda se on
+zajedno sa samim programom isporučuje klijentu, nakon čega
+klijent može samo pri kreiranju svog okruženja da iskoristi taj
+fajl (spisak) i tako kreira istovetno okruženje okruženju u 
+kome je programer razvijao i testirao program
+
+Takođe omogućava korišćenje različitih verzija paketa u 
+različitim projektima. Na računaru može da postoji više 
+instaliranih verzija što je dosta fleksibilnija varijanta od
+varijante u kojoj je dostupna samo jedna (npr. najnovija), jer
+postoje različiti zahtevi/potrebe/ograničenja 
+
+
+conda env list
+
+
+Pre instalacije paketa potrebno je aktivirati dato okruženje i
+nakon toga je moguće instalirati u njega data pakete komandom:
+pip install <naziv_paketa>
+
+ili 
+
+pip install -r requirements.txt # ukoliko je dostupna lista
+                                # svih paketa
+
+Kreiranje virtualnog okruženja:
+    # anacoda
+    conda create -n <ime> python=<verzija_pythona>
+    
+    # python
+    python -m venv <putanja>
+
+    
+Aktivacija virtuelnog okruženja:
+    # anacoda
+    conda activate <naziv>
+    
+    # python 
+        # linux
+        source <putanja>/bin/activate
+        
+        # windows
+        .<putanja>\Scripts\activate
+        
+        
+
+Deaktiviranje virtuelnog okruženja u python-u (CLI):
+    deactivate
