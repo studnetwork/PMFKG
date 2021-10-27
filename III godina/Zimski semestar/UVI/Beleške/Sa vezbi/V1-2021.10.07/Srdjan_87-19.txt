@@ -1,5 +1,5 @@
 Datum održavanja: 07.10.2021.
-Predavač: Lazar
+Predavač: Lazar Krstić
 Čas: 1
 =====================================
 
@@ -24,11 +24,11 @@ comment
 """
 
 
-_ izvršava prethodnu komandu
+_    # izvršava prethodnu komandu
 
 
 
-Zarezom se odbajaju elementi torke
+Zarezom se odvajaju elementi torke
 
     1,2,3
     
@@ -38,12 +38,12 @@ Zarezom se odbajaju elementi torke
     
     
     
-type(tip) - vraća tip date promenljie
+type(tip)    # vraća tip date promenljive
 
 
 Python je objektni jezik
 
-Tipovi ne moraju eksplicitno da se navode
+Tipovi promenljivih ne moraju eksplicitno da se navode
 
 
 Logički operatori:
@@ -60,34 +60,35 @@ Logički operatori:
 
 
 
-dir(x) - vraća listu naziva svih metoda koje su vezane za
-         datu instancu
+dir(x)    # vraća listu naziva svih metoda koje su vezane za
+          # datu instancu
          
 
-U pythonu ne postoje modifieri, nije moguće definisati 
-privatnu metodu npr.
+U Python-u ne postoje modifieri, npr. nije moguće definisati 
+privatnu metodu 
 
 Zbog toga postoji konvencija / standard imenovanja kojim
 se taj nedostatak može nadomestiti
 
 
-Privatni metodi se označavaju tako što na poletu i na njihovom
-kraju postoje 2 znaka "_", a ugrađeni metodi na sličan način
-s time što je se koristi samo 1 takav znak sa obe strane
+Privatni metodi se označavaju tako što se na početu i kraju 
+naziva navedu 2 znaka "_", a ugrađeni metodi na sličan način
+s time što je se koristi samo 1 takav znak sa obe strane naziva
 
 
 
-help(x) - opis metode / docs
+help(x)    # opis metode / docs
 
 
 
-string.lower(), string.upper()
+string.lower()
 
+string.upper()
 
 len(niz)
 
 
-Simbol ; deli 2 naredbe koje su napisane u jednoj liniji
+Simbol "s;" deli 2 naredbe koje su napisane u jednoj liniji
 
 
 
@@ -95,7 +96,7 @@ assert logicki_izraz, "Error message"
 
 
 
-Python ne podrzava konkatanaciju stringa sa nekim drugim 
+Python ne podržava konkatanaciju stringa sa nekim drugim 
 tipom (npr. intom)
 
 Konverzija nekog tipa u string:
@@ -104,12 +105,11 @@ Konverzija nekog tipa u string:
     
     
 Try/catch blok:
-
-try:
-    kod
-expect TypeError as e:
-    handling
-    
+    try:
+        kod
+    expect TypeError as e:
+        handling
+        
 
     
     
@@ -118,41 +118,41 @@ print(poruka)
 
 
 Kreiranje liste:
-    lista = [ e,l,e,m,e,n,t,i ];
+    lista = [ e, l, e, m, e, n, t, i ];
     
 
     
     
-Python podrzava negativno indeksiranje
+Python podržava negativno indeksiranje
 
 
 
-lista.append(x) - dodaje x ako el. liste "lista"
+lista.append(x)    # dodaje x ako el. liste "lista"
 
 
-lista.pop() - izacuje poslednji element iz liste
+lista.pop()    # izbacuje poslednji element iz liste
 
 
 Elementi liste ne moraju biti istog tipa
 
 
-Element liste moze biti lista
+Element liste može biti lista
 
 
 
-podrzava "slicing", tj. uzimanje jednog dela liste izmedju
+podržava "slicing", tj. uzimanje jednog dela liste između
 2 elementa
 
 
-lista[1:] - vraca sve el. od el. sa indeksom 1 pa do kraja
+lista[1:]    # vraća sve el. od el. sa indeksom 1 pa do kraja
 
 
-lista.reverse() - menja redosled elemenata; prvi postaje 
-                  poslednji, poslednji prvi, itd..
+lista.reverse()     # menja redosled elemenata; prvi postaje 
+                    # poslednji, poslednji prvi, itd..
                   
                   
-sorted(lista) - vraca listu sacinjenu od sortiranih elemenata
-                liste "lista" (koja nije modifikovana f-jom)
+sorted(lista)    # vraća listu sačinjenu od sortiranih elemenata
+                 # liste "lista" (koja nije modifikovana f-jom)
                 
                 
                 
@@ -168,30 +168,30 @@ nije moguće promeniti njene vrednosti
 
 Python sadrži tip "set"
 
-Kod sukova nema ponavljanja elemenata 
+Kod skupova nema ponavljanja elemenata 
 
 
-el in neki_skup # provera da li je "el" sadržan u skupu
+el in neki_skup    # provera da li je "el" sadržan u skupu
 
 
-skup.add(x) - dodavanje elementa u skup
+skup.add(x)    # dodavanje elementa u skup
 
 
 Ne postoji redosled u skupu
 
 
-set('string') # pravi skup od date kolekcije, tj.
-              # u slučaju stringa elementi te kolekcije su
-              # karakteri koji ga sačinjavaju
+set('string')    # pravi skup od date kolekcije, tj.
+                 # u slučaju stringa elementi te kolekcije su
+                 # karakteri koji ga sačinjavaju
               
               
-skup1 & skup2 # presek skupova
+skup1 & skup2     # presek skupova
 
 
-skup1 - skup2 # razlika
+skup1 - skup2     # razlika
 
 
-skup1 | skup2 # unija
+skup1 | skup2     # unija
 
 
 
@@ -204,7 +204,7 @@ Pristup:
     recnik["Kljuc3"]
     
     
-del recnik[kljuc1] # brisanje para ključ-vrednost
+del recnik[kljuc1]    # brisanje para ključ-vrednost
 
 
 
@@ -212,23 +212,24 @@ Redosled u navođenju ključeva nije bitan
 
 
 
-recnik.items() # vraća listu parova ključ-vrednost koji su
-               # torke
+recnik.items()    # vraća listu parova ključ-vrednost koji su
+                  # torke
                
-recnik.keys()  # vraća listu ključeva u rečniku
+recnik.keys()     # vraća listu ključeva u rečniku
 
 
-recnik.values() # vraća listu vrednosti u rečniku
+recnik.values()    # vraća listu vrednosti u rečniku
 
 
 
-range(from,to,step) - kreiranje liste
+range( from, to, step )    # kreiranje liste
 
 
-map( funkcija, lista ) - primenjuje funkciju na svaki el. liste
+map( funkcija, lista )    # primenjuje funkciju na svaki el. liste
 
 
-lambda funkcija je funkcija koja se piše u jednoj liniji i anonimna je. Sintaksa lambda x: naredbe
+lambda funkcija je funkcija koja se piše u jednoj liniji i 
+anonimna je. Sintaksa lambda x: naredbe;
 
 
 Funkcija map ne vraća listu, već neki specifičan objekat za tu
@@ -237,9 +238,9 @@ funkciju. Ukoliko želimo da dobijemo listu od toga koristi se:
 
 
 
-filter( funkcija, lista ) - vraća listu elemenata date liste
-                            koji su filtrirani pomoću 
-                            prosleđene funkcije
+filter( funkcija, lista )    # vraća listu elemenata date liste
+                             # koji su filtrirani pomoću 
+                             # prosleđene funkcije
                             
                             
 
@@ -254,7 +255,7 @@ Kreiranje liste (funkcijski pristup):
 
     
     
-for petlja u pythonu se ne ponaša kao for petlje u drugim 
+for petlja u Python-u se ne ponaša kao for petlje u drugim 
 jezicima, već kao foreach petlja (iterira po elementima liste)
 
 
@@ -284,7 +285,7 @@ Definisanje funkcije:
         naredbe_tela
         
         
-Svaka funkcija u python-u ima povratnu vrednost
+Svaka funkcija u Python-u ima povratnu vrednost
 
 
 
@@ -333,7 +334,7 @@ Ključna reč self predstavlja referencu instance, slično kao
 this u Javi
 
 
-print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2.3)
+print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2)
 
 
 Metode instance moraju da sadrže parametar self u svom potpisu
@@ -343,9 +344,8 @@ self se ne prosleđuje kao argument, već se implicitno dodaje
 
 
 
-Promenljive instance se deklarišu/definišu tokom dodele.
-Moguće je kreirati promenljivu instance i nakon definisanja
-cele klase:
+Promenljive instance se deklarišu/definišu tokom dodele. Moguće
+je kreirati promenljivu instance i nakon definisanja cele klase:
     class klasa:
         def __init__(self):
             pass
@@ -371,8 +371,8 @@ promenljive:
     
     
 Za instanciranje ne postoji ključna reč kao što postoji u nekim
-jezicima (npr. new), već potrebno samo napisati naziv klase i
-zagrade nakon njega:
+jezicima (npr. ključna reč new), već potrebno samo napisati 
+naziv klase i zagrade nakon njega:
     klasa = Klasa()
     
     
@@ -381,34 +381,33 @@ Pristup nadklasi se vrši pomoću ključne reči super
 
 
 
-U pythonu je moguće metodi proslediti neograničen broj 
-argumenata korišćenjem args i kvargs
+U Python-u je moguće metodi proslediti neograničen broj 
+argumenata korišćenjem args i kwargs
 
-kvargs skraćeno od key-value arguments
+kwargs skraćeno od keyword arguments
 
 Definiše se na sledeći način:
-    def metod( *args, **kvargs ):
-        print( kvargs[ args[5] ] )
+    def metod( *args, **kwargs ):
+        print( kwargs[ args[5] ] )
         
-Parametar args sadrži listu naziva svih prosleđenih argumenata,
-a kvargs predstavlja uređene parove (torke) koji su u obliku:
-(ključ,vrednost) pa je moguće pristupiti određenoj vrednosti
-na osnovu ključa iz args
-
+Parametar args pozicione argumente, dok kwargs sadrži
+imenovane argumente koji su prosleđeni
 
 
 Python podržava prosleđivanje argumenata pomoću imena parametra
 
 
 
-Stringovi mogu da se množe
+Stringovi mogu da se množe i to predstavlja ponavljanje stringa
+dati broj puta
 
 
-string.split(sep) # deli string po stringu "sep"
+string.split(sep)    # deli string po stringu "sep", 
+                     # default sep je space
 
 
-sep.join(delovi) # kreira string spajanjem delova dodavanjem
-                 # separatora "sep" između njih 
+sep.join(delovi)    # kreira string spajanjem delova pomoću 
+                    # separatora sep
                  
                  
 
@@ -443,24 +442,33 @@ Vrednosti za ključeve rečnika moraju biti vrednosti koje su
 hashable (što npr. liste ne mogu da budu jer su promenljive)
 
 
+
+
+
 for key in sorted( recnik.key() ):
     ...
     
+    
+    
  
  
-# ovo omogućava zatvaranje stream-a nakon njegovog korišćenja
+# with omogućava zatvaranje stream-a nakon njegovog korišćenja
 # slično using-u u C#
+#
 # f je wrapper koji omogućava pristup
-with open(naziv_fajla, 'r') as f:
-    for line in f:
-        ...
+
+    with open(naziv_fajla, 'r') as f:
+        for line in f:
+            ...
+            
         
         
-f.write("str") # upisuje string u fajl, bez dodavanja \n
+        
+f.write("str")    # upisuje string u fajl, bez dodavanja \n
 
 
-string.strip() # omogućava brisanje belina na početku i kraju
-               # stringa
+string.strip()    # omogućava brisanje belina na početku i kraju
+                  # stringa
                
                
 
@@ -468,7 +476,7 @@ string.strip() # omogućava brisanje belina na početku i kraju
 Virtuelno okruženje omogućava kreiranje istog okruženja na
 različitim računarima. Kreira se spisak paketa i onda se on
 zajedno sa samim programom isporučuje klijentu, nakon čega
-klijent može samo pri kreiranju svog okruženja da iskoristi taj
+klijent može pri kreiranju svog okruženja da iskoristi taj
 fajl (spisak) i tako kreira istovetno okruženje okruženju u 
 kome je programer razvijao i testirao program
 
@@ -483,32 +491,30 @@ conda env list
 
 
 Pre instalacije paketa potrebno je aktivirati dato okruženje i
-nakon toga je moguće instalirati u njega data pakete komandom:
-pip install <naziv_paketa>
+nakon toga je moguće instalirati u njega date pakete komandom:
+    pip install < naziv_paketa >
 
-ili 
-
-pip install -r requirements.txt # ukoliko je dostupna lista
-                                # svih paketa
+    # ili ovo ukoliko je dostupna list svih paketa
+    pip install -r requirements.txt
 
 Kreiranje virtualnog okruženja:
     # anacoda
-    conda create -n <ime> python=<verzija_pythona>
+    conda create -n < ime > python=< verzija_pythona >
     
     # python
-    python -m venv <putanja>
+    python -m venv < putanja >
 
     
 Aktivacija virtuelnog okruženja:
     # anacoda
-    conda activate <naziv>
+    conda activate < naziv >
     
     # python 
         # linux
-        source <putanja>/bin/activate
+        source < putanja >/bin/activate
         
         # windows
-        .<putanja>\Scripts\activate
+        .< putanja >\Scripts\activate
         
         
 
