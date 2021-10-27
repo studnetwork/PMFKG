@@ -1,0 +1,485 @@
+Datum održavanja: 07.10.2021.
+Predavač: Lazar Krstić
+Čas: 2
+=====================================
+
+
+`Ekspertni sistem je kompjuterski program koji simulira proces
+ljudskog rezonovanja i primenom ekspertskog zanja rešava
+problem`
+
+
+Osnova veštačke inteligencije je bila kreiranje programa koji
+će simulirati rad (rezonovanje) eksperata iz određene oblasti
+
+
+
+`Ekspet je osoba koja poseduje znanje ili veštine koje su 
+većini ljudi nepoznate ili nedostupne`
+
+
+
+S obzirom da je cilj ovih sistema prenošenje znanja eksperata
+na računar, ovi sistemi se zovu još i sistemi bazirani na 
+znanju
+
+
+
+Pre su znanje imali samo ekspertni, ali danas se do tog znanja 
+može doći iz različitih izvora
+
+
+
+
+
+Ekspertnog sistema simulira ljudsko razmišljanje o problemu
+
+
+Bitno je da pored pružanja ekspertize, ES pruži i postupak
+zaključivanja, tj. način na koji se došlo do nje
+
+
+Mana ES je to što ne garantuje uspeh, postoji mogućnost 
+nastanka greške.
+
+
+ES problem rešava korišćenjem heuristika (tj. metodama koje
+vode ka rešenju, ali ne garantuju dolazak do rešenja) ili 
+aproksimacija (koje predstavljaju rešenja koja su blizu onih
+stvarnih, idealnih, rešenja)
+
+
+
+Ekspertni sistem ima 2 celine:
+- bazu znanja
+- mehanizam zaključivanja
+
+
+Baza znanja predstavlja pravila kojima se objašnjava 
+ekspertsko znanje.
+
+
+Ulaz ekspertnog sistema su činjenice, a izlaz ekspertize
+
+
+Ulaz ekspertnog sistema ne mogu biti podaci, jer ukoliko ulaz 
+nisu činjenice već tvrdnje može doći greške jer se na istu
+stvar mogu odnositi suprotne tvrdnje zbog čega nije moguće
+doći do zaključka. 
+
+
+
+
+Osnovni koncepti koje ES treba da ispuni:
+- prikupljanje znanja
+  (mora da postoji kako bi bio upotrebljiv)
+- predstavljanje zanja
+  (izgradnja pravila / baze znanja)
+- zaključivanje
+  (proces u kome se na osnovu datih činjenica donosi neki 
+   zaključak pomoću definisanih pravila u bazi znanja)
+- objašnjavanje
+  (jedna od najvažnijih stvari jer sam zaključak se ne može
+   smatrati pozdanim / validnim rešenjem ukoliko se ne zna
+   zašto je to zaključak i kako se došlo do njega)
+
+
+
+
+Postoje ekspertni sistemi koji mogu da rade ulančavanje 
+unapred i ulančavanje unazad
+
+
+Ulančavanje unapred: 
+    činjenice -> ekspertize
+Ulančavanje unazad: 
+    ekspertize -> činjenice (pronalazak činjenica kojima se
+        došlo do zaključka)
+        
+        
+
+Prikupljanje znanja predstavlja transfer i transformaciju
+ekspretskog znanja, potrebnog za rešavanje nekog problema,
+od izvora znanja do programa
+
+
+
+Taj posao obavlja inženjer znanja (knowledge engineer)
+
+
+
+
+Činjenica je neka relacija
+
+
+Pravila je opis rešavanja problema
+
+
+Primer:
+    FACT(color="red")            # činjenica
+    IF color_is_red THEN stop    # pravilo
+    
+    
+
+Ako se dobro isprogramira program, moguće je program koji
+vrši ulančavanje unapred izmeniti tako da zaključuje unazad
+pa zbog toga kreator nije ograničen takvim programom
+
+
+
+[ bitno
+
+Glavne komponente ekspertskog sistema:
+- korisnički interfejs
+
+  Omogućava:
+  * interakciju sa korisnikom
+  * razvoj i održavanje baze zanja
+  
+  
+- sistem za prikupljanje znanja
+
+  omogućava korisniku da automatski unosi zananje u sistem
+  
+  
+- baza znanja
+
+  sadrži skup kodiranih pravila
+  
+  
+- radna memorija
+
+  sadrži trenutno aktuelne činjenice
+  
+  
+- mehanizam zaključivanja
+
+  vrši zaljučivanje izvršavajući pravilo sa najvišim 
+  prioritetom
+  
+  
+- sistem za objašnjavanje
+
+  sadrži znanje kodirano pravilima
+  ("objašnjenje pravila koja smo iskodirali")
+  
+]
+  
+Igled pravila:
+    IME: IF uslov THEN akcija
+
+    
+uslov se još naziva i antecedent ili leva strana
+
+akcija se još naziva kosekvent, desna strana, posledica
+
+
+Pravila iako podsećaju na if-ove iz nekih programskih jezika,
+za razliku od njih nema else blok
+
+
+
+Ekspertni sistem za razliku od algoritma nema definisan
+redosled izvršavanja.
+
+
+Pravila su međusobno ravnopravna, ali moguće je dodati im
+određene prioritete
+
+
+"Ekspertni sistem nije algoritam"
+
+"Poenta je sve rešiti na levoj strani pravila, ukoliko se
+radi i na desnoj to prelazi u algoritam"
+
+
+
+
+Ciklus zaključivnja
+-------------------
+
+Inference engine pronalazi pravila čiji su uslovi zadovoljeni
+
+Pretražuje bazu znanja i proverava koja pravila imaju 
+zadovoljen uslov. Ona koja imaju zadovoljen uslov se nazivaju
+aktivirana pravila
+
+
+Aktivirana pravila se smeštau na agendu. 
+
+
+Sortiranje pravila na agendi zavisi od određenih prioriteta
+
+
+Podrazumevano sva pravila imaju isti prioritet
+
+
+Ukoliko nije moguće odrediti redosled pravila zato što 
+su istog prioriteta onda se vrši razrešavanje konflikta
+
+
+ 
+Razrešavanje konflikta je korak u kojem se definisani način
+ra razrešavanje datog konflikta nastalog usled pojavljivanja
+više pravila koja imaju isti nivo prioriteta. Predstavlja
+pravilo inference engine-a.
+
+
+Ovo pravilo se uglavlnom relaizuje po principu steka, ono
+pravilo koje je poslednje postavljeno na agendu se izvšava
+se prvo
+
+
+
+Kod mora da pruži isti rezultat nezavisno od pravila za
+rezoluciju konflikta
+
+
+
+
+Kada se završi proces pronalaženja pravila izvršavaju se 
+aktivna pravila koja se nalaze u agendi
+
+
+Izvršavanje pravila se naziva firing
+
+
+Kada se izvrši pokreće se (?) then deo i pravilo se uklanja
+sa agende
+
+
+Kada se ukloni pravilo sa agede ažurira se baza znanja i
+čitav ovaj proces do sada se proverava sve dok agenda ne bude
+prazna ili dok se da eksplicitna komanda za zaustavlanje
+
+
+
+Jedan skup činjenica može neko pravilo zadovoljiti samo jednom
+
+Može se koristiti i više puta, ali ukoliko se radi o nekom
+drugom skupu činjenica
+
+
+
+
+
+
+Experta - biblioteka koja će se koristiti
+
+Inspirisana je programskim jezikom CLIPS
+
+
+CLIPS je standardni jezik za kreiranje ekspertnih sistema
+
+Njegova sintaksa se dosta razlikuje od sintakse C-olikih 
+jezika
+
+Nema neko razvijeno razvojno okruženje
+
+Moguće ga je integrisati u neki drugi jezik, ali teško
+
+
+
+
+
+
+Biblioteka Experta je napisana u Python-u
+
+Pruža sve funkcionalnosti koje pruža CLIPS
+
+Mogućnost integracije je veoma velika jer pisana u Python-u
+pa je lako moguće izvršiti integraciju
+
+
+Može se koristiti u bilo kom Python okruženju
+
+
+
+
+Znanje rada u CLIPS-u je primenljivo je u Experti i obrnuto
+
+
+
+
+Instalacija eksperte (CLI):
+    pip install experta
+    
+    
+    
+Uključivanje u projekat:
+    from experta import *
+
+
+
+    
+    
+"KnowledgeEngine je interface knowledge koji će vršiti 
+odlučivanje za nas"
+
+
+KnowledgeEngine()
+
+knowledgeEngineInstance.reset()
+
+
+knowledgeEngineInstance.facts
+
+knowledgeEngineInstance.agenda
+
+
+
+Rezultat metode reset je resetovanje i dodavanje činjenice
+InitailFact u praznu bazu znanja
+
+
+
+InitalFact je činjenica koja omogućava izvršavanje pravila
+koja ne zahtevaju uslov da bi bila zadovoljena. Pravilo je
+definisano tako da mora da ima činjenicu (uslov) koja može da
+ga zadovolji pa zbog toga postoji InitialFact, kako bi se
+ispunio taj zahtev i kod pravila koja nemaju potrebu za 
+postojanjem neke činjenice
+
+
+Primer takog pravila:
+    IF InitialFact THEN neka_akcija
+    
+    IF THEN neka_akcija # nije validno jer nema činjenice
+    
+    
+    
+
+Činjenica može da se kreira na 2 načina:
+- instaciranjem klase Fact
+- instanciranjem klase koja nasleđuje klasu Fact
+
+
+
+deftemplate
+
+
+Polja u klasi su slotovi kod CLIPS-a
+
+
+U CIPLS-u postoji i multislot.
+
+Multislot predstavlja vrstu slota koji može primiti više
+vrednosti
+
+
+U Experta-i ne postoji multislot, ali to je moguće 
+implementirati korišćenjem liste
+
+
+
+Činjenice kod kojih se polja klase ne prosleđuju preko
+preko imenovanih parametara se nazivaju ordered činjenicama,
+dok se činjenice koje koriste imenovane parametre nazivaju
+non-ordered činjenicama
+
+
+Treba izbegavati ordered činjenice jer se teže koriste i
+teže je selektovati vrednosti u njima
+
+
+Ordered činjenice se koriste samo kao neki flag
+
+Primer:
+    stanje = Fact('zaustavljeno')
+    
+    
+    
+Poželjno je da se posebni tipovi činjenica kreiranju
+kao objekti klase koja nasleđuje klasu Fact zato što
+je posle lakše razlikovati i pretraživati ih
+
+
+
+
+Dodavanje činenice:
+    engine.declare(cinjenica)
+    
+    
+
+Činjenice imaju svoju adresu. To se može posmatrati
+kao referenca na nju i koristi se kada želimo da
+obrišemo ili izmenimo činjenicu
+
+
+
+Metoda retract uklanja činjenicu iz liste činjenica:
+    engine.retract(1) # 1 je adresa neke činjenice
+    
+    
+
+Činjenice u engine-u ne mogu da se promene, ali promena
+se može postići tako što se obriše data činjenica, 
+potom doda nova koja predstavlja obrisanu činjenicu sa
+primenjenim izmenama.
+
+
+Kada se uradi ova "izmena" činjenica neće više imati
+staru adresu, već neku novu
+
+
+
+Izmena činjenice:
+    engine.modify( cinjenica, polje = <vrednost> )
+    
+    
+    # ovo nije preporučljivo
+    engine.modify( cinjenica, _0 = <vrednost1>,
+                              _1 = <vrednost2> )
+    
+
+    
+    
+    
+Razlika između metoda modify i duplicate je to što
+modify briše originalnu činjenicu, a duplicate ne
+
+Dupliranje činjenice:
+    engine.duplicate( cinjenica, polje = <vrednost> )
+
+
+
+
+    
+    
+Klasu KnowledgeEngine je moguće naslediti
+
+Nju je moguće proširiti dekoraterom @DefFacts
+
+
+@DefFacts omogućava unost liste činjenica odjednom
+
+
+Pri resetovanju liste činjenica, činjenice koje su 
+definisane u @DefFacts ubačene u listu činjenica
+
+
+Koristi se takođe kada se učitavaju činjenice iz fajla
+
+
+
+Ključna reč yield omogućava vraćanje više vrednosti 
+uz uštetu memorije i vremena jer se iz funckije vraća
+samo referenca na generatorski objekat koji generiše
+date vrednosti i to radi samo pri iteraciji
+
+
+
+Korišćenje dekoratora:
+    @DefFacts()
+    def funkcija(...):
+        ....
+        
+        
+
+        
+Metoda reset briše sve činjenice iz liste činjenica i
+nakon toga dodaje činjenice koje su definisane u 
+@DefFacts
+
+
+Na adresi 0 se uvek nalazi InitialFact
