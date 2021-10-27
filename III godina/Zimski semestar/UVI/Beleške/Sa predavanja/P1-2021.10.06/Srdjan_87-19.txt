@@ -393,7 +393,7 @@ Kontroler u rafineriji nafte
     
     
     
-Interaktivnik tutor engleskom
+Interaktivni tutor engleskog jezika
 
     Mere performanse: rezultat učenika na testu
     Okruženje: učenici, agencija za testiranje
@@ -493,7 +493,7 @@ Osobine okruženja zadatka:
   
   Ako se posmatraju koraci kod igranje šaha onda se može reći
   da je tu okruženje diskretno jer se događaji vrše potez za
-  potezom. Part-picking robot je drugi primer jer on kasifikuje
+  potezom. Part-picking robot je drugi primer jer on klasifikuje
   deo po deo.
   
   Primer kontinualnog okruženja je autonomno vozilo kod koga su

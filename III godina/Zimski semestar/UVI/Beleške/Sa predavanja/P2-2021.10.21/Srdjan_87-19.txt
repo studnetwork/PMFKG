@@ -64,7 +64,7 @@ jedna mora da se izvrši (OR)
 
 Agent dok rešava problem premeštanja kreće od osnovnog 
 (kranjeg cilja), tj. Hard problem, i razlaže ga na podciljeve
-(Sipmler problem)
+(Simpler problem)
 
 
 Ovakvim procesom, gde svaki problem razlaže na neki manji i 
@@ -110,23 +110,22 @@ Ekspertni sistemi
 
 
 Koncentrisanje na određeno domensko znanje slično kao što i
-eksperti deluju u svojim oblatima i u njima ostvaruju velike
+eksperti deluju u svojim oblastima i u njima ostvaruju velike
 uspehe
 
 
 Ideja je bila napraviti računarski program koji poseduje 
 znanje iz nekog uskog domena i na osnovu tog znanja vrši
-zaključivanje, a kao posledica nastaje pomoć koja je pomoć
-koja je potrebna ljudima
+zaključivanje kojim pruža pomoć koja je potrebna ljudima
 
 
 Cilj je bio smanjiti troškove firmi koje su zahtevale
 angažovanje ljudskih eksperata. Umesto da u svakom momentu
-kada im je bio potreban savet eksperta oni firma njega
-angažuje, ona bi ga angažovala samo jednom kako bi se
-"ekstrakovala" njegovo znanje i zapisala u obliku koji je
-pogodan za računar nakon čega bi računar mogao da rezonuje
-na osnovu datih znanja
+firma angažuje eksperta kada joj je potreban savet od njega, 
+ona bi ga angažovala samo jednom kako bi se "ekstrakovala" 
+njegovo znanje i zapisala u obliku koji je pogodan za računar
+nakon čega bi računar mogao da rezonuje na osnovu datih znanja
+
 
 
 Def
@@ -176,7 +175,7 @@ znanje + zaključivanje = ekspertni sistem
 
 
 Postupak identifikacije životinje na osnovu tvrdnji o njenim
-osobinama dovodi to kreiranje AND-OR stabla. 
+osobinama dovodi do kreiranja AND-OR stabla. 
 
 Za razliku od sveta blokova, u ovom primeru se simulira
 inteligentno ponašanje kroz proces zaključivanja
@@ -341,7 +340,7 @@ Glavne komponente ekspertnog sistema:
 2. sistem za prikupljanje znanja
 3. baza znanja
 4. radna memorija
-5. Mehanizam zaključivanja
+5. mehanizam zaključivanja
 6. sistem za objašnjavanje
               
               
@@ -370,7 +369,7 @@ radne memorije i sva ta pravila se smeštaju na agentu.
 
 Ta pravila se nazivaju aktivirana pravila
 
-Pravila su u agenti poređana po prioritetu
+Pravila su u agendi poređana po prioritetu
 
 Bira se pravilo najvećeg prioriteta među aktiviranim
 pravilima i ono se izvršava, tj. okida ( en. fire )
@@ -381,11 +380,11 @@ se dodaje u listu tvrdnji ili uklanjanje nekih
 postojećih tvrdnji.
 
 
-Nakon izvršavanja jednog pravila, agenda se lista
+Nakon izvršavanja jednog pravila, ažurira se lista
 tvrdnji (dodaju se nove ili se ukanjaju neke postojeće)
 
 
-To zahteva i ažuriranje agente. Ovaj čitav proces se
+To zahteva i ažuriranje agende. Ovaj čitav proces se
 odvija sve dok ima pravila za izvršenje, tj. dok 
 postoje pravila pravila u agendi za izvršenje
 
