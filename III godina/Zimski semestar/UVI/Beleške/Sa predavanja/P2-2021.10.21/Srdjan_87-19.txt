@@ -251,8 +251,8 @@ Ovaj način zaključivanja se naziva zaključivanje unapred
 
 Ako je staza klizava onda možemo da pretpostavimo da je
 mokra, a odatle da je ili padala kiša ili da je prskalica
-uključena. To se naziva zaključivanje unazad (
-fackward chaining). Traže se dokazi za hipoteze
+uključena. To se naziva zaključivanje unazad (backward chaining).
+Traže se dokazi za hipoteze
 
 
 Ovaj sistem ide redom kroz listu tvrdnji i vrši njihovo
@@ -351,8 +351,8 @@ ono što je jedino bitno, već i način na koji se došlo do njega
 Radna memorija sadrži tvrdnje
 
 
-Agenda je lista svih pravila koja su zadovoljena tvrdnjama koje su
-u radnoj memoriji. 
+Agenda je lista svih pravila koja su zadovoljena tvrdnjama iz radne 
+memorije. 
 
 Redosled izvršenja tih pravila zavisi od odabranog načina razrešavanja 
 konflikta
