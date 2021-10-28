@@ -1,0 +1,202 @@
+Datum održavanja: 21.10.2021.
+Predavač: Lazar Krstić
+Čas: 3
+=====================================
+
+
+Kreiranje pravila:
+    class ExampleEngine(KnowledgeEngine):
+    
+        @Rule(
+            # leva strana pravila
+        )
+        def prazno_pravilo(self):
+            # desna strana pravila
+            print("prazno pravilo")
+            
+
+    
+Sadržaj agende prethodnog primera:
+    0: prazno_pravilo {InitalFact()}
+    
+    
+
+    
+Metodom run se izvršavaju pravila sa agente
+
+Ovaj metod ima i dodatni argument kojim se može
+preslediti broj komandi koje želimo da izvršimo
+
+Podrazumevana vrednost je "inf", što bi značilo
+da će se vršiti izvršavanje sve dok postoje
+pravila u agendi
+
+
+
+U DefFacts treba dodavati činjenice sa yield, a ne sa declare
+metodom
+
+Vraćaju se činjenice ili nešto što nasleđuje klasu Fact
+
+
+
+
+
+Primer definisanja pravila:
+    @Rule( 
+        Fact('crveno-svetlo')
+    )
+    def pronadji_crveno_svetlo(self):
+        print("pronadjeno je crveno svetlo")
+        
+    
+    
+    
+    
+    
+
+Funkcija watch iz biblioteke experta definiše nivo logovanja
+događaja. Ne utiče ni na rad ni na rezultat programa
+
+Omogućava praćenje događaja o promeni pravila, činjenica,
+aktivacija
+
+
+
+Kod:
+    from experta import watch
+    
+    watch('RULES', 'FACTS', ACTIVATIONS')
+    ...
+    
+
+
+Otpraćivanje događaja koji se prate:
+    watch(level=0)
+
+    
+    
+MATCH omogućava čuvanje vrednosti iz neke činjenice    
+
+
+
+Formatiranje stringa:
+    "{0} neki {1} string {3}".format(4,5,6)
+    
+
+
+    
+Ne treba pozivati iz jednog pravila drugo pravilo. Ukoliko
+je tako nešto potrebno onda je moguće jednim pravilom dodati
+činjenice koje će aktivirati drugo pravilo (tako što će
+te činjenice zadovoljiti njegov uslov)
+
+
+
+
+Primer dodavanja činjenice unutar nekog pravila:
+    ...
+    @Rule(
+        Semafor(svetlo='zeleno')
+    )
+    def kreni(self):
+        self.declare(Akcija('Kreni'))
+        
+    ...
+
+
+    
+    
+Primer:
+    class ExampleEngine(KnowledgeEngine):
+        
+        @DefFacts()
+        def ucitaj_cinjenice(self):
+            yield Semafor(svetlo = 'Crveno')
+            
+        @Rule(Semafor(svetlo = MATCH.svetlo))
+        def odredi_akciju(self,svetlo):
+            if svetlo == 'Zeleno':
+                self.declare(Akcija('Start'))
+            else:
+                self.declare(Akcija('Stop'))
+                
+                
+Ovaj primer nije dobar jer dati kod, tj. pravilo 
+"odredi_akciju", predstavlja algoritam.
+
+ES ne rade sa algoritmima jer skup pravila bliži
+ljudskom načinu razmišljanja od algoritamskog. 
+Ne postoji neki redosled kojim bi pravila
+trebala da se izvrše, tj. nije bitan jer se ne
+zna kada će se šta dogoditi
+
+
+if-else u kosekventu ukazuje na grešku u pisanju
+datog pravila
+
+
+Pristupa sa skupom pravila rešavanju je mnogo 
+efikasaniji / brži od algoritamskog pristupa
+
+
+
+
+
+Kada se promenljiva prvi put primeni na levoj strani 
+pravila dodeljuje joj se vrednost i tu vrednost će
+zadržati tokom čitavog pravila. Ostala pojavljivanja
+promenljive će takođe imati tu vredost.
+
+
+
+
+Primer:
+    @Rule(
+        BojaOciju(MATCH.boja_ociju),
+        Osoba(ime_osobe = MATCH.ime,
+            godine = MATCH.godine,
+            boja_ociju = MATCH.boja_ociju 
+        )
+    )
+    def pronadji_osobu(self, ime, godine, boja_ociju):
+        print('Osoba {} ima {} godina i boju ociju {}'
+            .format( ime, godine, boja_ociju )
+        )
+        
+        
+
+        
+Redosled navođenja činjenica u uslovu je jako bitan jer
+on njega zavisi način na koji će baza znanja biti pretražena
+
+Ukoliko se ne navede pravi redosled izvršiće se mnogo više
+operacija nego što je potrebno
+
+
+
+
+
+
+
+MATCH se ponaša kao instanca čija su polja definisana kao
+konstante, kada se jednom inicijalizuju kasnije ne mogu da
+se promene (tokom prolaza kroz pravilo)
+
+
+Pretraga se vrši od poslednjeg dela uslova na početnom, tj.
+početni se prvo fiksiraju pa se traže činjenice koje zadovoljavaju
+kranji deo uslova, a onda kada se sve prođe prelazi se na sledeću
+vrednost tog prednjeg dela pa se ona fiksira i tako iznova sve dok
+se ne prođe kroz sve vrednosti
+
+
+
+
+
+Kada je potrebno obrisati ili "izmeniti" činjenicu neophodno
+je znati njenu adresu. Da bi se dobila adresa činjenice
+koja se aktivira koristi se sledeće:
+    @Rule(
+        AS.ime_var_za_adresu << FACT (...)
+    )
