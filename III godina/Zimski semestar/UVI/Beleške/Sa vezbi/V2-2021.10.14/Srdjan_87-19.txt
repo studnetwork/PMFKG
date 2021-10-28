@@ -5,16 +5,17 @@ Predavač: Lazar Krstić
 
 
 `Ekspertni sistem je kompjuterski program koji simulira proces
-ljudskog rezonovanja i primenom ekspertskog zanja rešava
+ljudskog rezonovanja i primenom ekspertskog znanja rešava
 problem`
 
 
-Osnova veštačke inteligencije je bila kreiranje programa koji
-će simulirati rad (rezonovanje) eksperata iz određene oblasti
+Osnovna ideja veštačke inteligencije je bila kreiranje programa
+koji će simulirati rad (rezonovanje) eksperata iz određene
+oblasti
 
 
 
-`Ekspet je osoba koja poseduje znanje ili veštine koje su 
+`Ekspert je osoba koja poseduje znanje ili veštine koje su 
 većini ljudi nepoznate ili nedostupne`
 
 
@@ -32,7 +33,7 @@ može doći iz različitih izvora
 
 
 
-Ekspertnog sistema simulira ljudsko razmišljanje o problemu
+Ekspertski sistem simulira ljudsko razmišljanje o problemu
 
 
 Bitno je da pored pružanja ekspertize, ES pruži i postupak
@@ -44,7 +45,7 @@ nastanka greške.
 
 
 ES problem rešava korišćenjem heuristika (tj. metodama koje
-vode ka rešenju, ali ne garantuju dolazak do rešenja) ili 
+vode ka rešenju, ali ne garantuju dolazak do njega) ili 
 aproksimacija (koje predstavljaju rešenja koja su blizu onih
 stvarnih, idealnih, rešenja)
 
@@ -62,18 +63,11 @@ ekspertsko znanje.
 Ulaz ekspertnog sistema su činjenice, a izlaz ekspertize
 
 
-Ulaz ekspertnog sistema ne mogu biti podaci, jer ukoliko ulaz 
-nisu činjenice već tvrdnje može doći greške jer se na istu
-stvar mogu odnositi suprotne tvrdnje zbog čega nije moguće
-doći do zaključka. 
-
-
-
 
 Osnovni koncepti koje ES treba da ispuni:
 - prikupljanje znanja
-  (mora da postoji kako bi bio upotrebljiv)
-- predstavljanje zanja
+  (mora da postoji kako bi ES bio upotrebljiv)
+- predstavljanje znanja
   (izgradnja pravila / baze znanja)
 - zaključivanje
   (proces u kome se na osnovu datih činjenica donosi neki 
@@ -81,7 +75,7 @@ Osnovni koncepti koje ES treba da ispuni:
 - objašnjavanje
   (jedna od najvažnijih stvari jer sam zaključak se ne može
    smatrati pozdanim / validnim rešenjem ukoliko se ne zna
-   zašto je to zaključak i kako se došlo do njega)
+   zašto je to zaključak, tj. kako se došlo do njega)
 
 
 
@@ -112,7 +106,7 @@ Taj posao obavlja inženjer znanja (knowledge engineer)
 Činjenica je neka relacija
 
 
-Pravila je opis rešavanja problema
+Pravilo je opis rešavanja problema
 
 
 Primer:
@@ -205,7 +199,7 @@ zadovoljen uslov. Ona koja imaju zadovoljen uslov se nazivaju
 aktivirana pravila
 
 
-Aktivirana pravila se smeštau na agendu. 
+Aktivirana pravila se smeštaju na agendu. 
 
 
 Sortiranje pravila na agendi zavisi od određenih prioriteta
@@ -220,19 +214,20 @@ su istog prioriteta onda se vrši razrešavanje konflikta
 
  
 Razrešavanje konflikta je korak u kojem se definisani način
-ra razrešavanje datog konflikta nastalog usled pojavljivanja
+razrešavanje datog konflikta nastalog usled pojavljivanja
 više pravila koja imaju isti nivo prioriteta. Predstavlja
 pravilo inference engine-a.
 
 
-Ovo pravilo se uglavlnom relaizuje po principu steka, ono
-pravilo koje je poslednje postavljeno na agendu se izvšava
-se prvo
+Ovo pravilo se uglavnom realizuje po principu steka, tj.
+pravilo koje je poslednje postavljeno na agendu se prvo
+izvršava
+
 
 
 
 Kod mora da pruži isti rezultat nezavisno od pravila za
-rezoluciju konflikta
+rešavanje konflikta
 
 
 
@@ -249,8 +244,8 @@ sa agende
 
 
 Kada se ukloni pravilo sa agede ažurira se baza znanja i
-čitav ovaj proces do sada se proverava sve dok agenda ne bude
-prazna ili dok se da eksplicitna komanda za zaustavlanje
+čitav ovaj proces do sada se ponavlja sve dok agenda ne bude
+prazna ili dok se ne da eksplicitna komanda za zaustavlanje
 
 
 
@@ -287,8 +282,8 @@ Biblioteka Experta je napisana u Python-u
 
 Pruža sve funkcionalnosti koje pruža CLIPS
 
-Mogućnost integracije je veoma velika jer pisana u Python-u
-pa je lako moguće izvršiti integraciju
+Mogućnost integracije je veoma velika jer je biblioteka 
+pisana u Python-u pa je lako moguće izvršiti integraciju
 
 
 Može se koristiti u bilo kom Python okruženju
@@ -330,21 +325,22 @@ knowledgeEngineInstance.agenda
 
 Rezultat metode reset je resetovanje i dodavanje činjenice
 InitailFact u praznu bazu znanja
-
+(to nije sve što radi kasnije će biti spomenute i ostale 
+ osobine)
 
 
 InitalFact je činjenica koja omogućava izvršavanje pravila
 koja ne zahtevaju uslov da bi bila zadovoljena. Pravilo je
 definisano tako da mora da ima činjenicu (uslov) koja može da
 ga zadovolji pa zbog toga postoji InitialFact, kako bi se
-ispunio taj zahtev i kod pravila koja nemaju potrebu za 
+ispunio taj zahtev i za pravila koja nemaju potrebu za 
 postojanjem neke činjenice
 
 
 Primer takog pravila:
     IF InitialFact THEN neka_akcija
     
-    IF THEN neka_akcija # nije validno jer nema činjenice
+    IF THEN neka_akcija    # nije validno jer nema činjenice
     
     
     
@@ -355,7 +351,7 @@ Primer takog pravila:
 
 
 
-deftemplate
+deftemplate    # CLIPS
 
 
 Polja u klasi su slotovi kod CLIPS-a
@@ -412,9 +408,9 @@ Metoda retract uklanja činjenicu iz liste činjenica:
     
     
 
-Činjenice u engine-u ne mogu da se promene, ali promena
-se može postići tako što se obriše data činjenica, 
-potom doda nova koja predstavlja obrisanu činjenicu sa
+Činjenice u engine-u ne mogu da se promene, ali nešto
+slično se može postići tako što se obriše data činjenica, 
+a potom doda nova koja predstavlja obrisanu činjenicu sa
 primenjenim izmenama.
 
 
@@ -451,11 +447,11 @@ Klasu KnowledgeEngine je moguće naslediti
 Nju je moguće proširiti dekoraterom @DefFacts
 
 
-@DefFacts omogućava unost liste činjenica odjednom
+@DefFacts omogućava unos liste činjenica odjednom
 
 
 Pri resetovanju liste činjenica, činjenice koje su 
-definisane u @DefFacts ubačene u listu činjenica
+definisane u @DefFacts biće ubačene u listu činjenica
 
 
 Koristi se takođe kada se učitavaju činjenice iz fajla
