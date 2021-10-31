@@ -6,7 +6,18 @@
 <a href="https://github.com/Produktivna-grupa/PMFKG/issues?q=is%3Aopen" alt="Open issues"><img src="https://img.shields.io/github/issues-raw/Produktivna-grupa/PMFKG.svg?color=green"></a>
 <a href="https://github.com/Produktivna-grupa/PMFKG/" alt="Contributors"><img src="https://img.shields.io/github/contributors/Produktivna-grupa/PMFKG?color=green"></a>
 <a href="https://opensource.org/licenses/MIT" alt="License: MIT"><img src="https://img.shields.io/github/license/Produktivna-grupa/PMFKG"></a>
+</p>
 
+<p align="center">
+<span style="font-size: 25px">Prečice</span></br>
+<a href="#o-projektu" alt="O projektu">O projektu</a>&nbsp;&nbsp;
+<a href="#linkovi-ka-materijalu" alt="Linkovi ka materijalu">Linkovi ka materijalu</a>&nbsp;&nbsp;
+<a href="#korisni-linkovi" alt="Korisni linkovi">Korisni linkovi</a>&nbsp;&nbsp;
+<a href="#kontakt" alt="Kontakt">Kontakt</a>&nbsp;&nbsp;
+<a href="#saradnja" alt="Saradnja">Saradnja</a>&nbsp;&nbsp;
+<a href="#licenca" alt="Licenca">Licenca</a>
+</p>
+</br>
 
 # O projektu
 Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
@@ -23,6 +34,10 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 # Korisni linkovi
 [Stranica fakulteta][stranica fakulteta]  
 [Stranica instituta za matematiku i informatiku][imi stranica]  
+
+[GitHub Client - Windows ili macOS][gh client official]  
+[GitHub Client - Linux][gh client linux]  
+
 [Mastering Markdown][mastering markdown]  
 [Markdown Cheatsheet][markdown cheatsheet]  
 [Markdown Editor][markdown editor]
@@ -43,7 +58,7 @@ Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju poseti
 
 Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
 
-[//]: # ( relativna adresa je koriscena za sliku )
+
 Neke od kategorija:  
 ![Kategorije diskusija][categories]
 
@@ -53,8 +68,6 @@ Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i 
 Licencom je obuhvaćen jedino materijal kreiran od strane studenata kao što su rešenja zadataka i beleške.
 
 Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca].
-
-[//]: # (Trenutno, zbog nedovoljne informisanosti, u podeli "Licenca" biće navedeni tekst dok se ne konsultuje neko sa fakulteta; potrebno je informisati se da li je moguće ukloniti licencu i odlučiti da li sačuvati licencu i koja bi bila najprikladnija za projekat ukoliko se odluči njeno zadržavanje)
 
 
 
@@ -83,6 +96,8 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [imi stranica]: https://imi.pmf.kg.ac.rs/
 [stranica fakulteta]: https://www.pmf.kg.ac.rs/
+[gh client official]: https://desktop.github.com/ 
+[gh client linux]: https://github.com/shiftkey/desktop
 [mastering markdown]: https://guides.github.com/features/mastering-markdown/
 [markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [markdown editor]: https://github.com/retext-project/retext
