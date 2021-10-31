@@ -85,7 +85,7 @@ Projektni uzorci su uzorci koji su nezavisni od konkretne
 implementacione tehnologije. 
 
 "Rešenja koja su se dokazala kao dobra u praksi. Pokazalo se da
-nisi svi problemi u potpunosti različiti i da postoje sličnosti 
+nisu svi problemi u potpunosti različiti i da postoje sličnosti 
 i u ulogama klasa. Takva rešenja koja se mogu uočiti u praksi i 
 koja se ponavljaju nazivaju se projektni uzorci"
 
@@ -203,7 +203,7 @@ Dostupan i na Linux sistemima
 
 
 DotGNU Portable.NET je implementacija Microsoft .NET razvojnog okvira
-koja predstavlja zamenu zvaničnog razvojnog okvira u obliku slobondog
+koja predstavlja zamenu (zvaničnog razvojnog okvira) u obliku slobondog
 softvera
 
 
@@ -436,7 +436,7 @@ Struktura PE-a:
 
 
 Svaki Assembly ima manifest. U manifestu se nalaze informacije o tipovima, 
-informacije o zavisnostima datom assembly-a i informacije o verziji ili autoru
+informacije o zavisnostima datog assembly-a i informacije o verziji ili autoru
 
 Takođe, svaki Assembly poseduje i Intermediate Language kod
 
@@ -469,12 +469,14 @@ Rezultat:
     
 D i X specificiraju format
 
-8 kaze kolika je duzina. Pošto heksadekadna reprezentacija broja 546 ima
+8 kaže kolika je dužina. Pošto heksadekadna reprezentacija broja 546 ima
 samo 3 karaktera, ostatak se popunjava belinama (pad-uje)
 
 
 
-Niz je objekat, ne samo niz vrednosti određenog tipa (kao što je npr. u C-u)
+Niz je objekat, a ne samo niz vrednosti određenog tipa (kao što je npr.
+u C-u)
+
 
 System.Array
 
@@ -504,6 +506,7 @@ Fortran je primer jezika koji pamti po kolonama
 
 
 
+
 Ima i višedimenzione nizove koje se pamte sekvencijalno
 
 JIT prevodilac izračunava offset radi pristupa
@@ -527,7 +530,7 @@ slično kao i kod C++
     
     
 
-Propertiji get i set:
+Metodi propertija (accessors) get i set:
 
     get { return x };
     set { this.x = x };
@@ -572,7 +575,7 @@ Tipovi podataka se uvoze upotrebom asembija (dll-a)
 Refleksija ( Type Reflection ) - "isto kao i kod Jave, moguće je učitati tip
 podatka"
 Pruža metoda za pristup metapodacima klase u toku izvršenja kao i metode za
-ispitivanje i promenu načina ponašanja klase u toku izvršavanja
+ispitivanje i promenu načina ponašanja klase u toku izvršavanja (?)
 
 
 
@@ -584,10 +587,10 @@ Nema pointere kao C++
 Dodate su i konstrukcije jezika pomoću kojih se implementiraju poznati koncepti:
 - iteratori: foreach i yield
 - enkapsulacija i pristup: property
-- funcijski pokazivači / funktori: delegati
+- funkcijski pokazivači / funktori: delegati
 - posmatrač uzorka dizajna (observer desing pattern): event-i
-- Aspekt-oriented programming - atributi
-- elementi funkcijskog programiranja - LINQ i anonimni metodi
+- aspekt-oriented programming: atributi
+- elementi funkcijskog programiranja: LINQ i anonimni metodi
 
 
 
@@ -595,7 +598,7 @@ Uslovni iskazi se moraju evaluirati na bool vrednosti
 
 
 
-Nema pointera, koristi se operator "." za pristup namespace-u, polju ili metodi
+Nema pointera(?), koristi se operator "." za pristup namespace-u, polju ili metodi
 
 
 Sva polja su inicijalizovana od strane CLR, na nulu za vrednosne i na null
@@ -707,6 +710,12 @@ Ključne reči ref i out prosleđuju varijablu kao referencu.
 
 Kod prosleđivanja uz navođenja ključne reči ref mora da postoji validna
 instanca (null je validna vrednost) ili vrednostni tip.
+
+Takođe, data promenljiva mora biti inicijalizovana pre prosleđivanja
+njene reference metodi
+
+
+
 
 
 out parametar:
