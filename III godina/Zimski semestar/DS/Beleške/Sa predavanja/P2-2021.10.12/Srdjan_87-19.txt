@@ -25,7 +25,7 @@ implementacija i, za njega, nepotrebni detalji
 
 Interfejs - dobro definisan ugovor o saradnji
 
-Interfejs je sačinjen od skupa funcijskih članova
+Interfejs je sačinjen od skupa funkcijskih članova
 (akcije koje su sastavni deo tog ugovora)
 
 
@@ -62,8 +62,8 @@ Interfejs je takođe tip.
 Njegove članice mogu biti:
 - metodi
 - propertiji
-- indeksere
-- događaje
+- indekseri
+- događaji
 
 
 Klasa koja implementira interfejs mora da podrži sve delove
@@ -115,16 +115,16 @@ nemaju
 [ dodato            
             
 Eksplicitno implementiranje interfejsa omogućava skrivanje
-metoda iz interfejsa od korisnika koji pristupa koristi
-ne koristi referencnu varijablu koja je tipa tog interfejsa.
+metoda iz interfejsa od korisnika koji joj pristupa preko
+referencne varijable koja nije je tipa tog interfejsa.
 U suštini, metodama koje su definisane u interfejsu je moguće
 pristupiti samo preko varijable koja je tipa tog interfejsa.
 Varijable date klase neće moći da vidi te metode koji su
-u klasi eksplicitno implementirani
+u njoj eksplicitno implementirani
 
 Ne preporučuje se korišćenje ovakvih implementacija ukoliko
 postoji potreba za više apstrakcija. Umesto toga se 
-preporučuje korišćenje ISP-a (Interface segregation principle),
+preporučuje korišćenje ISP-a (Interface Segregation Principle),
 tačnije, kreiranje novog interfejsa za svaku apstrakciju
 (apstrakcija se može smatrati skupom svih elemenata koji su
 dostupni korisniku)
@@ -187,8 +187,8 @@ su onog tipa kojeg je i članica za koju se taj properti definiše
 
 
 Konvencija je da se nazivi polja pišu malim slovom, a njihovi 
-propertiji isto, sa velikim slovom ili isto kao i samo polje uz
-dodata karaktera "_" ispred toga naziva
+propertiji isto, sa velikim slovom ili se ispred naziva polja doda i "_"
+dok se njegov properti piše bez tog znaka
 
 
 
@@ -204,23 +204,23 @@ Singleton (jedinka) - dizan šablon, predstavlja jedinstven objekat
                       
                       
 Primer implementacije:
-
-public class SoundManager {
-    private static SoundManager instance;
-    
-    public static SoundManager Instance { // staticki properti
-        get { return instance; }
+    public class SoundManager {
+        private static SoundManager instance;
+        
+        // statički properti
+        public static SoundManager Instance { 
+            get { return instance; }
+        }
+        
+        // staticki konstruktor koji se samo jednom poziva, 
+        // pri učitavanju klase
+        static SoundManager() {           
+            instance = new SoundManager();
+        }
+        
+        // konstruktor instance kojeg poziva statički konstruktor
+        private SoundManager() {...} 
     }
-    
-    private static SoundManager() { // privatni staticki konstruktor 
-                                    // koji se samo jednom poziva, 
-                                    // pri ucitavanju klase
-        instance = new SoundManager();
-    }
-    
-    private SoundManager() {...}  // konstruktor koji poziva staticki
-                                  // konstruktor
-}
 
 
 
@@ -246,7 +246,7 @@ Modifikatori pristupa:
      
 Polja, metodi i događaji klasa su podrazumevano private
 
-Podrazumevana vrednost modifier-a je internal
+Podrazumevana modifier klase je internal
 
 Metodi i događaji interfejsa su podrazumevano (implicitno) javni
 
@@ -257,19 +257,25 @@ Iako nije potrebno navoditi modifikatore to se ipak preporučuje
 
 Apstraktne klase se ne mogu instancirati
 
-Može sadržati i apstraktne i neapstraktne metode
+Apstraktna klasa sadržati i apstraktne i neapstraktne metode
 
 Čista apstraktna klasa (pure abstract class) nema implementaciju
 ni za jedan metod
+
+
+
 
 
 Zamišljene su kao bazne klase jer postoje slučajevi u kojima
 nije poznato neko podrazumevano ponašanje
 
 
-Zapečaćene klase (sealed klase) se ne može naslediti
 
-Ne može biti apstraktna klasa
+
+
+Zapečaćene klase (sealed klase) se ne mogu naslediti
+
+Zapečaćena klasa ne može biti apstraktna
 
 
 Postoje 2 razloga za pravljenje ovakvih klasa:
@@ -279,6 +285,514 @@ Postoje 2 razloga za pravljenje ovakvih klasa:
   (nije potrebno pretraživati tabele virt. funkcija)
   
   
-prvi snimak
+
+  
+  
+Ključna reč this se koristi, slično kao i u Javi, za pristup
+članicama klase (tačnije, instance)
 
 
+Primer upotrebe je rešavanje dvosmislenog pristupa
+( npr. polja i parametra koji se zovu isto )
+
+
+Drugi primer bi bio poređenje reference 
+
+
+
+
+Ključna reč base se koristi kada je potrebno pristupiti
+članicama roditeljske klase koje su pokrivene istoimenim
+članicama date klase
+
+
+
+
+
+Konstantne promenljive se definišu navođenjem ključne
+reči const pri deklaraciji promenljive.
+
+Evaluiraju se za vreme prevođenja (kompajliranja) i njena
+vrednost se ne može promeniti nakon inicijalizacije (kao
+i macro u C-u, prilikom kompajliranja se zameni i ugradi u
+kod jer je već poznata vrednost što znači da se neće menjati
+pa je moguće preračunati i ugraditi ih odmah i time ubrzati kod)
+
+
+
+
+
+
+`Polje ili podatak člana je namenjen za čuvanje podatka
+klase ili strukture`
+
+
+Može da čuva:
+- vrednostni tip
+- instancu klase (kao referencu)
+- instancu strukture(vrednost)
+- niz instanci klasa ili struktura
+- događaj
+
+
+
+
+
+
+readonly polje je polje koje je moguće inicijalizovati na
+3 mesta, u:
+- prilikom deklaracije
+- konstrukturu objekata
+- klasnom (statičkom) konstruktoru 
+  (ukoliko je reč o statičkoj promenljivoj)
+
+
+readonly polju može da promeni vrednost samo u okviru gore
+navedenih scope-ova i javljaće kompajlersku grešku ukoliko
+se pokuša promena vrednosti na nekom drugom mestu. Na tim
+mestima se ponaša kao konstanta
+
+
+Za razliku od konstante može da sadrži i referencu
+
+Ne može se definisati unutar metoda (za razliku od konstante)
+
+
+Može readonly promenljiva može biti statička ili nestatička
+
+
+
+
+
+
+Sav kod se izvršava unutar metoda
+
+
+Specijalni tipovi metoda: konstruktori, destruktori i operatori
+
+
+
+Propertiji i indekseri su implementirani pomoću get/set metoda
+
+
+
+
+Metodi mogu biti virtuelni ili nevirtuelni
+
+
+Metodi su podrazumevano nevirtuelni
+
+
+Nevirtuelni metodi nisu polimorfni. Jedinstveni su za klasu i
+ne mogu da se koriste u nasleđenim klasama
+
+
+Apstraktni metodi su implicitno virtuelni
+
+
+
+U C#, za razliku od Jave i C++, potrebno je eksplicitno navesti
+da se metod prepisuje i to se radi ključnom rečju override
+
+
+
+
+
+
+Apstraktni metodi nemaju implementaciju (telo).
+
+Podrazumevano su virtuelni
+
+Moraju da pripadaju apstraktnoj klasi
+
+Koriste se kako bi se označilo da neko ponašanje treba da 
+postoji u izvedenim tipovima
+
+Podržava uzorak dizajna "Šablonski metod" (Template design pattern)
+
+
+Apstraktne klase ne mogu da se instanciraju
+
+
+
+
+
+Ključna reč new kao modifikator metoda ograničava pozivanje datog
+metoda samo na referencu koja je istog ili nasleđenog tipa kao i 
+tip date instance. Reference tipa nekog roditeljskog tipa ne može
+da pristupi datom metodu:
+    class BaznaKlasa {
+        public virtual void metod() {
+            Console.Write("BaznaKlasa");
+        }
+    }    
+
+    class IzvedenaKlasa : BaznaKlasa {
+        public new void metod() {
+            Console.Write("IzvedenaKlasa");
+        }
+    }    
+
+    
+    ...
+    
+    
+    BaznaKlasa bk    = new IzvedenaKlasa();
+    IzvedenaKlasa ik = new IzvedenaKlasa();
+    
+    bk.metod();    // štampa: BaznaKlasa
+    ik.metod();    // štampa: IzvedenaKlasa        
+
+    
+
+Nagoveštava prevodiocu da se kreira nova metoda koja ne zavisi
+od neke druge (ne nasleđuje je) iako možda ima isti potpis kao
+ta neka metoda iz bazne klase.
+
+Pretraga te metode se vrši nezavisno od hijerarhije metode iz
+bazne klase, ona započinje svoju novu hijerarhiju
+
+
+Retko postoji situacija u kojoj se ovo može primeniti, tj. u
+kojoj je neophodno to koristi
+
+
+
+
+Konstruktori
+------------
+
+Specifične su po svom vremenu izvršenja - konstruktor instance
+se poziva pri kreiranju neke instance, a konstruktor klase pri 
+pozivu (učitavanju) klase
+
+
+Namena konstruktora je izvršenje inicijalizacije
+
+
+Statički konstruktor će se sigurno izvršiti pre nego što se 
+kreira ili pristupi bilo koji objekat te klase. U njemu se
+inicijalizu statičke članice, tj. statička polja klase
+
+
+
+Ukoliko se eksplicitno ne navede ni jedan konstruktor onda
+će biti kreiran podrazumevani konstruktor implicitno od strane
+prevodioca
+
+
+Kod struktura, konstruktor ne može da se kreira bez parametara
+
+
+U konstruktoru sva polja se inicijalizuju na nulu / null 
+
+
+Moguće je kreirati više konstruktora (overloading konstruktora)
+
+Moguće je pozivati jedan konstruktor preko drugog:
+    public Konstruktor() : this(42) {}
+    
+    public Konstruktor(int broj) : this(broj, "neki str") {} 
+    
+    public Konstruktor(int broj, string str) : base(str) {
+        this.broj = broj;
+    }
+    
+
+    
+Poziv konstruktora se dešava pre izvršenja tela konstruktora
+
+
+
+Cilj ovog pristupa sa konstruktorima, gde jedan zove drugog,
+je OO koncept iskorišćavanja koda na više mesta kako bi se
+smanjio redudantan kod jer se time smanjuje i broj mesta na
+kojima je potrebno izmeniti kod, a i mogućnost pravljenja 
+greške je manja jer se neće ponovo pisati taj redudantni kod
+u kome se nešto može izostaviti ili dodati. Takođe, smanjuje
+se i kod koji je potrebno testirati
+
+
+
+
+
+Moguće je definisati najviše jedan statički konstruktor za 
+dati tip
+
+Nema garancije u pogledu redosleda izvršenja pa zbog toga 
+ne može imati parametre
+
+
+
+
+Suprota metoda u odnosu na konstruktor je destruktor.
+
+Predstavlja poslednji metod koji se poziva pre nego što se
+oslobode resursi koji su dodeljeni nekoj instance koja više
+nije potrebna za rad programa
+
+
+Destruktori se nazivaju još i Finalizers
+
+`
+Kod:
+    internal class Foo {
+        private ~Foo() {
+            Console.WriteLine("Destroyed {0}", this);
+        }
+    }
+`
+
+Nije moguće eksplicitno kontrolisati trenutak kada će 
+Garbage Collector pozvati destruktor. To može biti problem
+ukoliko neka instanca koja se više ne koristi drži resurse
+koji su od važnosti.
+
+
+Dati problem se može rešiti korišćenjem interfejsa IDisposable 
+koji omogućava determinističko oslobađanje (unmanaged) resursa
+
+
+Javni Dispose metod, iz interfejsa IDisposable, koji je deo
+klase može opciono da se pozove od strane destruktora
+
+
+
+U C++ je moguće eksplicitno pozvati destruktor
+
+
+
+Destruktori usporavaju Garbage Collector (ukoliko su 
+definisani) zbog čega njihovo korišćenje nije preporučljivo.
+
+Preporučuje se koriščenje interfejsa IDisposable
+
+
+
+
+Slično C++, C# ima mogućnost redefinisanja ponašanja skoro svih
+operatora (u Javi to ne postoji)
+
+
+Takav metod mora da se definiše kao statički
+
+Nije neophodno da prvi argument metoda za redefinisanje operatora
+bude istog tipa kao tip u kome je definisan (što je neophodno u
+C++)
+
+
+Primer sintakse:
+    class Car {
+        private string vid;
+        
+        public static bool operator ==(Car x, Car y) {
+            return x.vid == y.vid;
+        }
+    }
+    
+
+
+    
+Operatori koji se mogu redefinisati (preklopiti):
+- unarni operatori
+    1. +
+    2. -
+    3. !
+    4. ~
+    5. true
+    6. false
+    7. ++
+    8. --
+- binarni operatori
+    01. +
+    02. -
+    03. *
+    04. /
+    05. %
+    06. &
+    07. |
+    08. ^
+    09. ==
+    10. !=
+    11. <<
+    12. >>
+    13. <
+    14. >
+    15. <=
+    16. >=
+    
+
+
+C++ ima širi skup operatora koji se mogu preklopiti
+
+
+U C# nije moguće preklapanje operatora:
+- .  ( za pristup članovima )
+- () ( za poziv metoda )
+- =  ( dodele )
+- sizeof
+- new
+- is 
+- as 
+- typeof 
+- checked
+- unchecked
+- &&
+- ||
+- ?:
+
+
+Ako se preklapa neki binarni operator onda se implicitno
+preklapa i odgovarajući kombinovani operator sa dodelom
+(što je u C++ potreno definisati eksplicitno)
+
+Ako je npr. redefinisan operator *, onda će implicitno
+biti redefinisan i operator *=
+
+
+
+
+Operatori se mogu redefinisati i za klase i za strukture
+
+
+
+Redosled parametra metoda za redefinisanje operatora je bitan.
+Prvi argument predstavlja operand levo od operatora, a
+drugi operand desno od operatora
+
+
+Ako su parametri operatora različitih tipova ili ako redefinisani
+operator nije komutativna onda je potrebno definisati još jednu
+sličnu metodu za drugi redosled tih parametara
+
+
+
+
+
+
+
+Moguće je definisati operatore konverzije.
+
+Metoda za njihovo definisanje mora da bude statička
+
+Može se definisati kao implicitni ili eksplicitni
+
+
+Primer:
+    internal class Note {
+        private int value;
+        
+        public static implicit operator double( Note x ) {
+            return ...;
+        }
+        
+        public static explicit operator Note( double x ) {
+            return ...;
+        }
+    }
+
+Korišćenje:
+    Note n = (Note) 442.578;
+    double d = n;
+    
+
+    
+
+    
+Operatori "is" i "as" ne postoje u C++
+
+
+Operator "is" se koristi za dinamičko testiranje da li je tip
+nekog objekta kompatibilan sa datim tipom
+
+
+Primer:
+    private static DoSomething(object o) {
+        if( o is Car )
+            ( (Car) o ).Drive();
+    }
+    
+Proverava da li je tip datog objekta u hijerarhiji sa nekim
+drugim tipom
+
+Važi i za interfejse. Može se proveriti da li neki objekat
+implementira neki interfejs:
+    if ( o is IDelete )
+    
+    
+U suštini, proverava se da li je moguće izvršiti konverziju,
+tj. validnu promenu reference
+
+
+
+
+
+Operator "as" pokušava da konvertuje promenljivu u specificiran
+tip i ako ta konverzija nije moguća vraća null
+
+Ima efikasnije izvršenje od operatora is
+
+
+Testiranje i provera se vrše u jednoj operaciji
+
+
+
+
+Preporučljivo je da pristup poljima bude kontrolisan.
+
+Nije preporučljivo da pristup poljima bude javan
+
+
+Ideja je da se vrednost polja samo učita i u njega sačuva, a
+da se preko metoda ona menja i pristupa
+
+
+Ukoliko properti služi za pristup referentnom tipu i ako je 
+vrednost polja null doći će do lazy evaluation-a. To predstavlja
+odloženu evaluaciju. Može biti veoma korisno kada neki objekat ima
+u određenim situacijama poziv ka bazi ili složenoj strukturi. S
+obirom da su takve aktivnosti zahtevne nije zgodno raditi ih
+stalno. Pomoću lazy evaluation koncepta to je moguće odraditi samo
+kada je neophodno, kada se npr. pristupa tom objektu
+
+
+Propertiji služe za kontrolisani pristup poljima
+
+
+`Korišćenje propertija je mnogo sličnije korišćenju javnog
+polja nego korišćenju metode`
+
+
+Suštinska razlika između pristupa poljima preko metoda (kao u 
+Javi) i preko propertija je u performansama.
+
+Propertiji imaju bolje performanse jer se generiše rutina od 
+strane prevodioca koja se ugrađuje u kod. Izbegava se kompletni
+mehanizam preko steka kada se poziva metoda.
+
+
+Ovo se može realizovati u C++ korišćenjem ključne reči inline
+(ne koristi se mehanizam pozivanja funkcije nego se ugrađuje
+u kod)
+
+
+
+Postoje tri tipa propertija:
+1. read-write
+2. read-only
+3. write-only
+
+
+Primer read-only propertija:
+    int ID { get; };
+    
+    
+    
+Od C# 3.0 dodato je skraćeno pisanje, gde get i set samo čitaju
+i pišu u polje
+
+Nakon polja se napišu get i set, a prevodilac će sam generisati
+automatski odgovarajuće propertije
+
+Primer:
+    public decimal CurrentPrice { get; set; }
