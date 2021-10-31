@@ -36,11 +36,22 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 [Stranica instituta za matematiku i informatiku][imi stranica]  
 
 [GitHub Client - Windows ili macOS][gh client official]  
-[GitHub Client - Linux][gh client linux]  
+[GitHub Client - Linux][gh client linux]
+
+[VSCodium][vscodium]
 
 [Mastering Markdown][mastering markdown]  
 [Markdown Cheatsheet][markdown cheatsheet]  
 [Markdown Editor][markdown editor]
+
+# Saradnja
+Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
+
+Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
+
+
+Neke od kategorija:  
+![Kategorije diskusija][categories]
 
 # Kontakt
 Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih linkova:
@@ -52,15 +63,6 @@ Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih li
     * Mihajlo Janković  
 
 **Napomena:** komunikacija preko moodle-a je moguća samo između studenata koji su prijavljeni na isti kurs
-
-# Saradnja
-Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
-
-Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
-
-
-Neke od kategorija:  
-![Kategorije diskusija][categories]
 
 # Licenca
 Fajlovi kao što su postavke zadataka sa kolokvijuma, materijal sa predavanja i logo fakulteta nisu obuhvaćeni licencom i sva prava na njih polaže Prirodno-matematički fakultet u Kragujevcu.
@@ -98,6 +100,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [stranica fakulteta]: https://www.pmf.kg.ac.rs/
 [gh client official]: https://desktop.github.com/ 
 [gh client linux]: https://github.com/shiftkey/desktop
+[vscodium]: https://github.com/VSCodium/vscodium
 [mastering markdown]: https://guides.github.com/features/mastering-markdown/
 [markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [markdown editor]: https://github.com/retext-project/retext
