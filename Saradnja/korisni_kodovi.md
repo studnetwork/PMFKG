@@ -1,9 +1,9 @@
 # Opis
-U ovom fajlu se nalaze neki od kodova koji bi mogli da bude od koristi za pravljenje novih fajlova u okviru ovog projekta
+U ovom fajlu se nalaze neki delovi koda koji bi mogli biti od koristi za pravljenje novih fajlova u okviru ovog projekta
 
 # Komentar
 
-Ukoliko zelite da unesete komentar u markdown (.md) fajlu, koji nece biti vidljiv koristite sledeci kod:
+Ukoliko želite da unesete komentar u markdown (.md) fajlu, koji neće biti vidljiv pri u samom prikazu, koristite sledeći kod:
 ```
 
 [//]: # (Ovde unosite sadrzaj komentara)
@@ -25,12 +25,16 @@ Ukoliko zelite da unesete komentar u markdown (.md) fajlu, koji nece biti vidlji
 </details>
 
 # Link
-Ukoliko želite da navedete link, to možete tako što će te prvo iskoristi:
-`[tekst koji predstavljati link][oznaka linka]`
-i onda nakon toga navesti web adresu za oznaku linka:
-`[oznaka linka] https://www.neka-adresa.com`
+Ukoliko želite da navedete link, to možete uraditi tako što će te prvo napisati:
+```
+[tekst koji predstavljati link][oznaka linka]
+```
+i onda nakon toga je potrebno navesti, u delu za reference koji se nalazi na kraju svakog fajla, web adresu za oznaku linka:
+```
+[oznaka linka]: https://www.neka-adresa.com
+```
 
-Drugi kod je potrebno navesti u delu za reference koji se nalazi na kraju svakog fajla. Taj deo je započinje od sledećeg koda
+  Taj deo je započinje od sledećeg koda
 ```
 [//]: # (---------------------------------------------------------)
 
@@ -81,7 +85,7 @@ Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju po
 ...
 
 # Ubacivanje slike
-Ubacivanje slike funkcioniše na isti način kao i navođenje linka, jedina razlika je to što se ispred takve komande doda znak "!"
+Ubacivanje slike funkcioniše na isti način kao i navođenje linka, jedina razlika je to što se ispred takve komande doda znak "!"  
 **Primer**:  
 ```
 ...
