@@ -66,8 +66,8 @@ Neke specifične delove kodova koji su korišćeni u markdown fajlovima ovog pro
 
 
 
-[slika]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/link2cb.png
-[šabloni]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/Šabloni
-[korisni kodovi]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/korisni_kodovi.md
+[slika]: ./link2cb.png
+[šabloni]: ./Šabloni
+[korisni kodovi]: ./korisni_kodovi.md
 [gh client official]: https://desktop.github.com/ 
 [gh client linux]: https://github.com/shiftkey/desktop

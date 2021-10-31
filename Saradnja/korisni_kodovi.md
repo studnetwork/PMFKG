@@ -61,7 +61,7 @@ Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju po
 
 
 
-[saradnja]: https://github.com/Produktivna-grupa/PMFKG/Saradnja/README.md#Opis
+[saradnja]: ./README.md#Opis
 
 ...
 ```
@@ -80,7 +80,7 @@ Ukoliko ste želite da doprinesete projektu i učestvujete u njegovom razvoju po
 
 
 
-[saradnja]: https://github.com/Produktivna-grupa/PMFKG/Saradnja/README.md#Opis
+[saradnja]: ./README.md#Opis
 
 ...
 
@@ -103,7 +103,7 @@ Ubacivanje slike funkcioniše na isti način kao i navođenje linka, jedina razl
 
 
 
-[BP1-vezbe-slide1-z1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png
+[BP1-vezbe-slide1-z1]: ../II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png
 ```
 **Rezultat**:  
 ...
@@ -121,4 +121,4 @@ Ubacivanje slike funkcioniše na isti način kao i navođenje linka, jedina razl
 
 
 
-[BP1-vezbe-slide1-z1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png
+[BP1-vezbe-slide1-z1]: ../II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png

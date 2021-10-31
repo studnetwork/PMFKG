@@ -81,14 +81,14 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Materijal reference)
 
-[druga-zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[druga-zimski]: ./II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-[druga-letnji]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[druga-letnji]: ./II%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 
-[treca-zimski]: https://github.com/Produktivna-grupa/PMFKG/blob/master/III%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[treca-zimski]: ./III%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-[treca-letnji]: https://github.com/Produktivna-grupa/PMFKG/blob/master/III%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[treca-letnji]: ./III%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 
 
@@ -112,7 +112,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Saradnja reference)
 
-[saradnja]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/README.md#opis
+[saradnja]: ./Saradnja/README.md#opis
 
 [discussions]: https://github.com/Produktivna-grupa/PMFKG/discussions
 
