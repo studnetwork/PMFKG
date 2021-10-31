@@ -32,7 +32,7 @@ zavisnosti od okruženja, poslovne kulture, timova i nekih drugih faktora
 Izjava od radu (statement of work) je jedan od prvih dokumenata koji se 
 kreira na nekom projektu.
 
-Nakon toga sledi: specifikacija, zahteva, modeliranje, upoznavanje sa
+Nakon toga sledi: specifikacija zahteva, modeliranje, upoznavanje sa
 sistemom, kreiranje baze, korisničkog interfejsa, ...
 
 

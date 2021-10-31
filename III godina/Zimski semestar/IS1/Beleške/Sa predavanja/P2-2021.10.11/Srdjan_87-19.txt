@@ -92,7 +92,7 @@ kompentencije koje jedan "IS stručnjak" treba da ima
 
 7. Održavanje, upravljanje sistema i operacije u njemu
 
-8. Rukovođenje IS - skup skernica kako iskoristiti sistem na najbolji
+8. Rukovođenje IS - skup smernica kako iskoristiti sistem na najbolji
                     mogući način kako bi se ostvario najbolji efekat
                     na poslovne procese i funkcionisanje neke 
                     organizacije
@@ -126,7 +126,7 @@ Omogućavaju modeliranje sistema i generisanje dela kod aplikacije
 
 
 Nekad je bolje i ne implementirati sistem nego ga implementirati pa
-zausatviti proizvodnju i tok rada što može predstavljati mnogo veći
+zaustaviti proizvodnju i tok rada što može predstavljati mnogo veći
 gubitak
 
 
@@ -154,15 +154,18 @@ Karakteristike informacijskog doba:
 5. IT utiče na poslovni uspeh
 
    Može da nam da informacije koje mogu da se iskoriste pri donošenju
-   poslovnih odluka kao što je npr. određivanje tražne
+   poslovnih odluka kao što je npr. određivanje tražnje
    
    
-6. Ugrađene informaciona tehnologija
+6. Ugrađene informacione tehnologije
 
    IoT uređaji omogućavaju prikupljanje podataka koji pre nisu bili
    dostupni. Ti podaci se mogu generisati velikom brzinom pa mogu 
    zahtevati i Big Data sisteme, ali se na kraju dobijaju informacije
    koje mogu biti od velikog značaja
+   
+
+   
    
    
 Uticaji informacionih tehnologija na poslovno okruženje:
@@ -211,7 +214,7 @@ Uticaji informacionih tehnologija na poslovno okruženje:
   Postoji više tipova usluga koje Cloud pruža:
   * IaaS (Infrastructure as a Service)
   * PaaS (Platform as a Service)
-  * SaaS (Software as a Service )
+  * SaaS (Software as a Service)
   
   Prednosti Cloud-a:
   * remote control
@@ -221,14 +224,14 @@ Uticaji informacionih tehnologija na poslovno okruženje:
   
 - digitalni sadržaj
 
-  Dolazi do sve veće digitlalizacije i kreiranje sve digitalnog 
-  sadržaja npr. slike, dokumenato, audio, video, IoT, ...
+  Dolazi do sve veće digitlalizacije i kreiranja digitalnog 
+  sadržaja npr. slika, dokumenata, audio i video sadržaja, IoT, ...
   
 
 - društveno umrežavanje
 
-  Društvene mreže u bliznisu za dobijanje informacija ekstraktovanjem
-  i obradom tih nestruktuiranih podataka iz njih
+  U biznisu se koriste za dobijanje informacija ekstraktovanjem
+  i obradom nestruktuiranih podataka iz njih
   
 - nauka o podacima
 

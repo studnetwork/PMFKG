@@ -13,17 +13,17 @@ Nazivaju se aktivnim glagolima
 
 Input može biti podatak, informacija, materijal koji
 predstavlja ulaz funkcije. Input se uvek nalazi na levoj
-strani funkcije. Na samoj stre
+strani funkcije.
 
 
 Output može biti podatak, informacija ili materijal koji
 predstavlja izlaz funkcije. Strelica ide od desne stranice
 
 
-Mehanizmi su resursi, alati, metodi i sredstvlja koji 
-omogućavaju izvršavanje date funkcije. Strelica idi iz
-iz spoljašnosti ka donjoj stranici funkcije
-(resursi koji se ne troše)
+Mehanizmi su resursi, alati, metodi i sredstva koja 
+omogućavaju izvršavanje date funkcije. Strelica ide iz
+okoline ka donjoj stranici funkcije. Mehanizmi su resursi 
+koji se ne troše
 
 
 Kontrola je nešto što usmerava, reguliše i ograničava
@@ -32,7 +32,7 @@ funkciju
 
 [ za kol
 
-poželjno je da bude što detaljniji dijagram
+Poželjno je da dijagram bude što detaljniji 
 
 Pogledati bazu "Proces rada preduzeća" zbog njegovog
 detaljnog opisa
@@ -43,7 +43,3 @@ je bitno
 Za IDEF0 je važno da postoji sve što je spomenuto u tekstu,
 a sve van toga je opciono
 ]
-
-
-
-2. klip

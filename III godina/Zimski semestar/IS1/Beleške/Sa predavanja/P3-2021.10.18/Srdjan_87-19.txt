@@ -47,20 +47,20 @@ Ljudi i roba se trasportuju brže nego što je to pre
 bilo moguće
 
 
-Mašine su omogućile da se proizvodnja bude obimnija,
-brža i jeftinija
+Mašine su omogućile da proizvodnja bude obimnija, brža
+i jeftinija
 
 
-Naglasak je bio na tome da se proizvodi brži i jeftinije
+Naglasak je bio na tome da se proizvodi brže i jeftinije
 
 
 "Možete da dobijete automobil bilo koje boje ako je crne
 boje" - Henry Ford 
 
 
-Danas se tako prati takav model. Primer jednog modela je 
-model koji je implementirala kompanija Dell, build-to-order
-ili make-to-order
+Danas se ne prati takav model. Primer jednog modela koji 
+se danas koristi je model koji je implementirala kompanija 
+Dell, build-to-order (ili make-to-order)
 
 "Kupci traže ono što je skrojeno po njihovim potrebama"
 
@@ -75,11 +75,11 @@ Dell je imao prednost u odnosu na konkurenciju, tj.
 first-mover advantage
 
 
-Njihov model je imao problem sa brzinom dostave.
+Njegov model je imao problem sa brzinom dostave.
 Druge komapnije su mogle odmah da ponude gotov računar,
 dok je Dell morao da sastavi neki računar po porudžbini
 a zatim da ga dostavi. Problem je rešen potpunom
-integracijom lanca snabdevajna
+integracijom lanca snabdevanja
 
 
 Ceo lanac treba da se prilagodi tražnji. Onaj ko je u
@@ -127,9 +127,9 @@ Optički kablovi
 Globalnizacija 3.0
 ==================
 
-Mogućnost komunikacije u ralnom vremenu
+Mogućnost komunikacije u realnom vremenu
 
-Vremenska i prostorna dimenzija su se anulirali
+Vremenska i prostorna dimenzija su se anulirale
 
 ---
 
@@ -140,9 +140,9 @@ Količina podataka veoma brzo raste, skoro pa eksponencijalno
 
 
 Thomas Friedman je definisao 10 pokretača globalizacije,
-tj. događaja koji su uzrokovali prelaz u 3. fazu globalizacije:
-1. Pad Berlinskog zida
-3. S
+tj. događaja koji su uzrokovali prelaz u 3. fazu globalizacije
+
+
 
 
 Pad Berliskog zida
@@ -186,11 +186,11 @@ Uvode se otvoreni protokoli i standardi
 
 
 dot com bubble - poslovni model servisa u ranim danima web-a
-                 nije bio održiv. Poslovalo skoro pa bez prihoda,
-                 investitori su počeli da se povlače i na kraju
-                 je ostao mali broj kompanija koje su kasnije
-                 postale veoma profitabilne zato što su njihovi 
-                 investitori bili strpljivi
+                 nije bio održiv. Poslovalo se skoro pa bez 
+                 prihoda, investitori su počeli da se povlače 
+                 i na kraju je ostao mali broj kompanija koje 
+                 su kasnije postale veoma profitabilne zato što
+                 su njihovi investitori bili strpljivi
 
                  
                  
@@ -198,7 +198,7 @@ Workflow (radni tok) softver ili middleware ili BDMS je sotver
 za upravljanje radnim tokovima
 
 
-Procesni pristup - posmatraju se aktivnosti u okviru jedno,
+Procesni pristup - posmatraju se aktivnosti u okviru jednog,
                    kompletnog softvera (što je drugačiji pristup
                    od tradicionalnog pristupa gde se svaka 
                    organizaciona ili funkcionalna celina 
@@ -235,9 +235,9 @@ Omogućava automatizaciju ili poluautomatizaciju
 
 
 
-Napredkom Internet tehnologija, povećanjem protoka, 
-omogućeno je i da korisnicima da publikuju svoje
-informacije, dokumenta, multimedijalne sadržaje, ...
+Napretkom Internet tehnologija, povećanjem protoka, 
+omogućeno je i korisnici da publikuju svoje informacije, 
+dokumenta, multimedijalne sadržaje, ...
 
 
 
@@ -255,18 +255,20 @@ ERP paketi otvorenog koda:
 
 
 
+
 Prednosti otvorenog koda:
 - mogućnost izmene softvera 
   * prilagođavanje softvera za sopstvene potrebe
-  * laška integracija jer moguće lako izmeniti 
+  * lakša integracija jer moguće lako izmeniti 
     softver kako bi se mogao povezati sa drugim 
     sistemima
   * ispravljanje greške u programu, nije potrebno
-    čekati na vendora da on to ispravi, ilu ukoliko
+    čekati na vendora da on to ispravi, ili ukoliko
     firma više ne posluje moguće je ažurirati dati
-    softver za interne potrebe
+    softver i ispraviti greške u njemu
 - transparentnost
 - unapređivanje koda i testiranje od strane drugih ljudi
+
 
 
 Mane otvorenog koda:
@@ -274,17 +276,16 @@ Mane otvorenog koda:
   dosutpan svima pa postoji mogućnost da neko primeti
   grešku i onda je zloupotrebi
 - neodrživ biznis model
-- kompanije se često ne odlučuju za sotverska rešenja 
-  otvorenog koda jer njihov proizvođač dovoljan broj ljudi 
-  za ispunjavanje nekih zahteva koje ta kompanija može
-  da zatraži. Zahtevaju određene garancije kao što su
+- kompanije se često ne odlučuju za softverska rešenja 
+  otvorenog koda jer njihovi proizvođači nemaju dovoljan
+  broj ljudi za ispunjavanje nekih zahteva koje ta kompanija
+  može da zatraži. Zahtevaju određene garancije kao što su
   podrška tokom njihovog korišćenja datog softvera,
   garancija razvoja tog softvera tokom vremena (u smislu
   korišćenih tehnologija)
   
   
 
-  
   
 Outsourcing je poslovni model po kome kompanija neke svoje 
 operacije, najčešće one koje nisu primarne za nju, izmesti,
@@ -295,40 +296,39 @@ tj. da na realizaciju drugoj kompaniji
 Y2K problem - '80tih / '90tih programeri su pisali broj godine
                sa 2 cifre kako bi uštedeli resurse. Do 
                preoblema dolazi kada je potrebno prikazati 
-               godine nakon 1999 jer je bi godina "00" mogla
-               da se tumači na 2 načina. Došlo je do potrebe za
-               velikim brojem programera koji bi mogli da poprave
-               stare neispravne programe. Outsource-ovao se veliki 
-               broj programera iz Kine
+               godine nakon 1999 jer je bi godina xy mogla 
+               predstavljati i godinu 19xy i godinu 20xy. Došlo je
+               do potrebe za velikim brojem programera koji bi 
+               mogli da poprave stare neispravne programe. 
+               Outsource-ovao se veliki broj programera iz Kine
                
                
-Outsorcing-om se na neki način prenosi rizik na firmu koja će da 
+               
+Outsourcing-om se na neki način prenosi rizik na firmu koja će da 
 pruži tu uslugu.
 
 
 
-Prednosti outsorcing-a:
-- smanjenje troškova (plaća se samo kada treba nešto
+Prednosti outsourcing-a:
+- smanjenje troškova 
+     (plaća se samo kada treba nešto
       da se odradi, umesto da se plaća puno radno 
       vreme ukoliko to nije potrebno)
 - kvalitet servisa
-  (bolje će dati posao uraditi oni koji su specijalizovani
-  za datu oblast neko neki tim programera firme)
+      (posao će bolje uraditi oni koji su specijalizovani za datu
+       oblast nego neki tim programera sastavljen od zaposlenih firme)
 - pristup specijalizovanim znanjima i veštinama
 - ugovorna obaveza
 - smanjen rizik 
 - eliminisani ili smanjeni problemi sa resursima
-  (kadrom, kapacitetom, ...)
+      (kadrom, kapacitetom, ...)
   
-  
 
-Outsorcing je posledica globalizacije i globalne 
-konkurencije
+Outsourcing je posledica globalizacije i globalne konkurencije
 
 
-
-Mane outsorcing-a:
-- komunikacijske prepreke (vremenske zone, različiti jezici
+Mane outsourcing-a:
+- komunikacijske prepreke (vremenske zone, različiti jezici)
 - manja kontrola (iako je ta neka kompanija obavezana 
       ugovorom, ukoliko ona ne ispuni dati ugovor doći će do
       gubitaka jer će to možda uticati na lanac snabdevanja,
@@ -341,7 +341,7 @@ Mane outsorcing-a:
 
 Offshoring je izmeštanje operacije u neku drugu zemlju radi
 pogodnijih uslova poslovanja (jeftinija radna snaga, manji 
-porezim, bolji uslovi poslovanja, ...)
+porezi, bolji uslovi poslovanja, ...)
 
 
 
@@ -363,7 +363,7 @@ Omogućavanje pristupa proizvođaču tako da može da vidi
 samo informacije koje se tiču njegovog proizvoda, dok
 data firma ne mora da obavlja neke procese kao što su
 naručivanje, ... 
-I jedna i druga strana imaju koriste
+I jedna i druga strana imaju koristi
 
 
 
@@ -380,7 +380,7 @@ odnosa duž lanca snabdevanja
 
 Nivoi transformacije organizacije neke kompanije:
 - funkcionalna optimizacija (svaka za sebe)
-- optimizacija proesa (proces u kome sadržane fun. celine)
+- optimizacija procesa (proces u kome su sadržane fun. celine)
 - optimizacija tržišta
 - optimizacija mreže snabdevanja
 
@@ -409,12 +409,12 @@ Pretraga po kategorijama sadržaja
 
 
 Definicije informacionog sistema:
-- pruža ubradu transakcija i podršku pri odlučivanju
+- pruža obradu transakcija i podršku pri odlučivanju
 - svi oblici prikupljanja, skladištenja, preuzimanja,
   obrade i razmene informacija koji koriste donosiocu
   odluka
 - obuhvata hardver, softver, ljude i podatke, procedure
-  i podatke
+
 
   
 Data warehouse - posebna vrsta baze podataka koja omogućava
@@ -463,7 +463,7 @@ Prednosti informacionih sistema:
 
 
 Sposobnosti informacionog sistema:
-- brzo izvršavanje intezivni izračunavanja
+- brzo izvršavanje intezivnih izračunavanja
 - pružanje brze i tačne komunikacije i saradnje
   između organizacija
 - efikasno sladištenje velike količine podataka
