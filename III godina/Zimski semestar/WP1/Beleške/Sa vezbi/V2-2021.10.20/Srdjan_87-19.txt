@@ -1,0 +1,164 @@
+Datum održavanja: 20.10.2021.
+Predavač: Andreja Živić
+Čas: 2
+=====================================
+
+
+Postoji elif
+
+
+Ukoliko se u tagu "option" ne navede atribut "value" onda
+će uzeti kao vrednost zadržaj koji se prikazuje
+
+
+Obično atribut "value" nema takvu vrednost već neki id ili
+key po kome se pretražuje u bazi i sl.
+
+
+
+Kreiranje niza:
+    $dani = array("Ponedeljak", "Utorak", "Sreda");
+    
+
+
+Iteracija kroz niz:
+    # 1. način
+    foreach( $dani as $dan ) {
+        echo $dan;
+    }
+    
+    # 2. način
+    foreach( $dani as $key => $dan ) {
+        echo $dani[$key];
+    }
+    
+    # 3. način
+    foreach( $dani as $key => $dan ) {
+        echo $dan;
+    }
+    
+    # 4. način
+    for($i = 0; $key < count($dani); $i++) {
+        echo $dani[$i];
+    }
+
+
+    
+Kod 2. načina, ukoliko je reč o asocijativnom nizu (rečniku)
+onda se uzima ključ, a ukoliko se radi o "običnom" nizu onda
+se za key uzima index (redni broj)
+
+
+
+Jedna od primena:
+    $dani = array("Ponedeljak", "Utorak", "Sreda");
+
+    foreach ($dani as $key => $dan ) {
+        echo $key;
+        echo $dan;
+        echo <br>
+    }
+    
+Rezultat:
+    0
+    Ponedeljak
+    
+    1
+    Utorak
+    
+    2
+    Sreda
+    
+    
+
+
+    
+print_r($dani)    # štampa informacije varijable u 
+                  # formatu koji je čitljiv ljudima
+                  
+                  
+                  
+array_push($pokazivac_na_niz, $vrednost_koja_se_dodaje)
+
+
+Primer:
+    array_push($dani, "Cetvrtak", "Petak", "Subota",  
+    "Nedelja");
+    
+    
+
+Dokle god se koristi (čuva) neka referenca, ono na šta 
+pokazuje neće biti obrisano iz memorije
+
+
+
+Slično kao što se u C-u oslobađaju resursi uz pomoć f-je 
+free tako se u PHP koristi f-ja: unset($pokazivac)
+
+
+Nizovi rade slično kau u C-u, promenljiva kojoj se dodeljuje
+niz u stvari sadrži pointer na prvi element niza
+
+
+
+Moguće je jednostavno dodati atribut nekog elementa 
+navođenjem u stringu pri kreiranju tag-a (primer. atribut
+"selected" i tag "option")
+
+
+
+
+
+Kreiranje asocijativnog niza:
+    $dani = array("prvi"=>"Ponedeljak","drugi"=>"Utorak",
+    "treci"="Sreda");
+    
+    
+
+Dodavanje u asocijativni niz:
+    $niz["cetvrti"] = "Cetvrtak";
+    
+
+    
+Izbacivanje poslednjeg elementa niza:
+    array_pop($dani); 
+    
+
+
+Izbacivanje elementa sa pocetka niza:
+    array_shift($dani);
+
+    
+    
+    
+Kreiranje niza deljenjem stringa po nekom delimiteru:
+    $dani_str = "Ponedeljak, Utorak, Sreda, Cetvrtak, Petak";
+    
+    $dani = explode(", ", $dani_str);
+    
+    
+    
+    
+Kreiranje stringa spajanjem elemenata nekog niza:
+    $dani = array("Ponedeljak", "Utorak", "Sreda");
+    
+    $dani_str = implode(", ", $dani);
+    
+    echo $dani_str
+    
+Rezultat:
+    Ponedeljak, Utorak, Sreda
+    
+    
+
+Sortiranje elemenata niza:
+    sort($dani);
+    
+    
+Funkcija sort sadrži i dodatni argument, $sort_flags, kojim
+se može odabrati način na koji će niz biti Sortiranje
+
+
+Sortiranje u descending redosledu:
+    rsort($dani);
+    

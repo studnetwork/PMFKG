@@ -3,11 +3,11 @@ Predavač: Vladimir Cvjetković
 Čas: 1
 =====================================
 
-PHP (Hypertext PreProcessor - jezik opšte namene; uglavnom se 
-                              koristi za Web programiranja
+PHP - jezik opšte namene; uglavnom se 
+      koristi za Web programiranja
 
-    Pravi naziv:
-        PHP: Hypertext Preprocessor 
+Pravi naziv:
+    PHP: Hypertext Preprocessor 
                               
 
 
