@@ -49,8 +49,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 
-
-[normalizacija-forum]: ./Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk/Resenja-DR460R
+[normalizacija-forum]: ./Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk
 
 [prvi kolokvijum]: ./Kolokvijumi/1.%20kolokvijum
 
