@@ -62,6 +62,7 @@
     }
 
  8. Po cemu je monitor kao instrument bolji od semafora?
+  - ?
   - Monitor je bolji instrument od semafora po tome što se u njemu može izvršavati samo jedan proces. 
 
  9. U kom trenutku dolazi do medjusobne blokade kod problema vecere filozofa?
@@ -69,10 +70,11 @@
     Tada ni jedan od njih ne moze da krene da jede jer svaki ima samo jednu viljusku a druga se nalazi kod drugog filozofa.
 
 10. Navesti barem 3 nacina dodele memorije u racunarskom sistemu (particionisanje). Koje su mane svakog od ovih nacina?
+  - ?
   - fiksno particionisanje, dinamičko particionisanje, partnerski sistem i relokacija 
  Mana fiksnog particionisanja je u tome što se javlja unutrašnja fragmentacija. 
  Mana dinamičkog particionisanja je u tome što se javlja spoljašnja fragmentacija. 
 
 
 --------------
-author: dragor
+author: DR460R
