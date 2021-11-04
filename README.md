@@ -13,8 +13,8 @@
 <a href="#o-projektu" alt="O projektu">O projektu</a>&nbsp;&nbsp;
 <a href="#linkovi-ka-materijalu" alt="Linkovi ka materijalu">Linkovi ka materijalu</a>&nbsp;&nbsp;
 <a href="#korisni-linkovi" alt="Korisni linkovi">Korisni linkovi</a>&nbsp;&nbsp;
-<a href="#kontakt" alt="Kontakt">Kontakt</a>&nbsp;&nbsp;
 <a href="#saradnja" alt="Saradnja">Saradnja</a>&nbsp;&nbsp;
+<a href="#kontakt" alt="Kontakt">Kontakt</a>&nbsp;&nbsp;
 <a href="#licenca" alt="Licenca">Licenca</a>
 </p>
 </br>
