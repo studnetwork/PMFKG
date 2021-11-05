@@ -31,17 +31,17 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[aor]: ./AOR/vodi%C4%8D_predmet.md#vodi%C4%8D
+[aor]: ./AOR/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[spa1]: ./SPA1/vodi%C4%8D_predmet.md#vodi%C4%8D
+[spa1]: ./SPA1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[mat2]: ./MAT2/vodi%C4%8D_predmet.md#vodi%C4%8D
+[mat2]: ./MAT2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[pip3]: ./PIP3/vodi%C4%8D_predmet.md#vodi%C4%8D
+[pip3]: ./PIP3/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[sa]: ./SA/vodi%C4%8D_predmet.md#vodi%C4%8D
+[sa]: ./SA/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[et]: ./ET/vodi%C4%8D_predmet.md#vodi%C4%8D
+[et]: ./ET/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )

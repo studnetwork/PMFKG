@@ -30,11 +30,11 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[op]: ./OP/vodi%C4%8D_predmet.md#vodi%C4%8D
-[mat1]: ./MAT1/vodi%C4%8D_predmet.md#vodi%C4%8D
-[toi]: ./TOI/vodi%C4%8D_predmet.md#vodi%C4%8D
-[rs]: ./RS/vodi%C4%8D_predmet.md#vodi%C4%8D
-[pip3]: ./PIP3/vodi%C4%8D_predmet.md#vodi%C4%8D
+[op]: ./OP/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[mat1]: ./MAT1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[toi]: ./TOI/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[rs]: ./RS/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[pip3]: ./PIP3/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
