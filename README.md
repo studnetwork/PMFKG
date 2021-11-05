@@ -24,7 +24,7 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 
 # Linkovi ka materijalu
 [Prva godina - Zimski semestar][prva-zimski]  
-[Prva godina - Zimski semestar][prva-letnji]  
+[Prva godina - Letnji semestar][prva-letnji]  
 
 [Druga godina - Zimski semestar][druga-zimski]  
 [Druga godina - Letnji semestar][druga-letnji]  
