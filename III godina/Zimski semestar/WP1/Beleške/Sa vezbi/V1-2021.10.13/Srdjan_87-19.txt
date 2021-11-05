@@ -10,7 +10,7 @@ Web server - računar koji pruža usluge drugim računarima
 WampServer
 
 
-Sources Folder je folder čiji su fajlovi koji je dostupan web serveru
+Sources Folder je folder koji je dostupan web serveru
 
 
 Project URL - putanja koja će biti otvorena u browseru nakon pokretanja
@@ -95,7 +95,7 @@ Pristup elementu niza (ili stringa):
     
 
     
-Primeri (u oba primera nista nece biti ispisano):
+Primeri (u oba primera ništa neće biti ispisano):
 
     $a = false;
     echo "$a"
@@ -121,7 +121,7 @@ Klikom na input element tipa "submit" dolazi do slanja unetih podataka
 
 
 GET metod se najčešće koristi za zahtevanje podataka sa servera ili
-slanje nekih neosetljivih (privatnih) podataka
+slanje nekih neosetljivih podataka
 
 Šalje se kao "rečnik", tj. skup parametara koji predstavljaju parove
 oblika ključ-vrednost. Između parova se postavlja simbol "&", a

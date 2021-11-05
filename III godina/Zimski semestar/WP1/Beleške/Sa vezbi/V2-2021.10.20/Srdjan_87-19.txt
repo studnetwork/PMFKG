@@ -8,7 +8,7 @@ Postoji elif
 
 
 Ukoliko se u tagu "option" ne navede atribut "value" onda
-će uzeti kao vrednost zadržaj koji se prikazuje
+će uzeti kao vrednost sadržaj koji se prikazuje klijentu
 
 
 Obično atribut "value" nema takvu vrednost već neki id ili
@@ -96,7 +96,7 @@ Slično kao što se u C-u oslobađaju resursi uz pomoć f-je
 free tako se u PHP koristi f-ja: unset($pokazivac)
 
 
-Nizovi rade slično kau u C-u, promenljiva kojoj se dodeljuje
+Nizovi rade slično kao u C-u, promenljiva kojoj se dodeljuje
 niz u stvari sadrži pointer na prvi element niza
 
 
@@ -111,7 +111,7 @@ navođenjem u stringu pri kreiranju tag-a (primer. atribut
 
 Kreiranje asocijativnog niza:
     $dani = array("prvi"=>"Ponedeljak","drugi"=>"Utorak",
-    "treci"="Sreda");
+    "treci"=>"Sreda");
     
     
 
@@ -156,7 +156,7 @@ Sortiranje elemenata niza:
     
     
 Funkcija sort sadrži i dodatni argument, $sort_flags, kojim
-se može odabrati način na koji će niz biti Sortiranje
+se može odabrati način na koji će niz biti sortiran
 
 
 Sortiranje u descending redosledu:
