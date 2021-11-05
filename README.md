@@ -23,6 +23,9 @@
 Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
 
 # Linkovi ka materijalu
+[Prva godina - Zimski semestar][prva-zimski]  
+[Prva godina - Zimski semestar][prva-letnji]  
+
 [Druga godina - Zimski semestar][druga-zimski]  
 [Druga godina - Letnji semestar][druga-letnji]  
 
@@ -83,15 +86,17 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Materijal reference)
 
-[druga-zimski]: ./II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[prva-zimski]: ./I%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[prva-letnji]: ./I%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
+[druga-zimski]: ./II%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 [druga-letnji]: ./II%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
-
 [treca-zimski]: ./III%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
-
 [treca-letnji]: ./III%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
+[cetvrta-zimski]: ./IV%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
+[cetvrta-letnji]: ./IV%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 
 [//]: # (Korisni likovi reference)
