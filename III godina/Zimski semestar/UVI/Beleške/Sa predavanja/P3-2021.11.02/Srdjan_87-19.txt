@@ -1,0 +1,425 @@
+Datum održavanja: 02.11.2021.
+Predavač: Višnja Simić
+Čas: 3
+=====================================
+
+
+
+Najbitniji delovi:
+- mehanizam zaključivanja
+- baza znanja
+
+
+
+Redosled smeštanja pravila na agendu zavisi od sistema ili
+izabranog načina
+
+
+Nikada se ne izvršava više pravila odjednom, već isključivo
+jedno po jedno jer je nakon izvršavanja svakog potrebno
+obaviti određena ažuriranja
+
+
+
+
+
+Na levoj strani pravila može postojati jedan ili više
+uslova
+
+
+Uslovi mogu biti povezani AND ili OR logičkim veznicima
+ili njihovom kombinacijom
+
+
+ 
+
+NOT zahteva da se uslov iskaz ne poklapa ni sa jednom
+tvrdnjom iz liste
+
+
+
+`Pravila mogu sadržati promenljive`
+
+
+Promenljiva dobija vrednost u procesu uparivanja tvrdnje sa
+uslovima pravila
+
+
+Koristi se kada imamo promenljiv deo pravila, čija vrednost
+"nije bitna" i drugi deo koji je fiksiran i koji "je bitan"
+
+
+Promenljiva se razlikuje od ostatka pravila po tome što
+ispred nje stoji znak pitanja "?"
+
+
+
+Mehanizam zaključivanja, pri proveravanju i uparivanju tvrdnje
+sa uslovom pravila, dodeljuje vrednost promenljivoj tako što
+nalazi datu tvrdnju u kojoj se fiksirani deo poklapa sa delom
+te tvrdnje, a onda ono što se u tvrdnji nalazi na mestu na kome
+se nalazi promenljiva uzima i dodeljuje ga toj promenljivoj
+
+
+
+"Promenljiva zadržava tu vrednost sve dok se pravilo ne izvrši"
+(tačnije aktivirana pravila; promenljiva će za svaku aktivaciju
+pravila imati drugačiju vrednost; pogledati dodata)
+
+Tokom uparivanja jedno pravilo se može uparti sa više tvrdnji
+
+[ dodato
+
+Primer:
+
+    Pravilo
+    IF (`?x je pas`) THEN (`?x je životinja`)
+
+    Tvrdnje:
+    f1: (`Droopy je pas`)
+    f2: (`Doge je pas`)
+    
+    |
+    V
+    
+    (`Droopy je životinja`)
+    (`Doge je životinja`)
+    
+U ovom primeru, kao i inače, dato pravilo se nije izvršilo istovremeno
+pod uticajem obe tvrdnje, već je prvo izvršeno pod uticajem prve tvrdnje i
+onda dodata je nova tvrdnja (`Droopy je životinja`), a nakon toga je
+ažurirana agenda i izvršeno pravilo pod uticajem tvrdnje f2 i time je dobijena nova tvrdnja (`Doge je životinja`)
+
+
+Aktivirana pravila dobijaju vrednosti u okviru svojih promenljivih, tj.
+pravilo koje sadrži promenljivu pri aktivaciji kreira aktivirano
+pravilo koje se evaluira zavisno od tvrdnji koje su ga zadovoljile.
+Samo pravilo neće imati neku od tih vrednosti i može imati više različitih
+aktiviran pravila
+
+
+Sama promenljiva ne dobija vrednost, već se tokom vezivanja vrednost, 
+koja se poklapa sa promenljivom, postavlja na mesto promenljive u
+aktiviranom pravilu i tu vrednost će aktivirano pravilo imati sve
+dok se ne izvrši
+]
+
+
+
+[ za test i ispit
+
+Podrazumevaćemo da mehanizam zaključivanja vezuje uslove pravila sa 
+tvrdnjama po leksikografskom poretku. Takođe, aktivirana pravila na
+agendi se izvršavaju po leksikografskom poretku.
+]
+
+
+
+Ekspertni sistemi rade sa tvrdnjama
+
+
+Podrazumeva se da su tvrdnje u listi tvrdnji tačne, ali moguće je dodeliti
+im stepen tačnosti ili čak označiti da je neka tvrdnja netačna
+
+
+
+
+Primer (pravilo za krađu):
+    Pravila
+        R1:
+            IF 'ti imaš (?x)'
+            THEN 'ja imam (?x)'
+            DELETE 'ti imaš (?x)'
+        
+    Tvrdnje
+        A0: 'ti imaš svesku'
+        A1: 'ti imaš olovku'
+        A2: 'ti imaš gumicu'
+        
+        
+Rešavanje:
+    Prvi ciklus vezivanja
+        Tvrdnje A0, A1 i A2 aktiviraju pravilo R1
+    Agenta:
+        R1: A0
+        R1: A1
+        R1: A2
+        
+        
+    Izvršava se aktivirano pravilo R1: A0
+    
+    Lista tvrdnji:
+        A1: 'ti imaš olovku'
+        A2: 'ti imaš gumicu'
+        A3: `ja imam svesku'
+        
+        
+        
+    Drugi ciklus vezivanja
+        Nema novih aktivacija
+    
+    Agenta:
+        R1: A1
+        R1: A2    
+        
+    Izvršava se aktivirano pravilo R1: A1
+    
+    Lista tvrdnji:
+        A2: 'ti imaš gumicu'
+        A3: 'ja imam svesku'
+        A4: 'ja imam olovku'
+        
+        
+    Treći ciklus vezivanja
+        Nema novih aktivacija
+    
+    Agenta:
+        R1: A2    
+        
+    Izvršava se aktivirano pravilo R1: A2
+    
+    Lista tvrdnji:
+        A3: 'ja imam svesku'
+        A4: 'ja imam olovku'
+        A5: 'ja imam gumicu'
+        
+    Četvrti ciklus vezivanja
+        Nema novih aktivacija
+        
+    
+    Agenda je prazna => kraj izvršavanja programa
+    
+    
+    
+
+Nije moguće dodeliti vrednost promenljivoj ukoliko se uslovni element NOT nalazi na početku uslova, pre drugih tipova uslovnih elemenata
+jer mehanizam zaključivanja traži tvrdnju koja će se poklopiti
+sa tim iskazom, ali pošto je uslovni element NOT netačan kada
+nađe takav iskaz (i time dodeli vrednost) neće doći do dalje provere,
+a kada se ne nađe takav iskaz onda neće doći do vezivanja pravila i
+tvrdnje pa time nikada neće doći do provere preostalog dela uslova
+
+
+Zbog toga je potrebno prvo dodelila vrednost promenljivoj pa tek nakon
+toga koristiti uslovni element NOT
+
+
+`Nove promenljive se ne mogu prvi put u pravilu uvoditi pod dejstvom
+NOT klauzule - mehanizam za zaključivanje neće znati šta da radi
+sa njima`
+
+
+"Mehanizam zaključivanja bi u slučaju prvog uvođenja promenljive u
+klauzuli NOT bio zbunjen jer mora da dodeli promenljivoj vrednost
+nečega što ne treba da nađe"
+
+
+Primer:
+    AND( NOT( '(?x) je pingvin' )
+         '(?x) je ptica'
+    )
+    
+Primer ispravnog uslova:
+    AND( '(?x) je ptica' 
+         NOT( '(?x) je pingvin' )
+    )
+    
+Ovo je ispravan uslov zato što će se prvo za x vezati neka vrednost, 
+a nakon toga će se proveriti deo u klauzuli NOT za tu vrednost, tj.
+ukoliko se pronađe nešto što je ptica, proveriće se da li nije pingvin
+
+
+Na ovaj način se traže svi objekti za koje se tvrdi da su ptice, ali
+za koje ne postoji tvrdnja da su pingvini
+
+
+
+
+Zaključivanje od tvrdnji ka zaključcima koji iz njih slede naziva se
+zaključivanje unapred ili zaključivanje sa ulančavanjem unapred
+(forward chaining)
+
+Tokom tog procesa ulančavanja unapred nove tvrdnje se mogu dodati
+u listu
+
+
+
+
+Pored navedenog načina korišćenja baze znanja postoji i drugi način,
+backward chaining
+
+
+Zaključivanje od hipoteza ka tvrdnjama koje podržavaju hipoteze naziva
+se zaključivanje unazad ili zaključivanje sa ulančavanjem unazad
+(backward chaining)
+
+
+
+
+Zaključivanje unazad se vrši tako što se polazi od hipoteze i onda se
+traži dokaz za nju. Prvo se kreće sa potragom za odgovarajućom
+tvrdnjom (dokazom) u listi tvrdnji. 
+
+`Ukoliko se ne pronađe traži se pravilo koje ima zaključak koji se
+poklapa sa hipotezom.
+
+Uslovi nađenog pravila se nadalje posmatraju kao hipoteze i pokušava
+se ulančavanje unazad od njih, ka tvrdnjama koje su dostupne u listi.
+
+Tokom procesa ulančavanja unazad nema dodavanja novih tvrdnji u listu.
+
+Ako postoji konflikt, uvek se bira praviko koje je prvo na redu.
+
+
+Ulančavanje unazad se može predstaviti AND-OR stablima`
+
+
+U tom stablu, koren predstavlja hipotezu koju želimo da tokažemo
+
+
+Na AND-OR stablu, AND se prikazuje tako što se grane koji 
+predstavljaju njegove strane povežu lukom
+
+
+[ za test
+
+U zadatku sa ulančavanjem unazad potrebno je pored crtanja AND-OR
+stabla i navesti redosled po kojem se ispituju hipoteze. Ide se po 
+dubini, tj. prvo se proverava zadovoljenost jedne grane, pa se nakon
+toga proverava zadovoljenost ostalih, ukoliko je to potrebno
+
+
+Na kraju je potrebno dati potpun zaključak, tj. opis konačnog 
+rezultata i spisak svih pravila i tvrdnji koje su u osnovi tog 
+rezultata
+]
+
+
+
+
+
+Ulančavanje unazad se koristi najčešće kada se iz određenog skupa 
+tvrdnji može doneti veliki broj zaključaka, ili ukoliko nemamo 
+tvrdnje, a zanima nas da li važi neki konkretan zaključak
+
+FAN-OUT: broj inputa koji ide iz nekog čvorišta
+
+
+
+
+Ulančavanje unapred se koristi kada na raspolaganju imamo veliki broj
+tvrdnji i kada želimo razmotrimo šta se na osnovu njih može zaključiti
+
+FAN-IN: broj inputa koji neki čvor može primiti
+
+
+
+
+
+Tretiranje neizvesnosti
+-----------------------
+
+
+Ne može se uvek sa velikom sigurnošću tvrditi tačnost neke tvrdnje.
+Zbog toga postoje sigurnosni faktori (certainty factors) koje je moguće
+dodeliti zaključcima pravila
+
+Zahvaljujući njima sistem za zaključivanje može da radi i sa tvrdnjama
+čija je tačnost neizvesna
+
+
+Ideja potiče iz ekspertnog sistema Majcin (Mycin) koji je bio jedan od 
+prvih uspešnih ekspertnih sistema i služio je za identifikaciju infekcija
+uzrokovanih bakterijom i preporuku antibiotika sa odgovarajućom dozom
+koja je prilagođena težini pacijenta.
+
+
+
+Kao što ekspert ne može tvrditi sa 100% tačnošću tačnost nekog zaključka,
+tako ni ekspertni sistem u kojem se kodira znanje eksperata ne može uvek
+donositi zaključke sa 100% sigurnošću
+
+
+
+
+Faktori izvesnosti se mogu dodeliti i samim tvrdnjama
+
+
+Izvesnost zaključka se kodira u bazu znanja, a izvesnost tvrdnje se može
+dodeliti preko korisničkog interfjesa
+
+
+
+Sigurnosni faktor (ili stepen sigurnosti) leve strane pravila je
+sigurnosni faktor svih klauzula koje ga čine
+
+
+Sigurnosni faktor klauzule AND se računa kao minimum svih antecedenata
+koji su njome obuhvaćeni
+    CF(AND-a) = min CF(antecedenti obuhvaćeni AND-om)
+
+Sigurnosni faktor klauzule OR se računa kao maksimum svih antecedenata
+koji su njome obuhvaćeni
+    CF(OR-a) = max CF(antecedenti obuhvaćeni OR-om)
+
+    
+CF(LHS) = CF(uslovnog elementa)
+
+
+
+CF(zaključka) = CF(LHS) * CF(RHS)
+
+
+
+Primer:
+    IF 
+        (`antecedent 1`) 1.0
+        (`antecedent 2`) 0.7
+        (`antecedent 3`) 0.8
+    THEN
+        (`kosekvent`) 0.8
+        
+        
+    CF(LHS) = min(1.0, 0.7, 0.8) = 0.7
+    CF(RHS) = 0.8
+
+    CF(zaključaka) = 0.7 * 0.8 = 0.56
+
+
+
+
+`Više različitih pravila mogu izvesti iste zaključke, sa 
+različitom sigurnošću.` Ti zaključci mogu da se kombinuju
+u jedan čija je stepen sigurnosti kombinacija stepena
+sigurnosti tih zaključaka
+
+
+NCF - stepen sigurnosti zaključka nakon kombinovanja
+      stepena sigurnosti koju ima isti zaključak izveden
+      iz drugih tvrdnji
+      
+CF1 - stepen sigurnosti datog zaključka dobijen 
+      izvođenjem iz jedno skupa tvrdnji
+      
+CF2 - stepen sigurnosti datog zaključka dobijen 
+      izvođenjem iz drugog skupa tvrdnji
+      
+      
+Formule:
+    1. CF1 i CF2 su pozitivni
+        NCF = (CF1+CF2) - (CF1*CF2)
+      
+    2. CF1 i CF2 su negativni
+        NCF = (CF1+CF2) + (CF1*CF2)
+        
+    3. CF1 i CF2 nisu istog znaka
+        NCF = (CF1+CF2) / ( 1 - min(|CF1|,|CF2|) )
+      
+      
+
+Sigurnosni faktor zaključka se može računati od strane
+engine-a pored "nametnutog" računa CF-a za LHS i RHS
+
+
+
+

@@ -1,0 +1,183 @@
+Datum održavanja: 27.10.2021.
+Predavač: Filip Bojović
+Čas: 3
+=====================================
+
+
+Kreiranje funkcije:
+    function naziv($po_vrednost, &$po_referenci) {
+        return 10;
+    }
+    
+
+    
+strtoupper($string)    # funkcija koja pretvara sva mala slova u velika
+
+strtolower($string)    # funkcija koja pretvara sva velika slova u mala
+
+
+
+
+PHP podržava definisanje podrazumevane vrednosti za neki parametar:
+    function naziv($prom1, $prom2 = "podrazumevana vrednost") {
+            return $prom2;
+    }
+
+    
+Prvo se navode parametri za koje nije definisana podrazumevana vrednost,
+a nakon njih oni za koje jeste
+
+
+Za određivanje niza se mogu koristiti count($niz) ili sizeof($niz)
+
+
+
+Ukoliko se ne zna koliko će elemenata imati niz može se koristit:
+    $arr = [];
+    
+Dodavanje elemenata u ovakav niz se vrši na sledeći način:
+    $arr[] = $vrednost1;
+    $arr[] = $vrednost2;
+    
+Elementi se pri ovom načinu dodavanja dodaju na kraj niza
+
+
+
+
+Vrednosti je moguće štampati sa:
+    var_dump($prom);
+    
+    # ili
+    
+    print_r($prom);
+    
+    
+    
+    
+Ako se šalje više vrednosti atributa nekog elementa moguće je
+poslati te vrednost u obliku niza:
+    # forma, šalje se POST na trenutnoj stranici
+    ...
+    echo "Adresa $i: <input type='text' name='adrese[]'> <br>";
+    ...
+    
+    $adrese = $_POST['adrese'];
+    
+    
+    
+Provera da li element niza (u ovom slučaju prvi) nije null:
+    if( isset($array[1]) ) ...
+    
+    
+
+trim($str)    # brisanje nepotrebnih razmaka sa krajeva stringa
+
+
+array_unique($niz)    # vraća niz sačinjen od jedinstvenih elemenata
+
+
+
+Prosleđivanje po referenci:
+    # primer funkcije za zamenu vrednosti
+    
+    function f(&$a, &$b) {
+        $temp = $a;
+        $a = $b;
+        $b = $a;
+    }
+    
+    $a = 5;
+    $b = 10;
+    
+    f($a, $b);
+    
+    
+Kao što se može primetiti iz primera, nije potrebno pri pozivu 
+koristiti simbol "&", već samo u potpisu funkcije
+
+
+
+U PHP-u je moguće funkciji proslediti neograničen broj argumenata
+korišćenjem funkcija "func_num_args()" i "func_get_args()":
+
+    function f() {
+        $arg_num = func_num_args();
+        $args = func_get_args();
+        
+        foreach($args as $arg) {
+            echo $arg
+        }
+    }
+    
+    
+    
+Ne preporučuje se korišćenje globalnih promenljivih
+
+
+
+Globalne promenljive nisu vidljive u funkcijama. Da bi postale 
+vidljive potrebno je da se definišu u datoj funkciji ključnom
+rečju global:
+    $dan = "Sreda";
+    ...
+    function dan() {
+        global $dan;
+        echo $dan;
+    }
+    
+
+Naziv globalne promenljive i njene definicije u funkciji moraju
+da se poklapaju (kao i case)
+
+
+
+Otvaranje fajla je isto kao i u C-u:
+    # u ovom slučaju za pisanje
+    $fp = fopen( $naziv_fajla, 'w' );
+    
+    # upis u fajl
+    fwrite($fp, "neki tekst");
+    
+    # zatvaranje fajla
+    fclose($fp);
+    
+    #########################
+    
+    # u ovom slučaju za čitanje
+    $fp = fopen( $naziv_fajla, 'r' );
+    
+    # upis u fajl
+    $podaci = fread( $fp, filesize($naziv_fajla) );
+    
+    # zatvaranje fajla
+    fclose($fp);
+    
+    
+    
+Funkcija "filesize" vraća dužinu fajla u bajtovima
+
+
+Kao u C-u, moguće je dodati header fajlove:
+    header.php:
+    <?php 
+        echo "Neki tekst";
+    ?>
+    
+    
+    stranica.php:
+    <?php
+        # pretpostavljamo da su u istom folderu
+        include './header.php';
+    ?>
+    
+    
+Ovo omogućava iskorišćavanje jednog dela koda u više 
+fajlova
+
+
+
+is_dir($putanja)     # provera da li se na datoj putanji nalazi 
+                     # direktorijum
+                     
+is_file($putanja)    # provera da li se na datoj putanji nalazi 
+                     # fajl

@@ -1,0 +1,220 @@
+Datum održavanja: 25.10.2021.
+Predavač: Lana Miljković
+Čas: 3
+=====================================
+
+
+IDEF0 je dijagram procesa, na njemu se prikazuju procesi i
+načini na koje se informacije razmenjuju.
+
+
+Na svakom nivou dekompozicije je potrebno imati između 2 i 6
+procesa. Poželjno je da ih bude oko 3
+
+
+
+
+
+Dijagram toka podataka (DTP)
+----------------------------
+
+DTP (ili en. DFD - Data Flow Diagram)
+
+
+Sličan je IDEF0 dijagramu
+
+
+DTP prikazuje šta se dešava sa podacima, kako se oni menjaju
+i modifikuju. Akcenat je na podacima
+
+
+Za razliku od IDEF0, koji je imao 2 komponente, DTP ima 
+4 komponente:
+- proces obrade podatka 
+    procesi koji modifikuju podatke
+    
+- objeke okruženja
+    još se nazivaju i interfejsi ili eksterni objekti
+    
+    kod IDEF0 ulazi su poticali iz okoline, dok kod DTP ti
+    ulazi potiču iz nekog eksternog objekta
+    
+- skladište podataka
+    u njima se skladište podaci koji procesi koriste ili
+    ažuriraju
+- tokove podataka 
+    veze koje povezuju komponente sistema
+    
+    
+
+
+    
+Crtanje / prikazivanje komponenti:
+- proces: zaobljeni pravougaonik
+
+- tok podataka: strelica
+
+- skladište: 2 paralelne linije 
+    (ili otvoreni pravougaonik u kome se nalazi oznaka 
+    skladišta)
+    
+- spoljni entiteti: pravougaonik
+
+
+
+
+Proces je niz operacija kojima se transformišu ulazni podaci
+u izlazne.
+
+Proces treba biti označen brojnom oznakom [ovo nije neophodno
+na kolokvijumu] i imenom procesa
+
+
+
+Tok podataka je neki put kojim protiču podaci, od jednog
+elementa ka drugom
+
+
+
+Skladište podataka služi za čuvanje nekih podataka
+
+BITNO: skladiše je moguče povezati jedino dva procesa. Nije
+moguće povezati 2 skladišta ili skladište i eksterni entitet
+
+
+
+Spoljni objekti (interfejsi) svi eksterni sistemi koji utiču
+na dati sistem 
+
+
+
+
+
+Na kontekstnom dijagramu kod DTP-a postoje samo eksterni
+sistemi koji utiču na dati IS, sam taj IS i tokovi podataka 
+između njih.
+
+
+Skladišta se može prikazivati tek od prvog nivoa
+
+
+Kontekstni dijagram prikazuje kontekst poslovnog procesa
+
+
+Radi lakše preglednosti, skladišta na istom nivou se mogu
+duplirati
+
+
+
+Vrlo je važno da sve veze između eksternih objekata i 
+informacionog sistema budu prisutne i na ostalim nivoima
+dekompozicije, tj. da broj veza eksternih objekata sa IS na 
+kontekstnom dijagramu bude jednak broju tih veza na ostalim
+nivoima dekompozicije, isto kao i kod IDEF0
+
+
+
+
+Eksterni objekti se navode na kontekstnom dijagramu i prvom
+nivou dekompozicije, a skladišta se prikazuju tek od prvog
+nivoa dekompozicije
+
+
+
+
+[ bitno za kolokvijum
+
+Pravila koja moraju biti zadovoljena kod DTP-a:
+1. procesi moraju da imaju ulazni i izlazni tok
+
+    u suprotnom ne bi ni bio proces jer ne može generisati
+    podatke ni iz čega, a ne može ni biti od koristi ukoliko
+    nema nikakav izlaz 
+
+2. Svaki proces mora biti imenovan
+    
+3. Za skladište takođe važi ono što važi i za proces u 
+   prvom pravilu, tj. mora imati ulaz i izlaz
+   
+4. Skladišta ne mogu direktno da se povezuju sa drugim 
+   skladištima ili eksternim objektima
+    
+5. Svaki eksterni objekat mora imati bar jedan ulazni ili
+   bar jedan izlazni tok
+   
+   ukoliko nema ni jedno onda ne bi bio relevantan za dati
+   IS pa ne bi bi bilo potrebno prikazivati ga
+   
+ 
+6. Eksterni objekti se ne mogu direktno povezivati jedni
+   sa drugima
+
+6. Svaki tok podataka između dva procesa mora biti imenovan
+
+  
+   
+   
+Nekorektni ulazi i izlazi se razmatraju prilikom provere
+da li neki element ima ulaz/izlaz (iako nije korektno prihvata
+se kao ulaz/izlaz)
+]
+
+
+
+Tok podataka može da se grana
+
+
+
+
+"Ukoliko tok između procesa i skladišta nije imenovan to znači
+da nosi celokupnu informaciju tog skladišta"
+
+
+
+Slajd 18, treći termin, rešenje:
+    eo2 s1
+    s1 eo1 
+    po1 ulaz
+    p01 p02 naziv
+    s4 ulaz
+    po2 izlaz
+    s2 s3
+    p04 izlaz
+    
+    
+
+Slajd 20, treći termin, rešenje:
+    eo1 eo2
+    eo1 s1
+    s1 izlaz
+    po1 ulaz
+    p02 po3 naziv
+    p03 izlaz
+    
+    
+Slajd 23, treći termin, rešenje:
+    po2 po4 naziv
+    s1 eo1
+    eo1 eo2
+    po3 izlaz
+    s2 s3
+    
+    
+    
+Za kreiranje DTP-a u AllFusion Process Modeler-u pri prekiranju
+odabrati DFD
+
+Da bi se pojavila opcija "Decompose" neophodno je da je aktivna
+kartica "Activities" u donjem levom uglu
+
+
+
+Ukoliko je dijagram prvog nivoa dekompozicije prenatrpan moguće
+započeti prikazivanje skladišta tek od narednog nivoa
+
+
+
+Moguće je koristiti boje kako bi se prikazala razlika između
+određenih elemenata i kako bi dijagram bio lakši za čitanje, tj.
+tumačenje
+
