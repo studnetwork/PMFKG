@@ -6,7 +6,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [Matematika 1][mat1]  
 [Teorijske osnove informatike][toi]  
 [Računarski sistemi][rs]  
-[Praktikum iz programiranja 1][pip3]  
+[Praktikum iz programiranja 1][pip1]  
 
 # Meeting linkovi
 
@@ -34,7 +34,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [mat1]: ./MAT1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [toi]: ./TOI/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [rs]: ./RS/Vodi%C4%8D_predmet.md#vodi%C4%8D
-[pip3]: ./PIP3/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[pip1]: ./PIP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 

@@ -3,7 +3,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
 [Arhitektura i organizacija računara][aor]  
-[Strukture podataka i algoritmi 1][spa2]  
+[Strukture podataka i algoritmi 1][spa1]  
 [Matematika 2][mat2]  
 [Praktikum iz programiranja 3][pip3]  
 [Softverski alati][sa]  
