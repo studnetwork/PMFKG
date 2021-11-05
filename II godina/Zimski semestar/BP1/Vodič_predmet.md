@@ -2,11 +2,7 @@
 U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 
 ## Kolokvijumi
-Rešenja kolokvijuma raspoređena po godinama  
-[Prvi kolokvijum][prvi kolokvijum]  
-[Drugi kolokvijum][drugi kolokvijum]  
-[Treci kolokvijum][treci kolokvijum]  
-[Spojena sva tri u jednom (popravni za 2014-15)][kombinovani kolovkijumi]
+[Link ka folderu Kolokvijumi][kolokvijumi]
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, napomene greškama u skriptama i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
@@ -18,7 +14,7 @@ Rešenja domaćih zadataka po godinama
   
 [Rešnja zadataka iz normalizacije sa foruma][normalizacija-forum]  
 
-[//]: # ( COMMENT tekst:Link ka rešenjima domaćih zadataka; link:[domaći])
+[//]: # ( [Link ka folderu Domaći][domaći] )
 
 ## Beleške
 Folder sa beleškama i materijalom koji može biti od koristi tokom učenja i spremanja kolokvijuma ili ispita. Mogu se naći i neki dodaci sa detaljnijim informacijama
@@ -31,7 +27,7 @@ Ova sekcija sadrži materijal koji nije sortiran
 
 [Moodle stranica predmeta][stranica predmeta]
 
-[//]: # ( COMMENT tekst: Link ka folderu Ostalo; Link: [ostalo] )
+[//]: # ( [Link ka folderu Ostalo][ostalo] )
 
 # Napomena
 Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
@@ -51,11 +47,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [normalizacija-forum]: ./Doma%C4%87i/Zadaci%20za%20vezbu/Normalizacija/Sa%20foruma%20-%20Za%203.%20klk
 
-[prvi kolokvijum]: ./Kolokvijumi/1.%20kolokvijum
-
-[drugi kolokvijum]: ./Kolokvijumi/2.%20kolokvijum
-
-[treci kolokvijum]: ./Kolokvijumi/3.%20kolokvijum
+[kolokvijumi]: ./Kolokvijumi
 
 [kombinovani kolovkijumi]: ./Kolokvijumi/Kombinovani
 
