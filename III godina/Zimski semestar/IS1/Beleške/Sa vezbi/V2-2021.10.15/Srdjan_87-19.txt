@@ -5,7 +5,7 @@ Predavač: Lana Miljković
 
 IDEF0
 
-Funkcija je predstavljena kao pravougaoik.
+Funkcija je predstavljena kao pravougaonik.
 Funkcija predstavlja proces / aktivnost
 
 Nazivaju se aktivnim glagolima
@@ -29,6 +29,7 @@ koji se ne troše
 Kontrola je nešto što usmerava, reguliše i ograničava
 funkciju
 
+IDEF0 dijagram predstavlja određeni sistem (nije reč o IS)
 
 [ za kol
 

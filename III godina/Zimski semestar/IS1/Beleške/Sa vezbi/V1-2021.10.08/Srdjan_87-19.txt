@@ -238,7 +238,7 @@ Pri modelovanju IDEF0 dijagrama prvo se kreira kontekstni dijagram koji jednim
 pravougaonikom prikazuje čitav informacioni sistem. 
 
 
-Nakon toga se dati pravougaonik razlaže međusobno povezane podprocese, pa će
+Nakon toga se dati pravougaonik razlaže međusobno povezane potprocese, pa će
 se na sledećem nivou sistem biti detaljnije prikazan.
 
 
@@ -292,7 +292,7 @@ na više procesa koji međusobno interaguju.
 
 
 Princip ograničenja složenosti definiše granice broja blokova tako da je donja 
-granica 2, a gornja 6. (2 je donja granice jer bi u suprotnom dati dijagram u stvari
+granica 2, a gornja 6 (2 je donja granice jer bi u suprotnom dati dijagram u stvari
 bio kontekstni dijagram; gornja je 6 kako se ne bi dijagram previše zakomplikovao)
 
 
@@ -301,7 +301,7 @@ odabirom opcije <<Decompose>>
 
 
 Nakon dekompozicije neophodno je da strelice koje potiču od roditeljskog (nadređenog)
-dijagrama budu povezana na odgovarajući način sa njegovim podprocesima.
+dijagrama budu povezana na odgovarajući način sa njegovim potprocesima.
 
 
 Pojava uglastih zagrada oko određene strelice označava da se dati izlaz ne
