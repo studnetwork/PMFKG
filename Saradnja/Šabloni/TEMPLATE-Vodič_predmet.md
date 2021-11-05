@@ -4,29 +4,30 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
-[Link ka folderu Kolokvijumi][kolokvijumi]
+[//]: # ([Link ka folderu Kolokvijumi][kolokvijumi])
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, kao i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
-[Link ka materijalu][vežbe i predavanja]
+[//]: # ([Link ka materijalu][vežbe i predavanja])
 
 ## Domaći
 Rešenja domaćih zadataka po godinama
 
-[Link ka folderu Domaći][domaći]
+[//]: # ([Link ka folderu Domaći][domaći])
 
 ## Beleške
 Folder sa beleškama i materijalom koji može biti od koristi tokom učenja i spremanja kolokvijuma ili ispita. Mogu se naći i neki dodaci sa detaljnijim informacijama
 o materijalu sa gradiva
 
-[Link ka folderu sa beleškama][beleške]
+[//]: # ([Link ka folderu sa beleškama][beleške])
 
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran
 
 [Moodle stranica predmeta][stranica predmeta]  
-[Link ka folderu Ostalo][ostalo]
+
+[//]: # ([Link ka folderu Ostalo][ostalo])
 
 # Napomena
 Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
@@ -57,5 +58,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
+
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
 
