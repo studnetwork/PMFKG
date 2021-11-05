@@ -353,8 +353,8 @@ Dati PEAS opis za dati primer agenta
 
 U primeru automatizovanog taksija deo okruženja predstavlja i 
 mušterija.
-Neki od aktuatora su: mikrofon za primanje komandi od strane 
-mušterije, ekran na kome bi se klijentu saopštavale informacije o
+Neki od aktuatora su: [? mikrofon za primanje komandi od strane 
+mušterije,] ekran na kome bi se klijentu saopštavale informacije o
 putovanju
 
 

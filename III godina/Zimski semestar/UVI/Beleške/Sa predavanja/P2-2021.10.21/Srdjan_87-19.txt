@@ -135,7 +135,7 @@ u cilju rešavanja problema i davanja saveta"
 
 
 
-Ekspet - osobja koja poseduje znanje ili veštine koje su
+Ekspet - osoba koja poseduje znanje ili veštine koje su
 većini ljudi nepoznate ili nedostupne
 
 
@@ -363,7 +363,7 @@ konflikta
 Ciklus mehanizma za zaključivanje
 ---------------------------------
 
-Mehanizam za zaključivanje prvo pronalazi u bazi zanja
+Mehanizam za zaključivanje prvo pronalazi u bazi znanja
 sva pravila čiji su uslovi zadovoljeni tvrdnjama iz
 radne memorije i sva ta pravila se smeštaju na agentu.
 
@@ -386,7 +386,7 @@ tvrdnji (dodaju se nove ili se ukanjaju neke postojeće)
 
 To zahteva i ažuriranje agende. Ovaj čitav proces se
 odvija sve dok ima pravila za izvršenje, tj. dok 
-postoje pravila pravila u agendi za izvršenje
+postoje pravila u agendi za izvršenje
 
 
 
