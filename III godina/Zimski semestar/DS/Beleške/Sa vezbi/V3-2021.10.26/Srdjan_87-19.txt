@@ -1,0 +1,145 @@
+Datum održavanja: 26.10.2021.
+Predavač: Srđan Nikolić
+Čas: 3
+=====================================
+
+
+Nema ograničenja na broj namespace-ova u jednom fajlu
+
+Namespace-ovi mogu biti ugnježdeni u drugi namespace
+
+
+
+
+Namespace System je definisan u biblioteci .NET framework-a
+i njena referenca se nalazi u References
+
+
+
+Namespace-ovi omogućavaju i da se za istu stvar koriste 
+različite implementacije
+
+
+
+U C# je moguće definisati kako se implicitno ili eksplicitno jedan
+tip konvertuje u drugi
+
+
+
+Primer definisanja implicitne konverzije:
+    ...
+    public static implicit operator KonvertujU(KonvertujIz prom) {
+        ...
+    }
+    ...
+
+Primena: 
+    KonvertujIz ki = new KonvertujIz();
+    
+    KonvertujU ku = ki;
+    
+    
+
+
+Primer definisanja eksplicitne konverzije:
+    ...
+    public static explicit operator KonvertujU(KonvertujIz prom) {
+        ...
+    }
+    ...
+
+Primena: 
+    KonvertujIz ki = new KonvertujIz();
+    
+    KonvertujU ku = (KonvertujU)ki;
+    
+    
+Pri definisanju operatora konverzije, kao argument se postavlja 
+referenca na tipa koji će se konvertovati, a izvan, kao naziv operatora,
+postavlja se tip onoga u šta će se dati tip konvertovati
+
+
+
+U C# je moguće redefinisati većinu operatora (operator overloading)
+
+
+
+Sabiranje stringa sa bilo kojim tipom je moguće zato što svaki tip
+nasleđuje tip object koji sadrži metodu ToString i ta metoda se poziva
+u ovakvim situacijama
+
+
+Primer redefinisanja binarnog operatora +:
+    ...
+    public static Tip operator +(Tip t1, Tip t2) {
+        ...
+    }
+    ...
+    
+Upotreba:
+    Tip t1 = new Tip(1);
+    Tip t2 = new Tip(2);
+    
+    Tip t3 = t1 + t2;
+    
+    
+
+Metod koji (re)definiše operator može da se overload-uje
+
+
+
+
+Ukoliko se redefiniše jedan od operatora "manje" (<) ili "veće" (>) onda
+je potrebno redefinisati i drugi
+
+
+Isto važi i za operatore "==" i "!="
+
+
+U Javi ne postoji redefinisanje operatora "manje" i "veće", kao ni bilo
+kog drugog operatora i to je moguće izvesti metodom CompareTo iz 
+interfejsa IComparable
+
+
+
+Asocijativnost i prioriter operatora se ne mogu promeniti njegovim 
+redefinisanjem
+
+
+
+
+Indekseri se koriste za pristupanje nekim elementima unutar nekog tipa
+
+Definisanje indeksera:
+    ...
+    public return_tip this[tip_za_indeksiranje vrednost] {
+        ...
+    }
+    ...
+    
+    
+Primer:
+    public class Test
+    ...
+        public double this[int i] {
+            ...
+        }
+    ...
+    
+Pristup:
+    Test t = new Test(10);
+    double x = t[5];
+
+
+    
+Indekser može imati više parametara
+
+
+
+[ za kol
+
+operator overloading, casting, indekseri, propertiji (da se napravi po
+zahtevu iz postavke), overloading, enkapsulacija, polimorfizam, 
+implementacija listi (npr. dvostruka) i drugih stuktura podataka
+]
+
