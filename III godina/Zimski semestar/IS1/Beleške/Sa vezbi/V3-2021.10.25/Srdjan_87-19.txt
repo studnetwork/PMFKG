@@ -5,7 +5,7 @@ Predavač: Lana Miljković
 
 
 IDEF0 je dijagram procesa, na njemu se prikazuju procesi i
-načini na koje se informacije razmenjuju.
+načini na koje se informacije(?) razmenjuju.
 
 
 Na svakom nivou dekompozicije je potrebno imati između 2 i 6
@@ -34,7 +34,9 @@ Za razliku od IDEF0, koji je imao 2 komponente, DTP ima
     procesi koji modifikuju podatke
     
 - objeke okruženja
-    još se nazivaju i interfejsi ili eksterni objekti
+    još se nazivaju i interfejsi, eksterni objekti, eksterni
+    entiteti, spoljašnji(spoljni) objekti ili spoljašnji(spoljni)
+    entiteti
     
     kod IDEF0 ulazi su poticali iz okoline, dok kod DTP ti
     ulazi potiču iz nekog eksternog objekta
@@ -78,13 +80,13 @@ elementa ka drugom
 
 Skladište podataka služi za čuvanje nekih podataka
 
-BITNO: skladiše je moguče povezati jedino dva procesa. Nije
+BITNO: skladiše je moguće povezati jedino sa procesom. Nije
 moguće povezati 2 skladišta ili skladište i eksterni entitet
 
 
 
-Spoljni objekti (interfejsi) svi eksterni sistemi koji utiču
-na dati sistem 
+Spoljni objekti (interfejsi) su svi eksterni sistemi koji 
+utiču na dati sistem 
 
 
 
@@ -125,7 +127,7 @@ nivoa dekompozicije
 [ bitno za kolokvijum
 
 Pravila koja moraju biti zadovoljena kod DTP-a:
-1. procesi moraju da imaju ulazni i izlazni tok
+1. Svaki proces mora ulazni i izlazni tok
 
     u suprotnom ne bi ni bio proces jer ne može generisati
     podatke ni iz čega, a ne može ni biti od koristi ukoliko
@@ -133,8 +135,7 @@ Pravila koja moraju biti zadovoljena kod DTP-a:
 
 2. Svaki proces mora biti imenovan
     
-3. Za skladište takođe važi ono što važi i za proces u 
-   prvom pravilu, tj. mora imati ulaz i izlaz
+3. Svako skladište mora imati ulazni i izlazni tok
    
 4. Skladišta ne mogu direktno da se povezuju sa drugim 
    skladištima ili eksternim objektima
@@ -149,7 +150,7 @@ Pravila koja moraju biti zadovoljena kod DTP-a:
 6. Eksterni objekti se ne mogu direktno povezivati jedni
    sa drugima
 
-6. Svaki tok podataka između dva procesa mora biti imenovan
+7. Svaki tok podataka između dva procesa mora biti imenovan
 
   
    
@@ -175,11 +176,11 @@ Slajd 18, treći termin, rešenje:
     eo2 s1
     s1 eo1 
     po1 ulaz
-    p01 p02 naziv
+    po1 po2 naziv
     s4 ulaz
     po2 izlaz
     s2 s3
-    p04 izlaz
+    po4 izlaz
     
     
 
@@ -188,11 +189,11 @@ Slajd 20, treći termin, rešenje:
     eo1 s1
     s1 izlaz
     po1 ulaz
-    p02 po3 naziv
-    p03 izlaz
+    po2 po3 naziv
+    po3 izlaz
     
     
-Slajd 23, treći termin, rešenje:
+Slajd 22, treći termin, rešenje:
     po2 po4 naziv
     s1 eo1
     eo1 eo2
