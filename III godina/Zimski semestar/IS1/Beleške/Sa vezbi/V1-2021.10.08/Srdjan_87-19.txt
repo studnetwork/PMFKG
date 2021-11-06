@@ -311,3 +311,146 @@ nalazi u roditeljskom dijagramu
 Prvo je potrebno definisati sve ulaze i izlaze na kontekstnom dijagramu, a oni će se 
 automatski generisati na ostalim relevantni nivoima dekompozicije.
 
+
+
+  
+
+
+========================================================================================
+
+
+Sažetak
+
+
+1. Šta je podatak?
+
+Podatak je neobrađena misaona činjenica.
+
+
+2. Šta je informacija?
+
+Informacija predstavlja obrađen podatak koji donosi novo znanje 
+
+
+3. Šta je sistem?
+
+Sistem je skup objekata i njihovih veza
+
+
+4. Šta je informacioni sistem?
+
+Informacioni sistem je sistem u kome se veze između objekata i
+veze sistema sa okolinom ostvaruju razmenom informacija
+
+
+5. Šta je cilj informacionog sistema?
+
+Cilj informacionog sistema je da se obradom prikupljenih podataka
+dobiju informacije radi njihovog transformisanja u znanje za specifičnu
+(poslovnu) namenu
+
+
+6. Primeri informacionih sistema?
+
+- geografski informacioni sistem
+- bankarski informacioni sistem
+- tehnički informacioni sistem
+- informacioni sistem za neku kliniku
+
+
+7. Šta je Outsourcing?
+
+Outsourcing je unajmljivanje druge firme za obavljanje određene poslovne
+aktivnosti ili procesa. Uglavnom se vrši transferom zaposlenih, tj.
+zaposleni te druge firme pružaju uslugu firmi koja ih je unajmila
+
+
+8. Šta je Selfsourcing?
+
+Selfsourcing je interni razvoj i podrška nekog procesa ili IT sistema
+od strane zaposlenih koji imaju znanja da samostalno razviju aplikaciju
+uz minimalnu tehničku pomoć od strane drugih lica koja nisu deo te firme
+
+
+9. Šta je Insourcing?
+
+Insourcing je suprotno od outsourcing-a. Zaposleni neke druge firme
+se dovode u datu firmu kako bi pružali određenu uslugu, tj. kako bi
+radili na nekom internom procesu ili aktivnosti
+
+
+10. Ko su ključni učesnici nekog projekta?
+
+    1. Stakeholders - finansijeri; oni kojima treba proizvod
+    2. Business owner - osoba koja komunicira sa stakeholder-ima i product owner-ima
+    3. Product owner - realizuje u development team-u ono za šta ga je zadužio business
+    owner
+    4. (ukoliko se radi po Scrum-u) Scrum master - zadužen da rad developer-a upravlja
+    i organizuje po Scrum-u
+    5. Development team - najčešće ga čine: UX Designer, Architect, Programmer, Database
+    Engineer, Tester
+    (veoma je korisno kada u timu postoji svaka od ovih uloga)
+    
+    
+11. Šta je model? 
+    
+Model je apstrakcija / reprezentacija dela stvarnog sveta
+
+
+12. Šta su glavne komponente IDEF0 dijagrama?
+
+- procesi (predstavljeni pravougaonicima)
+- veze između procesa (predstavljene streliama)
+
+
+13. Kako se naziva najopštiji dijagram u IDEF0, tj. dijagram na najvišem nivou?
+
+Kontekstni dijagram
+
+14. Da li je bitno u IDFE0 na koju stranu procesa će se povezati strelica? Ukoliko jeste
+    opiši
+    
+Strana procesa na koju će se povezati strelica je bitna jer svaka stranica ima dodeljeno
+značenje:
+    - leva stranica: ulazi
+    - gornja stranica: kontrole
+    - desna stranica: izlazi
+    - donja stranica: mehanizmi
+
+
+15. Šta su ulazi IDEF0 dijagrama?
+
+Ulazi su desjtva okruženja da dati sistem. Predstavljaju informacije, materijale i druga
+sredstva koja se u sistemu transformišu u neki izlaz; nešto što se troši
+
+
+16. Šta su kontrole IDEF0 dijagrama?
+
+Kontrole kontrolišu procese unutar informacionog sistema. Utiču na aktivnosti
+u sistemu, ali ne mogu transformisati ulazne podatke. Ono što gotovo svaki sistem
+ima (u kome je zaposlena barem jedna osoba) je zakon o radu. 
+
+Kontrole su uvek neka pravila, pravna načela koja kontrolišu sistem.
+"Kontrolne strelice kontrolišu kako, kada i da li će se neka aktivnost izvesti,
+odnosno kakvi će biti izlazi"
+
+
+17. Šta su mehanizmi IDEF0 dijagrama?
+
+Mehanizmi su resursi, alati, metodi i sredstva koja 
+omogućavaju izvršavanje date funkcije. Strelica ide iz
+okoline ka donjoj stranici funkcije. Mehanizmi su resursi 
+koji se ne troše
+
+
+18. Šta je dijagram dekompozicije?
+
+Dijagram dekompozicije je dijagram koji se dobija kada se neki dijagram dekomponuje 
+na više procesa koji međusobno interaguju.
+
+
+19. Princip ograničenja složenosti?
+
+Dekomponovan dijagram treba da ima između 2 i 6 potprocesa
+Preporučen broj: 3
+

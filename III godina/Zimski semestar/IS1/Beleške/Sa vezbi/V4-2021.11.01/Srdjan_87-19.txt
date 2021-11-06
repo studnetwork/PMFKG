@@ -1,0 +1,197 @@
+Datum održavanja: 01.11.2021.
+Predavač: Lana Miljković
+Čas: 4
+=====================================
+
+
+IDEF0 je dijagram procesa, a DFD dijagram toka podataka
+
+
+
+Poslovanje i komunikacija između dobavljača, kupca i skladišta
+Razmatraju se četiri glavna procesa:
+- nabavka materijala
+- proizvodnja
+- prodaja
+- knjigovodstvo
+
+
+Primer: proizvodnja i prodaja hleba, peciva i lisnatog testa
+
+
+Na sličan način radi i svaka druga firma koja proizvodi i 
+prodaje svoje proizvode
+
+
+[ dodatno
+
+Narudžbenica je komercijalni dokument izdat od strane kupca 
+prodavcu, koji ukazuje na vrstu, količinu i cene proizvoda ili 
+usluga koje će prodavac pružiti kupcu. Slanje narudžbenice 
+dobavljaču predstavlja zvaničnu ponudu za kupovinu proizvoda 
+ili usluga.
+
+Otpremnica je robni dokument koji nastaje u momentu izvršenja 
+naloga kupca. Prodavac, uz robu koju šalje kupcu, obavezno, 
+dostavlja i otpremnicu.
+
+Faktura ili račun je poslovni dokument izdat od strane prodavca
+kupcu. U njemu se navode nazivi, količine i cene dogovorene za
+proizvode ili usluge koje je prodavac obezbedio kupcu. 
+]
+
+Dobavljač šalje firmi:
+- ugovor
+- otpremnicu
+- fakturu
+- materijal
+
+Firma šalje dobavljaču:
+- naduržbenicu
+- reklamaciju ili sugestije
+- uplata
+
+
+
+
+Firma šalje kupcu:
+- ponude
+- otpremnice
+- fakture
+- odgovor (na neku reklamaciju)
+
+
+Kupac šalje firmi:
+- narudžbenicu
+- uplate
+- reklamacije
+
+
+
+
+
+
+
+Dekompozicija procesa nabavke
+-----------------------------
+
+[ možda bude neki zadatak o ovome
+(
+    Proces biranja dobavljača je preskočen; 
+    Ono što prethodi slanju ugovora od strane dobavljača:
+    1. šalje se ponuda svih ponuđača
+    2. na tenderu se bira dobavlač
+    3. najbolji ponuđač postaje kadidat za dobavljača
+    4. izabranom ponuđaču se šalje predlog ugovora
+    5. ako dobavljač privhati predlog ugovora onda ga šalje
+)
+]
+
+Dobavljač šalje ugovor. Ono što je ugovoreno se čuva u
+skladište. 
+
+Čuvaju se takođe i informacije o dobavljačima sa kojima je
+uspostavljen određeni ugovor
+
+
+
+Za proces naručivanja potrebno je znati ko su dobavljači
+što znači da je potrebno komunicirati sa skladištem koje
+sadrži te informacije, a takođe i informacije o stanju zaliha
+materijala odgovarajućeg skladišta
+
+
+Kada se te informacije dobiju, šalje se narudžbenica
+dobavljaču, a nakon toga se poslata narudžbenica čuva u
+skladištu
+
+
+
+Kada se dobiju otpremnica i materijal, vrši se prijem
+tog materijala, a otpremnica se čuva u skladištu 
+
+
+Potrebno je da se vrši određena kontrola nakon tog prijema,
+ukoliko je potrebno da se izvrši reklamacija šalje se 
+reklamacija odgovarajućem dobavljaču i taj zahtev se
+čuva u skladištu
+
+
+Ukoliko je sve prošlo kako treba dobavljač dostavlja fakturu
+i ona se čuva u skladištu za fakture
+
+
+
+"Sa DFD-om se prikazuje šta je sve od dokumentacije potrebno i
+kako se kreće ta dokumentacija kroz procese. Svaki dokument
+može da se čuva u nekom posebnom skladištu. Što ima više
+skladišta to je dijagram detaljniji"
+
+
+
+Proces proizvodnje
+------------------
+
+
+Da bi se znalo šta treba i kako da se proizvede potrebno je
+prvo da se obavi planiranje.
+
+Nakon toga slede proizvodnja proizvoda i njegova kontrola
+
+
+Za planiranje proizvodnje neophodno je znati kakvo je stanje
+sa zalihama proizvoda i koja su oblašćena lica kojima se može
+obratiti (?)
+
+
+U ovom procesu se kao zaključak dobijaju informacije o 
+potrebnom materijalu i generišu se radni nalozi (koji se
+čuvaju u skladištu radnih naloga)
+
+
+Koristeći materijal i radne naloge vrši se proizvodnja.
+
+Nakon toga se generiše predajnica. Ona se prosleđuje
+kontroli proizvoda
+
+Izveštaj kontrole se skladišti u skladištu sa izveštajima
+kontrole. 
+
+
+Pomoću kontrole proizvoda zna se kakvo je stanje zaliha
+(i time se ažurira stanje skladišta sa zalihama proizvoda)
+
+
+
+
+
+
+
+Proces prodaje
+--------------
+
+
+Narudžbenica kupca se prima u procesu za prijem narudžbenica i
+skladišti se u skladištu narudžbenica.
+
+
+Za proces isporuke potrebna je naružbenica i njegov rezultat
+su faktura i otpremnica koji se šalju kupcu. Data otpremnica
+se čuva u skladištu otpremnica, a stanje zaliha prozivoda se
+ažurira
+
+
+Ukoliko postoji reklamacija, imamo proces obrade reklamacija,
+te informacije se skladište, a kupcu se daje odgovor na dati
+zahtev za reklamaciju
+
+
+Informisanje kupca na osnovu informacija o tome koji su 
+proizvoda koji su na stanju
+
+
+
+Eksterni objekti se prikazuju na svim nivoima na kojima mogu
+da stanu
+
+ 
