@@ -270,16 +270,16 @@ Sintaksa:
     
     
 
-Niz je u stvari uređena mapa koja definiše veze između ključeva i njihovim
-vrednostima.
+Niz je u stvari uređena mapa koja definiše veze između ključeva i njihovih
+vrednosti.
 
 Može da se tretira kao niz, lista (vektor), heš tabela, rečnik, kolekcija,
 stek, red, itd..
 
 
 
-Element niza takođe biti niz i nije neopthodno da ti nizovi imaju isti
-broj elemenata
+Elementi niza takođe mogu biti nizovi i nije neophodno da ti nizovi imaju
+isti broj elemenata
 
 
 
@@ -401,7 +401,7 @@ strpos($str1, $sample) - funkcija koja određuje poziciju drugog argumenta
                          u stringu koji je prosleđen kao prvi
 
 str_replace($trazeniStr, $zamenskiStr, $stringUkomeSeMenja) - pojavljivanja 
-        prvog string argumenta u trecem string argumentu menja sa stringom
+        prvog string argumenta u trećem string argumentu menja sa stringom
         iz drugog argumenta
         
         

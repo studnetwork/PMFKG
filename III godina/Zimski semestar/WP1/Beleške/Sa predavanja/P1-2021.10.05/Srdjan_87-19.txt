@@ -117,7 +117,7 @@ samom serveru
 
 
 
-Ako je neko uspe da prođe firewall i ako zna simboličku ili
+Ako neko uspe da prođe firewall i ako zna simboličku ili
 brojčanu (IP) adresu on će moći da pristupi delovima IIS-a
 kojima ne bi smeo da pristupi
 
@@ -156,7 +156,7 @@ php -v
 
 
 node
-REPL - Request Evaluete Print Loop
+REPL - Request Evaluate Print Loop
 
 
 

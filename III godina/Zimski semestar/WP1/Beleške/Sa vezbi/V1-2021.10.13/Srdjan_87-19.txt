@@ -19,7 +19,7 @@ Project URL - putanja koja će biti otvorena u browseru nakon pokretanja
 Default-ni port za localhost je 80
 
 
-PHP se može biti sadržan u HTML fajlu
+PHP može biti sadržan u HTML fajlu
 
 
 Postojanje više web servera za svaku aplikaciju je bolja opcija u odnosu
@@ -58,7 +58,7 @@ Primer:
 Nije tipiziran
 
 
-slozeni tipovi: nizovi, objekti, ...
+složeni tipovi: nizovi, objekti, ...
 
 
 specijalni tipovi: null, baza podataka, ... (?)
@@ -139,7 +139,7 @@ Nazivi globalnih promenljivih počinju sa znakom "_"
 
 
 Pristup vrednostima iz zahteva:
-    $_Naziv-metoda['naziv-ključa]
+    $_NAZIV-METODA['naziv-ključa]
     
 Primer:
     $_GET['username']
