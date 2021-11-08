@@ -103,7 +103,7 @@ Promenljive inače imaju kao podrazumevanu vidljivost private
 
 
 Funkcije svojstva ne mogu da imaju karakteristike oba 
-oblika, tj. ili obe imaju telo ili ga ni jedan nema. 
+oblika, tj. ili obe imaju telo ili ga ni jedna nema. 
 
 Javlja se kompajlerska greška ukoliko jedna funckija nema 
 telo ( vitičaste zagrade ), a druga ga ima 
@@ -147,7 +147,7 @@ da se radi o referenci:
     
 
 BITNO: kada se promenljive prosleđuju po referenci upotrebom
-       ključne reči ref, neophodno je je pre slanja ta
+       ključne reči ref, neophodno je da je pre slanja ta 
        promenljiva inicijalizovana. Ref zahteva da promenljiva
        bude inicijalizovana pre nego što njena referenca bude
        prosleđena
@@ -209,8 +209,8 @@ klase
 
 Prvi element ima vrednost 0. Kreće od nule pa se uvećava za
 1 za svakog narednog člana. Ukoliko naiđe na neki koji je
-eksplicitno definisan, onda se nastavlja od te vrednosti to
-uvećavanje za 1
+eksplicitno definisan, onda se od te vrednosti nastavlja
+dalje uvećavanje za 1
 
 
 
@@ -222,8 +222,8 @@ Anonimni tipovi
 ---------------
 
 Nemaju predefinisane članice ili klasu. Kreiraju se prilikom
-instanciranja i pošto pošto se ne zna kojeg su tipa čuvaju
-se u var promenljivoj
+instanciranja i pošto se ne zna kojeg su tipa čuvaju se u var
+promenljivoj
 
 
 Koriste se kada je potrebno definisati neki objekat za neku
