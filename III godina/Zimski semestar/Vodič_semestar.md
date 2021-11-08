@@ -2,7 +2,7 @@
 U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
-[Dizajn softvera][ds]  
+[Dizajniranje softvera][ds]  
 [Informacioni sistemi 1][is1]  
 [Uvod u veštačku inteligenciju][uvi]  
 [Web programiranje 1][wp1]  
