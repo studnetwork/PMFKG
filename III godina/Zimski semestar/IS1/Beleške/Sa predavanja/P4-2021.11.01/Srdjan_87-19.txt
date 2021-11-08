@@ -1,0 +1,105 @@
+Datum održavanja: 01.11.2021.
+Predavač: Nenad Stefanović
+Čas: 4
+=====================================
+
+
+General Motors je imao 28 neintegrisanih sistema i centralni sistem je
+imao sertifikat da radi sa samo 6 od tih sistema. Bilo je potrebno
+izmeniti to kako bi se povećala produktivnost i efikasnost, tj. bilo je
+potrebno integrisati sve te sisteme, izmeniti stare novim softverom i
+omogućiti lakšu pretragu. Oni su to uradili. Takođe su centralizovali 
+podatke i dodali su sistem za obaveštavanje kada npr. broj zaliha
+pređe definisanu donju granicu
+
+
+
+Amazon je do 2003 poslovao negativno zbog velikih troškova isporuke. Nakon
+toga su analizirali svoje poslovanje, ustanovili su gde se često poručuju
+koji proizvodi pa su u tim delovima pravili skladišta i čuvali date proizvode
+čime su dosta smanjili troškove i vreme isporuke
+
+
+Slično je uradio i General Motors za rezervne delove. Takođe su i pratili tražnju za rezervnim tokom sezona kako bi ih pripremili na vreme
+
+
+GM je imao podatke koji su mu bili potrebni za unapređenja i uštede koje je
+ostvario, ali oni su samo bili čuvani, neintegrisani, i nisu se obrađivali.
+
+
+
+
+
+Uticaj informacionih sistema (IS može imati):
+- globalni uticaj
+- organizacioni uticaj
+- individualni uticaj
+
+
+Individualni uticaj
+-------------------
+PIM - lični IS za pravljanje, obaveza, kontantima, ...
+
+
+
+Organizacioni uticaj
+--------------------
+
+Čak i mala preduzeća imaju neki tip informacionog sistema
+
+Najbogatije kompanije u svetu imaju veoma složene IS. Da 
+nemaju neki dobar IS ne bi uspele da opstanu i budu konkurentne
+na tržištu
+
+
+
+Globalni uticaj
+---------------
+
+Države, ogranizacije, unije, ...
+
+Zajedničko upravljanje granicama, Svetska zdravstvena organizacija
+
+
+
+
+IT postoji kako bi potpomogao neki poslovni proces
+
+Projektant sistema treba da zna šta su stvarne potrebe korisnika
+njegovog sistema
+
+
+Sistem treba da zadovolji neku poslovnu potrebu
+
+
+
+
+
+
+
+Pet glavnih faktora za analizu uticaja IT-a na poslovne
+organizacije:
+- razvoj Interneta i konvergencija tehnologija
+- transformacija organizacije
+- globalizacija poslovanja
+
+  outsourcing, offshoring, ...
+  kada je globalno poslovanje onda je potrebno donositi
+  odluke što brže i efikasnije
+
+- razvoj ekonomija zasnovanih na informacijama i znanju
+  
+  daje konkurentnu prednost
+
+- nastanak digitalnih preduzeća
+
+  u narednih 10 godina 80% malih ili srednjih preduzeća će
+  prestati da postoji ukoliko ne primene neku digitalnu 
+  transformaciju (ne uvedu neke nove tehnologije u svoje
+  poslovne procese)
+  
+  
+  
+
+IS se i koriste za donošenje nekih odluka
+

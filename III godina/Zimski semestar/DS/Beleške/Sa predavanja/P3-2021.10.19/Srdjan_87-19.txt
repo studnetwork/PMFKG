@@ -1,0 +1,866 @@
+Datum održavanja: 19.10.2021.
+Predavač: Svetozar Rančić
+Čas: 3
+=====================================
+
+
+
+Klase omogućavaju obuhvatanje podataka i funkcija koje se odnose na
+njih u jednu celinu, kao i višestruko iskorišćavanje već napisanog koda
+
+
+Klasa iz koje se druga izvodi naziva se terminima:
+- roditeljska klasa
+- super klasa
+- bazna klasa
+- nadklasa
+
+
+Klasa koja se izvodi iz bazne klase se naziva terminima:
+- izvedena klasa
+- dete klasa
+- podklasa
+- nasleđena klasa
+
+
+
+U izvedenoj klasi su dostupni članovi bazne klase koji imaju vidljivost
+public ili protected
+
+
+
+Veza izvedene klase sa bazno je "is-a" i njome se predstavlja da je
+izvedene klasa specifikacija bazne klase. Strelica ide od izvedene ka 
+baznoj
+
+
+
+Sintaksa za nasleđivanje:
+    class BaseClass {
+        ...
+    }
+    
+    class Derived : BaseClass {
+        ...
+    }
+
+
+
+    
+    
+    
+protected članovi su vidljivi samo u datoj klasi i u njenim izvedenim klasama
+
+
+
+
+UML
+----
++ public vidljivost
+- private vidljivost
+# protected vidljivost
+
+
+
+
+
+Za razliku od C++, C# i Java ne podržavaju višestruko nasleđivanje.
+Ukoliko je potrebno kreirati klasu koja implementira neku kategoriju dodatnih
+članica, koriste se interface-i
+
+    
+    
+Izvedena klasa može da redefiniše metod bazne klase i to se naznačava
+ključnom rečju "override"
+
+
+
+Referenca na objekat nekog tipa može da referencira objekat klase tog tipa,
+kao i objekat bilo koje izvedene klase iz tog tipa
+
+
+Tokom izvršenja se određuje koja će verzija (ona iz bazne ili ona iz izvedene 
+klase) biti pozvana i to zavisi od tipa instance koja je referencirana, a ne 
+od tipa promenljive.
+
+Ukoliko ta instanca ima redefinisan dati metod onda će taj njen metod biti
+pozvan, u suprotnom se vrši pretraga uz hijerarhiju nasleđivanja sve dok
+se ne nađe klasa koja ima definisan dati metod i ta verzija će biti pozvana
+
+
+
+
+C# zahteva da se u definicije klase jasno označi njena svrha, tj.
+njene osobine
+
+
+Takođe i za metode, ukoliko je potrebno da imaju određene osobine, kao
+što je npr. osobina da mogu biti nasleđene onda je potrebno to eksplicitno
+navesti odgovarajućom ključnom rečju. U nekim drugim jezicima, kao što je
+npr. Java, to nije potrebno
+
+
+
+Metod koji redefiniše neki nasleđeni metod iz bazne klase mora to
+eksplicitno da naznači korišćenjem ključne reči "override"
+
+
+Modifikator "new" prekida hijerarhiju nasleđivanja datog metoda, tj.
+prekida pretragu za datim metodom po hijerahiji nasleđivanja i od tog
+metoda započinje nova hijerarhija. Kreira se novi metod koji iako ima
+isti potpis kao neki metod iz bazne klase nema nikakve veze sa njom
+
+(ne preporučuje se jer je suprotno od koncepata OOP, "narušava relacije
+između pojmova i kategorija")
+
+
+
+
+
+Overloading - korišćenje istog naziva metode sa različitim potpisom
+
+Ista očekivana aktivnost, opisana nazivom metode, nad različitim tipovima
+podataka
+
+
+
+Overriding (redefinisanje) - isti potpis, ali drugačija obrada u odnosu na 
+                             baznu klasu, koja odgovara potrebama izvedene
+                             klase
+                             
+                             
+                             
+Pri kreiranju klasa treba sve zajedniče osobine definisati što više u 
+hijerarhiji kako bi se izbeglo ponavljanje koda
+
+
+
+
+Negativni aspekti ponavljanja koda:
+- ukoliko dođe do greške u ponovljenom kodu, ona se verovatno postoji
+  i u ponovljenom kodu (čak i da ne postoji svejedno je potrebna dodatna
+  provera)
+- veći kod pa samim tim i veći pozao jer je potrebno sve te delove
+  testirati
+- promena koda koji se ponavlja zahteva te izmene na svakom mestu umesto
+  samo na jednom mestu
+  
+  
+  
+  
+  
+Upis adrese objekta u referencu nekog roditeljskog tipa se
+smatra konverzijom proširivanja - widening
+
+
+Upis adrese objekta u referencu izvedenog tipa onog tipa kojeg
+je referenca iz koje se uzima data adresa smatra konverzijom 
+sužavanja - narrowing
+NAPOMENA: ovo će raditi samo ukoliko se u toj referenci iz koje
+se vrši konverzija nalazi instanca pomenute izvedene klase
+
+Pri narrowing-u neophodno je koristiti operator eksplicitne koverzije
+
+
+Primer validnog narrowing-a:
+    Bozic b = new Bozic();
+    Praznik dan = b;         // sadrži instancu izvedene klase
+    Bozic B = (Bozic)dan;
+
+    
+Primer nevalidnog narrowing-a:
+    Praznik dan = new Praznik();      
+    Bozic B = (Bozic)dan;
+
+Operatorima "is" i "as" je moguće proveriti mogućnost konverzije i
+time sprečiti nastanak grešaka
+
+
+
+Kod konverzija primitivnih tipova narrowing i widening se odnose
+na sužavanje i proširenje skupa mogućih vrednosti, tj. na zauzeće
+memorije
+
+
+
+
+
+Sve u C# nasleđuje Object. To omogućava da postojanje jednog 
+osnovnog tipa za sve instance bilo kog tipa. Ovaj pristup
+je poznat kao unifikacija tipova (Type Unification)
+
+
+
+
+Iako se terminom objektno-orjentisan jezik podrazumeva da se sve 
+odnosi na objekti ipak u nekim jezicima to nije slučaj, jer postoje
+neki tipovi podataka koji nisu objekti. Ti tipovi imaju različite
+termine, ali u C# terminologiji nazivaju se vrednostnim tipovima
+
+Većina OO jezika se suočava sa ovim problemom i rešavaju ga na 
+različite načine
+
+
+
+Svi referencni tipovi se izvode iz klase System.Object
+
+U njoj su definisane metode:
+- ToString: konvertovanje objekta u njegovu string reprezentaciju
+- Equals: provera da li su dva ili više objekta isti po sadržaju
+- GetType: vraća tip objekta
+
+
+
+
+
+Pokazivači
+----------
+
+
+U C++ postoje, u Javi ne postoje
+C# daje kompromisno rešenje u odnosu na njih
+
+
+Jedna od važnijih uloga Garbage Collector-a je da vrši defragmentaciju
+jer usled stalnog kreiranja i brisanja objekata dolazi do fragmentacije
+zauzete memorije. Ovo je neophodno jer može doći do problema ukoliko
+je potrebno kreirati neki veći objekat jer bi se time zahtevao veći
+broj sekvencijalnih memorijskih adresa, a to ne bi bilo moguće
+obezbediti zbog tih malih delova, fragmenata, koji su raspostranjeni
+po čitavoj memoriji
+
+
+Korišćenje pointera se suprodstavlja ovom pristupu. 
+
+Potrebno bi bilo da se ti fragmenti realociraju, što nije lako, a pored
+toga bilo bi potrebno i ažurirati sve adrese u pointerima
+
+
+
+Deklaracija pokazivača:
+    referent_type * naziv
+    
+referent_type može biti samo tip iz kategorije unmanaged tipova
+
+
+Zbog realokacije, pokazivači se ne mogu koristiti za reference
+tipove.
+
+
+Boxing i unboxing ne rade sa pokazivačima
+
+
+Potrebno je eksplicitno navesti da nije moguće pomerati memoriju
+čiju adresu sadrži dati pokazivač
+
+
+
+Sledeći primer se drugacije tumači od istog primera u C-u:
+    int* p1, p2, p3;
+
+U C-u p1 bi bio pokazivač na int, dok bi p2 i p3 bili intovi. U
+C# sve tri promenljive predstavljaju pointer na int
+
+
+Primer nevalidne deklaracije:
+    int *p1, *p2, *p3;
+    
+    
+
+    
+Pokazivači ne mogu da ukazuju na reference ili na struct tip koji
+sadrži referencu jer GC kontroliše reference objekata pa može doći
+do promene adresa što će izazvati problem u radu sa pokazivačima.
+GC nije svestan toga da li na neki objekat ukazuje pokazivač ili ne 
+
+
+
+int** pp   // pokazivač na pokazivač na integer
+
+int*[] p   // jednodimenzioni niz pokazivača na integer
+
+void* p    // pokazivač na nepoznati tip;
+           // generički pokazivač kao i u C-u;
+           // pointerska aritmetika
+
+
+
+           
+
+U jezicima koji koriste GC pri korišćenju pokazivača javlja se 
+problem realokacije
+
+
+U C# to se vrši označavanjem tog dela kao "unsafe":
+    int[] a = new int[5] { 10, 20, 30, 40, 50 };
+    
+    unsafe {
+        ...
+    }
+
+    
+Takođe, to na šta pokazuje pointer mora da bude fiksirano na heap-u,
+tj. mora da se izuzme iz kontrole od strane GC-a 
+Fiksiran (en. pinned)
+
+
+Primer:
+    ...
+    unsafe {
+        ...
+        fixed( int* p = &a[0] ) {
+            ...
+        }
+        ...
+    }
+    ...
+    
+    
+    
+Dereferenciranje, pristup, pointerska (adresna) aritmetika i ostalo 
+radi slično kao u C-u
+
+
+
+Pošto je fiksiran prvi element niza, biće fiksiran i ceo niz
+
+
+Pointer koji pokazuje na fiksiranu vrednost može da promeni svoju
+vrednost (da pokazuje na nešto drugo)
+
+
+Da bi se koristio unsafe kod potrebno je to omogućiti check-iranjem
+opcije "Allow unsafe code" u opcijama projekta
+
+
+
+Ključna reč "fixed" može da se koristi samo unutar unsafe konteksta
+
+
+Ukoliko se ne iskoristi GC bi mogao da realocira zauzetu memoriju na
+koju dati pointer pokazuje što bi dovelo do greške
+
+
+
+Prilikom fiksiranja neke promenljive fiksira se i objekat kojem ona pripada:
+    class Point {
+        public int x;
+        public int y;
+    }
+    
+    unsafe private static void ModifyFixedStorage() {
+        Point pt = new Point();
+        
+        fixed( int* p = &pt.x ) {
+            *p = 1;
+        }
+    }
+
+    
+pt iz ovog primera se takođe fiksira
+
+
+
+Ovaj primer koda ne može da se prevede:
+    fixed( char* p = &str[0] ) {
+        ...
+    }
+
+https://stackoverflow.com/questions/5079736/cannot-take-the-address-of-the-given-expressionc-pointer
+
+str[0] je poziv funkcije za indeksiranje i vraća vrednost tako da nije
+moguće fiksirati njegovu adresu sa fixed( char* p = &str[0] )
+
+string nije array iako po pristupnoj sintaksu tako izgleda
+
+
+
+Binarna pretraga - koristi se na već skortiranom nizu
+
+Vraća -1 ako se ne nađe traženi element ili njegov indeks ukoliko
+je nađen
+
+
+U svakom koraku se smanjuje kompleksnost problema (broj el. koji je potrebno
+pretražiti) duplo
+
+
+Može da se koristi i za nalaženje opsega između kojih se neki el. nalazi
+
+
+
+Array.BinarySearch( arr, item );
+
+
+
+Ugrađen metod za sortiranje realizovan kao qsort:
+    Array.Sort( arr );
+    
+
+Okretanje svih elemenata niza u suprotni redosled:
+    Array.Reverse( arr );
+    
+    
+Kada se koristi verzija Sort metoda sa jednim argumentom onda se 
+za standardne tipove koriste operatori "<" i ">", dok se za druge
+tipove koriste implementirani metodi iz interfejsa IComparable
+
+
+
+Ukoliko nije poznato koliko će argumenata biti prisleđeno metodu
+moguće je koristiti ključnu rec "params" kojom bi se naznačio
+niz u kojem će se smeštati dati argumenti:
+    public static void Zbir( params int[] sabirci )
+    
+    
+    
+Interfejs IComparable ima u sebi metodu CompareTo
+
+Metoda CompareTo vraća 
+- negativnu vrednost, ako je instanca "manja" od instance sa kojom se poredi
+- pozitivnu vrednost, ako je "veća"
+- nulu, ako su te 2 instance jednake
+
+
+
+
+Kriterijum za poređenje članova niza je moguće promeniti i prilagoditi
+konkretnoj potrebi. To se postiže kreiranje klase koja implementira
+intefjes IComparer u kome se definiše metoda Compare
+
+Ova metoda prima 2 argumenta, 2 člana niza, i vraća isti rezultat kao
+i metod CompareTo
+
+
+Primer:
+    public class AbsComparer : IComparer<int> {
+        public int Compare(int x, int y) {
+            return Math.Abs(x) - Math.Abs(y);
+        }
+    }
+
+    
+Poziv:
+    Array.Sort( arr, new AbsComparer() );
+    
+    
+Moguće je i definisati način na koji će se porediti referencni tipovi
+
+
+
+
+
+
+Do Jave 5.0, postojala je mogućnost korišćenja kolekcijama koje su radile
+isključivo sa klasom Object. Šta god da se dodalo u kolekciju, to se 
+tretiralo kao Object.
+
+Pri svakom pristupu, tj. uzimanju nekih objekat iz kolekcije bilo je
+potrebno raditi eksplicitnu konverziju u odgovarajući tip. Pored toga
+što se piše dodatan kod, problem može biti to što takva neka konverzija
+može biti i uspešna i neuspešna. Takav kod je vrlo nepouzdan i potrebno
+je izdvojiti dodatno vreme kako bi se takav kod proverio.
+
+
+Zbog toga su u Javi, od verzije 5.0, i u C#-u uvedene mogućnosti za 
+za rad sa generičkim tipovima podataka
+
+Generički tipovi podataka, tj. kolekcije (kontejnerske klase) su kolekcije
+objekata koje, za razliku od onih u kojima može da se stavi bilo koji
+objekat (Object), prihvataju samo definisan tip objekta.
+
+Ovime se eliminiše potreba za konverzijom, a pre svega se eliminiše 
+problem sa testiranjem jer će umesto nekog programera to vršiti sam 
+kompajler pri prevođenju. Proveravaće valjanost upisa i čitanje
+iz te kolekcije. Neće dozvoliti upis nečega što nije predviđeno
+
+Veoma bitan napredak
+
+
+
+
+Uslov koji mora ispuniti neki tip da bi mogao bude član neke kolekcije je 
+"nametnut samom logikom te strukture podatka" (mora da implementira
+odgovarajuće interfejse (?))
+
+
+
+
+Unifikacija po tipu
+-------------------
+
+Jedinstveni univerzalni bazni tip (Object).
+
+Object može da sadrži bilo koju vrednost
+
+Svaki podatak se može čuvati, prenositi i obrađivati bez 
+dodatnog posla
+
+
+Unifikacija omogućava:
+- pozivanje virtuelnih funkcija nad bilo kojoj vrednosti
+- kreiranje klasa za bilo koji tip
+
+
+
+
+
+
+SmallTalk - prvi "čisti" OO jezik (zato sve je bilo objekat, nije bilo
+            primitivnih tipova)
+
+Kod njega je npr. int mogao da ima vrednost null. Sem što tako nešto 
+nije uobičajeno i očekivano, to zahteva i dodatnu logiku za proveru
+vrednosti takve promenljive kada učestvuje u nekoj operaciji. To loše 
+utiče na performanse u radu sa objektima. Drugi problem je korišćenje
+više prostora nego što je potrebno za čuvanje objekta primitivnog tipa
+
+
+
+
+Java i Eiffel imaju drugačiji pristup. Koriste omotačke(wrapper-ske) klase.
+Primitivni tipovi moraju da se box-uju u svoje omotačke klase kako bi 
+radili sa objektima, tj. referencnim tipovima
+
+
+
+
+Unifikacija tipova u C#
+-----------------------
+
+Pristup u C# je takav da se tipovi dele na referencne i vrednostne.
+
+
+Odlike referencnih tipova:
+- uvek se alociraju na heap-u
+- moguće je proizvoljno nasleđivanje
+
+
+
+Odlike vrednostnih tipova:
+- nasleđuju samo Object
+- ne mogu da se nasleđuju
+- alocirani su sa steka ili inline unutar drugih objekata
+- pri dodeli vrši se kopiranje vrednosti, a ne reference 
+  (suštinska razlika u odnosu na reference tipove)
+- nemaju potrebu za deskriptorom (referencom)
+- nemaju  potrebu za tebelama virtuelnih funkcija (vft - virtual function
+  tables) što omogućava efikasnije izvršenje akcija nad njima
+
+  
+  
+`Object nema deskriptor tima jer može da sadrži bilo koji tip`
+
+
+
+Konverzije iz vrednostnog, primitivno, u referencni tip vrednost se 
+kopira na heap i pridružuje mu se deskriptor (referenca); en. boxing
+
+Kada se konvertuje nazad u vrednostni tip, kopira se vrednost sa heap-a
+na stack; en. unboxing
+
+
+
+
+
+Unifikovana kolekcija klasa
+---------------------------
+
+
+Unboxing i boxing omogućavaju kreiranje generičkih klasa (?)
+
+
+Verzija C#-a 1.1 je imala nekoliko kolekcija:
+- ArrayList: dinamički alocirana lista
+- Queue: FIFO kontejner
+- Stack: LIFO kontejner
+- HashTable: rečnik ili parcijalno presločavanje (map)
+
+
+Sve ove kolekcije su se naslanjale na činjenicu da sve klase
+nasleđuju klasu Object
+
+
+Primer koda sa ArrayList:
+    ArrayList myList = new ArrayList();
+    myList.Add ("DotNetSpider");
+    myList.Add(1032);
+    myList.Add( DateTime.Now );
+    myList.Add( new DataTable() );
+    
+    
+Mogao je da se doda bilo koji tip.
+
+Da bi se dobio konkretan tip potrebno je izvršiti eksplicitnu konverziju:
+    int myInt = (int) myList[1];
+    
+Problem nastaje kada se pokuša konverzija nekog drugog tipa koji se 
+ne može konvertovati u dati tip:
+    int myInt = (int) myList[2];
+
+    
+Ovo zahteva veoma pažljivu proveru koda. Potrebno je raditi dodatne 
+provere jer u ovakvom kodu može doći do greške jer predstavlja
+nebezbednu programersku praksu
+
+
+
+ArrayList je ste kontejnerska klasa, ali nije generička.
+
+
+Drugi problem je zauzeće memorije. Box-ovan int zauzima 4 puta više
+memorije od samog int-a
+
+
+ArrayList je vrlo neefikasna struktura za rad sa vrednostnim tipovima
+
+
+
+Kreatori jezika su zadržali ArrayList i kreirali strukturu koja bi
+eleminisala / minimizirala nedostatne ArrayList-a, ali sačuvala njegove
+prednosti
+
+
+To je dovelo do kreiranje generičkih kontejnerskih klasa koje se 
+parametarizuju
+
+
+
+Sintaksa generičkih tipova:
+    public class Stack<T> {...}
+    
+T predstavlja tip podatka sa kojim će klasa raditi
+
+
+Instanciranje:
+    Stack<int> s = new Stack<int>();
+
+    
+Za razliku od Jave koja koristi wrapper-ske klase, u C# je moguće
+navesti i primitivni tip jer se automatski vrši boxing i unboxing
+    
+Može imati i više parametara, kao što to npr ima Dictionary:
+    Dictionary<TKey,TValue>
+    
+    
+
+Ukoliko se stavi drugi tip koji nije predviđen dolazi do kompajlerske
+greške:
+    s.Push(4.3);
+
+
+ 
+
+Za naziv parametra generičkog tipa se preporučuje da počinje velikim
+slovom. Ukoliko ima više tipova, poželjno je da se koriste neki 
+specifični nazivi
+
+
+
+
+
+
+Generički mogu biti:
+- tipovi
+  * struct
+  * interface
+  * class
+  * delegate
+- metodi (negenerička klasa može da ima generički metod)
+
+
+
+
+
+Još jedna od primena generičkih klasa je njihova upotreba pri
+nasleđivanju, primer:
+    public class IntStack : Stack<int> {
+        ...
+    }
+    
+Napomena: IntStack nije generički tip
+
+
+
+
+Primer prvog načina korišćenja:
+    public struct Customer<T> {
+        private static List<T> customerList;
+        private T customerInfo;
+        public T CustomerInfo { get; set; }
+        public int CompareCustomers( T customerInfo );
+    }
+    
+    
+Mogu da se koriste u internim poljima, propertijima i metodama klase
+
+
+
+
+U C# generički tipovi mogu da se prevedu u biblioteku klasa ili dll
+i mogu da ih koriste aplikacije
+
+
+
+C# i Java imaju drugačiji pristup šablonskim (template) klasama
+od C++
+
+
+U C++ šablonska klasa se koristi samo kao šablon koji služi za 
+generisanje klase tako što kompajler prvo vrši predprocesiranje, zameni
+generički parametara konkretnim tipom i onda kreira privremeni fajl, 
+a nakon toga se taj novokreirani fajl prevodi
+
+
+"U C++, svaki novi parametar znači novi kod. U C# i Javi, svaka 
+parametarizacija == isti kod
+
+
+
+
+
+
+Ograničenja generičkih tipova
+-----------------------------
+
+Pozivanje metoda sa tipom koji se parametarizuje.
+
+Ukoliko se pozove neki metod koji bi trebao da se nalazi u tipu T
+ili njegov konstruktor.
+
+
+Pristup C#-a je sličan pristupu u Javi
+
+
+Potrebno je da se eksplicitno navede koje uslove T mora da ispuni,
+tj. koje metode mora da ima. To se može realizovati u C#-u na 2 načina
+
+
+Prvi je da se navede da taj tip nasleđuje neku klasu. Time bi se 
+obezbedilo da ima date metode jer će ih naslediti od svoje roditeljske
+klase. Postojaće mogućnost da se taj metod pozove
+
+
+Drugi način je da dati tip implementira neki interfejs jer se time
+obezbeđuje da, iako se ne zna o kom tipu je reč, dati metod postoji
+jer poštuje dati ugovor (implementira interfejs). Na taj način se 
+nameće uslov i taj uslov će se proveriti od strane kompajlera
+
+
+
+Primer sa greškom:
+    public class Stack<T> {
+        public T PopEmpty() {
+            return new T();
+        }
+    }
+
+Poziva se podrazumevani konstruktor tipa T. Parametarizacija na ovaj način
+nema definisane uslove. S obzirom da se poziva konstruktor, ovakva definicija
+navodi na zaključak da T može biti samo referencni tip, ali takvog ograničenja
+nema. Postavlja se pitanje i šta uraditi ukoliko je neophodno da postoji
+mogućnost da T bude i vrednostni tip ili šta uraditi ukoliko dati tip
+nema podrazumevani konstruktor već konstruktor sa parametrima.
+
+
+
+
+Moguće je zadati ograničenje na parametar-tip ključnom rečju "where"
+
+
+Bazna klasa ili interfejs mogu da se koriste kao ograničenje
+
+
+
+
+Primer:
+    public interface IDrawable { public void Draw(); }
+    
+    public class SceneGraph<T> where T : IDrawable {
+        public void Render() {
+            ...
+            T node;
+            ...
+            node.Draw();
+        }
+    }
+
+    
+Tip T mora da implementira interface IDrawable
+
+
+Za pozivanje nije potrebno cast-ovanje (prevodilac koristi informaciju
+o tipu da odluči, tj. informacije o postojanju interfejsa, koji su metodi
+definisani u interfejsu, ograničenju koje tip ima )
+
+
+
+
+
+Moguće je postaviti ograničenje na parametar-tip tako da 
+on može biti samo klasa:
+    public class CarFactory<T> where T : class {
+        private T currentCar = null;
+    }
+    
+    
+Time se npr. može sprečiti da T dobije vrednost null
+
+
+
+Slično je moguće i za vrednostne tipove:
+    public struct Nullable<T> where T : struct {
+        private T value;
+    }
+    
+    
+
+Ovo omogućava delimično rešavanje primera sa neispravnim rešenjem:
+    public class Stack<T> where T : struct {
+        public T PopEmpty() {
+            return new T();
+        }
+    }
+
+
+Strukture imaju podrazumevani konstruktor kojim se polja definišu na 
+nule ili null, ali ne podržavaju korisnički definisane podrazumevane 
+kostruktore
+
+
+Ono što ovo rešenje ne čini potpunim je to što to više nije rešenje
+ukoliko je potrebno uključiti i klase kao moguće tipove za T
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
