@@ -1,0 +1,269 @@
+Datum održavanja: 02.11.2021.
+Predavač: Srđan Nikolić
+Čas: 4
+=====================================
+
+
+Parsiranje stringa u int:
+    int.Parse(str);
+    
+    
+    
+Klase koje su kreirane od strane korisnika ne mogu da se koriste 
+u foreach-u sve dok se data funkcionalnost ne implementira.
+foreach radi sa kolekcijama
+
+
+
+Klasa postaje kolekcija kada implementira interface IEnumerable
+
+IEnumerable definiše metod GetEnumerator
+
+
+
+Primer:
+    class Klasa : IEnumerable {
+        ...
+        
+        public IEnumerable GetEnumerator() {
+            ...
+        }
+    }
+
+
+
+foreach implicitno poziva GetEnumerator
+
+
+
+yield return 10;
+"yield kaže vrati ovu vrednost i nastavi dalje"
+
+
+Kada se sa yield-ovima vrate vrednosti iz metoda GetEnumerator, 
+"lista" se kreira dinamički, praviće se tokom izvršavanja, nije neophodno
+da postoji u memoriji
+
+
+
+foreach će generator pozivati sve dok ima elemenata. Prvo će ga pitati
+da li ima sledeći element i ukoliko ima pozvaće metodu koja vraća tu
+vrednost i to radi sve dok ne dobije odgovor da više nema elemenata
+
+
+
+U pristupi sa yield-om, nakon poslednjeg yield-a enumerator neće
+više imati potvrdan odgovor na pitanje da li postoji sledeći element
+i tada se završava foreach petlja
+
+
+
+Drugi pristup predstavlja korisnički definisan enumerator (klasa).
+
+Ova klasa mora da implementira IEnumerator. U ovom interfejsu su 
+definisane metode "MoveNext" i "Reset"
+
+
+U enumeratoru se nalazi određena promenljiva koja prati do kojeg
+elementa se stiglo (nešto kao indeks)
+
+
+foreach radi tako što poziva "MoveNext" za svaki element koji zatraži.
+Ukoliko ovaj metod vrati true onda će foreach moći da uzme element
+na koji ta interna promenljiva "pokazuje". Ovo se vrši sve dok enumerator
+ne vrati false, tj. sve dok ima elemenata (sledeći element se određuje
+logikom iz metode "MoveNext")
+
+
+
+
+Metod može da koristi yield samo ukoliko je povrati tip IEnumerable.
+Mora da se vraća kolekcija. Ta kolekcija može da se generiše tokom
+izvršavanja, tačnije, moguće je generisati elemente "u hodu", a moguće
+je i definisati način na koji bi se iteriralo kroz neki postojeći niz
+
+
+
+foreach kao drugi argument prima generator (enumerator), tačnije instancu
+objekta koji implementira interface IEnumerable. Nije neophodno da se metoda
+kolekcije koja vraća generator implicitno pozove u foreach-u. Moguće je
+kreirati enumerator na drugom mestu (nekim instanciranjem ili pozivom 
+metode koja ga vraća) i onda samo to postaviti kao drugi argument foreach
+petlje
+
+
+
+foreach radi sa IEnumerable. Tu se javlja polimorfizam. 
+
+
+
+Funkcija koja vraća enumerator se ne izvršava sve dok se ne izvrši pristup.
+Reč je o kasnom pozivanju. 
+
+
+
+
+
+
+Delegati su nešto kao pokazivači na funkcije
+
+Delegat je tip, pa može biti zasebno definisan, a može biti i deo nekog
+drugog tipa. On može pokazivati na funkcije koje imaju potpis kao onaj 
+potpis koji je njime definisan.
+
+
+Primer definisanja delegata:
+    delegate double TipFunkcije(double a, dobule b);
+    
+    
+
+Nastavak na dati primer:
+    static double saberi(double a, double b) {
+        return a + b;
+    }
+    
+    ... {
+       TipFunkcije tf = saberi; 
+    }
+    ...
+    
+
+
+Delegat može da pokazivati na onu metodu koja ima isti
+potpis kao njegova definicija (isti povratan tip i sekvencu parametara)
+
+
+
+Delegati se koriste kada je potrebno pri pisanju poziva definisati na 
+koji način će se nešto u određenom metodu raditi prosleđivanjem delegata
+koji pokazuje na metod koji obavlja tu željenu radnju. 
+
+Na taj način se može definisati metod koji može deo svog posla obaviti 
+na različite načine zavisno od toga koji metod mu je predat
+za realizaciju tog posla
+
+
+Primer je metod Sort koji može primiti metod kojim se proverava da li
+jedan element ide pre ili posle nekog drugog elementa
+
+
+
+
+Funkcije koje, po svojoj svrsi, pripadaju istoj kategoriji i koje
+imaju isti potpis mogu da se "grupišu" delegatom. Umesto da se pišu
+dve klase koje imaju isti kod, a jedino različit metod koji pozivaju
+unutar sebe, moguće je definisati jednu metodu sa tim kodom, gde se umesto
+tog poziva zove ona metoda koja je prosleđena. Time se sprečava dupliranje
+jednog te istog koda
+
+
+
+Primer:
+    ...
+    static void suma( double[] niz, Funkcija f) {
+        double s = 0;
+        foreach (var item in niz) {
+            s += f(item);
+        }
+        
+        Console.WriteLine("Suma = " + s);
+    }
+
+    
+Korišćenje:
+    suma(niz, kvadrat);
+    suma(niz, koren);
+    suma(niz, kub);
+    
+    
+
+
+
+Kada je potrebno vršiti neku radnju nakon dešavanja određenog 
+događaja onda nije isplativo da onaj koga to zanima proverava
+da li se tako nešto dogodilo sve do se ne dogodi. Efikasnija
+varijanta je da onaj ko kontroliše dati događaj prihvati
+referencu onoga ko želi da sazna da li se to nešto dogodilo
+pa ga obaveštava kada se to nešto dogodi 
+
+
+
+Slično ActionListener-a u C# postoje event-i
+
+
+
+Oni koji žele da odrade nešto kada se određeni događaj desi
+moraju da se prijave generatoru događaja tako što će mu
+proslediti referencu na njihov metod koji treba biti pozvan.
+
+Generator događaja poziva sve prijavljene metode kada se
+dati dogođaj dogodi
+
+
+
+
+Kreiranje "niza" referenci na metode koji obrađuju promenu događaja
+se vrši na sledeći način:
+    modifier event NazivDelegataTihMetoda nazivDogadjaja;
+    
+    
+
+event ima vrednost null ukoliko se ni jedna metoda nije prijavila
+
+
+Obaveštavanje o nastanku događaja i prosleđivanje potrebnih vrednosti
+pretplaćenim metodama:
+    nazivDogadjaja( vrednost1, vrednost2 );
+    
+    
+
+Pretplaćivanje metoda na događaj:
+    instancaGeneratoraDogadjaja.nazivDogadjaja += nazivMetode;
+
+
+
+    
+    
+Neki metod može da se pretplati više puta na događaj (ukoliko se ne 
+implementira neki mehanizam koji to sprečava). Zbog toga će i
+biti pozvan više puta od strane generatora događaja
+
+
+
+
+
+Moguće je i otkazati pretplatu:
+        instancaGeneratoraDogadjaja.nazivDogadjaja -= nazivMetode;
+        
+        
+        
+
+Metodi se pozivaju redosledom kojim su prijavljeni
+
+
+
+Generator događaja mora da proveri da li postoji neka pretplata 
+jer će u suprotnom doći do NullPointerException-a jer je njegova 
+vrednost tada null
+
+
+
+[ kolokvijum 
+
+vežbanje: generička lista (možda dvostruka) koja ima indeksere, svojstva,
+redefinisane operatore, implementiran foreach, event-e
+
+neće biti LINQ
+
+biće kolekcija
+
+
+Sigurno će biti:
+- definisanje foreach-a
+- definisanje event-a
+- definisanje indeksara (jedan ili više parametra)
+
+Podrazumeva se da su poznati koncepti iz OOP i SPA1 (liste i ostalo)
+
+Zadaci sa predmeta Vizuelno programiranje mogu da se koriste za vežbanje
+]

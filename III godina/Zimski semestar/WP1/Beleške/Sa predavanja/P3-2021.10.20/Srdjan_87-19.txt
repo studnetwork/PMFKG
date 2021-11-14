@@ -1,0 +1,419 @@
+Datum održavanja: 20.10.2021.
+Predavač: Vladimir Cvjetković
+Čas: 3
+=====================================
+
+
+
+Magične konstante (Magic constant)
+
+Imaju sledeći oblik:
+    __NAZIV__
+
+    
+    
+Primeri magičnih konstanti:
+__LINE__       vraća redni broj linije u fajlu
+__FILE__       apsolutna putanja sa rezolviranim simboličkim
+               linkom. Ukolide se nalazi u include-u, vraća
+               se naziv fajla   
+__DIR__        vraća naziv direktorijuma datog fajla
+__FUNCTION__   ime funkcije
+__CLASS__      ime klase
+__TRAIT__      ime trait-a
+__METHOD__     ime metoda klase
+__NAMESPACE__  ime namespace-a
+
+
+Trait je način da se definišu metodi koji ne pripadaju ni 
+jednoj klasi, ali mogu da se uključe u nju
+
+
+
+Pored osnovnih operatora postoji i operator za eksponent "**"
+
+Operator za moduo: %
+
+
+
+Kao i u JavaScript-u, postoje operatori jednakosti i 
+"identiteta".
+
+== jednakost
+=== identični
+
+
+Takođe,
+!= nejednaki
+!== neidentični
+
+
+
+Kao i u C, postoje pre-increment i post-increment
+
+
+
+
+Pored grupe logičkih operatora koji su isti kao oni u C-u,
+postoje i njhovi ekvavilenti zapisani u prirodnom jeziku:
+- and
+- or
+- xor
+
+
+
+Operatori konkatanacije:
+.
+.=   # konkatanacija + dodela
+
+
+
+Primeri konverzije tipova korišćenjem + i . operatora:
+    echo "12" +  3     # 15
+    echo "12" + '3'    # 15
+    echo '12' + '3'    # '123'
+    echo 12 . 3        # "123"
+    echo 12.3          # 12.3
+    
+
+    
+# vraća true ako imaju iste key/value parove
+$niz1 == $niz2 
+
+
+# vraća true ako imaju iste key/value parove i ukoliko su
+# u istom redosledu i istog tipa
+$niz1 === $niz2 
+
+
+
+
+
+Operator za kontrolu grešaka (Error control operator)
+-------------------------------------------------------
+
+PHP podržava samo jedan ovakav operator i on se označava sa: @
+
+Ovaj operator omogućava ignoristanje ispis dijagnostičkih
+poruka / grešaka koje se generišu od strane nekog izraza
+
+---
+
+
+
+Operator "instanceof" proverava da li je neki objekat instanca
+određene klase
+
+
+
+
+Execution operator
+------------------
+
+Oznaka: `
+
+Omogućava izvršavanje shell komandi
+
+---
+
+
+
+PHP podržava elseif i switch
+
+
+
+Moguće je koristiti grananje u PHP za ispis bez upotrebe
+komande echo:
+
+    <?php
+        if(true) {
+    ?>    
+    
+    # neki html / js / css
+        
+    <?php 
+        }
+    ?>
+    
+    
+Sadržaj koje je u datom primeru predstavljen kao komentar
+će biti ispisan / prikazan samo ukoliko je uslov
+ispunjen (u datom primeru će uvek biti jer je uslov uvek 
+tačan)
+
+
+
+
+date()    # funkcija za rad sa informacijama o datumu
+
+Opis / potpis:
+    date(string $format, ?int $timestamp = null): string
+
+date("H")    # vraća sate
+
+
+Ukoliko se ne prosledi vrednost za opcioni parametar timestamp
+onda će se vratiti datum i vreme za dati trenutak. Za to se
+koristi funkcija time() koja vraća broj sekundi od Unix epohe
+
+
+
+
+PHP podržava ternarni operator
+
+
+
+Postoji alternativna sintaksa za kontrolne strukture.
+
+
+Primer, korišćenje znaka ":" slično kao u python-u:
+    <?php if( $a == 5 ): ?>
+    
+    A is equal to 5
+    
+    <?php endif; ?>
+    
+    
+    
+Primer:
+    <?php
+        if($a == 5):
+            echo "a equals 5";
+            echo "...";
+        elseif ($a == 6):
+            echo "a equals 6";
+            echo "!!!";
+        else:
+            echo "a is neither 5 nor 6";
+        endif;
+    ?>
+    
+    
+
+Napomena: ukoliko se koristi data alternativna sintaksa sa ":"
+          neophodno je da elseif bude jedna reč, jer će u
+          suprotnom doći do greške u parsiranju
+          
+        
+
+
+Argument switch statement-a može biti int ili string
+
+
+
+Switch podržava alternativnu sintaksu sa ":". Pored te 
+alternativne sintaske poseduje i još jednu alternativnu
+sintaksu:
+    switch($value) {
+        case "c1";
+        case "c2";
+        case "c3";
+            echo "test";
+            break;
+        default;
+            echo "default option";
+            break;
+    }
+    
+    
+
+for, while i do while rade na isti način kao i u drugim
+jezicima
+    
+    
+while takođe ima alternativnu sintaksu:
+    <?php
+        $i = 1;
+        while ($i <= 10):
+            echo $i;
+            $i++;
+        endwhile;
+    ?>
+    
+    
+
+    
+    
+Iteriranje kroz nizove
+----------------------
+
+
+Primer:
+    $people = array(
+        array('name' => 'Kalle', 'salt' => 856412),
+        array('name' => 'Piere', 'salt' => 215863)
+    );
+    
+    for($i = 0, $size = count($people); $i < $size; ++i) {
+        $people[$i]['salt'] = mt_rand(000000,999999);
+    }
+    
+Napomena: korišćenje funkcije mt_rand nije preporučljivo 
+          za korišćenje u kriptografiji jer ne generiše
+          sigurne vrednostni
+          
+          
+
+          
+
+PHP ima foreach petlju:
+    foreach($array as $value) {
+        # kod
+    }
+
+    
+Takođe je moguće i zasebno uzimati vrednosti iz para key-value
+    foreach($arr as $key => $value) {
+        echo "$key mapira $value";
+    }
+    
+    
+    
+Može i da radi sa referancama:
+    $arr = array(1,2,3,4);
+    foreach($array as &$value) {
+        $value *= 2;
+    }
+    
+    # neophodno je uraditi i ovo kako kasnije ne bi
+    # došlo do greške
+    unset($value);
+
+    
+
+Primer u kome se ogleda greška koja je spomenuta u 
+prethodnom primeru;
+    $arr = array(1,2,3,4);
+    foreach($arr as &$value) {
+        $value *= 2;
+    }
+    
+    foreach($arr as $key => $value) {
+        echo "{$key} => {$value} ";
+        print_r($arr);
+    }
+    
+
+Ispis:
+    0 => 2 Array
+    (
+        [0] => 2
+        [1] => 4
+        [2] => 6
+        [3] => 2
+    )
+    1 => 4 Array
+    (
+        [0] => 2
+        [1] => 4
+        [2] => 6
+        [3] => 4
+    )
+    2 => 6 Array
+    (
+        [0] => 2
+        [1] => 4
+        [2] => 6
+        [3] => 6
+    )
+    3 => 6 Array
+    (
+        [0] => 2
+        [1] => 4
+        [2] => 6
+        [3] => 6
+    )
+
+
+Može se primetiti da jedino poslednji element niza menja
+svoju vrednost i to tako da ima vrednost onog para na kome
+se u tom trenutku nalazi foreach petlja. 
+
+Očekivana vrednost bi bila 8, ali pošto je promenljiva $value
+u prethodnom foreach-u dobila adresu poslednjeg elementa u
+nizu onda će se svaka dodela vrednosti promenljivoj $value
+u drugom foreach-u upisivati u taj poslednji element niza.
+Zbog toga je potrebno unset-ovati promenljivu ukoliko se
+radilo sa referencama
+
+
+
+Takođe, u ovom primeru se demonstrira još jedna stvar. To 
+je evaluacija promenljive unutar stringa:
+     echo "{$key} => {$value} ";
+
+Ovaj način zapisivanja može biti koristan kada postoji nešto
+u stringu nakon date promenljive što bi uticalo na parsiranje.
+Kada se promenljiva uokviri na dati način onda ne može doći
+do dvosmislenosti i greške
+
+
+
+
+
+
+Primer iteriranja while-om kao što se to radi foreach-om
+(uzima se samo vrednost):
+    $arr = array("one", "two", "three");
+    reset($arr);
+    
+    # ovo je deprecated; each je ukinuto u verziji 8
+    # while( list(, $value) = each($arr) ) 
+    
+    while( $value = current($arr) ) {
+        next($arr);
+        echo "Value: $value <br>";
+    }
+    
+    
+Funkcija current vraća element na kome se pokazivač trenutno
+nalazi, dok funkcija next pomera taj pokazivač na sledeći
+element u nizu
+
+
+
+
+Primer sa uzimanjem i ključa i vrednosti:
+    $arr = array("one", "two", "three");
+    reset($arr);
+    
+    while( list($key,$value) 
+        = array( key($arr), current($arr) )
+    ) {
+        echo "Key: $key; Value: $value <br>";
+        
+        # izlazi se sa break na ovaj način zbog list
+        # koji će uvek zadovoljavati uslov while petlje
+        if( !next($arr) )
+            break;
+        
+    }
+
+    
+    
+Primer kreiranja multidimenzionog niza:
+    $a = array();
+    $a[0][0] = "a";
+    $a[0][1] = "b";
+    $a[1][0] = "y";
+    $a[1][1] = "z";
+    
+    foreach($a as $v1)
+        foreach($v1 as $v2)
+            echo "$v2";
+            
+            
+            
+            
+            
+break radi slično kao u drugim jezicima s tim što ima i jedan
+dodatak. Ukoliko se pored njega navede i broj onda će izaći
+iz tolikog broja petlji:
+    while(true)
+        $i = 0;
+        while(true) {
+            echo ++$i;
+            echo "<br>";
+            break 2;
+        }
+    echo "kraj";

@@ -1,0 +1,293 @@
+Datum održavanja: 28.10.2021.
+Predavač: Lazar Krstić
+Čas: 4
+=====================================
+
+
+Field constraint
+----------------
+
+Ograničenja na vrednost polja u slotu se mogu nametnuti
+upotrebom:
+- negacije: ~
+- logičkog I: &
+- logički ILI: |
+
+
+U primeru:
+    Stundet( ime="Petar", index="1/2021", preostalo_ispita=0)
+    
+ime, index i preostalo_ispita su slotovi
+
+
+
+Negacija
+--------
+
+ima najviši prioritet
+
+Ne deluje na true/false vrednosti kao u drugim jezicima, već
+proverava da li vrednost datog slota nije jednaka nekoj vrednosti
+
+
+Primer:
+    ...
+    Rule( Osoba(ime = MATCH.ime, boja_kose = ~ L("smedja")) )
+    ...
+    
+
+Da bi se ograničenja polja primenila potrebno je da se data 
+vrednost nađe u "L()". L() označava da je reč o literalu
+
+
+
+
+Logičko ili
+------------
+
+Najnižeg prioriteta
+
+"Vrednost polja može imati ili jednu ili drugu vrednost"
+
+
+Primer:
+    @Rule(Osoba( ime = MATCH.ime, boja_kose = L("smedja") | L("crna") ))
+    def ima_tamnu_kosu(self, ime):
+        pass
+        
+
+Nije moguće uzeti vrednost za polje boja_kose jer se ne zna koji literal
+treba uzeti
+
+        
+        
+Logičko i
+---------
+
+Srednji prioritet
+
+
+Deluje na 2 uslova koja povezuje tako što zahteva da 
+dato polje ispuni oba uslova
+
+
+
+Koristi se zajedno sa druga dva ograničenja jer samostalno
+nema praktičnu vrednost
+
+
+Primenjuje se kada je su uslovi ograničenja zadovoljeni kako
+bi se uzela vrednost koja ih zadovoljava
+
+
+
+Primer primene:
+    @Rule(Osoba( ime = MATCH.ime, 
+            boja_kose = MATCH.boja_kose 
+            & ( L("smedja") | L("crna") ) 
+        )
+    )
+    def ima_tamnu_kosu(self, ime, boja_kose):
+        print("{} ima tamnu kosu. Boja kose je {}"
+            .format(ime, boja_kose) # kada vitičaste zagrade ne sadrže broj
+        )                           # onda se u njih pakuju argumenti redom
+        
+        
+        
+
+        
+        
+Logičko I se često kombinuke sa negacijama
+
+
+
+~L("A") & ~L("B") == ~( L("A") | L("B") )
+
+
+
+
+Ukoliko je u nekom organičenju polja potrebno koristi MATCH onda njega 
+ne treba dodatno naznačiti kao literal jer je on već litera:
+    ...
+    Osoba( ime = MATCH.ime_2,
+            boja_ociju = MATCH.boja_ociju_2 & ~MATCH.boja_ociju_1,
+            boja_kose = L("ridja") | MATCH.boja_kose_1
+    )
+    ...
+    
+
+    
+U ovom primeru dolazi do dupliranja aktivacija. Razlog za to je to što
+u prvoj aktivaciji ušestvuje levi literal logičkog ILI, a u drugoj 
+aktivaciji njegov desni literal
+
+Da bi se ova višestruka aktivacija izbegla, u datom uslovu tvrdnje dodaje
+se i provera dodatnog polja. To polje će predstavljati indikator koji će
+sadržati informaciju o tome da li je već jednom došlo do aktivacije sa istim
+skupom tvrdnji. Kada dođe do prve aktivacije data tvrdnja se modifikuje kako bi se onemogućila naredna aktivacija istog skupa tvrdnji:
+    ...
+    Osoba( ime = MATCH.ime_2,
+            boja_ociju = MATCH.boja_ociju_2 & ~MATCH.boja_ociju_1,
+            boja_kose = L("ridja") | MATCH.boja_kose_1,
+            pronadjen = False
+    )
+    ...
+        self.modify(osoba_2, pronadjen = True)
+    ...
+    
+    
+
+
+    
+
+    
+Predicate Field Constraint
+--------------------------
+
+Predikatska ograničenja vrednosti
+
+
+Predikatska funkcija je funkcija koja vraća True ili False.
+
+
+Piše se unutar P()
+
+
+Omogućava korišćenje funkcija koje se mogu napisati u python-u
+(npr. lambda funkcija ili običnih funkcija)
+
+
+
+Primer:
+    @Rule(
+        Osoba(ime = MATCH.ime, 
+            godine = MATCH.godine & P( lambda x : x < 30 )
+        )
+    )
+    def manje_od_30(self, ime, godine):
+        print( "{}, godine : {}".format(ime,godine) )
+        
+        
+lambda funkcija prihvata x, vrednost slot-a (polja), a vraća bool
+
+
+
+
+
+
+Wildcard Field Constraint
+-------------------------
+
+Omogućava proveru postojanja vrednosti bez čuvanja iste
+Predstavlja se sa W()
+
+
+Primer:
+    ...
+    @DefFacts()
+    def ucitaj_osobe(self):
+        yield Osoba( ime = "Uros" )
+        yield Osoba( ime = "Milos", godine = 48 )
+    ...
+    
+    @Rule(
+        Osoba(ime = MATCH.ime, godine = W() )
+    )
+    def poznat_broj_godina(self, ime):
+        print("Pronadjena osoba {}".format(ime) )
+        
+        
+
+   
+NOT()
+-----
+   
+   
+NOT() omogućava ispitivanje postojanja neke činjenice u listi
+činjenica
+
+Ne sme se koristiti u kombinaciji sa MATCHneka_var ukoliko se 
+MATCH.neka_var tu prvi put pojavljuje jer ne može se dodeliti 
+vrednost nečega što ne postoji
+
+
+MATCH.neka_var je moguće koristiti u NOT() ukoliko se ne pojavljuje
+u njemu prvi put, tj. ukoliko se u njemu ne dodeljuje vrednost
+
+
+
+
+Primer za NOT():
+    @Rule( NOT( Fact(max=W()) ) )
+    def init(self):
+        self.declare(Fact(max=0))
+        
+        
+
+
+        
+
+TEST()
+------
+
+Proverava logički uslov na levoj strani pravila
+        
+Koristi lambda funkciju. Ona može da prihvati MATCH-ovane 
+promenljive i vraća bool
+        
+TEST() se može koristi za parsiranje stringa
+
+
+Jedna od bitnih primena je ispitivanje vrednosti slota(polja) 
+koji je niz
+
+
+U CLIPS-u se to radi preko multislota
+
+
+Primer:
+    @Rule(
+        Fact(val = MATCH.val),
+        AS.m << Fact(max = MATCH.max),
+        TEST(lambda max, val: val > max)
+    )
+    def compute_max(self, m, val):
+        self.modify(m, max = val)
+
+        
+U ovom primeru proverava se da li je neka vrednost veća od max i
+ukoliko jeste dolazi do promene tog max u datu vrednost val
+
+
+
+Nakon što se činjenica prihvati kao rečnik moguće je pristupiti
+njenim atributima sa uglastim zagradama:
+    ...
+    AS.v << Fact(max=W())
+    ...
+        print("Max: ", v['max'])
+    ...
+    
+    
+U ovom slučaju dolazi do prisupa atributu bez korišćenja MATCH.max
+jer v sadrži referencu na objekat tipa Fact pa je moguće pristupiti
+atributu preko nje jer je objekat implementiran kao rečnik
+
+Nije preporučljivo koristi ovo jer se lako može pogrešiti
+
+
+
+
+
+Pored @DefFacts() za unos više od jedne činjenice u KnowledgeEngine,
+moguće je to uraditi i na sledeći način:
+    lista = [ Fact(value = x) for x in [2, 4, 44, 27, 17, 81] ]
+    engine.declare(*lista)
+    
+    
+engine.declare(*lista) "će odvojeno poslati sve vrednosti iz liste"
+
+
+
+
+engine.run(broj) će izvršiti "broj" koraka, tj. aktivacija 

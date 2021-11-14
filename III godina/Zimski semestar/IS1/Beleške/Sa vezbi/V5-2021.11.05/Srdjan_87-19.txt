@@ -1,0 +1,353 @@
+Datum održavanja: 05.11.2021.
+Predavač: Lana Miljković
+Čas: 5
+=====================================
+
+
+
+PMOV - prošireni model objekti i veze
+
+"Služi kao šema pred generisanje same baze podataka"
+
+
+[ kolokvijum
+
+2 tipa zadatka za PMOV:
+- na osnovu teksta generisati PMOV dijagram
+- na osnovu PMOV dijagrama napraviti relacione tabele
+  (može biti komplikovano)
+]
+
+
+
+Model objekti-veze
+-------------------
+
+
+Predstavlja rešenje za jedan od većih problema koji nastaje
+u procesu razvoja baze podataka kada projektantni, programeri
+i korisnici imaju potpuno različite načine shvatanja podataka
+i načinje njihove upotrebe, kao i procesa posmatranog 
+okruženja  koje treba modelovati
+
+
+`Da bi se obezbedio precizan opis prirode podatka i način na 
+koji se oni koriste, potrebno je prizvesti jasan model koji
+nije striktno tehničke prirode.` 
+
+Primer takvog modela je MOV (model objekti-veze)
+
+
+
+Model podataka obezbeđuje interpretaciju podataka o 
+posmatranom realnom sistemu
+
+
+`Interpretacija podataka se u nekom modelu podataka ostvaruje
+kroz tri njegove osnovne komponente:`
+- struktura modela: "skup svih entiteta koji učestvuju u 
+                    u interakcijama unutar sistema"
+- ograničenja: "pravila po kojima se nešto radi"
+- operacije: "veze između objekata i načini na koje se one
+             izvršavaju"
+
+
+             
+
+Osnovni elementi MOV dijagrama:
+- entiteti
+- veze
+- atributi
+
+
+Entitet je bilo koji objekat realnog sistema koji je 
+relevantan za dati sistema
+
+Veza je asocijacija između 2 ili više entiteta
+
+Atributi entiteta ili veza opisuju njihove karakteristike
+
+
+
+
+Kandidati za entitete:
+- osobe
+- fizički objekti
+- organizacije
+- grupe/klase/tipovi (tipovi proizvoda, klase poslova, ..)
+
+
+
+Entitet može da bude zavistan ili nezavistan entitet
+
+
+Nezavisni entitet ima sopstveni primarni ključ jer
+ne zavisi ni od koga pa može da bude posebna tabela
+
+
+Zavisni entitet mora da nasledi primarni ključ jer 
+on kao samostalan ne može da bude posebna, nezavisna
+tabela
+
+
+
+
+Primer:
+    Naružbenica        - nezavistan entitet
+    Stavka naružbenice - zavistan entitet
+    
+    
+Zavistan entitet se još naziva i slab objekat. Na 
+dijagramu se grafički prikazuje kao pravougaonik
+unutar nekog većeg pravougaonika, npr:
+
+    --------------------------
+    | ---------------------- |
+    | |                    | |
+    | | Stavka naružbenice | |
+    | |                    | |
+    | ---------------------- |
+    --------------------------
+
+
+    
+Atributi entiteta se prikazuju elipsama
+
+
+Nezavnisni entiteti (objekti) se nazivaju se još i
+jakim objektima
+
+
+[ ispit, nije bitno za kolokvijum
+
+Jak objekat identifikuje slabi objekat, dok slab objekat
+egzistenciono zavisi od jakog objekta
+]
+
+
+
+`Entiteti se u sistemu opisuju preko svojih svojstava ili
+atributa`
+
+`Svaki atribut u jednom trenutku ima neku vrednost.`
+
+
+Skup svih mogućih vrednosti koju atributi mogu uzeti se 
+naziva domen
+
+
+
+
+
+Atributi koji predstavljaju deo primarnog ključa se 
+trebaju označiti ( strelicom, podvlačenjem, obuhvatanjem sa
+PK() )
+
+
+
+
+Postoje i složeni atributi koji se sastoje od više
+prostih atributa
+
+
+
+Veze se predstavljaju linijama između objekata, na kojima se nalaze rombovi pored kojih se imenuje sama veza. To ime
+oslikava sematiku povezanosti između objekata
+
+
+Broj objekata koji su povzani definiše stepen veze:
+- veza između dva: binarna
+- veza između tri: ternarna
+- ...
+
+
+
+
+
+Kardinalnost predstavlja od broja objekata koji su povezani
+datom vezom
+
+
+
+Tipovi kardinalnosti:
+- jedan prema jedan (1:1)
+- jedan prema više (1:N)
+- više prema više (N:M)
+
+
+
+
+
+Maksimalna kardinalnost je broj instanci entiteta koji može
+da učestvuje u vezi
+
+
+Primer tipa kardinalnosti jedan prema više:
+    košarkaški tim ----<1:N>---- igrač
+                      
+                      
+
+Košarkaški tim može imati maksimačno N (5) igrača, a
+igraš može da igra samo u jednom košarkaškom timu
+u jednom trenutku
+
+
+
+Obično se piše N umesto konkretnog broja, ali nije nepravilno
+napisati i konkretan broj
+
+
+
+Minimalna kardinalost predstavlja minimalni broj instanci
+entiteta koji mora da učestvuje u vezi
+
+
+
+Kardinalnost preslikavanja definiše najmanji i najveći mogući
+broj pojavljivanje instanci jednog objekta za jednu instancu
+drugog objekta
+
+Mora se uvek zadati
+
+
+
+Primer:
+    Radnik--(1:1)--<Zapošljavanje>--(0,M)--Preduzeće
+            Radi                   Zapošljava 
+            
+            
+Radnik mora biti zaposlen u tačno jednom preduzeću
+
+Preduzeće može zaposliti 0 ili više radnika
+
+
+
+
+Primer:
+    Naružbenica---(0,1)---<Naručivanje>---(1,1)---Opremnica
+                 Povlači                 PoOsnovu
+                 
+                 
+Narudžbenica može imati 0 ili 1 otpremnicu zato što otpremnica ne
+mora odmah da stigne, a jedna narudžbenica može imati najviše jednu
+otpremnicu
+
+
+Otpremnica može imati tačno jednu narudžbenicu
+
+
+
+Opisi ispod kardinalnosti nisu neophodni (u prethodnom primeru to 
+su "Povlači" i "PoOsnovu")
+
+
+
+
+[ nije bitno za kol
+
+Višeznačni atributi
+---------------------
+
+
+Ne prikazuju se na PMOV dijagramu
+
+
+Primeri: jezik, nalog isplate
+
+
+S obzirom da se višeznačni atribut ne prikazuje na ovom dijagramu,
+ukoliko neki entitet ima višeznačni atribut čiji je skup vrednosti
+određen, višeznačni atribut se prikazuje kao poseban entitet. Ukoliko
+je neodređen (beskonačan) onda se prikazuje kao slab objekat
+
+]
+
+
+
+
+PMOV: prošireni model objekti-veze
+----------------------------------
+
+Pored svega što sadrži MOV, sadrži i:
+- apstrakcije (specifikacija/generalizacija)
+- agregacije
+
+
+
+Klasifikacija je stvrstavanje nekog objekata u određenu grupaciju
+
+
+`Generalizacija je apstrakcija u kojo se skup sličnih tipova objekata
+predstavlja opštim generičkim tipom`
+
+Primer generalizacije:
+    Administrativno osoblje & Nastavnici => Radnici
+    
+    
+
+Specijalizacija je obrnuti postupak, opšti generički tip dobija
+dodatne osobine koje su specifične za dati tip
+
+Primer specijalizacije:
+    Radnici => Administrativno osoblje
+    # ili
+    Radnici => Nastavnici
+
+
+
+Primer specijalizacije:
+    "Radnik može da bude administrativno osoblje ili nastavnik"
+    
+    
+
+Specifikacija se na dijagramu označava tako što se u robu veze
+u kojoj dolazi do specifikacije napiše "S"
+
+
+
+
+
+
+Agregacije
+----------
+
+Agregacija nastaje kada postoji veza više prema više
+
+
+Jedini tip veze koji može da ima dodatne atribute
+
+
+"U bazama podataka su agregante veze uvek prikazane kao nova tabela"
+
+
+Sadržaće primarni ključ jednog i primarni ključ drugog
+
+S obzirom da agragacija predstavlja novi entitet onda može i veza
+između njega sa nekim drugim entitetom može da postoji
+
+
+
+Primer:
+    Entiteti profesor i predmet formiraju agregatnu tabelu
+    Nastavni_plan. To formira novi enditet i onda između tog
+    enditeta i entiteta Student moguće je formirati novu
+    vezu "Pohađa"
+    
+
+
+
+Agregacija se grafički predstavlja kao veza (koja se prikazuje
+rombom) koja je uokvirena pravougaonikom
+
+
+---
+
+
+
+
+Primer: Radnik ima dete
+
+U ovom slučaju dete zavisi od radnika (staratelja) pa je slabi
+objekat. Nema veze između njih (sem te za zavisnost), pa se ne 
+piše kardinalnost za njega (ali nije zabranjeno)
+

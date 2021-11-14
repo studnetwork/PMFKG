@@ -1,0 +1,609 @@
+Datum održavanja: 03.11.2021.
+Predavač: Višnja Simić
+Čas: 4
+=====================================
+
+
+Akcije jednostavnih refleksnih agenata zasnivaju se na 
+direktnom preslikavnaju stanja u akcije. 
+
+Nisu dobri u okruženjima u kojima je potreban veliki
+skladištni prostor ili predugo učenje
+
+
+Bolja opcija bi bilo upošljavanje agenata koji su zasnovani
+na ciljevima, koji razmatraju svoje buduće akcije i poželjnost
+ishoda takvih akcija
+
+
+
+Jedna vrsta agenata zasnovanih na cilju su agenti za rešavanje
+problema (problem-solving agents)
+
+Ono što je karakteristično za njih je da stanja sveta smatraju
+celinama. Dok rešavaju problem, oni prelaze iz jednog stanja 
+sveta (okruženja u kome se nalaze) u drugo. Ne zanima ih
+unutrašnja struktura sveta, ona nije vidljiva za algoritme
+koje ovi agenti koriste prilikom rešavanja problema
+
+
+
+
+Neinformisani algoritmi - ne daju im se nikakve informacije o
+                          problemu osim same definicije 
+                          problema
+                          
+                          
+
+Problem farmera, vuka, koze i kupusa pri prelasku reke
+
+Ono što se prvo ustanovljava kod ovakvog tipa problema jeste
+krajnji cilj. Utvrđivanje krajnjeg cilja naziva se 
+formulisanje cilja.
+
+
+Tipični primeri koji rešavaju pretragom, pored prethodnog
+primera, su:
+- pronanaženje 2 puta na nekoj mapi
+- sudoku
+- rešavanje rubikove kocke
+- postavljajne 8 kraljica na šahovsku tablu bez
+  međusobnog napadanja
+- presipanje sadržaja sudova
+
+
+
+
+Pri rešavanju problema potrebno je ustanoviti formalni opis
+tog problema. 
+
+Model prelaza za svako stanje i za svaku na njega primenjenu
+akciju daje novo stanje u kojem će se problem naći nakon
+primene akcije
+
+
+Sve akcije se formulišu. One se mogu primetiti kako bi se
+iz početnog stanja, preko drugih stanja, stiglo do cilja.
+Ovaj proces odlučivanja koje akcije treba preduzeti iz koga
+stanja predstavlja formulisanje problema.
+
+
+Početno stanje, akcije i model prelaza predstavljaju prostor
+stanja problema.
+
+Rešavanje problema predstavlja pretragu prostora stanja 
+problema
+
+
+`Pretraživaje je proces traženja sekvence akcija kojom se 
+stiže do cilja`
+
+
+`Algoritam pretraživanja uzima problem kao ulaz, a vraća
+rešenje u vidu sekvence akcija`. Pod problemom se podrazumeva
+ono što je definisano kao početno i kranje stanje.
+
+
+Kada se rešenje pronađe izvršavaju se te akcije koje ga
+čine i ta faza se naziva izvršavanje
+
+
+
+
+
+
+Stablo koje se formira pretregom sekvence akcija koja bi
+bila rešenje za prelazak iz početnog stanja u ciljno stanje
+
+
+
+Znak beskonačno označava da bi cena primene neke akcije 
+bila beskonačno velika
+
+
+Svaka akcija ima svoju cenu prelaza iz jednog u drugo stanje
+
+
+Cene zavise od vrste problema
+
+
+U pravougaonicima se nalazi opis stanja
+
+
+Postoji mogućnost i da jedan problem ima više sekvenci akcija
+koje dovode do rešenja ukoliko se koristi algoritam koji 
+jedan autor naziva "British museum search". Ovim algoritmom
+se prolazi kroz sve mogućnosti. Razlog za dati naziv je to 
+što podseća na posećivanje muzeja bez posebnog plana, sa 
+ciljem da se obiđe sve što je izloženo tako što bi se 
+se istražile sve mogućnosti
+
+
+
+
+Opis mogućih akcija koje su na raspolaganju. Definiše se 
+kao funkcija Akcija.
+
+Za dato stanje s, Akcija(s) vraća skup akcija koje se mogu
+izvrštiti u s
+
+
+
+
+Model prelaza (transition model) govori o tome šta će se 
+dogiditi kada se primeni neka akcija
+
+Definiše se kao funkcija Rezultat.
+
+Rezultat(s,a) daje stanje (sledbenika) koje će se dobiti
+izvršavanjem akcije a u stanju s
+
+
+
+Primer:
+    s = FCW || G
+    
+    Akcija(s) = {FC>, FW>}
+    Rezultat(s, FC>) = W || FCG
+    Rezultat(s, FW>) = C || FWG
+
+
+
+    
+    
+Testiranje cilja
+
+Definisano funkcijom Goal koja proverava da li je dato stanje
+ciljno stanje 
+
+Goal:S -> { True, False }
+
+
+
+
+Funkcija troška svakoj putanji dodeljuje numerički iznos troška
+
+c(a,s,s') = trošak preduzimanja akcije a u stanju s da bi se 
+            prešlo u stanje s'
+            
+            
+            
+Sumirano:
+
+Formalni opis problema čime:
+- početno stanje: s
+- opis mogućih akcija: Akcija(s)
+- model prelaza: Rezultat(s, a)
+- testiranje cilja: Goal(trenutno_stanje)
+- funkcija troška: c(a,s,s')
+
+
+
+
+Još jedan od primera problema koji se može rešiti primenom
+algoritma pretraživanja je problem trgovačkog putnika 
+(Travelling salesman problem - TSP)
+
+Svodi se na traženje optimalne putanje, tj. putanje sa 
+najmanjim troškovima
+
+
+
+
+
+Da bi se algoritam pretraživanja uspešno dizajnirao i primenio 
+njegov kreator mora da analizira i predvidi ponašanje tog
+algoritma, da li je pronalaženje problema zagarantovano, da li
+može da upadne u beskonačnu petlju pri pronalaženju rešenja, da
+li je to rešenje koji algoritam pronađe zagarantovano optimalno,
+kakva je složenost procesa pretraživanja u pogledu utroška 
+vremena i memorije
+
+
+
+
+Svi algoritmi pretrage moraju vršiti pretragu sistematično
+
+
+
+Prostor stanja problema se može opisati pomoću grafa 
+(jedan od načina)
+
+Svaki čvor u stanju predstavlja stanje, veze između njih akcije.
+Težina svake grane predstavlja cenu neke akcije
+
+
+`Putanja u prostoru stanja je sekvenca stanja povezanih jednom 
+sekvencom akcija`
+
+
+Graf je usmeran ako je za svaku granu definisan smer što se vizuelno
+predstavlja strelicom. 
+
+
+Korišćenje grafova za predstavljanje stanja je pogodno zato što
+omogućava korišćenje teorije grafova za analizu strukture, složenosti
+problema i procedura koje se koriste za njihovo rešavanje 
+
+
+
+
+Pretraživanjem usmerenog grafa postepeno se gradi stablo pretraživanja
+
+
+
+U korenu stabla pretraživanja nalazi se početno stanje
+
+
+Stablo se gradi tako što se pojedini čvorovi proširuju korišćenjem
+funkcije sledbenika: Rezultat(s,a)
+
+Korišćenjem te funkcije generišu se svi sledenici nekog čvora
+
+
+
+
+Kako se vrši pretraga stabla?
+1. Kao koren stabla postavlja se početno stanje
+2. Proverava se da li je to ciljno stanje
+3. Ukoliko nije pronađeno ciljno stanje, trenutno stanje se proširuje
+   primenom svih mogućih akcija i time se generišu svi njegovi sledbenici
+4. Bira se jedan od generisanih stanja (odabir zavisi od algoritma koji
+   se primenjuje)
+5. Formiraju se sledbenici odabranog stanja (isto kao u 3.)
+
+
+
+Suština je da se bira jedna opcija dok se druge ostave kao alternativa
+za slučaj da prva opcija ne dovede do rešenja
+
+
+
+Čvorovi koji nemaju svog sledbenika se nazivaju čvorovi listovi
+
+
+Skup svih čvorova listava koji su dospuni za proširenje naziva se
+granica, rub (frontier) ili otvorena lista (ti čvorovi se još nazivaju 
+i rubni čvorovi)
+
+
+Proširenje rubnih čvorova se vrši sve dok se ne dođe do cilja, ili
+dok ne nestane rubnih čvorova (sve dok ne nestane čvorova koji se 
+mogu proširiti)
+
+
+
+Skup svih čvorova koji su već prošireni(razvijeni) se naziva
+zatvorena lista
+
+
+
+Opšti algoritam pretrage stabla
+-------------------------------
+
+Vraća rešenje ili obaveštenje da rešenje nije pronađeno
+
+U početku se u otvorenu listu ubacuje početno stanje, a zatim se u
+petlji ispituje da li je otvorena lista prazna, ukoliko jeste onda
+nije nađeno rešenje, ukoliko nije onda se odabira jedan od čvorova
+iz te liste i uklanja iz nje.
+
+Ukoliko je taj čvor cilj onda se čitava putanja od početnog stanja vraća,
+u suprotnom se proširuje i dodaje svoje sledbenike u listu
+
+Način na koji se ti sledbenici dodaju u otvorenu listu i način na koji
+će biti odabran rubni čvor koji će biti dalje razvijan zavisi od toga
+koji su algoritmi odabrani.
+
+
+
+
+
+
+
+Postoji mogućnost da dođe do formiranja petlje tokom pretrage ukoliko 
+je loša strategija pretraživanja. Stablo postaje beskonačno iako je 
+broj stanja ograničen.
+
+
+Petlje mogu da uzrokuju neuspeh algoritma i da učine rešive probleme 
+nerešivim.
+
+
+
+Troškovi puta mogu biti aditivni, zavisno od problema
+
+
+"Putanja koja uzrokuje petlju nikada nije bolja od iste putanje sa 
+uklonjenom petljom"
+
+
+
+"Veoma je bitno da algoritmi prate gde su išli i da izbegnu ponavljanje
+iste pretrage kako bi efikasnije rešili problem"
+
+
+Algoritam će biti efikasniji ukoliko izbegava putanje sa petljama i 
+ukoliko ne čuva više putanje do bilo kog stanja(najkraći put).
+
+
+
+[ bitno; ispit
+
+Algoritam uniforme pretrage ili algoritam A-zvezda nikada ne čuvaju
+više različitih putanja od jednog čvora do drugog, već čim nađu 
+putanju koja je bolja od one koja je do tada bila poznata oni je 
+odbacuju, a zadržavaju samo tu bolju
+]
+
+
+
+
+Način na koji mogu da se izbegnu suvišne putanje je pamćenje onih
+putanja koje su već proverene. Da bi se to uradilo, u Tree-search
+algoritam (opšti algoritam pretrage) je potrebno dodati još jednu
+strukturu podataka koji će se nazivati istraženi skup ili zatvorena
+lista, u koju ću se pamtiti svi čvorovi koji su prošireni
+
+
+U slučaju da novogenerisani čvorovi već postoje u istraženom skupu
+neće doći do njihovog dodavanja u rub, već bivaju odbaćeni
+
+
+
+Tree-seach + istraženi skup = Graph-search
+
+
+Kako radi Graph-search?
+1. Postavlja početno stanje u rub
+2. Istražen skup postavlja na vrednost praznog skupa
+3. Ulazi u petlju i proverava da li je rub prazan, ukoliko jeste obaveštava
+   da nije nađeno rešenje, u suprotnom bira čvor list iz ruba i uklanja ga
+   njega
+4. Ukoliko je odabrani čvor cilj, vraća rešenje (putanju od početnog do njega),
+   u suprotnom ga dodaje u istraženi skup
+5. Generiše sve potomke datog čvora dodajući ih u rub, ali samo ako oni nisu već
+   u rubu ili istraženom skupu
+   
+   
+   
+   
+Stablo pretraživanja koje se konstruiše primenom Graph-search algoritma sadrži
+najviše po jednu kopiju svakog stanja
+
+
+"Stablo će se graditi preko grafa prostora stanja"
+
+
+Primenom ovog tipa algoritma, rubni čvorovi razdvajaju grafa prostora stanja
+na istraženi i neistraženi region
+
+
+
+
+Pri implementaciji algoritama pretrage potrebno je svakom čvoru u grafu
+pretrage pridružiti opis čvora
+
+
+Taj opis čvora predstavlja identifikaciju stana problema na koji se čvor
+odnosi
+
+
+
+
+Svaki čvor je struktura podataka koja sadrži:
+- stanje
+- roditelja
+- akciju (koja je primenjena na roditelja)
+- trošak putanje
+
+
+`Čvor je knjigovodstvena struktura podatka, dok stanje odgovara
+trenutnoj konfiguraciji sveta`
+
+
+
+Za ovakvu strukturu je moguće implementirati funkciju Child-node
+koja za dati roditeljski čvor vraća čvor dete
+
+
+
+Pokazivači na roditeljski čvor omogućavaju da se rekonstruiše
+putanja od početnog čvora do ciljnog čvora
+
+
+
+"Čvor i stanje nisu isto"
+
+
+Dva čvora mogu da sadrže isto stanje, ako se to stanje generiše
+kroz 2 različite putanje
+
+
+Pri implementaciji je bitno uskladištiti rubne čvorove na takav 
+način da algoritam za pretraživanje može lako da uzme sledeći
+čvor koji će da razvija. Skup rubnih čvorova se iz tog razloga
+prestavlja redom čekanja (može biti queue, stack ili prioritetni
+red)
+
+
+
+
+Postoje 2 osnovne vrste strategija pretraživanja:
+- neinformisano pretraživanje (en. blind, uninformed search)
+- informisano pretraživanje (en. directed, inforemed, heuristic search)
+
+
+
+
+Algoritmi neinformisane pretrage:
+- Pretraživanje po širini (en. Breadth-first search)
+- Pretraživanje sa uniformnim troškovima (en. uniform-cost search)
+- Pretraživanje po dubini (en. Depth-first search)
+- Ograničeno pretraživanje u dubinu
+- Iterativno pretraživanje u dubinu
+- Dvosmerno pretraživanje
+
+
+
+
+
+
+Pretraga u širinu (BFS)
+-----------------------
+
+Nakon razvića korenskog čvora, razvijaju se svi njegovi sledbenici, 
+pa nakon toga njihovi sledbenici i tako dalje.
+
+
+Čvorovi se razvijaju redom po nivoima. Kada se razviju svi čvorovi na 
+jednom nivou tek onda se prelazi sa razvojom čvorova u narednom
+nivou.
+
+Rub je predstavljen FIFO redom čekanja (queue)
+
+
+Testiranje da li je neki čvor cilj se realizuje kada se taj čvor 
+generiše, umesto u trenutku kada treba da se razvije (ključna razlika
+u odnosu na uniformnu pretragu)
+
+
+Stablo pretraživanja nije veliko kao kod pronalaženja rešenja bez
+primene neke strategije pretraživanja, ali je još uvek veliko
+
+
+
+
+Pseudokod:
+    function Breadth-First-Search(problem) returns a solution, or failure
+    
+        node <- a node with State = problem.Initial-State, Path-Cost = 0
+        
+        if problem.Goal-Test(node.State) then return Solution(node)
+        
+        frontier <- a FIFO queue with node as the only element
+        explored <- an empty set
+        
+        loop do 
+            if Empty?(frontier) then return failure
+            
+            node <- Pop(frontier) /* chooses the shallowest node in frontier */
+            add node.State to explored
+            
+            for each action in problem.Actions(node.State) do 
+                child <- Child-Node(problem, node, action)
+                
+                if child.State is not in explored or frontier then
+                    if problem.Goal.Test(child.State) then return Solution(child)
+                    
+                    frontier <- Insert(child, frontier)
+                    
+
+
+
+[ kolokvijum / ispit
+
+Konačno rešenje zadataka u kojima se ručno vrši pretraga predstavlja
+putanju od početnog čvora do cilja i cenu te putanje
+]
+
+
+
+
+
+
+Uniformno pretraživanje
+-----------------------
+
+
+Veoma slična BFS-u
+
+
+Razlika je u tome što se ne proširuje onaj čvor koji je prvi dodat na
+rub već onaj čvor sa ruba koji ima najnižu cenu putanje od početnog
+čvora do njega samog.
+
+
+Obeležimo taj čvor sa n, a putanju sa najnižim troškom do njega sa g(n)
+
+
+Rub (otvorena lista) se implementira kao prioritetni red koji je uređen
+po g (ceni putanje)
+
+
+Druga razlika između ove pretrage i BFS je to što ona proverava da je
+dati čvor cilj tek kada se on odabere za razvijanje.
+
+
+
+Pretraga sa uniformnim troškom je optimalnija od BFS jer se pri pretrazi
+biraju oni čvorovi koji u datom trenutku imaju najoptimalniju putanju, pa
+kada dođu do cilja putanja do njega će ujedno biti i najoptimalnija
+
+BFS zbog svog odabira čvorova može da dođe do cilja i nekom nedovoljno
+optimalnom putanjom pre nego što dođe do optimalne, a pošto se zaustavlja
+kada nađe bilo koju putanju koja dovodi do cilja, on će stati i dati kao
+rešenje prvu putanju koju je našao
+
+
+Pod optimalnošću podrazumeva se da je cena troška najmanja
+
+
+
+Pseudokod:
+    function Uniform-Cost-Search(problem) returns a solution, or failure
+    
+        node <- a node with State = problem.Initial-State, Path-Cost = 0
+        frontier <- a priority queue orderd by Path-Cost, with node as the
+                    only element
+        explored <- an empty set
+        
+        loop do 
+            if Empty?(frontier) then return failure
+            
+            node <- Pop(frontier) /* chooses the lowest-cost node in frontier */
+            
+            if problem.Goal.Test(node.State) then return Solution(node)
+            
+            add node.State to explored
+            
+            for each action in problem.Actions(node.State) do 
+                child <- Child-Node(problem, node, action)
+                
+                if child.State is not in explored or frontier then
+                    frontier <- Insert(child, frontier)
+                    
+                else if child.State is in frontier with higher Path-Cost then
+                    replace that frontier node with child
+                    
+
+
+Duži put se briše kada se nađe kraći i ponda taj kraći dolazi na njegovo mesto
+
+
+
+
+[ kolokvijum - test
+
+"Sigurno će biti to da radite uniformnu pretragu korak po korak na testu"
+]
+
+
+
+Ukoliko je cena putanje ista za neka 2 čvora onda se bira leksikografski, npr:
+    S, A    = 5
+    S, B, A = 5
+    -----------
+    bira se S, A jer A dolazi leksikografski pre od B
+    
+    
+
+
+
+Uniformna pretraga pravi mnogo manje stablo pretrage od BFS
+
+
+
+
+
+
