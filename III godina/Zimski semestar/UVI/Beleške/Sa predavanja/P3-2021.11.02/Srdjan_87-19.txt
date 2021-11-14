@@ -64,7 +64,7 @@ se nalazi promenljiva uzima i dodeljuje ga toj promenljivoj
 
 "Promenljiva zadržava tu vrednost sve dok se pravilo ne izvrši"
 (tačnije aktivirana pravila; promenljiva će za svaku aktivaciju
-pravila imati drugačiju vrednost; pogledati dodata)
+pravila imati drugačiju vrednost; pogledati dodato)
 
 Tokom uparivanja jedno pravilo se može uparti sa više tvrdnji
 
@@ -88,14 +88,15 @@ Primer:
 U ovom primeru, kao i inače, dato pravilo se nije izvršilo istovremeno
 pod uticajem obe tvrdnje, već je prvo izvršeno pod uticajem prve tvrdnje i
 onda dodata je nova tvrdnja (`Droopy je životinja`), a nakon toga je
-ažurirana agenda i izvršeno pravilo pod uticajem tvrdnje f2 i time je dobijena nova tvrdnja (`Doge je životinja`)
+ažurirana agenda i izvršeno pravilo pod uticajem tvrdnje f2 i time je 
+dobijena nova tvrdnja (`Doge je životinja`)
 
 
 Aktivirana pravila dobijaju vrednosti u okviru svojih promenljivih, tj.
 pravilo koje sadrži promenljivu pri aktivaciji kreira aktivirano
 pravilo koje se evaluira zavisno od tvrdnji koje su ga zadovoljile.
 Samo pravilo neće imati neku od tih vrednosti i može imati više različitih
-aktiviran pravila
+aktiviranih pravila
 
 
 Sama promenljiva ne dobija vrednost, već se tokom vezivanja vrednost, 
@@ -192,7 +193,8 @@ Rešavanje:
     
     
 
-Nije moguće dodeliti vrednost promenljivoj ukoliko se uslovni element NOT nalazi na početku uslova, pre drugih tipova uslovnih elemenata
+Nije moguće dodeliti vrednost promenljivoj ukoliko se uslovni element
+NOT nalazi na početku uslova, pre drugih tipova uslovnih elemenata
 jer mehanizam zaključivanja traži tvrdnju koja će se poklopiti
 sa tim iskazom, ali pošto je uslovni element NOT netačan kada
 nađe takav iskaz (i time dodeli vrednost) neće doći do dalje provere,
@@ -249,8 +251,8 @@ Pored navedenog načina korišćenja baze znanja postoji i drugi način,
 backward chaining
 
 
-Zaključivanje od hipoteza ka tvrdnjama koje podržavaju hipoteze naziva
-se zaključivanje unazad ili zaključivanje sa ulančavanjem unazad
+Zaključivanje od hipoteza ka tvrdnjama, koje podržavaju te hipoteze, 
+naziva se zaključivanje unazad ili zaključivanje sa ulančavanjem unazad
 (backward chaining)
 
 
@@ -268,13 +270,13 @@ se ulančavanje unazad od njih, ka tvrdnjama koje su dostupne u listi.
 
 Tokom procesa ulančavanja unazad nema dodavanja novih tvrdnji u listu.
 
-Ako postoji konflikt, uvek se bira praviko koje je prvo na redu.
+Ako postoji konflikt, uvek se bira pravilo koje je prvo na redu.
 
 
 Ulančavanje unazad se može predstaviti AND-OR stablima`
 
 
-U tom stablu, koren predstavlja hipotezu koju želimo da tokažemo
+U tom stablu, koren predstavlja hipotezu koju želimo da dokažemo
 
 
 Na AND-OR stablu, AND se prikazuje tako što se grane koji 

@@ -5,11 +5,11 @@ Predavač: Lana Miljković
 
 
 IDEF0 je dijagram procesa, na njemu se prikazuju procesi i
-načini na koje se informacije(?) razmenjuju.
+načini kojima se razmenjuju informacije(?).
 
 
 Na svakom nivou dekompozicije je potrebno imati između 2 i 6
-procesa. Poželjno je da ih bude oko 3
+procesa. Poželjno je da ih bude 3
 
 
 
@@ -24,8 +24,8 @@ DTP (ili en. DFD - Data Flow Diagram)
 Sličan je IDEF0 dijagramu
 
 
-DTP prikazuje šta se dešava sa podacima, kako se oni menjaju
-i modifikuju. Akcenat je na podacima
+DTP prikazuje šta se dešava sa podacima, kako se oni menjaju.
+Akcenat je na podacima
 
 
 Za razliku od IDEF0, koji je imao 2 komponente, DTP ima 
@@ -39,11 +39,13 @@ Za razliku od IDEF0, koji je imao 2 komponente, DTP ima
     entiteti
     
     kod IDEF0 ulazi su poticali iz okoline, dok kod DTP ti
-    ulazi potiču iz nekog eksternog objekta
+    ulazi potiču iz nekog eksternog objekta. Slično je i za izlaze,
+    išli su ka okruženju, dok sada kod DTP idu ka eksternim objektima
     
 - skladište podataka
-    u njima se skladište podaci koji procesi koriste ili
+    u njima se skladište podaci koje procesi koriste ili
     ažuriraju
+    
 - tokove podataka 
     veze koje povezuju komponente sistema
     
@@ -97,7 +99,7 @@ sistemi koji utiču na dati IS, sam taj IS i tokovi podataka
 između njih.
 
 
-Skladišta se može prikazivati tek od prvog nivoa
+Skladišta se mogu prikazivati tek od prvog nivoa
 
 
 Kontekstni dijagram prikazuje kontekst poslovnog procesa
@@ -133,6 +135,7 @@ Pravila koja moraju biti zadovoljena kod DTP-a:
     podatke ni iz čega, a ne može ni biti od koristi ukoliko
     nema nikakav izlaz 
 
+    
 2. Svaki proces mora biti imenovan
     
 3. Svako skladište mora imati ulazni i izlazni tok
@@ -202,8 +205,7 @@ Slajd 22, treći termin, rešenje:
     
     
     
-Za kreiranje DTP-a u AllFusion Process Modeler-u pri prekiranju
-odabrati DFD
+Za kreiranje DTP-a u AllFusion Process Modeler-u odabrati opciju DFD
 
 Da bi se pojavila opcija "Decompose" neophodno je da je aktivna
 kartica "Activities" u donjem levom uglu

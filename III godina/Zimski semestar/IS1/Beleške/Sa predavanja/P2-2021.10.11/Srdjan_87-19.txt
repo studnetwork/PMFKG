@@ -8,9 +8,9 @@ I u praksi je pokazano da metodološki pristup projektovanju
 informacionog sistema daje bolje rezultate od ad-hoc pristupa
 
 
-Više od polovine grešaka (54%) se otkrije nakon programiranje i
+Više od polovine grešaka (54%) se otkrije nakon programiranja i
 testiranja. Greške koje su otkrivene u krajnjim faza su duplo 
-skuplje od grešaka koje se utkriju u ranim fazama.
+skuplje od grešaka koje se otkriju u ranim fazama.
 
 Skoro polovina grešaka u softveru (45%) je vezana za faze 
 definisanja zahteva i projektovanje. Takve greške se dalje
@@ -20,7 +20,7 @@ propagiraju i time uvećavaju
 Kada se uvode novi IS, gotovi "erpovi", najčešće se kompanije 
 tada transformišu, redizajniraju ili vrše potpuni reinženjering
 svojih aktivnosti/procesa. Razlog nije samo prilagođavanje 
-softveru, već i to što se taj softver ima već ugrađene najbolje
+softveru, već i to što taj softver ima već ugrađene najbolje
 prakse po pitanju realizacije nekih procesa, menažmenta, ...
 
 
@@ -122,7 +122,7 @@ Specifične kompentencije za određene oblasti ili domene
 
 
 CASE alati - Computer Aided Software Engineering alati
-Omogućavaju modeliranje sistema i generisanje dela kod aplikacije
+Omogućavaju modeliranje sistema i generisanje dela koda aplikacije
 
 
 Nekad je bolje i ne implementirati sistem nego ga implementirati pa
@@ -182,7 +182,7 @@ Uticaji informacionih tehnologija na poslovno okruženje:
   * Volume (količina)
   * Velocity (brzina generisanja) - zahtevaju se sistemi koji mogu
                                     da obrade podake koji brzo
-                                    pristužu
+                                    pristižu
   * Variety (raznolikost) - podaci dolaze od različitih izvora,
                             u različitim formatima i mogu biti
                             struktuirani, polustruktuirani ili

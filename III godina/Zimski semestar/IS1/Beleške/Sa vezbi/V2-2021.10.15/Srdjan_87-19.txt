@@ -5,13 +5,13 @@ Predavač: Lana Miljković
 
 IDEF0
 
-Funkcija je predstavljena kao pravougaonik.
-Funkcija predstavlja proces / aktivnost
+Funkcija je grafički prikazana kao pravougaonik i
+predstavlja proces / aktivnost
 
 Nazivaju se aktivnim glagolima
 
 
-Input može biti podatak, informacija, materijal koji
+Input može biti podatak, informacija ili materijal koji
 predstavlja ulaz funkcije. Input se uvek nalazi na levoj
 strani funkcije.
 

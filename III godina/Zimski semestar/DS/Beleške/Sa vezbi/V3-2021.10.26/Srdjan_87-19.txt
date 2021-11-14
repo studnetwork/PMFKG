@@ -97,8 +97,9 @@ Isto važi i za operatore "==" i "!="
 
 
 U Javi ne postoji redefinisanje operatora "manje" i "veće", kao ni bilo
-kog drugog operatora i to je moguće izvesti metodom CompareTo iz 
-interfejsa IComparable
+kog drugog operatora. Poređenje definisano od strane korisnika je moguće 
+izvesti metodom CompareTo iz interfejsa Comparable. U C# to je CompareTo
+iz interfejsa IComparable
 
 
 

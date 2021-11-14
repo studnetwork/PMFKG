@@ -38,7 +38,8 @@ Uticaj informacionih sistema (IS može imati):
 
 Individualni uticaj
 -------------------
-PIM - lični IS za pravljanje, obaveza, kontantima, ...
+PIM (Personal Information Manager) - lični IS za praćenje obaveza,
+                                     čuvanje konakata, ...
 
 
 
@@ -101,5 +102,5 @@ organizacije:
   
   
 
-IS se i koriste za donošenje nekih odluka
+IS se takođe koriste i za donošenje nekih strateških odluka
 

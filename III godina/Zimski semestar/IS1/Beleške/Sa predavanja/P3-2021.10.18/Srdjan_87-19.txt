@@ -54,8 +54,8 @@ i jeftinija
 Naglasak je bio na tome da se proizvodi brže i jeftinije
 
 
-"Možete da dobijete automobil bilo koje boje ako je crne
-boje" - Henry Ford 
+"Kupac može da dobijete automobil bilo koje boje sve dok
+je to crna boja" - Henry Ford 
 
 
 Danas se ne prati takav model. Primer jednog modela koji 
@@ -103,7 +103,7 @@ Primeri primene informacionih sistema:
    
 2. City bank koji je korišćenjem Cloud Computing 
    servisa uspeo 10+ puta brže da pripremi i otvori 
-   svoje filijale (u IT smislu) od svoih konkurenata
+   svoje filijale (u IT smislu) od svojih konkurenata
    i time su brže ulazili na neko tržiše i osvajali
    novo klijente
    
@@ -295,12 +295,12 @@ tj. da na realizaciju drugoj kompaniji
 
 Y2K problem - '80tih / '90tih programeri su pisali broj godine
                sa 2 cifre kako bi uštedeli resurse. Do 
-               preoblema dolazi kada je potrebno prikazati 
-               godine nakon 1999 jer je bi godina xy mogla 
-               predstavljati i godinu 19xy i godinu 20xy. Došlo je
-               do potrebe za velikim brojem programera koji bi 
-               mogli da poprave stare neispravne programe. 
-               Outsource-ovao se veliki broj programera iz Kine
+               problema dolazi kada je potrebno prikazati 
+               godine nakon 1999 jer bi godina xy mogla predstavljati
+               i godinu 19xy i godinu 20xy. Došlo je do potrebe za
+               velikim brojem programera koji bi mogli da poprave 
+               stare neispravne programe. Outsource-ovao se veliki 
+               broj programera iz Kine
                
                
                

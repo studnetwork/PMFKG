@@ -509,7 +509,7 @@ Primer determinističkog i višeagentnog okruženja može biti šah
   
   
 
-Pogledati primeri iz knjige.
+Pogledati primere iz knjige.
 
 
 

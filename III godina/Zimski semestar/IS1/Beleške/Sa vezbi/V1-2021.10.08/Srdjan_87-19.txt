@@ -4,6 +4,7 @@ Predavač: Lana Miljković
 =====================================
 
 
+[ ispit
 
 Konsultacije mogu biti dosta korisne pri izradi projekta
 Asistent / profesor može da ukaže na moguće probleme i
@@ -12,7 +13,7 @@ proveri kvalitet
 
 Prvo se zakazuje kod asistenta pa onda kod profesora ukoliko
 asistent kaže da je rad dobar
-
+]
 
 
 Podatak je neobrađena misaona činjenica.
@@ -225,7 +226,7 @@ odnosno kakvi će biti izlazi"
 
 
 
-Mehanizmi su izvori koji izvode aktivnosti, a ne troše se kao što su npr. ljudi,
+Mehanizmi su izvori koji izvode aktivnosti, a ne troše se. To su npr. ljudi,
 operma, mašine, ...
 
 

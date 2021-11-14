@@ -64,7 +64,7 @@ Postoji neka tipizacija, javlja se npr. kod parametara funkcija
 
 
 Operator konkatanacije je tačka ("."), zbog čega se za operator 
-pristup članicam objekta koristi strelica
+pristup članicama objekta koristi strelica
 
 
 
@@ -191,7 +191,7 @@ Tipovi podataka:
 - Object
 - NULL
 - Resource (promenljiva kojoj je dodeljen resurs, a resurs može da
-            referenca na neki fajl, bazu podataka, string, ...)
+            bude referenca na neki fajl, bazu podataka, string, ...)
             
             
 
@@ -231,7 +231,7 @@ Rezultat:
 Funkcija var_dump($promenljiva) vraća tip i sadržaj promenljive
 
 
-Intedžer je signed, ne može početi sa nulom (jer se tako obeležava
+Intedžer je signed i ne može početi sa nulom (jer se tako obeležava
 oktalna reprezentacija broja)
 
 

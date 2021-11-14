@@ -121,16 +121,18 @@ kompajliranje celog projekta ukoliko se izvrši izmena u samom dll-u.
 Dovoljno je da se taj dll ponovo kompajlira i dostavi klijentu
 
 
-Još jedna od prednosti deljenih biblioteka je to što one ne moraju da
-se učitaju za svaki program zasebno ukoliko ih ti programi koriste već više programa može da koristi jednu te istu biblioteku. Samo se jedna takva
+Još jedna od prednosti deljenih biblioteka je to što one ne moraju da se 
+učitaju za svaki program zasebno ukoliko ih ti programi koriste već više 
+programa može da koristi jednu te istu biblioteku. Samo se jedna takva
 biblioteka učitava u memoriju, a onda više programa može da je koristi
 
 
 
 Kod statičkog linkovanja to se pakuje u jedan fajl, exe fajl. Sve 
-korišćene deljene biblioteke ulaze u sastavu tog exe fajla. Ukoliko bi
-se izmenilo nešto u takvom programu onda bi bilo potrebno kompajlirati 
-ceo projekat ponovo
+korišćene biblioteke ulaze u sastavu tog exe fajla. Ukoliko bi se izmenilo 
+nešto u takvom programu onda bi bilo potrebno ponovo kompajlirati ceo 
+projekat 
+
 
 
 
@@ -171,7 +173,7 @@ Prepisivanje u C# nije isto kao i u Javi jer su kod nje svi metodi
 podrazumevano virtuelni, dok u C# nisu
 
 Metod je moguće prepisati ukoliko je deklarisan kao virtuelan, apstraktan
-ili ukoliko je prepisan
+ili ukoliko je prepisan, jer je tada dati metod virtualan
 
 
 
@@ -195,7 +197,7 @@ Koristi se za skraćivanje zapisa pri deklaraciji promenljivih
 
 
     
-Postavljanje default-ne vrednosti i definsanje opcionog parametra je
+Postavljanje default-ne vrednosti i definisanje opcionog parametra je
 podržano u C#:
     void primer( int a, object o=null) {
         ...

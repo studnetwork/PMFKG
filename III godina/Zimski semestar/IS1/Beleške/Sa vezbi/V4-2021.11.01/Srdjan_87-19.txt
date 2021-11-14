@@ -8,7 +8,10 @@ IDEF0 je dijagram procesa, a DFD dijagram toka podataka
 
 
 
-Poslovanje i komunikacija između dobavljača, kupca i skladišta
+Tip zadatak: Poslovanje i komunikacija (razmena informacija) 
+između dobavljača, kupca i skladišta
+------------------------------------------------------------
+
 Razmatraju se četiri glavna procesa:
 - nabavka materijala
 - proizvodnja
@@ -31,9 +34,16 @@ usluga koje će prodavac pružiti kupcu. Slanje narudžbenice
 dobavljaču predstavlja zvaničnu ponudu za kupovinu proizvoda 
 ili usluga.
 
-Otpremnica je robni dokument koji nastaje u momentu izvršenja 
-naloga kupca. Prodavac, uz robu koju šalje kupcu, obavezno, 
-dostavlja i otpremnicu.
+
+
+Otpremnica je dokument robnog knjigovodstva kojim se evidentira: 
+-izlaz robe iz skladišta (magacina) prodavca (trgovca), kao i
+-finansijsko zaduženje kupca
+
+Otpremnica nastaje u momentu izvršenja naloga kupca. Prodavac,
+uz robu koju šalje kupcu, obavezno, dostavlja i otpremnicu.
+
+
 
 Faktura ili račun je poslovni dokument izdat od strane prodavca
 kupcu. U njemu se navode nazivi, količine i cene dogovorene za
@@ -43,8 +53,8 @@ proizvode ili usluge koje je prodavac obezbedio kupcu.
 Dobavljač šalje firmi:
 - ugovor
 - otpremnicu
-- fakturu
 - materijal
+- fakturu
 
 Firma šalje dobavljaču:
 - naduržbenicu
@@ -63,8 +73,8 @@ Firma šalje kupcu:
 
 Kupac šalje firmi:
 - narudžbenicu
-- uplate
 - reklamacije
+- uplate
 
 
 
@@ -76,15 +86,15 @@ Dekompozicija procesa nabavke
 -----------------------------
 
 [ možda bude neki zadatak o ovome
-(
-    Proces biranja dobavljača je preskočen; 
-    Ono što prethodi slanju ugovora od strane dobavljača:
+    Proces biranja dobavljača u navedenom primeru je preskočen; 
+    Ono što prethodi slanju ugovora od strane dobavljača su 
+    sledeće akrivnosti:
     1. šalje se ponuda svih ponuđača
     2. na tenderu se bira dobavlač
     3. najbolji ponuđač postaje kadidat za dobavljača
     4. izabranom ponuđaču se šalje predlog ugovora
-    5. ako dobavljač privhati predlog ugovora onda ga šalje
-)
+    5. ako dobavljač privhati predlog ugovora tek onda šalje
+       ugovor datoj firmi
 ]
 
 Dobavljač šalje ugovor. Ono što je ugovoreno se čuva u
@@ -140,11 +150,11 @@ Nakon toga slede proizvodnja proizvoda i njegova kontrola
 
 
 Za planiranje proizvodnje neophodno je znati kakvo je stanje
-sa zalihama proizvoda i koja su oblašćena lica kojima se može
+sa zalihama proizvoda i koja su ovlašćena lica kojima se može
 obratiti (?)
 
 
-U ovom procesu se kao zaključak dobijaju informacije o 
+U procesu planiranja se kao zaključak dobijaju informacije o 
 potrebnom materijalu i generišu se radni nalozi (koji se
 čuvaju u skladištu radnih naloga)
 
@@ -172,7 +182,7 @@ Proces prodaje
 
 
 Narudžbenica kupca se prima u procesu za prijem narudžbenica i
-skladišti se u skladištu narudžbenica.
+skladišti se u skladištu narudžbenica kupca.
 
 
 Za proces isporuke potrebna je naružbenica i njegov rezultat
@@ -186,8 +196,8 @@ te informacije se skladište, a kupcu se daje odgovor na dati
 zahtev za reklamaciju
 
 
-Informisanje kupca na osnovu informacija o tome koji su 
-proizvoda koji su na stanju
+Proces informisanja kupca na osnovu informacija o proizvodima 
+šalje ponude kupcima
 
 
 

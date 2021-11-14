@@ -46,7 +46,7 @@ kod za odgovarajući RDBS, tj. generisati potreban kod za kreiranje
 
 
 
-Objedninjeni jezik za modeliranje (UML) sadži skoro sve potrebne dijagrame
+Objedinjeni jezik za modeliranje (UML) sadrži skoro sve potrebne dijagrame
 za modeliranje jednog sistema, za razliku od nekih drugih notacija kao 
 što su IDEF0, DFD i drugih koji su dobri za neku specifičnu oblast
 modeliranja
@@ -63,7 +63,7 @@ na razvoj i uspešnost samog projekta.
 Uloge informacionog sistema:
 - upravljanje podacima
 - upravljanje procesima
-- izveštavanje (daje potrebno informacije)
+- izveštavanje (daje potrebne informacije)
 
 
 Sistem mora da ima ulaz i izlaz, ako to nema nije proces pa ni sistem

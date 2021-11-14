@@ -94,14 +94,15 @@ te činjenice zadovoljiti njegov uslov)
 
 
 
-Primer dodavanja činjenice unutar nekog pravila:
+Primer dodavanja činjenice unutar desnog dela pravila:
     ...
+    # levi deo
     @Rule(
         Semafor(svetlo='zeleno')
     )
+    # desni deo
     def kreni(self):
         self.declare(Akcija('Kreni'))
-        
     ...
 
 
@@ -168,7 +169,7 @@ Primer:
 
         
 Redosled navođenja činjenica u uslovu je jako bitan jer
-on njega zavisi način na koji će baza znanja biti pretražena
+od njega zavisi način na koji će baza znanja biti pretražena
 
 Ukoliko se ne navede pravi redosled izvršiće se mnogo više
 operacija nego što je potrebno
@@ -184,11 +185,11 @@ konstante, kada se jednom inicijalizuju kasnije ne mogu da
 se promene (tokom prolaza kroz pravilo)
 
 
-Pretraga se vrši od poslednjeg dela uslova na početnom, tj.
-početni se prvo fiksiraju pa se traže činjenice koje zadovoljavaju
-kranji deo uslova, a onda kada se sve prođe prelazi se na sledeću
-vrednost tog prednjeg dela pa se ona fiksira i tako iznova sve dok
-se ne prođe kroz sve vrednosti
+Pretraga se vrši od poslednjeg dela uslova ka početnom, tj. početni 
+delovi se prvo fiksiraju pa se traže činjenice koje zadovoljavaju
+kranji deo uslova, a onda kada se sve provere sve vrednosti za kranji
+uslov prelazi se na sledeću vrednost nekog prednjeg dela pa se ona 
+fiksira i tako iznova sve dok se ne prođe kroz sve vrednosti
 
 
 

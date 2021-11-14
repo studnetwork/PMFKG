@@ -80,12 +80,12 @@ Goal tree
 
 Koren stabla je glavni cilj
 
-Grane vode ka akcijama, tj. podciljeivma koje je potrebno
+Grane vode ka akcijama, tj. podciljevima koje je potrebno
 ostvariti da bi bio postignut nadcilj
 
 
-Listovi su ciljevi koji su zadovoljeni bez potrebe da se
-realizuju podciljevi. Nalaze se u krajnjim čvorovima stabla
+Listovi su ciljevi koji nemaju podciljeva.
+Nalaze se u krajnjim čvorovima stabla
 
 
 Stabla ciljeva sadrže ciljeve koji se ostvaruju:
@@ -344,7 +344,7 @@ Glavne komponente ekspertnog sistema:
 6. sistem za objašnjavanje
               
               
-Sistem za objašnjavanje je veoma bitana komponenta jer nije sam zaključak
+Sistem za objašnjavanje je veoma bitna komponenta jer nije sam zaključak
 ono što je jedino bitno, već i način na koji se došlo do njega
 
 
@@ -365,7 +365,7 @@ Ciklus mehanizma za zaključivanje
 
 Mehanizam za zaključivanje prvo pronalazi u bazi znanja
 sva pravila čiji su uslovi zadovoljeni tvrdnjama iz
-radne memorije i sva ta pravila se smeštaju na agentu.
+radne memorije i sva ta pravila se smeštaju na agendu.
 
 Ta pravila se nazivaju aktivirana pravila
 

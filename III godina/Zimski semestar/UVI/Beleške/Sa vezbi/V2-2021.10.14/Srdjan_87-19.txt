@@ -324,23 +324,22 @@ knowledgeEngineInstance.agenda
 
 
 Rezultat metode reset je resetovanje i dodavanje činjenice
-InitailFact u praznu bazu znanja
-(to nije sve što radi kasnije će biti spomenute i ostale 
- osobine)
+InitailFact u praznu bazu znanja (ukoliko DefFacts nije
+definisan)
 
 
 InitalFact je činjenica koja omogućava izvršavanje pravila
 koja ne zahtevaju uslov da bi bila zadovoljena. Pravilo je
-definisano tako da mora da ima činjenicu (uslov) koja može da
+definisano tako da mora imati činjenicu (uslov) koja može da
 ga zadovolji pa zbog toga postoji InitialFact, kako bi se
 ispunio taj zahtev i za pravila koja nemaju potrebu za 
 postojanjem neke činjenice
 
 
 Primer takog pravila:
-    IF InitialFact THEN neka_akcija
+    IF InitialFact THEN neka_posledica
     
-    IF THEN neka_akcija    # nije validno jer nema činjenice
+    IF THEN neka_posledica    # nije validno jer nema činjenice
     
     
     

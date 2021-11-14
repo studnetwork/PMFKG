@@ -71,12 +71,70 @@ Zbog toga postoji konvencija / standard imenovanja kojim
 se taj nedostatak može nadomestiti
 
 
-Privatni metodi se označavaju tako što se na početu i kraju 
-naziva navedu 2 znaka "_", a ugrađeni metodi na sličan način
-s time što je se koristi samo 1 takav znak sa obe strane naziva
+Privatni članovi se označavaju tako što se ispred ispred njihovog
+imena doda "_" (underscore) znak. Ovo ne ograničava pristup članu
+van klase, već samo služi kao indikator drugim programerima da bi
+taj član trebao da bude privatan
+
+Primer:
+    class Myclass():
+    def __init__(self):
+        self.__variable = 10
+
+        
+Name Mangling, tj. postavljanje "__" ispred naziva člana ograničava
+spoljašnji pristup članu. Namenjeno je za kreiranje članova kojima
+se može pristupiti po nazivu samo iz klase u kojoj su definisani,
+tj. njihova namena je pre svega sprečavanje konflikata sa izvedenom
+klasom. Naziv tog člana je zamenjen sa "_ImeKlase__naziv promenljive".
+Ovakav pristup omogućava slično ponašanje kao što to imaju privatni
+članovi u drugim jezicima.
+
+Primer iz interpretera:
+    >>> class MyClass():
+    ...     def __init__(self):
+    ...             self.__superprivate = "Hello"
+    ...             self._semiprivate = ", world!"
+    ...
+    >>> mc = MyClass()
+    >>> print mc.__superprivate
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    AttributeError: myClass instance has no attribute '__superprivate'
+    >>> mc._MyClass__superprivate
+    'Hello'
+    >>> print mc._semiprivate
+    , world!
 
 
+Metodi koji oko svog imena (sa obe strane) imaju "__" predstavljaju 
+specifične metode. Python dozvoljava redefinisanje operatora 
+korišćenjem datog načina označavanja i imena operatora:
+    class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
 
+    def __str__(self):
+        return "({0},{1})".format(self.x, self.y)
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+        
+# primena
+    
+    p1 = Point(1, 2)
+    p2 = Point(2, 3)
+
+    print(p1+p2)
+
+# rezultat
+    (3,5)
+
+    
+    
 help(x)    # opis metode / docs
 
 
@@ -88,7 +146,7 @@ string.upper()
 len(niz)
 
 
-Simbol "s;" deli 2 naredbe koje su napisane u jednoj liniji
+Simbol ";" deli 2 naredbe koje su napisane u jednoj liniji
 
 
 
@@ -334,7 +392,7 @@ Ključna reč self predstavlja referencu instance, slično kao
 this u Javi
 
 
-print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2)
+print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2))
 
 
 Metode instance moraju da sadrže parametar self u svom potpisu
@@ -492,29 +550,37 @@ conda env list
 
 Pre instalacije paketa potrebno je aktivirati dato okruženje i
 nakon toga je moguće instalirati u njega date pakete komandom:
-    pip install < naziv_paketa >
+    pip install naziv_paketa
 
     # ili ovo ukoliko je dostupna list svih paketa
     pip install -r requirements.txt
 
 Kreiranje virtualnog okruženja:
     # anacoda
-    conda create -n < ime > python=< verzija_pythona >
+    conda create -n ime_okruženja python=verzija_pythona
     
     # python
-    python -m venv < putanja >
+    #
+    # u ovom pristupu će poslednji folder u putanji predstavljati 
+    # naziv samog okruženja, kao i folder u kome će biti smešteni
+    # potrebni fajlovi
+        # linux
+        python -m venv putanja/do/foldera/ime_okruženja
+        
+        # windows
+        python -m venv putanja\do\foldera\ime_okruženja
 
     
 Aktivacija virtuelnog okruženja:
     # anacoda
-    conda activate < naziv >
+    conda activate ime_okruženja
     
     # python 
         # linux
-        source < putanja >/bin/activate
+        source putanja/do/foldera/ime_okruženja/bin/activate
         
         # windows
-        .< putanja >\Scripts\activate
+        .putanja\do\foldera\ime_okruženja\Scripts\activate
         
         
 
