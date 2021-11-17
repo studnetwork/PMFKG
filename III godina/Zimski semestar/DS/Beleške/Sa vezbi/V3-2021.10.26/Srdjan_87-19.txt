@@ -11,13 +11,13 @@ Namespace-ovi mogu biti ugnježdeni u drugi namespace
 
 
 
-Namespace System je definisan u biblioteci .NET framework-a
+Namespace "System" je definisan u biblioteci .NET framework-a
 i njena referenca se nalazi u References
 
 
 
-Namespace-ovi omogućavaju i da se za istu stvar koriste 
-različite implementacije
+Namespace-ovi omogućavaju i da se za istu stvar(npr. user-defined klasu) 
+koriste različite implementacije
 
 
 
@@ -71,16 +71,16 @@ u ovakvim situacijama
 
 Primer redefinisanja binarnog operatora +:
     ...
-    public static Tip operator +(Tip t1, Tip t2) {
+    public static Tip3 operator +(Tip1 t1, Tip2 t2) {
         ...
     }
     ...
     
 Upotreba:
-    Tip t1 = new Tip(1);
-    Tip t2 = new Tip(2);
+    Tip1 t1 = new Tip1(1);
+    Tip2 t2 = new Tip2(2);
     
-    Tip t3 = t1 + t2;
+    Tip3 t3 = t1 + t2;
     
     
 
@@ -98,8 +98,9 @@ Isto važi i za operatore "==" i "!="
 
 U Javi ne postoji redefinisanje operatora "manje" i "veće", kao ni bilo
 kog drugog operatora. Poređenje definisano od strane korisnika je moguće 
-izvesti metodom CompareTo iz interfejsa Comparable. U C# to je CompareTo
-iz interfejsa IComparable
+izvesti metodom CompareTo iz interfejsa Comparable, ali ne može dati isti
+rezultat jer ova funkcija vraća -1, 0 ili 1. U C# to je CompareTo iz 
+interfejsa IComparable
 
 
 
@@ -113,7 +114,7 @@ Indekseri se koriste za pristupanje nekim elementima unutar nekog tipa
 
 Definisanje indeksera:
     ...
-    public return_tip this[tip_za_indeksiranje vrednost] {
+    public ReturnType this[ Tip vrednost ] {
         ...
     }
     ...

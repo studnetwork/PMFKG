@@ -63,7 +63,8 @@ mogućnost da se prikaže sadržaj promenljivih, zaustavi izvršavanje,
 izvršavanje komandu po komandu i slično..
 
 
-Kada je selektovan Release profil nije moguće izvršavati kod uz debugging
+Kada je selektovan Release profil nije moguće izvršavati kod u debugging
+modu
 
 
 Kada se kod izvrši bez debugging-a, ignorisaće se brakepoint-i
@@ -102,7 +103,7 @@ posebnim fajlovima
 
 
 
-Namaspace-ovi definisani u projektima/asembilijam nisu podrazumevano
+Namaspace-ovi definisani u projektima/asemblijima nisu podrazumevano
 vidljivi drugim projektima/asembijima. Da bi bili vidljivi potrebno
 je da se doda referenca u References > Projects
 
@@ -116,15 +117,15 @@ Kada je program spreman za isporuku build-uje se u Release profilu i
 isporučuju se exe fajlovi zajedno sa dll fajlovima (ukoliko postoje)
 
 
-Jedan od prednosti korišćenja dll-ova je to što nije potrebno 
+Jedna od prednosti korišćenja dll-ova je to što nije potrebno 
 kompajliranje celog projekta ukoliko se izvrši izmena u samom dll-u.
 Dovoljno je da se taj dll ponovo kompajlira i dostavi klijentu
 
 
 Još jedna od prednosti deljenih biblioteka je to što one ne moraju da se 
-učitaju za svaki program zasebno ukoliko ih ti programi koriste već više 
-programa može da koristi jednu te istu biblioteku. Samo se jedna takva
-biblioteka učitava u memoriju, a onda više programa može da je koristi
+učitaju zasebno za svaki program koji ih koristi, jer više programa može 
+da koristi jednu te istu biblioteku. Samo se jedna takva biblioteka učitava
+u memoriju, a onda više programa može da je koristi
 
 
 
@@ -166,14 +167,14 @@ primer:
 Nasleđivanje i implementiranje interfejsa koristi istu sintaksu
 
 
-Prepisivanje metoda je moguće jedino ukoliko je taj metod virtuelni
-
-
 Prepisivanje u C# nije isto kao i u Javi jer su kod nje svi metodi
 podrazumevano virtuelni, dok u C# nisu
 
-Metod je moguće prepisati ukoliko je deklarisan kao virtuelan, apstraktan
-ili ukoliko je prepisan, jer je tada dati metod virtualan
+
+Prepisivanje metoda je moguće jedino ukoliko je taj metod virtuelni
+(ukoliko je deklarisan kao virtuelan, apstraktan ili ukoliko je prepisan)
+
+
 
 
 
@@ -182,7 +183,7 @@ Generička lista:
     
     
 
-foreach( var item in lista ) {
+foreach( var item in kolekcija ) {
     ...
 }
 

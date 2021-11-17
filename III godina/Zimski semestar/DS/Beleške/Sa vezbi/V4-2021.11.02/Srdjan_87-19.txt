@@ -40,32 +40,32 @@ yield return 10;
 "yield kaže vrati ovu vrednost i nastavi dalje"
 
 
-Kada se sa yield-ovima vrate vrednosti iz metoda GetEnumerator, 
-"lista" se kreira dinamički, praviće se tokom izvršavanja, nije neophodno
-da postoji u memoriji
+Kada se sa yield-ovima vrate vrednosti iz metoda GetEnumerator, "lista" 
+se kreira dinamički, praviće se tokom izvršavanja, nije neophodno da
+postoji u memoriji
 
 
 
-foreach će generator pozivati sve dok ima elemenata. Prvo će ga pitati
-da li ima sledeći element i ukoliko ima pozvaće metodu koja vraća tu
-vrednost i to radi sve dok ne dobije odgovor da više nema elemenata
+foreach će pozivati generator sve dok ima elemenata. Prvo će ga pitati
+da li ima sledeći element i ukoliko ima pozvaće metodu koja vraća taj
+element. To radi sve dok ne dobije odgovor da više nema elemenata
 
 
 
-U pristupi sa yield-om, nakon poslednjeg yield-a enumerator neće
+U pristupu sa yield-om, nakon poslednjeg yield-a enumerator neće
 više imati potvrdan odgovor na pitanje da li postoji sledeći element
 i tada se završava foreach petlja
 
 
 
-Drugi pristup predstavlja korisnički definisan enumerator (klasa).
+Drugi pristup predstavlja korisnički definisan enumerator (klasu).
 
 Ova klasa mora da implementira IEnumerator. U ovom interfejsu su 
 definisane metode "MoveNext" i "Reset"
 
 
 U enumeratoru se nalazi određena promenljiva koja prati do kojeg
-elementa se stiglo (nešto kao indeks)
+elementa se stiglo tokom iteriranja(nešto kao indeks)
 
 
 foreach radi tako što poziva "MoveNext" za svaki element koji zatraži.
@@ -81,6 +81,7 @@ Metod može da koristi yield samo ukoliko je povrati tip IEnumerable.
 Mora da se vraća kolekcija. Ta kolekcija može da se generiše tokom
 izvršavanja, tačnije, moguće je generisati elemente "u hodu", a moguće
 je i definisati način na koji bi se iteriralo kroz neki postojeći niz
+(kolekciju) unutar datog tipa
 
 
 
@@ -93,12 +94,12 @@ petlje
 
 
 
-foreach radi sa IEnumerable. Tu se javlja polimorfizam. 
+foreach radi sa IEnumerable. Tu se može javiti polimorfizam. 
 
 
 
-Funkcija koja vraća enumerator se ne izvršava sve dok se ne izvrši pristup.
-Reč je o kasnom pozivanju. 
+Funkcija koja vraća enumerator se ne izvršava sve dok se ne izvrši pristup
+(tačnije sve dok se ne zatraži prvi element). Reč je o kasnom pozivanju. 
 
 
 
@@ -107,13 +108,15 @@ Reč je o kasnom pozivanju.
 
 Delegati su nešto kao pokazivači na funkcije
 
-Delegat je tip, pa može biti zasebno definisan, a može biti i deo nekog
-drugog tipa. On može pokazivati na funkcije koje imaju potpis kao onaj 
-potpis koji je njime definisan.
+Delegat je tip, pa može biti zasebno definisan, a može se naći i u
+definiciji nekogdrugog tipa. 
+
+On može pokazivati na funkcije koje 
+imaju potpis kao onaj potpis koji je njime definisan.
 
 
 Primer definisanja delegata:
-    delegate double TipFunkcije(double a, dobule b);
+    delegate double Delegat(double a, dobule b);
     
     
 
@@ -121,44 +124,47 @@ Nastavak na dati primer:
     static double saberi(double a, double b) {
         return a + b;
     }
-    
-    ... {
-       TipFunkcije tf = saberi; 
-    }
+    ...
+       Delegat tf = saberi; 
     ...
     
 
 
-Delegat može da pokazivati na onu metodu koja ima isti
-potpis kao njegova definicija (isti povratan tip i sekvencu parametara)
+Delegat može da pokazivati na onu metodu koja ima isti potpis kao 
+njegova definicija (isti povratan tip i sekvencu parametara)
 
 
 
-Delegati se koriste kada je potrebno pri pisanju poziva definisati na 
-koji način će se nešto u određenom metodu raditi prosleđivanjem delegata
-koji pokazuje na metod koji obavlja tu željenu radnju. 
-
-Na taj način se može definisati metod koji može deo svog posla obaviti 
-na različite načine zavisno od toga koji metod mu je predat
-za realizaciju tog posla
+Delegati se koriste kada je potrebno pri pisanju poziva neke metode 
+definisati na koji način će se nešto u tom metodu raditi. To definisanje
+se može obaviti prosleđivanjem delegata koji pokazuje na metod koji 
+obavlja tu željenu radnju. 
 
 
-Primer je metod Sort koji može primiti metod kojim se proverava da li
+Na taj način se može definisati metod koji deo svog tela može obaviti 
+na različite načine zavisno od toga koji metod mu je predat za realizaciju
+tog dela njegovog tela.
+
+
+
+Primer je metod Sort čiji argument može biti metod kojim se proverava da li
 jedan element ide pre ili posle nekog drugog elementa
 
 
 
 
-Funkcije koje, po svojoj svrsi, pripadaju istoj kategoriji i koje
-imaju isti potpis mogu da se "grupišu" delegatom. Umesto da se pišu
-dve klase koje imaju isti kod, a jedino različit metod koji pozivaju
-unutar sebe, moguće je definisati jednu metodu sa tim kodom, gde se umesto
-tog poziva zove ona metoda koja je prosleđena. Time se sprečava dupliranje
-jednog te istog koda
+Funkcije koje, po svojoj svrsi, pripadaju istoj kategoriji i koje imaju 
+isti potpis mogu se grupisati delegatom. Umesto da se pišu dve klase 
+koje imaju isti kod, a jedino različit metod koji pozivaju unutar sebe, 
+moguće je definisati jednu metodu sa tim kodom, gde se umesto tog poziva
+zove ona metoda koja je prosleđena. Time se sprečava dupliranje jednog 
+te istog koda
 
 
 
 Primer:
+    ...
+    delegate double Funkcija(double broj);
     ...
     static void suma( double[] niz, Funkcija f) {
         double s = 0;
@@ -168,7 +174,7 @@ Primer:
         
         Console.WriteLine("Suma = " + s);
     }
-
+    ...
     
 Korišćenje:
     suma(niz, kvadrat);
@@ -179,12 +185,11 @@ Korišćenje:
 
 
 
-Kada je potrebno vršiti neku radnju nakon dešavanja određenog 
-događaja onda nije isplativo da onaj koga to zanima proverava
-da li se tako nešto dogodilo sve do se ne dogodi. Efikasnija
-varijanta je da onaj ko kontroliše dati događaj prihvati
-referencu onoga ko želi da sazna da li se to nešto dogodilo
-pa ga obaveštava kada se to nešto dogodi 
+Kada je potrebno vršiti neku radnju nakon dešavanja određenog događaja
+onda nije isplativo da onaj ko treba da vrši tu radnju proverava da li
+se tako nešto dogodilo sve do se ne dogodi. Efikasnija varijanta je da
+onaj ko kontroliše dati događaj prihvati referencu onoga ko želi da 
+sazna da li se to nešto dogodilo pa ga obavesti kada se to nešto dogodi 
 
 
 

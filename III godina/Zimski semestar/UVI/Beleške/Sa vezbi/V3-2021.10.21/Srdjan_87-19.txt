@@ -71,12 +71,12 @@ Kod:
     
 
 
-Otpraćivanje događaja koji se prate:
+Otkazivanje pretplate na događaje koji se prate:
     watch(level=0)
 
     
     
-MATCH omogućava čuvanje vrednosti iz neke činjenice    
+MATCH omogućava čuvanje vrednosti (polja) iz neke činjenice    
 
 
 
@@ -137,8 +137,8 @@ if-else u kosekventu ukazuje na grešku u pisanju
 datog pravila
 
 
-Pristupa sa skupom pravila rešavanju je mnogo 
-efikasaniji / brži od algoritamskog pristupa
+Pristupa se rešavanju sa skupom pravila jer je mnogo 
+efikasanije / brže od algoritamskog pristupa
 
 
 
@@ -197,7 +197,7 @@ fiksira i tako iznova sve dok se ne prođe kroz sve vrednosti
 
 Kada je potrebno obrisati ili "izmeniti" činjenicu neophodno
 je znati njenu adresu. Da bi se dobila adresa činjenice
-koja se aktivira koristi se sledeće:
+koja se aktivira koristi se sledeći kod:
     @Rule(
         AS.ime_var_za_adresu << FACT (...)
     )

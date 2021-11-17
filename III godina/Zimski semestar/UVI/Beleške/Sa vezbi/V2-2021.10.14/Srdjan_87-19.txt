@@ -74,7 +74,7 @@ Osnovni koncepti koje ES treba da ispuni:
    zaključak pomoću definisanih pravila u bazi znanja)
 - objašnjavanje
   (jedna od najvažnijih stvari jer sam zaključak se ne može
-   smatrati pozdanim / validnim rešenjem ukoliko se ne zna
+   smatrati pouzdanim / validnim rešenjem ukoliko se ne zna
    zašto je to zaključak, tj. kako se došlo do njega)
 
 
@@ -308,7 +308,7 @@ Uključivanje u projekat:
 
     
     
-"KnowledgeEngine je interface knowledge koji će vršiti 
+"KnowledgeEngine je inference knowledge koji će vršiti 
 odlučivanje za nas"
 
 
@@ -458,7 +458,7 @@ Koristi se takođe kada se učitavaju činjenice iz fajla
 
 
 Ključna reč yield omogućava vraćanje više vrednosti 
-uz uštetu memorije i vremena jer se iz funckije vraća
+uz uštedu memorije i vremena jer se iz funckije vraća
 samo referenca na generatorski objekat koji generiše
 date vrednosti i to radi samo pri iteraciji
 

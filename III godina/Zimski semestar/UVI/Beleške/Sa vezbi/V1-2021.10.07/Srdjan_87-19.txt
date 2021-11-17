@@ -70,6 +70,7 @@ privatnu metodu
 Zbog toga postoji konvencija / standard imenovanja kojim
 se taj nedostatak može nadomestiti
 
+[ dodato
 
 Privatni članovi se označavaju tako što se ispred ispred njihovog
 imena doda "_" (underscore) znak. Ovo ne ograničava pristup članu
@@ -87,7 +88,7 @@ spoljašnji pristup članu. Namenjeno je za kreiranje članova kojima
 se može pristupiti po nazivu samo iz klase u kojoj su definisani,
 tj. njihova namena je pre svega sprečavanje konflikata sa izvedenom
 klasom. Naziv tog člana je zamenjen sa "_ImeKlase__naziv promenljive".
-Ovakav pristup omogućava slično ponašanje kao što to imaju privatni
+Ovakav pristup omogućava slično ponašanje koje imaju imaju privatni
 članovi u drugim jezicima.
 
 Primer iz interpretera:
@@ -109,7 +110,7 @@ Primer iz interpretera:
 
 Metodi koji oko svog imena (sa obe strane) imaju "__" predstavljaju 
 specifične metode. Python dozvoljava redefinisanje operatora 
-korišćenjem datog načina označavanja i imena operatora:
+korišćenjem ovog načina označavanja i samog naziva operatora:
     class Point:
     def __init__(self, x=0, y=0):
         self.x = x
@@ -133,6 +134,7 @@ korišćenjem datog načina označavanja i imena operatora:
 # rezultat
     (3,5)
 
+]
     
     
 help(x)    # opis metode / docs
@@ -164,9 +166,9 @@ Konverzija nekog tipa u string:
     
 Try/catch blok:
     try:
-        kod
+        # kod
     expect TypeError as e:
-        handling
+        # handling
         
 
     
@@ -179,13 +181,12 @@ Kreiranje liste:
     lista = [ e, l, e, m, e, n, t, i ];
     
 
-    
-    
 Python podržava negativno indeksiranje
 
+    
 
 
-lista.append(x)    # dodaje x ako el. liste "lista"
+lista.append(x)    # dodaje x kao el. liste "lista"
 
 
 lista.pop()    # izbacuje poslednji element iz liste
@@ -287,7 +288,8 @@ map( funkcija, lista )    # primenjuje funkciju na svaki el. liste
 
 
 lambda funkcija je funkcija koja se piše u jednoj liniji i 
-anonimna je. Sintaksa lambda x: naredbe;
+anonimna je. Sintaksa
+    lambda x: naredbe;
 
 
 Funkcija map ne vraća listu, već neki specifičan objekat za tu
@@ -313,7 +315,7 @@ Kreiranje liste (funkcijski pristup):
 
     
     
-for petlja u Python-u se ne ponaša kao for petlje u drugim 
+for petlja u Python-u se ne ponaša kao for petlja u drugim 
 jezicima, već kao foreach petlja (iterira po elementima liste)
 
 
@@ -340,14 +342,14 @@ belina, a ne nekim simbolima kao što su vitičaste zagrade
 
 Definisanje funkcije:
     def funkcija(argument):
-        naredbe_tela
+        # naredbe_tela
         
         
 Svaka funkcija u Python-u ima povratnu vrednost
 
 
 
-Python podžava opcione / default-e parametre. Ukoliko se
+Python podržava opcione / default-e parametre. Ukoliko se
 opcioni parametar ne navede onda se koristi njegova default-na
 vrednost
 
@@ -356,12 +358,12 @@ vrednost
 
 Kreiranje klase:
     class Naziv:
-        kod
+        # kod
         
         
 Nasleđivanje:
     class Dog(Animal):
-        kod
+        # kod
         
         
         
@@ -372,14 +374,14 @@ Dokumentacija se piše u multiline komentaru ispod onoga
 
 
 Za razliku od drugih objektnih jezika, u Python-u promenljive
-definisane u klasnom scope-u predstavljaju promenljive
-same klase (staticke promenljive), a ne promenljive instance
+definisane u klasnom scope-u predstavljaju promenljive same
+klase (staticke promenljive), a ne promenljive instance
 
 
 
 Definisanje konstruktora:
     def __init__( self, parametri.. ):
-        ...
+        # kod
         
         
 Primer:
@@ -397,13 +399,13 @@ print("neki string ima vrednost1 %d i vrednost2 %.2f" % (1,2))
 
 Metode instance moraju da sadrže parametar self u svom potpisu
 
-self se ne prosleđuje kao argument, već se implicitno dodaje
+self se ne prosleđuje kao argument (prosleđuje se implicitno)
 
 
 
-
-Promenljive instance se deklarišu/definišu tokom dodele. Moguće
-je kreirati promenljivu instance i nakon definisanja cele klase:
+Promenljive instance se deklarišu/definišu tokom inicijalizacije. 
+Moguće je kreirati promenljivu instance i nakon definisanja cele 
+klase:
     class klasa:
         def __init__(self):
             pass
@@ -440,7 +442,8 @@ Pristup nadklasi se vrši pomoću ključne reči super
 
 
 U Python-u je moguće metodi proslediti neograničen broj 
-argumenata korišćenjem args i kwargs
+argumenata korišćenjem args i kwargs (ne moraju tako da
+se nazovu)
 
 kwargs skraćeno od keyword arguments
 
@@ -476,16 +479,20 @@ Python uvek radi sa referencama, isto kao i Java
 
 
 Kopiranje elemenata liste:
+    # I nacin
     kopija = list(neka_lista)
     
+    # II nacin
     import copy
     kopija = copy.copy(neka_lista) # kopira samo vrednosti što
                                    # znači da kopira i 
                                    # vrednosti referenci na
                                    # neke objekte, a ne i sam
                                    # objekat
-                            
-    kopija = copy.deepcopy(neka_lista) # kompletno kopiranje
+         
+    # kompletno kopiranje; kopiraju se i objekti 
+    # na koje reference pokazuju, a ne samo reference
+    kopija = copy.deepcopy(neka_lista)
     
     
 
@@ -503,8 +510,8 @@ hashable (što npr. liste ne mogu da budu jer su promenljive)
 
 
 
-for key in sorted( recnik.key() ):
-    ...
+for key in sorted( recnik.keys() ):
+    # kod
     
     
     
@@ -517,7 +524,7 @@ for key in sorted( recnik.key() ):
 
     with open(naziv_fajla, 'r') as f:
         for line in f:
-            ...
+            # kod
             
         
         

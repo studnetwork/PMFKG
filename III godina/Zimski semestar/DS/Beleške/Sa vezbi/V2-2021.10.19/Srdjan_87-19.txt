@@ -13,7 +13,6 @@ Javi i C#
 
 
 
-
 View > Solution Explorer
 
 
@@ -27,7 +26,7 @@ neke putanje
 
 
 
-Getter i Setter metode u Javi su metode koriste se zbog
+Getter i Setter metode u Javi su metode se koje koriste zbog
 enkapsulacije
 
 
@@ -46,9 +45,9 @@ Na osnovu konteksta poziva/pristupa, svojstvo određuje da li
 je potrebno da se pozove get ili set.
 
 Prvi način korišćenja svojstva je njegovo korišćenje u
-funcijskom obliku. Kreira se tako što se navede blok koda
-koji će predstavljati funkciju koja će se izvršiti zavisno
-od konteksta pristupa.
+funkcijskom obliku. Kreira se tako što se navede blok koda
+koji predstavlja funkciju koja će se izvršiti zavisno od
+konteksta pristupa.
 
 Sintaksa:
     modifikatori tip NazivSvojstva {
@@ -92,13 +91,12 @@ unutar nje
 
 
 
-Svojstvo mora da ima modifier public (?)
+Accessors (funkcije svojstva) imaju kao podrazumevanu vidljivost
+vidljivost svojstva kome pripadaju
 
 
-get i set metode imaju kao podrazumevanu vidljivost public
 
-
-Promenljive inače imaju kao podrazumevanu vidljivost private
+Članice klase inače imaju kao podrazumevanu vidljivost private
 
 
 
@@ -147,7 +145,7 @@ da se radi o referenci:
     
 
 BITNO: kada se promenljive prosleđuju po referenci upotrebom
-       ključne reči ref, neophodno je da je pre slanja ta 
+       ključne reči ref, neophodno je da pre slanja ta 
        promenljiva inicijalizovana. Ref zahteva da promenljiva
        bude inicijalizovana pre nego što njena referenca bude
        prosleđena
@@ -201,16 +199,14 @@ U pozadini stoj int, ali je to moguće promeniti, npr:
     enum NekiEnum : byte { ... }
 
 
-
-On je tip kao i klasa(?), pa ga je moguće definisati i van neke
-klase
-
+On je tip, pa ga je moguće definisati i van neke klase
 
 
 Prvi element ima vrednost 0. Kreće od nule pa se uvećava za
 1 za svakog narednog člana. Ukoliko naiđe na neki koji je
 eksplicitno definisan, onda se od te vrednosti nastavlja
 dalje uvećavanje za 1
+
 
 
 

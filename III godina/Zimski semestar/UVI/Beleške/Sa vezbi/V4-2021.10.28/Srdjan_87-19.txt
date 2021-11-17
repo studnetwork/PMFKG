@@ -107,7 +107,7 @@ Logičko I se često kombinuke sa negacijama
 
 
 Ukoliko je u nekom organičenju polja potrebno koristi MATCH onda njega 
-ne treba dodatno naznačiti kao literal jer je on već litera:
+ne treba dodatno naznačiti kao literal jer je on već literal:
     ...
     Osoba( ime = MATCH.ime_2,
             boja_ociju = MATCH.boja_ociju_2 & ~MATCH.boja_ociju_1,
@@ -118,7 +118,7 @@ ne treba dodatno naznačiti kao literal jer je on već litera:
 
     
 U ovom primeru dolazi do dupliranja aktivacija. Razlog za to je to što
-u prvoj aktivaciji ušestvuje levi literal logičkog ILI, a u drugoj 
+u prvoj aktivaciji učestvuje levi literal logičkog ILI, a u drugoj 
 aktivaciji njegov desni literal
 
 Da bi se ova višestruka aktivacija izbegla, u datom uslovu tvrdnje dodaje
@@ -203,11 +203,11 @@ NOT()
 -----
    
    
-NOT() omogućava ispitivanje postojanja neke činjenice u listi
+NOT() omogućava ispitivanje nepostojanja neke činjenice u listi
 činjenica
 
-Ne sme se koristiti u kombinaciji sa MATCHneka_var ukoliko se 
-MATCH.neka_var tu prvi put pojavljuje jer ne može se dodeliti 
+Ne sme se koristiti u kombinaciji sa MATCH.neka_var ukoliko se 
+MATCH.neka_var tu prvi put pojavljuje jer se ne može dodeliti 
 vrednost nečega što ne postoji
 
 
@@ -279,8 +279,8 @@ Nije preporučljivo koristi ovo jer se lako može pogrešiti
 
 
 
-Pored @DefFacts() za unos više od jedne činjenice u KnowledgeEngine,
-moguće je to uraditi i na sledeći način:
+Pored @DefFacts(), za unos više od jedne činjenice u KnowledgeEngine
+može se koristiti i sledeći pristup:
     lista = [ Fact(value = x) for x in [2, 4, 44, 27, 17, 81] ]
     engine.declare(*lista)
     
