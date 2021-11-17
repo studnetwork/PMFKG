@@ -518,3 +518,8 @@ Python podržava sledeći izraz:
     
 
     
+
+Kreiranje multislota (polja koje sadrži neku listu vrednosti):
+    polje = Field(list)
+    
+    

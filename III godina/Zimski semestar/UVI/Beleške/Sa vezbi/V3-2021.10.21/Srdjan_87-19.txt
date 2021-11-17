@@ -74,10 +74,6 @@ Kod:
 Otkazivanje pretplate na događaje koji se prate:
     watch(level=0)
 
-    
-    
-MATCH omogućava čuvanje vrednosti (polja) iz neke činjenice    
-
 
 
 Formatiranje stringa:
@@ -91,6 +87,13 @@ je tako nešto potrebno onda je moguće jednim pravilom dodati
 činjenice koje će aktivirati drugo pravilo (tako što će
 te činjenice zadovoljiti njegov uslov)
 
+
+
+    
+MATCH omogućava čuvanje vrednosti (polja) iz neke činjenice    
+
+Promenljiva u koju se čuva ta vrednost može da se prosledi
+(ime mora da bude isto) funkciji, tj. desnoj strani pravila
 
 
 
