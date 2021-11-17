@@ -1,0 +1,155 @@
+Datum održavanja: 09.11.2021.
+Predavač: Srđan Nikolić
+Čas: 5
+=====================================
+
+
+
+C# omogućava pravljenje anonimnih delegata (?):
+    Delegat d = delegate (double x, double y) {
+        return x - y;
+    };
+    
+    
+    
+Dinamičko kreirajne anonimne funkcije, pomoću lambda izraza:
+    // izraz u jednoj liniji, koji vraća određenu vrednost
+    d = (x,y) => x-y;
+    
+    // lambda funkcija u više linija
+    d = (x,y) => {
+        double rezultat;
+        
+        rezultat = x-y;
+        
+        return rezultat;
+    };
+    
+    
+    
+Lambda funkcije se koriste kada je potrebno definisati 
+funkciju koja se koristi samo na jednom mestu
+
+
+
+
+Generički tipovi
+----------------
+
+
+C# pruža mogućnost kreiranje generičkih tipova
+
+
+Generički tipovi omogućavaju kreiranje tipova koji mogu 
+da rade sa više različitih tipova podataka
+
+
+
+Primer sintakse za kreiranje generičke klase:
+    class Kolekcija<TNazivTipa> {
+        int polje1;
+        
+        public int NekiMetod(T drugaInstanca) {
+            return polje1 + drugaInstanca.polje1;
+        }
+    }
+
+
+
+S obzirom da ovako definisana klasa može kao tip da primi
+bilo koji tip, u nekim situacijama je pogodno definisati
+određena ograničenja
+
+
+Ograničenja se definišu sledećom sintaksom:
+    where TNazivTipa : uslov
+    
+
+Ukoliko generička klasa nasleđuje neki drugi tip ili ukoliko 
+implementira neki interface onda se prvo to piše, a nakon toga
+toga se pišu ograničenja
+
+
+    
+    
+Primer ograničenja na primitivne tipove:
+    public class Kolekcija<TNazivTipa> where TNazivTipa : struct
+    ...
+    
+
+Primitivni tipovi su implementirani kao strukture
+
+
+
+
+Ukoliko je potrebno postaviti ograničenje samo na referencne tipove
+koristi se class ili naziv nekog specifičnog tipa:
+    # T može biti bilo koja klasa
+    class A<T> where T : class
+    
+    # T može biti samo instanca klase Student, tj. klasa student i
+    # sve njene izvedene klase
+    class B<T> where T : Student
+    
+    
+
+    
+Ograničenje da tip mora imati podrazumevani konstruktor:
+    class C<T> where T : class, new()
+    
+    
+
+    
+Primer u kome se generička klasa izvodi iz neke druge:
+    class Kolekcija<T> where T : class {
+        ...
+    }
+    
+    class IzvedenaKolekcija<T> : Kolekcija <T> where T : class {
+        ...
+    }
+    
+
+    
+Generička klasa može imati i više tip-parametara:
+    class Kolekcija<X,Y> where X: struct where Y: class, new() {
+        ...
+    }
+    
+    
+    
+
+
+
+
+    
+Predikat je funkcija koja vraća boolean vrednost
+
+
+
+
+
+Primer kreiranje generičkog delegata:
+    delegate bool predikat<T>(T t);
+    
+    
+
+
+Kao i kod klasa, moguće je definisati ograničenja:
+    delegate bool predikat<T>(T t) where T : class;
+    
+    
+
+    
+
+
+
+    public IEnumerable<T> filtriraj(predikat<T> filter) {
+        for(int i = 0; i < len; i++ ) {
+            if( filter(vrednosti[i]) ) 
+                yield return vrednosti[i];
+        }
+    }
+    
+    
+    

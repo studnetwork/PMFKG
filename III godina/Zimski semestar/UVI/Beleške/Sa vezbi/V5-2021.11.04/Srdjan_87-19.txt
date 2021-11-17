@@ -1,0 +1,520 @@
+Datum održavanja: 04.11.2021.
+Predavač: Lazar Krstić
+Čas: 5
+=====================================
+
+
+
+OR()
+----
+
+Neophodno je da se zadovolji samo jedan od navedenih
+uslova
+
+
+Primer:
+    @Rule(
+        Struja(status = "ukljucena"),
+        OR(
+            Nepogoda(tip = "poplava"),
+            ProtivpozarniSistem(tip = "prskalica za vodu",
+                status = "ukljucena"
+            )
+        )
+    )
+    @def iskljuci_struju(self):
+        ...
+        
+        
+    
+    
+
+AND()
+-----
+
+Uokviravanje više uslova. Može se koristiti za ugnježdavanje
+u druge srodne "funkcije" / logičke operatore (?)
+
+
+
+
+EXISTS()
+--------
+
+
+Može da utvrdi da li nešto postoji ili ne. 
+
+"Može imati dosta složen uslov"
+
+"Pogodno kada nije potrebno čuvati vrednost"
+
+
+Ne može se dobiti referenca činjenice. Samo služi za proveru
+da li nešto postoji ili ne (vraća bool)
+
+
+Primer:
+    @Rule(
+        Goal("save-the-day"),
+        EXISTS( Hero(status = "unoccupied") )
+    )
+    def save_the_day(self):
+        print("saved")
+        
+        
+
+Ukoliko postoji više činjenica Hero(status = "unoccupied"), 
+neće doći do više od jedne aktivacije ovog pravila ( kada
+postoji i Goal("save-the-day") ) jer se proverava samo da 
+li postoji neka takva činjenica, nije bitno koja i koliko
+
+
+
+
+
+FORALL()
+--------
+
+Zahteva da uslov bude ispunjen za svaki skup tvrdnji koji
+može dovesti do aktivacije pravila. Samo u takvom slučaju
+FORALL() će vratiti True, tj. aktiviraće pravilo ukoliko
+nema drugih uslova/ograničenja. Aktivira pravilo samo jednom,
+a ne onoliko puta koliko ima i skupova činjenica koji mogu
+da aktiviraju date uslove
+
+
+
+Primer:
+    @Rule(
+        FORALL(
+            Nepogoda(tip = "pozar", lokacija = MATCH.lokacija),
+            VatrogasnaStanica(lokacija = MATCH.lokacija),
+            Zgrada(status = "evakuisana", 
+                lokacija =   MATCH.lokacija
+            )
+        )
+    )
+    def svi_pozari_pod_kontrolom(self):
+        print( "Svi pozari su pod kontrolom i" 
+            + " sve zgrade su evakuisane"
+        )
+
+
+
+U datom primeru se proverava da li je svaka zgrada na nekoj
+lokaciji na kojoj se desio pozar i na kojoj se nalazi neka
+vatrogasna stanica evakuisana
+
+
+
+
+
+
+Definisanje polja (slota)
+-------------------------
+
+Omogućava bolju kontrolu nad vrednostima slota
+
+Tip polja se definiše sa Field(tip)
+
+Primer:
+    class Osoba(Fact):
+        ime = Field(str)
+        prezime = Field(str)
+        broj_godina = Field(int)
+        
+        
+
+Moguće je naznačiti koja polja su obavezna, a koja ne
+pomoću imenovanog argumenta "mandatory". Podrazumevana
+vrednost ovog argumenta je False
+
+
+Primer:
+    class Osoba(Fact):
+        ime = Field(str, mandatory=True)
+        prezime = Field(str)
+        broj_godina = Field(int, mandatory=False)
+        
+
+
+
+        
+        
+Takođe je moguće definisati podrazumevanu vrednost polja
+korišćenjem imenovanog argumenta "default":
+    class Automobil(Fact):
+        model = Field(str, mandatory = True)
+        broj_vrata = Field(int, mandatory = False, default = 5)
+
+        
+"To je korisno kada je potrebno odrediti da li je neka činjenica
+aktivirala već jednom neko pravilo, da li je promenjena i slično"
+
+
+"Obično se koristi kada želimo da proširimo klasu" (?)
+
+
+Ukoliko se pri instanciraju ne navede vrednost za neobavezno
+polje onda će to polje dobiti podrazumevanu vrednost
+
+
+
+
+
+
+
+
+
+Kako bi se sprečio unos neispravnih vrednost za datu situaciju
+neophodno je definisati dodatna ograničenja. To se može 
+postići definisanjem logičkog izraza koji to kontroliše
+
+
+
+Primer:
+    class Factorial(Fact):
+        n = Field( lambda n: isinstance(n, int) and n>=0, mandatory = True)
+        result = Field(int, mandatory = True)
+        
+        
+
+        
+        
+        
+
+        
+Šeme
+----
+
+
+Nekad je potrebno definisati polje koje može imati više "tipova", nešto nalik na enum.
+Pri instanciranju je moguće navesti "tip" koji će polje imati, tj, koju će enum 
+vrednost predstavljati
+
+
+Primer:
+    import schema
+    
+    class Osoba(Fact):
+        ime = Field(str)
+        pol = Field(schena.OR("Ž","M"))
+        
+        
+        
+        
+Regularni izrazi
+----------------
+
+Biblioteka re
+
+import re
+
+
+re.match()
+
+
+
+
+
+
+Salience
+--------
+
+
+Agenda - spisak pravila za koja je ispunjen uslov izvršenja
+
+Agenda radi kao stek (u većini ES): LIFO
+
+
+Ukoliko se eksplicitno ne promeni, svako pravilo ima na
+agendi ima isti prioritet
+
+
+Salience obezbeđuje da se prioritet pravila eksplicitno odredi
+bez obzira na redosled aktivacije pravila
+
+
+Eksplicitno definisanje prioriteta pravila se vrši dodelom 
+date vrednosti salience-u
+
+
+Podrazumevana vrednost za salience nekog pravila je 0
+
+
+Može imati negativnu vrednost
+
+
+
+Dobro napisan kod mora da radi i u FIFO i u LIFO agendama
+
+
+
+
+
+
+Primer eksplicitnog definisanja salience-a:
+    @Rule(salience = -1)
+    def pravilo_1(self):
+        pass
+        
+
+
+Preterana upotreba naredbe salience rezultira loše 
+kodiranim programom jer se time stvara algoritam
+
+
+Izmena ekspertskog znanja u takvom programu bi 
+zahtevala izmenu čitavog programa
+
+
+
+Salience se ne koristi kao metoda za odabir jednog
+pravila iz grupe pravila, već kao metod kojim se
+pravilo svrstava u određenu grupu pravila
+
+
+
+
+
+
+
+Primer faznog izvršavanja ekspertskog sistema
+---------------------------------------------
+
+
+Neka treba napraviti ekspertni sistem koji vrši detekciju,
+izolaciju i opravak sistema kao što je neki elekntronski
+uređaj
+
+U fazi detekcije ekspertski sistem prepoznaje da uređaj
+ne funkcioniše ispravno
+
+U fazi izolacije ekspretski sistem određuje koje komponente su
+uzrokovale problem
+
+U fazi oporavka ekspertski sitem utvrđuje korake neophodne 
+za ispravku greške, ako je to moguće
+
+
+
+
+Problem koji treba rešiti određenim redosledom, tj. faze
+koje čine rad ovog uređaja trebaju da se izvrše u određenom
+redosledu
+
+
+
+Ciklus rada
+
+Detekcija-->Izolacija-->Oporavak
+    A                      |
+    |                      v
+    |                      |
+     --<-------<------<----
+ 
+ 
+ 
+
+ 
+
+Prvi pristup
+------------
+
+Znanje o kotroli toka je smešteno unutar samih pravila
+
+=> pravila iz oblasti detekcije će uključivati i ona koja će
+   određivati kada treba ići u fazu izolacije
+   
+   
+`Svaka grupa pravila će imati uslov kojim se određuje u kojoj
+fazi se ta pravila primenjuju`
+
+
+
+Mane ovog pristupa:
+- ekspertsko znanje se meša sa kontrolom toka
+- ograničavanje mogućnosti proširenja (pri dodavanju novog pravila
+  zahteva proveru ispravnosti prelaza na narednu fazu)
+- teško je utvrditi trenutak u kome će doći do prelaska iz jedne
+  faze na drugu
+
+
+
+ 
+ 
+ 
+ 
+Drugi pristup
+-------------
+
+Upotreba salience naredbe za organizaciju pravila na agendi
+
+
+Najveći prioritet: faza detekcije
+
+Najniži prioritet: oporavak
+
+
+Prve se izvršavaju sva pravila iz faze detekcije pa kada se ona
+završe izvršavaju se sva pravila faze izolacije i onda tek nakon
+izvršenja svih pravila fate izolacije kreću da se izvršavaju 
+pravila faze oporavka
+
+
+
+
+Mane:
+- česta upotreba naredbe salience
+- zahteva dodatnu dodelu i proveru pri svakom dodavanju
+  novog pravila
+- podfaze mogu imati takođe neke svoje faze koje imaju isti 
+  problem i zbog toga potrebu za korišćenjem salience naredbe
+- nije garantovan korektan redosled izvršavanja pravila
+
+
+
+--
+
+
+
+Kod oba pristupa najveća mana je mešanje pravila sa kontrolom toka
+
+
+
+Treći pristup
+-------------
+
+Odvajanje znanja o kontroli toka od ekspertskog znanja
+
+
+Kombinuje se činjenica o tome koja faze je trenutno aktuelna
+sa pravilima za prelazak sa jedne faze na drugu
+
+
+
+Pravila za prelazak s jedne faze na drugu ne nose ekspertsko
+znanje. Koriste se jedino za prelazak u drugu fazu
+
+
+
+Za svako pravilo postoji uslov koji određuje u kojoj fazi se
+to pravilo primenjuje
+
+
+Primer za pravilo iz faze detekcije:
+    @Rule( Faza('detekcija'), ... )
+    def za_detekciju(self):
+        pass
+        
+
+        
+        
+Nema potrebe za definisanje salience-a jer ovo pravilo sme da 
+se izvršava sve dok je aktivna faza detekcije.
+
+Ukoliko nije aktivna faza detekcije uslov pravila neće biti 
+zadovoljen pa se ni pravilo neće aktivirati
+
+
+
+
+
+Pre definisanja samih ekspertskih pravila definišu se pravila
+za prelaza sa jedne faze na drugu.
+
+
+
+
+Pri definisanju takvog pravila potrebno je promeniti mu salience
+kako bi se omogućilo da se sva pravila iz date faze izvrše pre
+njega pa da se nakon toga to pravilo za prelaz izvrši kao poslednje
+na agendi. Time se prelazi na sledeću fazu i ovaj način definisanja
+se obavlja sve do poslednje faze.
+
+
+Ukoliko je taj proces koji se obrađuje cikličan onda će se na kraju
+dodati činjenicu u poslednjoj fazi koja aktivira prvu fazu u ciklusu
+što omogućava dalji prolazak kroz ciklus
+
+
+
+
+
+Na ovaj način je uspostavljena hijerarhija salience-a.
+
+`Svaki nivo u hijerarhiji salience-a odgovara određenom skupu 
+pravila čiji članovi imaju jednak salience`
+
+
+Zna se koja će se pravila izvršavati na svakom nivou hijerarhije
+salience-a. Salience ekspertskih pravila se ne menja već se menja
+samo kada je potrebno preći sa jedne faze na drugu
+
+
+
+U datom primeru pravila za detekciju, izolaciju i opravak će uvek
+imati veći salience od pravila za kontrolu
+
+
+
+Pravilo koje vrši prelaz će biti na agendi sve dok se ne izvrše
+sva pravila iz te faze i tek nakon toga će doći na red za 
+izvršavanje
+
+
+
+
+
+
+
+
+Primer pravila za prelazak:
+    @Rule(
+        AS.faza << Faza("detekcija"),
+        salience = -10
+    )
+    def sa_detekcije_na_izolaciju(self, faza):
+        self.retract(faza)
+        self.declare(Faza("izolacija"))
+        
+        
+    @Rule(
+        AS.faza << Faza("izolacija"),
+        salience = -10
+    )
+    def izolacija_na_oporavak(self, faza):
+        self.retract(faza)
+        self.declare(Faza("oporavak"))
+        
+    ...
+    
+    
+
+  
+
+  
+[ Bitno
+  
+Kada se vrši modifikacija neke činjenice doći će do promene njene 
+adrese i to može za posledicu imati ponovno aktiviranje pravila
+sa istom činjenicom. Ona će se posmatrati kao činjenica koja
+do tada nije aktivirala pravilo i to može uzrokovati beskonačnu
+petlju.
+
+Da bi se sprečilo ovako nešto dodaje se flag polje koje će služiti
+za proveru da li je ovakva činjenica već izvršila dato pravilo.
+Dodaje se provera flag-a u pravilu kao dodatan uslov i kada
+dođe do aktivacije tog pravila pored izmene nekog polja čija je
+izmena predviđena menja se i vrednost flag-a (BITNO; ukoliko se ne 
+izmeni doći će do stvaranja beskonačne petlje). To flag bolje bi
+trebal oda ima definisanu podrazumevanu vrednost
+]
+
+
+
+Python podržava sledeći izraz:
+    18 < x < 50     # zamenjuje: x > 18 and x < 50
+    
+
+    
