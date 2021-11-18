@@ -49,7 +49,7 @@ primera, su:
 - rešavanje rubikove kocke
 - postavljajne 8 kraljica na šahovsku tablu bez
   međusobnog napadanja
-- presipanje sadržaja sudova
+- presipanje sadržaja iz posuda različitih zapremina
 
 
 
@@ -62,7 +62,7 @@ akciju daje novo stanje u kojem će se problem naći nakon
 primene akcije
 
 
-Sve akcije se formulišu. One se mogu primetiti kako bi se
+Sve akcije se formulišu. One se mogu primeniti kako bi se
 iz početnog stanja, preko drugih stanja, stiglo do cilja.
 Ovaj proces odlučivanja koje akcije treba preduzeti iz koga
 stanja predstavlja formulisanje problema.
@@ -81,7 +81,7 @@ stiže do cilja`
 
 `Algoritam pretraživanja uzima problem kao ulaz, a vraća
 rešenje u vidu sekvence akcija`. Pod problemom se podrazumeva
-ono što je definisano kao početno i kranje stanje.
+ono što je definisano kao početno i krajnje stanje.
 
 
 Kada se rešenje pronađe izvršavaju se te akcije koje ga
@@ -92,7 +92,7 @@ Kada se rešenje pronađe izvršavaju se te akcije koje ga
 
 
 
-Stablo koje se formira pretregom sekvence akcija koja bi
+Stablo se formira pretragom za sekvencom akcija koja bi
 bila rešenje za prelazak iz početnog stanja u ciljno stanje
 
 
@@ -116,12 +116,12 @@ jedan autor naziva "British museum search". Ovim algoritmom
 se prolazi kroz sve mogućnosti. Razlog za dati naziv je to 
 što podseća na posećivanje muzeja bez posebnog plana, sa 
 ciljem da se obiđe sve što je izloženo tako što bi se 
-se istražile sve mogućnosti
+se istražili svi mogući "putevi"
 
 
 
 
-Opis mogućih akcija koje su na raspolaganju. Definiše se 
+Opis mogućih akcija koje su na raspolaganju se definiše
 kao funkcija Akcija.
 
 Za dato stanje s, Akcija(s) vraća skup akcija koje se mogu
@@ -131,7 +131,7 @@ izvrštiti u s
 
 
 Model prelaza (transition model) govori o tome šta će se 
-dogiditi kada se primeni neka akcija
+dogoditi kada se primeni neka akcija
 
 Definiše se kao funkcija Rezultat.
 
@@ -156,7 +156,7 @@ Testiranje cilja
 Definisano funkcijom Goal koja proverava da li je dato stanje
 ciljno stanje 
 
-Goal:S -> { True, False }
+Goal: S -> { True, False }
 
 
 
@@ -175,7 +175,7 @@ Formalni opis problema čime:
 - opis mogućih akcija: Akcija(s)
 - model prelaza: Rezultat(s, a)
 - testiranje cilja: Goal(trenutno_stanje)
-- funkcija troška: c(a,s,s')
+- funkcija troška: c(a, s, s')
 
 
 
@@ -193,11 +193,12 @@ najmanjim troškovima
 
 Da bi se algoritam pretraživanja uspešno dizajnirao i primenio 
 njegov kreator mora da analizira i predvidi ponašanje tog
-algoritma, da li je pronalaženje problema zagarantovano, da li
-može da upadne u beskonačnu petlju pri pronalaženju rešenja, da
-li je to rešenje koji algoritam pronađe zagarantovano optimalno,
-kakva je složenost procesa pretraživanja u pogledu utroška 
-vremena i memorije
+algoritma: 
+- da li je pronalaženje problema zagarantovano
+- da li može da upadne u beskonačnu petlju pri pronalaženju rešenja
+- da li je to rešenje koji algoritam pronađe zagarantovano optimalno
+- kakva je složenost procesa pretraživanja u pogledu utroška vremena 
+  i memorije
 
 
 
@@ -209,8 +210,8 @@ Svi algoritmi pretrage moraju vršiti pretragu sistematično
 Prostor stanja problema se može opisati pomoću grafa 
 (jedan od načina)
 
-Svaki čvor u stanju predstavlja stanje, veze između njih akcije.
-Težina svake grane predstavlja cenu neke akcije
+Svaki čvor u stablu predstavlja stanje, veze između njih akcije, a
+težina svake grane cenu neke akcije
 
 
 `Putanja u prostoru stanja je sekvenca stanja povezanih jednom 
@@ -248,7 +249,7 @@ Kako se vrši pretraga stabla?
 2. Proverava se da li je to ciljno stanje
 3. Ukoliko nije pronađeno ciljno stanje, trenutno stanje se proširuje
    primenom svih mogućih akcija i time se generišu svi njegovi sledbenici
-4. Bira se jedan od generisanih stanja (odabir zavisi od algoritma koji
+4. Bira se jedno od generisanih stanja (odabir zavisi od algoritma koji
    se primenjuje)
 5. Formiraju se sledbenici odabranog stanja (isto kao u 3.)
 
@@ -285,8 +286,8 @@ Vraća rešenje ili obaveštenje da rešenje nije pronađeno
 
 U početku se u otvorenu listu ubacuje početno stanje, a zatim se u
 petlji ispituje da li je otvorena lista prazna, ukoliko jeste onda
-nije nađeno rešenje, ukoliko nije onda se odabira jedan od čvorova
-iz te liste i uklanja iz nje.
+nije nađeno rešenje, ukoliko nije onda se bira jedan od čvorova iz
+te liste i on se uklanja iz nje.
 
 Ukoliko je taj čvor cilj onda se čitava putanja od početnog stanja vraća,
 u suprotnom se proširuje i dodaje svoje sledbenike u listu
@@ -324,13 +325,14 @@ iste pretrage kako bi efikasnije rešili problem"
 
 
 Algoritam će biti efikasniji ukoliko izbegava putanje sa petljama i 
-ukoliko ne čuva više putanje do bilo kog stanja(najkraći put).
+ukoliko ne čuva više od jedne putanja do bilo kog stanja (tj. biće 
+efikasniji ukoliko čuva samo najkraći put).
 
 
 
 [ bitno; ispit
 
-Algoritam uniforme pretrage ili algoritam A-zvezda nikada ne čuvaju
+Algoritam uniforme pretrage ili algoritam A-zvezda(?) nikada ne čuvaju
 više različitih putanja od jednog čvora do drugog, već čim nađu 
 putanju koja je bolja od one koja je do tada bila poznata oni je 
 odbacuju, a zadržavaju samo tu bolju
@@ -342,7 +344,7 @@ odbacuju, a zadržavaju samo tu bolju
 Način na koji mogu da se izbegnu suvišne putanje je pamćenje onih
 putanja koje su već proverene. Da bi se to uradilo, u Tree-search
 algoritam (opšti algoritam pretrage) je potrebno dodati još jednu
-strukturu podataka koji će se nazivati istraženi skup ili zatvorena
+strukturu podataka koja će se nazivati istraženi skup ili zatvorena
 lista, u koju ću se pamtiti svi čvorovi koji su prošireni
 
 
@@ -359,7 +361,7 @@ Kako radi Graph-search?
 2. Istražen skup postavlja na vrednost praznog skupa
 3. Ulazi u petlju i proverava da li je rub prazan, ukoliko jeste obaveštava
    da nije nađeno rešenje, u suprotnom bira čvor list iz ruba i uklanja ga
-   njega
+   iz njega
 4. Ukoliko je odabrani čvor cilj, vraća rešenje (putanju od početnog do njega),
    u suprotnom ga dodaje u istraženi skup
 5. Generiše sve potomke datog čvora dodajući ih u rub, ali samo ako oni nisu već
@@ -375,7 +377,7 @@ najviše po jednu kopiju svakog stanja
 "Stablo će se graditi preko grafa prostora stanja"
 
 
-Primenom ovog tipa algoritma, rubni čvorovi razdvajaju grafa prostora stanja
+Primenom ovog tipa algoritma, rubni čvorovi razdvajaju graf prostora stanja
 na istraženi i neistraženi region
 
 
@@ -385,7 +387,7 @@ Pri implementaciji algoritama pretrage potrebno je svakom čvoru u grafu
 pretrage pridružiti opis čvora
 
 
-Taj opis čvora predstavlja identifikaciju stana problema na koji se čvor
+Taj opis čvora predstavlja identifikaciju stanja problema na koji se čvor
 odnosi
 
 
@@ -431,7 +433,7 @@ red)
 
 Postoje 2 osnovne vrste strategija pretraživanja:
 - neinformisano pretraživanje (en. blind, uninformed search)
-- informisano pretraživanje (en. directed, inforemed, heuristic search)
+- informisano pretraživanje (en. directed, informed, heuristic search)
 
 
 
@@ -578,7 +580,7 @@ Pseudokod:
                     
 
 
-Duži put se briše kada se nađe kraći i ponda taj kraći dolazi na njegovo mesto
+Duži put se briše kada se nađe kraći i onda taj kraći dolazi na njegovo mesto
 
 
 
@@ -591,19 +593,15 @@ Duži put se briše kada se nađe kraći i ponda taj kraći dolazi na njegovo me
 
 
 Ukoliko je cena putanje ista za neka 2 čvora onda se bira leksikografski, npr:
-    S, A    = 5
-    S, B, A = 5
+    S, B, A    = 5
+    S, C, B, A = 5
     -----------
-    bira se S, A jer A dolazi leksikografski pre od B
+    bira se S, B, A jer B leksikografski dolazi pre C
     
     
 
 
 
 Uniformna pretraga pravi mnogo manje stablo pretrage od BFS
-
-
-
-
 
 

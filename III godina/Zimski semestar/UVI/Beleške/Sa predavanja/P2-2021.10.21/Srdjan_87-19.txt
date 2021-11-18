@@ -63,7 +63,7 @@ jedna mora da se izvrši (OR)
 (ovo stablo je isto što i Goal tree)
 
 Agent dok rešava problem premeštanja kreće od osnovnog 
-(kranjeg cilja), tj. Hard problem, i razlaže ga na podciljeve
+(kranjeg) cilja, tj. Hard problem, i razlaže ga na podciljeve
 (Simpler problem)
 
 
@@ -140,7 +140,7 @@ većini ljudi nepoznate ili nedostupne
 
 
 
-Kod prvih ekspertni sistema znanje se isključivo preuzimalo
+Kod prvih ekspertnih sistema znanje se isključivo preuzimalo
 od eksperata dok je danas moguće koristiti knjige, časopise 
 i slično. Zbog toga se termini "ekspertni sistemi" i "sistemi
 bazirani na znanju" koriste kao sinonimi.
@@ -318,18 +318,18 @@ korisniku putem interfejsa
 
 Nacrtati strukturu ekspertnog sistema
 
-                         --------------------
-                        |                    |
-                        |   ---------------  |
-             Tvrdnja    |  |  Baza znanja  | |
----------  -----------> |   ---------------  |
-Korisnik |              |                    |
----------  <----------- |   ---------------  |
-            Ekspertiza  |  |   Mehanizam   | |
-                        |  | zaključivanja | |
-                        |   ---------------  |
-                        |                    |
-                         --------------------
+                            --------------------
+                           |                    |
+                           |   ---------------  |
+ ----------     Tvrdnja    |  |  Baza znanja  | |
+|          | ------------> |   ---------------  |
+| Korisnik |               |                    |
+|          | <------------ |   ---------------  |
+ ----------    Ekspertiza  |  |   Mehanizam   | |
+                           |  | zaključivanja | |
+                           |   ---------------  |
+                           |                    |
+                            --------------------
                         
 ]
 
@@ -376,8 +376,8 @@ pravilima i ono se izvršava, tj. okida ( en. fire )
 
 
 Rezultat tog izvršavanja je ili neka nova tvrdnja koja
-se dodaje u listu tvrdnji ili uklanjanje nekih 
-postojećih tvrdnji.
+se dodaje u listu tvrdnji ili uklanjanje nekih postojećih 
+tvrdnji.
 
 
 Nakon izvršavanja jednog pravila, ažurira se lista

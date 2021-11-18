@@ -33,7 +33,7 @@ ili njihovom kombinacijom
 
  
 
-NOT zahteva da se uslov iskaz ne poklapa ni sa jednom
+NOT zahteva da se iskaz uslov ne poklapa ni sa jednom
 tvrdnjom iz liste
 
 
@@ -64,7 +64,7 @@ se nalazi promenljiva uzima i dodeljuje ga toj promenljivoj
 
 "Promenljiva zadržava tu vrednost sve dok se pravilo ne izvrši"
 (tačnije aktivirana pravila; promenljiva će za svaku aktivaciju
-pravila imati drugačiju vrednost; pogledati dodato)
+pravila imati drugačiju vrednost, zavisno od tvrdnji; pogledati dodato)
 
 Tokom uparivanja jedno pravilo se može uparti sa više tvrdnji
 
@@ -99,8 +99,8 @@ Samo pravilo neće imati neku od tih vrednosti i može imati više različitih
 aktiviranih pravila
 
 
-Sama promenljiva ne dobija vrednost, već se tokom vezivanja vrednost, 
-koja se poklapa sa promenljivom, postavlja na mesto promenljive u
+Sama promenljiva ne dobija vrednost, već se tokom vezivanja vrednost
+koja se poklapa sa promenljivom postavlja na mesto promenljive u
 aktiviranom pravilu i tu vrednost će aktivirano pravilo imati sve
 dok se ne izvrši
 ]
@@ -285,22 +285,22 @@ predstavljaju njegove strane povežu lukom
 
 [ za test
 
-U zadatku sa ulančavanjem unazad potrebno je pored crtanja AND-OR
-stabla i navesti redosled po kojem se ispituju hipoteze. Ide se po 
+U zadatku sa ulančavanjem unazad je pored crtanja AND-OR stabla 
+potrebno navesti i redosled po kojem se ispituju hipoteze. Ide se po 
 dubini, tj. prvo se proverava zadovoljenost jedne grane, pa se nakon
-toga proverava zadovoljenost ostalih, ukoliko je to potrebno
-
+toga proverava zadovoljenost ostalih ukoliko je to potrebno
+(prolazak je sličan PLD prolasku stabla iz SPA2)
 
 Na kraju je potrebno dati potpun zaključak, tj. opis konačnog 
-rezultata i spisak svih pravila i tvrdnji koje su u osnovi tog 
-rezultata
+rezultata, na osnovu kojih pravila je dokazano i pomoću kojih
+tvrdnji
 ]
 
 
 
 
 
-Ulančavanje unazad se koristi najčešće kada se iz određenog skupa 
+Ulančavanje unazad se najčešće koristi kada se iz određenog skupa 
 tvrdnji može doneti veliki broj zaključaka, ili ukoliko nemamo 
 tvrdnje, a zanima nas da li važi neki konkretan zaključak
 
@@ -343,8 +343,8 @@ donositi zaključke sa 100% sigurnošću
 
 
 
+Faktori izvesnosti se mogu dodeliti i tvrdnjama i zaključcima
 
-Faktori izvesnosti se mogu dodeliti i samim tvrdnjama
 
 
 Izvesnost zaključka se kodira u bazu znanja, a izvesnost tvrdnje se može
