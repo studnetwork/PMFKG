@@ -1,4 +1,5 @@
 from experta import *
+from experta.utils import freeze
 import schema
 
 def e_print(engine: KnowledgeEngine):
@@ -16,7 +17,7 @@ class Putnik(Fact):
     ima_dosije          = Field(schema.Or("DA", "NE"),                  True)
     procena_rizika      = Field(lambda x: x >= 0 and x <= 1,            False,  0.5)
     
-    potvrda             = Field(str,                                    False,  "")
+    potvrda             = Field(list, False, freeze([]))
 
 
 class MyEngine(KnowledgeEngine):
@@ -40,44 +41,44 @@ class MyEngine(KnowledgeEngine):
     @Rule(
         Faza("ip"),
         AS.p << Putnik(ima_dosije = "DA", procena_rizika = MATCH.riz, potvrda = MATCH.pot),
-        TEST(lambda pot: pot.split(" ").count("ip_dosije") == 0)
+        TEST(lambda pot: pot.count("ip_dosije") == 0)
     )
     def ip_dosije(self, p, riz, pot):
         # print("ip_dosije: {}".format(p["ime"])) # DEBUG
-        self.modify(p, procena_rizika = 1 if riz + 0.2 > 1 else riz + 0.2, potvrda = pot + " ip_dosije")
+        self.modify(p, procena_rizika = 1 if riz + 0.2 > 1 else riz + 0.2, potvrda = list(pot) + ["ip_dosije"])
 
 
     # Iz Libije ili Irana
     @Rule(
         Faza("ip"),
         AS.p << Putnik(drzava_porekla = L("Libija") | L("Iran"), procena_rizika = MATCH.riz, potvrda = MATCH.pot),
-        TEST(lambda pot: pot.split(" ").count("ip_libija_iran") == 0)
+        TEST(lambda pot: pot.count("ip_libija_iran") == 0)
     )
     def ip_libija_iran(self, p, riz, pot):
         # print("ip_libija_iran: {}".format(p["ime"])) # DEBUG
-        self.modify(p, procena_rizika = 1 if riz + 0.25 > 1 else riz + 0.25, potvrda = pot + " ip_libija_iran")
+        self.modify(p, procena_rizika = 1 if riz + 0.25 > 1 else riz + 0.25, potvrda = list(pot) + ["ip_libija_iran"])
 
     
     # Nije iz Nigerije
     @Rule(
         Faza("ip"),
         AS.p << Putnik(drzava_porekla = ~(L("Libija") | L("Iran") | L("Nigerija")), procena_rizika = MATCH.riz, potvrda = MATCH.pot),
-        TEST(lambda pot: pot.split(" ").count("ip_nije_nigerija") == 0)
+        TEST(lambda pot: pot.count("ip_nije_nigerija") == 0)
     )
     def ip_nije_nigerija(self, p, riz, pot):
         # print("ip_nije_nigerija: {}".format(p["ime"])) # DEBUG
-        self.modify(p, procena_rizika = 0 if riz - 0.1 < 0 else riz - 0.1, potvrda = pot + " ip_nije_nigerija")
+        self.modify(p, procena_rizika = 0 if riz - 0.1 < 0 else riz - 0.1, potvrda = list(pot) + ["ip_nije_nigerija"])
 
     
     # Dovoljno star/mlad
     @Rule(
         Faza("ip"),
         AS.p << Putnik(broj_godina = MATCH.god, procena_rizika = MATCH.riz, potvrda = MATCH.pot),
-        TEST(lambda pot, god: (god < 18 or god > 50) and pot.split(" ").count("ip_starost") == 0)
+        TEST(lambda pot, god: (god < 18 or god > 50) and pot.count("ip_starost") == 0)
     )
     def ip_starost(self, p, riz, pot):
         # print("ip_starost: {}".format(p["ime"])) # DEBUG
-        self.modify(p, procena_rizika = 0 if riz - 0.15 < 0 else riz - 0.15, potvrda = pot + " ip_starost")
+        self.modify(p, procena_rizika = 0 if riz - 0.15 < 0 else riz - 0.15, potvrda = list(pot) + ["ip_starost"])
     
     
 
