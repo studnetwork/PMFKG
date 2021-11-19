@@ -192,8 +192,8 @@ class MyEngine(KnowledgeEngine):
 ng = MyEngine()
 ng.reset()
 
-ng.png()
+# ng.png()
 
 ng.run()
 
-ng.png()
+# ng.png()
