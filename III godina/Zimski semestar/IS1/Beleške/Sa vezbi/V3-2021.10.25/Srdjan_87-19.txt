@@ -33,7 +33,7 @@ Za razliku od IDEF0, koji je imao 2 komponente, DTP ima
 - proces obrade podatka 
     procesi koji modifikuju podatke
     
-- objeke okruženja
+- objekte okruženja
     još se nazivaju i interfejsi, eksterni objekti, eksterni
     entiteti, spoljašnji(spoljni) objekti ili spoljašnji(spoljni)
     entiteti
@@ -42,7 +42,7 @@ Za razliku od IDEF0, koji je imao 2 komponente, DTP ima
     ulazi potiču iz nekog eksternog objekta. Slično je i za izlaze,
     išli su ka okruženju, dok sada kod DTP idu ka eksternim objektima
     
-- skladište podataka
+- skladišta podataka
     u njima se skladište podaci koje procesi koriste ili
     ažuriraju
     

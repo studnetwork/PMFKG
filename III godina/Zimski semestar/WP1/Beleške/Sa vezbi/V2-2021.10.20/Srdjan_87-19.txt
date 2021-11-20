@@ -38,7 +38,7 @@ Iteracija kroz niz:
     }
     
     # 4. način
-    for($i = 0; $key < count($dani); $i++) {
+    for($i = 0; $i < count($dani); $i++) {
         echo $dani[$i];
     }
 
@@ -102,9 +102,9 @@ niz u stvari sadrži pointer na prvi element niza
 
 
 Moguće je jednostavno dodati atribut nekog elementa 
-navođenjem u stringu pri kreiranju tag-a (primer. atribut
-"selected" i tag "option")
-
+navođenjem u stringu pri kreiranju tag-a (npr. atribut
+"selected" i tag "option"):
+    /* kod */ . " selected >$value</option>";
 
 
 

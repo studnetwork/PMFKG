@@ -20,12 +20,12 @@ strtolower($string)    # funkcija koja pretvara sva velika slova u mala
 
 PHP podržava definisanje podrazumevane vrednosti za neki parametar:
     function naziv($prom1, $prom2 = "podrazumevana vrednost") {
-            return $prom2;
+        return $prom2;
     }
 
     
 Prvo se navode parametri za koje nije definisana podrazumevana vrednost,
-a nakon njih oni za koje jeste
+a nakon njih oni za koje jeste (tj. prvo idu obavezni pa nakon njih opcioni)
 
 
 Za određivanje niza se mogu koristiti count($niz) ili sizeof($niz)
@@ -56,7 +56,7 @@ Vrednosti je moguće štampati sa:
     
 Ako se šalje više vrednosti atributa nekog elementa moguće je
 poslati te vrednost u obliku niza:
-    # forma, šalje se POST na trenutnoj stranici
+    # forma, šalje se POST trenutnoj stranici
     ...
     echo "Adresa $i: <input type='text' name='adrese[]'> <br>";
     ...
@@ -68,7 +68,12 @@ poslati te vrednost u obliku niza:
 Provera da li element niza (u ovom slučaju prvi) nije null:
     if( isset($array[1]) ) ...
     
+       
+Obično se provera da li je request stigao vrši proverom da li dugme
+(kojem je takođe dodeljeno ime u njegvom tagu) ima set-ovanu vrednost
     
+    
+
 
 trim($str)    # brisanje nepotrebnih razmaka sa krajeva stringa
 
@@ -111,7 +116,7 @@ korišćenjem funkcija "func_num_args()" i "func_get_args()":
     
     
     
-Ne preporučuje se korišćenje globalnih promenljivih
+Ne preporučuje se korišćenje (user-defined) globalnih promenljivih
 
 
 
@@ -132,7 +137,7 @@ da se poklapaju (kao i case)
 
 
 Otvaranje fajla je isto kao i u C-u:
-    # u ovom slučaju za pisanje
+    # pisanje
     $fp = fopen( $naziv_fajla, 'w' );
     
     # upis u fajl
@@ -143,7 +148,7 @@ Otvaranje fajla je isto kao i u C-u:
     
     #########################
     
-    # u ovom slučaju za čitanje
+    # čitanje
     $fp = fopen( $naziv_fajla, 'r' );
     
     # upis u fajl
