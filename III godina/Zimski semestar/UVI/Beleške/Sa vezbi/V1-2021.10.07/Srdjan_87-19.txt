@@ -18,7 +18,7 @@ navede i interpreter koji će se koristiti
 # komentar
 
 """
-multi
+multi-
 line
 comment
 """
@@ -80,7 +80,7 @@ taj član trebao da bude privatan
 Primer:
     class Myclass():
     def __init__(self):
-        self.__variable = 10
+        self._variable = 10
 
         
 Name Mangling, tj. postavljanje "__" ispred naziva člana ograničava
@@ -109,8 +109,8 @@ Primer iz interpretera:
 
 
 Metodi koji oko svog imena (sa obe strane) imaju "__" predstavljaju 
-specifične metode. Python dozvoljava redefinisanje operatora 
-korišćenjem ovog načina označavanja i samog naziva operatora:
+specifične metode (magic methods). Python dozvoljava redefinisanje 
+operatora korišćenjem ovog načina označavanja i samog naziva operatora:
     class Point:
     def __init__(self, x=0, y=0):
         self.x = x
@@ -141,9 +141,9 @@ help(x)    # opis metode / docs
 
 
 
-string.lower()
+neki_string.lower()
 
-string.upper()
+neki_string.upper()
 
 len(niz)
 
@@ -309,7 +309,7 @@ filter( funkcija, lista )    # vraća listu elemenata date liste
 Kreiranje liste (funkcijski pristup):
     lista = [ x for x in neka_lista ]
     
-    lista = [ x*x for x in neka_lista if logicki_izraz ]
+    lista = [ x*x for x in neka_lista if logicki_izraz else "druga povratna vrednost" ]
 
     
 
@@ -329,7 +329,7 @@ for i in range(len):
     
 
 
-Python podržava korišćenje ključne reči elif umesto if else
+Python podržava korišćenje ključne reči "elif" umesto "else if"
 
 
 Ključna reč pass omogućava kreiranje bloka u kome ne postoji
@@ -422,9 +422,8 @@ preko ključne reči self:
         self.promenljiva_instance = 10
 
 
-Klasnim/statičkim promenljivama se pristupa tako što se
-navede naziv same klase nakon koga slede tačka i naziv date
-promenljive:
+Klasnim/statičkim promenljivama se pristupa tako što se navede 
+naziv same klase nakon koga slede tačka i naziv date promenljive:
     klasa.klasna_promenljiva
     
     
@@ -463,8 +462,8 @@ Stringovi mogu da se množe i to predstavlja ponavljanje stringa
 dati broj puta
 
 
-string.split(sep)    # deli string po stringu "sep", 
-                     # default sep je space
+neki_string.split(sep)    # deli string po stringu "sep", 
+                          # default sep je space
 
 
 sep.join(delovi)    # kreira string spajanjem delova pomoću 
@@ -556,10 +555,10 @@ conda env list
 
 
 Pre instalacije paketa potrebno je aktivirati dato okruženje i
-nakon toga je moguće instalirati u njega date pakete komandom:
+nakon toga je moguće instalirati u njega pakete komandom:
     pip install naziv_paketa
 
-    # ili ovo ukoliko je dostupna list svih paketa
+    # ili ovom komandom ukoliko je dostupna list svih paketa
     pip install -r requirements.txt
 
 Kreiranje virtualnog okruženja:
@@ -577,7 +576,7 @@ Kreiranje virtualnog okruženja:
         # windows
         python -m venv putanja\do\foldera\ime_okruženja
 
-    
+ 
 Aktivacija virtuelnog okruženja:
     # anacoda
     conda activate ime_okruženja
@@ -589,7 +588,18 @@ Aktivacija virtuelnog okruženja:
         # windows
         .putanja\do\foldera\ime_okruženja\Scripts\activate
         
+
+NAPOMENA: ukoliko ne rade komande "pip" i "python" postoji mogućnost
+          da je kao podrazumevana verzija python-a postavljena verzija
+          2.x.x. Ukoliko je to slučaj moguće je pokrenuti date naredbe
+          sa "pip3" i "python3". U slučaju da ni to ne radi onda ili
+          python nije instaliran ili se ne nalazi u varijabli okruženja
+          (environment variable) čiji je naziv: PATH
         
 
+        
 Deaktiviranje virtuelnog okruženja u python-u (CLI):
     deactivate
+
+    
+ 

@@ -97,7 +97,7 @@ Primer primene:
 
         
         
-Logičko I se često kombinuke sa negacijama
+Logičko I se često kombinuje sa negacijama
 
 
 
@@ -124,7 +124,8 @@ aktivaciji njegov desni literal
 Da bi se ova višestruka aktivacija izbegla, u datom uslovu tvrdnje dodaje
 se i provera dodatnog polja. To polje će predstavljati indikator koji će
 sadržati informaciju o tome da li je već jednom došlo do aktivacije sa istim
-skupom tvrdnji. Kada dođe do prve aktivacije data tvrdnja se modifikuje kako bi se onemogućila naredna aktivacija istog skupa tvrdnji:
+skupom tvrdnji. Kada dođe do prve aktivacije data tvrdnja se modifikuje kako 
+bi se onemogućila naredna aktivacija istog skupa tvrdnji:
     ...
     Osoba( ime = MATCH.ime_2,
             boja_ociju = MATCH.boja_ociju_2 & ~MATCH.boja_ociju_1,
@@ -196,6 +197,11 @@ Primer:
     def poznat_broj_godina(self, ime):
         print("Pronadjena osoba {}".format(ime) )
         
+
+Rezultat:
+    Pronadjena osoba Milos
+    
+    
         
 
    
@@ -218,6 +224,7 @@ u njemu prvi put, tj. ukoliko se u njemu ne dodeljuje vrednost
 
 
 Primer za NOT():
+    # ispravno jer nema dodele vrednosti
     @Rule( NOT( Fact(max=W()) ) )
     def init(self):
         self.declare(Fact(max=0))
@@ -269,9 +276,10 @@ njenim atributima sa uglastim zagradama:
     ...
     
     
-U ovom slučaju dolazi do prisupa atributu bez korišćenja MATCH.max
-jer v sadrži referencu na objekat tipa Fact pa je moguće pristupiti
-atributu preko nje jer je objekat implementiran kao rečnik
+U ovom slučaju dolazi do prisupa atributu "max" bez korišćenja MATCH-a
+preko promenljive v koja sadrži referencu na objekat tipa Fact pa je 
+moguće pristupiti atributu preko nje jer je objekat implementiran kao 
+rečnik
 
 Nije preporučljivo koristi ovo jer se lako može pogrešiti
 

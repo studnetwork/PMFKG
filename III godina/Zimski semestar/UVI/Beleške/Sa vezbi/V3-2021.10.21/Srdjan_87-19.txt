@@ -71,7 +71,9 @@ Kod:
     
 
 
-Otkazivanje pretplate na događaje koji se prate:
+Otkazivanje pretplate na događaje koji se prate
+(korisno ukoliko se program interpretira, tj. ukoliko se 
+pokrene selektovanjem koda koji se treba interpretirati):
     watch(level=0)
 
 
@@ -91,6 +93,8 @@ te činjenice zadovoljiti njegov uslov)
 
     
 MATCH omogućava čuvanje vrednosti (polja) iz neke činjenice    
+(ne MATCH.promenljiva ne mora da ima isto ime kao polje čiju
+vrednost uzima)
 
 Promenljiva u koju se čuva ta vrednost može da se prosledi
 (ime mora da bude isto) funkciji, tj. desnoj strani pravila

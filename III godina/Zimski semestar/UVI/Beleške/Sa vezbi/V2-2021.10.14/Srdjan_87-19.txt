@@ -308,7 +308,7 @@ Uključivanje u projekat:
 
     
     
-"KnowledgeEngine je inference knowledge koji će vršiti 
+"KnowledgeEngine je inference engine koji će vršiti 
 odlučivanje za nas"
 
 
@@ -414,7 +414,8 @@ primenjenim izmenama.
 
 
 Kada se uradi ova "izmena" činjenica neće više imati
-staru adresu, već neku novu
+staru adresu, već neku novu (što uzrokuje aktiviranje
+pravila koje je data činjenica već prethodno zadovoljila)
 
 
 

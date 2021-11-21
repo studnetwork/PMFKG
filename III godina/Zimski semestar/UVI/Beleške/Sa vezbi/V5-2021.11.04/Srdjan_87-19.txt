@@ -66,7 +66,8 @@ Primer:
 Ukoliko postoji više činjenica Hero(status = "unoccupied"), 
 neće doći do više od jedne aktivacije ovog pravila ( kada
 postoji i Goal("save-the-day") ) jer se proverava samo da 
-li postoji neka takva činjenica, nije bitno koja i koliko
+li postoji neka takva činjenica, nije bitno koja je i koliko
+ih ima
 
 
 
@@ -102,9 +103,19 @@ Primer:
 
 
 U datom primeru se proverava da li je svaka zgrada na nekoj
-lokaciji na kojoj se desio pozar i na kojoj se nalazi neka
-vatrogasna stanica evakuisana
+lokaciji na kojoj se desio požar i na kojoj se nalazi neka
+vatrogasna stanica evakuisana. 
 
+Ukoliko nema vatrogasne stanice na nekoj lokaciji na kojoj se nalaze
+zgrada i požar ili ukoliko zgrada na lokaciji na kojoj su požar i
+vatograsna stanica onda pravilo neće biti aktivirano iako možda 
+postoji više skupova činjenica kod kojih su ti uslov zadovoljeni.
+
+Razlog za to je to što FORALL zahteva da svi ovi uslovi budu zadovoljeni,
+tj. da svaka zgrada na nekoj lokaciji na kojoj se nalazi vatrogasna stanica
+bude evakuisana. Ukoliko barem nešto od toga nije ispunjeno onda nije moguće
+doći do navedenog zaključka da su svi požari pod kontrolom i da su sve
+zgrade evakuisane
 
 
 
@@ -167,8 +178,8 @@ polje onda će to polje dobiti podrazumevanu vrednost
 
 
 Kako bi se sprečio unos neispravnih vrednost za datu situaciju
-neophodno je definisati dodatna ograničenja. To se može 
-postići definisanjem logičkog izraza koji to kontroliše
+neophodno je definisati dodatna ograničenja. To se može postići
+definisanjem logičkog izraza koji to kontroliše
 
 
 
@@ -198,7 +209,7 @@ Primer:
     
     class Osoba(Fact):
         ime = Field(str)
-        pol = Field(schena.OR("Ž","M"))
+        pol = Field(schema.OR("Ž","M"))
         
         
         
@@ -222,13 +233,13 @@ Salience
 --------
 
 
-Agenda - spisak pravila za koja je ispunjen uslov izvršenja
+Agenda - spisak pravila za koja je ispunjen uslov
 
 Agenda radi kao stek (u većini ES): LIFO
 
 
-Ukoliko se eksplicitno ne promeni, svako pravilo ima na
-agendi ima isti prioritet
+Ukoliko se eksplicitno ne promeni, svako pravilo na agendi 
+ima isti prioritet
 
 
 Salience obezbeđuje da se prioritet pravila eksplicitno odredi
@@ -299,19 +310,18 @@ za ispravku greške, ako je to moguće
 
 
 
-Problem koji treba rešiti određenim redosledom, tj. faze
-koje čine rad ovog uređaja trebaju da se izvrše u određenom
-redosledu
+Problem, tj. faze koje čine rad ovog uređaja trebaju da 
+se izvrše u određenom redosledu
 
 
 
 Ciklus rada
 
-Detekcija-->Izolacija-->Oporavak
-    A                      |
-    |                      v
-    |                      |
-     --<-------<------<----
+Detekcija--->Izolacija--->Oporavak
+    A                       |
+    |                       |
+    |                       V
+     ---<-------<-------<---
  
  
  
@@ -356,9 +366,9 @@ Najveći prioritet: faza detekcije
 Najniži prioritet: oporavak
 
 
-Prve se izvršavaju sva pravila iz faze detekcije pa kada se ona
+Prvo se izvršavaju sva pravila iz faze detekcije pa kada se ona
 završe izvršavaju se sva pravila faze izolacije i onda tek nakon
-izvršenja svih pravila fate izolacije kreću da se izvršavaju 
+izvršenja svih pravila faze izolacije kreću da se izvršavaju 
 pravila faze oporavka
 
 
@@ -429,8 +439,8 @@ za prelaza sa jedne faze na drugu.
 Pri definisanju takvog pravila potrebno je promeniti mu salience
 kako bi se omogućilo da se sva pravila iz date faze izvrše pre
 njega pa da se nakon toga to pravilo za prelaz izvrši kao poslednje
-na agendi. Time se prelazi na sledeću fazu i ovaj način definisanja
-se obavlja sve do poslednje faze.
+na agendi. Time se prelazi na sledeću fazu. Ovaj način definisanja
+pravila za prelaz na sledeću fazu se obavlja za sve faze ciklusa.
 
 
 Ukoliko je taj proces koji se obrađuje cikličan onda će se na kraju
@@ -448,8 +458,9 @@ pravila čiji članovi imaju jednak salience`
 
 
 Zna se koja će se pravila izvršavati na svakom nivou hijerarhije
-salience-a. Salience ekspertskih pravila se ne menja već se menja
-samo kada je potrebno preći sa jedne faze na drugu
+salience-a. Salience ekspertskih pravila se ne menja već se samo menja
+salience pravila za kontrolu toka, tj. samo kada je potrebno preći sa 
+jedne faze na drugu
 
 
 
@@ -503,12 +514,14 @@ do tada nije aktivirala pravilo i to može uzrokovati beskonačnu
 petlju.
 
 Da bi se sprečilo ovako nešto dodaje se flag polje koje će služiti
-za proveru da li je ovakva činjenica već izvršila dato pravilo.
-Dodaje se provera flag-a u pravilu kao dodatan uslov i kada
-dođe do aktivacije tog pravila pored izmene nekog polja čija je
-izmena predviđena menja se i vrednost flag-a (BITNO; ukoliko se ne 
-izmeni doći će do stvaranja beskonačne petlje). To flag bolje bi
-trebal oda ima definisanu podrazumevanu vrednost
+za proveru da li se ovakva činjenica već uparila jednom sa datim 
+pravilom. 
+
+Dodaje se provera flag-a u pravilu kao dodatan uslov i kada dođe do 
+aktivacije tog pravila pored posledica koje je pravilo već imalo dolazi
+i do izmene vrednost flag-a (NAPOMENA: ukoliko se ne izmeni doći će do 
+stvaranja beskonačne petlje). Taj flag bi trebalo da ima definisanu
+podrazumevanu vrednost (u Field-u)
 ]
 
 
