@@ -194,7 +194,7 @@ class MyEngine(KnowledgeEngine):
         Faza("proseci"),
         ZbirOcena(naziv_filma = MATCH.naziv, zbir = MATCH.zbir, broj_ocena = MATCH.broj & P(lambda x: x > 0)),
         AS.f << Film(naziv = MATCH.naziv, check = MATCH.check),
-
+        NOT(Recenzija(naziv_filma = MATCH.naziv,sabrana = False)),
         TEST(lambda check: not sadrzi(check, "cuvanje_prosecnih_ocena"))
     )
     def cuvanje_prosecnih_ocena(self, f, zbir, broj, check):
