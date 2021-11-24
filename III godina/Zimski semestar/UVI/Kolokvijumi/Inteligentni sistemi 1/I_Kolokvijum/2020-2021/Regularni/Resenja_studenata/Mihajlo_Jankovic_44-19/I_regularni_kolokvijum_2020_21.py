@@ -18,7 +18,7 @@ class Film(Fact):
     reziser = Field(str)
     kategorija = schema.Or("AKCIJA","DRAMA","HOROR","TRILER","NAUCNA_FANTASTIKA","KOMEDIJA")
     opis = Field(str)
-    datum_premijere = Field(lambda x: isinstance(x,str) and re.search("[0-9]{4}-[0-9]{2}-[0-9]{2}",x))
+    datum_premijere = Field(lambda x: isinstance(x,str) and re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}").match(x) != None)
     lista_glumaca = Field(list)
     duzina_trajanja = Field(lambda x: isinstance(x,float) and 0 < x < 24)
     preporuka = Field(float,default = 50)
