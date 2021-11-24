@@ -1,0 +1,29 @@
+Spisak osoba (cije su informacije dostupne):
+    Vladimir
+    Srecko
+    Jagoda
+    Sara
+    Vladan
+    Stefan
+    Nebojsa
+    Milica
+    Predrag
+
+Supruznici:
+    Vladimir -
+    Srecko   -
+    Jagoda   -
+    Sara     Stefan
+    Vladan   Bogdana
+    Stefan   Sara
+    Nebojsa  Dragana
+    Milica   Predrag
+    
+Braca:
+    Vladimir Srecko
+    Nebojsa  Stefan
+    
+Osoba-Ujak:
+    Vladimir Vladan
+    Srecko   Vladan
+    Jagoda   Vladan
