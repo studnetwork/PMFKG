@@ -321,7 +321,7 @@ class Engine(KnowledgeEngine):
         TEST(lambda preporuka, max_preporuka: preporuka > max_preporuka)
     )
     def nadji_max(self,max,naziv,preporuka):
-        self.modify(max, naziv = naziv, preporuka = preporuka) # SMANJI KAUNTER !!!!!!!!!!!
+        self.modify(max, naziv = naziv, preporuka = preporuka)
     
     # Kontrola toka: Max -> Ispisi Max
     # {
