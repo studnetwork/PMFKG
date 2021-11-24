@@ -350,7 +350,7 @@ Primer takog pravila:
 
 
 
-deftemplate    # CLIPS
+deftemplate u CLIPS je isto sto i class u Experta-i, tj. python-u
 
 
 Polja u klasi su slotovi kod CLIPS-a
