@@ -1,0 +1,10 @@
+3
+2
+Jovana 20 Z
+Janko 25 M 
+3
+Nikola 15 M
+Petar 18 M
+Ana 21 Z
+1
+Nemanja 24 M

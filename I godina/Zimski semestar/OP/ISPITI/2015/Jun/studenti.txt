@@ -1,0 +1,15 @@
+11
+Anja 8
+Jana 7
+Petar 15
+Janko 14
+Jovana 6
+Sanja 9
+Maja 5
+Sara 7
+Marko 12
+Lazar 16
+Aleksa 14
+12
+20
+10

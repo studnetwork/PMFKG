@@ -1,0 +1,32 @@
+2
+Marko 23 M 2
+Milos 20 M 3
+2
+Marija 19 Z 5
+Milan 18 M 6
+2
+Mina 20 Z 6
+Milica 19 Z 4
+3
+Teodora 22 Z 4
+Tamara 23 Z 4
+Natasa 18 Z 2
+3
+Nevena 28 Z 3
+Natalija 29 Z 5
+Petar 22 M 0
+1
+Lazar 12 M 0
+2
+Stefan 18 M 2
+Filip 19 M 2
+3
+Ana 22 Z 1
+Neda 27 Z 1
+Sava 25 M 10
+2
+Anika 20 Z 10
+Katarina 21 Z 10
+2
+Magdalena 22 Z 9
+Kristina 23 Z 8

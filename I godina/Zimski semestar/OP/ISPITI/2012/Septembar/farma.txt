@@ -1,0 +1,15 @@
+14
+kokoska 5
+svinja 80
+krava 350
+kokoska 5
+kokoska 5
+svinja 120
+svinja 90
+svinja 40
+krava 300
+konj 200
+guska 30
+guska 30
+patka 15
+paun 20
