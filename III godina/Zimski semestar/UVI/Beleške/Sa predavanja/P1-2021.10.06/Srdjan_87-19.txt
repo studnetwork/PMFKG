@@ -39,8 +39,8 @@ je bio termin veštička inteligencija
 Njege posledice bila su velika očekivanja
 
 Allen Newell i Herber Simon su pokušali da razviju program
-koji može rešiti bili koji problem. Na kraju su zaključili
-da nije moguće stvoriti takav program
+koji može rešiti bili koji problem(General Problem Solver). Na
+kraju su zaključili da nije moguće stvoriti takav program
 
 
 
@@ -342,6 +342,10 @@ Okruženje zadatka se opisuje pomoću 4 parametra:
 ili skraćeno PEAS
 
 
+E u PEAS predstavlja okruženje. To se odnosi na skup entiteta na 
+na koje taj agent deluje / utiče i entiteta koji mogu da utiču
+na njega. Nije reč o njegovoj fizičkoj okolini, tj. entitetima
+koji ga okružuju
  
 
 [ Мoguće pitanje na usmenom delu ispita:
@@ -364,7 +368,7 @@ Primeri:
 
 Softverski agent koji određuje dijagnozu pacijenta
 
-    Mere performanse: tačnost, ozdravljenje
+    Mere performanse: tačnost, ozdravljenje (kao posledica delovanja agenta)
     Okruženje: pacijent, bolničko osoblje
     Aktuatori: ekran, dijagnoze, tretmani
     Senzori: Tastatura / dokumenti, otkrića, odgovori pacijenta
@@ -560,7 +564,7 @@ prethodnu istoriju
 
 
 Primer takvog agenta je agent iz primera Vacuum-cleaner world
-čija je funkcija zasnovana ta tabeli. Njegova odluka se bazira
+čija je funkcija zasnovana na tabeli. Njegova odluka se bazira
 samo na trenutnoj lokaciji i tome da li je ona prljava ili ne
 
 

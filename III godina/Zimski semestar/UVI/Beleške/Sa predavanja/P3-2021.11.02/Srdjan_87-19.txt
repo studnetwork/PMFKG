@@ -16,7 +16,7 @@ izabranog načina
 
 
 Nikada se ne izvršava više pravila odjednom, već isključivo
-jedno po jedno jer je nakon izvršavanja svakog potrebno
+jedno po jedno jer je nakon svakog izvršavanja potrebno
 obaviti određena ažuriranja
 
 
@@ -33,7 +33,7 @@ ili njihovom kombinacijom
 
  
 
-NOT zahteva da se iskaz uslov ne poklapa ni sa jednom
+NOT zahteva da se iskaz uslova ne poklapa ni sa jednom
 tvrdnjom iz liste
 
 
@@ -116,6 +116,13 @@ agendi se izvršavaju po leksikografskom poretku.
 
 
 
+[ za test (prvi test - prvi zadatak)
+
+Zaljučivanje unapred, slično zadatku sa određivanjem da li je životinja
+opasna ili ne (Spaki, Fibi i Roki)
+]
+
+
 Ekspertni sistemi rade sa tvrdnjama
 
 
@@ -193,13 +200,11 @@ Rešavanje:
     
     
 
-Nije moguće dodeliti vrednost promenljivoj ukoliko se uslovni element
-NOT nalazi na početku uslova, pre drugih tipova uslovnih elemenata
-jer mehanizam zaključivanja traži tvrdnju koja će se poklopiti
-sa tim iskazom, ali pošto je uslovni element NOT netačan kada
-nađe takav iskaz (i time dodeli vrednost) neće doći do dalje provere,
-a kada se ne nađe takav iskaz onda neće doći do vezivanja pravila i
-tvrdnje pa time nikada neće doći do provere preostalog dela uslova
+Nije moguće dodeliti vrednost promenljivoj u uslovnom elementu NOT jer
+mehanizam zaključivanja traži tvrdnju koja će se poklopiti sa iskazom 
+uslova, a pošto je uslovni element NOT netačan kada nađe takav iskaz 
+(i time dodeli vrednost) onda nikada ne bi došlo do aktivacije takvog
+pravila
 
 
 Zbog toga je potrebno prvo dodelila vrednost promenljivoj pa tek nakon
@@ -271,6 +276,7 @@ se ulančavanje unazad od njih, ka tvrdnjama koje su dostupne u listi.
 Tokom procesa ulančavanja unazad nema dodavanja novih tvrdnji u listu.
 
 Ako postoji konflikt, uvek se bira pravilo koje je prvo na redu.
+(konflikti se resavaju leksikografski)
 
 
 Ulančavanje unazad se može predstaviti AND-OR stablima`
@@ -370,7 +376,8 @@ CF(LHS) = CF(uslovnog elementa)
 
 
 CF(zaključka) = CF(LHS) * CF(RHS)
-
+( sistem za zaključivanje može ovo računati naknadno; neki to rade, neki ne.
+CF(RHS) predstavlja eksplicitno kodiranje verovatnoće )
 
 
 Primer:
@@ -392,13 +399,13 @@ Primer:
 
 `Više različitih pravila mogu izvesti iste zaključke, sa 
 različitom sigurnošću.` Ti zaključci mogu da se kombinuju
-u jedan čija je stepen sigurnosti kombinacija stepena
+u jedan čiji je stepen sigurnosti kombinacija stepena
 sigurnosti tih zaključaka
 
 
 NCF - stepen sigurnosti zaključka nakon kombinovanja
-      stepena sigurnosti koju ima isti zaključak izveden
-      iz drugih tvrdnji
+      stepena sigurnosti koji imaju isti zaključci izvedeni
+      iz različitih skupa tvrdnji
       
 CF1 - stepen sigurnosti datog zaključka dobijen 
       izvođenjem iz jedno skupa tvrdnji

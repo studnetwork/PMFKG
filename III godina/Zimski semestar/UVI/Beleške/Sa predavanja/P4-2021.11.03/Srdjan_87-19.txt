@@ -44,7 +44,7 @@ formulisanje cilja.
 
 Tipični primeri koji rešavaju pretragom, pored prethodnog
 primera, su:
-- pronanaženje 2 puta na nekoj mapi
+- pronalaženje 2 puta na nekoj mapi
 - sudoku
 - rešavanje rubikove kocke
 - postavljajne 8 kraljica na šahovsku tablu bez
@@ -192,8 +192,7 @@ najmanjim troškovima
 
 
 Da bi se algoritam pretraživanja uspešno dizajnirao i primenio 
-njegov kreator mora da analizira i predvidi ponašanje tog
-algoritma: 
+njegov kreator mora da analizira i predvidi ponašanje tog algoritma: 
 - da li je pronalaženje problema zagarantovano
 - da li može da upadne u beskonačnu petlju pri pronalaženju rešenja
 - da li je to rešenje koji algoritam pronađe zagarantovano optimalno
@@ -263,7 +262,7 @@ za slučaj da prva opcija ne dovede do rešenja
 Čvorovi koji nemaju svog sledbenika se nazivaju čvorovi listovi
 
 
-Skup svih čvorova listava koji su dospuni za proširenje naziva se
+Skup svih čvorova listova koji su dostpuni za proširenje naziva se
 granica, rub (frontier) ili otvorena lista (ti čvorovi se još nazivaju 
 i rubni čvorovi)
 
@@ -349,7 +348,7 @@ lista, u koju ću se pamtiti svi čvorovi koji su prošireni
 
 
 U slučaju da novogenerisani čvorovi već postoje u istraženom skupu
-neće doći do njihovog dodavanja u rub, već bivaju odbaćeni
+neće doći do njihovog dodavanja u rub, već bivaju odbačeni
 
 
 

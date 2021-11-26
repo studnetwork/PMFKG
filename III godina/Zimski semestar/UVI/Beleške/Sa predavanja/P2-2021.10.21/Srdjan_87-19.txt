@@ -135,7 +135,7 @@ u cilju rešavanja problema i davanja saveta"
 
 
 
-Ekspet - osoba koja poseduje znanje ili veštine koje su
+Ekspert - osoba koja poseduje znanje ili veštine koje su
 većini ljudi nepoznate ili nedostupne
 
 
@@ -264,8 +264,8 @@ Ukoliko ista tvrdnja može da se upari sa dva pravila onda će
 se izvršiti oba (u zavisnosti od konfiguracije samog sistema)
 
 
-Pravila obično stvaraju nove tvrdnje konsekvente, ali mogu
-i da brišu postojeće tvrdnje
+Pravila obično stvaraju nove tvrdnje, ali mogu i da brišu 
+postojeće tvrdnje
 
 
 
@@ -377,7 +377,10 @@ pravilima i ono se izvršava, tj. okida ( en. fire )
 
 Rezultat tog izvršavanja je ili neka nova tvrdnja koja
 se dodaje u listu tvrdnji ili uklanjanje nekih postojećih 
-tvrdnji.
+tvrdnji 
+(izmena postojeće tvrdnje predstavlja kombinaciju ove dve 
+akcije: tvrdnja se uklanja i dodaje se nova u kojoj su 
+primenjene date izmene; sličan postupak je izučavan na BP1)
 
 
 Nakon izvršavanja jednog pravila, ažurira se lista
