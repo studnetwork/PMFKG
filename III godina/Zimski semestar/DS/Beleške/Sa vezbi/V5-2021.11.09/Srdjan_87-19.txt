@@ -49,7 +49,7 @@ Primer sintakse za kreiranje generičke klase:
     class Kolekcija<TNazivTipa> {
         int polje1;
         
-        public int NekiMetod(T drugaInstanca) {
+        public int NekiMetod(TNazivTipa drugaInstanca) {
             return polje1 + drugaInstanca.polje1;
         }
     }
@@ -69,6 +69,11 @@ Ukoliko generička klasa nasleđuje neki drugi tip ili ukoliko
 implementira neki interface onda se prvo to piše, a nakon toga
 toga se pišu ograničenja
 
+Primer generičke klase koja implementira interface IEnumerable i
+ima ograničenje na generičkom tipu koje kaže da on mora biti 
+tipa Klasa:
+     public class Kolekcija<TNazivTipa> : IEnumerable where TNazivTipa : Klasa
+
 
     
     
@@ -87,7 +92,7 @@ koristi se class ili naziv nekog specifičnog tipa:
     # T može biti bilo koja klasa
     class A<T> where T : class
     
-    # T može biti samo instanca klase Student, tj. klasa student i
+    # T može biti samo instanca klase Student, tj. klasa Student i
     # sve njene izvedene klase
     class B<T> where T : Student
     
@@ -105,11 +110,15 @@ Primer u kome se generička klasa izvodi iz neke druge:
         ...
     }
     
-    class IzvedenaKolekcija<T> : Kolekcija <T> where T : class {
+    class IzvedenaKolekcija<T> : Kolekcija<T> where T : class {
         ...
     }
     
 
+Napomena: tip-parametri (T) ovih generičkih klasa ne moraju da budu isti,
+          mogu biti različiti i to zavisi od potreba implementacije
+
+    
     
 Generička klasa može imati i više tip-parametara:
     class Kolekcija<X,Y> where X: struct where Y: class, new() {
@@ -143,7 +152,7 @@ Kao i kod klasa, moguće je definisati ograničenja:
     
 
 
-
+Primer korišćenja:
     public IEnumerable<T> filtriraj(predikat<T> filter) {
         for(int i = 0; i < len; i++ ) {
             if( filter(vrednosti[i]) ) 

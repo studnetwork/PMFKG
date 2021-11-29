@@ -562,7 +562,7 @@ nakon toga je moguće instalirati u njega pakete komandom:
     pip install -r requirements.txt
 
 Kreiranje virtualnog okruženja:
-    # anacoda
+    # anaconda
     conda create -n ime_okruženja python=verzija_pythona
     
     # python
@@ -578,7 +578,7 @@ Kreiranje virtualnog okruženja:
 
  
 Aktivacija virtuelnog okruženja:
-    # anacoda
+    # anaconda
     conda activate ime_okruženja
     
     # python 
@@ -598,8 +598,11 @@ NAPOMENA: ukoliko ne rade komande "pip" i "python" postoji mogućnost
         
 
         
-Deaktiviranje virtuelnog okruženja u python-u (CLI):
-    deactivate
-
+Deaktiviranje virtuelnog okruženja:
+    # anaconda
+    conda deactivate
     
+    # python (CLI)
+    deactivate
+      
  
