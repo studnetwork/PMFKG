@@ -1,0 +1,7 @@
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\bin\Debug\ImplementacijaKruzneListe.exe.config
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\bin\Debug\ImplementacijaKruzneListe.exe
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\bin\Debug\ImplementacijaKruzneListe.pdb
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\obj\Debug\ImplementacijaKruzneListe.csproj.AssemblyReference.cache
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\obj\Debug\ImplementacijaKruzneListe.csproj.CoreCompileInputs.cache
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\obj\Debug\ImplementacijaKruzneListe.exe
+C:\Users\Name\Documents\Projects\DS\ImplementacijaKruzneListe\ImplementacijaKruzneListe\obj\Debug\ImplementacijaKruzneListe.pdb
