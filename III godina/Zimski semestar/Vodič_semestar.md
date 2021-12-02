@@ -6,6 +6,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [Informacioni sistemi 1][is1]  
 [Uvod u veštačku inteligenciju][uvi]  
 [Web programiranje 1][wp1]  
+[Računarska grafika][rg]  
 
 
 [//]: # ( # Meeting linkovi )
@@ -29,6 +30,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [is1]: ./IS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [uvi]: ./UVI/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [wp1]: ./WP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[rg]: ./RG/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [//]: # ( Meeting reference )
 
