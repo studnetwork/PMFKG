@@ -28,11 +28,11 @@ Prvo se navode parametri za koje nije definisana podrazumevana vrednost,
 a nakon njih oni za koje jeste (tj. prvo idu obavezni pa nakon njih opcioni)
 
 
-Za određivanje niza se mogu koristiti count($niz) ili sizeof($niz)
+Za određivanje veličine niza se mogu koristiti count($niz) ili sizeof($niz)
 
 
 
-Ukoliko se ne zna koliko će elemenata imati niz može se koristit:
+Ukoliko se ne zna koliko će elemenata imati niz može se koristiti:
     $arr = [];
     
 Dodavanje elemenata u ovakav niz se vrši na sledeći način:

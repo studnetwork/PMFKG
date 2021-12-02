@@ -4,7 +4,7 @@ Predavač: Andreja Živić
 =====================================
 
 
-Postoji elif
+Postoji elseif
 
 
 Ukoliko se u tagu "option" ne navede atribut "value" onda
