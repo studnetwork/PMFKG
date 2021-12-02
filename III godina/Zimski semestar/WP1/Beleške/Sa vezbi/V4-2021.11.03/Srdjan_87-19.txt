@@ -1,0 +1,199 @@
+Definisanje klase:
+    class Klasa
+    {
+    
+    }
+    
+    
+Definisanje polja:
+    vidljivost $naziv;
+    
+    
+Primer:
+    class Zaposleni()
+    {
+        protected $ime;
+    }
+    
+    
+
+Definisanje konstruktora:
+    fuction __construct($ime, $plata)
+    {
+        $this->ime = $ime;
+        $this->plata = $plata;
+    }
+    
+    
+Prepisivnaje metoda toString:
+    function __toString()
+    {
+        ...
+    }
+    
+    
+date_default_timezone_set('Europe/Belgrade'); # postavlja timezone 
+
+
+
+date('format') # vraca trenutno vreme
+
+Primer:
+    date("h:i:s");
+    
+    
+    
+Instanciranje:
+    $zoki = new Zaposleni("Zoki", 21231);
+    
+    
+
+Definisanje konstante:
+    const PI = "3.1415";
+    
+
+    
+Definisanje statickog polja:
+    static $naziv;  
+    
+    
+    
+    
+Pristup statickom polju unutar klase:
+    self::$naziv
+    
+    
+Pristup van klase:
+    Zaposleni::$naziv
+    
+    
+    
+    
+Operator ":" se može koristiti za pristup statičkim i overriden
+članicama ili poljima koja su konstante. Može se koristiti za pristup
+članicama roditeljske klase
+
+    
+Destruktor se poziva pri unistavanju objekta. Sintaksa:
+    function __destruct()
+    {
+        ...
+    }
+    
+
+    
+Sintaksa staticke funkcije:
+    public static function postaviVrednost($param)
+    {
+        ...
+    }
+    
+    
+
+    
+Provera da li je neka instanca instanca neke klase:
+    $x instanceof $klasa
+    
+    
+    
+Da bi se klasa koristila potrebno je koristiti:
+    require_once "putanja/do/fajla/klase.php";
+    
+    
+
+    
+Sintaksa za nasledjivanje:
+    class Rukovodilac extends Zaposleni
+    {
+        private $zvanje;
+        ptivate $bonus;
+        
+        ...
+    }
+
+    
+    
+__autoload($x) se pre koristilo, ali je izbaceno u PHP 5
+
+
+
+Pristup članicama roditeljske klase:
+    parent::$naziv
+    
+    
+Primer:
+    function __construct($ime, $plata, $zvanje, $bonus)
+    {
+        parent::__construct($ime, $plata);
+        $this->zvanje = $zvanje;
+        $this->bonus = $bonus
+    }
+    
+    
+
+    
+U PHP može postojati samo 1 konstruktor (za razliku od jave)
+
+
+
+Prebacivanje sa jedne stranice na drugu se može vršiti i pomoću
+Javascript-a:
+    window.location = "rukovodilac.php";
+    
+    
+
+    
+Definisanje interface-a:
+    interface INaziv
+    {
+        ...
+    }
+    
+    
+Definisanje apstraktne klase:
+    abstract class Osoba
+    {
+        ...
+    }
+    
+    
+
+Apstraktna klasa može da ima i apstraktnu metodu:
+    abstract function dajIme();
+    
+    
+ 
+ 
+Implementiranje interfejsa:
+    class Zaposleni implements IPromenaImena
+    {
+        ...
+    }
+    
+    
+
+    
+#####################################################
+
+
+Sličnosti OOP u Javi i PHP-u:
+- definisanje klase
+- vidljivost
+- instanciranje
+- definisanje statičkih polja i funkcija 
+  (izuzev sintakse za nazivanje promenljivih)
+- instanceof
+- interface
+- apstraktne klase
+- sintaksa za nasleđivanje
+- sintaksa za implementiranje interface-a
+
+
+Različitosti:
+- definisanje funkcija (PHP zahteva ključnu reč function)
+- funkcija može da radi i sa presleđivnajem po vrednosti i sa
+  prosleđivanjem po referenci
+- u PHP se članici klase pristupa sa $this->, umesto sa this.
+- konstruktor se definiše sa function __construct()
+- u PHP postoji sintaksa za pristupanje statičkim, konstantnim i overriden
+  članicama: self::

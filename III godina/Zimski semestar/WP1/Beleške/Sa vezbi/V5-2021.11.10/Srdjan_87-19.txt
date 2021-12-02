@@ -1,0 +1,354 @@
+
+localhost  -> phpmyadmin
+
+
+
+
+Default account
+
+username: root
+password nije potreban (ne unosi se nista)
+
+
+
+
+U gornjem delu prozora se nalazi broj koji predstavlja port
+baze (naveden je nakon "Server: MySQL:")
+
+
+
+
+Default-ni port za MySQL je 3306 (desavalo se da port bude
+drugaciji na kol.)
+
+
+U phpmyadmin se na spomenutom portu nalazi DBMS, a ne baza
+
+
+
+
+A_I u prikazu za kreiranju tabele predstavlja auto-increment
+
+
+
+Kada se za neku kolonu čekira A_I onda se automatski to polje
+dodaje u skup kolona koje predstavljaju primarni ključ
+
+
+
+Export se može koristit za export-ovanje baze: podataka,
+definicija, ...
+
+
+Taj fajl je kasnije moguće importovati i time sve to dodati
+u neku drugu bazu
+
+
+
+
+Kartica Isert se koristi za dodavanje novih redova u tabelu
+
+
+
+Mysqli interface
+################
+
+Nije pogodan za CRUD komande (pre svega za create)
+
+
+Kreiranje konekcije sa bazom u PHP:
+    $konekcija = new mysqli($host, $user, $password, $ime_baze);
+
+    
+Ovakav kod pretpostavlja da je port 3306. Ukoliko DBMS koristi drugi port,
+konekcija se pravi na sledeći način (pomoću dodatnog parametra):
+    new mysqli($host, $user, $password, $ime_baze, $port );
+    
+    
+Ova konekcija se vrši preko mreže, pa može doći do greške
+pri uspostavljanju konekcije. Zbog toga je prvo potrebno
+proveriti uspešnost uspostavljanje konekcije pre nego što
+se pokuša izvršavanje nekih komandi
+
+
+    if(mysqli_connect_errno()) {
+        die("Greska prilikom konekcije sa bazom");
+    }
+    
+    
+Funkcija die prekida izvršavanje programa i vraća datu poruku
+o grešci
+    
+    
+    
+
+Slanje upita iz PHP:
+    $rezultat = $konekcija->query($upit); # upit je sql u stringu
+    
+    
+    
+query() ima i drugi parametar, $resultmode, kojim se definiše
+na koji način će se čuvati rezultat. Podrazumevani način je
+skladištenje u matrici, gde se svaki red čuva kao niz
+
+
+
+Iz navedenog primera, $rezultat mora prvo da se proveri jer
+postoji mogućnost da nije vraćen nikakav rezultat (da je 
+došlo do greške u pisanju upitu, u bazi prilikom izvršavanja 
+i slično)
+
+Nakon toga se proverava da li u tom rezultatu postoji nekih
+podataka, tj. da li je tabela prazna ili ne:
+    if( $rezultat->num_rows > 0)
+    
+    
+
+Prolazak kroz vraćenu tabelu:  
+    while( $red = $rezultat->fetch_array() )
+    {
+        ...
+    }
+    
+    
+Pristup vrednosti neke kolone:
+    $red[$indeks]
+    
+    
+    
+
+    
+Nakon završetka rada sa bazom, poziva se:
+    $konekcija->close();
+    
+    
+    
+Takođe, memorija koju zauzima promenljiva $rezultat može da se 
+oslobodi:
+    $rezultat->close();
+    
+    
+    
+Primer koda kojim se učitava nešto iz baze:
+    $konekcija = new mysqli($host, $user, $password, $ime_baze, $port );
+
+    if(mysqli_connect_errno()) {
+        die("Greska prilikom konekcije sa bazom");
+    }
+
+    $upit = "select * from knjige;";
+    
+    $rezultat = $konekcija->query($upit);
+    
+    if($rezultat) {
+        
+        if($rezultat->num_rows > 0) {
+                
+            echo "<table border=1 cellpadding=5 >";
+            while( $red = $rezultat->fetch_array() ) {
+                echo "<tr>";
+                echo "<td>".$red[0]."</td>";
+                echo "<td>".$red[1]."</td>";
+                echo "<td>".$red[2]."</td>";
+                echo "<td>".$red[3]."</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        }
+        $rezultat->close();
+    }
+    
+    $konekcija->close();
+
+
+
+
+    
+Drugi način je korišćenje:
+    while( $red = $rezultat->fetch_assoc() )
+    
+umesto ->fetch_array
+
+To omogućava korišćenje naziva kolona umesto indeksa za pristupanje preko $red
+
+Vrši se preko asocijativnog niza
+
+
+Primer za pristupanje vrednostima kolona ukoliko se uzima asocijativni niz:
+    echo "<td>".$red["id"]."</td>";
+    
+
+    
+    
+Još jedan način je uzimanjem cele table:
+    $tabela = $rezultat->fetch_all(MYSQLI_ASSOC); # umesto MYSQLI_ASSOC može da se piše 1
+    
+    foreach($tabela as $red) {
+        echo "<tr>";
+        echo "<td>".$red["id"]."</td>";
+        echo "<td>".$red["naslov"]."</td>";
+        echo "<td>".$red["autor"]."</td>";
+        echo "<td>".$red["godina_izdanja"]."</td>";
+        echo "</tr>";
+    }
+    
+    
+    
+    
+
+
+    
+PDO interface
+##############
+
+Koristi se za bilo koju bazu
+
+Preporuka: sve što se radi sa bazom se radi u jednom fajlu kako se ne bi
+otvarala konekcija ponovo u svakom drugom fajlu
+
+
+
+class Biblioteka {
+    const host = 'localhost';
+    const port = '3306';
+    const user = 'root';
+    const password = '';
+    const dbname = 'biblioteka';
+    
+    private $db;
+    
+    function __construct() {
+        try {
+            $konekcioni_string = "mysql:host=" . self::host 
+                . ";port=" . self::port;
+                . ";dbname=" . self::dbname;
+            $this->db = new PDO($konekcioni_string, self::user, self::password);
+        }
+        catch(PDOException $ex) {
+            echo "Greska: " . $ex->getMessage();
+        }
+    }
+    
+    function __destruct() {
+        $this.db = null;
+    }
+    
+    public function stampaj_tabelu() {
+        try {
+            $sql = "select * from knjge";
+            
+            if( isset($this->db) ) {
+                $pdo_izraz = $this->db->query($sql);
+                $niz = $pdo_izraz->fetch_ALL(PDO::FETCH_ASSOC);
+                  
+                  
+                echo "<table border=1 cellpadding=5 >";
+                echo "<tr>";
+                echo "<th>Id</th>";
+                echo "<th>Naslov</th>";
+                echo "<th>Autor</th>";
+                echo "<th>Godina izdanja</th>";
+                echo "</tr>";
+    
+                  
+                foreach($tabela as $red) {
+                    echo "<tr>";
+                    echo "<td>".$red["id"]."</td>";
+                    echo "<td>".$red["naslov"]."</td>";
+                    echo "<td>".$red["autor"]."</td>";
+                    echo "<td>".$red["godina_izdanja"]."</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            }
+            
+        }
+        catch(PDOException $ex) {
+            echo "Greska: " . $ex->getMessage();
+        }
+    }
+}
+
+
+Materijal sa moodle-a i konekcioni string će biti dostupni na kolokvijumu
+
+
+mysql u konekcionom string-u označava da treba koristi driver za mysql
+
+
+
+Ono što ne valja sa ovom klasom Biblioteka je to što se pravi konekcija za 
+sa bazom svaki put kada se pravi njena instanca. Bolja opcija bi bila pravljenje
+singlton-a
+
+
+
+Svaka komunikacija sa bazom (ukoliko se koristi PDO) može da izazove PDOException
+
+
+
+
+include_once "putaja" # include-uje biblioteku samo jednom; neće se učitati
+                      # opet ukoliko je već jednom include-ovana
+                      
+                      
+                      
+Ukoliko je ponovo učitati biblioteku koristi se samo include
+
+
+
+
+
+Razlika između SELECT, JOIN i sličnih komandi i komandi INSERT, DELETE i UPDATE
+je to što je za drugi skup komandi potrebno vršiti kao transakcije jer je potrebno
+održati konzistentnost baze
+
+
+Iz tog razloga, INSERT i DELETE umesto $konekcija->query($sql) koriste
+$konekcija->exec($sql)
+
+
+
+Pri pravljenju sql stringa za INSERT, potrebno je string vrednosti u njemu 
+uokviriti navodnicima (escape ili kombinacija jednostrukih dvostrukih navodnika)
+
+
+
+
+
+
+Sql string je moguće i napraviti na drugi način koji je lakše napisati i koji
+je sigurniji
+
+
+Primer:
+    public function update($id, $naslov, $autor, $godina) {
+        try {
+            $sql = "update knjige set naslov=:naslov, "
+                    . "autor=:autor, "
+                    . "godina_izdanja=:godina "
+                    . "where id=:id";
+                    
+            $pdo_izraz = $this->db->prepare($sql);
+            $pdo_izraz->bindParam(":id", $id);
+            $pdo_izraz->bindParam(":naslov", $naslov);
+            $pdo_izraz->bindParam(":autor", $autor);
+            $pdo_izraz->bindParam(":godina", $godina);
+            
+            $pdo_izraz->execute();
+            return true;
+        }
+        catch(Exception $ex) {
+            echo "Greska. ";
+            echo $ex->getMessage();
+        }
+        
+        return false;
+    
+    }
+
+
+NAPOMENA: koristi se metod execute, a ne exec. To se radi zbog prepare-a
+
+NAPOMENA: pri konstrukciji sql-a, potrebno je da postoji space između reči,
+          kako ne bi došlo do njihov konkatanacije
