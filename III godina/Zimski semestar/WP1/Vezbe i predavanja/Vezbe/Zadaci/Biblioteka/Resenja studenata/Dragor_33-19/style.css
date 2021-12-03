@@ -1,0 +1,25 @@
+.card {
+/*    display: inline-table;*/
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+    box-shadow: #aaa 0 0 20px 0;
+}
+
+table {
+    margin: 15px;
+}
+
+form {
+    max-width: max-content;
+}
+
+td {
+   padding: 5px;
+   border: 1px solid black;
+}
+
+form > * {
+    margin: 5px;
+}
