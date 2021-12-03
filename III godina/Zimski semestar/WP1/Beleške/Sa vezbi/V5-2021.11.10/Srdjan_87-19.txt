@@ -7,7 +7,7 @@ localhost  -> phpmyadmin
 Default account
 
 username: root
-password nije potreban (ne unosi se nista)
+password nije potreban (ne unosi se ništa)
 
 
 
@@ -18,8 +18,8 @@ baze (naveden je nakon "Server: MySQL:")
 
 
 
-Default-ni port za MySQL je 3306 (desavalo se da port bude
-drugaciji na kol.)
+Default-ni port za MySQL je 3306 (dešavalo se da port bude
+drugačiji na kol.)
 
 
 U phpmyadmin se na spomenutom portu nalazi DBMS, a ne baza
@@ -31,7 +31,7 @@ A_I u prikazu za kreiranju tabele predstavlja auto-increment
 
 
 
-Kada se za neku kolonu čekira A_I onda se automatski to polje
+Kada se za neku kolonu čekira A_I onda se automatski ta kolona
 dodaje u skup kolona koje predstavljaju primarni ključ
 
 
@@ -46,7 +46,7 @@ u neku drugu bazu
 
 
 
-Kartica Isert se koristi za dodavanje novih redova u tabelu
+Kartica Insert se koristi za dodavanje novih redova u tabelu
 
 
 
@@ -239,7 +239,7 @@ class Biblioteka {
             
             if( isset($this->db) ) {
                 $pdo_izraz = $this->db->query($sql);
-                $niz = $pdo_izraz->fetch_ALL(PDO::FETCH_ASSOC);
+                $niz = $pdo_izraz->fetchALL(PDO::FETCH_ASSOC);
                   
                   
                 echo "<table border=1 cellpadding=5 >";

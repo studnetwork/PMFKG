@@ -36,7 +36,7 @@ date_default_timezone_set('Europe/Belgrade'); # postavlja timezone
 
 
 
-date('format') # vraca trenutno vreme
+date('format') # vraća trenutno vreme
 
 Primer:
     date("h:i:s");
@@ -53,13 +53,13 @@ Definisanje konstante:
     
 
     
-Definisanje statickog polja:
+Definisanje statičkog polja:
     static $naziv;  
     
     
     
     
-Pristup statickom polju unutar klase:
+Pristup statičkom polju unutar klase:
     self::$naziv
     
     
@@ -74,7 +74,7 @@ Operator "::" se može koristiti za pristup statičkim i overriden
 članicama roditeljske klase
 
     
-Destruktor se poziva pri unistavanju objekta. Sintaksa:
+Destruktor se poziva pri uništavanju objekta. Sintaksa:
     function __destruct()
     {
         ...
@@ -82,7 +82,7 @@ Destruktor se poziva pri unistavanju objekta. Sintaksa:
     
 
     
-Sintaksa staticke funkcije:
+Sintaksa statičke funkcije:
     public static function postaviVrednost($param)
     {
         ...
@@ -102,7 +102,7 @@ Da bi se klasa koristila potrebno je koristiti:
     
 
     
-Sintaksa za nasledjivanje:
+Sintaksa za nasleđivanje:
     class Rukovodilac extends Zaposleni
     {
         private $zvanje;
@@ -113,7 +113,8 @@ Sintaksa za nasledjivanje:
 
     
     
-__autoload($x) se pre koristilo, ali je izbaceno u PHP 5
+__autoload($x) se pre koristilo umesto require_once, ali je 
+izbačeno u PHP 5
 
 
 
