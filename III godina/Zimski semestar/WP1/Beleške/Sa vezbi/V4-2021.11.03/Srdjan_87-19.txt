@@ -69,7 +69,7 @@ Pristup van klase:
     
     
     
-Operator ":" se može koristiti za pristup statičkim i overriden
+Operator "::" se može koristiti za pristup statičkim i overriden
 članicama ili poljima koja su konstante. Može se koristiti za pristup
 članicama roditeljske klase
 
@@ -176,7 +176,7 @@ Implementiranje interfejsa:
 #####################################################
 
 
-Sličnosti OOP u Javi i PHP-u:
+Sličnosti OOP Jave i PHP-a:
 - definisanje klase
 - vidljivost
 - instanciranje
@@ -189,11 +189,18 @@ Sličnosti OOP u Javi i PHP-u:
 - sintaksa za implementiranje interface-a
 
 
-Različitosti:
+Razlike OOP Jave i PHP-a:
 - definisanje funkcija (PHP zahteva ključnu reč function)
-- funkcija može da radi i sa presleđivnajem po vrednosti i sa
+- funkcija može da radi i sa prosleđivnajem po vrednosti i sa
   prosleđivanjem po referenci
 - u PHP se članici klase pristupa sa $this->, umesto sa this.
 - konstruktor se definiše sa function __construct()
 - u PHP postoji sintaksa za pristupanje statičkim, konstantnim i overriden
-  članicama: self::
+  članicama: self::članica
+- u Javi se kao ključna reč za roditeljsku klasu koristi super, a u
+  PHP reč parent, npr: parent::__construct()
+- korišćenje klase iz drugog fajla se vrši komandom require_once ili
+  komandom include_once (obe komande imaju i svoje varijante bez _once)
+- toString metoda u PHP predstavlja magičnu metodu pa se zbog zapisuje
+  kao __toString
+  
