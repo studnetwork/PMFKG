@@ -5,7 +5,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 Linkovi do resursa koji se odnose na vežbe  
 
 [Studentska služba - dekompozicija do trećeg nivoa (tj. kontekstni, I, II)][studentska sluzba]
-
+[Servisiranje uređaja - dekompozicija do trećeg nivoa (tj. kontekstni, I, II)][servisiranje uredjaja]
 ### Lekcije
 Linkovi ka snimcima lekcija:  
 
@@ -64,7 +64,9 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Vezbe reference )
+
 [studentska sluzba]: ./Studentska%20sluzba
+[servisiranje uredjaja]: ./Servisiranje%20uredjaja
 
 [//]: # ( linkovi na fajlovima )
 
