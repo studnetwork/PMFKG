@@ -55,9 +55,10 @@ Dobavljač šalje firmi:
 - otpremnicu
 - materijal
 - fakturu
+- odgovor (na zahtev za reklamaciju)
 
 Firma šalje dobavljaču:
-- naduržbenicu
+- naružbenicu
 - reklamaciju ili sugestije
 - uplata
 
@@ -68,7 +69,7 @@ Firma šalje kupcu:
 - ponude
 - otpremnice
 - fakture
-- odgovor (na neku reklamaciju)
+- odgovor (na zahtev za reklamaciju)
 
 
 Kupac šalje firmi:
@@ -88,7 +89,7 @@ Dekompozicija procesa nabavke
 [ možda bude neki zadatak o ovome
     Proces biranja dobavljača u navedenom primeru je preskočen; 
     Ono što prethodi slanju ugovora od strane dobavljača su 
-    sledeće akrivnosti:
+    sledeće aktivnosti:
     1. šalje se ponuda svih ponuđača
     2. na tenderu se bira dobavlač
     3. najbolji ponuđač postaje kadidat za dobavljača

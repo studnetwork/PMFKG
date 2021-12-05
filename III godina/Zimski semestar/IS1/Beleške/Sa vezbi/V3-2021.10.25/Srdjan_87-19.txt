@@ -54,7 +54,7 @@ Za razliku od IDEF0, koji je imao 2 komponente, DTP ima
 
     
 Crtanje / prikazivanje komponenti:
-- proces: zaobljeni pravougaonik
+- proces: pravougaonik sa zaobljenim ivicama
 
 - tok podataka: strelica
 

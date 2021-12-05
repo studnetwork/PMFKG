@@ -421,7 +421,7 @@ značenje:
 
 15. Šta su ulazi IDEF0 dijagrama?
 
-Ulazi su desjtva okruženja da dati sistem. Predstavljaju informacije, materijale i druga
+Ulazi su dejstva okruženja da dati sistem. Predstavljaju informacije, materijale i druga
 sredstva koja se u sistemu transformišu u neki izlaz; nešto što se troši
 
 
