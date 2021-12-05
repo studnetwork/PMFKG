@@ -5,28 +5,36 @@ Stavke koje se mogu primeniti na većinu sistema
 Ulazi
 ======
 Informacije od drzavnih institucija (specificno)
+
 Zahtevi korisnika
 
-katalog proizvoda ponudjaca
-model ugovora od ponudjaca
-materijal (roba)
-otpremnica
-faktura
+Konkursna dokumentacija za tender
+Katalog proizvoda ponudjaca
+Zalba na izbor najboljeg dobavljaca
+Model ugovora od ponudjaca
+Materijal (roba)
+Otpremnica
+Odgovor na zahtev za reklamaciju
+Faktura
 
-analiza trzista
+Analiza trzista
 
-dokumentacija za zaposlenje
-zahtev za zaposlenje
+Dokumentacija za zaposlenje
+Zahtev za zaposlenje
 ---------------------------------------------------------
 
-izlazi
+Izlazi
 =======
+Informacije potrebne drzavnim organima
+
 
 Statisticki podaci
 
+Dokumentacija u vezi raspisanog tendera
 Narudzbenica
 Konacan ugovor
 Ugovor sa izabranim dobavljacem
+Zahtev za reklamaciju
 
 Racun
 ---------------------------------------------------------
@@ -34,26 +42,33 @@ Racun
 Mehanizmi
 =========
 
-pribor / oprema
-pomocno osoblje
-ekonomista
-pravnik
+Pribor / oprema
+Pomocno osoblje
+Ekonomista
+Pravnik
 PR
 ---------------------------------------------------------
 
 Kontrole
 =========
-Zakonske odredbe(uopstenje)
+Zakonske odredbe(uopstenje kontrola)
+Standardi
+Zakon o radu
+Prava i obaveze zaposlenih
+
 Zakon o *
 Pojedinacni i kolektivni ugovori(?)
-Zakon o radu
-Pravila rada
-Standardi
 Pravilnik o obavljanju delatnosti *
-Pravilnik * (organizacije,firme,..)
 Finansijski zakoni
 Sistem za evidenciju / DBMS
+
+
+Pravilnik * (organizacije, firme/preduzeca,..) / Politika *
+Pravila rada
+Kriterijumi za izbog dobavljaca
 ---------------------------------------------------------
+
+
 
 Potprocesi
 ==========
@@ -64,10 +79,10 @@ Izvestavanje *
 
 
 Prvi nacin:
-1. Rad sa *
+1. Rad (sa) *
     1.1. Prijem * i dokumentacije
     1.2. Zakazivanje termina
-    1.3. Izdavanje racuna u dokumenata
+    1.3. Izdavanje racuna i dokumenata
 2. Administracija
     2.1 Marketing
     2.2 Finansijska sluzba
