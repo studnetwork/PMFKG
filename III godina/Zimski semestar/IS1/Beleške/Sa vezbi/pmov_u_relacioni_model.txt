@@ -1,0 +1,99 @@
+Stepeni veza poređani po jačini:
+1. 1,1
+2. 0,1
+3. x,N
+
+Za većinu slučajeva se vrši prelaz PK u atribut drugog
+entiteta i onaj ko će dobiti novi atribut se određuje 
+pomoću jačine stepena veze.
+
+---
+
+I     II
+(1,1) (1,N) => PK od II postaje neključni atribut tabele I
+
+(0,1) (1,N) => PK od II postaje neključni atribut tabele I
+
+(0,1) (1,1) => PK od I postaje neključni atribut tabele II
+
+
+(0,1) (0,1) => Proizvoljno se bira entitet čiji će PK postati
+               atribut drugog entiteta
+               
+
+(1,1) (1,1) => Nova tabela. PK može da bude PK iz I ili PK iz II
+               Neključni atributi su svi preostali atributi oba entiteta
+               
+               
+(x,N) (y,M) => Nova tabela. PK predstavlja složeni atribut sačinjen od 
+               PK iz I i PK iz II, kao i PK koji može biti deo same veze
+               (primer: ispitni rok veze prijavljivanje kod prijavljivanja
+               studenta za polaganje nekog predmeta).
+               
+               Neključni atributi su neključni atributi veze (agregacije)
+     
+     
+               x i y su iz {0,1}
+          
+            
+            
+            
+               
+Slabi entitet pri transformaciji u ER dodaje u skup ključnih atributa i
+PK svog jačeg entiteta
+
+
+Svaka specifikacija se transformiše u tabelu čiji su atributi atributi te
+specifikacije, a njen PK ili njegov deo postaje PK njene generalizacije.
+On je ujedno u FK
+
+Napomena: pored PK generalizacije (nadenditeta) specijalizacija uzima i sve
+          ostale identifikatore koji taj nadentitet ima
+
+
+
+
+
+Rekruzivni tip veze
+-------------------
+
+Isti princip kao i sve gore, s tim što se prvo uradi sledeća
+transformacija prikaza:
+
+                    ____(x,y)____
+                   |             |
+                 -----         -----
+                |  x  |       <  y  >
+                 -----         -----
+                   |             |
+                    ----(z,t)----
+                    
+                         ||
+                         ||
+                         \/
+                
+   -----               -----                ----- 
+  |  x  | ---(x,y)--- <  y  > ---(z,t) --- |  x  | 
+   -----               -----                ----- 
+ 
+ 
+ 
+---
+
+ 
+Bitno: PK čine svi atributi koji identifikuju dati entitet. To mogu biti i
+       atributi koji potiču iz nadenditeta, jačeg entiteta ili entiteta koji
+       učestvuje u agregaciji. Takođe, veza može sadržati ključne atribute
+       (kod agregacije; ona može imati kao svoj atribut ključni atribut)
+ 
+        
+Napomena: PK ne mora biti sačinjen samo od jednog atributa. 
+          
+ 
+Napomena: pri dodavanju PK iz jednog entiteta u tabelu drugog kao
+          neključni atribut, taj atribut je u stvari FK
+          
+Napomena: ukoliko se dogodi da se neki PK dodaje kao atribut, a već postoji
+          jer je dodat zbog neke druge veze on se ipak dodaje kao da nije
+          postojao. Tabela će tada imati imati oba primerka tog atributa
+ 
