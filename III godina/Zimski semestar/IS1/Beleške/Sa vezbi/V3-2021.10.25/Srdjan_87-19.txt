@@ -155,6 +155,7 @@ Pravila koja moraju biti zadovoljena kod DTP-a:
 
 7. Svaki tok podataka između dva procesa mora biti imenovan
 
+8. Tok između eksternog objekta i procesa mora biti imenovan  
   
    
    
