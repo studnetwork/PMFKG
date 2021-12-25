@@ -1,0 +1,8 @@
+.card {
+    display: inline-table;
+    padding: 20px;
+}
+
+table, td {
+    border: 1px solid black;
+}
