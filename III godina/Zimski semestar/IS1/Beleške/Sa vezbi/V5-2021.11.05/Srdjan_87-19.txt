@@ -32,7 +32,7 @@ okruženja  koje treba modelovati
 
 
 `Da bi se obezbedio precizan opis prirode podatka i način na 
-koji se oni koriste, potrebno je prizvesti jasan model koji
+koji se oni koriste, potrebno je proizvesti jasan model koji
 nije striktno tehničke prirode.` 
 
 Primer takvog modela je MOV (model objekti-veze)
@@ -151,7 +151,8 @@ prostih atributa
 
 
 
-Veze se predstavljaju linijama između objekata, na kojima se nalaze rombovi pored kojih se imenuje sama veza. To ime
+Veze se predstavljaju linijama između objekata, na kojima se 
+nalaze rombovi pored kojih se imenuje sama veza. To ime
 oslikava sematiku povezanosti između objekata
 
 
@@ -233,7 +234,7 @@ mora odmah da stigne, a jedna narudžbenica može imati najviše jednu
 otpremnicu
 
 
-Otpremnica može imati tačno jednu narudžbenicu
+Otpremnica može (mora) imati tačno jednu narudžbenicu
 
 
 
@@ -277,7 +278,7 @@ Pored svega što sadrži MOV, sadrži i:
 Klasifikacija je stvrstavanje nekog objekata u određenu grupaciju
 
 
-`Generalizacija je apstrakcija u kojo se skup sličnih tipova objekata
+`Generalizacija je apstrakcija u kojoj se skup sličnih tipova objekata
 predstavlja opštim generičkim tipom`
 
 Primer generalizacije:
@@ -300,7 +301,7 @@ Primer specijalizacije:
     
     
 
-Specifikacija se na dijagramu označava tako što se u robu veze
+Specifikacija se na dijagramu označava tako što se u rombu veze
 u kojoj dolazi do specifikacije napiše "S"
 
 
@@ -329,7 +330,7 @@ između njega sa nekim drugim entitetom može da postoji
 
 Primer:
     Entiteti profesor i predmet formiraju agregatnu tabelu
-    Nastavni_plan. To formira novi enditet i onda između tog
+    Nastavni_plan. To formira novi entitet i onda između tog
     enditeta i entiteta Student moguće je formirati novu
     vezu "Pohađa"
     
