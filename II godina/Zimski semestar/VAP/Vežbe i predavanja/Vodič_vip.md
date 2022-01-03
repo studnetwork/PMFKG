@@ -3,8 +3,8 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-[Link ka materijalu][v-folder]  
-[Termin 10: Rešenja zadataka iz "Zadaci - R.pdf"][v-fajl-1]  
+
+[//]: # ([Link ka materijalu][v-folder]  )
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -81,6 +81,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Vezbe napomene reference )
+
 [v-n-1]: place.holder
 
 
@@ -102,13 +103,14 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Predavanje napomene reference )
+
 [p-n-1]: place.holder
 
 
 
 [//]: # ( Ostalo reference )
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=215
 
 
 
