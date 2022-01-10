@@ -62,7 +62,7 @@ class Node:
 
 # Search algorithms
     
-def graph_search(problem, open_nodes):
+def graph_search(problem, open_nodes, optimize = False):
     
     explored_states = [problem.initial]
     open_nodes.append(Node(problem.initial))
@@ -83,7 +83,7 @@ def graph_search(problem, open_nodes):
                 explored_states.append(new_node.state)
 
             # Postojece stanje, optimizacija puta
-            else:
+            elif optimize:
                 open_nodes.append(new_node)
                 old_node = open_nodes.find(lambda x: x.state == new_node.state)
 
@@ -99,4 +99,4 @@ def bfs(problem):
     return graph_search(problem, Queue())
 
 def a_star(problem, h):
-    return graph_search(problem, Queue(lambda x: x.path_cost + h(x)))
+    return graph_search(problem, Queue(lambda x: x.path_cost + h(x)), optimize=True)
