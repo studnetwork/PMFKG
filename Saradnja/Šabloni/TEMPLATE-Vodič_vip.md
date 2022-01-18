@@ -4,7 +4,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
 
-[//]: # ([Tekst linka][v-fajl-1])
+[//]: # ([Tekst linka][v-folder-1])
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -25,7 +25,7 @@ Linkovi ka snimcima konsultacija:
 ## Predavanja
 Linkovi do resursa koji se odnose na predavanja  
 
-[//]: # ([Tekst linka][v-fajl-1])
+[//]: # ([Tekst linka][p-folder-1])
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -65,6 +65,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Vezbe reference )
 
+[v-folder-1]: place.holder
+
 
 [//]: # ( linkovi na fajlovima )
 
@@ -102,11 +104,13 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Vezbe napomene reference )
+
 [v-n-1]: place.holder
 
 
 [//]: # ( Predavanje reference )
-[p-fajl-1]: place.holder
+
+[p-folder-1]: place.holder
 
 
 [//]: # ( linkovi na fajlovima )
@@ -142,6 +146,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 
 [//]: # ( Predavanje napomene reference )
+
 [p-n-1]: place.holder
 
 
