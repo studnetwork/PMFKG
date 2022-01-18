@@ -43,9 +43,10 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 
 [VSCodium][vscodium]
 
-[Mastering Markdown][mastering markdown]  
-[Markdown Cheatsheet][markdown cheatsheet]  
-[Markdown Editor][markdown editor]
+[Anki][anki] | [Anki (F-Droid)][anki fdroid]  
+[Anki tutorial (YT)][anki tut yt] | [Anki tutorial (Invidious)][anki tut invidious]
+
+[Mastering Markdown][mastering markdown] | [Markdown Cheatsheet][markdown cheatsheet] | [Markdown Editor][markdown editor]
 
 # Saradnja
 Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
@@ -106,6 +107,10 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [gh client official]: https://desktop.github.com/ 
 [gh client linux]: https://github.com/shiftkey/desktop
 [vscodium]: https://github.com/VSCodium/vscodium
+[anki]: https://apps.ankiweb.net/
+[anki fdroid]: https://f-droid.org/en/packages/com.ichi2.anki/
+[anki tut yt]: https://www.youtube.com/watch?v=WmPx333n5UQ
+[anki tut invidious]: https://invidious.kavin.rocks/watch?v=WmPx333n5UQ
 [mastering markdown]: https://guides.github.com/features/mastering-markdown/
 [markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [markdown editor]: https://github.com/retext-project/retext
