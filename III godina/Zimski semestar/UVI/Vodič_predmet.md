@@ -4,7 +4,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Kolokvijumi
 Rešenja kolokvijuma raspoređena po godinama
 
-[//]: # ([Link ka folderu Kolokvijumi][kolokvijumi])
+[Link ka folderu Kolokvijumi][kolokvijumi]
 
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, kao i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
