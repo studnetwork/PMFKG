@@ -3,38 +3,44 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
-[1. termin : rešenja zadataka sa prezentacije][v-fajl-1]  
-[2. termin : rešenja zadataka sa prezentacije][v-fajl-2]  
-[3. termin : rešenja zadataka sa prezentacije][v-fajl-3]  
+
+[Anki_flashcards][v-folder-1]
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
 
-[//]: # (1. [Lekcija 1][v-lekcija-1] `Tema vežbi`)
+[//]: # (1. [Lekcija 1][v-lekcija-1] `Tema vežbi`  )
+
+[//]: # (2. [Lekcija 2][v-lekcija-2] `Tema vežbi`  )
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
 
 [//]: # (1. [Konsultacije 1][v-konsultacije-1] `Tema konsultacija`  )
 
+[//]: # (2. [Konsultacije 2][v-konsultacije-2] `Tema konsultacija`  )
 
 ### Napomene
 
 ## Predavanja
 Linkovi do resursa koji se odnose na predavanja  
 
-[Anki flashcards][anki]
+[//]: # ([Tekst linka][p-folder-1])
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
 
 [//]: # (1. [Predavanje 1][p-lekcija-1] `Tema predavanja`  )
 
+[//]: # (2. [Predavanje 2][p-lekcija-2] `Tema predavanja`  )
+
 
 ### Konsultacije
 Linkovi ka snimcima konsultacija:  
 
 [//]: # (1. [Konsultacije 1][v-konsultacije-1] `Tema konsultacija`  )
+
+[//]: # (2. [Konsultacije 2][v-konsultacije-2] `Tema konsultacija`  )
 
 ### Napomene
 
@@ -59,12 +65,13 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Vezbe reference )
 
+[v-folder-1]: ./Anki_flashcards
+
 
 [//]: # ( linkovi na fajlovima )
 
-[v-fajl-1]: ./v_1_resenja_primera.md
-[v-fajl-2]: ./v_2_resenja_primera.txt
-[v-fajl-3]: ./v_3_resenja_primera.md
+[v-fajl-1]: place.holder
+
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
 
@@ -103,7 +110,8 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Predavanje reference )
 
-[anki]: ./Anki_flashcards
+[p-folder-1]: place.holder
+
 
 [//]: # ( linkovi na fajlovima )
 
@@ -145,7 +153,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Ostalo reference )
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=35
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=499
 
 
 
@@ -153,4 +161,4 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 [pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja
+
