@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 
 INSERT INTO `players` (`id`, `name`, `position`, `rating`, `team_id`, `buff_id`) VALUES
 (1, 'player 1', 'forward', 84, 1, NULL),
-(2, 'player 2', 'back', 86, 1, 2),
+(2, 'player 2', 'back', 84, 1, 2),
 (3, 'player 3', 'center', 92, 1, 3),
 (4, 'player A', 'front', 94, 2, 1),
 (5, 'player B', 'center', 80, 2, NULL),
