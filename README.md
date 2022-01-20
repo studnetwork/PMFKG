@@ -23,13 +23,11 @@
 Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
 
 # Linkovi ka materijalu
-[Prva godina - Zimski semestar][prva-zimski]  
-[Prva godina - Letnji semestar][prva-letnji]  
+Prva godina: [Zimski semestar][prva-zimski] | [Letnji semestar][prva-letnji]  
 
-[Druga godina - Zimski semestar][druga-zimski]  
-[Druga godina - Letnji semestar][druga-letnji]  
+Druga godina: [Zimski semestar][druga-zimski] | [Letnji semestar][druga-letnji]  
 
-[Treća godina - Zimski semestar][treca-zimski]  
+Treća godina: [Zimski semestar][treca-zimski]  
 
 [//]: # ([Treća godina - Letnji semestar][treca-letnji]  )
 
@@ -38,8 +36,7 @@ Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragu
 [Stranica fakulteta][stranica fakulteta]  
 [Stranica instituta za matematiku i informatiku][imi stranica]  
 
-[GitHub Client - Windows ili macOS][gh client official]  
-[GitHub Client - Linux][gh client linux]
+GitHub Client: [Windows ili macOS][gh client official] | [Linux][gh client linux]
 
 [VSCodium][vscodium]
 
