@@ -1,0 +1,7 @@
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\bin\Debug\tezi.exe.config
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\bin\Debug\tezi.exe
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\bin\Debug\tezi.pdb
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\obj\Debug\tezi.csproj.AssemblyReference.cache
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\obj\Debug\tezi.csproj.CoreCompileInputs.cache
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\obj\Debug\tezi.exe
+C:\Users\Name\Documents\Projects\DS\Vezbe\Popravni\I-2021-2021\tezi\tezi\obj\Debug\tezi.pdb
