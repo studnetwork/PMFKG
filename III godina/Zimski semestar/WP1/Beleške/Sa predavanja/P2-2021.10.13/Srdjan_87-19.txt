@@ -38,7 +38,7 @@ Sintaksa za komentare:
 // sintaksa za komentar u jednoj liniji
 # drugi primer sintakse za komentar u jednoj liniji
 /*
-   vise
+   vise-
    linijski
    komentar
 */
@@ -161,7 +161,7 @@ Primer:
 
     
 Static scope
-- klučnom rečju static se lokalna promenljiva označava kao statična
+- ključnom rečju static se lokalna promenljiva označava kao statična
 - statična promenljiva ostaje u memoriji i nakon izlazka iz funkcije
 
 
@@ -303,7 +303,7 @@ bilo kog tipa
 
 Ključ će biti konvertovan u intedžer ukoliko:
 - je string koji sadrži validan decimalan broj koji ne počinje sa +
-- je float (razlomački deo se odbacuje i uzima se samo ceo deo)
+- je float (decimalni deo se odbacuje i uzima se samo ceo deo)
 - je boolean; true se konvertuje u 1, a false u 0
 - ...
 
@@ -410,7 +410,7 @@ Konstante su nazivi prostih vrednosti koje se ne mogu menjati
 
 Pišu se bez $ oznake na početku
 
-Globalne su
+Globalne su.
 
 Definišu se sa:
     define("naziv", vrednost, isCaseInsensitive)

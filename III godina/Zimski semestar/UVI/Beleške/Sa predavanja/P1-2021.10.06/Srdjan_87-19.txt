@@ -34,7 +34,7 @@ se slali signali između takvih neurona
 Za zvanični začetak veštačke inteligencije smatra se letnja
 radionica na Dartmouth Collage-u čija je ideja bila 
 okupljanje istraživača iz oblasti vešatačke inteligencije
-na 2 meseca radi razmenjivanja ideja. Rezultat te redionice
+na 2 meseca radi razmenjivanja ideja. Rezultat te radionice
 je bio termin veštička inteligencija
 Njege posledice bila su velika očekivanja
 
@@ -62,7 +62,7 @@ ekspertnih sistema. Prvi je bio R1 u DEC-u 1982. i namena mu
 je bila konfigurisanje komponenti računara
 
 
-Istraživači se okreću metodama koje su inspirisani prirodom
+Istraživači se okreću metodama koje su inspirisane prirodom
 To se pokazalo kao ispravan pravac razmišljanja
 
 
@@ -151,10 +151,10 @@ ispitivača smatralo bi se da je prošao test.
 
 Da bi računar zavarao ispitivača potrebno je da poseduje
 sledeće sposobnosti:
-- predstavljanje znanja
-- zaključivanje
-- obrada prirodnog jezika
 - mašinsko učenje
+- obrada prirodnog jezika
+- zaključivanje
+- predstavljanje znanja
 
 
 Potpuni Tjuringov test zaheva i:
@@ -328,8 +328,8 @@ Okruženje zadatka su problemi za koje agenti predstavljaju rešenje
 Okruženje u kome agent deluje i okruženje zadatka nisu isto.
 
 
-Okruženje zadatka čine mere performanse agenta, (fizičko) okruženje,
-senzori i aktuatori 
+Okruženje zadatka čine mere performanse agenta, okruženje
+(ono na šta deluje), senzori i aktuatori 
 
 
 
@@ -345,7 +345,7 @@ ili skraćeno PEAS
 E u PEAS predstavlja okruženje. To se odnosi na skup entiteta na 
 na koje taj agent deluje / utiče i entiteta koji mogu da utiču
 na njega. Nije reč o njegovoj fizičkoj okolini, tj. entitetima
-koji ga okružuju
+koji ga okružuju u fizičkom svetu
  
 
 [ Мoguće pitanje na usmenom delu ispita:
@@ -357,9 +357,12 @@ Dati PEAS opis za dati primer agenta
 
 U primeru automatizovanog taksija deo okruženja predstavlja i 
 mušterija.
-Neki od aktuatora su: [? mikrofon za primanje komandi od strane 
-mušterije,] ekran na kome bi se klijentu saopštavale informacije o
+
+Aktuatori: ekran na kome bi se klijentu saopštavale informacije o
 putovanju
+
+Senzori: mikrofon za primanje komandi od strane 
+mušterije
 
 
 

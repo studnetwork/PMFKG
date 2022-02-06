@@ -63,8 +63,8 @@ postoje i njhovi ekvavilenti zapisani u prirodnom jeziku:
 
 
 Operatori konkatanacije:
-.
-.=   # konkatanacija + dodela
+    .
+    .=   # konkatanacija + dodela
 
 
 
@@ -77,7 +77,8 @@ Primeri konverzije tipova korišćenjem + i . operatora:
     
 
     
-# vraća true ako imaju iste key/value parove
+# vraća true ako imaju iste key/value parove 
+# (za dati key, vrednost dobijena evaluacijom je ista)
 $niz1 == $niz2 
 
 
@@ -137,9 +138,8 @@ komande echo:
     
     
 Sadržaj koje je u datom primeru predstavljen kao komentar
-će biti ispisan / prikazan samo ukoliko je uslov
-ispunjen (u datom primeru će uvek biti jer je uslov uvek 
-tačan)
+će biti ispisan / prikazan samo ukoliko je uslov ispunjen 
+(u datom primeru će uvek biti jer je uslov uvek tačan)
 
 
 
@@ -289,7 +289,7 @@ prethodnom primeru;
     }
     
     foreach($arr as $key => $value) {
-        echo "{$key} => {$value} ";
+        echo "{$key} => {$value}";
         print_r($arr);
     }
     
@@ -338,9 +338,9 @@ radilo sa referencama
 
 
 
-Takođe, u ovom primeru se demonstrira još jedna stvar. To 
-je evaluacija promenljive unutar stringa:
-     echo "{$key} => {$value} ";
+Takođe, u ovom primeru se demonstrira još jedna mogućnost PHP.
+To je evaluacija promenljive unutar stringa:
+     echo "{$key} => {$value}";
 
 Ovaj način zapisivanja može biti koristan kada postoji nešto
 u stringu nakon date promenljive što bi uticalo na parsiranje.
@@ -360,7 +360,7 @@ Primer iteriranja while-om kao što se to radi foreach-om
     # ovo je deprecated; each je ukinuto u verziji 8
     # while( list(, $value) = each($arr) ) 
     
-    while( $value = current($arr) ) {
+    while( $value = current($arr) ) { # nova verzija
         next($arr);
         echo "Value: $value <br>";
     }
@@ -368,7 +368,7 @@ Primer iteriranja while-om kao što se to radi foreach-om
     
 Funkcija current vraća element na kome se pokazivač trenutno
 nalazi, dok funkcija next pomera taj pokazivač na sledeći
-element u nizu
+element u nizu (tacnije, rec je o iteratoru)
 
 
 
@@ -377,9 +377,7 @@ Primer sa uzimanjem i ključa i vrednosti:
     $arr = array("one", "two", "three");
     reset($arr);
     
-    while( list($key,$value) 
-        = array( key($arr), current($arr) )
-    ) {
+    while( list($key,$value) = array( key($arr), current($arr) ) ) {
         echo "Key: $key; Value: $value <br>";
         
         # izlazi se sa break na ovaj način zbog list
@@ -409,11 +407,12 @@ Primer kreiranja multidimenzionog niza:
 break radi slično kao u drugim jezicima s tim što ima i jedan
 dodatak. Ukoliko se pored njega navede i broj onda će izaći
 iz tolikog broja petlji:
-    while(true)
+    while(true) {
         $i = 0;
         while(true) {
             echo ++$i;
             echo "<br>";
             break 2;
         }
+    }
     echo "kraj";
