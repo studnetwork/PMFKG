@@ -1,0 +1,236 @@
+Datum održavanja: 19.11.2021
+Predavač: Višnja Simić
+Čas: 6
+=====================================
+
+ 
+Učenje mašine da igra šah, ideje:
+1. igra kao čovek (ne može, nerelano)
+2. if-then, izlistaju se pravila i onda se bira ono sa
+   najvišim prioritetom (uspešno bilo za neke igre)
+3. vrši se procena unapred, koja od mogućnosti je najbolja.
+   Formira se funkcija koja procenjuje na osnovu nekih svojstava igre
+   Ona se jos naziva funkcija vrednovanja stanja (statička
+   vrednost stanja)
+   Govori o tome "koliko smo u toj igri dobri""
+   
+   Svakom svojstvu moze da se dodeli težina:
+   w1*f1 + w2*f2 + w3*f3 + ... + wn*fn
+
+4. pretraga, neinformisana; dok se ne pronađe rešenje
+   (veoma puno vremena je potrebno za razvijanje stabla)
+   
+   b^d čvorova na dubini d
+   
+   Šah kada se razvije ima 10^120 
+   "Užasno veliko pretraživanje"
+   
+
+Opcija koja preostaje je razvoj stabla do neke dužine, do 
+koje je moguće za datu situaciju
+
+
+
+Pretraživanje sa suprodstavljanjem
+----------------------------------
+
+
+Uticaj drugih agenata je nepredvidiv
+
+Igranje igara predstavlja kompetetivno okruženje u kome agenti
+imaju suprodstavljene ciljeve
+
+
+Min-Max metod (Minmax algoritam)
+--------------------------------
+
+U čvoru se nalazi igra koji vrši odlučivanje, tj. čija pozicija
+se posmata. Prolazak kroz stablo zavisi od 2 agenta.
+
+
+Jedan utiče na svaki paran odabir, a drugi na svaki neparan
+
+
+Obično je onaj čija se pozicija gleda max, tj. agent koji za 
+cilj ima da maksimizira svoju dobit. Ono što se na kraju odabere
+predstavlja koliko će taj agent dobiti / izgubiti u toj igri
+(tj. statičku vrednost stanja (?))
+
+Drugi agent, neželeći da izgubi, gleda da minimizira dobit 
+prvog agenta. Zbog toga bira opcije (ukoliko pretpostavimo da je 
+taj agent nepogrešiva, tj. najgoru moguću situaciju) koje su
+pogodnije za njega, odnosno one opcije koje će mu prouzrokovati
+najmanju štetu
+
+   x    # max
+ z   y  # min
+2 7 1 8 # max
+
+
+Ukoliko je vrednost jedne grane već određena(2), nije potrebno 
+potpuno proveriti drugu granu(y) jer ukoliko je vrednost prve grane
+veća od leve vrednosti iz druge(1) onda nema potrebe za proverom
+desne vrednosti druge grane(8) jer će min sigurno izabrati ili tu 
+proverenu vrednost(1) ili će izabrati manju ukoliko postoji. To bi 
+značilo da max odmah može da zna da mu ova grana(y) nije isplativa 
+pa će moći tu da stane sa proverom i da izabere isplativiju granu(z)
+
+
+Nulta ili konstantna suma:
+     1   0
+     0   1
+    1/2 1/2
+
+   
+Čvor koji je min vraća minimum vrednosti svoje dece, dok max vraća 
+njihov max (odnosi se na akciju kada je neki od igrača na potezu)
+
+
+
+   
+
+   x    # max
+ z   y  # min
+2 7 1 8 # max
+
+
+Minimax(x) = max( min(2,7), min(1,8) )
+
+
+Jedna od notacija:
+- maksimajzer: trougao sa dva ugla u donjoj polovini
+- minimajzer: trougao sa dva ugla u gornjoj polovini
+
+
+
+m - dubina stabla pretraživanja
+b - faktor grananja igre
+
+Prostorna složenost: O(bm)
+Vremenska složenost: O(b^m)
+
+
+---
+
+
+Formiranje saveza
+-----------------
+
+Igrači igraju jedan za drugim. Nema naizmenične izmene dva igrača i
+minimajzera ili maksimajzera, već svaki igrač gleda da ostvari što veću
+dobit. 
+
+Ukoliko je dobit za bilo koji potez ista on može da odluči sa kojim
+igračom će da stupi u savez 
+
+
+Igre koje uključuje element slučajnosti (stohastičke igre)
+----------------------------------------------------------
+
+Ukoliko ishod poteza ima neku verovatnoću onda se povoljno stanje računa
+tako što se sa tom verovatnoćom pomnoži vrednost za svaku granu, a nakon
+toga se sve to sabere. Dobijena vrednost će predstavljati 
+vrednost/korisnost izbora "datog poteza
+
+
+Dodat i čvor šanse (to je ovo gore)
+
+
+
+Alfa-beta odsecanje
+-------------------
+
+
+Alfa-beta odsecanje predstavlja poboljšanje minimax algoritma. 
+Koristi optimizaciju koja je prethodno spomenuta kako bi se
+smanjili prostor i vreme koji su potrebni za minimax
+
+Rezultat je isti kao kod minimax-a, pretraga je samo optimalnija
+
+alfa = vrednost najboljeg poteza za MAX igrača, tj. garantovana najbolja
+       vrednost koju MAX može da dobije
+beta = vrednost najboljeg poteza za MIN igrača, tj. garantovana najbolja
+       vrednost koju MIN može da dobije
+
+
+max moze da ima alfa ili vise
+min moze da ima beta ili manje
+
+
+Cilj je uvećavanje alfe i smanjene bete
+
+
+
+Oni ce se u jednom trenutku susresti
+
+
+
+Odsecanje se vrši kada je alfa >= beta (sa neta)
+
+
+Na potezu
+    MIN: odsecanje ako je beta <= alfa (tj. alfa >= beta) (?)
+    MAX: odsecanje ako je alfa > beta (?)
+
+
+
+Radi se tako što se krene od listova i onda se redom menjaju
+alfa i beta za svaki nadčvor. Kreću sa alfa=-beskonačno i 
+beta=beskonačno, i onda se proverava da li je odnos između
+alfa i beta narušen, ako nije proverava se sledeći podčvor.
+Kada se to završi odluči se grana pa se ide na gore i tako
+sve dok se ne dođe do korena
+
+
+
+
+Grana se odseca kada se zna da protivnik već ima u povoljniji
+potez od nekog poteza koji trenutni igrač ima u drugoj grani.
+
+
+
+MAX dobija od leve podgrane neku vrednost i to mu predstavlja
+minimalanu vrednost koju može da dobije, ali on ide dalje 
+i proverava da li može dobiti više 
+
+
+
+U suštini, onaj ko igra gleda da li neka njegova grana
+može da mu pruži bolji rezultat. Ako jednu prođe, a 
+drugu započene i primeti u drugoj da ona pruža pogodnije 
+stanje za protivnika onda neće biti potrebe da se odredi
+koliko tačno je loša ta druga opcija jer odmah zna da neće
+ići kroz granu u kojoj se te opcije nalaze (jer će protivnik
+sigurno birati tu vrednost, osim ako druga opcija nije još i 
+gora od prve). Pri svakom produbljivanju se prvo provere 
+roditelji, pa se onda proverava srodni čvor
+
+
+
+Ušteda zavisi od redosleda posećivanja sledbenika.
+
+Može doći do maksimalnog broja odsecanja, ali 
+može se doći i do situacije da se ne izvrši ni 
+jedno. 
+
+
+Za MAX čvorove, najbolje je ako se prvo posećuje
+sledbenik sa najvećom statičkom vrednošću, tako
+da se vreme ne troši na ostatak potomaka koji
+su sigurno lošiji
+
+
+Za MIN čvorove, najbolje je ako se prvo posećuje
+sledbenik sa najmanjom statičkom vrednošću 
+
+
+
+To omogućava da se sa istim resursima ode duplo
+dublje u pretragu jer je kod minimax-a broj procena b^d,
+a kod alfa-beta b^(d/2)
+
+
+
+Kada MIN bira, sledbenici trebaju biti raspoređeni u neopadajućem poretku,
+dok kada MAX bira sledbenici trebaju da budu u nerastućem poretku
+

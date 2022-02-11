@@ -1,0 +1,374 @@
+Datum održavanja: 25.11.2021
+Predavač: Višnja Simić
+Čas: 7
+=====================================
+
+Algoritam stabla odlučivanja
+
+
+
+Program
+slika jabuke -> [] -> "apple"
+
+
+
+Svaki skup pravila bi mogao da bude nadigran ulazom koji
+ne zadovoljava ni jedno pravilo
+
+
+
+Potreban algoritam koji će na osnovu velikog broja slika sam odrediti
+pravila koja važe za klasifikaciju voća po vrsti
+
+
+
+Cilj: pravljenje modela koji može da vrši predikciju
+
+Dobija se treniranjem, a ono se vrši primenom algoritma
+mašinskog učenja
+
+
+Algoritam mašinskog učenja je procedura koja se primenjuje da bi se 
+naučio model mašinskog učenja naučio da daje određenu predikciju
+
+
+Kljucna komponenta su podaci
+
+
+$#
+Trening skup su poznati podaci iz kojih algoritam može da uči
+#$
+
+$#
+Označeni podaci su podaci koji imaju labelu
+
+
+Labela predstavlja rezultat, izlaz, tj. ono što je 
+potrebno odrediti nakon treniranja kod neoznačenih podataka
+
+Ona predstavlja output klasifikatora 
+#$
+
+
+
+Težina i tekstura su atributi/svojstva.
+
+Moraju biti dobro odabrani
+
+
+$#
+Klasifikator je onoliko dobar koliko je dobar odabir atributa
+na osnovu kojih se klasifikacija vrši
+#$
+
+
+Ulazi se saštoje iz više svojstava
+
+
+$#
+Svaki red u trening tabeli podataka se naziva primerom za učenje
+(kaže se još i skup podataka za obuku)
+#$
+
+
+
+Što je veći broj podataka to će klasifikator bolje raditi
+
+
+
+scikit radi sa brojevima, ako je vrednost atributa string onda se 
+prvo moraju šifrovati/kodirati. Labele se takođe kodiraju
+
+ 
+
+
+Treniranje klasifikatora Decision tree
+
+
+
+$#
+Klasifikator je model koji određuje kojoj klasi pripada primer koji mu 
+je doveden na ulazom. Tačnije, dovode mu se atributi primera
+#$
+
+
+Algoritam mašinskog učenja se primenjuje za rešavanje zadatka mašinskog 
+učenja u cilju formiranja modela mašinskog učenja
+
+
+
+.DecisionTreeClassifier() se nalazi u tree iz sklearn
+nema model, prazno je, samo navodi šta se koristi
+
+
+
+
+
+Decision tree - donosi odluke na osnovu odgovora na pitanja
+(koje se formira kao stablo; da/ne)
+
+
+To stablo (stablo odlučivanja) je u stvari niz pravila 
+
+
+
+Proces učenja je proces u kome se stvara model
+
+
+$#
+Prediktor / hipoteza - neki od naziva za model
+#$
+
+
+x = tree.DecisionTreeClassifier()
+
+x = x.fit(atributi,labele) # metod sprovodjenje učenja
+
+
+Ovo do sada je ono što se naziva "Supervišed Learning"
+
+
+Ovakvo učenje čine 3 koraka:
+1. skupljanje trening podataka
+2. treniranje klasifikatora
+3. iskorišćenje klasifikatora
+
+
+
+x.predict([[160,0]])
+
+
+
+Javni data set Iris - skup koji uključuje 3 vrste irisa
+
+
+
+
+
+Stablo odlučivanja je dijagram oblika stabla koji se koristi
+za utvrđivanje toka akcija u procesu odlučivanja
+
+
+$#
+Čvorovi koji nemaju grane su čvorovi lištovi i u njima se
+zna kojoj klasi pripada dati primer
+#$
+
+
+
+Stablo odlučivanja je najjednostavniji mehanizam za klasifikaciju
+i regresiju
+
+
+$#
+Regresija - dodeliti primeru numericku vrednost kroz rad modela
+primer: određivanje na osnovu broja, soba, kupatila, itd cenu
+kuće. Izlaz modela može imati beskonačan broj mogućih vrednosti
+
+
+Ono što je dobro kod stabla odlučivanja je to što se na osnovu
+njih mogu generisati pravila. Rezultat rada stabla odlučivanja
+je ljudima razumljiv. Nema blackbox odlučivanja kao što je to 
+slučaj kod neuronskih mreža. Zbog toga su npr. primenljiva u
+medicini
+
+
+Još jedna od dobrih osobina je to što je baza znanja
+koja se može formirati od ovog modela proširiva. Moguće
+je kasnije dodati ekspertsko znanje kako bi se dopunio
+dati sistem za odlučivanje
+
+
+Primer explainable sistema odlučivanja
+#$
+
+
+$#
+Na svakom čvoru odluke testira se po jedan atribut.
+#$
+
+Čvor list daje rezultat klasifikacije
+
+$#
+Svaka grana odgovara jednoj od mogucih vrednosti atributa
+koji je testiran u tom čvoru
+#$
+
+
+Konačna odluka koje je doneo model stabla jeste putanja od 
+korenog čvora, preko nekih čvorova odluke, do nekog čvora lista
+
+
+
+Atributi mogu biti različitih tipova:
+- binarni (yes/no, male/female)
+- diskretni (jedna konkretna vrednost)
+- kontinualni (imaju neku realnu vrednost)
+
+
+
+$#
+Cilj obučavanja stabla odlučivanja: formiranje najmanjeg
+mogućeg stabla odlučivanja "i pri tome se rekruzivno 
+najznačajniji atribut bira kao koren stabla odnosno podstabla"
+
+
+Cilj je u stvari da se sa što manje tih pitanja klasifikuje
+što veći broj primera
+#$
+
+
+Pored najboljeg odabira atributa, potrebno je odabrati i
+njegov prag, zbog čega su numerički atributi komplikovaniji
+za klasifikaciju
+
+
+To se ponavlja i za podstabla 
+
+
+Stabla koja se formiranju na ovaj način se nazivaju:
+Top Down Induction of Decision Trees
+
+
+Neki konkretni algoritmi: ID3, CART, C5, ...
+
+Razlike: da li podržavaju regresiju, klasifikaciju, oba, ...
+
+
+
+$#
+Test je bolji ako se njime što više primera svrstava u
+homogene grupe
+#$
+
+
+Meri koliko dobro dati atribut razdvaja trening primere prema
+ciljanoj klasifikaciji
+
+$#
+Onaj atribut koji ima bolje informaciono poboljšanje od nekog
+drugog je atribut čijom se primenom (odabirom) dobijaju podskupovi 
+osnovnog skupa koji su delimično ili potpuno homogeni
+#$
+
+$#
+Entropija predstavlja meru homogenost (uređenosti; "bolje bi bilo 
+da ovde stoji neuređenost jer ima najmanju vrednost kada je skup 
+uređen") skupa podataka
+
+
+
+Skup pozitivnih primera: oni za koje je odluka True
+Skup negativnih primera: oni za koje je odluka False
+
+
+Ako je S skup pozitivnih i negativnih primera, entropija
+skupa S, u odnosu na binarnu klasifikaciju primera, je:
+    Entropy(S) = -( poz * log_2(poz) + neg * log_2(neg) )
+    
+    
+    
+    
+Kada su svi primerci svrstani u jednu klasu onda je entropija = 0
+
+
+
+Ako je ciljna funkcija može uzeti neku od c različitih
+vrednosti onda je entropija od S:
+
+    Entropy(S) = Sum_(i=1)^c -p_i * log_2(p_i)
+    
+    gde je p_i udeo primera iz s koji pripadaju klasi i
+    
+    
+Maksimalna vrednost entropije je u ovom slučaju log_2(c)
+
+
+Gornja formula slično izgleda kao binarna formula, s tim
+što ima onoliko tih proizvoda koliko ima i kategorija
+
+
+Kada je 50/50 onda je entropija = 1
+
+#$
+
+
+
+Poštoje različite mere za odabir najboljeg atributa.
+Primeri 2 takve mere koje ćemo izučavati su:
+- information gain
+- GINI  
+
+
+Na osnovu njih se meri "kvalitet" atributa
+
+
+
+Information gain
+(informaciono poboljšanje)
+--------------------------
+ 
+$#
+Informaciono poboljšanje predstavlja očekivano umanjenje 
+entropije (neuređenosti skupa) nakon što se trening primeri
+razvrstaju po vrednostima atributa za koji se računa  
+informaciono poboljšanje
+
+
+    Gain(S,A) = Entropy(S) - Sum_(v e Values(A)) |S_v|/|S|*Entropy(S_v)
+    
+    
+|S_v|/|S| predstavlja procenat primera koji ide u skup S_v    
+    
+Skupova S_v ima onoliko koliko ima vrednosti skupa A
+#$
+
+
+[ na testu 
+    
+Slično kao zadatak sa vampirima: određivanje informacionog
+poboljšanja i formiranje stabla odlučivanja "na ruke". Logaritmi
+neće morati da se računa ju već će biti data njihov rezultat/izračuna to
+]
+
+
+
+Kada se izvrši grananje kod koga postoji više grana koje se dalje
+trebaju testirati, zadatak se rešava tako što se te dve grane
+dalje testiraju kao odvojeni primeri, posebno
+
+
+
+
+
+
+Gini indeks ili Gini impurity
+------------------------------
+
+Formula:
+    Za svaki od k atributa se izračunava:
+    G_k = 1-Sum_(i=1)^c P_i^2
+    
+    
+P_i je udeo instaci klase među ostalim instancama
+(k-tog čvora)
+
+
+Max za gini je 0.5
+
+
+[ za test
+
+gini indeks neće biti na testu {47:50}
+]
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,407 @@
+Datum održavanja: 04.11.2021
+Predavač: Višnja Simić
+Čas: 5
+=====================================
+
+Mere performansi algoritama pretrage:
+- potpunost: govori o tome da li će algoritam garantovano
+             pronaći rešenje ukoliko ono postoji
+- optimalnost: da li je rešenje optimalno
+- vremenska složenost: koliko vremena treba da se rešenje 
+                       pronađe
+- prostorna složenost: koliko je memorije potrebno da bi se
+                       pretraga izvršila
+
+
+
+                       
+Određivanje složenosti algoritma u odnosu da veličinu ulaza.
+Predstavljaćemo je sa f(n), tj. broj koraka koji će algoritam 
+izvršiti za određeni ulaz
+
+
+
+Jedan isti algoritam može imati različita vremena izvršavanja
+za različite ulaze. Zbog toga se pri analiziranju algoritma
+razmatraju najbolje i najgore vreme izvršenja algoritma.
+
+
+
+
+Za analizu vremena izvršenja algoritma razmatra se samo 
+najgori slučaj. Bitno je samo da se zna koja je gornja 
+granica vremena izvršavanja, jer će u ostalim slučajevima
+vreme izvršenja biti kraće.
+
+
+
+Veliko O notacija
+-----------------
+
+O(n) predstavlja složenost algoritma za najveći broj vrednosti
+n i jednaka je proizvodu neke konstante sa n
+(sa izuzetkom početnih manjih vrednosti)
+
+
+---
+
+
+Složenost algoritma i složenost problema nisu isto
+
+
+Složenost problema predstavlja vreme koje je potrebno da se
+primenom algoritma na problem dobije rešenje
+
+
+
+
+Problemi se po složenosti dele na:
+- P klasu problema: problemi koji se mogu rešiti u polinomnom 
+                    vremenu (vreme izvršavanja alg. je O(n^k))
+- NP klasu problema: problemi koji se mogu rešiti 
+                     nedeterministički u polinomnom vremenu
+                    
+                     (pretpostavi se šta bi moglo da bude 
+                     rešenje pa se u polinomnom vremenu
+                     verifikuje tačnost rešenja)
+                     
+                     
+
+Analiza složenosti algoritama pretrage
+--------------------------------------
+
+b - faktor grananja maksimalnog broja sledbenika nekog čvora
+    (maksimalnog broja jer se gleda najgora varijanta)
+    
+d - dubina najplićeg ciljnog čvora (potrebna dubina stabla
+    na kojoj se nalazi prvo ciljno stanje)
+    
+m - maksimalna dužina putanje u prostoru stanja 
+    (može biti i inf.)
+                     
+
+
+b^d == broj čvorova na dubini d
+
+na dubini 1, generiše se b čvorova; b^1 = b
+da dubini 2, svaki od b čvorova generiše po b svojih podčvorova; b^2 = b * b
+                  ^
+                  iz prvog nivoa
+.
+.
+.
+
+i tako dalje čime se dobija b^d sledbenika na d. nivou 
+
+
+
+Analiza BFS algoritma
+----------------------
+
+
+Potpun i optimalan
+
+
+Potpun je ako se najplići čvor nalazi na konačnoj dubini d
+
+
+Optimalan ako je cena prelaza konstantna ili ukoliko 
+funkcija dubine čvora neopadajuća
+
+
+Vremenska složenost: O(b^d)
+Prostorna složenost: O(b^d)
+
+
+Eksponencijalna prostorna složenost
+
+Vremenska složenost je podnošljiva/prihvatljiva za male dubine
+
+
+
+
+
+Analiza algoritma unformne pretrage
+-----------------------------------
+
+
+Potpun i optimalan
+
+
+c* - trošak do optimalnog rešenja
+e - cena po koraku
+
+c*/e = broj koraka do optimalnog rešenja
+
+
+Vremenska složenost: O(b^(1+floor(c*/e)))
+Prostorna složenost: O(b^(1+floor(c*/e)))
+
+b na broj koraka (koji je predstavljen kao najbliži ceo broj
+koji je veći od količnika)
+
+
+Za razliku od BFS kod koga se provera da li čvor ciljni vrši
+odmah nakon generisanja, kod uniformne pretrage ta provera
+se vrši tek kada se taj čvor izabere za proširivanje
+
+
+Ukoliko su cene jednake onda je složenost O(b^(d+1)). Veći
+stepen za jedan u odnosu na BFS je posledica lokacije provere
+koja je spomenuta u tekstu iznad
+
+
+To pomeranje provere je urađeno zbog toga što uniformna ne 
+proverava čvor odmah za slučaj da ipak postoji neka optimalnija
+putanja
+
+
+
+Analiza DFS algoritma
+---------------------
+
+Backtracking - vraćanje unazad (slično kao LPR prolaz iz spa2 )
+
+
+Vremenska složenost: O(b^m)
+Prostorna složenost: O(bm)
+
+Pretraga može veoma nepovoljna ukoliko je m dosta veće od d
+
+Treba ga izbegavati ukoliko je maksimalna dubina velika ili 
+beskonačna
+
+
+Pretraživanje do ograničene dubine
+----------------------------------
+
+Ograničava se DFS. Postavlja se ograničenje na dubinu do 
+koje će pretraga ići. Razlog za to je neoptimalnost DFS 
+algoritma
+
+
+Neka je sa l označena ta maksimalna dubina. Čvorovi na nivou
+l će se tretirati kao čvorovi bez sledbenika
+
+
+Ako se odabere l<d, pretraga će biti nepotpuna
+Ako se odabere l>d, pretraga će biti neoptimalna
+
+
+
+Vremenska složenost: O(b^l)
+Prostorna složenost: O(b^l)
+
+
+DFS predstavlja na neki način pretragu sa ograničenjem dubine
+gde je l = beskonačno
+
+
+
+
+
+Pretraživanje u dubinu sa iterativnim produbljivanjem
+-----------------------------------------------------
+
+
+Iterativno se povećava l u ograničenoj pretrazi sve dok
+se ne dođe do cilja u nekoj od iteracija
+
+
+Garanatovano pronalazi put do cilja
+
+
+Vremenska složenost: O(b^d)
+Prostorna složenost: O(bd)
+
+
+Predstavlja neku vrstu kombinaciju BFS i DFS algoritma.
+Vrši se DFS do određene dubine, a time će i u datoj iteraciji
+proveriti sve čvorove redom na određenoj dubini onda na neki
+način radi i kao BFS
+
+
+Iako možda izgleda kao da nije optimala zbog ponovnog prolaza
+kroz već proverene čvorove, ova pretraga ipak nije toliko loša 
+jer se čvorovi koji se nalaze na najdubljem nivou generišu samo 
+jednom, a tih čvorova ima najviše (polovina).
+
+
+
+
+Dvosmerna pretraga
+------------------
+
+Vrše se 2 pretrage i cilj je da se sretnu
+
+Proverava se da li se rubovi seku
+
+
+Složenost: 2 * b^(d/2)
+
+
+
+Mane:
+1. Pronalaženje prethodnika može biti teško (npr. kod 
+   abstraktnih problema)
+2. Potraga za rešenjem kod nerešivih problema
+3. Implementacija nije jednostavna (niti, sinhronizacija, ...)
+
+
+
+
+
+
+Poređenje algoritama neinformisanog pretraživanja
+-------------------------------------------------
+
+
+ -------------------------------------------------------------------------------------------------
+|             |       BFS        |     Uniformni trošak    | DFS | Ograničena | Pretraga sa iter. |
+|             |                  |                         |     |   dubina   |   proširivanjem   |
+|-------------|------------------|-------------------------|-----|------------|-------------------|
+|             |                  | ako je b konačan i      |     |            |                   |
+|  Potpunost  | ako je b konačan | ako su cene svih koraka | Ne  |     Ne     | ako je b konačan  |
+|             |        *         | >= epsilon, a epsilon>0 |     |            |        *          |
+|             |                  |                         |     |            |                   |
+|-------------|------------------|-------------------------|-----|------------|-------------------|
+| Optimalnost | ako su cene svih |           Da            | Ne  |     Ne     | ako su cene svih  |
+|             | koraka jednake   |                         |     |            |  koraka jednake   |
+ -------------------------------------------------------------------------------------------------
+ 
+* tj. ako je graf konačan (?)
+ 
+
+
+
+ 
+Informisane pretrage
+====================
+
+
+Vrši se uređenje poteza tako da se prvo izvršavaju oni
+koji imaju najviše potencijala
+
+
+To uređenje/odlučivanje se vrši pomoću dodatnog znanja, informacija, 
+o samom problemu
+
+
+Heuristika je znanje o nekom problemu koje može olakšati njegovo
+rešavanje
+
+
+
+Čvor za proširivanje se bira na osnovu funkcije vrednovanja, f(n) 
+[ne odnosi sa na f(n) iz priče o složenosti]
+
+
+
+Heuristička funkcija, h(n), omogućava prenošenje dodatnog znanja o
+problemu algoritmu pretraživanja
+
+
+
+Primer heuristike:
+    Packman: menhnetn udaljenost ili euklidsko rastojanje
+    
+
+"Menhetn rastojanje je rastojanje koje kombinuje vertikalne i 
+horizontalne udaljenosti od jedne tačke do druge", tj. 
+putanja se formira od vertikalnih ili horizontalnih linija
+
+
+
+
+
+Primeri informisanih strategija pretraživanja:
+1. Gramzivo pretraživanje (Greedy best-first search)
+2. Algoritam A* (A-star search)
+
+
+
+
+Pretraživanje "prvi najbolji"
+-----------------------------
+
+
+Definiše funkciju vrednovanja čvora kao heurističku funkciju
+
+Pretpostavlja se da je čvor koji ima nižu vrednost heurističke 
+funkcije bliži ciljnom čvoru
+
+
+
+
+Nije optimalna
+
+
+Nije potpuna ako se realizuje kao algoritam pretrage stabla, dok
+kao algoritam pretrage grafa jeste potpuna ukoliko je prostor 
+pretrage konačan
+
+
+Kod pretrage stabla može da se dogodi da se odabere
+pogrešan čvor i da tako algoritam završi u ćorsokaku 
+jer taj čvor može bude čvor list, a s obzirom da se 
+neće vraćati unazad onda tu pretraga staje, što ovu
+pretragu čini nekompletnom
+
+
+
+
+A-star pretraga
+---------------
+
+Najpoznatiji oblik pretraživanja prvo-najbolji
+
+Koristi funkciju vrednovanja koja predstavlja zbir
+stvarne cene puta od početnog čvora do čvora n 
+( koja se obeležava sa g(n) ) i procenjene cene puta
+od čvora n do cilja ( h(n) )
+
+f(n) = g(n) + h(n)
+
+
+
+Prvo razvija čvor sa najnižom vrednošću za g(n) + h(n)
+
+
+
+Uslovi optimalnosti za heuristike
+1. Prihvatljivost 
+2. Konzistentnost
+
+
+Heuristička funkcija je prihvatljiva ukoliko nikada ne 
+precenjuje trošak stizanja do cilja
+
+
+
+Konzistentnost (monotonost) je zahtevana za primenu
+A-star algoritma za pretragu grafa
+
+
+"Heuristika je konzistetna ako za svaki čvor n i
+ako za svakog sledbenika čvora n, obeleženog sa 
+n', koji se generiše bilo kojom akcijom a, procenjena
+cena stizanja do cilja od čvora n nije veća od zbira
+cene stizanja od čvora n do n' i cene od n' do ciljnog
+čvora" [mislim da bi kod drugog sabirka trebalo da stoji
+"i procenjene cene"]
+
+
+
+Svaka konzistentna funkcija je i prihvatljiva
+
+
+Obezbeđuje odabir najkraće putanje, jer ukoliko 
+postoji kraća onda bi ona trebala da se odabere
+
+
+Pretraga stabla algoritmom A* je optimalna ukoliko
+je heuristika h(n) prihvatljiva
+
+
+Pretraga grafa algoritmom A* je optimalna ukoliko
+je heuristika h(n) konzistentna
