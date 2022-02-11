@@ -31,6 +31,9 @@ se slali signali između takvih neurona
 
 
 1956.
+Rađanje oblasti Veštačka inteligencija
+John McCarthy, Marvin Minsky, Allen Newell i Herbert Simon
+
 Za zvanični začetak veštačke inteligencije smatra se letnja
 radionica na Dartmouth Collage-u čija je ideja bila 
 okupljanje istraživača iz oblasti vešatačke inteligencije
@@ -38,9 +41,11 @@ na 2 meseca radi razmenjivanja ideja. Rezultat te radionice
 je bio termin veštička inteligencija
 Njege posledice bila su velika očekivanja
 
-Allen Newell i Herber Simon su pokušali da razviju program
-koji može rešiti bili koji problem(General Problem Solver). Na
-kraju su zaključili da nije moguće stvoriti takav program
+Allen Newell i Herbert Simon su pokušali da razviju program
+koji može rešiti bili koji problem (General Problem Solver). 
+Na kraju su zaključili da trenutno ne mogugu stvoriti takav 
+program
+
 
 
 

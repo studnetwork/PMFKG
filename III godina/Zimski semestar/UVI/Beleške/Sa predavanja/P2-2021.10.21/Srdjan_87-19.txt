@@ -221,7 +221,7 @@ postoji tvrdnja koja se poklapa sa uslovom pravila
 
 
 
-Uslovi i zaljučci mogu da se pišu prirodnim jezikom
+Uslovi i zaključci mogu da se pišu prirodnim jezikom
 
 
 

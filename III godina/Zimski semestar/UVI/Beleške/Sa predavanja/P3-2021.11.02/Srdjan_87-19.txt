@@ -38,7 +38,7 @@ tvrdnjom iz liste
 
 
 
-`Pravila mogu sadržati promenljive`
+`Pravila mogu sadržati ?promenljive`
 
 
 Promenljiva dobija vrednost u procesu uparivanja tvrdnje sa

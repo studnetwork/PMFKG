@@ -31,7 +31,7 @@ koje ovi agenti koriste prilikom rešavanja problema
 
 Neinformisani algoritmi - ne daju im se nikakve informacije o
                           problemu osim same definicije 
-                          problema
+                          problema (formalnog opisa)
                           
                           
 
@@ -44,7 +44,7 @@ formulisanje cilja.
 
 Tipični primeri koji rešavaju pretragom, pored prethodnog
 primera, su:
-- pronalaženje 2 puta na nekoj mapi
+- pronalaženje puta od jedne do druge tačke na nekoj mapi
 - sudoku
 - rešavanje rubikove kocke
 - postavljajne 8 kraljica na šahovsku tablu bez
@@ -170,7 +170,7 @@ c(a,s,s') = trošak preduzimanja akcije a u stanju s da bi se
             
 Sumirano:
 
-Formalni opis problema čime:
+Formalni opis problema čine:
 - početno stanje: s
 - opis mogućih akcija: Akcija(s)
 - model prelaza: Rezultat(s, a)
@@ -194,7 +194,7 @@ najmanjim troškovima
 Da bi se algoritam pretraživanja uspešno dizajnirao i primenio 
 njegov kreator mora da analizira i predvidi ponašanje tog algoritma: 
 - da li je pronalaženje problema zagarantovano
-- da li može da upadne u beskonačnu petlju pri pronalaženju rešenja
+- da li može da upadne u beskonačnu petlju u potrazi za rešenjem
 - da li je to rešenje koji algoritam pronađe zagarantovano optimalno
 - kakva je složenost procesa pretraživanja u pogledu utroška vremena 
   i memorije
@@ -250,7 +250,7 @@ Kako se vrši pretraga stabla?
    primenom svih mogućih akcija i time se generišu svi njegovi sledbenici
 4. Bira se jedno od generisanih stanja (odabir zavisi od algoritma koji
    se primenjuje)
-5. Formiraju se sledbenici odabranog stanja (isto kao u 3.)
+5. Ponavlja se isti postupak od 2. koraka
 
 
 
@@ -331,7 +331,7 @@ efikasniji ukoliko čuva samo najkraći put).
 
 [ bitno; ispit
 
-Algoritam uniforme pretrage ili algoritam A-zvezda(?) nikada ne čuvaju
+Algoritam uniforme pretrage ili algoritam A-zvezda nikada ne čuvaju
 više različitih putanja od jednog čvora do drugog, već čim nađu 
 putanju koja je bolja od one koja je do tada bila poznata oni je 
 odbacuju, a zadržavaju samo tu bolju
