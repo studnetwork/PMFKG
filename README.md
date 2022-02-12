@@ -1,4 +1,4 @@
-<p align="center"><a href="https://www.pmf.kg.ac.rs"><img src="https://raw.githubusercontent.com/TodorovicSrdjan/PMFKG/master/pmflogo.gif" width="150"></a></p> 
+<p align="center"><a href="https://www.pmf.kg.ac.rs"><img src="https://raw.githubusercontent.com/TodorovicSrdjan/PMFKG/master/Resursi/Slike/pmflogo.gif" width="150"></a></p> 
 <h2 align="center"><b>PMFKG - Informatika</b></h2>
 
 <p align="center">
@@ -82,6 +82,11 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 
 
+[//]: # (README reference)
+
+[pmf logo]: ./Resursi/Slike/pmflogo.gif
+
+
 [//]: # (Materijal reference)
 
 [prva-zimski]: ./I%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
@@ -117,6 +122,8 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [fb]: https://www.facebook.com/groups/988381171505906
 [discord]: https://discord.gg/by9wC55xJ7
 [moodle chat]: https://imi.pmf.kg.ac.rs/moodle/message/index.php?contactsfirst=1
+[matrix room qr]: ./Resursi/Slike/matrix-room-qr.png
+[matrix room link]: https://matrix.to/#/#cekaonica:kde.org
 
 
 
@@ -126,7 +133,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [discussions]: https://github.com/Produktivna-grupa/PMFKG/discussions
 
-[categories]: ./categories.png
+[categories]: ./Resursi/Slike/categories.png
 
 
 [//]: # (Licenca reference)
