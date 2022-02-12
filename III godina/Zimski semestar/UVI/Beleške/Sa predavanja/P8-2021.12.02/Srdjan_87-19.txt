@@ -1,0 +1,658 @@
+Datum održavanja: 02.12.2021
+Predavač: Višnja Simić
+Čas: 8
+=====================================
+
+Primena atributu sa nediskretnim vrednostima u čvoru odluke, kako?
+
+
+Potrebno je utvrditi prag (numericki), na bazi koga će se donositi
+odluke u čvoru. Od tog numeričkog se pravi bulovski tip.
+
+
+$##
+Prvo se sortiraju sve vrednosti. Nakon toga se posmatraju njihove
+klasifikacije, gde dolazi do promene klase. Za prag se uzima srednja
+vrednosti izmedju 2 vrednosti izmenju kojih dolazi do prelaza
+
+
+Ukoliko postoji više pragova/kategorija, onda se za svaku određuje
+information gain i bira se onaj koji ima veću vrednost. 
+##$
+
+
+Mašinsko učenje je proučavanje računarskih algoritama koji se
+automatski unapređuju kroz sticanje iskustva 
+    - Tom Mitchell
+
+
+
+ML koristi statističke metode koje omogućavaju računarima da se
+unapređuju kroz sticanje iskustva
+
+
+Deep Learning, podskup ML, koristi višeslojne neuronske mreže.
+Najčešće za prepoznavanje oblika na slikama
+
+
+
+
+Vrste ML:
+- nadgledano učenje
+- nenadgledano učenje
+- učenje sa pojačavanjem
+
+
+
+
+Nadgledano učenje/obučavanje
+----------------------------
+
+$##
+Primeri su označeni/obeleženi. "Već je određena njihova klasa/kategorija
+ili regresivna vrednost kod regresivnih problema"
+##$
+
+
+Zadatak ML je da nauči f-ju koja bi preslikavala ulaze i izlaze na osnovu
+primera parova ulaza i izlaza
+
+
+
+Zadaci:
+- zadaci klasifikacije
+- zadaci regresije
+
+$##
+Zadaci klasifikacije - očekuje se da model predvidi 1 vrednost iz konačno
+                       mnogo različtih vrednosti
+                       
+
+Najčešća je binarna klasifikacija. Nov primer se svrstava u jednu od dve
+kategorije, obično se kaže pozitivnu ili negativnu kategoriju.
+
+
+
+Zadaci regresije - predviđanje kontinualne vrednosti
+##$
+
+Primer: predviđanje cene kuce
+
+
+Binarna klasifikacija može biti podvedena pod regresioni problem sa
+labelama -1 i +1
+
+
+
+Nenadgledano obučavanje
+-----------------------
+
+
+Primeri nisu obeleženi. Zadatak računara je da kroz izvšravanje algoritma 
+pronađe obrazce među podacima, uoči šta je to karakteristično za određene 
+grupe sličnih primera i da uspešno razvrsta primere u nekakve grupe
+
+
+Zadaci:
+- Grupisanje (klasterizacija) je osnovni zadatak ovog tipa učenja, tj.
+  uviđanje sličnih karakteristika primera koji pripadaju jednoj grupi 
+
+- Prepoznavanje anomalija u podacima
+ 
+  Anomalije u podacima - retka dešavanja
+  
+  U podacima koji su većinski slični pojavi se neki retki različiti
+  slučajevi
+  
+- Smanjenje dimenzija
+
+  Koristi se kada je potrebno izvući iz velike količine podataka i velikog
+  broja atributa one podatke koji su bitni za proces učenja
+  
+  može da olakša učenje smanjenjem redudanse kod zavisnih atributa
+  
+  
+  
+
+  
+Učenje sa pojačavanjem (Reinforcement learning)
+-----------------------------------------------
+
+Zasniva se na ideji učenja kod ljudi
+
+
+Pohvala/nagrada i kazna
+
+
+Agent uči iz niza pojačavanja (nagrada ili kazni)
+
+
+Postepeno uči koje njegove akcije dovode do kazne, a koje do
+nagrade tako da može da ustanovi koje njegovo ponašanje vodi ka uspehu
+
+
+---
+
+
+
+
+
+Algoritam mašinskog učenja je postupak koji se izvodi nad podacima 
+da bi se stvorio model. Prepoznaju ponavljanja/sličnosti u podacima
+
+Postoje algoritmi za:
+* klasifikaciju (stablo odlučivanja)
+* regresiju (linearna regresija)
+* klasterizaciju (k-means)
+
+
+Algoritmi ML se mogu opisati pomoću matematike i pseudokoda
+
+
+Njihova efikasnost se može opisati na sličan način kao što se to
+radi i sa drugim algoritmima (složenost i sl.)
+
+
+Mogu se implementirati u bilo kom savremenom prog. jeziku
+
+
+Model je izlaz algoritma mašinskog učenja
+
+
+Kada se postigne željeni stepen utreniranosti modela onda se on
+može sačuvati. Sačuvan model se može koristiti, tj. ugraditi negde 
+i nije dalje potrebno trenirati ga. Koristi se za predikciju do
+tada neviđenih primera
+
+
+
+Trening podaci su ulaz u algoritam.
+Algoritam podučava model / formira prediktor / formira hipotezu
+To postaje izlaz iz algoritma
+Model vrši predikciju primera koji dobije na ulazu
+
+
+
+Primenom različtih algoritama ML, od istog skupa je moguće dobiti
+različite modele
+
+
+$##
+Složeneniji modeli mogu da budu i gori od nekih jednostavnijih jer
+on može da bude suviše prilagođen ulaznim podacima i time nesposoban
+da kasnije vrši generalizaciju kada dobije novi ulaz
+##$
+
+
+Kroz proces učenja, kroz različite algoritme ili za jedan algoritam 
+sa različtim parametrima, vrši se pretraga prostora mogućih modela za 
+modeliranje podataka
+
+Cilj je pronaći model koji ima dobre performanse
+
+
+Performanse se prvo testiraju na skupu za učenje, a nakon toga na
+testnom skupu, sa primerima sa kojima se pre nije do tada susreo.
+Performanse nad testnim skupom su veoma bitne
+
+
+Ukoliko model ima dobre performanse na testnom skupu, tj. ako na osnovu
+ulaza prediktuje dobre izlaze onda se kaže da dobro generalizuje
+
+
+
+
+
+Trening greška govori o tome koliko je dobro model naučio trening 
+podatke
+
+
+
+Sposobnost modela da generalizuje se ne može određivati samo na 
+osnovu testing greške, odnosno performansama na testnom skupu
+
+
+
+Trening i testing skupovi trebaju da budu disjunktni
+
+
+
+Velika preciznost ne znači bolji rezultati (Najčešće je suprotno)
+
+
+Neprilagođavanje podacima - underfit
+Preprilagođavanje podacima - overfit
+
+
+
+Proces traženja najboljeg modela podrazumeva ne samo isprobavanje
+različtih algoritama obučavanja nego i korišćenje različtih
+parametara nad istim algoritmima za obučavanje
+
+
+
+Pre testiranja se određuje koji je algoritam podučavanja najbolji
+
+
+Za to se koristi validicioni skup. Nad njim se vrši provera validnosti
+različtih modela koji su generisani pomoću trening skupa
+
+
+Ovaj proces se zove proces validacije
+
+
+U ovom procesu se takođe performanse mere nekim greškama - greške validacije
+To su greške koje model pravi nad podacima za validaciju
+
+Ona govori o sposobnosti modela da vrši generalizaciju
+
+
+Idealno bi bilo da trening set bude 2/3 podataka, a setovi za validaciju i 
+testiranje po 1/6
+
+
+
+Ukoliko nije dostupan veliki skup podataka, potrebno je pribeći nekoj od tehnika
+koje omogućavaju iskorišćenje već korišćenih podataka
+
+Ove tehnike se ne odnose na testing skup. On treba biti odvojen u startu
+
+
+
+Prva tehnika - k unakrsna validacija
+------------------------------------
+
+
+Vrši se više rundi obučavanja
+
+Početni skup se deli na k delova. Najčešće se deli na 10 delova (podskupova)
+
+Ima onoliko rundi koliko ima i delova
+
+
+U svakoj rundi se k-1 podskupova koristi za obučavanje, a preostali skup će se 
+koristi za validaciju (izračunavanje stope greške)
+
+Finalna preciznost se računa kao prosek svih preciznosti rudni
+
+
+U suštini, za svaku rudnu se pravi nov model koji se proverava sa izostavljenim
+skupom.
+
+U pristupu sa neta, testni skup se ne izdvaja već je od jedan od k podskupova.
+Kada se vrši predikcija, vrši se pomoću svih modela pravilom većine
+
+
+Stopa greške će za neku veličinu stabla biti 0. U tački koja je u toj blizini
+dolazi do promene putanje krive, koja nakon opadanja počinje da raste. Nakon
+te tačke sve dalje veličine stabla nisu efikasan odabir jer će se za njih
+povećati stopa greške
+
+
+
+Leave-one-out cross-validation
+------------------------------
+
+Ekstremnija varijanta k-unakrsne validacije.
+
+
+Uvek se po 1 primer ostavlja po strani, dok se model uči na svim ostalim primerima,
+a nakon podučavanja se testira na tom jednom izdvojenom primeru
+
+greška se računa kao prosečna vrednost greške na svih n ostavljenih primera
+
+
+Postiže bolje rezultate, ali veoma dugo traje
+
+
+
+
+
+
+Primer određivanje težine na osnovu visine
+
+
+Potrebno je znati formulu. Pošto to još ne znamo
+koristi se mašinsko učenje
+
+
+Skup za testiranje se odvaja
+
+
+Preostali skup podataka se deli na skup za učenje
+i skup za validaciju
+
+
+
+Linearna regresija je vrsta modela mašinskog učenja koja
+fituje trening skup pravom linijom. Dobija se kao rezultat 
+algoritma linearne regresije
+
+
+Reziduali su ostupanja od prave linearne regresije
+
+
+Suma kvadrata - suma kvadriranih reziduala 
+
+
+
+Mala greška na trening skupu, a velika greška na validacionom
+skupu ukazuje na prilagođavanje modela trening skupu
+
+
+
+Ukoliko je greška velika i na trening i na validacionom skupu 
+onda je model nedovoljno obučen (underfitting)
+
+
+Good fit - mala greška na trening skupu i malo manja greška na
+           validacionom skupu
+           
+           
+           
+
+`Bias predstavlja grešku modela koja nastaje kao posledica 
+uprošćavanja pretpostavki ili pogrešnih predpostavki koje 
+model pravi u odnosu na podatke za učenje kako bi što
+lakše naučio ciljnu funkciju`
+
+
+
+`Visok bias sugeriše da algoritam ne uočava bitne trendove
+mešu podacima`
+
+
+
+Visoka varijansa - preučavanje
+
+
+Potrebno je uspostaviti balans između bias-a i varijanse
+
+
+
+Pristupi koji se koriste kako bi se izbeglo preučavanje stabla
+se mogu grubisati u 2 grupe:
+1. Zaustavljanej rasta stabla pre nego što perfektno klasifikuje
+   trening podatke
+2. Dopuštanje preprilagođavanja, nakon čega se orezuje dobijeno 
+   stablo
+   
+   
+2. pristup daje bolje rezultate jer je teško odrediti trenutak kada
+treba zaustaviti rast stabla
+
+
+
+Orezivanje podrazumeva odbacivanje nekog stabla i dovođenje nekog 
+lista na njegovo mesto
+
+
+To se vrši uz praćenje promene greške
+
+
+
+`Evaluacija modela vrši se na osnovu mere njegove sposobnosi
+predviđanja`
+
+
+Mere kvaliteta klasifikacije se zasnivaju na matrici konfuzije
+
+
+                -------------------------
+               |  Klasa određena modelom |
+               |-------------------------|
+               |     Da     |     Ne     |
+ --------------|------------|------------|
+| Stvarna | Da |     TP     |     FN     |
+|  klasa  |----|------------|------------|
+|         | Ne |     FP     |     TN     |
+ ----------------------------------------
+ 
+ 
+ 
+Greška tipa 1: 
+    False positive (primer sa slajda: trudan muškarac)
+
+Greška tipa 2: 
+    False negative (primer sa slajda: tekst kaže da trudana žena nije trudna)
+
+
+
+Matrica konfuzije kada postoji više klasa
+-----------------------------------------
+
+Na glavnoj dialogali se nalazi broj ispravno klasifikovanih primera
+
+Ostala polja predstavljaju broj pogrešno klasifikovanih primera jedne
+klase kao primera druge klase
+
+
+
+
+
+Tačnost klasifikacije - Accuracy
+--------------------------------
+
+Predstavlja udeo tačno klasifikovanih primera u ukupnom broju primera
+
+Accuracy = (TP+TN) / (TP+TN+FP+FN)
+
+
+
+Preciznost - Precision
+----------------------
+ 
+Udeo tačno klasifikovanih pozitivnih primera u ukupnom broju pozitivnih primera
+(po proceni modela)
+
+
+Precision = TP / (TP + FP) 
+
+
+Odabir mere kvaliteta zavisi od primera i od toga šta je opasnije u
+datom problemu, da ima više FP ili FN
+
+
+Meru preciznosti je dobro koristiti kada je opasno / nepoželjno da se 
+stvarno negativan primer klasifikuje pozitivan, FP (lažno pozitivan)
+
+Primer: spam filter (bitan mail ode u spam)
+
+
+
+
+
+Odziv - Recall (Sensitivity; True Positive Rate - TPR)
+------------------------------------------------------
+
+Udeo pronađenih pozitivnih instaniu svim stvarno pozitivnim instancama
+
+
+Recall = TP / (TP + FN)
+
+
+
+Koristi se kada je opasno / nepoželjno da se stvarno pozitivan primer
+klasifikuje kao negativan, FN (lažno negativan)
+
+
+Primeri:
+- Covid test
+- Bankovna transakcija koja predstavlja prevaru
+
+
+
+
+Kada nije lako uočiti koju meru koristiti moguće je 
+koristiti meru F1 koja predstavlja kombinaciju Precision-a 
+i Recall-a
+
+F1 = (2 * Precision * Recall) / (Precision + Recall)
+
+
+Harmonijska sredina te 2 mere
+
+
+Što je vrednost F1 veća to je model bolji
+
+
+
+Specifičnost - Specificity (True Negative Rate - TNR)
+-----------------------------------------------------
+
+Koliko često model za one primere koji su negativni predvidi
+da oni jesu negativni
+
+Specificity = TN / (TN + FP) = 1 - FPR
+
+
+
+False Positive Rate - FPR
+-------------------------
+
+Udeo lažno pozitivnih, FN, među onima koji su (stvarno) negativni
+
+
+FPR = FP / (TN + FP)
+
+---
+
+[ dodato
+
+(stvarno, model)
+
+1 == da,da
+2 == da,ne
+3 == ne,da
+4 == ne,ne
+
+"Formula":
+- Precision: 1 / prva kolona
+- Sensitivity:  1 / prvi red
+- Specificity: 4 / drugi red
+- FPR: 3 / drugi red
+- Accuracy: 1 + 3 / sva polja
+
+]
+
+
+
+
+Vizuelno prepoznavanje kvaliteta modela
+---------------------------------------
+
+Koriste se ROC grafikon
+
+Na x-osi je FPR
+Na y-osi je TPR (recall)
+
+
+ROC grafikon u stvari oslikava odnos benefita i cene primene
+modela
+
+
+Vrednosti osa je iz opsega [0.0, 1.0]
+
+Idealna situacija bi bila u tački (0, 1.0), gde nema grešaka
+i gde je broj tačno klasifikovanih primera maksimalan, ali
+ta situacija je nerealna
+
+
+
+Najgori klasifikatori su klasifikatori koji se nalaze na 
+dijagonali jer je verovatnoća 50/50 (nisu ništa bolji od 
+nasumičnog pogađanja)
+
+
+
+Oni klasifikatori koji imaju dosta grešaka, a malo tačnih
+predviđanja takođe mogu da budu dobri. Ono što može da ih
+učini dobrim iako su u takvom obliku loši je uzimanje 
+suprotnih predviđanja
+
+
+
+Diskretni klasifikatori su klasifikatori čiji je izlaz klasa
+
+
+Modeli mogu da vraćaju i verovatnoću ili rang da primer pripada
+nekoj klasi. To su verovatnosni klasifikatori
+
+
+
+Logistička regresija vraća verovatnoću da će neki primer pripadati
+određenoj klasi
+
+
+
+Za verovatnosne klasifikatore ROC kriva u stvari jeste kriva na 
+ROC dijagramu.
+
+
+On se može svesti na diskretni binarni klasifikator korišćenjem
+vrednosti praga: vrednosti iznad praga pripadaju jednoj od klasa,
+a vrednosti ispod praga drugoj klasi
+
+
+
+Ta verovatnoća može biti i score
+
+
+Promenom praga menjaju se i prediktovane klase primera
+
+
+
+ROC kriva se dobija tako što se prag postepeno smanjuje.
+Kreće se od 1 i ide se do 0
+
+
+Za svaki prag se crta matrica konfuzije u određuje koliko
+je čega bilo, a onda se na osnovu tih informacija izračunavaju
+FPR i TPR, pa potom crta tačka čije koordinate predstavljaju te 
+dve vrednosti
+
+
+Svaka dobijena tačka se spaja
+
+
+Ako se za raliku između pragova uzme dovoljno mala vrednost onda 
+će dobijena linija podsećati na krivu
+
+
+
+Modeli se porede poređenjem površina ispod ROC krive (AUC - Area Under Curve)
+svakog modela
+
+
+Onaj koji ima veći AUC je bolji
+
+
+
+Za diskretne klasifikatore se crta tako što se (0.0,0.0) poveže sa dobijenom tačkom,
+a onda se potom ta tačka poveže sa tačkom (1.0,1.0)
+
+
+
+
+
+Metrike za ocenjivanje regresionih modela
+-----------------------------------------
+
+MSE (Mean Square Error)
+    MSE = sum(1,n, (dobijenaNumVred-očekNumVred)^2)
+
+RMSE (Root Mean Square Error)
+    RMSE = sqrt( 1/n * MSE )
+    
+MAE (Mean Average Error)
+    MAE = 1/n * sum(1,n, abs(dobijenaNumVred-očekNumVred))
+    
+
+    
+RMSE više kažnjava razliku između prave i dobijene vrednosti
+
+
+
+
+R kvadrat
+    R2 = 1 -  (?/MSE)
