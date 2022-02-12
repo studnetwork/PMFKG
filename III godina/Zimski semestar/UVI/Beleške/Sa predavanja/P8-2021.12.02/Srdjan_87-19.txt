@@ -76,7 +76,7 @@ kategorije, obično se kaže pozitivnu ili negativnu kategoriju.
 Zadaci regresije - predviđanje kontinualne vrednosti
 ##$
 
-Primer: predviđanje cene kuce
+Primer: predviđanje cene kuće
 
 
 Binarna klasifikacija može biti podvedena pod regresioni problem sa
@@ -234,7 +234,7 @@ parametara nad istim algoritmima za obučavanje
 Pre testiranja se određuje koji je algoritam podučavanja najbolji
 
 
-Za to se koristi validicioni skup. Nad njim se vrši provera validnosti
+Za to se koristi validacioni skup. Nad njim se vrši provera validnosti
 različtih modela koji su generisani pomoću trening skupa
 
 
@@ -371,8 +371,8 @@ Potrebno je uspostaviti balans između bias-a i varijanse
 
 
 Pristupi koji se koriste kako bi se izbeglo preučavanje stabla
-se mogu grubisati u 2 grupe:
-1. Zaustavljanej rasta stabla pre nego što perfektno klasifikuje
+se mogu grupisati u 2 grupe:
+1. Zaustavljanje rasta stabla pre nego što perfektno klasifikuje
    trening podatke
 2. Dopuštanje preprilagođavanja, nakon čega se orezuje dobijeno 
    stablo
@@ -465,7 +465,7 @@ Primer: spam filter (bitan mail ode u spam)
 Odziv - Recall (Sensitivity; True Positive Rate - TPR)
 ------------------------------------------------------
 
-Udeo pronađenih pozitivnih instaniu svim stvarno pozitivnim instancama
+Udeo pronađenih pozitivnih instanci svim stvarno pozitivnim instancama
 
 
 Recall = TP / (TP + FN)
@@ -551,9 +551,9 @@ ROC grafikon u stvari oslikava odnos benefita i cene primene
 modela
 
 
-Vrednosti osa je iz opsega [0.0, 1.0]
+Vrednosti na osama su iz opsega [0.0, 1.0]
 
-Idealna situacija bi bila u tački (0, 1.0), gde nema grešaka
+Idealna situacija bi bila u tački (0.0, 1.0), gde nema grešaka
 i gde je broj tačno klasifikovanih primera maksimalan, ali
 ta situacija je nerealna
 
