@@ -62,6 +62,9 @@ Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih li
 	* Srđan Todorović  
 	* Dragor Draganović  
     * Mihajlo Janković  
+* [Matrix soba][matrix room link]<br>![matrix room qr]
+
+  
 
 **Napomena:** komunikacija preko moodle-a je moguća samo između studenata koji su prijavljeni na isti kurs
 
