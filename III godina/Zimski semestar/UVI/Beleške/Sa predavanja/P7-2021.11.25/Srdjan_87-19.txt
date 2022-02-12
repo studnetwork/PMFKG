@@ -125,7 +125,7 @@ x = tree.DecisionTreeClassifier()
 x = x.fit(atributi,labele) # metod sprovodjenje učenja
 
 
-Ovo do sada je ono što se naziva "Supervišed Learning"
+Ovo do sada je ono što se naziva "Supervised Learning"
 
 
 Ovakvo učenje čine 3 koraka:
@@ -150,8 +150,9 @@ za utvrđivanje toka akcija u procesu odlučivanja
 
 
 $#
-Čvorovi koji nemaju grane su čvorovi lištovi i u njima se
-zna kojoj klasi pripada dati primer
+Čvorovi koji nemaju grane su čvorovi listovi i u njima se
+zna kojoj klasi pripada dati primer (tj. u njima se nalaze
+predikcije modela; u njima je primer klasifikovan)
 #$
 
 
@@ -190,7 +191,7 @@ Na svakom čvoru odluke testira se po jedan atribut.
 Čvor list daje rezultat klasifikacije
 
 $#
-Svaka grana odgovara jednoj od mogucih vrednosti atributa
+Svaka grana odgovara jednoj od mogućih vrednosti atributa
 koji je testiran u tom čvoru
 #$
 
@@ -269,7 +270,7 @@ skupa S, u odnosu na binarnu klasifikaciju primera, je:
     
     
     
-Kada su svi primerci svrstani u jednu klasu onda je entropija = 0
+Kada su svi primeri svrstani u jednu klasu onda je entropija = 0
 
 
 
@@ -281,7 +282,8 @@ vrednosti onda je entropija od S:
     gde je p_i udeo primera iz s koji pripadaju klasi i
     
     
-Maksimalna vrednost entropije je u ovom slučaju log_2(c)
+Maksimalna vrednost entropije za svaku kategoriju je u ovom 
+slučaju: log_2(c)
 
 
 Gornja formula slično izgleda kao binarna formula, s tim

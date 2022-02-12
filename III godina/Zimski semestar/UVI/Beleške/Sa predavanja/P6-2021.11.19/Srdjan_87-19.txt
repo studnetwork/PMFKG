@@ -153,15 +153,15 @@ beta = vrednost najboljeg poteza za MIN igrača, tj. garantovana najbolja
        vrednost koju MIN može da dobije
 
 
-max moze da ima alfa ili vise
-min moze da ima beta ili manje
+max može da ima alfa ili više
+min može da ima beta ili manje
 
 
 Cilj je uvećavanje alfe i smanjene bete
 
 
 
-Oni ce se u jednom trenutku susresti
+Oni će se u jednom trenutku susresti
 
 
 
