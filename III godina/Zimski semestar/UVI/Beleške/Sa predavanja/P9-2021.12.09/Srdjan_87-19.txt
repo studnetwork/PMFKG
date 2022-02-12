@@ -1,0 +1,277 @@
+Datum održavanja: 09.12.2021
+Predavač: Višnja Simić
+Čas: 9
+=====================================
+
+K najbližih suseda
+------------------
+
+Najjednostavniji, ali veoma efikasan
+
+Ideja:
+Primeri koji pripadaju istim klasama imaju slične vrednosti
+atributa
+
+
+
+
+Decision boundary
+Granice odluke se formiraju crtanjem simetrala između 
+susednih tačaka. Nakon toga se prave delovi koji se 
+delimično formiraju na presecima tih pravih.
+
+Ta podela se vrši na graf-u koji na jednoj osi ima jedan
+atribut, a na drugoj drugi
+
+
+Ako se primer nalazi na granici onda je verovatnoća da
+pripadne jednoj od oblasti 50/50. Ne zna se kojoj će pripasti,
+ne može se reći ništa konkretno
+
+
+
+
+Kako algoritam k najbližih suseta klasifikuje novi objekat?
+* Određuje se rastojanje između novog objekta i svih ostalih
+  iz trening skupa
+  
+* Bira se k elemenata iz trening skupa koji su najbliži 
+  objektu koji se klasifikuje
+  
+* Novi se klasifikuje u onu klasu koja je najbrojnija među
+  susedima
+  
+  
+K predstavlja parametar algoritma i on se mora posebno 
+utvrditi
+
+
+Može se raditi i crtanjem kružnice
+
+
+Nema pravog rešenja. Menja se parametar k dok se ne 
+postignu zadovoljavajući rezultati
+
+
+Kada su numerički podaci u skupu za obuku onda se uzima
+Euklidsko rastojanje.
+
+
+D(a,b) = sqrt(sum(i,n, (a,b)=>(a_i-b_i)^2)
+
+Menhetn rastojanje je takođe moguće koristiti
+
+
+Hamingovo rastojanje se koristi za kategorijske promenljive
+(proverava da li su primeri iz iste kategorije, 1 ili 0)
+
+
+Ovo nije algoritam učenja, već "algoritam predviđanja" jer
+se zasniva samo na čuvanju podataka i samo se vrši proverava 
+koji su susedi najbliži kada se na ulaz dovede novi primer. 
+
+Zbog toga dolazi do problema oko vremena izvršenja
+
+
+Za k=1, za svaku tačku se "alocira" njen zaseban region
+
+Zbog toga je greška u tom slučaju jedanka 0.
+
+
+Kako se k povećava tako raste i greška. I granica postaje
+sve više glatka
+
+
+Procena se vrši na osnovu preseka grafikona koji prikazuje
+broj grešaka nad trening skupom i grafikona koji prikazuje
+broj grešaka nad validacionom skupu
+
+
+
+"Treniranje klasifikatora" ovim algoritmom podrazumeva prolaženje 
+kroz njega sa istim skupom primera za različite vrednosti parametra k
+
+
+Tj. predstavlja obavljanje klasifikacije za svaki primer iz trening 
+skupa za različite vrednosti k. Na osnovu toga se određuje greška 
+nad trening skupom (za svaku vrednost parametra. k).
+
+
+To isto je ponovljeno na skupu primera za validaciju
+
+
+Nakon toga se bira k koje ima najbolje performanse u preseku
+rezultata nad ta 2 skupa
+
+
+
+
+
+Prokletstvo dimenzijelnosti
+---------------------------
+
+Problem kod k najbližih suseda
+
+
+Kako raste broj atributa primera tako oni postaju samo 
+udaljeniji
+
+
+
+Neko rešenje:
+    redukovanje dimenzija (metodom nenadgledanog učenja)
+    
+    
+k najbližih suseda klasifikacija se primenjuje u:
+- određivanju kreditnog rejtinga
+- politici (procena političke orjentacije glasača/birača)
+
+
+
+Prednosti:
+- jednostavan za razumevanje
+- jednostavan za implementaciju
+- nema obuke
+- može da radi sa višeklasnom klasifikacijom
+
+
+Mane:
+- faza testiranja je jako skupa 
+- nezgodna primena kod asimetrične distribucije klasama
+  (veća klasa će uglavnom dominirati u glasanju)
+- tačnost opada sa porastom atributa 
+  (prokletstvo dimenzijelnosti)
+  
+  
+
+  
+Za neke vrednosti k se ne može odrediti klasa jer se može
+dogoditi da postoji više primeraka koji se nalaze na istoj 
+udaljenosti
+
+
+
+Menhetn radi tako što se broje koraci
+
+
+Crtanje granice se vrši tako što se crta po linija na svakoj
+simetrali. One se spoje i tako se dobija granicna linija
+
+
+
+Linearna regresija - na osnovu nekog ulaza predvideti 
+                     kontinualnu, numericku, vrednost 
+                     
+                     
+Ideja je da se skup podataka modelira pravom linijom                     
+                     
+                     
+                     
+Regresiona prava opisuje zavisnost između nezavisne 
+promenljive x i zavisne promenljive y
+
+
+Ako se sa povećanjem vrednosti za x povećava i vrednost za y
+onda je trend pozitivan. Ukoliko se sa njegovim povećanjem
+smanjuje vrednost za y onda je trend negativan
+
+
+
+Karakteristike regresione prave:
+- odsečak na y-osi
+- ugao u odnosu na x-osu
+
+
+To su "stepeni slobode"; to je ono što možemo menjati kako bi se
+dobile različite linije
+
+
+
+Cilj je određivanje relacije između ulaza i izlaza
+
+
+
+
+Kod linearne regresije to je unapred definisano, tj.
+h(x) = y
+
+prelazi u 
+
+h(x) = ax+b
+
+(jer je u pitanju linija; traži se linija)
+
+
+Njome se traže koef. a i b
+
+
+
+Nema uvek smisla primenjivati linearnu regresiju na nekom
+skupu podataka (nema kada korelacija između x i y ne postoji)
+
+
+
+
+Prvi korak je vizuelizacija podataka
+
+
+
+Zadatak algoritma linearne regresije je određivanje 
+keof. prave
+
+
+ 
+ 
+h - hipoteza
+
+
+Ima ovaj oblik:
+    h(x) = w_0 + w_1 * x
+
+
+Određivanje modela linearne regresije se svodi na određivanje 
+parametra w0 i w1, takvih da dobijena prava h(x) = w0 + w1*x 
+što bolje oslikava podatke iz trening skupa
+
+
+Za određivanje modela linearne regresije vrši se minimilizacija 
+razlike između vrednosti dobijenog modela sa vrednostima iz 
+konkretnih podataka
+           
+
+Vrši se promenom vrednosti w0 i w1
+
+
+rezidual = greška na nekom primeru (tj. razlika konkretne
+           vrednosti sa predviđenom)
+
+           
+Sumiraju se sve greške koje model pravi nad trening skupom,
+tj. sumiraju se reziduali i traži se najmanja vrednost. Ta 
+formula potom koriguje kako bi se laške i obavljao račun jer
+npr. pri određivanju vrednosti reziduala ne zna se koja od 
+vrednosti je veća što kod razlike vrednosti prouzrokuje dobijanje 
+vrednosti različitog znaka, zavisno od tok faktora. To se rešava 
+kvadriranjem razlike, onda ta korekcija utiče na neki drugi račun 
+pa se zbog toga još ceo taj izraz množi sa 1/(2m) zbog jednostavnosti
+Time se dobija formula srednje kvadratne greške.
+        
+Srednja kvadratna greška E:
+    E = 1/(2m) * sum( (h(x_i)-y_i)^2 )
+
+
+
+w1 = ( m * sum(i, m, x_i * y_i) - sum(i, m, x_i) * sum(i, m, y_i) ) / 
+        ( m * sum(i, m, x_i^2) - sum(i, m, x_i)^2 )
+                
+w0 = ( sum(i, m, y_i) - w1 * sum(i,m, x_i) ) / m
+
+
+
+Algoritam linearne regresije je proces pronalaženja koeficijanata
+w0 i w1 takvih da je greška koja se pravi nad skupom trenig podataka
+minimalna
+
+
+Model linearne regresije predstavljaju brojevi w0 i w1 
+
