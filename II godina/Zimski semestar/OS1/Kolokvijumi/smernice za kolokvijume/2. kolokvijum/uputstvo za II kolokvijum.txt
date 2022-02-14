@@ -1,0 +1,25 @@
+Kreirao: Ljubomir Matovic 58/2020
+
+Pogledati kolokvijum iz 2021/2022 kao i njegovo rešenje.
+
+Svaki segment deljene memorije je zašticen mutexima.
+Ako imamo niz od n članova potrebno nam je samo n semafora za zaštitu kritičnog regiona.
+Skidamo vrednost semafora kada hoćemo da pročitamo vrednost deljenog segmenta ili promenimo vrednost deljenog segmenta i nakon toga ga odmah vraćamo (pogledati rešenje kolokvijuma).
+
+Jedno pitanje=jedan semafor
+
+Koliko ima lopti u korpi nije isto pitanje kao koliko ima lopti van korpe, pa su nam potrebna dva semafora.
+Ukupan broj lopti jeste zbir broja lopti u korpi i van korpe, ali nije dozvoljeno čitanje vrednosti semafora, pa zbog toga moramo koristiti dva semafora.
+
+Uvek se prvo skida vrednost opšteg semafora, pa zatim vrednost binarnog semafora.
+
+To što u postavci zadatka piše da igrač prvo stane u red pa onda uzme loptu iz korpe ne znači da treba prvo skinuti semafor za pristup korpi(binarni) pa semafor za broj lopti u korpi(opšti).
+Ako nema lopti u korpi igrač čeka da se pojavi lopta u korpi, pa tek onda staje u red i traži pristup korpi.
+
+Svaki semafor koji se skine, mora da se vrati (ne nužno isti proces).
+
+Igrač skida broj lopti u korpi, a redar vraća broj lopti u korpi.
+Igrač skida i vraća semafor za pristup korpi.
+Redar skida i vraća semafor za pristup korpi.
+Redar skida broj lopti van korpe, a igrač vraća broj lopti van korpe.
+Svi semafori koji čuvaju deljene segmente se skidaju i vraćaju od strane istog procesa koji im pristupa i to je brzo jer se proces vrlo kratko zadržava u kritičnom regionu(samo dok ne pročita ili ne izmeni podatak u deljenom segmentu).

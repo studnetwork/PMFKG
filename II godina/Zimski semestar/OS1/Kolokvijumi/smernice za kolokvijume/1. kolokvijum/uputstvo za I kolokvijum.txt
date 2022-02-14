@@ -1,0 +1,55 @@
+//Kreirao: Ljubomir Matovic 58/2020
+
+Kod servera(forkuje se; glavni proces koji komunicira sa ostalima):
+
+/*
+učitavanje bilioteka
+sve biblioteke ce bice date na kolokvijumu
+*/
+int n; //broj dece
+int m; //broj klijenata koji se prijavljuje na forkovani server
+int msgid; //id reda za poruke
+//ove dve promenljive moraju biti globalne zbog signal handlera
+//da li ce ostale promenljive biti globalne zavisi od postavke
+
+#define ImeStrukturePoruke_SIZE sizeof(ImeStrukturePoruke) - sizeof(long)
+// za svaku strukturu definisati makro koji ce se koristiti u funkcijama msgsnd i msgrcv kao parametar veličine poruke
+//npr. msgsnd(msgid,&poruka,ImeStrukturePoruke_SIZE,0);
+
+/*
+msgrcv vraća broj bajtova koje je pročitao ili -1 ako dođe do greške
+ako hoćemo da pročitamo poruku bez čekanja i da radimo nešto sa njom ukoliko postoji to se radi ovako
+if(msgrcv(msgid,&poruka,ImeStrukturePoruke_SIZE,tip,IPC_NOWAIT)>0)
+{
+	/*ostatak koda*/
+} 
+*/
+
+void signal_handler(int a){
+	int b;
+	int i;
+	for(i=0;i<n;i++)//čekanje da se završe sva deca
+	wait(&b);
+	/* ostatak koda */
+	exit(0);
+}
+
+int main(){
+	/*deklarisanje promenljivih i setovanje početnih vrednosti*/
+	int i;
+	for(i=0;i<n;i++){
+		if(fork()==0){
+		signal(SIGINT,SIG_IGN);
+		/*kod deteta*/
+		exit(0);
+		}
+	}
+	signal(SIGINT,signal_handler);
+	while(1);// busy wait da se roditelj ne bi završio pre svoje dece	
+}
+
+Da bi program dobro radio, potrebno je dobro odrediti tipove poruka.
+Jedna varijanta bi bila da svaki proces prima poruke koje su tipa njegovog pida a da salje poruke tipa pida procesa sa kojim zeli da komunicira.
+Druga varijanta bi bila da forkovani server prima poruke tipa n+i*(m+1) a da klijent prima poruke tako da njegov tip bude jednak (tip njegovog servera + njegov redni broj),
+gde redni broj pripada intervalu [1,m].
+Pogledati primer.
