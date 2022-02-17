@@ -1,0 +1,154 @@
+
+
+fgets($handle, $length)
+
+
+string fgetc(resource $handle)
+
+(moze da vrati i false i nesto sto evaluira na false =>
+treba koristiti identicko poredjenje)
+
+
+fputs je alias za fwrite
+
+
+
+phpinfo() sadrzi polje "Loaded Configuration File" u kome se
+nalazi putanja do konfiguracionog fajla
+
+
+Da bi se omogucio file upload potrebno je da se otkomentarisu
+linije za file upload u konfiguracionom fajlu
+
+file_uploads = On
+upload_max_filesize = 2M
+max_file_uploads = 20 // ovo je max upload-ova u jednom req
+
+
+
+Da bi upload funkcionisao potrebno je da atribut forme enctype 
+ima vrednost: multipart/form-data
+[ BITNO ]
+
+
+
+Globalni asocijativni niz za fajl upload: $_FILES
+
+
+basename($path) # daje naziv fajla
+
+
+basename($_FILES["nameAttrValue"]["name"]) # dobijanje pravog naziva fajla
+
+
+
+move_uploaded_file($_FILES["nameAttrValue"]["tmp_name"], $target_file_path)
+
+
+pathinfo() # moze da vrati putanju po delovima (dir, fname, ext, ...)
+
+
+arrray getimagesize( string $filename [, array &$imageinfo])
+
+Vraca tip, visinu i sirinu slike
+
+Moze da vrati i vise informacija preko imageinfo
+
+
+
+$_FILES["nameAttrValue"]["size"] # velicina upload-ovanog fajla
+
+
+
+Dobijanje ekstenzije uploaded fajla:
+pathinfo($target_file, PATHINFO_EXTENSION) # za vracanj vise tih
+                                           # delova koristi se |
+    
+    
+
+    
+bool mkdir( string $path [, int $mode = 0777 [, bool $recursive = false
+    [, resource $context ]]])
+
+mode je ignorisan na windows-u
+
+
+
+
+bool chmod(string $filename, int $mode)
+
+bool rmdir(string $dirname [, resource $context ])
+
+
+bool is_dir(string $filename)
+
+bool is_file(string $filename)
+
+bool copy(string $source, $dest [, resource $context ])
+
+
+bool rename(string $oldname, string $newname [, resource $context ])
+
+Moze i da se koristi za pomeranje fajla
+
+
+// brisanje fajla
+unlink(string $filename [, resource $context ])
+
+
+// putanja do direktorijuma u kome se nalazi
+string dirname(string $path [, int $levels = 1 ])
+
+
+
+// izvrsava neki eksterni program    
+string exec(string $command [, array &$output [, int &$return_var ]])
+
+
+
+// izvrsavanje komande preko shell-a
+string shell_exec( string $cmd )
+
+
+string system( string $command [, int &$return_var ])
+
+
+
+void passthru( string $command [, int $&return_var] )
+
+(potrebno je koristiit escapeshellarg() ili escapeshellcmd() ukoliko se 
+u komandi nalaze podaci uneti od strane korisnika kako bi se onemogucio
+maliciozni unos)
+
+
+Dve vrste ekstenzija za pristup bazama podataka preko PHP:
+1. Abstraction layers
+2. Vendor specific database extensions
+
+
+
+
+
+ODBC - Open DataBase Connectivity
+---------------------------------
+
+MS razvio
+
+Nezavisnost od OS-a i DBMS-a
+
+Predstavlja medjusloj izmedju aplikacije i DBMS-a
+
+
+----
+
+
+MySQLi - MySQL Improved Extension
+
+
+
+"phpMyAdmin je veoma koristan alat, ali je po mom misljenju bezbednostni rizik"
+
+
+
+`MariaDB je kreirana od originalnih developera MySQL-a i garantovano ce ostati
+open source`

@@ -1,0 +1,173 @@
+Primer anonimne klase PHP 7+
+    $util->setLogger( new class{
+        public function log($msg) {
+            echo $msg;
+        }  
+    });
+    
+    
+Primer:
+    var_dump( new class(10) extends SomeClass implements SomeInterface {
+        private $num;
+        
+        public function __construct($num) {
+            $this->num = $num;
+        }
+        
+        use SomeTrait;
+    });
+    
+
+    
+    
+Instance anonimne klase direktno kreirane uvek imaju razlicitu
+oznaku, dok instance anonimne klase kreirane unutar jedne 
+iste funkcije imaju istu oznaku
+
+
+
+
+Overloading
+-----------
+
+Ukoliko se preko instance neke klase pristupi nekom polju
+koje ne postoji ili koje nije vidljivo, poziva se magicni
+metod __set( string $name, mixed $value). Taj metod ce
+za to ime polja ($name) postaviti datu vrednost ($value)
+
+
+metod __set() se moze definisati od strane korisnika
+
+__get() omogucava citanje vrednosti polja koje nije dostupno
+
+
+__isset() proverava da li je vrednost datog nedostupnog polja
+setovana 
+
+__unset() poziva unset() nad nedostupnim poljem
+
+
+
+Moze da se implementira kao niz, tako sto ce se nepostojeci
+dodavati sa __set, i uzimati sa __get
+
+
+
+Ove metode se odnose samo na polja
+
+
+
+Za metode postoje 
+    public mixed __call( string $name, array $arguments )
+    
+    // i
+    
+    public static mixed __callStatic( string $name, array $arguments )
+
+    
+    
+Klasa moze da bude final i ako jeste onda ne moze da se nasledi
+
+
+
+Direct IO (DIO) se moze koristiti ukoliko je bas potreban u nekim specificnim
+slucajevima
+
+Za IO se trebaju koristiti standardne IO funkcije
+
+
+
+
+int readfile(string $filename, [, bool $use_include_path = false [,
+    resource $context ]])
+
+readfile vraca broj ucitanih bajtova i stampa ucitan tekst
+    
+use_include_path - da li ce se fajl traziti i na include putanji
+
+
+get_include_path() # vraca include putanje
+
+set_include_path($path)
+
+
+PATH_SEPARATOR # koristak pri setovanju include path-a
+
+
+
+file_exists($file) 
+
+
+
+
+fopen(
+    string $filename,
+    string $mode,
+    bool $use_include_path = false,
+    ?resource $context = null
+): resource|false
+
+Otvara file ili URL
+
+
+
+
+string fread ( resource $handle, int $length)
+
+
+file_size($file)
+
+
+Otvaranje fajlova preko mreze zahteva prikupljanje
+sadrzaja fajla u delovima
+
+
+Nacin #1
+    $handle = fopen($file, "rb");
+    $contents = stream_get_contents($handle);
+    $fclose($handle);
+    
+Nacin #2
+    $handle = fopen($file, "rb");
+    
+    // radi se identicko proveravanje je moze da vrati
+    // i nesto sto se interpretira kao false, a nije false
+    if(FALSE === $handle) {
+        exit("error...");
+    }
+    
+    $contents = "";
+    
+    while(!feof($handle)) {
+        $contents .= fread($handle, 8192);
+    }
+    
+    $fclose($handle);
+    
+    
+
+    
+
+file_get_contents(
+    string $filename,
+    bool $use_include_path = false,
+    ?resource $context = null,
+    int $offset = 0,
+    ?int $length = null
+): string|false
+
+ucitava fajl kao string
+
+
+
+file(string $filename, int $flags = 0, ?resource $context = null): array|false
+
+ucitava fajl i vraca niz linija
+
+
+fwrite(resource $stream, string $data, ?int $length = null): int|false
+
+
+Zahtev se salje trenutnoj stranici ukoliko se izostavi atribut action ili
+ukoliko kao vrednost ima prazan string. Treca opcija je koriscenje globalnog
+asocijativnog niza server, $_SERVER[PHP_SELF]

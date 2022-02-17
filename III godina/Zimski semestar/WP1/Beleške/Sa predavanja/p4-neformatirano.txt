@@ -1,0 +1,121 @@
+include i require
+    ukljucuju kod iz drugog fajla
+    
+    razlika izmedju njih je to sto require zahteva ukljucivanje,
+    dok include ne zahteva, odnosno, require javlja kompajlersku
+    gresku dok include samo upozorava
+    
+    bolje je koristiti require, u koliko nema nekog zahteva, jer
+    time potencijalna greska nece ostati neprimecena
+    
+    
+Ukoliko include nema navedenu putanju za dati fajl onda ce traziti
+fajl u include path-u (php.ini)
+
+
+require_once i include_once
+    isto kao oni bez _once, s tim sto nece biti ukljuceno ponovo
+    ukoliko je vec jednom ukljuceno
+    
+    
+    
+Koriscenje return-a otezava razumevanje programa pa je pozeljno 
+izbegavati ga.
+
+
+
+nl2br($str) # \n menja sa <br>
+
+
+
+
+moguce je koristiti promenljivu pre njenog definisanja, kao u
+javascript-u
+
+
+Moguce je definisati funkciju u funkciji. Ugnjezdena funkcija ce
+moci da se pozove tek kada se spoljasnja funkcija pozove. Nakon
+tog poziva ugnjezdena funkcija ce postati dostupna
+
+
+
+F-je i klase imaju globalni opseg
+
+PHP f-je ne podrzavaju overloading
+
+Imena funkcija su case-insensitive
+
+
+Moguce je pristupiti argumentima koji su prosledjeni funkciji, 
+a koji nisu navedeni u potpisu (vrv func_get_args)
+
+
+stek se "rusi" na oko 100-200 rekurzivnih poziva
+
+
+kao sto se kopira vrednost pri prosledjivanju promenljive, 
+i kod prosledjivanje reference se vrsi kopiranje reference
+
+
+Ako se niz preda funkciji onda se predaje kopija niza. Da bi 
+se promene izvrsile izvan funkcije potrebno je da se koristi &
+
+
+
+Moguce je proslediti objekat kao argument i zvati njegove metode
+preko te reference
+
+
+is_null()
+
+
+"Neki ".join(". ", ["string", "Nova recenica"])
+
+
+
+Default parametri moraju da se pisu na kraju liste parametara
+
+
+
+func_get_args()
+func_get_arg(1)
+
+
+Ako se u funkciji ne iskoristi return, funkcija ce vratiti null
+
+
+Funkcije je moguce zvati i preko stringa
+    function foo()
+    {
+        echo "foo";
+    }
+    
+    $f = 'foo';
+    $f();
+    
+
+Isto je moguce i za metode
+
+
+Statickim clanovima klase je moguce pristupiti sa:
+    Klasa::imeClanice
+    
+    
+    
+Pozivanje funkcije preko niza:
+    $func = array("Foo", "bar"); // bar je staticka fun.
+    $func(); // stampa "bar"
+    
+    $func = array(new Foo, "baz");
+    $func(); // stampa "baz"
+    
+    
+    
+Vracanje reference iz funkcije:
+    function &returns_reference()
+    {
+        return $x;
+    }
+    
+    $ref =& return_reference();
+    

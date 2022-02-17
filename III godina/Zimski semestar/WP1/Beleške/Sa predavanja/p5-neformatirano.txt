@@ -1,0 +1,170 @@
+ 
+Elementi niza mogu biti razlicitih  tipova
+
+
+Zarez nakon poslednjeg elementa (pri navodjenju
+elemenata) se tolerise
+
+
+
+Kao kod enuma u C-u, ako se za neki element
+definise indeks, onda ce naredni da krene od
+tog indeksa + 1
+
+
+list($el1, $el2, $el3) # izdvaja elemente iz tuple-a
+
+npr:
+    list($a, $b) = [1,2];
+    echo $b; // 2
+    
+    
+    
+Ako nema int kljuceva, onda ce se krenuti od 0
+
+
+Ukoliko se koristi $arr[] za dodavanje elementa na kraj 
+niza, tada se uzima max int kljuc + 1. Taj kljuc ne mora da
+postoji trenutno u nizu, dovoljno je da je jednom postojao.
+To vazi sve dok se niz ne reindeksira (dok se promenljivoj
+ne dodeli novi niz)
+
+
+
+array_values($arr) # kreira novi niz od postojeceg
+
+
+array_keys($arr) # kreira niz sa kljucevima prosledjenog niza
+                 # kao vrednostima
+
+
+
+
+
+$arr[] = $var; i array_push($arr,$var); rade isto
+
+Razlika izmedju ta dva je sto se array_push() moze da doda 
+vise elemenata na kraj niza pa se u tim slucajevima i koristi
+
+
+
+array_pop($att) # vraca poslednji element u nizu i izbacuje ga
+
+
+
+array_shift($arr) # kao pop, s tim sto izacuje prvi el. i nakon
+                  # toga vrsi reindeksiranje
+                  
+                  
+array_unshift($arr) # suprotno od array_shift, dodaje elemente
+                    # na pocetak niza i vrsi reindeksiranje
+                    
+                    
+explode($separatoru, $string) # deli string po separatoru na 
+                             # niz podstringova
+                             
+                             
+                             
+explode prihvata i jos jedan parametar, limit. Ukoliko je 
+limit pozitivan onda ce se vratiti toliko podstringova, gde
+poslednji sadrzi ostatak stringa. Ukoliko je negativan, onda
+se vracaju svi sem poslednjih limit podstringova. Ukoliko je 
+0, posmatrace se kao da je prosledjen 1
+
+
+implode($separator, $niz) # spaja elemente sa saparatorom i na
+                          # taj nacin formira jedan string
+                          
+                          
+                          
+sort($arr) # inplace sort
+
+Ima dodatni argument za nacin sortiranja.
+Vrednosti mogu biti:
+    SORT_REGULAR # default
+    SORT_NATURAL
+    SORT_STRING
+    SORT_FLAG_CASE # sa SORT_NATURAL ili SORT_STRING
+
+    
+    
+asort($arr) # alfabetski sort; cuva kljuceve koji su 
+            # povezani sa datim vrednostima
+            
+            
+            
+rsort($arr) # reverse sort
+
+arsort($arr) # asort + rsort
+
+
+ksort($arr) # sortira niz po kljucevima
+
+
+array_multisort($niz1,$niz2)
+
+
+
+
+Klase
+======
+
+
+Klasa moze da se kreira i u jednoj liniji:
+    $k = (object) array('polje1'=>'val1', 'polje2'=>'val2');
+    echo $k->polje1; // val1
+    
+    
+
+$this
+
+
+
+isset($var)
+
+
+get_class($x)
+
+
+
+new self unutar funkcije neke klase kreira instancu te klase
+
+
+Moguce je kreirati klasu preko stringa kao i kod funkcija
+
+
+
+Moguce je praviti i instancu klase neke instance:
+    $i1 = new Klasa();
+    $i2 = new $i1();
+    
+    var_dump($i2); // object(Klasa)#1 (0) {}
+    
+
+---
+    
+Primer, new static:    
+    class Klasa
+    {
+        static function f()
+        {
+            retun new static;
+        }
+    }
+
+    class IzvedenaKlasa extends Klasa
+    {
+    }
+
+    $o1 = new Test::f();
+    var_dump($o1); // object(Klasa)#1 (0) {}
+
+    $o2 = new IzvedenaKlasa::f();
+    var_dump($o2); // object(IzvedenaKlasa)#2 (0) {}
+
+
+    
+Anonimne funkcije:
+    $f = function($arg1) {
+        return $arg1 + 1;
+    }

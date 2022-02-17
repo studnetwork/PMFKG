@@ -1,0 +1,188 @@
+final metodi ne mogu da se menjaju
+
+
+metodama iz roditeljske klase se pristupa sa parent::
+
+
+
+echo Klasa::class; // korisno za dobijanje namespace-a klase
+
+
+Polja moraju da imaju modifikator pristupa
+(public, private ili protected)
+
+
+Moze i sa var da se deklarise, ali samo zbog kompatabilnosti
+postoji. Access Modifier je public u tom slucaju
+
+
+
+
+Static poljima se pristupa sa ::
+
+
+
+$ se nikad ne koristi nakon ->, npr. $this->polje
+
+
+
+
+heredoc
+    postavljanjem indikatora za kraj se moze odabrati odakle
+    ce da krene ispis. 
+
+    
+Primer:
+<?php
+// END moze da bude i uokvireno sa ", tj. "END"
+echo <<<END 
+      a
+     b
+    c
+\n
+END;
+
+echo <<<END
+      a
+     b
+    c
+    END;
+
+
+    
+    
+Rezultat:
+      a
+     b
+    c
+
+  a
+ b
+c
+
+
+
+Kod nowdoc-a, indikatora se okruzuje sa '
+
+
+Konstruktor roditeljske klase se ne poziva implicitno u 
+konstruktoru dete klase 
+
+
+Ukoliko dete klasa ne definise svoj konstruktor onda ce biti
+koriscen roditeljski konstruktor
+
+
+
+
+
+Moguce je pozvati privatni metod bazne klase preko instance
+izvedene klase tako sto pozovemo metod bazne klase koji
+poziva taj privatni metod
+
+
+
+Statickom polju klase se pristupa sa ::$naziv
+
+
+Metod koji implementira metod apstraktne klase moze da ima 
+u svom potpisu vise parametara nego potpis metoda iz apstrakne
+klase
+
+
+
+Interfejs moze da definise konstante
+
+
+
+Metode podrzavaju tipizaciju. Navodjenjem tipa u potpisu, 
+ispred naziva promenljive forsira se prosledjivanje promenljive
+tog tipa
+
+
+
+Kao to ogranicenje moze da se postave, pored osnovnih tipova, i
+self, array i callable
+
+
+self zahteva da je prosledjena instanca klase u kojoj je dati
+metod definisan
+
+
+
+callable (funkcija)
+
+
+
+
+trait - horizontalno prosirivanje klase
+
+
+Razlicite klase mogu da ukljuce isti trait
+
+
+U klasu se sa "use" ukljucuje trait
+
+
+Ukoliko klasa nasledjuje baznu klasu i koristi neki trait, gde
+i bazna i trait imaju metod istog imena, onda prednost ima
+metod iz trait-a
+
+
+
+Rezolucija konflikta koji nastaje kada vise trait-a koji se 
+koriste imaju metode sa istim nazivom
+-----------------------------------------------------------
+
+Resava se tako sto se u use bloku navede cija metoda ce se
+koristiti
+
+Primer:
+    class Klasa {
+        use A,B {
+            A::smallTalk insteadof B;
+            B::bigTalk insteadof A;
+        }
+    }
+
+    
+    
+Moguce je i dati alias nekom metodu traita:
+    class Klasa {
+        use A {
+            A::bigTalk as talk
+        }
+    }
+    
+    // poziv
+    
+    $t = new Klasa();
+    $t->talk();
+    
+    
+
+Moguce je i promeniti vidljivost clanice trait-a:
+    class Klasa {
+        use A { bigTalk as protected; }
+    }
+    
+    // ili sa alias-om
+    
+    class Klasa {
+        use A { bigTalk as private talk; }
+    }
+    
+.
+
+trait moze da sadrzi i abstract metode
+
+
+moze imati static metod ili static varijablu unutar funkcije
+(ta varijabla se vezuje za dati tip klase koja koristi trait;
+njega vrednost ce ostati i nakon izvrsenja funkcije, ali
+za dati TIP!)
+
+
+Ako trait definise neko polje, i klasa ga koristi, onda ta 
+klasa ne moze da definise polje sa istim imenom
+
