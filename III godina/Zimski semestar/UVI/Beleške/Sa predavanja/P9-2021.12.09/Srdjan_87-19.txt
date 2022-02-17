@@ -31,7 +31,7 @@ ne može se reći ništa konkretno
 
 
 
-Kako algoritam k najbližih suseta klasifikuje novi objekat?
+Kako algoritam k najbližih suseda klasifikuje novi objekat?
 * Određuje se rastojanje između novog objekta i svih ostalih
   iz trening skupa
   
@@ -67,7 +67,7 @@ Hamingovo rastojanje se koristi za kategorijske promenljive
 
 
 Ovo nije algoritam učenja, već "algoritam predviđanja" jer
-se zasniva samo na čuvanju podataka i samo se vrši proverava 
+se zasniva samo na čuvanju podataka i samo se proverava 
 koji su susedi najbliži kada se na ulaz dovede novi primer. 
 
 Zbog toga dolazi do problema oko vremena izvršenja
@@ -147,7 +147,9 @@ Mane:
   
 Za neke vrednosti k se ne može odrediti klasa jer se može
 dogoditi da postoji više primeraka koji se nalaze na istoj 
-udaljenosti
+udaljenosti (čime se ne može odrediti koju od tih tačaka
+odabrati; ovaj problem se javlja samo kada broj suseda primera
+koji se klasifikuje pređe broj k)
 
 
 
@@ -160,7 +162,7 @@ simetrali. One se spoje i tako se dobija granicna linija
 
 
 Linearna regresija - na osnovu nekog ulaza predvideti 
-                     kontinualnu, numericku, vrednost 
+                     kontinualnu, numeričku, vrednost 
                      
                      
 Ideja je da se skup podataka modelira pravom linijom                     
