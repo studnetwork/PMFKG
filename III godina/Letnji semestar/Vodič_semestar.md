@@ -14,7 +14,8 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 
 # Korisni linkovi
-[Moodle stranica][moodle stranica]
+
+[//]: # ([Moodle stranica][moodle stranica])
 
 
 
