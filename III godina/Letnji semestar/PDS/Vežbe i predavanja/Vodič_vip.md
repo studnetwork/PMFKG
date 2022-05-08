@@ -4,7 +4,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
 
-[Threading][v-folder-1]  
+[Threading primer sa komentarima][v-folder-1]  
 [Vežbe 2 - Primer 8 - kružni bafer (bez var. count, sa vizuelizacijom)][v-folder-2]  
 
 ### Lekcije
@@ -66,7 +66,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Vezbe reference )
 
-[v-folder-1]: ./Vezbe/Primeri/Resenja%20studenata/Threading/
+[v-folder-1]: ./Vezbe/Primeri/Threading/Resenja%20studenata/Dragor_33-19/
 
 [v-folder-2]: ./Vezbe/Primeri/Primer_8_kruzni_buffer/Resenja%20studenata/Srdjan_87-19/
 
