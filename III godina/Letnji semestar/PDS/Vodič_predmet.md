@@ -25,7 +25,7 @@ o materijalu sa gradiva
 ## Ostalo
 Ova sekcija sadrži materijal koji nije sortiran
 
-[//]: # ([Moodle stranica predmeta][stranica predmeta]  )
+[Moodle stranica predmeta][stranica predmeta]
 
 [//]: # ([Link ka folderu Ostalo][ostalo])
 
@@ -55,7 +55,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [ostalo]: ./Ostalo
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=170
 
 [new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
 

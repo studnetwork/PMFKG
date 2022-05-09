@@ -1,5 +1,5 @@
 # Vodič
-U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
+U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 # Lista predmeta
 [Programiranje distribuiranih sistema][PDS]  
@@ -15,7 +15,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Korisni linkovi
 
-[//]: # ([Moodle stranica][moodle stranica])
+[Moodle stranica][moodle stranica]
 
 
 
@@ -43,5 +43,5 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Korisni linkovi reference )
 
-[moodle stranica]: https://imi.pmf.kg.ac.rs/moodle/course/index.php?categoryid={id_stranice}
+[moodle stranica]: https://imi.pmf.kg.ac.rs/moodle/course/index.php?categoryid=100
 
