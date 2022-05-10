@@ -3,6 +3,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 # Lista predmeta
 [Programiranje distribuiranih sistema][PDS]  
+[Logičko i funkcijsko programiranje][LFP]  
 
 [//]: # ( Svaki folder predmeta mora imati fajl "Vodič_predmet.md" i u njemu naslov "Vodič". U suprotnom, kod koji je gore naveden za link ka predmetu neće biti ispravan jer on pokazuje ka tom fajlu i spomenutom naslovu koji je u njemu. Ovaj komentar kao i sve ostale koji Vam nisu potrebni možete obrisati )
 
@@ -30,6 +31,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 [//]: # ( Lista predmeta reference )
 
 [PDS]: ./PDS/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[LFP]: ./LFP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 
