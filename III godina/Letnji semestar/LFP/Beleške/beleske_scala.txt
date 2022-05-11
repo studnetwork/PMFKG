@@ -1,0 +1,98 @@
+object vezbe
+{
+    def main (args:Array[String]):Unit = {
+        println("Main")
+    }
+}
+
+---
+
+val broj = 6
+broj match{
+  case 1 => println("Jedan")
+  case 2 => println("Dva")
+  case 3 => println("Tri")
+  case _ => println("Nesto drugo")
+}
+
+---
+
+torke (one su one-based):
+	val predmet = ("LFP","TS","DP")
+
+Iterisanje
+==========
+
+for(x <-1 to 4) {...}
+for(profesor <- listaProfesora) {...}
+
+Funkcije
+========
+
+lambda:
+	x => x+10
+	x => { val y = x + 5; y + 5 }
+	
+f kao arg:
+	def x(y:Int, f:Int=>Int):Int = {}
+
+def squareIt(x: Int): Int = {
+  x*x
+}
+	
+
+Liste
+====
+
+//ZERO-BASED
+val listaProfesora = List("TS","AKM","VS")
+
+spajanje liste:
+	val l3 = l1 ++ l2
+
+lista.map((x)=>...)
+lista.reduce((x,y)=>...)
+lista.filter((x)=>...)
+lista.contains(value)
+
+lista.length
+lista.reverse
+lista.sorted
+lista.distinct
+lista.max
+lista.sum
+
+
+
+def removeAt[T](xs: List[T],n: Int): List[T] = remove(xs,n,0)
+
+
+
+def merge(xs:List[Int],ys: List[Int]):List[Int] = (xs,ys) match {
+	case (xs,Nil) => xs
+	case (Nil,ys) => ys
+	case (x::xs1,y::ys1) =>
+		if(x<y) x::merge(xs1,ys) else y::merge(xs,ys1)
+}
+			
+			
+			
+Klase
+========
+
+
+class Shape()
+case class Rectangle(a: Int, b: Int) extends Shape
+case class Circle(r:Int) extends Shape
+
+def isRound (shape: Shape): Boolean = shape match {
+	case Circle(r) => true
+	case Rectangle(a, b) => false
+}
+
+
+IO
+=====
+
+
+val value = readLine()
