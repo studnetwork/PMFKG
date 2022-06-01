@@ -10,7 +10,7 @@ Ukoliko se navode linkovi na neki resurs koji se nalazi u okviru ovog projekta p
 
 Za primer ovakve transformacije adrese linka, iz apsolutne u relativnu, koristićemo link do fajla `korisni_kodovi.md` koji se nalazi u istom folderu kao i ovaj fajl u kome ćemo ga linkovati. Kod sa apsolutnim adresiranjem izgleda ovako:
 ```
-[korisni kodovi]: https://github.com/Produktivna-grupa/PMFKG/blob/master/Saradnja/korisni_kodovi.md
+[korisni kodovi]: https://github.com/studnetwork/PMFKG/blob/master/Saradnja/korisni_kodovi.md
 ```
 Kod za njegovo relativno linkovanje:
 ```

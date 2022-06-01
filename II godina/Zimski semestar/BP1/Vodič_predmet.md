@@ -61,6 +61,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=27
 
-[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
+[new issue]: https://github.com/studnetwork/PMFKG/issues/new
 
-[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
+[pull request]: https://github.com/studnetwork/PMFKG/compare

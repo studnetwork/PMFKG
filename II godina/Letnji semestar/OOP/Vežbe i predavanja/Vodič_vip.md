@@ -185,6 +185,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Napomena reference )
 
-[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
-[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
+[new issue]: https://github.com/studnetwork/PMFKG/issues/new
+[pull request]: https://github.com/studnetwork/PMFKG/compare
 

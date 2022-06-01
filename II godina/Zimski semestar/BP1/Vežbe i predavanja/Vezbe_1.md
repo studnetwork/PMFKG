@@ -176,6 +176,6 @@ Ima li nekih posebnih ograničenja?
 
 [//]: # (Reference za slike)
 
-[BP1-vezbe-slide1-z1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png
+[BP1-vezbe-slide1-z1]: https://github.com/studnetwork/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z1.png
 
-[BP1-vezbe-slide1-z2]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z2.png
+[BP1-vezbe-slide1-z2]: https://github.com/studnetwork/PMFKG/blob/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja/BP1-vezbe-slide1-z2.png

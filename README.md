@@ -2,10 +2,10 @@
 <h2 align="center"><b>PMFKG - Informatika</b></h2>
 
 <p align="center">
-<a href="https://github.com/Produktivna-grupa/PMFKG/commits/master" alt="Commit history"><img src="https://img.shields.io/github/last-commit/Produktivna-grupa/PMFKG?color=green" ></a>
-<a href="https://github.com/Produktivna-grupa/PMFKG/issues?q=is%3Aopen" alt="Open issues"><img src="https://img.shields.io/github/issues-raw/Produktivna-grupa/PMFKG.svg?color=green"></a>
-<a href="https://github.com/Produktivna-grupa/PMFKG/" alt="Contributors"><img src="https://img.shields.io/github/contributors/Produktivna-grupa/PMFKG?color=green"></a>
-<a href="https://opensource.org/licenses/MIT" alt="License: MIT"><img src="https://img.shields.io/github/license/Produktivna-grupa/PMFKG"></a>
+<a href="https://github.com/studnetwork/PMFKG/commits/master" alt="Commit history"><img src="https://img.shields.io/github/last-commit/studnetwork/PMFKG?color=green" ></a>
+<a href="https://github.com/studnetwork/PMFKG/issues?q=is%3Aopen" alt="Open issues"><img src="https://img.shields.io/github/issues-raw/studnetwork/PMFKG.svg?color=green"></a>
+<a href="https://github.com/studnetwork/PMFKG/" alt="Contributors"><img src="https://img.shields.io/github/contributors/studnetwork/PMFKG?color=green"></a>
+<a href="https://opensource.org/licenses/MIT" alt="License: MIT"><img src="https://img.shields.io/github/license/studnetwork/PMFKG"></a>
 </p>
 
 <p align="center">
@@ -134,7 +134,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [saradnja]: ./Saradnja/README.md#opis
 
-[discussions]: https://github.com/Produktivna-grupa/PMFKG/discussions
+[discussions]: https://github.com/studnetwork/PMFKG/discussions
 
 [categories]: ./Resursi/Slike/categories.png
 

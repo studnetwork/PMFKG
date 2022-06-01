@@ -138,6 +138,6 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Napomena reference )
 
-[new issue]: https://github.com/Produktivna-grupa/PMFKG/issues/new
-[pull request]: https://github.com/Produktivna-grupa/PMFKG/compare
-[vežbe i predavanja]: https://github.com/Produktivna-grupa/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja
+[new issue]: https://github.com/studnetwork/PMFKG/issues/new
+[pull request]: https://github.com/studnetwork/PMFKG/compare
+[vežbe i predavanja]: https://github.com/studnetwork/PMFKG/tree/master/II%20godina/Zimski%20semestar/BP1/Ve%C5%BEbe%20i%20predavanja

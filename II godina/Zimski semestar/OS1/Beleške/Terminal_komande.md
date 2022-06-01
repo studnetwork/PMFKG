@@ -71,4 +71,4 @@ Obriši red za poruke čiji je msqid jednak `qID`:
 
 
 
-[os1]: https://github.com/Produktivna-grupa/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[os1]: https://github.com/studnetwork/PMFKG/blob/master/II%20godina/Zimski%20semestar/OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
