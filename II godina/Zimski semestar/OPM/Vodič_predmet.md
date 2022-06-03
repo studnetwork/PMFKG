@@ -23,7 +23,7 @@ o materijalu sa gradiva
 [Link ka folderu sa beleškama][beleške]
 
 ## Ostalo
-Ova sekcija sadrži materijal koji nije sortiran
+Ova sekcija sadrži materijal koji nije obuhvaćen prethodnim sekcijama.
 
 [Moodle stranica predmeta][stranica predmeta]  
 [Link ka folderu Ostalo][ostalo]
