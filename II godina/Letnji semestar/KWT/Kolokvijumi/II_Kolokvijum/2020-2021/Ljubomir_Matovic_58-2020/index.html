@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>II kolokvijum Informatika</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="index.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            Pretraga po nazivu:
+            <input type="text" id="search" onkeyup="popuniTabelu(filterTabele)"/>
+            <select id="proizvodjaci" onchange="popuniTabelu(filterTabele)"></select>
+            Broj kalorija: >100 <input type="checkbox" id="vece_kalorije" onchange="popuniTabelu(filterTabele)"/>
+            Broj kalorija: &#8804;100 <input type="checkbox" id="manje_kalorije" onchange="popuniTabelu(filterTabele)"/>
+        </div>
+        <div id="fold">
+            <table id="proizvodi"></table>
+        </div>
+        <div class="wrapper">
+            <h3>Trenutne porudzbine:</h3>
+            <table id="porudzbine"></table>
+            <span id="prazno_text">vasa korpa za kupovinu je prazna</span>
+            <h3>Cena:</h3>
+            <p id="cena"></p>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

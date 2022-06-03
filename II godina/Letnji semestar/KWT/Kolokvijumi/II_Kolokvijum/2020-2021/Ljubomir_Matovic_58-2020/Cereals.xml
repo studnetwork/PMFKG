@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Cereal>
+    <Name>100% Bran</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>70</Calories>
+    <Price>68.402973</Price>
+  </Cereal>
+  <Cereal>
+    <Name>100% Natural Bran</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>120</Calories>
+    <Price>33.983679</Price>
+  </Cereal>
+  <Cereal>
+    <Name>All-Bran</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>70</Calories>
+    <Price>59.425505</Price>
+  </Cereal>
+  <Cereal>
+    <Name>All-Bran with Extra Fiber</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>50</Calories>
+    <Price>93.704912</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Almond Delight</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>110</Calories>
+    <Price>34.384843</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Apple Cinnamon Cheerios</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>29.509541</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Apple Jacks</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>33.174094</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Basic 4</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>130</Calories>
+    <Price>37.038562</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Bran Chex</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>90</Calories>
+    <Price>49.120253</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Bran Flakes</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>90</Calories>
+    <Price>53.313813</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cap&apos;n&apos;Crunch</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>120</Calories>
+    <Price>18.042851</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cheerios</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>50.764999</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cinnamon Toast Crunch</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>120</Calories>
+    <Price>19.823573</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Clusters</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>40.400208</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cocoa Puffs</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>22.736446</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Corn Chex</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>110</Calories>
+    <Price>41.445019</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Corn Flakes</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>100</Calories>
+    <Price>45.863324</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Corn Pops</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>35.782791</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Count Chocula</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>22.396513</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cracklin&apos; Oat Bran</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>40.448772</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Cream of Wheat (Quick)</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>100</Calories>
+    <Price>64.533816</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Crispix</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>46.895644</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Crispy Wheat &amp; Raisins</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>100</Calories>
+    <Price>36.176196</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Double Chex</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>100</Calories>
+    <Price>44.330856</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Froot Loops</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>32.207582</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Frosted Flakes</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>31.435973</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Frosted Mini-Wheats</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>100</Calories>
+    <Price>58.345141</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Fruit &amp; Fibre Dates; Walnuts; and Oats</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>120</Calories>
+    <Price>40.917047</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Fruitful Bran</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>120</Calories>
+    <Price>41.015492</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Fruity Pebbles</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>110</Calories>
+    <Price>28.025765</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Golden Crisp</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>100</Calories>
+    <Price>35.252444</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Golden Grahams</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>23.804043</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Grape Nuts Flakes</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>100</Calories>
+    <Price>52.076897</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Grape-Nuts</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>110</Calories>
+    <Price>53.371007</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Great Grains Pecan</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>120</Calories>
+    <Price>45.811716</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Honey Graham Ohs</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>120</Calories>
+    <Price>21.871292</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Honey Nut Cheerios</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>31.072217</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Honey-comb</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>110</Calories>
+    <Price>28.742414</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Just Right Crunchy  Nuggets</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>36.523683</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Just Right Fruit &amp; Nut</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>140</Calories>
+    <Price>36.471512</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Kix</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>39.241114</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Life</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>100</Calories>
+    <Price>45.328074</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Lucky Charms</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>26.734515</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Maypo</Name>
+    <Manufacturer>A</Manufacturer>
+    <Calories>100</Calories>
+    <Price>54.850917</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Muesli Raisins; Dates; &amp; Almonds</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>150</Calories>
+    <Price>37.136863</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Muesli Raisins; Peaches; &amp; Pecans</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>150</Calories>
+    <Price>34.139765</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Mueslix Crispy Blend</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>160</Calories>
+    <Price>30.313351</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Multi-Grain Cheerios</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>100</Calories>
+    <Price>40.105965</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Nut&amp;Honey Crunch</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>120</Calories>
+    <Price>29.924285</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Nutri-Grain Almond-Raisin</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>140</Calories>
+    <Price>40.69232</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Nutri-grain Wheat</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>90</Calories>
+    <Price>59.642837</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Oatmeal Raisin Crisp</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>130</Calories>
+    <Price>30.450843</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Post Nat. Raisin Bran</Name>
+    <Manufacturer>P</Manufacturer>
+    <Calories>120</Calories>
+    <Price>37.840594</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Product 19</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>100</Calories>
+    <Price>41.50354</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Puffed Rice</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>50</Calories>
+    <Price>60.756112</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Puffed Wheat</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>50</Calories>
+    <Price>63.005645</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Quaker Oat Squares</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>100</Calories>
+    <Price>49.511874</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Quaker Oatmeal</Name>
+    <Manufacturer>Q</Manufacturer>
+    <Calories>100</Calories>
+    <Price>50.828392</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Raisin Bran</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>120</Calories>
+    <Price>39.259197</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Raisin Nut Bran</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>100</Calories>
+    <Price>39.7034</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Raisin Squares</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>90</Calories>
+    <Price>55.333142</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Rice Chex</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>110</Calories>
+    <Price>41.998933</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Rice Krispies</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>40.560159</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Shredded Wheat</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>80</Calories>
+    <Price>68.235885</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Shredded Wheat &apos;n&apos;Bran</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>90</Calories>
+    <Price>74.472949</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Shredded Wheat spoon size</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>90</Calories>
+    <Price>72.801787</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Smacks</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>31.230054</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Special K</Name>
+    <Manufacturer>K</Manufacturer>
+    <Calories>110</Calories>
+    <Price>53.131324</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Strawberry Fruit Wheats</Name>
+    <Manufacturer>N</Manufacturer>
+    <Calories>90</Calories>
+    <Price>59.363993</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Total Corn Flakes</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>38.839746</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Total Raisin Bran</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>140</Calories>
+    <Price>28.592785</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Total Whole Grain</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>100</Calories>
+    <Price>46.658844</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Triples</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>39.106174</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Trix</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>27.753301</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Wheat Chex</Name>
+    <Manufacturer>R</Manufacturer>
+    <Calories>100</Calories>
+    <Price>49.787445</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Wheaties</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>100</Calories>
+    <Price>51.592193</Price>
+  </Cereal>
+  <Cereal>
+    <Name>Wheaties Honey Gold</Name>
+    <Manufacturer>G</Manufacturer>
+    <Calories>110</Calories>
+    <Price>36.187559</Price>
+  </Cereal>
+</root>

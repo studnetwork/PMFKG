@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 5, 2018, 10:47:25 PM
+    Author     : Knezevic Marko
+*/
+
+table, th, td {
+    border: 1px solid darkred;
+}
+
+#fold
+{
+    width: 600px;
+    height: 500px;
+    overflow: auto;
+    float: left;
+}
+
+table {
+    background-color: wheat;
+    color: darkred;
+    margin: 20px;
+}
+
+th, td
+{
+    padding: 5px;
+}
+
+#pretraga
+{
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    max-width: 600px;
+}
+
+.wrapper
+{
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid lightsteelblue;
+    width: 500px;
+    max-height: 500px;
+    overflow: auto;
+}
+.wrapper > span{
+    text-transform: uppercase;
+}
