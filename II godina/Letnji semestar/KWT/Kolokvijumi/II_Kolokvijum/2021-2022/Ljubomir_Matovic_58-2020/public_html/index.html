@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oglasna tabla</title>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        
+        <div id="container">
+            <h2>Oglasna Tabla</h2>
+            <div id="login">
+                <div id="labels">
+                    <div>Korisničko ime:</div>
+                    <div><input id="inpUser" type="text"></div>
+                </div>
+                <div id="inputs">
+                    <div>Lozinka:</div>
+                    <div><input id="inpPass" type="password"></div>
+                </div>
+                <div id="loginButton">
+                    <button id="logujSe">Uloguj se</button>
+                </div>
+                <div id="porukaGreske"></div>
+            </div>
+            <button id="logout" style="float:right; margin-right:20px; margin-bottom:20px;">Izloguj se</button>
+                
+            <div id="prikaz" style="clear:both;">
+                <div id="search" >
+                    <span id="unosAutor">
+                        Author:
+                        <select id="selectAuthor" onchange="popuniTabelu()">
+                            
+                        </select>
+                    </span>
+                    <span id="search">
+                        Search:
+                        <input id="txtSearch" type="text" onkeyup="popuniTabelu()"/>
+                    </span>
+                </div>
+                <div id="results">
+                    <div id="tabela">
+
+                    </div>
+                    <div id="right">
+                        <div id="broj"></div>
+                        <div id="oglasi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="functions.js"></script>
+    </body>
+</html>

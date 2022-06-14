@@ -1,0 +1,71 @@
+#login
+{
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    overflow: hidden;
+    width: 33%;
+    margin: auto;
+}
+
+#labels, #inputs {
+    float: left;
+}
+
+#loginButton {
+    clear:both;
+}
+
+#labels {
+    padding-right: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container {
+    width: 900px;
+    margin:auto;
+}
+
+#search {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px 5px 5px 100px;
+    background-color: lightblue;
+}
+
+#results {
+    overflow:hidden;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+#tabela {
+    float:left;
+    width: 60%;
+}
+
+table {
+    width:100%;
+    background-color: wheat;
+    color: darkred;
+}
+
+table, tr, td {
+    border: 1px solid darkred;
+}
+
+#right {
+    float:left;
+    width: 30%;
+    padding-left: 5%;
+}
+#porukaGreske{
+    color: red;
+}
+
