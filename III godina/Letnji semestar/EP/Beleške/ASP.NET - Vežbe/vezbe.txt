@@ -1,0 +1,48 @@
+== EP - Beleske - Vezbe ==
+
+-- Dependency Injectin u .NET 2 --
+
+  - Mapiranje interfejsa i klase cija se instanca Inject-uje  // lokacija:  Startup.cs > ConfigureServices(IServiceCollection services)
+                                                              // mapiranje: services.AddTransient<IClassToInject, ClassToInject>(); (Na vezbama se postavljalo ispred poziva AddMvc() metode)
+                                                              // instanca date klase se automatski prosledjuje kao parametar u konstruktorima gde je dati interfejs tip tog parametra
+
+
+-- Context metode (za komunikaciju sa bazom) --
+
+  - context.ModelName.ToList() == SELECT ALL                                            // dobavlja sve redove
+  - context.ModelName.Where(x => <boolean expression>).ToList() == SELECT WHERE         // dobavlja one redove koji zadovoljavaju uslov (x predstavlja red iz baze, x.Attribute)
+
+
+-- ASP HTML Atributi --
+
+  - asp-controller i asp-action   // zajedno se koriste umesto href linka u <a> tagu
+                                  // HTML nacin:  <a href="/Kontroler/Metoda"></a>
+                                  // ASP nacin:   <a asp-controller="Kontroler" asp-action="Metoda"></a>
+
+  - asp-route-parameterName       // postavlja Query parametar u linku na koji gadja <a> tag
+                                  // HTML nacin:  <a href="/Kontroler/Metoda?parameterName=Vrednost"></a>
+                                  // ASP nacin:   <a asp-controller="Kontroler" asp-action="Metoda" asp-route-parameterName="Vrednost"></a>
+                                  // postavljeni parametar se prosledjuje kao parametar metodi Metoda u kontroleru Kontroler, ime Query parametra iz linka mora da se poklapa sa onim iz metode
+
+
+-- Views (Pogledi) --
+
+  - @Html.Partial("_ViewName", InputParameter);   // Ukljucivanje parcijalnog pogleda u drugi pogled (ime ne mora pocinjati sa "_", ali je tako po konvenciji)
+
+
+-- Components (Komponente) --
+
+  - Component klasa nasledjuje ViewComponent klasu
+  - @await Component.InvokeAsync("ComponentName");
+  - Invoke metoda komponente vraca objekat (return View(objekat)), kome se u View delu te komponente koristi kao Model
+
+
+-- Napomene --
+
+  - UI sloj presipa Model-e u ViewModel-e
+  - Slojevi ispod UI sloja ne bi trebalo rade nista sa ViewModel-ima
+  
+
+-- Zanimljivo --
+
+  - "U modelu stoji URL slike koja se nalazi u okviru projekta, ali to nije nesto sto se koristi inace"
