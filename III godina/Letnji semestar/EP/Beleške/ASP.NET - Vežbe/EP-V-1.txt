@@ -1,0 +1,90 @@
+.NET 4.6 | .NET Core | .NET 5
+
+
+Web aplikacija u praksi - bar 3 sloja
+
+
+Sloj prezentacije<-->poslovni sloj<-->sloj podataka
+
+
+Zasto se deli na slojeve?
+
+Individualan razvoj, testiranje, nezavisnost, greska
+je prisutna samo na jednom sloju, ne mora da se popravlja
+i na susednom
+
+
+
+Onion arhitektura
+-----------------
+
+Komunikacija se vrsi preko interfejsa, a ne preko
+implementacije klasa
+
+Slojevi zavise samo od unutrasnjih slojeva, a nije
+svestan spoljasnjih
+
+
+Posalje se zahtev, okine se kontroler, kontroler poziva
+prvi sloj u backend-u, a to je UI sloj. UI sloj formira
+podatke za UI. Nakon toga sloj iznad zove interface
+sloja ispod
+
+
+
+EF Core - Entity Framework Core
+-------------------------------
+
+Omogucava pristup bazi. Tabele se predtavljaju kao objekti
+u backendu
+
+Nalazi se ispod/u sloju podataka
+
+
+Database first pristup - pristup u kojem se klase generisu
+iz vec postojece baze podataka
+
+
+
+Code first
+----------
+
+Noviji pristup
+
+Nema sql-a
+
+POCO - Plain old CLR objects
+
+
+Prave se klase i POCO, a nakon toga se migracijama kreira
+baza podataka
+
+
+Nezavisno od baze podataka
+
+
+
+----------------------------------------------------
+
+MVC vise nije toliko zastupljen
+
+
+
+
+Model - reprezentacija tabele/objekta iz baze; sadrzi
+        podatke za konkretnu primenu
+        
+        
+        
+Pogled i model nikada ne komuniciraju direktno, vec preko
+kontrolera
+
+
+
+
+
+
+
+
+
+
