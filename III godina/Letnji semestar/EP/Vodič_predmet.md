@@ -60,7 +60,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [ostalo]: ./Ostalo
 
-[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id={id_predmeta}
+[stranica predmeta]: https://imi.pmf.kg.ac.rs/moodle/course/view.php?id=421
 
 [new issue]: https://github.com/studnetwork/PMFKG/issues/new
 
