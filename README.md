@@ -36,6 +36,8 @@ Treća godina: [Zimski semestar][treca-zimski] | [Letnji semestar][treca-letnji]
 [Stranica fakulteta][stranica fakulteta]  
 [Stranica instituta za matematiku i informatiku][imi stranica]  
 
+[Lista igrica učenje koncepata i unapređivanja veština potrebnih za IT](https://github.com/studnetwork/ITEG/blob/master/README.sr.md)
+
 GitHub Client: [Windows ili macOS][gh client official] | [Linux][gh client linux]
 
 [VSCodium][vscodium]
