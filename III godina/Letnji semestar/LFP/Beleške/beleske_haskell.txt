@@ -1,0 +1,98 @@
+== Napomene ==
+
+- In Haskell, lists are a homogenous data structure (?)
+- redosled definisanja funkcija nije bitan, sve su vidljive svuda u fajlu
+- if-else statement je izraz (else deo je obavezan)
+- ' se obicno koristi da oznaci da funkcija nije lazy (strict func.) ili modifikovanu verziju funkcije
+- funkcija koja ne prima parametre (konstantna) se obicno zove "definition" ili "name"
+- "An expression is basically a piece of code that returns a value"
+- [1,2,3] is actually just syntactic sugar for 1:2:3:[]
+- Watch out when using floating point numbers in ranges! Because they are not completely precise (by definition), their use in ranges can yield some pretty funky results. My advice is not to use them in list ranges
+- infix funkcija moze i da se definise kao infix, tj. da ima backticks i u definiciji
+- functions are not instances of Show typeclass (they can't be represented with a string)
+- GHCi calls "print expression" for "expression" typed in it
+- function application "space" character has HIGHEST precedence (left associative), and function application "$" character has LOWEST precedence (rigth associative)
+
+== Pojmovi ==
+
+- pattern-matching          (?)
+- type inference
+- referential transpaency   (za iste parametre jedna funkcija garantovano vraca isti rezultat)
+- polymorphic function      (genericka funkcija)
+- class constraint          (sve pre "=>" u deklaraciji tipa funkcije)
+- type annotation           (kad se koristi ":: Tip" u pozivu funkcije, f 1 2 :: Tip)
+- enumerated                (= nabrojiv)
+- higher order function     (function that accepts a function or returns a function)
+- curried functions
+- partially applied function
+
+== Typeclass / Data / Record syntax ==
+
+- "value constructors" su funkcije !!!
+  data Tip = Kons1 TipPolja1 TipPolja2 | Kons2 TipPolja1 TipPolja2 | ...
+- Kad se stavi da value konstruktor ima isto ime kao i tip, to nema nikakvo specijalno znacenje (obicno se stavlja kad postoji samo jedan konstruktor)
+
+- record syntax
+    data Tip = Konstruktor { polje :: Tip
+                           , polje :: Tip
+                           , polje :: Tip
+                           ...
+                           }
+    ** ovako se automatski generisu FUNKCIJE koje predstavljaju data POLJA
+
+== Type variable ==
+
+- This is much like generics in other languages, only in Haskell it's much more powerful because it allows us to easily write very general functions if they don't use any specific behavior of the types in them
+
+
+== Lists ==
+
+lista !! x          // x. element (pocevsi od 0)
+head lista          // 1. element liste
+tail lista          // svi nakon 1. elementa
+last lista          // poslednji element
+init lista          // svi pre poslednjeg elementa
+
+** head, tail, last, init ne mogu da se koriste na praznoj listi (baca Exception)
+
+length lista        // duzina liste (vraca Int)
+null lista          // da li je prazna (vraca Bool), identicno "lista == []"
+reverse lista       // suprotan redosled elemenata
+take x lista        // vraca listu prvih x elemenata liste
+drop x lista        // vraca listu svih elemenata liste sem prvih x
+maximum lista       // najveci element
+minimum lista       // najmanji element
+sum lista           // suma svih elemenata liste
+product lista       // proizvod svih elemenata liste
+elem x lista        // da li je x clan liste (vraca Bool)
+
+cycle
+repeat
+replicate
+
+map
+filter
+takeWhile
+
+foldl
+folfr
+scanl
+scanr
+
+== Pattern matching / Where / Let / Case ==
+
+- "as pattern" (func s@(x:y:ys), s cuva referencu na celu "stvar")
+- If all guards evaluate to False (and we haven't provied an otherwise catch-all guard), evaluation falls through to the next pattern.
+
+- where bindings are cyntactic constructs
+- where bindings can be also used to pattern match
+
+- let bindings are expressions themselves
+- let variables are separated by newline (and indented in same column) or by ; when inline
+- let bindings in list comprehension are visible to "output function" (the part before the |) and all predicates and sections that come after of the binding. If let-in binding is defined for particular predicate then its only visible to thad predicate
+
+- pattern matching with function definition is just just syntactic sugar for case expressions !!!
+- they are useful for pattern matching against something in the middle of an expression
+- case x of pattern -> result
+            pattern -> result
+            ...
