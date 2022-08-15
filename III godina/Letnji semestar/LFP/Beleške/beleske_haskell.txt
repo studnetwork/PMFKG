@@ -12,6 +12,7 @@
 - functions are not instances of Show typeclass (they can't be represented with a string)
 - GHCi calls "print expression" for "expression" typed in it
 - function application "space" character has HIGHEST precedence (left associative), and function application "$" character has LOWEST precedence (rigth associative)
+- List in Haskell is like a promise (thunk) of a list, its lazy ([1,2,3] is actually 1:2:3:[])
 
 == Pojmovi ==
 
@@ -40,9 +41,16 @@
                            }
     ** ovako se automatski generisu FUNKCIJE koje predstavljaju data POLJA
 
+- class constraint moze da se ubaci u definiciju type-klase (tu se odnosi na genericki tip instance) i definiciju instance (tu se odnosi na genericki tip tipa koji se "instancira")
+
 == Type variable ==
 
 - This is much like generics in other languages, only in Haskell it's much more powerful because it allows us to easily write very general functions if they don't use any specific behavior of the types in them
+
+- Naznacavanje tipa konstruktora u class definiciji
+  class Functor f where
+      fmap :: (a -> b) -> f a -> f b
+  ** `f` u prvoj liniji je genericki tip ("placeholder"), a u definiciji tipa `fmap` funkcije `f` predstavlja konstruktor tipa `f` koji prima jedan parametar tipa `a` (`b`)
 
 
 == Lists ==
@@ -96,3 +104,83 @@ scanr
 - case x of pattern -> result
             pattern -> result
             ...
+
+
+== Monads ==
+
+- In fact, list comprehensions are just syntactic sugar for using lists as monads. In the end, list comprehensions and lists in do notation translate to using >>= to do computations that feature non-determinism.
+
+
+== Input and Output ==
+
+- Std I/O -
+
+getLine
+getContents
+getChar
+
+putStr
+putStrLn
+putChar
+
+print         // putStrLn + show
+
+interact
+
+* specijalne funkcije
+when      // ukoliko je prolsedjeno True vraca prosledjeni aplikativni funktor (npr. "IO" akcija), u suprotnom vraca "return ()" (prazna torka zamotana u kontekst tipa datog funktora, npr. "IO ()")
+sequence  // za datu listu (Traversable) monada vraca monad sa listom vrednosti izvucenih iz datih monada (npr. "sequence [readLine, readLine]" ce izvrsiti funkcije i vratiti "["linija", "linija"]")
+mapM      // primenjuje funkciju koja vraca monad na listu (Foldable) vrednosti i vraca monad sa listom vrednosti na koje je primenjena funkcija (kao "map + sequence")
+mapM_     // isto kao "mapM" samo vraca "Monad ()" (nije nam bitan rezultat)
+forM      // isto kao "mapM" samo je redosled parametara drugaciji
+forever
+
+
+- Files -
+
+openFile        // vraca handle
+withFile        // vraca IO action, koristi handle interno a prima funkciju koja prima handle
+
+readFile        // FilePath -> IO
+writeFile       // FilePath -> IO
+appendFile      // FilePath -> IO
+removeFile      // FilePath -> IO
+renameFile      // FilePath -> IO
+
+hGetContents    // Handle ... -> IO
+hGetChar        // Handle ... -> IO
+hPutStr         // Handle ... -> IO
+hPutStrLn       // Handle ... -> IO
+...
+
+hClose
+
+
+* citanje fajla je lazy, kad treba da se iskoristi sadrzaj onda se cita, ali baferovano linija po linija (to je defalt buffer size, a za citanje binary fajlova je default obicno block)
+
+hSetBuffering   // postavlja tip i velicinu bafera za dati fajl
+                // NoBuffering, nema baferovanja pa se disk koristi mnogo
+                // LineBuffering, baferuje se linija
+                // BlockBuffering (Maybe Int), Just pa broj bajtova ili Nothing ako OS treba da odluci o velicini
+hFlush          // flushuje bafer
+
+openTempFile    // kreira i otvara novi fajl u izabranom direktorijumu sa izabranim prefiksom za ime
+getCurrentDirectory
+
+
+- Command Line -
+
+getArgs       // -> IO [String]
+getProgName   // -> IO String
+
+
+== Bytestrings ==
+
+pack
+unpack
+
+fromChunks
+toChunks
+
+
+Word8
