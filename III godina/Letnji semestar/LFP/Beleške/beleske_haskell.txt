@@ -1,37 +1,52 @@
 == Napomene ==
 
-- In Haskell, lists are a homogenous data structure (?)
 - redosled definisanja funkcija nije bitan, sve su vidljive svuda u fajlu
 - if-else statement je izraz (else deo je obavezan)
 - ' se obicno koristi da oznaci da funkcija nije lazy (strict func.) ili modifikovanu verziju funkcije
 - funkcija koja ne prima parametre (konstantna) se obicno zove "definition" ili "name"
+- infix funkcija moze i da se definise kao infix, tj. da ima backticks i u definiciji, npr. "x `func` y = ..."
+- funkcije definisane kao polja u value konstruktorima su GLOBALNE, polje sa istim imenom ne moze biti razlicitog tipa u 2+ konstruktora
+
+- "In Haskell, lists are a homogenous data structure"
 - "An expression is basically a piece of code that returns a value"
-- [1,2,3] is actually just syntactic sugar for 1:2:3:[]
-- Watch out when using floating point numbers in ranges! Because they are not completely precise (by definition), their use in ranges can yield some pretty funky results. My advice is not to use them in list ranges
-- infix funkcija moze i da se definise kao infix, tj. da ima backticks i u definiciji
-- functions are not instances of Show typeclass (they can't be represented with a string)
-- GHCi calls "print expression" for "expression" typed in it
-- function application "space" character has HIGHEST precedence (left associative), and function application "$" character has LOWEST precedence (rigth associative)
+- "[1,2,3] is actually just syntactic sugar for 1:2:3:[]"
+- "Watch out when using floating point numbers in ranges! Because they are not completely precise (by definition), their use in ranges can yield some pretty funky results. My advice is not to use them in list ranges"
+- "functions are not instances of Show typeclass (they can't be represented with a string)"
+- "GHCi calls "print expression" for "expression" typed in it"
+- "function application "space" character has HIGHEST precedence (left associative), and function application "$" character has LOWEST precedence (rigth associative)"
 - List in Haskell is like a promise (thunk) of a list, its lazy ([1,2,3] is actually 1:2:3:[])
+
 
 == Pojmovi ==
 
-- pattern-matching          (?)
-- type inference
 - referential transpaency   (za iste parametre jedna funkcija garantovano vraca isti rezultat)
 - polymorphic function      (genericka funkcija)
-- class constraint          (sve pre "=>" u deklaraciji tipa funkcije)
+- polymorphic type          (genericki tip)
 - type annotation           (kad se koristi ":: Tip" u pozivu funkcije, f 1 2 :: Tip)
-- enumerated                (= nabrojiv)
+- enumerated                (nabrojiv)
 - higher order function     (function that accepts a function or returns a function)
+- constraint                (typeclass cija instanca mora da bude tip koji se "ogranicava", npr. "data (Eq a) => Tip a = ..." ili "f :: Eq a => Tip a -> ...")
+- pattern-matching
+- type inference
 - curried functions
 - partially applied function
 
+
 == Typeclass / Data / Record syntax ==
 
-- "value constructors" su funkcije !!!
-  data Tip = Kons1 TipPolja1 TipPolja2 | Kons2 TipPolja1 TipPolja2 | ...
-- Kad se stavi da value konstruktor ima isto ime kao i tip, to nema nikakvo specijalno znacenje (obicno se stavlja kad postoji samo jedan konstruktor)
+- value konstruktori su funkcije
+    data TypeConstructor = ValueConstructor FieldType FieldType ... | ValueConstructor FieldType FieldType ... | ...
+    ** Kad se stavi da value konstruktor ima isto ime kao i tip, to nema nikakvo specijalno znacenje (obicno se stavlja kad postoji samo jedan konstruktor)
+
+- type konstruktor prima type-parametre (kao genericki tipovi u drugim jezicima), koji se mogu koristiti u value konstruktorima
+    data TypeConstructor tp1 tp2 ... = ValueConstructor tp1 tp2 ... | ValueConstructor tp1 tp2 ... | ...
+    ** Type konstruktor koji ima postavljene sve tip-parametre je TIP, u suprotnom je i dalje tip-konstruktor
+      npr. "Niz a" je type konstruktor, dok je "Niz Int" konkretan tip koji se moze koristiti u funkcijama itd
+
+- definicija tipa moze imati i "ogranicenja", npr:
+    data (Eq a) => Tip a = ...
+    ** znaci da tip-parametar mora da bude "instanca" typeclass-e Eq
+    ** ALI, praksa je da se ne stavljaju ogranicenja u definiciji tipova (data), jer se onda isto ogranicenje mora staviti u svaku funkciju koja koristi taj tip cak iako joj to ogranicenje nije bitno!!!!
 
 - record syntax
     data Tip = Konstruktor { polje :: Tip
@@ -86,6 +101,7 @@ foldl
 folfr
 scanl
 scanr
+
 
 == Pattern matching / Where / Let / Case ==
 
@@ -184,3 +200,12 @@ toChunks
 
 
 Word8
+
+
+== Modules ==
+
+import Mod.SubMod                   // importuje sve funkcije koje modul exportuje
+import Mod.SubMod (f1, f2)          // od svih funkcija koje modul exportuje importuje samo navedene
+import Mod.SubMod hiding (f3, f4)   // importuje sve funkcije koje modul exportuje osim navedenih
+import qualified Mod.SubMod         // importuje sve funkcije koje modul exportuje, ali se mogu koristiti samo preko naziva modula, npr. Mod.SubMod.f1
+import qualified Mod.SubMod as M    // importuje sve funkcije koje modul exportuje, ali se mogu koristiti samo preko navedenog naziva, npr. M.f1
