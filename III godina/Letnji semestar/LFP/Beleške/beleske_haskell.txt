@@ -122,6 +122,24 @@ scanr
             ...
 
 
+== Functor / Applicative / Monoid ==
+
+fmap    // mapira vrednost iz datog funktora pomocu date funkcije (fmap (*3) (Just 5)    => Just 15)
+
+<*>     // mapira vrednost iz datog funktora pomocu date funkcije iz drugog funktora (fmap (Just (*3)) (Just 5)    => Just 15)
+<$>     // infix sinonim za fmap
+pure    // pakuje vrednost u minimalni kontekst (npr. 5 u Just 5)
+
+>>=     // mapira vrednost iz datog monada pomocu funkcije koja prima samo vrednost a vraca vrednost zapakovanu u monad (npr, reciprocna vrednost, Just 5 >>= \x -> if x /= 0 then Just (1/x) else Nothing    => Just 0.2)
+return  // isto kao pure
+
+(<$>) :: (a -> b) -> f a -> f b
+(<*>) :: f (a -> b) -> f a -> f b
+(>>=) :: m a -> (a -> m b) -> m b
+(<=<) ::
+
+
+
 == Monads ==
 
 - In fact, list comprehensions are just syntactic sugar for using lists as monads. In the end, list comprehensions and lists in do notation translate to using >>= to do computations that feature non-determinism.
