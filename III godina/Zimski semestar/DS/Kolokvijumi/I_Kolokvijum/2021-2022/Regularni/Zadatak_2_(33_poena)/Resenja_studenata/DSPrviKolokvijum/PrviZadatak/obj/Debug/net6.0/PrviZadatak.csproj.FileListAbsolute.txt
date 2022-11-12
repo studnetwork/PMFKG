@@ -1,0 +1,15 @@
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\bin\Debug\net6.0\PrviZadatak.exe
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\bin\Debug\net6.0\PrviZadatak.deps.json
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\bin\Debug\net6.0\PrviZadatak.runtimeconfig.json
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\bin\Debug\net6.0\PrviZadatak.dll
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\bin\Debug\net6.0\PrviZadatak.pdb
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.csproj.AssemblyReference.cache
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.AssemblyInfoInputs.cache
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.AssemblyInfo.cs
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.csproj.CoreCompileInputs.cache
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.dll
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\refint\PrviZadatak.dll
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.pdb
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\PrviZadatak.genruntimeconfig.cache
+C:\Users\matov\source\repos\DSPrviKolokvijum\PrviZadatak\obj\Debug\net6.0\ref\PrviZadatak.dll
