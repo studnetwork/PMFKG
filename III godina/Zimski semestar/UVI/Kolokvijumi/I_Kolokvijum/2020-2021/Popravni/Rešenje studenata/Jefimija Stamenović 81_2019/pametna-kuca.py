@@ -17,7 +17,7 @@ class Film(Fact):
     dodato_zbog_omiljenog_glumca = Field(bool, default = False)
     dodato_zbog_zanra = Field(bool, default = False)
     rang = Field(int, default = 0)
-    otstampana = Field(bool, default = False)
+    odstampana = Field(bool, default = False)
 
 class SrodneKategorije(Fact): 
     naziv_prve_kategorije = Field(str)
@@ -28,7 +28,7 @@ class Recenzija(Fact):
     tekst_recenzije = Field(str)
     ocena = Field(lambda x: isinstance(x, int) and (0<=x<=10))
     dodato_prosek = Field(bool, default = False)
-    otstampana = Field(bool, default = False)
+    odstampana = Field(bool, default = False)
 
 class FilmskaNagrada(Fact): 
     naziv_filma = Field(str)
@@ -306,25 +306,25 @@ class Engine(KnowledgeEngine):
     @Rule(
         Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
         AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, 
-                        rang = MATCH.counter, otstampana = False) 
+                        rang = MATCH.counter, odstampana = False) 
     )
     def stampajFilm(self, naziv_filma, preporuka, counter, film): 
         print("{} Film : {}, preporuka : {}".format(counter, naziv_filma ,preporuka)) 
-        self.modify(film, otstampana = True)
+        self.modify(film, odstampana = True)
     @Rule(
         Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
-        Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, rang = MATCH.counter, otstampana = True), 
+        Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, rang = MATCH.counter, odstampana = True), 
         AS.recenzija << Recenzija(naziv_filma = MATCH.naziv_filma, 
-                                  tekst_recenzije = MATCH.tekst, otstampana = False)
+                                  tekst_recenzije = MATCH.tekst, odstampana = False)
     )
     def stampajRecenzije(self, recenzija, tekst): 
         print("Recenzija : {}".format(tekst))
-        self.modify(recenzija, otstampana = True)
+        self.modify(recenzija, odstampana = True)
 
     @Rule(
         AS.brojac << Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
         Film(naziv = MATCH.naziv_filma, rang = MATCH.counter ), 
-        NOT(Recenzija(naziv_filma = MATCH.naziv_filma, otstampana = False))
+        NOT(Recenzija(naziv_filma = MATCH.naziv_filma, odstampana = False))
     )
     def uvecajBrojac(self, brojac, counter): 
         print("\n")
