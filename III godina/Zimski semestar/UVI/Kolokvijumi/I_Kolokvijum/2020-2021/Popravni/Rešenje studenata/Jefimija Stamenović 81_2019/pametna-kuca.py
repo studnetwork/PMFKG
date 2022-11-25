@@ -1,229 +1,335 @@
 from experta import *
-import schema 
-import re 
+import re
+import schema
 
-class Zgrada(Fact): 
-    tip = Field(schema.Or("KUCA", "POMOCNI_OBJEKAT"))
-    adresa = Field(str)
-    pametni_uredjaji = Field(list)
-
-class PametniUredjaj(Fact): 
-    ip_adresa = Field(lambda x : isinstance(x, str) and re.match(r'[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}', x))
-
-class ElektricniSporet(PametniUredjaj): 
-    ukljucena_ringla_1 = Field(bool, default = False)
-    ukljucena_ringla_1 = Field(bool, default = False)
-    ukljucena_ringla_3 = Field(bool, default = False)
-    ukljucena_ringla_4 = Field(bool, default = False)
-
-class Bazen(PametniUredjaj):
-    temperatura_vode = Field(float)
-    grejanje = Field(bool, default = False)
-
-class Vlasnik(Fact):
-    ime = Field(str)
-    adresa = Field(str)
-
-class VremenskiUslovi(Fact): 
-    stanje = Field(schema.Or("SUNCANO", "KISA", "OBLACNO"))
-
-class Kamera(PametniUredjaj): 
-    ukljucena = Field(bool, default = False)
-    lokacija = Field(str)
-
-class Kretanje(Fact): 
-    lokacija = Field(str)
-
-class Alarm(Fact): 
-    ukljucen = Field(bool, default = False)
-
-class Prostorija(Fact): 
+class Film(Fact): 
     naziv = Field(str)
-    temperatura = Field(float, default = 15)
+    reziser = Field(str)
+    kategorija = Field(schema.Or("AKCIJA", "DRAMA", "HOROR", "TRILER", "NAUCNA_FANTASTIKA", "KOMEDIJA"))
+    opis = Field(str)
+    datum_premijere = Field(lambda x: re.match(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', x))
+    lista_glumaca = Field(list)
+    duzina_trajanja = Field(float)
+    preporuka = Field(float, default = 50)
+    dodato_za_istu_kategoriju = Field(bool, default = False)
+    dodato_za_srodnu_kategoriju = Field(bool, default = False)  
+    skinuto_zbog_nagrade = Field(bool, default = False)
+    dodato_zbog_omiljenog_glumca = Field(bool, default = False)
+    dodato_zbog_zanra = Field(bool, default = False)
+    rang = Field(int, default = 0)
+    otstampana = Field(bool, default = False)
 
-class IzmenjivacToplote(PametniUredjaj): 
-    max_temp = Field(float)
-    min_temp = Field(float)
-    avg_temp = Field(float)
+class SrodneKategorije(Fact): 
+    naziv_prve_kategorije = Field(str)
+    naziv_druge_kategorije = Field(str)
 
-class GaraznaVrata(PametniUredjaj): 
-    otvorena = Field(bool, default = False)
+class Recenzija(Fact): 
+    naziv_filma = Field(str)
+    tekst_recenzije = Field(str)
+    ocena = Field(lambda x: isinstance(x, int) and (0<=x<=10))
+    dodato_prosek = Field(bool, default = False)
+    otstampana = Field(bool, default = False)
 
-class Auto(Fact): 
-    pass 
+class FilmskaNagrada(Fact): 
+    naziv_filma = Field(str)
+    nagrada = schema.Or("ZLATNA_PALMA", "OSKAR", "ZLATNI_LAV")
+    dodata_filmu = Field(bool, default = False)
 
-class Log(Fact): 
-    ip_adresa = Field(str)
-    poruka = Field(str)
+class ProsecnaOcena(Fact): 
+    suma = Field(int, default = 0)
+    brojac = Field(int, default = 0)
+    prosek = Field(float, default = 0) 
+    obradjena = Field(bool, default = False)
+    dodata_u_preporuku = Field(bool, default = False)
+    dodato_zbog_veceg_proseka = Field(bool, default = False)
 
-class Engine(KnowledgeEngine):
+class Korisnik(Fact):
+    omiljeni_film = Field(str)
+    omiljena_kategorija = Field(schema.Or("AKCIJA", "DRAMA", "HOROR", "TRILER", "NAUCNA_FANTASTIKA", "KOMEDIJA"))
+    omiljeni_glumac = Field(str)
+    neomiljena_kategorija = Field(schema.Or("AKCIJA", "DRAMA", "HOROR", "TRILER", "NAUCNA_FANTASTIKA", "KOMEDIJA"))
+
+class Engine(KnowledgeEngine): 
 
     @DefFacts()
     def loadFacts(self): 
-        yield Vlasnik(ime = "Pera", adresa = "Daniciceva")
-        yield Zgrada(tip = "KUCA", adresa = "Radoja Domanovica", pametni_uredjaji = 
-        ["89.120.24.162", "89.120.25.203", "89.120.20.462", "89.5.20.23", "89.6.20.6", "75.35.56.2", "89.23.2.3"])
-        yield ElektricniSporet(ip_adresa = "89.120.24.162", ukljucena_ringla_1 = True, 
-        ukljucena_ringla_2 = False, ukljucena_ringla_3 = False, ukljucena_ringla_4 = True)
-        yield Bazen(ip_adresa = "89.120.25.203", temperatura_vode = 16.5, grejanje = False)
-        yield VremenskiUslovi(stanje = "KISA")
-        yield Kretanje(lokacija = "DNEVNA_SOBA")
-        yield Kamera(ip_adresa = "89.120.20.462", ukljucena = True, lokacija = "DNEVNA_SOBA")
-        yield Kamera(ip_adresa = "89.5.20.23", ukljucena = True, lokacija = "SPAVACA_SOBA")
-        yield Alarm(ip_adresa = "89.6.20.6", ukljucen = False)
-        yield Prostorija(naziv = "DNEVNA_SOBA", temperatura = 22.0)
-        yield Prostorija(naziv = "SPAVACA_SOBA", temperatura = 25.0)
-        yield Prostorija(naziv = "KUPATILO", temperatura = 15.0)
-        yield Auto()
-        yield GaraznaVrata(ip_adresa = "75.35.56.2", otvorena = False)
-        yield IzmenjivacToplote(ip_adresa = "89.23.2.3", min_temp = 1000.0, max_temp = -1000.0, avg_temp = 0.0)
+        yield Film(naziv = "A", reziser = "Pera", kategorija = "AKCIJA", opis = "Opis...", datum_premijere = "2020-11-11",
+                    lista_glumaca = ["Misa", "Dule", "Nexi"], duzina_trajanja = 2.5)
 
+        yield Film(naziv = "B", reziser = "Mika", kategorija = "KOMEDIJA", opis = "Opis...", datum_premijere = "2018-12-26",
+                    lista_glumaca = ["Misa", "Dule", "Nexi"], duzina_trajanja = 1.5)
+
+        yield Film(naziv = "C", reziser = "Laza", kategorija = "HOROR", opis = "Opis...", datum_premijere = "2021-01-11",
+                    lista_glumaca = ["Masa", "Dule", "Nexi"], duzina_trajanja = 2.5)
+
+        yield Film(naziv = "D", reziser = "Zika", kategorija = "TRILER", opis = "Opis...", datum_premijere = "2001-10-10",
+                    lista_glumaca = ["Misa", "Sale", "Bane"], duzina_trajanja = 2.5)
+
+        yield Film(naziv = "E", reziser = "Sale", kategorija = "AKCIJA", opis = "Opis...", datum_premijere = "2002-11-11",
+                    lista_glumaca = ["Misa", "Sale", "Bane"], duzina_trajanja = 1.6)
+        
+        yield Film(naziv = "F", reziser = "Pera", kategorija = "DRAMA", opis = "Opis...", datum_premijere = "2019-03-04",
+                    lista_glumaca = ["Misa", "Boris", "Bane"], duzina_trajanja = 2.1)
+
+        yield SrodneKategorije(naziv_prve_kategorije = "AKCIJA", naziv_druge_kategorije = "TRILER")
+        yield SrodneKategorije(naziv_prve_kategorije = "HOROR", naziv_druge_kategorije = "TRILER")
+        yield SrodneKategorije(naziv_prve_kategorije = "DRAMA", naziv_druge_kategorije = "AKCIJA")
+        yield SrodneKategorije(naziv_prve_kategorije = "KOMEDIJA", naziv_druge_kategorije = "DRAMA")
+
+        yield Recenzija(naziv_filma = "A", tekst_recenzije = "Ocena za A...", ocena = 9)
+        yield Recenzija(naziv_filma = "B", tekst_recenzije = "Ocena za B...", ocena = 8)
+        yield Recenzija(naziv_filma = "C", tekst_recenzije = "Ocena za C...", ocena = 7)
+        yield Recenzija(naziv_filma = "D", tekst_recenzije = "Ocena za D...", ocena = 6)
+        yield Recenzija(naziv_filma = "A", tekst_recenzije = "Ocena za A...", ocena = 3)
+        yield Recenzija(naziv_filma = "B", tekst_recenzije = "Ocena za B...", ocena = 4)
+        yield Recenzija(naziv_filma = "C", tekst_recenzije = "Ocena za C...", ocena = 7)
+        yield Recenzija(naziv_filma = "D", tekst_recenzije = "Ocena za D...", ocena = 8)
+        yield Recenzija(naziv_filma = "E", tekst_recenzije = "Ocena za E...", ocena = 8)
+        yield Recenzija(naziv_filma = "E", tekst_recenzije = "Ocena za E...", ocena = 1)
+        yield Recenzija(naziv_filma = "E", tekst_recenzije = "Ocena za E...", ocena = 2)
+        
+        yield Recenzija(naziv_filma = "F", tekst_recenzije = "Ocena za F...", ocena = 10)
+        yield Recenzija(naziv_filma = "F", tekst_recenzije = "Ocena za F...", ocena = 9)
+        yield Recenzija(naziv_filma = "F", tekst_recenzije = "Ocena za F...", ocena = 9)
+
+        yield FilmskaNagrada(naziv_filma = "A", nagrada = "ZLATNA_PALMA")
+        yield FilmskaNagrada(naziv_filma = "B", nagrada = "OSKAR")
+        yield FilmskaNagrada(naziv_filma = "C", nagrada = "ZLATNI_LAV")
+
+        yield Korisnik(omiljeni_film = "A", 
+                       omiljena_kategorija = "AKCIJA", 
+                       omiljeni_glumac = "Misa", 
+                       neomiljena_kategorija = "HOROR", 
+                       dao_recenziju = True)
+        yield Recenzija(naziv_filma = "A", 
+                               tekst_recenzije = "-", 
+                               ocena = 10)
     @Rule(
-        Log(poruka = MATCH.poruka, ip_adresa = MATCH.ip_adresa), 
+        NOT(Korisnik()), 
         salience = 10
     )
-    def stampajLog(self, poruka, ip_adresa): 
-        print("{} : {}".format(ip_adresa, poruka))
+    def ucitajPodatke(self): 
+        omiljeni_film = input("Unesite naziv omiljenog filma: ")
+        omiljena_kategorija = input("Unesite naziv omiljene kategorije: ")
+        omiljeni_glumac = input("Unesite ime omiljenog glumca: ")
+        neomiljena_kategorija = input("Unesite naziv kategorije koju ne volite: ")
+        self.declare(Korisnik(omiljeni_film = omiljeni_film, 
+                              omiljena_kategorija = omiljena_kategorija, 
+                              omiljeni_glumac = omiljeni_glumac, 
+                              neomiljena_kategorija = neomiljena_kategorija, 
+                              dao_recenziju = False))
     
 
     @Rule(
-        Zgrada(tip = "KUCA", adresa = MATCH.adresa_kuce & MATCH.adresa, pametni_uredjaji = MATCH.uredjaji)
+        AS.korisnik << Korisnik(omiljeni_film = MATCH.omiljeni_film, dao_recenziju = False), 
+        salience = 10
     )
-    def broadcastUredjaja(self, uredjaji): 
-        for uredjaj in uredjaji: 
-            self.declare(Log(poruka = "Pametni uredjaj => Pronadjen", ip_adresa = uredjaj))
-            self.declare(PametniUredjaj(ip_adresa = uredjaj))
-    
-    @Rule(
-        Vlasnik(adresa = MATCH.adresa), 
-        Zgrada(tip = "KUCA", adresa = MATCH.adresa_kuce & ~MATCH.adresa)
-    )
-    def vlasnikNijeKuci(self): 
-        print("Pametna kuca => Vlasnik nije kuci...")
-        self.declare(Fact(prazna_kuca = True))
+    def dajRecenziju(self, korisnik, omiljeni_film): 
+        ocena = int(input("Dajte recenziju za svoj omiljeni film: "))
+        tekst = input("Unesite tekst recenzije: ")
+        self.declare(Recenzija(naziv_filma = omiljeni_film, 
+                               tekst_recenzije = tekst, 
+                               ocena = ocena))
+        self.modify(korisnik, dao_recenziju = True)
 
     @Rule(
-        Fact(prazna_kuca = True),
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa),
-        AS.sporet << ElektricniSporet(ip_adresa = MATCH.ip_adresa),
-        OR(
-            ElektricniSporet(ip_adresa = MATCH.ip_adresa, ukljucena_ringla_1 = True), 
-            ElektricniSporet(ip_adresa = MATCH.ip_adresa, ukljucena_ringla_2 = True),
-            ElektricniSporet(ip_adresa = MATCH.ip_adresa, ukljucena_ringla_3 = True),
-            ElektricniSporet(ip_adresa = MATCH.ip_adresa, ukljucena_ringla_4 = True)
+        Korisnik(dao_recenziju = True), 
+        Film(naziv = MATCH.film), 
+        NOT(ProsecnaOcena(naziv_filma = MATCH.film))
+    )
+    def izracunajRecenzije(self, film): 
+        print("Kreiram prosecnu ocenu za film {}".format(film))
+        self.declare(ProsecnaOcena(naziv_filma = film, suma = 0, brojac = 0))
+
+    @Rule(
+        AS.prosecna_ocena << ProsecnaOcena(naziv_filma = MATCH.naziv_filma, suma = MATCH.suma, brojac = MATCH.brojac), 
+        AS.recenzija << Recenzija(naziv_filma = MATCH.naziv_filma, ocena = MATCH.ocena, dodato_prosek = False)
+    )
+    def dodajSumuIBrojac(self,prosecna_ocena, suma, brojac, naziv_filma, recenzija, ocena): 
+        print("Dodajem ocenu {} za film {}".format(ocena, naziv_filma))
+        self.modify(prosecna_ocena, suma = suma + ocena, brojac = brojac + 1)
+        self.modify(recenzija, dodato_prosek = True)
+
+    @Rule(
+        AS.prosecna_ocena << ProsecnaOcena(naziv_filma = MATCH.naziv_filma, suma = MATCH.suma, 
+                                           brojac = MATCH.brojac, prosek = 0, obradjena = False), 
+        NOT(Recenzija(naziv_filma = MATCH.naziv_filma, ocena = MATCH.ocena, dodato_prosek = False))
+    )
+    def izracunajProsek(self, prosecna_ocena, suma, brojac,naziv_filma):
+        print("Prosecna ocena za film {} je {}".format(naziv_filma, suma/brojac))
+        self.modify(prosecna_ocena, prosek = suma/brojac, obradjena = True)
+
+    @Rule(
+        AS.prosecna_ocena << ProsecnaOcena(naziv_filma = MATCH.naziv_filma, 
+                                           prosek = MATCH.prosek & P(lambda prosek : prosek >= 5), 
+                                           obradjena = True, dodata_u_preporuku = False), 
+        AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka)
+    )
+    def dodajProsekUPreporuku(self, naziv_filma, prosek, preporuka, film, prosecna_ocena): 
+        print("Filmu {} dodajem prosecnu ocenu {} u preporuku {}. Sada je {}".format(naziv_filma, prosek, 
+                                                                            preporuka, prosek+preporuka))
+        self.modify(film, preporuka = preporuka + prosek)
+        self.modify(prosecna_ocena, dodata_u_preporuku = True)
+
+    @Rule(
+        AS.prosecna_ocena << ProsecnaOcena(naziv_filma = MATCH.naziv_filma, 
+                                           prosek = MATCH.prosek & P(lambda prosek : prosek < 5), 
+                                           obradjena = True, dodata_u_preporuku = False), 
+        AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka)
+    )
+    def skiniProsekOdPreporuke(self, naziv_filma, prosek, preporuka, film, prosecna_ocena): 
+        print("Filmu {} skidam prosecnu ocenu {} u preporuku {}. Sada je {}".format(naziv_filma, prosek, 
+                                                                            preporuka, preporuka - prosek))
+        self.modify(film, preporuka = preporuka - prosek)
+        self.modify(prosecna_ocena, dodata_u_preporuku = True)
+    
+    @Rule(
+        Korisnik(omiljeni_film = MATCH.omiljeni_film), 
+        AS.film<<Film(naziv = MATCH.naziv_filma & ~MATCH.omiljeni_film, preporuka = MATCH.preporuka), 
+        ProsecnaOcena(naziv_filma = MATCH.omiljeni_film, 
+                      prosek = MATCH.prosek_omiljeni_film, 
+                      obradjena = True), 
+        AS.prosecna_ocena << ProsecnaOcena(naziv_filma = MATCH.naziv_filma, 
+                                           prosek = MATCH.prosek, 
+                                           obradjena = True, 
+                                           dodato_zbog_veceg_proseka = False), 
+        TEST(
+            lambda prosek, prosek_omiljeni_film: prosek > prosek_omiljeni_film
         )
     )
-    def iskljuciSporet(self, sporet, ip_adresa): 
-        self.declare(Log(poruka = "Sporet => Iskljucujem ringle", ip_adresa = ip_adresa))
-        self.modify(sporet, ukljucena_ringla_1 = False, 
-                            ukljucena_ringla_2 = False, 
-                            ukljucena_ringla_3 = False, 
-                            ukljucena_ringla_4 = False)
+    def dodajPreporukuZbogVecegProseka(self, film, preporuka, naziv_filma, prosecna_ocena):
+        print("Film {} ima veci prosek od omiljenog. Uvecavam preporuku za 5".format(naziv_filma))
+        self.modify(film, preporuka = preporuka + 5.0)
+        self.modify(prosecna_ocena,  dodato_zbog_veceg_proseka = True)
 
     @Rule(
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa), 
-        AS.bazen << Bazen(ip_adresa = MATCH.ip_adresa, temperatura_vode = MATCH.temp, grejanje = False), 
-        TEST(lambda temp: temp<18)
+        Korisnik(omiljeni_film = MATCH.omiljeni_film), 
+        Film(naziv = MATCH.omiljeni_film, kategorija = MATCH.kategorija), 
+        AS.film << Film(naziv = MATCH.naziv_filma & ~MATCH.omiljeni_film, kategorija = MATCH.kategorija, 
+                dodato_za_istu_kategoriju = False, preporuka = MATCH.preporuka)
     )
-    def zagrejBazen(self, bazen, ip_adresa): 
-        self.declare(Log(poruka = "Bazen => Grejem vodu", ip_adresa = ip_adresa))
-        self.modify(bazen, grejanje = True)
+    def dodajZaIstuKategoriju(self, preporuka, naziv_filma, film): 
+        print("Filmu {} uvecavam preporuku za 10 zbog iste kategorije".format(naziv_filma))
+        self.modify(film, preporuka = preporuka + 10.0, dodato_za_istu_kategoriju = True)
 
     @Rule(
-        Fact(prazna_kuca = True), 
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa_kamere), 
-        Kamera(ip_adresa = MATCH.ip_adresa_kamere, ukljucena = True, lokacija = MATCH.lokacija), 
-        Kretanje(lokacija = MATCH.lokacija), 
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa_alarma), 
-        AS.alarm << Alarm(ip_adresa = MATCH.ip_adresa_alarma, ukljucen = False)
+        Korisnik(omiljeni_film = MATCH.omiljeni_film), 
+        Film(naziv = MATCH.omiljeni_film, kategorija = MATCH.kategorija_omiljenog_filma), 
+        AS.film << Film(naziv = MATCH.naziv_filma & ~MATCH.omiljeni_film, 
+                        kategorija = MATCH.kategorija_filma, 
+                        dodato_za_srodnu_kategoriju = False, 
+                        preporuka = MATCH.preporuka), 
+        OR(
+            SrodneKategorije(
+                naziv_prve_kategorije = MATCH.kategorija_omiljenog_filma, 
+                naziv_druge_kategorije = MATCH.kategorija_filma
+            ), 
+            SrodneKategorije(
+                naziv_prve_kategorije = MATCH.kategorija_filma, 
+                naziv_druge_kategorije = MATCH.kategorija_omiljenog_filma
+            )
+        )
     )
-    def ukljuciAlarm(self, alarm, ip_adresa_kamere, ip_adresa_alarma, lokacija): 
-        self.declare(Log(poruka = "Alarm => Aktiviran sam od strane kamere (IP: {})".format(ip_adresa_kamere), ip_adresa = ip_adresa_alarma))
-        self.modify(alarm, ukljucen = True)
+    def dodajZaIstuKategoriju(self, preporuka, naziv_filma, film): 
+        print("Filmu {} uvecavam preporuku za 5 zbog srodne kategorije".format(naziv_filma))
+        self.modify(film, preporuka = preporuka + 5.0, dodato_za_srodnu_kategoriju = True)
 
     @Rule(
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa),
-        AS.izmenjivac << IzmenjivacToplote(ip_adresa = MATCH.ip_adresa, max_temp = MATCH.max),
-        Prostorija(temperatura = MATCH.temp), 
-        TEST(lambda max, temp: temp>max)
+        AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka), 
+        AS.nagrada << FilmskaNagrada(naziv_filma = MATCH.naziv_filma, 
+                                     nagrada = MATCH.naziv_nagrade,
+                                     dodata_filmu = False)
     )
-    def izmeniMax(self, izmenjivac, temp, ip_adresa): 
-        self.declare(Log(poruka = "Izmenjivac temperature => Nasao sam novi max {}".format(temp), ip_adresa = ip_adresa))
-        self.modify(izmenjivac, max_temp = temp)
+    def dodajFilmskuNagradu(self, film, nagrada, preporuka, naziv_filma, naziv_nagrade): 
+        print("Filmu {} uvecavam preporuku zbog nagrade {}".format(naziv_filma, naziv_nagrade))
+        self.modify(nagrada, dodata_filmu = True)
+        self.modify(film, preporuka = preporuka + 2.0)
 
     @Rule(
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa),
-        AS.izmenjivac << IzmenjivacToplote(ip_adresa = MATCH.ip_adresa, min_temp = MATCH.min),
-        Prostorija(temperatura = MATCH.temp), 
-        TEST(lambda min, temp: min>temp)
+        AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, 
+                        skinuto_zbog_nagrade = False), 
+        NOT(FilmskaNagrada(naziv_filma = MATCH.naziv_filma))
     )
-    def izmeniMin(self, izmenjivac, temp, ip_adresa): 
-        self.declare(Log(poruka = "Izmenjivac temperature => Nasao sam novi min {}".format(temp), ip_adresa = ip_adresa))
-        self.modify(izmenjivac, min_temp = temp)
+    def skiniJerNemaNagradu(self, film, naziv_filma, preporuka): 
+        print("Filmu {} skidam preporuku jer nema nagradu".format(naziv_filma))
+        self.modify(film, preporuka = preporuka - 7.0, skinuto_zbog_nagrade = True)
 
-    @Rule( 
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa),
-        AS.izmenjivac << IzmenjivacToplote(ip_adresa = MATCH.ip_adresa, max_temp = MATCH.max, min_temp = MATCH.min),
-        TEST(lambda max, min: max-min>5),
+    @Rule(
+        Korisnik(omiljeni_glumac = MATCH.glumac, omiljeni_film = MATCH.omiljeni_film), 
+        Film(naziv = MATCH.omiljeni_film, reziser = MATCH.reziser),
+        AS.film << Film(naziv = MATCH.naziv_filma & ~MATCH.omiljeni_film, lista_glumaca = MATCH.glumci, 
+        dodato_zbog_omiljenog_glumca = False, preporuka = MATCH.preporuka, reziser = MATCH.reziser),
+        TEST(lambda glumac, glumci: glumac in glumci)
+    )
+    def nadjiOmiljenogGlumcaUFilmu(self, film, glumac, naziv_filma, preporuka):
+        print("Nasao sam omiljenog glumca {} u filmu {}".format(glumac, naziv_filma))
+        self.modify(film, preporuka = preporuka + 10.0, dodato_zbog_omiljenog_glumca = True)
+
+    @Rule(
+        AS.film << Film(naziv = MATCH.naziv_filma, kategorija = MATCH.kategorija & (L("KOMEDIJA") | L("TRILER")), 
+        dodato_zbog_zanra = False, preporuka = MATCH.preporuka, 
+        duzina_trajanja = MATCH.trajanje & P(lambda trajanje: trajanje < 3))
+    )
+    def dodajZbogZanra(self, film, naziv_filma, kategorija, preporuka, trajanje): 
+        print("-->Filmu {} dodajem preporuku zbog zanra {} i trajanja {}".format(naziv_filma, kategorija, trajanje))
+        self.modify(film, dodato_zbog_zanra = True, preporuka = preporuka + 5.0)
+
+    @Rule(
         salience = -10
     )
-    def nasaoSamMaxAndMin(self, max, min, izmenjivac, ip_adresa): 
-        avg_temp = ((max+min)/2)
-        self.declare(Log(poruka = "Izmenjivac temperature => Nasao sam max : {}, min : {}, avg : {}".format(max,min,avg_temp), ip_adresa = ip_adresa))
-        self.modify(izmenjivac, avg_temp = avg_temp)
-        self.declare(Fact(podesi_temp = True))
+    def izracunajPrvaTri(self): 
+        print("--------------------------------------")
+        print("Prelazim na racunanje najbolja tri: ")
+        self.declare(Fact('faza-rangiranje'))
 
     @Rule(
-        AS.faza << Fact(podesi_temp = True), 
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa),
-        AS.izmenjivac << IzmenjivacToplote(ip_adresa = MATCH.ip_adresa, max_temp = MATCH.max, 
-                                           min_temp = MATCH.min, avg_temp = MATCH.avg), 
-        AS.max_soba << Prostorija(temperatura = MATCH.max), 
-        AS.min_soba << Prostorija(temperatura = MATCH.min)
+        Fact('faza-rangiranje'),
+        Korisnik(omiljeni_film = MATCH.omiljeni_film), 
+        AS.film << Film(naziv = MATCH.film1 & ~MATCH.omiljeni_film, preporuka = MATCH.preporuka1, rang = MATCH.rang), 
+        Film(naziv = MATCH.film2 & ~MATCH.omiljeni_film, preporuka = MATCH.preporuka2),
+        TEST(lambda preporuka1, preporuka2 : preporuka1<=preporuka2), 
+        NOT(Fact(prvi_film = MATCH.film1, drugi_film = MATCH.film2))
     )
-    def promeniTemp(self, max_soba, min_soba, avg, izmenjivac, faza, ip_adresa): 
-        self.declare(Log(poruka = "Menjam temperature", ip_adresa = ip_adresa))
-        self.modify(max_soba, temperatura = avg)
-        self.modify(min_soba, temperatura = avg)
-        self.modify(izmenjivac, min_temp = 1000.0, max_temp = -1000.0, avg_temp = 0.0)
-        self.retract(faza)
+    def rangirajFilm(self, film1, film2, film, rang): 
+        print("Rang filma {} je za sad {}".format(film1, rang))
+        self.declare(Fact(prvi_film = film1, drugi_film = film2))
+        self.modify(film, rang = rang + 1)
 
     @Rule(
-        Auto()
+        Fact('faza-rangiranje'),
+        salience = -10
     )
-    def stigaoAuto(self): 
-        self.declare(Fact(auto_ispred_garaze = True))
+    def predjiNaStampanje(self): 
+        print("Kreiram brojac...")
+        self.declare(Fact(brojac = 1))
 
     @Rule(
-        Auto(),
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa), 
-        AS.vrata<<GaraznaVrata(ip_adresa = MATCH.ip_adresa, otvorena = False), 
-        Fact(auto_ispred_garaze = True)
+        Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
+        AS.film << Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, 
+                        rang = MATCH.counter, otstampana = False) 
     )
-    def otvoriVrata(self, vrata, ip_adresa): 
-        self.declare(Log(poruka = "Garazna vrata => Stigao auto, otvaram", ip_adresa = ip_adresa))
-        self.modify(vrata, otvorena = True)
+    def stampajFilm(self, naziv_filma, preporuka, counter, film): 
+        print("{} Film : {}, preporuka : {}".format(counter, naziv_filma ,preporuka)) 
+        self.modify(film, otstampana = True)
+    @Rule(
+        Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
+        Film(naziv = MATCH.naziv_filma, preporuka = MATCH.preporuka, rang = MATCH.counter, otstampana = True), 
+        AS.recenzija << Recenzija(naziv_filma = MATCH.naziv_filma, 
+                                  tekst_recenzije = MATCH.tekst, otstampana = False)
+    )
+    def stampajRecenzije(self, recenzija, tekst): 
+        print("Recenzija : {}".format(tekst))
+        self.modify(recenzija, otstampana = True)
 
     @Rule(
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa), 
-        GaraznaVrata(ip_adresa = MATCH.ip_adresa, otvorena = True), 
-        Auto(), 
-        AS.fact << Fact(auto_ispred_garaze = True)
+        AS.brojac << Fact(brojac = MATCH.counter & P(lambda counter: counter <= 3)),
+        Film(naziv = MATCH.naziv_filma, rang = MATCH.counter ), 
+        NOT(Recenzija(naziv_filma = MATCH.naziv_filma, otstampana = False))
     )
-    def autoJeUGarazi(self, fact, ip_adresa): 
-        self.declare(Log(poruka = "Garazna vrata => Stigao auto, otvaram", ip_adresa = ip_adresa))
-        self.retract(fact)
-        self.declare(Fact(auto_u_garazi = True))
+    def uvecajBrojac(self, brojac, counter): 
+        print("\n")
+        self.modify(brojac, brojac = counter + 1) 
 
-    @Rule(
-        Fact(auto_u_garazi = True), 
-        PametniUredjaj(ip_adresa = MATCH.ip_adresa), 
-        AS.vrata<<GaraznaVrata(ip_adresa = MATCH.ip_adresa, otvorena = True)
-    )
-    def zatvoriVrata(self, vrata, ip_adresa): 
-        self.declare(Log(poruka = "Garazna vrata => Auto je u garazi, zatvaram", ip_adresa = ip_adresa))
-        self.modify(vrata, otvorena = False)
-    
 engine = Engine()
 engine.reset()
 engine.run()
