@@ -40,6 +40,48 @@ public class EkonomskaKlasaTest {
     }
 
     @Test
+    public void dajPopust_checkWeightBoundary_9() {
+        // arrange
+        double weight = 9;
+        double expectedDiscount = 30.0;
+        EkonomskaKlasa underTest = new EkonomskaKlasa(1_000, weight, 1_000);
+
+        // act
+        double actualDiscount = underTest.dajPopust();
+
+        // assert
+        assertEquals(expectedDiscount, actualDiscount, 0.0001);
+    }
+    
+    @Test
+    public void dajPopust_checkWeightBoundary_10() {
+        // arrange
+        double weight = 10;
+        double expectedDiscount = 30.0;
+        EkonomskaKlasa underTest = new EkonomskaKlasa(1_000, weight, 1_000);
+
+        // act
+        double actualDiscount = underTest.dajPopust();
+
+        // assert
+        assertEquals(expectedDiscount, actualDiscount, 0.0001);
+    }
+
+    @Test
+    public void dajPopust_checkWeightBoundary_11() {
+        // arrange
+        double weight = 11;
+        double expectedDiscount = 20.0;
+        EkonomskaKlasa underTest = new EkonomskaKlasa(1_000, weight, 1_000);
+
+        // act
+        double actualDiscount = underTest.dajPopust();
+
+        // assert
+        assertEquals(expectedDiscount, actualDiscount, 0.0001);
+    }
+
+    @Test
     public void dajPopust_WeightLessThen10() {
         // arrange
         double weight = 5;
