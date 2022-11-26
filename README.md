@@ -29,7 +29,7 @@ Druga godina: [Zimski semestar][druga-zimski] | [Letnji semestar][druga-letnji]
 
 Treća godina: [Zimski semestar][treca-zimski] | [Letnji semestar][treca-letnji] 
 
-[//]: # ([Treća godina - Letnji semestar][treca-letnji]  )
+Četvrta godina: [Zimski semestar][cetvrta-zimski] 
 
 
 # Korisni linkovi
