@@ -67,10 +67,11 @@ public class PutnikTest {
         idGen.setAccessible(true);
 
         // act
+
         // assert
         assertEquals(0, idGen.getInt(underTest));
 
-        idGen.setAccessible(false); // is necessary?
+        idGen.setAccessible(false);
     }
 
     @Test

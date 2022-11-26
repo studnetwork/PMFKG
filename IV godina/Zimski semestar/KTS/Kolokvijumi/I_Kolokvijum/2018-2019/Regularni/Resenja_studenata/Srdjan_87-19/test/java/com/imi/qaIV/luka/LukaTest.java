@@ -7,7 +7,6 @@ import com.imi.qaIV.putnici.Karta;
 import com.imi.qaIV.putnici.Putnik;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -27,7 +26,7 @@ public class LukaTest {
 
     private static Method izbaciKontejnereUSkladistaMethod;
 
-    // @BeforeClass // commented out to hide stacktrace print caused by absence of 'izbaciKontejnereUSkladista'
+    @BeforeClass
     public static void setUpClass() {
         try {
             izbaciKontejnereUSkladistaMethod = Luka.class

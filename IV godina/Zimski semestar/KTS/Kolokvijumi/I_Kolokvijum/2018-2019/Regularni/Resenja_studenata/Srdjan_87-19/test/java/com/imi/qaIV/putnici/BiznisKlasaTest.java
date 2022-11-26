@@ -52,7 +52,7 @@ public class BiznisKlasaTest {
     }
 
     @Test
-    public void dajCenuKarte_tickedIsUsed() {
+    public void dajCenuKarte_wifiIsUsed() {
         // arrange
         BiznisKlasa underTest = new BiznisKlasa(2000, true, 500);
 
@@ -64,7 +64,7 @@ public class BiznisKlasaTest {
     }
 
     @Test
-    public void dajCenuKarte_tickedIsNotUsed() {
+    public void dajCenuKarte_wifiIsUsed() {
         // arrange
         BiznisKlasa underTest = new BiznisKlasa(2000, false, 500);
 
