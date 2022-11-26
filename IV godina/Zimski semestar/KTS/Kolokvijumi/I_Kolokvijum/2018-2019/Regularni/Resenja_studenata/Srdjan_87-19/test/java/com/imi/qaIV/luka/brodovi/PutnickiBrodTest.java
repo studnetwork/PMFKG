@@ -50,6 +50,8 @@ public class PutnickiBrodTest {
         putniciField.setAccessible(false);
     }
 
+    // TODO: add test for constructor
+
     public Putnik[] getDataFromFieldPutnici() throws IllegalAccessException {
         putniciField.setAccessible(true);
         Putnik[] underTestPutnici = (Putnik[]) putniciField.get(underTest);

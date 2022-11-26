@@ -2,9 +2,42 @@ package com.imi.qaIV.putnici;
 
 import org.junit.Test;
 
+import java.lang.reflect.Field;
+
 import static org.junit.Assert.*;
 
 public class EkonomskaKlasaTest {
+
+    @Test
+    public void testConstructor() throws NoSuchFieldException, IllegalAccessException {
+        // arrange
+        Class EkonomskaKlasaClass = EkonomskaKlasa.class;
+        Class KartaClass = Karta.class;
+
+        Field osnovnaCenaField = KartaClass.getDeclaredField("osnovnaCena");
+        Field tezinaPrtljagaField = EkonomskaKlasaClass.getDeclaredField("tezinaPrtljaga");
+        Field cenaPrtljagaPoKgField = EkonomskaKlasaClass.getDeclaredField("cenaPrtljagaPoKg");
+
+        // act
+        EkonomskaKlasa underTest = new EkonomskaKlasa(1_000, 5, 2_000);
+
+        // assert
+        osnovnaCenaField.setAccessible(true);
+        tezinaPrtljagaField.setAccessible(true);
+        cenaPrtljagaPoKgField.setAccessible(true);
+
+        double osnovnaCena = (double) osnovnaCenaField.get(underTest);
+        double tezinaPrtljaga = (double) tezinaPrtljagaField.get(underTest);
+        double cenaPrtljagaPoKgPrtljaga = (double) cenaPrtljagaPoKgField.get(underTest);
+
+        assertEquals(1_000, osnovnaCena, 0.0001);
+        assertEquals(5, tezinaPrtljaga, 0.0001);
+        assertEquals(2_000, cenaPrtljagaPoKgPrtljaga, 0.0001);
+
+        osnovnaCenaField.setAccessible(false);
+        tezinaPrtljagaField.setAccessible(false);
+        cenaPrtljagaPoKgField.setAccessible(false);
+    }
 
     @Test
     public void dajPopust_WeightLessThen10() {

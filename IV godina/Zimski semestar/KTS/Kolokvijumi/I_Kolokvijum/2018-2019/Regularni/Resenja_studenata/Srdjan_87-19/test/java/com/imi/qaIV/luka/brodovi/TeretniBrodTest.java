@@ -17,6 +17,8 @@ public class TeretniBrodTest {
                 shipName, captainName, 10, 8, 600);
     }
 
+    // TODO: add test for constructor
+
     @Test
     public void dajUkupnuZapreminuKontejnera() {
         // arrange

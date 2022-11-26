@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 public class BrodTest {
 
+    // TODO: add test for constructor
+
     @Test
     public void testToString() {
         // assert

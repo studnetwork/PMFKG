@@ -1,14 +1,21 @@
 package com.imi.qaIV.luka;
 
+import com.imi.qaIV.putnici.BiznisKlasa;
+import com.imi.qaIV.putnici.Karta;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
 import java.lang.reflect.Field;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.*;
 
 public class SkladisteTest {
+    @Rule
+    public ErrorCollector collector = new ErrorCollector();
 
     private static Field kapacitetField;
     private static Field popunjenostField;
@@ -28,6 +35,23 @@ public class SkladisteTest {
     @Before
     public void setUp() throws Exception {
         underTest = new Skladiste(capacity);
+    }
+
+    @Test
+    public void testConstructor() throws NoSuchFieldException, IllegalAccessException {
+        // arrange
+
+        // act
+
+        // assert
+        double kapacitet = getDataFromFieldKapacitet();
+        double popunjenost = getDataFromFieldPopunjenost();
+        int brojBrodova = getDataFromFieldBrojBrodova();
+
+        // collector is used to continue the test even if one of asserts fail
+        collector.checkThat(kapacitet, equalTo(20.0));
+        collector.checkThat(popunjenost, equalTo(0.0));
+        collector.checkThat(brojBrodova, equalTo(0));
     }
 
     public double getDataFromFieldKapacitet() throws IllegalAccessException {
@@ -52,18 +76,6 @@ public class SkladisteTest {
         brojBrodovaField.setAccessible(false);
 
         return brojBrodova;
-    }
-
-    @Test
-    public void testConstructor() throws IllegalAccessException {
-        // arrange
-        double expectedResult = capacity;
-
-        // act
-        double actualResult = getDataFromFieldKapacitet();
-
-        // assert
-        assertEquals(expectedResult, actualResult, 0.001);
     }
 
     @Test
