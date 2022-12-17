@@ -3,6 +3,7 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
 [Kvalitet i testiranje softvera][kts]  
+[Web programiranje 2][wp2]  
 
 
 [//]: # ( # Meeting linkovi )
@@ -23,6 +24,8 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [//]: # ( Lista predmeta reference )
 
 [kts]: ./KTS/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
+[wp2]: ./WP2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [//]: # ( Meeting reference )
 
