@@ -1,0 +1,22 @@
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-6 text-center mt-5">
+        
+        <div class="alert alert-danger" role="alert" *ngIf="showErrorMsg">{{ errorMessage }}</div>
+
+        <input [(ngModel)]="email" placeholder="Unesite email">
+        <br>
+        <input [(ngModel)]="name" placeholder="Unesite ime i prezime">
+        <br>
+        <input [(ngModel)]="password" placeholder="Unesite lozinku">
+        <br>
+        <br>
+        <input type="submit" (click)="register()" value="Registruj se">
+        <br>
+        <br>
+        <a routerLink="/login">Imate nalog? Ulogujte se</a>
+        <br>
+  
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-6 text-center mt-5">
+
+        <a class="btn btn-info" routerLink="new">Dodaj novu knjigu</a> <!-- putanja: /books/new -->
+        <h3 class="mt-5">Lista knjiga</h3>
+        <div *ngIf="books == null || books.length === 0">Ne postoje podaci o knjigama</div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Naziv</th>
+                <th>Autor</th>
+                <th>Godina izdanja</th>
+            </tr>
+            <tr *ngFor="let book of books"> <!-- NAPOMENA: koristi se `of`, a ne `in` -->
+                <td>{{ book._id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author?.name + " " +  book.author?.surname }}</td>
+                <td>{{ book.yearOfPublication }}</td>
+            </tr> 
+        </table>
+
+    </div>
+</div>

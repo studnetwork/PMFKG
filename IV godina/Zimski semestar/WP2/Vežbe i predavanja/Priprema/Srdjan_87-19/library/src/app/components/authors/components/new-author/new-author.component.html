@@ -1,0 +1,14 @@
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-6 text-center">
+        <h1>Kreiranje novog autora</h1>
+            <input [(ngModel)]="name" placeholder="Unesite ime">
+            <br>
+            <input [(ngModel)]="surname" placeholder="Unesite prezime">
+            <br>
+            <input type="number" [(ngModel)]="dateOfBirth" placeholder="Unesite godinu rodjenja">
+            <br>
+            <div class="btn btn-info mt-3" (click)="createNewAuthor()">Kreiraj</div>
+    </div>
+
+</div>

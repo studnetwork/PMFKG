@@ -1,0 +1,29 @@
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-6 text-center">
+        <h1>Kreiranje nove knjige</h1>
+            <input [(ngModel)]="title" placeholder="Unesite naziv">
+            <br>
+            <input type="number" [(ngModel)]="yearOfPublication" placeholder="Unesite godinu izdanja">
+            <br>
+            <div class="border mt-3">
+                <h3>Izbor autora</h3>
+                <div class="btn btn-info" routerLink="/authors/new">Kreiraj novog autora</div>
+                <h6 class="mt-3"><u>Lista autora</u></h6>
+                <div class="mt-3" style="height: 6em; overflow: scroll;">
+                    <div 
+                    *ngFor="let author of authors" 
+                    (click)="chooseAuthor(author._id)" 
+                    [ngStyle]="{
+                        'background-color': author._id === chosenAuthor ? 'gray' : 'white',
+                        'color': author._id === chosenAuthor ? 'white' : 'black'
+                    }">
+                        {{ author.name }}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="btn btn-info" (click)="createNewBook()">Kreiraj</div>
+    </div>
+
+</div>
