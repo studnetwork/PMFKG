@@ -51,5 +51,5 @@ Izgled XML-a
 ```
 
 
-Drugi report moze da se nabavi dodavanjem u: Edit Configuration > Configuration > Listerners
-klikom na +
+Drugi report moze da se nabavi dodavanjem u:  
+`Edit Configuration > Configuration > Listerners` klikom na +
