@@ -1,0 +1,83 @@
+POM - Page Object Model
+
+Ideja je da se svaka stranica predstavi kao jedna klasa (objekat).
+
+Ima propertije i metode.
+
+Properti je nesto sto identifikuje jedan deo (ili stvar) na stranici.
+
+Sve klase (za stranice) se nasledjuju iz bazne apstrankne klase koja
+sadrzi ono sto je potrebno da ima svaka klasa kao sto je WebDriver koji
+se dobija preko konstruktora (kako se ne bi napravila zavisnost)
+
+
+Propertiji koji sadrze by objekte se instanciraju odmah.
+
+
+Akcije stranice su predstavljene metodama klase
+
+
+Propertiji su privatni, a metodi javni.
+
+
+Kada se predje na drugu stranicu potrebno je da se vrati objekat
+koji predstavlja tu stranicu
+
+Prosledjivanje linkova preko konstruktora klase date stranice nije
+dobra praksa jer onda nije moguce ispravko proveriti rad linkova.
+Na netu se mogu naci tutorijali koji to koriste.
+
+
+U `@BeforeSuite`-u se setupuje driver
+
+A pre svakog testa (koriscenjem `@BeforeMethod`) vrsi se priprema:
+instancira se driver, vrsi navigacija na odgovarajucu stranicu i
+instancira objekat te stranice
+
+
+
+Koriscenje POM-a omogucava razdvajanje testa od stvari koje su vezane za samu stranicu.
+
+Svaki test sadrzi referencu objekata same stranice i referencu
+web drivera
+
+Jedan od nacina imenovanja propertija jeste da se na kraju naziva stavi By
+kako bi se npr izbegle situacije u kojima se ocekuje By ovjekat a 
+prosledjuje string
+
+Za svaku akciju na stranici se pravi metodz npr za unos u polje, button
+click, ...
+
+
+
+
+Akcija submitovanja podataka obuhvata samo klik na submit button jer se 
+moze pretpostaviti da je to odradjeno akcijama za popunjavanje polja.
+
+
+
+
+# Testiranje sa cekanjem
+
+
+Za neke stvari je potrebno sacekti neko vreme pre nego sto se izvrsi akcija
+jer zahtevaju odredjeno vreme kako bi se neki elementi ucitali (npr. 
+odgovor servera dodje kasnije ili koriscenje modala jer treba vremena
+da se potpuno ucitaju)
+
+
+`WebDriverWait` je objekat koji se koristi za cekanje. Prosledjuje se 
+referenca drajvera i maksimalnda duzina cekanja (koristi se objekat
+`Duration`)
+
+`Duration` ima metod `.ofSeconds(x)`
+
+
+`wait.until(uslov)` - preuzima element iz uslova ako uslov bude ispunjen u
+definisanom periodu
+
+Za uslov se koristi neki metod iz `ExpectedConditions.`, npr.
+`visibilityOfLocatedElement(el)`
+
+
+Ako istekne vreme dolazi do `TimeoutException`-a
