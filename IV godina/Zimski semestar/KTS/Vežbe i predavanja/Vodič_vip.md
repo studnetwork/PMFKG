@@ -4,7 +4,7 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe  
 
-[//]: # ([Tekst koji ce biti prikazan][v-fajl-1]  )
+[Resenje zadataka sa 8. termina - xpath only][v-folder-1]  
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -68,7 +68,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi ka fajlovima )
 
-[v-fajl-1]: ./ImplementacijaKruzneListe
+[v-folder-1]: ./vezbe/Zadaci_sa_8_termina/Srdjan_87-19/
 
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
