@@ -4,14 +4,14 @@ Ideja je da se svaka stranica predstavi kao jedna klasa (objekat).
 
 Ima propertije i metode.
 
-Properti je nesto sto identifikuje jedan deo (ili stvar) na stranici.
+Properti je nesto sto **identifikuje** jedan deo (ili stvar) na stranici.
 
 Sve klase (za stranice) se nasledjuju iz bazne apstrankne klase koja
-sadrzi ono sto je potrebno da ima svaka klasa kao sto je WebDriver koji
+sadrzi ono sto je potrebno da ima svaka klasa kao sto je `WebDriver` koji
 se dobija preko konstruktora (kako se ne bi napravila zavisnost)
 
 
-Propertiji koji sadrze by objekte se instanciraju odmah.
+Propertiji koji sadrze `By` objekte se instanciraju odmah.
 
 
 Akcije stranice su predstavljene metodama klase
@@ -38,15 +38,15 @@ instancira objekat te stranice
 
 Koriscenje POM-a omogucava razdvajanje testa od stvari koje su vezane za samu stranicu.
 
-Svaki test sadrzi referencu objekata same stranice i referencu
+Svaki test (klasa) sadrzi referencu objekata same stranice i referencu
 web drivera
 
-Jedan od nacina imenovanja propertija jeste da se na kraju naziva stavi By
-kako bi se npr izbegle situacije u kojima se ocekuje By ovjekat a 
-prosledjuje string
+Jedan od nacina imenovanja propertija jeste da se na kraju naziva stavi `By`
+kako bi se npr. izbegle situacije u kojima se ocekuje `By` objekat a 
+prosledjuje string gde obe promenljive imaju isti naziv
 
-Za svaku akciju na stranici se pravi metodz npr za unos u polje, button
-click, ...
+Za svaku akciju na stranici se pravi metod, npr. za unos podataka u polje, za 
+button click, ...
 
 
 
@@ -60,14 +60,14 @@ moze pretpostaviti da je to odradjeno akcijama za popunjavanje polja.
 # Testiranje sa cekanjem
 
 
-Za neke stvari je potrebno sacekti neko vreme pre nego sto se izvrsi akcija
+Za neke stvari je potrebno sacekati neko vreme pre nego sto se izvrsi akcija
 jer zahtevaju odredjeno vreme kako bi se neki elementi ucitali (npr. 
 odgovor servera dodje kasnije ili koriscenje modala jer treba vremena
 da se potpuno ucitaju)
 
 
 `WebDriverWait` je objekat koji se koristi za cekanje. Prosledjuje se 
-referenca drajvera i maksimalnda duzina cekanja (koristi se objekat
+referenca drajvera i maksimalna duzina cekanja (koristi se objekat
 `Duration`)
 
 `Duration` ima metod `.ofSeconds(x)`

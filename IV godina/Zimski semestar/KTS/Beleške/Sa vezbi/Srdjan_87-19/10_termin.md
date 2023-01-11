@@ -8,7 +8,7 @@ Ovaj kod inicijalizuje sve elemente date stranice (pisemo ga u konstruktoru zbog
 
 Omogucava jednostavniji rad jer npr. skracuje kod koji se pise i omogucava lakse pisanje kompleksnih upita.
 
-Umesto da se koristi `driver.findElement` koristi se anotacija `@FindBy` iznad polja tipa WebElement koje sadrzi rezultat, odnosno trazeni element.
+Umesto da se koristi `driver.findElement` koristi se anotacija `@FindBy` iznad polja tipa `WebElement` koje sadrzi rezultat, odnosno trazeni element.
 
 Sa Ctrl+p unutar zagrada `FindBy` je moguce izlistati sve dostupne parametre.
 
@@ -16,12 +16,13 @@ Sa Ctrl+p unutar zagrada `FindBy` je moguce izlistati sve dostupne parametre.
 @FindBy(id="nekiId")
 ...
 
-@FindBy(linkTexr="neki tekst")
+@FindBy(linkTexe="neki tekst")
 ...
 ```
 
 
-Ova anotacija ima i parametar how kojim se definise nacin na koji ce se pretraga izvrsiti. Zajedno sa ovim parametrom je potrebno definisati i parametar using u kome se navodi vrednost po kojoj ce se izvrsiti pretraga.
+Ova anotacija ima i parametar `how` kojim se definise nacin na koji ce se pretraga izvrsiti. Zajedno sa ovim parametrom je potrebno definisati i
+parametar `using` u kome se navodi vrednost po kojoj ce se izvrsiti pretraga.
 
 ```
 @FindBy(how=How.ID, using="nekiId")
