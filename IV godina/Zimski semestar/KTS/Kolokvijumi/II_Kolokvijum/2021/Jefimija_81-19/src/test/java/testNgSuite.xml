@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testing-1.0.ctd">
+<suite name="II kolokvijum QA">
+    <test name="Login">
+        <classes>
+            <class name="org.shop.LoginPageTest">
+                <methods>
+                    <include name="login"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cart">
+        <classes>
+            <class name="org.shop.CartPageTest">
+                <methods>
+                    <include name="logout"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
