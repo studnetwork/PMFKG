@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite - Kolokvijum 2">
+    <test name="Shopping">
+        <classes>
+            <class name="pom.HomePageTest"/>
+            <class name="pom.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>
