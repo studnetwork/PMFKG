@@ -57,12 +57,11 @@ bloka i exception-a.
 
 Prvo idu specificni, pa onda manje specificni paterni.
 
-Prvo idu staticne rute.
-
-Nakon njih rute koje su prazne (match-uju default rutu).
-
-Na kraju liste nalaze se rute koje sadrze wildcard karakter. To su rute koje
-match-uju svaki URL.
+Postupak:
+1. Zapocinje se sa staticnim rutama.
+2. Nakon njih rute koje su prazne (match-uju default rutu).
+3. Na kraju liste nalaze se rute koje sadrze wildcard karakter. To su rute koje
+   match-uju svaki URL.
 
 ## Dodatno
 
