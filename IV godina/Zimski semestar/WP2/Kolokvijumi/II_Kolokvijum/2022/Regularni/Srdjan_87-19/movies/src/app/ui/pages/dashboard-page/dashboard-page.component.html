@@ -1,0 +1,55 @@
+<!-- ### Ovo bi trebalo da ide u poseban fajl -->
+<style>
+    table, th, td {
+        border: 1px solid black
+    }
+</style>
+<!-- ### -->
+
+<div *ngIf="isAuthenticated()">
+    <button (click)="logout()">Odjavi se</button>
+    <br>
+    <br>
+    <a routerLink="/profile">Profil</a>
+</div>
+
+<div *ngIf="! isAuthenticated()">
+    <a routerLink="/login">Prijavi se</a>
+    <br>
+    <a routerLink="/register">Registruj se</a>
+</div>
+
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Naslov filma</th>
+        <th>Zanrovi</th>
+        <th *ngIf="isAuthenticated()">Ocenjivanje</th>
+    </tr>
+    <tr *ngFor="let movie of movies; index as i">
+        <td>{{ movie._id }}</td>
+        <td>
+            <button (click)="getAllActorsForMovieId(movie._id)" style="width: 100%">{{ movie.title }}</button>
+        </td>
+        <td>{{ movie.genres.join(", ") }}</td>
+        <td *ngIf="isAuthenticated()">
+            <input type="number" (change)="ratingChange(i, $event)" min="1" max="10">
+            <button (click)="rate(movie._id, i)">Oceni</button>
+        </td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<table *ngIf="showActors">
+    <tr>
+        <th>ID</th>
+        <th>Actor Name</th>
+    </tr>
+    <tr *ngFor="let actor of actors">
+        <td>{{ actor._id }}</td>
+        <td>{{ actor.name }}</td>
+    </tr>
+</table>

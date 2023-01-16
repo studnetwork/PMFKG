@@ -1,0 +1,11 @@
+Potrebno je ispraviti greske na backend-u kako bi resenje radilo.
+
+1. Dodati cors
+```
+const cors = require('cors');
+...
+app.use(cors());
+```
+ 
+2. Ispraviti funkciju u modelu za film
+   U fajlu `Movies-API/models/movie.js` promeniti `findOneAndUpdate` u `findByIdAndUpdate`

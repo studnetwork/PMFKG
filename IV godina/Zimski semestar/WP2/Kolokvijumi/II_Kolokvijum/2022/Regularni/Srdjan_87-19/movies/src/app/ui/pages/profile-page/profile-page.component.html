@@ -1,0 +1,21 @@
+<style>
+    table, th, td {
+        border: 1px solid black
+    }
+</style>
+
+<button (click)="logout()">Odjavi se</button>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Ime filma</th>
+        <th>Prosecna ocena</th>
+    </tr>
+    <tr *ngFor="let movie of movies">
+        <td>{{ movie._id }}</td>
+        <td>{{ movie.title }}</td>
+        <td>{{ calculateAvgRating(movie.ratings) }}</td>
+    </tr>
+</table>
+<br>
+<a routerLink="/">Idi na glavnu stranicu</a>
