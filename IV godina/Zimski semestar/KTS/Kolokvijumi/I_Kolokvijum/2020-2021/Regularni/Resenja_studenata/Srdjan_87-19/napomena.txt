@@ -1,0 +1,1 @@
+Zadatak je resen bez mocking-a iako je to na odredjenim mestima potrebno odraditi (kako bi resenje bilo ispravno)
