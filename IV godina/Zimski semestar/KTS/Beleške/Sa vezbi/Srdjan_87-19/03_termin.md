@@ -1,24 +1,23 @@
-# Parametarizovani testovi
+# Parametrizovani testovi
 
 Kada pisemo testove hocemo da pokrijemo sto vise
-razlicitih slucajeva (npr. ulaznih vrednosti, stanja, ...). Pisanje testova koji se razlikuju
-samo po ulaznim parametrima nije preporucljivo
-jer se tesko odrzavaju, veci je kod pa moze 
-lako doci do greske (npr. ne azuriramo isti kod u 
-svim testovima pa dodje do greske u nekom trenutku 
+razlicitih slucajeva (npr. ulaznih vrednosti, stanja, ...). 
+Pisanje testova koji se razlikuju samo po ulaznim 
+parametrima nije preporucljivo jer se tesko odrzavaju, 
+veci je kod pa moze lako doci do greske (npr. ne azuriramo isti 
+kod u svim testovima pa dodje do greske u nekom trenutku 
 u onom testu koji nije azuriran).
 
 Kako bi se izbeglo ponavljanje i svi problemi koje
-ono nosi umesto zasebnih testova pisemo jedan
-parametarski test. 
+ono nosi umesto zasebnih testova pisemo jedan kod
+koji ce napraviti onoliko parametrizovanih testova
+koliko ima torki. 
 
-Parametarski test sadrzi zajednicki kod i uredjenu
-listu parametara i vrsi proveru za svaku torku, 
-koristeci isti kod.
+![3](./resursi/3/3.png)
 
 
 Sintaksa:
-```
+```Java
 @RunWith(Parameterized.class)
 public class KlasaKojaSeTestiraTest {
     
@@ -31,7 +30,7 @@ public class KlasaKojaSeTestiraTest {
     }
 
     @parameterized.Parameters 
-    public static Collection listaTorki() {
+    public static Collection listaTorki() {   // obratiti paznju, u pitanju je static metod
         return Array.asList(new Object[][] {
             { new Param1(1), new Param2(1) },
             { new Param1(2), new Param2(2) },
@@ -60,8 +59,7 @@ public void nekiTest() {...}
 
 # Custom runner
 
-
-# Mocking
+# Unit testing
 
 U OOP klasa predstavlja unit.
 
@@ -81,6 +79,8 @@ testing.
 
 
 Kod njega se svaka celina (unit) testira zasebno.
+
+# Mocking
 
 U OOP klase cesto koriste polja i metode neke druge klase.
 

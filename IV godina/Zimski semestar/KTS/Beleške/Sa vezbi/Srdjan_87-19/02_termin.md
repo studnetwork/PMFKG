@@ -22,7 +22,7 @@ moguce pokrenuti dati test.
 * Act (izvrsenje akcije, odnosno pozivanje metoda koji se testira)
 * Assert (provera rezultata)
 
-```
+```Java
 @Test
 public void nekiTest() {
     // Arrange
@@ -85,7 +85,7 @@ problema tokom izvrsavanja testa)
 ## Testiranje dolaska do izuzetka
 ### Pomocu anotacije
 
-```
+```Java
 @Test(expected = ???.class)
 public void nekiMetod(){
     ...
@@ -113,7 +113,7 @@ test ce onda proci ako ne dodje do neke greske.
 Metod `fail` uzrokuje pad testa uz ispis poruke, ako
 se ona prosledi.
 
-```
+```Java
 @Test
 public void nekiMetod() {
     
