@@ -122,3 +122,83 @@ public class NekiTest{
 
 Nekada je potrebno koristi ovaj pristup jer se test pokrece sa drugim 
 runner-om (npr. `Parameterized.class`)
+
+
+# Hamcrest
+
+Snippet koji se dodaje u `pom.xml`
+```
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-all</artifactId>
+    <version>1.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+**Hamcrest** je biblioteka koja nudi razle alate za match-ovanje.
+
+U testingu se koristi jer olaksava definisanje tvrdnji kojima se
+proverava rezultat metoda koji testiramo.
+
+
+Koristimo `MatcherAssert.assertThat(???)` i `Matchers.is(???)`
+
+ili krace
+```Java
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
+assertThat(???) i is(???)
+```
+
+
+Primeri:
+```Java
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
+// proverava da li promenljive referisu isti objekat
+assertThat(ACTUAL, sameInstance(EXPECTED));
+
+// proverava da li promenljive imaju isti sadrzaj 
+// (u slucaju listi da li imaju elemente istih vrednosti, u odgovarajucem redosledu)
+assertThat(ACTUAL, equalTo(EXPECTED));
+
+// proverava da li lista sadrzi element `first`
+assertThat(list, hasItem(first));
+
+assertThat(map, hasKey(KEY));  
+assertThat(map, not(hasKey(INCORRECT_KEY)));
+
+assertThat(actualString, is("nekiStr"));
+
+assertThat(actualString, not("nekiString"));
+assertThat(actualString, not(isEmptyOrNullString()));
+
+// proveriti da li vise uslova vazi
+assertThat(actualString, 
+    allOf(
+        not("nekiString"),
+        not(isEmptyOrNullString()),
+        startsWith("nek")
+        )
+    );
+
+// proveriti da li je broj u blizini broja 10 sa odstupanjem 0.01
+assertThat(actualNumber, closeTo(10, 0.01));
+
+assertThat(list, hasItems(10, 20));
+assertThat(list, everyItem(greaterThan(0)));
+assertThat(list, contains(20, 13));
+assertThat(list, containsInAnyOrder(20, 13));
+
+assertThat(array, arrayWithSize(3));
+assertThat(array, hasItemInArray(7));
+assertThat(array, arrayContaining(20, 13));
+assertThat(array, arrayContainingInAnyOrder(20, 13));
+```
+
+*Napomene*:
+* `contains`, `containsInAnyOrder`, `arrayContaining` i `arrayContainingInAnyOrder` zahtevaju da svi elementi budu navedeni (ako niz/lista sadrzi 1, 2 i 3 onda je neophodno da se ovim metodima proslede isti ti brojevi)
+* `contains` i `arrayContaining` zahtevaju da elementi budu odgovarajucem redosledu 
