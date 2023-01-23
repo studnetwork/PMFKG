@@ -6,8 +6,8 @@ Ima propertije i metode.
 
 Properti je nesto sto **identifikuje** jedan deo (ili stvar) na stranici.
 
-Sve page klase se nasledjuju iz apstraktne bazne klase koja sadrzi sve ono 
-sto je potrebno da ima svaka klasa, na primer `WebDriver` koji se dobija preko 
+Sve page klase se nasledjuju iz apstraktne bazne klase koja sadrzi sve ono sto 
+je potrebno da ima neka page klasa, na primer `WebDriver` koji se dobija preko 
 konstruktora (jer na taj nacin imamo slabo vezivanje page klase i `WebDriver`-a)
 
 Propertiji koji sadrze `By` objekte se instanciraju odmah.
@@ -24,7 +24,14 @@ Propertiji su privatni, a metodi javni.
 ---
 
 Kada se predje na drugu stranicu potrebno je da se vrati objekat
-koji predstavlja tu stranicu
+koji predstavlja tu stranicu:
+```Java
+// `HomePage` klasa
+public LoginPage navigateToLoginPage(){
+    loginLink.click();
+    return new LoginPage(driver);
+}
+```
 
 Prosledjivanje linkova preko konstruktora klase date stranice **nije dobra** praksa
 jer onda nije moguce ispravko proveriti rad linkova. Na netu se mogu naci tutorijali 
@@ -42,8 +49,8 @@ instancira objekat te stranice
 
 Koriscenje POM-a omogucava razdvajanje testa od stvari koje su vezane za samu stranicu.
 
-Svaki test (klasa) sadrzi referencu objekata same stranice i referencu
-web drivera
+Svaka testna klasa sadrzi **referencu objekata klase same stranice** (npr. `HomePage`) i **referencu
+web drivera**
 
 Jedan od nacina imenovanja propertija jeste da se na kraju naziva stavi `By`
 kako bi se npr. izbegle situacije u kojima se ocekuje `By` objekat a 
@@ -53,26 +60,22 @@ Za svaku akciju na stranici se pravi metod, npr. za unos podataka u polje, za
 button click, ...
 
 
-
-
 Akcija submitovanja podataka obuhvata samo klik na submit button jer se 
-moze pretpostaviti da je to odradjeno akcijama za popunjavanje polja.
-
+moze pretpostaviti da je unos podataka odradjeno akcijama za popunjavanje polja.
 
 
 
 # Testiranje sa cekanjem
 
-
-Za neke stvari je potrebno sacekati neko vreme pre nego sto se izvrsi akcija
+Za neke stvari je potrebno sacekati pre nego sto se izvrsi akcija
 jer zahtevaju odredjeno vreme kako bi se neki elementi ucitali (npr. 
 odgovor servera dodje kasnije ili koriscenje modala jer treba vremena
 da se potpuno ucitaju)
 
 
 `WebDriverWait` je objekat koji se koristi za cekanje. Prosledjuje se 
-referenca drajvera i maksimalna duzina cekanja (koristi se objekat
-`Duration`)
+referenca drajvera i maksimalna duzina cekanja (za to se koristi objekat
+klase `Duration`)
 
 `Duration` ima metod `.ofSeconds(x)`
 
