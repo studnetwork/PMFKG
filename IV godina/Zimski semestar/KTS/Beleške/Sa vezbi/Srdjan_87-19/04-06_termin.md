@@ -123,6 +123,42 @@ public class NekiTest{
 Nekada je potrebno koristi ovaj pristup jer se test pokrece sa drugim 
 runner-om (npr. `Parameterized.class`)
 
+# Testiranje standardnog izlaza
+
+Ukoliko je npr. potrebno da testiramo da li metod kao rezultat svog
+izvrsavnja ima odgovarajuci ispis na standardni izlaz onda je potrebno
+da izvrsimo redirekciju izlaza pre poziva te funkcije.
+
+Redirekciju podataka vrsimo sa `System.setOut` u neku promenljivu tipa `ByteArrayOutputStream`.
+
+Nakon zavrsetka testa je **neophodno da se output destinacija programa vratiti**
+**na standardni izlaz** kako ne bi uticali na rad ostalih testova.
+
+Primer
+```Java
+    // cuvamo standardni izlaz kako bi posle mogli da se vratimo na pocetno stanje
+    private final PrintStream originalOut = System.out;
+
+    ...
+
+    @Test
+    public void testirajIspis() {
+        // arrange
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        ...
+        // act 
+        underTest.metodKojiVrsiIspis();
+        
+        // assert
+        System.setOut(originalOut));
+        
+        // `trim()` koristimo kako bi smo uklonili `\n` koji se dodaje na kraj
+        // prosledjenog stringa u metodu `System.out.println` 
+        assertEqual("neki string", out.toString().trim());
+        ...
+}
+```
 
 # Hamcrest
 
@@ -141,43 +177,31 @@ Snippet koji se dodaje u `pom.xml`
 U testingu se koristi jer olaksava definisanje tvrdnji kojima se
 proverava rezultat metoda koji testiramo.
 
-
-Koristimo `MatcherAssert.assertThat(???)` i `Matchers.is(???)`
-
-ili krace
-```Java
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
-assertThat(???) i is(???)
-```
-
-
 Primeri:
 ```Java
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.hamcrest.MatcherAssert;
 import static org.hamcrest.Matchers.*;
 
 // proverava da li promenljive referisu isti objekat
-assertThat(ACTUAL, sameInstance(EXPECTED));
+MatcherAssert.assertThat(ACTUAL, sameInstance(EXPECTED));
 
 // proverava da li promenljive imaju isti sadrzaj 
 // (u slucaju listi da li imaju elemente istih vrednosti, u odgovarajucem redosledu)
-assertThat(ACTUAL, equalTo(EXPECTED));
+MatcherAssert.assertThat(ACTUAL, equalTo(EXPECTED));
 
 // proverava da li lista sadrzi element `first`
-assertThat(list, hasItem(first));
+MatcherAssert.assertThat(list, hasItem(first));
 
-assertThat(map, hasKey(KEY));  
-assertThat(map, not(hasKey(INCORRECT_KEY)));
+MatcherAssert.assertThat(map, hasKey(KEY));  
+MatcherAssert.assertThat(map, not(hasKey(INCORRECT_KEY)));
 
-assertThat(actualString, is("nekiStr"));
+MatcherAssert.assertThat(actualString, is("nekiStr"));
 
-assertThat(actualString, not("nekiString"));
-assertThat(actualString, not(isEmptyOrNullString()));
+MatcherAssert.assertThat(actualString, not("nekiString"));
+MatcherAssert.assertThat(actualString, not(isEmptyOrNullString()));
 
 // proveriti da li vise uslova vazi
-assertThat(actualString, 
+MatcherAssert.assertThat(actualString, 
     allOf(
         not("nekiString"),
         not(isEmptyOrNullString()),
@@ -186,19 +210,20 @@ assertThat(actualString,
     );
 
 // proveriti da li je broj u blizini broja 10 sa odstupanjem 0.01
-assertThat(actualNumber, closeTo(10, 0.01));
+MatcherAssert.assertThat(actualNumber, closeTo(10, 0.01));
 
-assertThat(list, hasItems(10, 20));
-assertThat(list, everyItem(greaterThan(0)));
-assertThat(list, contains(20, 13));
-assertThat(list, containsInAnyOrder(20, 13));
+MatcherAssert.assertThat(list, hasItems(10, 20));
+MatcherAssert.assertThat(list, everyItem(greaterThan(0)));
+MatcherAssert.assertThat(list, contains(20, 13));
+MatcherAssert.assertThat(list, containsInAnyOrder(20, 13));
 
-assertThat(array, arrayWithSize(3));
-assertThat(array, hasItemInArray(7));
-assertThat(array, arrayContaining(20, 13));
-assertThat(array, arrayContainingInAnyOrder(20, 13));
+MatcherAssert.assertThat(array, arrayWithSize(3));
+MatcherAssert.assertThat(array, hasItemInArray(7));
+MatcherAssert.assertThat(array, arrayContaining(20, 13));
+MatcherAssert.assertThat(array, arrayContainingInAnyOrder(20, 13));
 ```
 
 *Napomene*:
+* `assertThat` postoji i biblioteci `JUnit` pa je zbog toga potrebno eksplicitno pozivati tu metodu sa `MatcherAssert.assertThat` (za to je neophodan import `import org.hamcrest.MatcherAssert`)
 * `contains`, `containsInAnyOrder`, `arrayContaining` i `arrayContainingInAnyOrder` zahtevaju da svi elementi budu navedeni (ako niz/lista sadrzi 1, 2 i 3 onda je neophodno da se ovim metodima proslede isti ti brojevi)
 * `contains` i `arrayContaining` zahtevaju da elementi budu odgovarajucem redosledu 
