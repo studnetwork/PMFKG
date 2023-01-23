@@ -79,7 +79,7 @@ public class MerljivUcinakTest {
                 .thenReturn(brojNaDresu);
 
         Mockito.when(statistikaMock2.getOstvareniUcinak())
-                .thenReturn(15);
+                .thenReturn(2);
 
         Fudbaler fudbaler = new Fudbaler("Mitrovic", brojNaDresu);
         fudbaler.dodajStatistiku(statistikaMock1);
