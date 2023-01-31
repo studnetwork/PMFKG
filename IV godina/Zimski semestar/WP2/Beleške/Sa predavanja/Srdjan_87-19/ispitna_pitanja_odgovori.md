@@ -1,9 +1,9 @@
-# 1. 
+# 1. Sta je Nginx
 
 Nginx je fleksibilan HTTP server koji se moze konfigurisati na razlicite nacine.
 On je takodje i reverse proxy server, mail proxy server i genericki TCP/UDP sever.
 
-# 2. 
+# 2. Nginx funkcionlanosti
 
 Funkcionalnosti koje nginx omogucava:
 * load balancing
@@ -15,10 +15,10 @@ i time korisniku stvori utisak da se radi o samo jednom serveru koji radi na jed
 * autoindexing
 * skalabilnost
 
-# 3. 
+# 3. ECMAScript i verzije
 
 ECMAScript je standard koji osigurava interoperabilnost izmedju web stranica 
-na razlicitim pregledacima (browser-ima). Najcesce se koristi za pisanje skripti 
+i razlicitih pregledaca (browser-ima). Najcesce se koristi za pisanje skripti 
 koje se izvrsavaju na klijentskom delu, ali u sve vecem porastu je i njegovo 
 koriscenje za pisanje serverskog dela aplikacija i servisa.
 
@@ -38,10 +38,10 @@ Verzije:
 
 Napomena: **ES4 je preskocena** (ne postoji)
           
-# 4. 
+# 4. Use strict 
 
-`"use strict";` oznacava kod koji bi trebao da se izvrsi
-u striktnom modu ("strict mode")
+Use strict je direktiva kojom se oznacava da se dati deo 
+koda treba izvrsiti u strinktnom modu ("strict mode")
 
 Pomaze pri pisanju "clean" i "secure" JS koda. 
 
@@ -54,8 +54,11 @@ i njen scope). Oni pregledaci koji je podrzavaju ce je
 izvrsiti, a oni koji je ne podrzavaju ce je samo ignorisati
 i tretirati kao obican string.
 
+```Javascript
+"use strict";
+```
 
-# 5. 
+# 5. forEach
 
 `forEach` je metod array objekta koji nad svakim elementom 
 niza (array-a) zove prosledjenu funkciju.
@@ -83,7 +86,7 @@ funciton sum(value) {
 }
 ```
 
-# 6. 
+# 6. Getter i setter 
 
 Getter i setter predstavljaju metode koji podsecaju na 
 getter-e i setter-e svojstva (propertija). Rad sa njima podseaca na 
@@ -113,13 +116,14 @@ val person = {
 };
 ```
 
-# 7. 
+# 7. JS Properties
 
-Property-ji objekta imaju meta podatke:
+Property-ji objekta imaju atribute. Neki od njih su:
+* `name`
 * `value`
 * `writable` - da li vrednost moze da se promeni
 * `enumerable` - da li moze da se enumerise (pristupi u `for..in`-u, `stringify`-u, itd..)
-* `configurable` - da li moze da se konfigurise (izmene meta podaci nakon definisanja)
+* `configurable` - da li moze da se konfigurise (izmene vrednosti atributa nakon definisanja)
 
 Propery objekta moze da se definise sa:
 ```Javascript
@@ -130,13 +134,13 @@ Object.defineProperty(objekatNadKojimDefinisemo, "nazivPropertija", {
 })
 ```
 
-# 8. 
+# 8. Object.create
 
 `Object.create(prototip)` kreira se novi objekat na osnovu nekog 
 drugog objekta (prototipa). Imace iste podatke i strukturu
 
 Ima i drugi argument koji predstavlja objekat u kome se mogu definisati 
-novi propertiji (sa svojim metapodacima) koji ce biti dodati novom objektu
+novi propertiji (sa svojim atributima) koji ce biti dodati novom objektu
 
 # 9. Razlike izmedju `let`, `var` i `const` 
 
@@ -156,12 +160,13 @@ Konstante **moraju** da imaju dodeljenu vrednost
 Vrednost ne moze da im se menja, ali ako pokazuju na neki objekat ili niz onda je 
 moguce menjati njihov sadrzaj (dok pokazivac ostaje onakav kakav jeste)
 
-# 10. 
+# 10. for (standardni, in, of)
 
 `for..of` i `for..in` omogucavaju prolazak kroz iterabilne objekte 
 
-`for..of` omogucava prolazak da se pri svakom prolazu dobije naredna vrednost (
-vrednost propertija `next`), dok `for..in` pri svakoj interaciji vraca indeks 
+`for..of` omogucava iterisanje tako da se pri svakoj iteraciji dobije vrednost
+koja ce se vratiti (vrednost propertija `next`), dok `for..in` pri svakoj 
+interaciji vraca indeks 
 
 `for` je standardan `for` koji se pojavljuje u vecini jezika:
 ```Javascript
@@ -169,18 +174,16 @@ for (initialization; condition; afterthought)
   statement
 ```
 
-# 11. 
+# 11. Iterables
 
 Iterables su objekti kroz koje je moguce iterisati pomocu `for..of`-a, tj.
 objekti koji implementiraju metod `Symbol.iterator`
-
 
 Koriste iteratore koji implementiraju `next()` metod. 
 
 `next` vraca objekat koji mora da ima propertije:
 * `value` koji sadrzi vrednost koja ce se vratiti
 * `done` koji oznacava da li je iterisanje zavrseno ili ne
-
 
 Primer definisanja iterabilnog objekta:
 ```Javascript
@@ -201,7 +204,7 @@ myNumbers[Symbol.iterator] = function() {
 
 `for..of` automatski zove metod `Symbol.iterator`
 
-# 12. 
+# 12. Map i Set
 
 Mape omogucavaju da se definisu mapiranja kljuceva u odgovarajuce vrednosti.
 
@@ -217,6 +220,8 @@ fruits.set(apples, 500);
 
 Redosled kljuceva je isti kao redosled u kojem su oni dodavani.
 
+---
+
 Skupovi (`Set`) su kolekcije jedinstvenih vrednosti. Svaka vrednost se moze pojaviti
 samo jednom. 
 
@@ -230,7 +235,7 @@ letters.add('a');
 letters.add('b');
 ```
 
-# 13. 
+# 13. Klase
 
 Klase u JS predstavljaju sablone za kreiranje objekata.
 
@@ -260,7 +265,7 @@ Instanciranje:
 const myCar = new Car("Ford", 2015);
 ```
  
-# 14. 
+# 14. Promise
 
 Promisi predstavljaju alternativu za callback-ove. Omogucava pisanje citljivijeg
 koda jer se izbegava ugnjezdavanje koje se javlja kod callback-ova (callback hell).
@@ -291,7 +296,7 @@ myPromise
 .catch(function(error) { ... });
 ```
 
-# 15. 
+# 15. Fetch API
 
 JS Fetch API predstavlja interfejs koji omogucava pregledacima da naprave http zahteve
 
@@ -305,7 +310,7 @@ fetch(file)
 ```
  
  
-# 16. 
+# 16. Symbol
 
 Tip `Symbol` moze da se koristi na razlicite nacine.
 
@@ -339,10 +344,13 @@ i key za koju je kreirana
 
 Zbog toga: `Symbol.for('key') == Symbol.for('key')` vraca `true`
 
+`Symbol.keyFor` je inverzna funcija funkcije `Symbol.for` koja za datu vrednost
+vraca njen kljuc
+
 Ovaj globalni registar vazi za celu aplikaciju.
 
 
-# 17. 
+# 17. default vrednost parametra i rest parametar
 
 Default-ne vrednosti parametra funkcije su vrednosti koje se 
 dodeljuju tom parametru ukoliko se pri pozivu ne prosledi njegova 
@@ -356,6 +364,8 @@ function f(a, b=3) {
 
 f("a");
 ```
+
+---
 
 Rest parametar predstavlja niz svih argumenata koje preostanu u pozivu datog metoda.
 
