@@ -314,8 +314,8 @@ fetch(file)
 
 Tip `Symbol` moze da se koristi na razlicite nacine.
 
-Jedan od nacina koriscenja je i definisanje skrivenog identifikatora kojem ne moze
-slucajno da se pristupi iz nekog dela koda.
+Jedan od nacina koriscenja je i definisanje skrivenog identifikatora kojem se ne 
+moze pristupiti slucajno iz nekog dela koda.
 
 Dobija se jedinstvena vrednost.
 
@@ -457,7 +457,7 @@ iz modula `events`
 
 Da bi se `EventEmitter` koristio u korisnickom objektu potrebno je 
 da funkcija sablon (funkcija kojom se kreira objekat) ili klasa 
-nasledjuju prototype klase 
+nasledjuju prototype klase `EventEmitter`
 
 Primer za funkciju sablon:
 ```Javascript
@@ -465,7 +465,7 @@ const { EventEmitter } = require('events');
 
 function SablonFunkcija() {
   this.metod = function(nekaVrednost) {
-    this.emit('nazivDogadaja', nekaVrednost);
+    this.emit('nazivDogadjaja', nekaVrednost);
   };
 }
 
@@ -476,8 +476,8 @@ const y = new SablonFunkcija();
 
 Za isti dogadjaj je moguce registrovati vise listener-a
 
-Listeneri se mogu registrovati sa `objekat.on('nazivDogadaja', nekiListener)`
-ili sa `objekat.addListener('nazivDogadaja', nekiListener)`.
+Listeneri se mogu registrovati sa `objekat.on('nazivDogadjaja', nekiListener)`
+ili sa `objekat.addListener('nazivDogadjaja', nekiListener)`.
 
 Ako hocemo da isto uradimo preko klase koristimo:
 ```Javascript
@@ -485,7 +485,7 @@ class Klasa extends EventEmitter {  // neophodno
   constructor() {                   // neophodno
     super();                        // neophodno
     this.metod = function(nekaVrednost) {
-    this.emit('nazivDogadaja', nekaVrednost);
+    this.emit('nazivDogadjaja', nekaVrednost);
   }
 }
 ```
@@ -498,8 +498,6 @@ iz spoljasnjeg okruzenja i nakon sto se to okruzenje napusti.
 Iako bi se u drugim jezicima javila greska da data promenljiva vise ne postoji,
 u JS se zbog closure-a cuva referenca na promenljive koje su u upotrebi od 
 strane neke unutrasnje funkcije.
-
-Kontekst (okruzenje) se cuva sve dok se funkcija ne izvrsi.
 
 Primer:
 ```Javascript
@@ -516,7 +514,12 @@ document.getElementById('size-12').onclick = size12;
 document.getElementById('size-14').onclick = size14;
 ```
 
-# 25. NodeJS - Baferi
+U ovom primeru svaki poziv kreira closure koji cuva vrednost promenljive `size`
+za dati poziv.
+
+# 25. NodeJs - callback chain
+
+# 26. NodeJS - Baferi
 
 Baferi predstavljaju skladista podataka u binarnom obliku.
 
@@ -553,7 +556,7 @@ Bafer moze da se kopira, potpuno ili delimicno, metodom `copy`
 Vise bafera moze da se spoji u jedan metodom `concat` koja prihvata niz
 bafera
 
-# 26. NodeJS - Tokovi podataka
+# 27. NodeJS - Tokovi podataka
 
 Tokovi podataka (streams) su memorijske strukture koje se koriste za
 I/O operacije.
@@ -570,7 +573,7 @@ nasledjuje klasu `Readable` (`Writable`) i da implementira metod
 `push()`
 
 Ukoliko se prosledi `null` ili prazan string metodu `push` onda ce se to 
-izazvati dogadaj `end`
+izazvati dogadjaj `end`
 
 
 Ove klase se nalaze u modulu `streams`:
@@ -579,7 +582,7 @@ const { Writable, Readable } = require('streams');
 ```
 
 Na objetku korisnicke klase koja nasledjuje neku stream klasu moguce je
-registrovati listener-e `on(data)` i `on(end)`, gde prvi predstavlja
+registrovati listener-e `on('data')` i `on('end')`, gde prvi predstavlja
 lister koji osluskuje za dogadjaj kada se podaci upisuju / citaju, dok
 drugi predstavlja listener koji osluskuje za dogadjaj kada je proces
 upisa / citanja gotov.
