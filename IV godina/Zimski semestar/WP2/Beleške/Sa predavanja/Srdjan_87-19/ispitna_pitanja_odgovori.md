@@ -152,10 +152,10 @@ scope.
 Kada se jednom deklarisu `let` i `const` promenljie vise ne mogu ponovo da se deklarisu
 pod tim imenom.
 
-Konstantne (`const`) sprecavaju nastanak greske pri promeni sadrzaja promenljivih 
-ciji sadrzaj nije trebao da se menja 
+Konstanta (`const`) sprecava slucajnu promenu sadrzaja promenljive ciji sadrzaj nije
+predvidjeno menjati.
 
-Konstante **moraju** da imaju dodeljenu vrednost
+Konstante **moraju** da imaju dodeljenu vrednost (da budu inicijalizovane)
 
 Vrednost ne moze da im se menja, ali ako pokazuju na neki objekat ili niz onda je 
 moguce menjati njihov sadrzaj (dok pokazivac ostaje onakav kakav jeste)
@@ -538,7 +538,7 @@ console.log(buf256.toString());
 ```
 
 Metod `buffer.write` ima i parametre preko kojih je moguce definisati
-poziciju od koje ce da se vrsi upis i kolika ce da bude duzina upisa
+poziciju od koje ce da se vrsi upis i kolika ce biti duzina upisa
 ```Javascript
 buf256.write(", dodatni tekst", 10, 15);
 ```
@@ -581,7 +581,7 @@ Ove klase se nalaze u modulu `streams`:
 const { Writable, Readable } = require('streams');
 ```
 
-Na objetku korisnicke klase koja nasledjuje neku stream klasu moguce je
+Na objektu korisnicke klase koja nasledjuje neku stream klasu moguce je
 registrovati listener-e `on('data')` i `on('end')`, gde prvi predstavlja
 lister koji osluskuje za dogadjaj kada se podaci upisuju / citaju, dok
 drugi predstavlja listener koji osluskuje za dogadjaj kada je proces
@@ -609,7 +609,8 @@ class Answer extends Readable {
 }
 ```
 
-`_write` je metod koji treba da ima sledeci potpis `function(data, encoding, callback)`
+`_write` je metod koji treba da ima sledeci potpis `function(data, encoding, callback)`. 
+Funkcija `callback` mora da se pozove unutar callback-a koji se dodeljuje `_write`-u`1  
 
 Primer:
 ```Javascript
@@ -621,3 +622,252 @@ writer.end("Kraj"); // upisuje dati string i zatvara tok
 Pored klasa `Readable` i `Writable` u modulu postoji klasa `Duplex` 
 koja omogucava i citanje i pisnje nad istim objektom. Predstavlja 
 kombinaciju klasa `Readable` i `Writable`
+
+Jedan tok moze da se prosledi drugom pomocu metode `pipe`:
+```Javascript
+...
+let reader = new Reader();
+let writer = new Writer();
+reader.pipe(writer)
+```
+
+# 28. NodeJS - Kompresija i dekompresija
+
+Razne metode za kompresiju se mogu naci u modulu `zlib`
+
+Svaki metod za kompresiju ima odgovarajucu metodu za dekompresiju,
+`deflate`-`inflate`, `deflateRaw`-`inflateRaw`, `gzip`-`gunzip`
+
+Svi metodi rade asinhrono (koriste callback)
+
+Primer:
+```Javascript
+const zlib = require('zlib');
+
+// isto izgleda i poziv za `deflateRaw` i `gzip`
+zlib.deflate("neki sadrzaj koji ce se kompresovati", function(err, buffer) {...});
+```
+
+# 29. NodeJS - rad sa datotekama
+
+Koristi se modul `fs`
+
+Upis i ispis mogu da budu i sinhroni i asinhroni
+
+Sinhrone metode dovode do blokiranja event loop-a, sto zna da bude pogodno ukoliko
+naredni deo koda treba da radi sa fajlom.
+
+Primer asinhronog upisa:
+```Javascript
+const fs = require('fs');
+
+const options = {encoding: 'utf8', flag: 'w'};
+fs.writeFile('../file.txt', 'neki tekst', options, function(err) {...});
+```
+
+
+Primer sinhronog upisa:
+```Javascript
+const fs = require('fs');
+const fd = fs.openSync('../file.txt', 'w');
+
+let bytes = fs.writeSync(fd, 'neki tekst', null, null);
+fs.closeSync(fd);
+```
+
+Fajl moze i asinhrono da se otvori:
+```Javascript
+fs.open('../file.txt', 'w', function(err, fd) {
+  ...
+  fs.write(fd, "neki tekst", null, null, function(err, bytes) {...});   
+  ...
+  fs.close(fd);
+})
+```
+
+Takodje je moguce upisivati u fajl pomocu tokova podataka:
+```Javascript
+const ws = fs.createWriteStream('../file.txt', options);
+ws.write('neki');
+ws.end('tekst');
+```
+
+Analogno ovim metodama postoje i metode za citanje. Uglavnom je razlika
+samo u tome sto je rec o read-u a ne o write-u (i slicno, npr. `r` umesto `w` za flag)
+
+`fs.readSync` kao drugi argument argument prihvata bafer u kojem ce biti smesteno ono
+sto se ucita (u `fs.writeSync` na mestu tog argumenta bio je string koji se upisuje)
+
+Sa `fs.read` je slicna situacija, umesto stringa prosledjuje se bafer, a pored toga 
+callback ima i dodatni parametar za podatke koji su procitani (u odnosu na `fs.write`-ov
+callback koji ima potpis `function(err, bytes)`)
+
+Za neki fajl mozemo da dobijemo i status, tj. neke informacije o njemu:
+```Javascript
+// `stats` je objekat. Nad njim mozemo da zovemo razne metode, npr. metode za proveru tipa fajla (isFile, isSocket, ...)
+fs.stats('../file.txt', function(err, stats) {...}); 
+```
+
+Citanje stavki iz nekog foldera:
+```Javascript
+fs.readdir('./', function(err, entries){...};)
+```
+
+Kreiranje foldera:
+```Javascript
+fs.mkdir('./noviFolder', function(err){...};)
+```
+
+Brisanje foldera:
+```Javascript
+fs.rmdir('./obrisati', function(err){...};)
+```
+
+Provera da li postoji neki fajl:
+```Javascript
+fs.exists('./file.txt', function(err){...});
+```
+
+Promena imena nekog fajla:
+```Javascript
+fs.rename('staro.txt', 'novo.txt', function(err){...});
+```
+
+# 30. NodeJS - file system promise API
+
+Metode u modulu `fs` imaju i verzije koje rade sa promise-ima
+umesto sa callback-ovima
+
+Nalaze se u `fs.promises`, npr. `fs.promises.mkdir(...)`
+
+# 31. NodeJS - http server
+
+Modul `http` omogucava kreiranje jednostavnog http servera. Uglavnom
+se za to koristi modul `express` jer pruza dodatne funkcionalnosti
+kao sto je jednostavno implementiranje rutiranja.
+
+Objekat servera moze da se kreira na 2 nacina, implicitno i eksplicitno.
+
+Kreiranje servera implicitno:
+```Javascript
+const server = http.createServer(options, requestListener); 
+server.listen(port);
+```
+
+Kreiranje servera eksplicitno:
+```Javascript
+const server = http.createServer();
+server.on('request', requestListener);
+server.listen(port);
+```
+
+`requestListener` je funkcija koja ce obraditi dati zahtev. 
+Prihvata: objekat klase `IncomingMessage` i objekat klase `ServerResponse`
+
+Primer `requestListener`-a:
+```Javascript
+(req, res) => {
+  res.writeHead(200, {'Content-Type' : 'application/json'});
+  res.end(JSON.stringify({data: 'Hello World!'}));
+}
+```
+
+Jedna od primena `options`-a je definisanje parametara za https (public key, ...)
+
+Oba parametra metoda `createServer` su opciona (sto se moze i primetiti u primeru
+za eksplicitno kreiranje servera)
+
+Rutiranje se implementira tako sto se iskoriste metodi za citanje
+podataka iz modula `fs`
+
+# 32. NodeJS - http client
+
+Http client omogucava slanje http zahteva iz obicno js aplikacije ili sa servera.
+
+Potpis metoda
+```Javascript
+http.request(options[, callback]);
+http.request(url[, options][, callback]);
+```
+
+Metod `http.request` kreira objekat klase `http.ClientRequest`
+
+Primer:
+```Javascript
+const http = require('http');
+const options = {
+  hostname: 'localhost',
+  port: '8080',
+  path: '/hello.html'
+};
+
+const req = http.request(options, function(response) {
+  let data = '';
+  response.on('data', function(chunk) {
+    data += chunk;
+  })
+
+  response.on('end', function() {
+    // obrada podataka iz promenljive `data`
+  })
+});
+
+req.end();
+```
+
+# 33. NodeJS - predaja podataka (http)
+
+Primer klijentskog dela:
+```Javascript
+const http = require('http');
+
+const options = {
+    host: 'localhost',
+    port: '8000',
+    method: 'POST' // BITNO
+};
+
+const req = http.request(options, function(response) {
+    let data = '';
+    
+    response.on('data', function(chunk) {
+        data += chunk;
+    });
+
+    response.on('end', function() { 
+        console.log(data);
+    });
+});
+req.write('{"nekiProperti": "vrednost"}');
+req.end();
+```
+
+Primer serverskog dela:
+```Javascript
+const http = require('http');
+
+const server = http.createServer(function(req, res) {
+    let data = '';
+    
+    req.on('data', function(chunk) {
+        data += chunk;
+    });
+
+    req.on('end', function() { 
+        // try-catch blok se koristi zbog mogucnosti da nema `nekiProperti` propertija
+        // ili da primljeni podaci nisu validan json 
+        try {
+            let obj = JSON.parse(data);
+            console.log('neki properti: ' + obj.nekiProperti);
+            
+            res.writeHead(200);
+        } catch(e) {
+            res.writeHead(400);
+        }
+
+        res.end('response');
+    });
+});
+
+server.listen(8000);
+```
