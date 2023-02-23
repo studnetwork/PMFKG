@@ -1,12 +1,14 @@
 # Okvirni pregled gradiva 2022/23
 
 ## Pojmovi
+
+Opšte
 - Internet, Web
 - Klijent, Server
 - Web Browser, Web Server
 
+Tehnologije
 - HTML, CSS, JavaScript
-- XML
 - HTML elementi i atributi
 
 
@@ -69,10 +71,8 @@ Sekcije tabele
 
 - _Ordered list_ (`ol`); atribut `type`: `1`, `a`, `A`, `i`, `I`
     - _list item_ (`li`)
-
 - _Unordered list_ (`ul`)
     - _list item_ (`li`)
-
 - _Description list_ (`dl`)
     - _term_ (`dt`)
     - _description_ (`dd`)
