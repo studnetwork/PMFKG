@@ -25,17 +25,14 @@ Tehnologije
 - _Paragraph_ (`p`)
 - _Strong_, _Em_ (`strong`, `em`)
 - _Superscript_, _Subscript_ (`sup`, `sub`)
-
 - Manualno formatiranje teksta (`pre`)
 - Kod (`code`)
-
 - Skracenica (`abbr`); atribut: `title`
 - _Bi-Directional-Override_ (`bdo`)
 - Izbrisan i Dodat tekst (`del`, `ins`)
 - Mali tekst (`small`)
 - _Thematic break & Line break_ (`hr`, `br`)
 - _Anchor_ (`a`); atribut: `target="_blank"`
-
 - _Inspector u Browser-u, struktura stranice_
 
 
@@ -76,5 +73,4 @@ Sekcije tabele
 - _Description list_ (`dl`)
     - _term_ (`dt`)
     - _description_ (`dd`)
-
 - Ugnjezdene liste
