@@ -1,6 +1,8 @@
 # Okvirni pregled gradiva 2022/23
 
-## Pojmovi
+---
+
+# Pojmovi
 
 Opšte
 - Internet, Web
@@ -11,6 +13,8 @@ Tehnologije
 - HTML, CSS, JavaScript
 - HTML elementi i atributi
 
+
+# HTML
 
 ## Struktura
 
@@ -33,6 +37,7 @@ Tehnologije
 - Mali tekst (`small`)
 - _Thematic break & Line break_ (`hr`, `br`)
 - _Anchor_ (`a`); atribut: `target="_blank"`
+- Specijalni karakteri (`&lt; &gt; &nbsp; &nbsp; &nbsp; &nbsp; &copy;`)
 - _Inspector u Browser-u, struktura stranice_
 
 
@@ -50,12 +55,15 @@ Tagovi
 - `table`
 - _table row_ (`tr`)
 - _table data_ (`td`)
-- _table header_ (`th`); headeri u prvom redu; headeri kao prva celija u svakom redu
+- _table header_ (`th`)
+    - headeri u prvom redu
+    - headeri kao prva celija u svakom redu
 
 Atributi
 - `rowspan`
 - `colspan`
 - `cellspacing`
+- `cellpadding`
 
 Sekcije tabele
 - `thead`
@@ -74,3 +82,66 @@ Sekcije tabele
     - _term_ (`dt`)
     - _description_ (`dd`)
 - Ugnjezdene liste
+
+## Inputi
+
+- `form`
+    - get metoda na neki postojeci url (`https://www.w3schools.com/action_page.php`)
+    - post metoda na `MAILTO:name@site.com`, atribut: `enctype="text/plain"`
+- `input`; vrednosti za `type` atribut:
+    - `text`, `email`, `password`
+    - `radio`, `checkbox`
+    - `file`
+    - `hidden`, `submit`, `reset`
+- `select`, `option`, `optgroup`
+- `textarea`; atributi: `rows`, `cols`
+- `button` (slika unutar dugmeta)
+- `label`
+- `fieldset`, `legend` (forma unutra)
+
+## IFrame
+
+- `iframe`, rade se 3 varijante:
+    - obican
+    - prazan, u kome se otvara neki sajt pomocu klika na link (`a`)
+    - sa YouTube klipom
+
+
+# CSS
+
+## Selektori
+
+- element (npr. `a`, `h1`, ...) 
+- class (`.`)
+- id (`#`)
+
+## Properties
+
+- _layout_
+    - `width`
+    - `height`
+    - `paddign`
+    - `margin`
+    - `float`
+    - `clear`
+    - `min-height`
+- _background_
+    - `background-color`
+    - `background-image`
+    - `background-repeat`
+    - `background-position`
+    - `background-attachment`
+    - `background-size`
+- _text_
+    - `color`
+    - `text-indent`
+    - `text-decoration`
+    - `text-aligh`
+    - `line-height`
+    - `letter-spacing`
+- _font_
+    - `font-size`
+    - `font-style`
+    - `font-weight`
+    - `font-family`
+    - `font-variant`
