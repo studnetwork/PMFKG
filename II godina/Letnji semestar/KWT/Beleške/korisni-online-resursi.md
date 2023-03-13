@@ -7,6 +7,7 @@
 
 # References
 - [_HTML/CSS features support in browsers_](https://caniuse.com/)
+- [_Comparison of browser engines_](https://en.wikipedia.org/wiki/Comparison_of_browser_engines)
 - [_Understanding the Difference Between CSS Resolution and Device Resolution_](https://elad.medium.com/understanding-the-difference-between-css-resolution-and-device-resolution-28acae23da0b)
 
 
@@ -23,6 +24,7 @@
 
 # Forum threads
 - [_CSS margin terror. Margins add space outside parent element_](https://stackoverflow.com/a/13573739)
+- [_What is WebKit and how is it related to CSS?_](https://stackoverflow.com/a/3468183)
 
 
 # Possibly interesting
