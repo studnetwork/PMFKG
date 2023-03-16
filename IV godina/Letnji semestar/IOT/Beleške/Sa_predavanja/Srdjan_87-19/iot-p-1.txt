@@ -1,0 +1,135 @@
+I kol
+18 pitanja po 1p
+
+II kol
+9 pitanja 
+prakticni zadatak (grupno)
+
+sve ostalo u grupama
+
+---
+
+m2m - machine-to-machine
+
+
+1800s - telegraf, Morzeova azbuka
+
+
+1926 - Tesla predvideo da ce bezicna konekcija da poveze svet u jedan veliki mozak
+
+
+1990 - izazov da se tosterom upravlja preko interneta
+
+1993 - Trojan Room Caffee Pot
+
+1998 - inTouch Project: prenos dodira preko interneta
+
+1999 - skovan naziv "Internet of Things"
+
+2011 - IPv6: ogroman broj IP adresa
+
+
+iotday.org
+
+
+RFID - mali kompjuter koji dobija napajanje od polja i u nekom kratkom vremenskom periodu se "podize" i komunicira sa njim
+jedan od prvih uredjaja koji je bio povezan na mrezu
+Doveo je do unapredjenja u lancima snabdevanja
+
+
+
+2003. je broj povezanih uredjaja je premasio broj ljudi na zemlji
+
+ti uredjaji nisu samo racunari, vec i obicni uredjaji koji su povezani sa senzorima
+
+Sada ima oko 50 milijardi povezanih uredjaja
+
+natting - inzenjerski trik kojim se stedi raspolozivi broj IP adresa;
+U lokalnoj mrezi ima puno uredjaja, ali koristi se samo 1 IP
+adresa. Uredjaji se indentifikuju preko port-a
+
+
+Definicija IoT-a:
+inteligentna interakcija izmedju ljudi i stvari radi razmene
+informacija i zmanja sa ciljem da se kreira nova vrednost
+
+Pametni sistemi i IoT su zasnovani na kombinaciji:
+1. senzora i aktuatora (senzori mere uticaj okoline, a aktuatori deluju na okolinu) 
+2. povezanosti
+3. ljudima i procesima
+
+
+Softverom se kontrolise fizika, odnosno hardver pomocu
+programabilne elektronike
+
+
+Podela senzora:
+* opticki i svetlostni senzori
+* ubrzanje i nagib (senzori koji reaguju na pokret)
+* senzori koji detektuju elektricna i magnetna polja
+* senzori koji mere nivo i oticanje (fluida ?)
+* sila, teret, uvrtanje, sila zatezanja i pritisak
+* (merenje) tok (fluida); primer: benzinska pumpa
+* senzori za detekciju hemikalija / gasa 
+* akustika / zvuk / vibracija (mic i zvucnik su reverzabilni, jedan moze da se koristi kao drugi)
+* vlaznost 
+* senzori za merenje temperature
+* senzori za kretanje, brzinu
+* pozicija, postojanje i daljinu (blizinu)
+
+
+Povezivanje
+---
+
+RFID, NFC, bluetooth
+
+
+PAN - personal area network
+(bluetooth, ...)
+
+LAN 
+
+MAN
+
+WAN
+
+
+(najcesce) U cloud idu svi podaci koji se prikupe preko senzora 
+
+Pored cloud-a postoje i pojmovi: fog i edge
+
+Edge - procesiranje na mestu na kome su podaci dobijeni  
+       (suprotno od cloud-a)
+       
+Fog - nesto izedju Edge-a i Cloud-a
+
+
+Sablon IoT sistema:
+- senzori i aktuatori
+- sistem za akviziciju (kartice)
+- edge IT (analitika i pretprocesiranje)
+- data centar / cloud
+
+Sve ove stavke mogu da budu obuhvacene i jednim uredjajem
+
+Klasifikacija senzora na osnovu vlasnistva:
+- Licni senzori / senzori domacinstva
+- Senzori organizacija:
+  * senzori privatnih organizacija
+  * senzori javnih organizacija
+- Provajderi senzornih podataka koji mogu komercijalno da se koriste
+
+
+Sensing-as-a-Service
+- sensors and sensor owners
+- sensor publishers (objavljuju podatke, ali ne direktno)
+- extended service providers (oni direktno pruzaju pristup podacima)
+- sensor data consumers
+
+
+cobots - co(llaboration ro)bots
+roboti koji su korisni i sigurni za koriscenje ljudima
+lako se programiraju, nisu potrebni eksperit za to
+
+
+Crowdsensing - dolazak do veceg broja podataka od ljudi (entuzijasta) koji te podate prikupljaju i pruzaju svojevoljno
