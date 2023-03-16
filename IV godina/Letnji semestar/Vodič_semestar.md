@@ -3,16 +3,10 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 # Lista predmeta
 
-[//]: # ( [Predmet 1][{skracenica_naziva_predmeta}]  )
-
-[//]: # ( [Predmet 2][{skracenica_naziva_predmeta}]  )
-
-# Meeting linkovi
-
-[//]: # ( [Predmet 1 - Predavanje][meeting-{skracenica_naziva_predmeta}-p]  )
-
-[//]: # ( [Predmet 1 - Vezbe][meeting-{skracenica_naziva_predmeta}-v]  )
-
+[Baze podataka 2][bp2]  
+[Inteligentni sistem][intsys]  
+[Internet stvari][iot]  
+[Operativni sistemi 2][os2]  
 
 # Korisni linkovi
 
@@ -30,9 +24,10 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
-[skracenica_naziva_predmeta]: ./{skracenica_naziva_predmeta}/Vodi%C4%8D_predmet.md#vodi%C4%8D
-
-
+[bp2]: ./BP2/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[intsys]: ./INTSYS/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[iot]: ./IOT/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[os2]: ./OS2/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )
