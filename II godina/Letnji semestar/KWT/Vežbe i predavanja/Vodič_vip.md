@@ -3,7 +3,8 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za vežbe i predavanj
 
 ## Vežbe
 Linkovi do resursa koji se odnose na vežbe:  
-[Zadaci sa vežbi - rešenja studenata][v-folder-1]
+[Zadaci sa vežbi - rešenja studenata][v-folder-1]  
+[Pregled gradiva sa vezbi (2022-2023)][v-fajl-1]  
 
 ### Lekcije
 Linkovi ka snimcima lekcija:  
@@ -59,7 +60,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-fajl-1]: place.holder
+[v-fajl-1]: ./vezbe-gradivo-2022.md
 
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
