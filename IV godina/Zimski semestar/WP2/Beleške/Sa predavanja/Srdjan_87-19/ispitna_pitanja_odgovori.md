@@ -1,7 +1,7 @@
 # 1. Sta je Nginx
 
 Nginx je fleksibilan HTTP server koji se moze konfigurisati na razlicite nacine.
-On je takodje i reverse proxy server, mail proxy server i genericki TCP/UDP sever.
+On je takodje i reverse proxy server, mail proxy server i genericki TCP/UDP server.
 
 # 2. Nginx funkcionlanosti
 
@@ -29,11 +29,8 @@ Verzije:
 * ES5 (ili ECMAScript 2009)
 * ES6 (ili ECMAScript 2015)
 * ECMAScript 2016
-* ECMAScript 2017
-* ECMAScript 2018
-* ECMAScript 2019
-* ECMAScript 2020
-* ECMAScript 2021
+* ECMAScript 2016
+* ...
 * ECMAScript 2022
 
 Napomena: **ES4 je preskocena** (ne postoji)
@@ -89,11 +86,13 @@ funciton sum(value) {
 # 6. Javascript - Getter i setter 
 
 Getter i setter predstavljaju metode koji podsecaju na 
-getter-e i setter-e svojstva (propertija). Rad sa njima podseaca na 
-rad sa poljima jer ne zahtevaju koriscenje zagrada. 
+getter-e i setter-e svojstva (propertija). Za razliku od obicnih metoda
+oni mogu da se koriste kao property (ne zahtevaju koriscenje zagrada 
+poziv i dobijanje vrednosti ili dodela vrednosti radi na isti nacin kao 
+i kod obicnog property-a)
 
 Pri definisanju objekta umesno key-value (property name - value) 
-para koristimo rec `get` ili `set` ispred odgovarajuceg metoda.
+para koristimo rec `get` ili `set` ispred odgovarajuceg metoda (pogledati priemr).
 
 Funkcija setter-a ima dodatni parametar koji predstavlja vrednost
 koja se dodeljuje property-u
@@ -114,6 +113,8 @@ val person = {
         this.firstName = value; 
     }
 };
+
+console.log(person.fullName);
 ```
 
 # 7. Javascript - Properties
@@ -152,6 +153,8 @@ scope.
 Kada se jednom deklarisu `let` i `const` promenljie vise ne mogu ponovo da se deklarisu
 pod tim imenom.
 
+`var` i `let` promenljive ne mogu da se deklarisu u istom bloku pod istim imenom.
+
 Konstanta (`const`) sprecava slucajnu promenu sadrzaja promenljive ciji sadrzaj nije
 predvidjeno menjati.
 
@@ -166,7 +169,7 @@ moguce menjati njihov sadrzaj (dok pokazivac ostaje onakav kakav jeste)
 
 `for..of` omogucava iterisanje tako da se pri svakoj iteraciji dobije vrednost
 koja ce se vratiti (vrednost propertija `next`), dok `for..in` pri svakoj 
-interaciji vraca indeks 
+interaciji vraca redom sve nazive enumerabilne string property-e datog objekta
 
 `for` je standardan `for` koji se pojavljuje u vecini jezika:
 ```Javascript
@@ -176,8 +179,8 @@ for (initialization; condition; afterthought)
 
 # 11. Javascript - Iterables
 
-Iterables su objekti kroz koje je moguce iterisati pomocu `for..of`-a, tj.
-objekti koji implementiraju metod `Symbol.iterator`
+Iterables su objekti koji implementiraju metod `Symbol.iterator`. 
+Kroz njih je moguce iterisati pomocu `for..of`-a
 
 Koriste iteratore koji implementiraju `next()` metod. 
 
@@ -206,21 +209,24 @@ myNumbers[Symbol.iterator] = function() {
 
 # 12. Javascript - Map i Set
 
+## Map
+
 Mape omogucavaju da se definisu mapiranja kljuceva u odgovarajuce vrednosti.
 
 Kao kljuc mozemo koristiti i neki objekat
 
-Kreiranje i dodavanje novog mapiranja:
-```Javascript
-const apples = {name: 'Apples'};
-
-const fruits = new Map();
-fruits.set(apples, 500);
-```
-
 Redosled kljuceva je isti kao redosled u kojem su oni dodavani.
 
----
+Kreiranje mape i dodavanje novog mapiranja:
+```Javascript
+const fruits = new Map();
+
+fruits.set('Apples', 500);
+fruits.get('Apples');
+// output: 500
+```
+
+## Set
 
 Skupovi (`Set`) su kolekcije jedinstvenih vrednosti. Svaka vrednost se moze pojaviti
 samo jednom. 
@@ -262,18 +268,21 @@ class Car {
 
 Instanciranje:
 ```Javascript
-const myCar = new Car("Ford", 2015);
+const myCar = new Car('Ford', 2015);
 ```
  
 # 14. Javascript - Promise
 
-Promisi predstavljaju alternativu za callback-ove. Omogucava pisanje citljivijeg
+Promisi su obecanja da ce ili doci do greske ili da ce se potpuno izvrsiti neki asinhroni kod. 
+Predstavljaju alternativu za callback-ove.. Omogucava pisanje citljivijeg
 koda jer se izbegava ugnjezdavanje koje se javlja kod callback-ova (callback hell).
 
 Objekat promise-a sadrzi kod koji zahteva cekanje na njegovo potpuno izvrsenje ("producing code"). 
 
-Pomocu tog objekta se kasnije moze pozvati kod koji ce konzumirati rezultat "producing"
+Pomocu tog objekta se kasnije moze pozvati "Consuming code", kod koji ce konzumirati rezultat "producing"
 koda, tj. koda koji se ceka.
+
+Promise povezuje "Producing code" i "Consuming code"
 
 Sintaksa:
 ```Javascript
@@ -335,11 +344,11 @@ prilikom debugging-a
 `Symbol('opis') == Symbol('opis')` vraca `false` jer je rezultat uvek nova jedinstvena 
 vrednost
 
-Ne mozemo da dobijemo vrednost koriscenjem pomocu koda `new Symbol()`
+Ne mozemo da dobijemo vrednost koriscenjem pomocu koda `Symbol()`
 
 `Symbol.for('key')` omogucava kreiranje jedinstvene vrednosti i njeno cuvanje u 
 globalnom registru. Prvo se proverava da li vec postoji u njemu i ukoliko postoji 
-onda se ona vraca, a ukoliko ne postoji onda se u njega unosi kreirana vrednost za 
+onda se ona vraca, a ukoliko ne postoji onda se u njega unosi kreirana vrednost  
 i key za koju je kreirana
 
 Zbog toga: `Symbol.for('key') == Symbol.for('key')` vraca `true`
@@ -351,6 +360,8 @@ Ovaj globalni registar vazi za celu aplikaciju.
 
 
 # 17. Javascript - default vrednost parametra i rest parametar
+
+## Default vrednost parametra
 
 Default-ne vrednosti parametra funkcije su vrednosti koje se 
 dodeljuju tom parametru ukoliko se pri pozivu ne prosledi njegova 
@@ -365,9 +376,10 @@ function f(a, b=3) {
 f("a");
 ```
 
----
+## Rest parametar
 
-Rest parametar predstavlja niz svih argumenata koje preostanu u pozivu datog metoda.
+Rest parametar predstavlja parametar u kome se nalazi niz svih argumenata koje preostanu u pozivu datog metoda, tj.
+niz argumenata koji sledi nakon niza keyword (moze se rec i "regularnih") parametara
 
 Obuhvata sve argumente za koje nije definisan regularan tip parametra.
 
@@ -394,7 +406,7 @@ event handler-i.
 
 Uobicajeni model programiranja je sinhroni. U njemu se pri pozivu
 funkcije ceka na zavrsetak njenog izvrsenja pre nego sto se predje
-na sledecu naredbu. Takvo izvrsavanje se naziva **blokirajucim (ili sinhronim) **
+na sledecu naredbu. Takvo izvrsavanje se naziva **blokirajucim (ili sinhronim)**
 jer se program blokira sve dok se data funkcija ne izvrsi. 
 
 
@@ -425,18 +437,24 @@ taj task obavio u nekoj drugoj niti.
 # 20. NodeJS - Worker pool 
 
 Event loop predstavlja glavnu nit. Posto bi blokirajuci task zaustavio 
-tu nit, umesto da se saceka na njegovo izvrsenje u toj niti task se ce 
+tu nit, umesto da se saceka na njegovo izvrsenje u toj niti task ce se 
 izvrsiti u nekoj drugoj niti i time nece doci do blokiranja.
 
 Ta druga nit se uzima iz worker pool-a. On sadrzi ogranicen broj niti
 
-Programeru nije vidljiv ovaj visenitni model jer je on sakrivan iza 
-NodeJS API-a
-
 Blocking task moze da vrati rezultat preko callback-a
 ili pomocu promise-a
 
+Programeru nije vidljiv ovaj visenitni model jer je on sakrivan iza 
+NodeJS API-a
+
 # 21. NodeJS - async callback funkcija
+
+(???)
+
+Callback je funkcija koja se poziva nakon sto se zavrsi neki zadatak. Predstavlja jednu mogucnost za
+izvrsenje nekog koda nakon sto se neki dogadjaj desi bez cekanja na njegovo izvrsenje. Kada se dogadjaj
+dogodi callback se pozove od strane onoga ko obavestava o dogadjaju.
 
 # 22. NodeJS - `process.nextTick` i `setImmediate`
 
@@ -445,10 +463,18 @@ Tick predstavlja jednu iteraciju petlje dogadjaja (event loop-a)
 `process.nextTick(callback)` omogucava zakazivanje izvrsenja 
 callback-a `callback` pre pocetka naredne iteracije, dok 
 `setImmidiate(callback)` izvrsava prosledjeni callback na samom
-pocetku sledece iteracije iteracije
+pocetku sledece iteracije 
 
 `process.nextTick(callback)` se uvek izvrsava pre `setImmidiate(callback)`
 
+**Napomena**: `process` je globalni objekat
+
+`process.nextTick` se koristi kada zelimo da postavimo prosledjeni callback 
+na vrh event queue-a, tj. kada zelimo da se izvrsi odmah nakon sto se zavrsi
+izvrsavanje trenutne funkcije.
+
+`setImmediate` se koristi kada zelimo da se callback izvrsi nakon svih 
+callback-ova IO dogadjaja koji se trenutno nalaze u listi dogadjaja
 
 # 23. NodeJS - EventEmitter
 
@@ -456,22 +482,22 @@ Za emitovanje i registrovanje dogadjaja koristi se klasa `EventEmitter`
 iz modula `events`
 
 Da bi se `EventEmitter` koristio u korisnickom objektu potrebno je 
-da funkcija sablon (funkcija kojom se kreira objekat) ili klasa 
-nasledjuju prototype klase `EventEmitter`
+da klasa ili funkcija sablon (funkcija kojom se kreira objekat)  
+nasledjuje prototype klase `EventEmitter`
 
 Primer za funkciju sablon:
 ```Javascript
 const { EventEmitter } = require('events');
 
-function SablonFunkcija() {
+function sablonFunkcija() {
   this.metod = function(nekaVrednost) {
     this.emit('nazivDogadjaja', nekaVrednost);
   };
 }
 
-SablonFunkcija.prototype = EventEmitter.prototype;
+sablonFunkcija.prototype = EventEmitter.prototype;
 
-const y = new SablonFunkcija();
+const y = new sablonFunkcija();
 ```
 
 Za isti dogadjaj je moguce registrovati vise listener-a
@@ -485,7 +511,8 @@ class Klasa extends EventEmitter {  // neophodno
   constructor() {                   // neophodno
     super();                        // neophodno
     this.metod = function(nekaVrednost) {
-    this.emit('nazivDogadjaja', nekaVrednost);
+      this.emit('nazivDogadjaja', nekaVrednost);
+    }
   }
 }
 ```
@@ -610,7 +637,7 @@ class Answer extends Readable {
 ```
 
 `_write` je metod koji treba da ima sledeci potpis `function(data, encoding, callback)`. 
-Funkcija `callback` mora da se pozove unutar callback-a koji se dodeljuje `_write`-u`1  
+Funkcija `callback` mora da se pozove unutar callback-a koji se dodeljuje `_write`-u`  
 
 Primer:
 ```Javascript
@@ -695,7 +722,7 @@ ws.end('tekst');
 Analogno ovim metodama postoje i metode za citanje. Uglavnom je razlika
 samo u tome sto je rec o read-u a ne o write-u (i slicno, npr. `r` umesto `w` za flag)
 
-`fs.readSync` kao drugi argument argument prihvata bafer u kojem ce biti smesteno ono
+`fs.readSync` kao drugi argument prihvata bafer u kojem ce biti smesteno ono
 sto se ucita (u `fs.writeSync` na mestu tog argumenta bio je string koji se upisuje)
 
 Sa `fs.read` je slicna situacija, umesto stringa prosledjuje se bafer, a pored toga 
@@ -725,7 +752,7 @@ fs.rmdir('./obrisati', function(err){...};)
 
 Provera da li postoji neki fajl:
 ```Javascript
-fs.exists('./file.txt', function(err){...});
+fs.exists('./file.txt', function(exists){...});
 ```
 
 Promena imena nekog fajla:
@@ -871,3 +898,4 @@ const server = http.createServer(function(req, res) {
 
 server.listen(8000);
 ```
+
