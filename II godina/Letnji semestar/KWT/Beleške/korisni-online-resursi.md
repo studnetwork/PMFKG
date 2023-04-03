@@ -15,6 +15,7 @@
 - [_HTML & CSS for beginners (Playlist)_](https://youtube.com/playlist?list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
 - [_Learn CSS Display Property In 4 Minutes_](https://youtu.be/Qf-wVa9y9V4)
 - [_Learn CSS Position In 9 Minutes_](https://youtu.be/jx5jmI0UlXU)
+- [_CSS Flexbox in 100 Seconds_](https://youtu.be/K74l26pE4YA)
 
 
 # YouTube channels
