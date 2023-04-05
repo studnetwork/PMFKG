@@ -12,6 +12,7 @@
 
 
 # Tutorials
+## HTML & CSS
 - [_HTML & CSS for beginners (Playlist)_](https://youtube.com/playlist?list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
 - [_One Minute Coding (Playlist)_](https://youtube.com/playlist?list=PL1PqvM2UQiMpdSRU17xcHqUIit0S16Lt5)
 - [_Learn CSS Display Property In 4 Minutes_](https://youtu.be/Qf-wVa9y9V4)
@@ -19,7 +20,12 @@
 - [_CSS Flexbox in 100 Seconds_](https://youtu.be/K74l26pE4YA)
 - [_CSS Box Shadow (in 1 minute)_](https://youtu.be/jEuvbVVkcT0)
 - [_CSS Text Shadow (in 1 minute)_](https://youtu.be/0nP67G-ZiWQ)
+## JavaScript
 - [_What Is The Fastest Way To Load JavaScript_](https://youtu.be/BMuFBYw91UQ?t=48)
+- [_Reference vs Value in JavaScript_](https://youtu.be/-hBJz2PPIVE)
+- [_JavaScript Let vs Var vs Constant_](https://youtu.be/XgSjoHgy3Rk) (TLDR: ne koristiti `var`)
+
+
 
 
 # YouTube channels
