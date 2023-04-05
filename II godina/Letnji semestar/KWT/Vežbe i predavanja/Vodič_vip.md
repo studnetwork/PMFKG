@@ -56,11 +56,11 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( Vezbe reference )
 
-[v-folder-1]: ./Resenja_studenata
+[v-folder-1]: ./Vezbe/Resenja_studenata
 
 [//]: # ( linkovi na fajlovima )
 
-[v-fajl-1]: ./vezbe-gradivo-2022.md
+[v-fajl-1]: ./Vezbe/vezbe-gradivo-2022.md
 
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
