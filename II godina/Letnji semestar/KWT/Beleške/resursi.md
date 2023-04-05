@@ -19,6 +19,7 @@
 - [_CSS Flexbox in 100 Seconds_](https://youtu.be/K74l26pE4YA)
 - [_CSS Box Shadow (in 1 minute)_](https://youtu.be/jEuvbVVkcT0)
 - [_CSS Text Shadow (in 1 minute)_](https://youtu.be/0nP67G-ZiWQ)
+- [_What Is The Fastest Way To Load JavaScript_](https://youtu.be/BMuFBYw91UQ?t=48)
 
 
 # YouTube channels
@@ -29,6 +30,7 @@
 # Forum threads
 - [_CSS margin terror. Margins add space outside parent element_](https://stackoverflow.com/a/13573739)
 - [_What is WebKit and how is it related to CSS?_](https://stackoverflow.com/a/3468183)
+- [_Where should I put `<script>` tags in HTML markup?_](https://stackoverflow.com/a/24070373)
 
 
 # Possibly interesting
