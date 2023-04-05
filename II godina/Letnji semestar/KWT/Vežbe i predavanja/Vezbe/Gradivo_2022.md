@@ -387,4 +387,4 @@ Property `HTMLAnchorElement` objekta
 - Različiti HTML elementi imaju različite osobine. Na primer, [HTMLAnchorElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement) predstavlja `a` HTML element i poseduje svojstvo `href`, dok [HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement) predstavlja `img` HTML element i poseduje svojstvo `src`, itd.
 - [_**Lista HTML element interfejsa**_](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API#html_element_interfaces_2) (Za svaki od interfejsa u listi postoji detaljna dokumentacija, klik na link)
 
-![Class Tree](classes.png)
+![Class Tree](https://i.stack.imgur.com/r3Ci6.png)

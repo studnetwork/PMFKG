@@ -60,7 +60,7 @@ Ukoliko primetite neku grešku, uradite jednu od slećih stvari:
 
 [//]: # ( linkovi na fajlovima )
 
-[v-fajl-1]: ./Vezbe/vezbe-gradivo-2022.md
+[v-fajl-1]: ./Vezbe/Gradivo_2022.md
 
 
 [v-lekcija-1]: place.holder "Datum odrzavanja: 1. Mesec 2000."
