@@ -150,6 +150,7 @@ Sekcije tabele
 
 
 # JavaScript
+# Reference
 
 ## Povezivanje sa stranicom
 ### Interni `<script>` tag
@@ -289,13 +290,24 @@ alert('Tekst')
 
 ### Events
 
-#### On Click
 ```html
-<p onclick="fn('value')">Paragraf</p>
+<!-- [Klik] na element -->
+<p onclick="fn()">On Click</p>
+
+<!-- Pointer [Preko] ili [Izvan] elementa -->
+<p onmouseover="fn()">On Mouse Over</p>
+<p onmouseout="fn()">On Mouse Out</p>
+
+<!-- Na [Pritisak] ili [Pustanje] klika -->
+<p onmouseup="fn()">On Mouse Up</p>
+<p onmousedown="fn()">On Mouse Down</p>
+
+<!-- Na [Pritisak] dugmeta na tastaturi -->
+<input type="text" onkeydown="fn()">
 
 <script>
-    function fn(x) {
-        // ...
+    function fn() {
+        // ..
     }
 </script>
 ```
@@ -319,14 +331,18 @@ JavaScript je objektno-orjentisani jezik. HTML elementima pristupamo pomoću ref
 <p id="p1">Paragraf</p>
 
 <script>
-    function fn() {
-        // x: referenca na HTMLElement objekat
-        let x = document.getElementById('p1')
-    }
+    // x: referenca na HTMLElement objekat
+    let x = document.getElementById('p1')
 </script>
 ```
 
 ### Izmena HTML elementa
+
+#### `document.write()` - Radikalna izmena!
+
+```js
+document.write('Ovo je jedini sadrzaj stranice')
+```
 
 Neka od svojstava HTML elemenata koja se mogu menjati:
 
@@ -343,6 +359,12 @@ Property `HTMLElement` objekta koji uzima (get) ili postavlja (set) sadržaj ele
     x.innerHTML = '<p>Novi paragraf</p>'
 </script>
 ```
+pomocu eventa, JS kod u HTML-u:
+```html
+<div onclick="this.innerHTML='<p>Novi paragraf</p>'">
+    <span>Stari span</span>
+</div>
+```
 Rezultat je ekvivalentan HTML kodu:
 ```html
 <div id="d1">
@@ -350,6 +372,22 @@ Rezultat je ekvivalentan HTML kodu:
 </div>
 ```
 Source: [MDN | innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+
+
+#### `className`
+```html
+<p id="p1" class="c1">Paragraf</p>
+
+<script>
+    // x: referenca na HTMLElement objekat
+    let x = document.getElementById('p1')
+    x.className = 'c2 c3'
+</script>
+```
+Rezultat je ekvivalentan HTML kodu:
+```html
+<p id="p1" class="c2 c3">Paragraf</p>
+```
 
 
 #### `style`
@@ -367,8 +405,8 @@ Rezultat je ekvivalentan HTML kodu:
 ```html
 <p id="p1" style="font-size: 25px;">Paragraf</p>
 ```
-
 Source: [MDN | style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+
 
 #### `href`
 Property `HTMLAnchorElement` objekta
