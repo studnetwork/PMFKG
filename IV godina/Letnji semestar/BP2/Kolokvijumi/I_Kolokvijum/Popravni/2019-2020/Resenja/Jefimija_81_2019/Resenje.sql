@@ -1,69 +1,79 @@
+-------------------------------
+-- 6.22981
+exec sp_klijenti_potroseno
 
-/*
-	16.6818			->		7.10964
-	14.6598			->		4.45978
-	 2.5325			->		2.0558
-	 0.401578		->		0.0032853
-	 0.0100023		->		0.100023
-	 0.287542		->		0.210505
-=   34.5732223		-> =	13.9390333
-*/
-
-/*
-*/
 alter table klijenti 
 add constraint pk_idKlijent 
 primary key (id)
 
-alter table proizvodi 
-add constraint pk_idProizvod
-primary key (id)
-
-alter table kamioni
-add constraint pk_idKamion
-primary key (id)
-
 alter table porudzbine
-add constraint pk_idPoruzbine
+add constraint pk_idPorudzbine
 primary key (id)
 
--- sa PK-ovima je smanjeno vreme na 7.70503
--- sa idx_nclu_pro_cena smanjeno vreme na 7.23614
--- sa idx_nclu_kli_ime smanjeno vreme na 7.15916
--- sa idx_clu_por_kli_pro smanjeno vreme na 7.10964
-exec sp_klijenti_potroseno
+alter table proizvodi 
+add constraint pk_idProizvodi
+primary key (id)
 
 create nonclustered index idx_nclu_pro_cena 
-on proizvodi(cena)
+on proizvodi(id)
+include (cena)
 
-create nonclustered index idx_nclu_kli_ime
+create nonclustered index idx_klijent_id_naziv 
 on klijenti(ime)
+drop index klijenti.idx_klijent_id_naziv  
 
-create clustered index idx_clu_por_kli_pro
-on porudzbine(idKlijenta, idProizvoda)
-
--- na samom pocetku : 14.6598 (bez indeksa iz prethodne proc)
--- sa dosadasnjim indeksima : 4.45978
+create nonclustered index idx_por_klijent_pro
+on porudzbine(idProizvoda, idKlijenta)
+-----------------------------------------------------------------------
+-- 3.53
 exec sp_top_ten_proizvodi
+create nonclustered index idx_pro_naziv 
+on proizvodi(naziv)
 
--- na samom pocetku : 2.5325 (bez indeksa iz prethodne proc) 
--- sa dosadasnjim indeksima 2.0558
+create nonclustered index idx_por_pro 
+on porudzbine(idProizvoda)
+
+drop index proizvodi.idx_pro_naziv
+--------------------------------------------------------
 exec sp_stanje_porudzbina
 
--- na samom pocetku : 0.401578 (bez indeksa iz prethodne proc) 
--- sa dosadasnjim indeksima 0.411134
--- sa dodatim indeksom idx_nclu_kam_slo_sta 0.0032853
+alter table kamioni 
+add constraint pk_idKamioni
+primary key (id)
+
+create nonclustered index idx_nclu_por_kam
+on porudzbine(idKamiona)
+
+create clustered index idx_clu_por_dat
+on porudzbine(datumIsporuke)
+
+drop index porudzbine.idx_nclu_por_sta_dat
+/*
+	select kl.ime, kl.adresa, pro.naziv,
+	case  
+		when por.idKamiona is null then 'naruceno'
+		else 'utovareno'
+	end as status
+	from porudzbine por
+	join klijenti kl on por.idKlijenta=kl.id
+	join proizvodi pro on por.idProizvoda=pro.id
+	where por.datumIsporuke is null
+*/
+-- 0.0032832
+alter table kamioni 
+add constraint pk_kamioni_id
+primary key(id)
+
+create nonclustered index idx_kam_slo_sta
+on kamioni(status, slobodno)
+
+drop index kamioni.idx_kam_slo_sta
 exec sp_odaberi_kamion 30
 
-create nonclustered index idx_clu_kam_slo_sta
-on kamioni(slobodno, status)
-
-create nonclustered index idx_nclu_kam_id
-on kamioni(id)
--- na samom pocetku : 0.0100023 (bez indeksa iz prethodne proc) 
--- sa dosadasnjim indeksima 0.100023
 exec sp_nova_porudzbina 30, 400
-
--- na samom pocetku : 0.287542 (bez indeksa iz prethodne proc) 
--- sa dosadasnjim indeksima 0.210505
 exec sp_broj_klijenata
+
+-- 0.210505
+-- 0.133468
+create nonclustered index idx_nclu_idKli
+on klijenti(id)
