@@ -9,7 +9,7 @@ Rešenja kolokvijuma raspoređena po godinama
 ## Vežbe i predavanja
 Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja zadataka koji nisu rešeni, efikasnija i kreativna rešenja studenata, kao i zadaci za utvrđivanje gradiva sa vežbi ili predavanja.
 
-[//]: # ([Link ka materijalu][vežbe i predavanja]  )
+[Link ka materijalu][vežbe i predavanja]  
 
 ## Domaći
 Rešenja domaćih zadataka po godinama
