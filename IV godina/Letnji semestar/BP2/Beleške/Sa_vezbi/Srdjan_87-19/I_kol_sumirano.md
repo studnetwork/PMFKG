@@ -11,8 +11,8 @@ Gomila se ponasa kao gomila:
   stvar koja dodje)
 * tesko se nalaze "stvari" jer je sve "nabacano"
 * sortiranje je sporo jer je sve "nabacano "
-* koristi se samo kada nesto sa organizacijom
-  treba slicno da uradi (ucita sve zapise)
+* prihvatljivo u situaciji kada se citaju svi zapisi
+  (ili kada su drugi nacini nisu optimalni)
   
  
 ## Indeksi
@@ -33,13 +33,12 @@ Podaci su fizicki sortirani po kljucu pretrage
 
 Najvise 1 moze da se postavi nad tabelom
 
-Pretraga dovodi do neke stranice. Ako ta stranica
-nije trazena onda se od ove do koje smo dosli ide
-sekvencijalno
+Pretraga dovodi do neke stranice. Ako ta stranica nije ona koju 
+smo trazili onda se od te stranice krece sa sekvencijalnom pretragom
 
 ### Neklasterovani
 
-sadrzi u listovima pokazivace
+u listovima sadrzi pokazivace
 
 pokazivaci su uredjeni
 
@@ -49,10 +48,10 @@ da ih ima vise
 
 ## Ostalo
 
-Operator Cost i Subtree Cost predstavljaju vreme
-izvrsenja upita
+`Operator Cost` i `Subtree Cost` predstavljaju vreme
+izvrsenja date operacije
 
-Rows per Execution predstavlja broj redova koji je
+`Rows per Execution` predstavlja broj redova koji je
 ucitan u radnu memoriju (broj redova koji ce se naci
 u rezultatu)
 
@@ -68,7 +67,7 @@ kada se u upitu ne koriste atributi koji nisu deo
 kljuca pretrage. Zasto? Zato sto ne mora da se dobavlja nedostajuci
 podatak iz skladista.
 
-Ovo je bitno. Neklasterovani se isplati samo kada podaci iz 
+Bitno: Neklasterovani se isplati samo kada podaci iz 
 njega mogu da se iskoriste tako da se ne pristupa skladistu.
 
 Takodje, `count(*)` moze da koristi samo podatke iz indeksa 
@@ -83,7 +82,7 @@ indeksu
 
 Primer: `SELECT * FROM person WHERE firstname LIKE 'Diane';`
 
-Key Lookup je brzi od RID Lookup-a
+`Key Lookup` je brzi od `RID Lookup`-a
 
 
 # Vezbe 3
@@ -120,7 +119,7 @@ Zasto? Zato sto je sam indeks veci pa je vise vremena
 potrebno za ucitavanje, a takodje je i vreme pristupa sporije. 
 
 To usporenje postoji, ali opet nije toliko ni lose, npr. u 
-situaiciji gde trebamo da ubrzamo upit pomocu kompozitnog kljuca,
+situaciji gde trebamo da ubrzamo upit pomocu kompozitnog kljuca,
 ali i neki drugi upit koji sadrzi podskup kljuca pretrage kao 
 svoj kljuc pretrage. Ovaj drugi upit ce raditi mozda malo sporije 
 nego sto bi inace mogao da radi, ali generalno oba upita 
@@ -131,7 +130,7 @@ Ono sto je bitno kod kompozitnih indeksa jeste da se
 podaci sortiraju u redosledu u kom su definisane kolone
 u samom kljucu. Kada postoje iste vrednosti one se onda 
 sortiraju po narednoj koloni i tako do dalje za sve 
-kolone kljuca 	pretrage.
+kolone kljuca pretrage.
 
 # Vezbe 4
 
@@ -163,21 +162,19 @@ kljuc pretrage (iz cega onda sledi i da ne uticu na sortiranje)
 Sto je indeks manje to je brzina pretrage veca.
 
 Ako je neki atribut potreban samo kao podatak, ali ne i 
-kao nesto po cemu se vrsi filtriranje, grupisanje ili sortiranje
-onda bi trebao da se doda include-om.
+kao nesto po cemu se vrsi pretraga, grupisanje ili sortiranje
+onda bi trebao da se doda `include`-om.
 
 Ako je potreban i za ove operacije onda je mozda bolje koristi
 kompozitni kljuc 
 
-Nikada nema potrebe da se koristi include u kombinaciji sa
+Nikada nema potrebe da se koristi `include` u kombinaciji sa
 klasterovanim indeksom 
 
 
 Velicina kompozitnog indeksa se uvecava onoliko puta koliko
 je atributa sadrzi u kljucu pretrage.
 
-Indeksi mogu i da uspore izvrsavanje nekih upita.
--- Takav ja slucaj sa INSERT, UPDATE i DELETE naredbama.
 ## Insert
 
 Neklasterovani indeksi usporavaju `INSERT`
@@ -197,7 +194,7 @@ morali da se azuriraju i u indeksu)
 
 ## DELETE 
 
-Slicno kao `UPDATE`
+Slicno kao `UPDATE` (visestruka op.; usporenje zbog neklasterovanog)
 
 ## Joins
 
@@ -210,7 +207,10 @@ jer tad i moze da bude isplativo
 
 Pravi Hash tabelu pa preko nje pristupa podacima.
 
-Pravljenje te tabele je moze dugo da traje.
+Pravljenje te tabele moze dugo da traje, ali kada se jednom napravi moze
+kasnije da se koristi i omoguci veoma brz pristup
+
+### Match Join
 
 Ideja je da se obe tabele sortiraju i onda "prodje samo jednom"
 
@@ -222,17 +222,17 @@ nad tim vrednostima po kojima se spaja
 ## Koriscenje
 
 Ukoliko podaci nisu uredjeni (nema indeksa) 
-SQL Server ce uglvnom birati Hash Join.
+SQL Server ce uglvnom birati `Hash Join`.
 
-Merge Join je povoljan u situaciji kada se spajanje vrsi po kolonama nad kojima 
-je definisan klasterovni indeks (jer to pruza uredjenje koje je potrebno za merge)
+`Merge Join` je povoljan u situaciji kada se spajanje vrsi po kolonama nad kojima 
+je definisan klasterovni indeks (jer to pruza uredjenje koje je potrebno za ovaj join)
 
 Cak i kada druga tabela nije sortirana to moze da bude bolja opcija od izgradnje 
-Hash tabele i tada bi se izvrsilo sortiranje te druge tabele pa onda Merge Join.
+Hash tabele i tada bi se izvrsilo sortiranje te druge tabele pa onda `Merge Join`.
 
 Kako bi smo dodatno optimizovali upit mozemo da definisemo neki indeks nad 
 spoljasnjim kljucem. Ako se zahteva i neki podatak iz druge tabele koji nije
-dostupan iz indeksa njega mozemo dodati include-om 
+dostupan iz indeksa njega mozemo dodati `include`-om 
 
 Neklasterovani indeksi mogu da zauzmu dosta memorije. To moze da se smanji
 ako se zamene sa klasterovanim. Naravno, to nije uvek moguce, ali treba to imati
