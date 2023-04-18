@@ -1,156 +1,4 @@
-# Okvirni pregled gradiva 2022/23
-
----
-
-# Pojmovi
-
-Opšte
-- Internet, Web
-- Klijent, Server
-- Web Browser, Web Server
-
-Tehnologije
-- HTML, CSS, JavaScript
-- HTML elementi i atributi
-
-
-# HTML
-
-## Struktura
-
-- `!DOCTYPE`
-- Struktura dokumenta (`html`, `head`, `body`)
-- Metapodaci (`meta`, `title`)
-
-
-## Tekst
-
-- _Heading_ (`h1` - `h6`)
-- _Paragraph_ (`p`)
-- _Strong_, _Em_ (`strong`, `em`)
-- _Superscript_, _Subscript_ (`sup`, `sub`)
-- Manualno formatiranje teksta (`pre`)
-- Kod (`code`)
-- Skracenica (`abbr`); atribut: `title`
-- _Bi-Directional-Override_ (`bdo`)
-- Izbrisan i Dodat tekst (`del`, `ins`)
-- Mali tekst (`small`)
-- _Thematic break & Line break_ (`hr`, `br`)
-- _Anchor_ (`a`); atribut: `target="_blank"`
-- Specijalni karakteri (`&lt; &gt; &nbsp; &nbsp; &nbsp; &nbsp; &copy;`)
-- _Inspector u Browser-u, struktura stranice_
-
-
-## Slike
-
-- Slika sa spoljašnje adrese; `src="http://..."`; atributi: `alt`, `height`, `width`
-    - _Network deo u Inspector-u u Browser-u, kako je slika dobavljena preko mreze HTTP zahtevom_
-- Slika iz foldera images; `src="images/..."`
-- Slika u linku; kombinovanje tagova, `img` u `a` tagu
-
-
-## Tabele
-
-Tagovi
-- `table`
-- _table row_ (`tr`)
-- _table data_ (`td`)
-- _table header_ (`th`)
-    - headeri u prvom redu
-    - headeri kao prva celija u svakom redu
-
-Atributi
-- `rowspan`
-- `colspan`
-- `cellspacing`
-- `cellpadding`
-
-Sekcije tabele
-- `thead`
-- `tfoot`
-- `tbody`
-- Pregled voih sekcija u Inspectoru
-
-
-## Liste
-
-- _Ordered list_ (`ol`); atribut `type`: `1`, `a`, `A`, `i`, `I`
-    - _list item_ (`li`)
-- _Unordered list_ (`ul`)
-    - _list item_ (`li`)
-- _Description list_ (`dl`)
-    - _term_ (`dt`)
-    - _description_ (`dd`)
-- Ugnjezdene liste
-
-## Inputi
-
-- `form`
-    - get metoda na neki postojeci url (`https://www.w3schools.com/action_page.php`)
-    - post metoda na `MAILTO:name@site.com`, atribut: `enctype="text/plain"`
-- `input`; vrednosti za `type` atribut:
-    - `text`, `email`, `password`
-    - `radio`, `checkbox`
-    - `file`
-    - `hidden`, `submit`, `reset`
-- `select`, `option`, `optgroup`
-- `textarea`; atributi: `rows`, `cols`
-- `button` (slika unutar dugmeta)
-- `label`
-- `fieldset`, `legend` (forma unutra)
-
-## IFrame
-
-- `iframe`, rade se 3 varijante:
-    - obican
-    - prazan, u kome se otvara neki sajt pomocu klika na link (`a`)
-    - sa YouTube klipom
-
-
-# CSS
-
-## Selektori
-
-- element (npr. `a`, `h1`, ...) 
-- class (`.`)
-- id (`#`)
-
-## Properties
-
-- _layout_
-    - `width`
-    - `height`
-    - `paddign`
-    - `margin`
-    - `float`
-    - `clear`
-    - `min-height`
-- _background_
-    - `background-color`
-    - `background-image`
-    - `background-repeat`
-    - `background-position`
-    - `background-attachment`
-    - `background-size`
-- _text_
-    - `color`
-    - `text-indent`
-    - `text-decoration`
-    - `text-aligh`
-    - `line-height`
-    - `letter-spacing`
-- _font_
-    - `font-size`
-    - `font-style`
-    - `font-weight`
-    - `font-family`
-    - `font-variant`
-
-## TODO: Dodati pojmove sa 4. i 5. termina
-
-
 # JavaScript
-# Reference
 
 ## Povezivanje sa stranicom
 ### Interni `<script>` tag
@@ -230,16 +78,28 @@ let x = 33
 // Uncaught SyntaxError: redeclaration of let x
 ```
 
-### Izvršavanje koda
+### Operacije i izrazi
+```
+Aritmeticke:
+  + - * / %
+Logicke:
+  == != === !==
+  && || !
+```
 ```js
-funkcija(17) // poziv (validno)
+4 * 3       // => 12
+12 / 5      // => 2.4
+10 % 4      // => 2
+'str ' + 17 // => 'str 17'
 
-function funkcija(x) // definicija
-{
-    // ...
-}
+4 == 4      // => true
+4 == '4'    // => true
+4 === '4'   // => false
 
-funkcija(33) // poziv (validno)
+true == 1   // => true
+true === 1  // => false
+
+// itd.
 ```
 
 ### String
@@ -248,6 +108,18 @@ funkcija(33) // poziv (validno)
 let s1 = "Tekst"
 let s2 = 'Tekst'
 let s3 = `Tekst` // template literal
+```
+
+### Izvršavanje koda
+```js
+funkcija(17) // poziv funkcije (validno)
+
+function funkcija(x) // definicija funkcije
+{
+    // ...
+}
+
+funkcija(33) // poziv funkcije (validno)
 ```
 
 ### Grananje (if-else)
@@ -341,7 +213,9 @@ JavaScript je objektno-orjentisani jezik. HTML elementima pristupamo pomoću ref
 #### `document.write()` - Radikalna izmena!
 
 ```js
-document.write('Ovo je jedini sadrzaj stranice')
+document.write('Ovaj tekst je postao jedini sadrzaj stranice')
+document.write(', a sada je dodat i ovaj tekst')
+document.write(', i jos jedan...')
 ```
 
 Neka od svojstava HTML elemenata koja se mogu menjati:
@@ -423,6 +297,6 @@ Property `HTMLAnchorElement` objekta
 ## HTML elementi
 
 - Različiti HTML elementi imaju različite osobine. Na primer, [HTMLAnchorElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement) predstavlja `a` HTML element i poseduje svojstvo `href`, dok [HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement) predstavlja `img` HTML element i poseduje svojstvo `src`, itd.
-- [_**Lista HTML element interfejsa**_](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API#html_element_interfaces_2) (Za svaki od interfejsa u listi postoji detaljna dokumentacija, klik na link)
+- [_**Lista HTML element interfejsa**_](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API#html_dom_api_interfaces) (Za svaki od interfejsa u listi postoji detaljna dokumentacija, klik na link)
 
 ![Class Tree](https://i.stack.imgur.com/r3Ci6.png)
