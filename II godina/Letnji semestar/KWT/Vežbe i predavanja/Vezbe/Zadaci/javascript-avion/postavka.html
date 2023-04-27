@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #sky {
+            background-color: skyblue;
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+
+            position: relative;
+        }
+        #plane {
+            width: 200px;
+
+            position: absolute;
+            right: 0; /* koristi se za kretanje aviona */
+        }
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 2em;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="sky">
+        <img id="plane" src="avion.png">
+    </div>
+    <button>Kreni</button>
+
+</body>
+</html>

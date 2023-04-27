@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #sky {
+            background-color: skyblue;
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+
+            position: relative;
+        }
+        #plane {
+            width: 200px;
+
+            position: absolute;
+            right: 0; /* koristi se za kretanje aviona */
+        }
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 2em;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="sky">
+        <img id="plane" src="avion.png">
+    </div>
+    <button onclick="start()">Kreni</button>
+
+    <script>
+        /* Konstante */
+        const plane = document.getElementById('plane')
+        const maxDist = 1000-200 // sky-plane (px)
+        const S = 5              // duzina pomeraja (px)
+        const T = 20             // interval pomeraja (ms)
+        
+        /* Promenljive */
+        let curDist = 0  // trenutna udaljenost
+        let idInt = null // ID "Intervala"
+
+        /* Funkcije */
+
+        function frame() {
+            if(curDist + S <= maxDist)
+                move(S)
+            else
+                stop()
+        }
+
+        function move(dist) {
+            curDist += dist
+            plane.style.right = curDist + 'px';
+        }
+
+        function start() {
+            if(idInt == null) {
+                idInt = setInterval(frame, T)
+            }
+        }
+
+        function stop() {
+            clearInterval(idInt)
+        }
+
+    </script>
+
+</body>
+</html>
