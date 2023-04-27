@@ -1,0 +1,21 @@
+<style> p { background-color: #c7c7c7; } </style>
+
+<p onclick="print()">Paragraf (On Click)</p>
+<p onmousedown="print(1,'prvi')">Prvi paragraf (On Mouse Down)</p>
+<p onmouseover="print(2,'drugi')">Drugi paragraf (On Mouse Over)</p>
+
+<p onclick="change(this)">Treci paragraf (On Click)</p>
+
+<em>(pogledati konzolu, F12)</em>
+
+<script>
+    function change(el) {
+        el.style.color = 'yellow'
+        el.style.backgroundColor = 'black'
+    }
+
+    function print(x = 'p', y = 'p') {
+        console.log('Paragraf | ' + x + ' | ' + y)
+        // console.log(`Hello, ${x}, ${y}`) // drugi nacin
+    }
+</script>

@@ -1,0 +1,20 @@
+<script>
+
+    // creation
+    let today = new Date()
+    let date1 = new Date('2/29/2000')
+    let date2 = new Date(2000, 1, 29) // monthIndex: 0-11 (januar 0, februar 1, ...)
+    
+    // to string
+    console.log( today.toLocaleDateString() ) // "4/20/2023"
+    console.log( today.toLocaleString() )     // "4/20/2023, 1:28:25 AM"
+    console.log( today.toUTCString() )        // "Wed, 19 Apr 2023 23:28:25 GMT"
+
+    // set day in month
+    let date = new Date(2023, 0, 25) // 25. januar
+    date.setDate(date.getDate() + 5) // 30. januar
+    console.log(date.getDate())      // "Mon Jan 30 2023 00:00:00 GMT+0100 (Central European Standard Time)"
+    date.setDate(date.getDate() + 2) // 1. februar
+    console.log(date.getDate())      // "Wed Feb 01 2023 00:00:00 GMT+0100 (Central European Standard Time)"
+
+</script>

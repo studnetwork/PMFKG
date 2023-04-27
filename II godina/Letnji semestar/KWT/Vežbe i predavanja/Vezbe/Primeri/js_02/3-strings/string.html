@@ -1,0 +1,24 @@
+<script>
+
+    // split
+    let text = "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+    let words = text.split(" ")
+    console.log(words) // [ "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipisicing", "elit" ]
+
+    // indexOf
+    let index = text.indexOf("ipsum")
+    console.log(index) // 6
+
+    // substr
+    let sub = text.substr(4, 9) // from: 4, length: 9
+    console.log(sub)            // "m ipsum d"
+
+    // replace
+    let newText = text.replace("dolor", "DOLAR$$$")
+    console.log(newText) // "Lorem ipsum DOLAR$$$ sit amet consectetur adipisicing elit"
+
+    // toUpperCase
+    let upper = text.toUpperCase()
+    console.log(upper) // "LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT"
+
+</script>

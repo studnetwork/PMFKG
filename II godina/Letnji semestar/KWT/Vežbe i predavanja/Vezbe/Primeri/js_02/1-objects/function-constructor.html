@@ -1,0 +1,33 @@
+<!-- ----[ Objekti: Constructor function ]---- -->
+
+<script>
+
+    function Student(fname, lname, index) {
+        this.fname = fname
+        this.lname = lname
+        this.index = index
+
+        this.changeName = function(name) {
+            this.fname = name
+        }
+
+        this.show = function() {
+            document.write('<strong>' + this.index + '</strong><br>')
+            document.write(this.fname + ' ' + this.lname + '<br>')
+            document.write('<hr>')
+        }
+    }
+
+
+    let pera = new Student('Pera', 'Peric', '11/2011')
+    let laza = new Student('Laza', 'Lazic', '12/2012')
+
+    pera.show()
+    laza.show()
+
+    document.write('<hr>')
+
+    pera.changeName('Mika')
+    pera.show()
+
+</script>

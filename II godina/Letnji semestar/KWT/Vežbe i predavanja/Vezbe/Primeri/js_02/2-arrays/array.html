@@ -1,0 +1,28 @@
+<script>
+
+    // rade istu stvar, kreiraju novi prazan niz
+    let a1 = new Array()
+    let a2 = []
+    
+    // push
+    let array = []
+    array.push('Prvi')           // => 1
+    array.push(2, 'Treci', 'IV') // => 4
+    console.log(array)           // ['Prvi', 2, 'Treci', 'IV']
+    
+    // pop
+    array.pop()        // => 'IV'
+    console.log(array) // ['Prvi', 2, 'Treci']
+    
+    // join
+    let text = array.join(' -> ')
+    console.log(text)  // 'Prvi -> 2 -> Treci'
+
+    // sort
+    array = [2, 1, 3]
+    let niz = array.sort(function(a, b) { return a - b }) // => referenca na isti niz (koji je sad izmenjen/sortiran)
+    console.log(array)                                    // [1, 2, 3]
+    console.log(niz)                                      // [1, 2, 3]
+    console.log(array == niz)                             // true (isti su po referenci)
+
+</script>

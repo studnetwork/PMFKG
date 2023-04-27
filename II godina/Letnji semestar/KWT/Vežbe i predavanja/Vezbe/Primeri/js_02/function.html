@@ -1,0 +1,23 @@
+<script>
+
+    /* funkcije: f, g, h, i */
+
+    // imenovana funkcija
+    function f(x) {
+        return ++x
+    }
+
+    // anonimna funkcija
+    let g = function(x) {
+        return --x
+    }
+
+    let h = f
+    let i = g
+
+    console.log( f(7) )
+    console.log( g(7) )
+    console.log( h(7) )
+    console.log( i(7) )
+
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uvod u JavaScript</title>
+
+    <style>
+        /* CSS */
+    </style>
+    <link rel="stylesheet" href="...">
+
+    <script>
+
+        alert("Zdravo, ovo je alert prozor sa porukom, on blokira izvršavanje JavaScript koda!\n\nNakon klika na [OK] browser nastavlja sa izvršavanjem koda.\n")
+        console.log("console.log(...) ispisuje poruku u konzolu browsera")
+
+        /* ============================== */
+        console.log("=== Promenljive ===")
+        let x = 5
+        x = "String"
+        const c = 10
+        var v = 'Izbegavati var promenljive!' // https://youtu.be/XgSjoHgy3Rk
+
+        console.log("x = " + x)
+        console.log("c = " + c)
+
+        /* ============================== */
+        console.log("=== Funkcije ===")
+
+        console.log("f1(123,'B')")
+        f1(123,"B")
+
+        function f1(a,b) {
+            let d = "D"
+            console.log("a = " + a)
+            console.log("b = " + b)
+            console.log("d = " + d)
+        }
+
+        console.log("f1('AA','BB')")
+        f1("AA","BB")
+
+        /* ============================== */
+        console.log("=== Operatori ===")
+        
+        console.log("--- string ----")
+        console.log('"String"')
+        console.log(`String ${10+1}`)
+        
+        console.log("--- brojevi i bool ----")
+        console.log(10%6)
+        console.log(10>6)
+        console.log(true && false)
+        console.log(true || false)
+        console.log(!true)
+        
+        console.log("--- uporedjivanje po vrednosti (i tipu) ----")
+        console.log('4' == 4) // => true
+        console.log('4' === 4) // => false
+        console.log(false === 0) // => false
+        console.log('4' !== 4) // => true
+
+        /* ============================== */
+        console.log("=== Kontrola toka ===")
+
+        console.log("--- if-else ---")
+        if(true) {
+            console.log("if")
+        } 
+        else if(false) {
+            console.log("else if")
+        }
+        else {
+            console.log("else")
+        }
+
+        console.log("--- while loop ---")
+        let i = 5
+        while(i > 0) {
+            console.log(`i: ${i}`)
+            i--
+        }
+
+        console.log("--- for loop ---")
+        for(let j = 5; j > 0; j--)
+            console.log("j: " + j)
+
+        /* ============================== */
+
+        alert("Kod je izvršen! Sada će nakon klika na [OK] browser nastaviti sa parsiranjem HTML fajla!")
+
+    </script>
+
+</head>
+<body>
+
+    <h1>Kod iz script taga je izvršen!</h1>
+    <h2>Pogledaj konzolu (F12)</h2>
+    
+</body>
+</html>

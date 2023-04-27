@@ -1,0 +1,24 @@
+<!-- ----[ Promena klase ]---- -->
+
+<style>
+    .klasa {
+        border: 4px solid rgb(38, 32, 78);
+        border-radius: 8px;
+        color: white;
+        background-color: darkslateblue;
+    }
+</style>
+
+<p onclick="change(this)">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere corporis quia alias voluptatum qui eveniet sequi ut.
+</p>
+
+<script>
+    let klasa = ''
+
+    function change(paragraf) 
+    {   
+        klasa = (klasa == '' ? 'klasa' : '') // if ? then : else   
+        paragraf.className = klasa
+    }
+</script>

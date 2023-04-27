@@ -1,0 +1,14 @@
+<!-- ----[ Promena href atributa ]---- -->
+
+<a id="search" href="https://google.com" target="_blank">Google Search</a> 
+<br><br>
+
+<button onclick="change()">Change Search!</button>
+
+<script>
+    function change() {
+        let anchor = document.getElementById('search')
+        anchor.href = 'https://duckduckgo.com'
+        anchor.innerHTML = 'Duck Duck Go Search!'
+    }
+</script>

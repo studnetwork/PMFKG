@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Sijalica</title>
+    
+    <!-- -------------------[ defer ]------------------- -->
+    <!-- downloaduje se paralelno sa parsiranjem fajla -->
+    <!-- izvrsava se nakon sto se ucita cela strana -->
+    <script src="script.js" defer></script> 
+
+</head>
+<body>
+    
+    <h1>Zbir brojeva</h1>
+    <input id="sabirak-1" type="text"> + <input id="sabirak-2" type="text">
+    <button onclick="add()"> = </button>&nbsp;<span id="zbir"></span>
+
+    <h1>Model telefona</h1>
+    <select onchange="setImg(this)">
+        <option value="galaxyS7.JPG">Samsung Galaxy S7</option>
+        <option value="iphone6s.JPG">iPhone 6S</option>
+        <option value="lg-nexus5.JPG">LG Nexus 5</option>
+    </select>
+    <br>
+    <img id="telefon" src="images/galaxyS7.JPG" height="300">
+
+    <h1>Sijalica</h1>
+    <img src="images/pic_bulboff.gif" width="100" onclick="toggleBulb(this)">
+
+</body>
+</html>
