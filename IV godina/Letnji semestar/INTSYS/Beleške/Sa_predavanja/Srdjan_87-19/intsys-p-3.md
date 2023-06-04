@@ -1,7 +1,7 @@
 Kao ulaz u neki fuzzy sistem mogu da se koriste crisp vrednosti
 
-Ako bismo zeleli da omogucimo toleranciju na greksu onda
-bi bilo potrebno da dozvolima mala odstupanja od neke
+Ako bismo zeleli da omogucimo toleranciju na gresku onda
+bi bilo potrebno da dozvolimo mala odstupanja od neke
 vrednosti.  
 Time bi se izvrsila fazifikacija
 
@@ -10,7 +10,7 @@ sa trougaonom funkcijom pripadnosti. Za datu vrednost
 se doda odstupanje i dobije se jednokraki trougao 
 
 
-U ovom slucaju samo 1 vrednost ima stepen pripadnosti 1.
+U ovom slucaju samo 1 vrednost ima stepen pripadnosti 1.  
 Realnija varijanta je mozda "zvonasta" / kriva funkcija,
 odnosno distribucija ulaznih vrednosti
 
@@ -21,38 +21,46 @@ stepen pripadnosti se moze odrediti na 2 nacina
 1. preko crisp vrednosti koja je ucitana, ta vrednost se samo
    slika na osnovu funkcije pripadnosti
 2. ucitana vrednost se fazifikuje, npr. dodamo toleranciju
-   a nakon toga kao stepen pripadnosti uzimamo maksimum
+   a nakon toga kao stepen pripadnosti uzimamo maksimum (visinu)
    preseka tog fazifikovanog skupa i nekog drugog skupa 
    
    
 # Lambda odsecak 
 
-Skupu lambda_A pripadaju svi x-ovi za koje je 
+Skupu `lambda_A` pripadaju svi x-ovi za koje je 
 `funkPrip_A(x) >= lambda`
 
 
-stepen pripadnosti je vrednost izmedju 0 i 1
+Stepen pripadnosti je vrednost izmedju `0` i `1`
 
 
 Svaki fazi skup ima beskonacno mnogo lambda-odsecaka
 
 
-lambda odskecak dodje kao skup svih x-ova takvih
-da je njegova slika veca od lambda.
-manje vise dodje kao odsecak originalnog tako
+Lambda odsecak dodje kao skup svih x-ova takvih
+da je njegova slika (stepen pripadnosti) veca od lambda.
+Manje-vise dodje kao odsecak originalnog tako
 da se uzima samo njegov deo od lambde kao najmanje vrednosti
 pa tako sve do kraja
 
+Neka uproscena definicija bi bila:  
+Lambda odsecak skupa `A` predstavlja fuzzy skup koji se dobije
+kada se svakom `x` za koje je stepen pripadnosti veci od `lambda`
+dodeli stepen pripadnosti `0` (i time se odstrani deo boundary-a)
+
+![alpha cut](https://www.researchgate.net/profile/Niladri-Dash-2/publication/331035257/figure/fig2/AS:725358710116356@1549950401485/Triangular-form-and-alpha-cut-of-membership-function-The-classification-method-proposed.ppm)
 
 
-`+` u lambda `0+` predstavlja neku malu vrednost blisku nuli
+`+` u lambda `0+` predstavlja neku malu pozitivnu vrednost blisku nuli
 
 `(!A)_lambda = !(A_lambda)` samo za `lambda = 0.5`
 
 
-Ako imamo neku vrednost x takvo da je `x >= lambda` i da 
-x pripada `[0, 1]` onda vazi da je `A_x` podskup od `A_lambda`
+Ako imamo neku vrednost `t` takvo da je `t >= lambda` i da 
+`t` pripada `[0, 1]` onda vazi da je `A_t` podskup od `A_lambda`
 
+To u stvari znaci da je lambda odsecak sa vecom vrednoscu podskup 
+lambda odsecka sa manjom vrednoscu.
 
 # Definisanje delova fazi skupa sa lambda odseckom
 
@@ -60,7 +68,7 @@ x pripada `[0, 1]` onda vazi da je `A_x` podskup od `A_lambda`
 
 `support(A) = A_0+`
 
-`boundary(A) = (A_0+, A_1)`
+`boundary(A) = [A_0+, A_1)`
 
 
 # Defazifikacija
@@ -76,47 +84,44 @@ ako se ne biraju pazljivo
 
 Koristi se kada postoje peak-ovi (ugl. kada ih ima vise)
 
-"Metod defazifikacije koji se vodi maksimumom"
+> "Metod defazifikacije koji se vodi maksimumom"
 
-Posmatra samo one tacke iz U ciji je stepen pripadnosti 
-jednak visini datog skupa
+Posmatra samo one vrednosti iz `U` (univ. skupa) ciji je stepen pripadnosti 
+jednak **visini** datog fuzzy skupa
 
-Ako postoji samo 1 takva tacka onda je ona rezultat
+Ako postoji samo 1 takva vrednost onda je ona rezultat
 defazifikaciju, a ukoliko ih ima vise onda se trazi
 prosecna vrednost svih tih tacaka
 
-
-## Centroid (center of gravity)
+## Centroid (Center Of Gravity - COG)
 
 Koristi se kada fazi skup moze da se podeli na vise figura
 za koje mozemo lako da nadjemo teziste
 
 
-Z^* = 
+Z<sup>*</sup> = 
 zbir proizvoda tezista i povrsine svake figure 
 /
 zbir povrsina svake figure
 
 
-## Metoda ponderisanog proseka (weighted average method)
+## Metoda ponderisanog proseka (Weighted Average Method)
 
 Zahteva postojanje simetricnosti 
 
 ponderise == mnozi
 
-vrednost se dobija tako sto se prvo odradi suma
-proizvoda tacke u odnosu na koju postoji simetricnost i
-njene slike (pripadnosti), a zatim ta suma podeli sa
-sumom slika spomenutih tacaka
+Vrednost se dobija tako sto se prvo odradi suma
+proizvoda x-a u odnosu na koji postoji simetricnost i
+njegove pripadnosti, a zatim ta suma podeli sa
+sumom pripadnosti tih x-ova
 
 
 Ako imamo 2 skupa, A i B koji su simetricni u odnosu na
-tacke a i b respektivno, i ako je 
+x vrednosti a i b respektivno, i ako je 
 `fun_prip_A(a)=0.5; fun_prip_B(b)=0.9` onda se rezultat
-dobija na sledeci nacin:
-```
-z^* = (a*0.5 + b*0.9) / (0.5 + 0.9)
-```
+dobija na sledeci nacin:  
+Z<sup>*</sup> = (a*0.5 + b*0.9) / (0.5 + 0.9)
 
 # Lingvisticke promenljive
 
@@ -131,14 +136,14 @@ Da bi se definisala jedna ovakva promenljiva potrebno je
 definisati:
 - (njen) naziv
 - terme (vrednosti; to su neki termini)
-- podskup vrednosti nekog skupa za koji se definisu termi
+- "podskup vrednosti nekog skupa za koji se definisu termi" (sa predavanja) | univerzalni skup (pdf)
 
 
 
 ## Modifikatori lingvistickih vrednosti
 
 Izrazi prirodnog jezika kojima se menjaju osnovne
-lingvkisticke vrednosti
+lingvisticke vrednosti
 
 Primeri: a little, slightly, very, extremly, more or less
 
@@ -149,3 +154,4 @@ Omogucavaju povecanje ekspresivnosti
 
 Pomocu logickih veznika mozemo da povezujemo i kreiramo
 slozenije terme
+ 

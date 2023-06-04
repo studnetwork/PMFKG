@@ -57,10 +57,10 @@ upravljanja automobila
 
 ## Klasicna logika 
 
-Klasicna (bulovska) logika se jos naziva i **crisp**
+Klasicna (Bulovska) logika se jos naziva i **crisp**
 (sto znaci jasan)
 
-bulovksa logika: tacno ili netacno (nema izmedju)
+Bulovksa logika: tacno ili netacno (nema izmedju)
 
 ## Fuzzy logika
 
@@ -72,7 +72,7 @@ odredjenoj meri, ide od potpuno netacnog (0) do potpuno tacnog(1),
 dozvoljene su sve vrednosti izmedju
 
 
-Problem kod bulovske logike je to sto bi neki elementi pripadali
+Problem kod Bulovske logike je to sto bi neki elementi pripadali
 razlicitim kategorijama iako su dosta slicni (razlika izmedju njih
 je veoma mala). To nije problem kod fuzzy logike jer je postoji
 spektar vrednosti, odnosno koeficijenata pripadnosti ili tacnosti
@@ -103,7 +103,7 @@ Koristi se u detekciji outlier-a
 
 ## Kljucni delovi
 
-Fuzzy logika se bavi ispitivanjem stepena tolerancije na nepreciznost smanjenja
+Fuzzy logika se bavi ispitivanjem stepena tolerancije na nepreciznost
 ishoda, tj. rezultata komunikacije
 
 Opisuje nesto kroz stepen tacnosti, tj. vrednostima spektra koji ide od potpuno 
@@ -177,11 +177,11 @@ objektima"**
 
 ---
 
-`>` - bolje
+`>` - bolje  
 `<` - gore (losije)
 
-90% procenata sansa da je nesto sto nije opasno za pice (1.)
-< 
+90% procenata sansa da je nesto sto nije opasno za pice (1.)  
+<   
 0.9 stepen pripadnosti necemu sto nije opasno za pice (2.)
 
 
@@ -191,6 +191,4 @@ za pice
 (2.) tecnost izabrane flase je veoma blizu onome sto je potpuno bezopasno
 
 
-50%
-> 
-0.5
+50% verovatnoca > 0.5(stepen pripadnosti)
