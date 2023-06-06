@@ -1,5 +1,5 @@
-Dekartov proizvod skupova A i B je skup uredjenih parova takvih da je
-prvi element para iz A, a drugi element para iz B.
+Dekartov proizvod skupova `A` i `B` je skup uredjenih parova takvih da je
+prvi element para iz `A`, a drugi element para iz `B`.
 
 Npr:
 ```
@@ -13,18 +13,17 @@ Dekartov_proizvod = A x B = {
                     }
 ```
 
+Moze i da se uopsti pa da se radi sa uredjenim n-torkama umesto parovima.
+
+Npr. `A x B x C x D`
+
 Imati u vidu da nije komutativno, tj. `A x B != B x A`
 
 Moze se raditi i nad istim skupom, npr. `A x A`
 
-To moze i da se uopsti pa da se radi sa uredjenim n-torkama umesto parovima.
-
-Npr. `A x B x C x D`
-
-
 # Jasne relacije
 
-Klasicna ili jasna relacija je podskup dekartovog proizvoda. 
+Klasicna ili jasna relacija je podskup Dekartovog proizvoda. 
 
 Jos moze da se kaze da su crisp relacije.
 
@@ -48,7 +47,7 @@ Kompozicija relacije je relacija koja se dobija kada se uspostavi
 veza izmedju elemenata skupa `X` i elemenata skupa `Z`.
 
 
-Kompunuju se relacije `R` i `S` kako bi se pronasla nova relacija koja ce
+Komponuju se relacije `R` i `S` kako bi se pronasla nova relacija koja ce
 da slika elemente skupa `X` u skup `Z`
 
 Obradicemo 2 nacina za vrsenje kompozicije relacija:
@@ -69,12 +68,12 @@ hi_T(x, z) = max( min( hi_R(x,y), hi_S(y,z) ) )  # radi se za svaku kombinaciju
 
 Ako imamo vise paralelno spojenih lanaca u jedan i krenemo da vucemo jedan
 kraj u suprotnom smeru od drugog onda ce prvo doci do pucanja najslabije
-karike u najslabijem lancu, a do sledeceg najslabijeg lanca sve do
+karike u najslabijem lancu, pa do sledeceg najslabijeg lanca sve do
 poslednjeg kod koga ce takodje doci do pucanja na najslabijoj karici.
 
 Ako bismo zeleli da vidimo koliko ce izdrzati taj lanac, mi bismo prvo
 odredili za svaki koliko je jaka njegova najslabija karika (u formuli je to deo 
-gde se trazi `min`), a onda bismo pronasli koja ce od svih njih najtuze izdrzati
+gde se trazi `min`), a onda bismo pronasli koja ce od svih njih najduze izdrzati
 (u formuli `max` deo) i to bi predstavljalo ujedno i izdrzljivost citavog slozenog lanca.
 
 
@@ -88,7 +87,7 @@ Relacije se mogu prikazati na 3 nacina, kao:
 Ovaj metod izvodjenja kompozicije lici na postupak mnozenja matrica, s tim sto 
 se umesto mnozenja trazi minimum izmedju tih vrednosti, a umesto sabiranja
 se trazi maksimum tih minimuma. Ta vrednost se na kraju pise na odgovarajuce
-mesto, isto kao i kod mnozenja matrica.
+mesto u rezultujucom matrici, isto kao i kod mnozenja matrica.
 
 
 Ovo dodje i kao neka tranzitivnost, sto moze bolje da se primeti na prikazu
@@ -101,11 +100,10 @@ Isto kao max-min, samo se umesto trazenja minimuma vrsi mnozenje
 # Fuzzy Dekartov proizvod
 
 Kao sto je Dekartov proizvod klasicnih relacija takodje relacija tako je i
-Dekartov proizvod fuzzy skupova takodje fuzzy skup.
+Dekartov proizvod fuzzy skupova takodje fuzzy skup, a kao takav onda mora 
+da ima definisan i stepen pripadnosti za svaki element.
 
-A kao takav onda mora da ima i stepen pripadnosti definisan za svaki element.
-
-Stepen pripadnosti elementa Fuzzy Dekartovog proizvoda se moze izracunati kao:
+Stepen pripadnosti elementa fuzzy Dekartovog proizvoda se moze izracunati kao:
 ```
 mi_AxB(x,y) = min(mi_A(x), mi_B(y))
 ```
@@ -115,23 +113,23 @@ njegovom domenu, tj. fuzzy skup kome pripada.
 
 Fuzzy skupovi se uvek mogu zapisati u matricnom obliku.
 
-Definisanjem Dekartovog proizvoda fuzzy skupa mi dobijamo u stvari Fuzzy relaciju.
+Definisanjem Dekartovog proizvoda fuzzy skupa mi dobijamo u stvari fuzzy relaciju.
 
 # Fuzzy relacija
 
-Fuzzy relacija slika Dekartov proizvod u segment [0,1]. Za razliku od
+Fuzzy relacija slika Dekartov proizvod u segment `[0,1]`. Za razliku od
 klasicnih relacija kod kojih je jacina relacije takva da su torke ili u relaciji
 ili nisu (`0` ili `1`) ovde imamo spektar vrednosti, tj. stepen pripadanja
 relaciji zbog neodredjenosti koju imamo u fuzzy logici.
 
 
-Cim se formira Dekartov proizvod fazi skupova formira se i relacija izmedju njih.
+Cim se formira Dekartov proizvod fuzzy skupova formira se i relacija izmedju njih.
 
 Zasto?  
 Kod crisp relacija potrebno je da se definise koje n-torke su deo relacije,
 one imaju jacinu relacije `1` dok sve ostale n-torke imaju jacinu relacije `0`.
-Kod fazi relacija mi vec imamo to definisano. Stepen pripadnosti Dekartovog
-proizvoda (ima ga jer je fazi skup) je u stvari i jacina relacije izmedju
+Kod fuzzy relacija mi vec imamo to definisano. Stepen pripadnosti Dekartovog
+proizvoda (ima ga jer je fuzzy skup) je u stvari i jacina relacije izmedju
 datih elemenata n-torke.
 
 

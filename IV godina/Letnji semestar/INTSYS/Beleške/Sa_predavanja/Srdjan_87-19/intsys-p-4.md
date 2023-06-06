@@ -12,7 +12,7 @@ Umesno egzaktnog poklapanja kao kod ekspertskih sistema mi imamo poklapanje prav
 To poklapanje je u stvari njihov presek
 
 
-**Stepen vazenja zakljucka je visina preseka ova 2 skupa**
+**Stepen vazenja zakljucka je visina preseka ova 2 skupa** (skupa pravila i tvrdnje)
 
 
 Zakljucivanje se najcesce radi tako sto se rezultat, koji predstavlja fuzzy skup, defazifikuje i time dobije crisp vrednost koja predstavlja zakljucak
@@ -27,20 +27,20 @@ Zakljucak moze da sadrzi vise fuzzy skupova, tj. vise terma. Kada vrsimo zakljuc
 Ako postoji vise pravila onda se za svako odsecanjem zakljucka dolazi do rezultujuceg skupa za dato pravilo, a zatim se svi ti rezultati spoje unijom u jedan skup cime bi se dobio konacan rezultat zakljucivanja
 
 
-kada je vise pravila povezano sa logickim veznikom:
+Kada je vise pravila povezano sa logickim veznikom:
 * `AND` onda se uzima **minimalni** stepen ispunjenosti
 * `OR` onda se uzima **maksimalni** stepen ispunjenosti
 i na osnovu njega se vrsi odsecanje
 
 
 
-**baza znanja** je sastavljena od pravila i definicija svih fazi skupova (i univerzalnih skupova) koji se koriste u uslovima i zakljuccima pravila
+**Baza znanja** je sastavljena od pravila i definicija svih fazi skupova (i univerzalnih skupova) koji se koriste u uslovima i zakljuccima pravila
 
 MOM i COG daju slican rezultat ako nema nekih peak-ova
 
 Ovaj opisani proces zakljucivanja predstavlja **Mamdanijev proces zakljucivanja**.
 
-Pored njega postoje i neki drugi, npr Sugeno i Cukamoto tehnike
+Pored njega postoje i neki drugi, npr. Sugeno i Cukamoto tehnike
 
 # Sugeno tehnika zakljucivanja (TSK)
 
@@ -59,22 +59,22 @@ Najcesce se koristi ANN za pronalazenje ove f-je
 Nastala je iz potrebe da se vrsi fuzzy zakljucivanje nad podacima koji su u formi ulaz-izlaz
 (?)
 
-Ako je f konstantna f-ja onda je to **Sugenov model nultog reda**  
-on odgovarao Mamdanijevom modelu. Zakljucak je skup singltona
+Ako je f konstantna f-ja onda je to **Sugenov model nultog reda**.  
+On odgovara Mamdanijevom modelu. Zakljucak je u oba slucaja skup singltona
 
 Ako je f linearna f-ja onda je to **Sugenov model prvog reda**
 
 
 Stepeni poklapanja tvrdnji sa uslovima pravila nemaju nikakvu ulogu u definisanju zakljucka, 
-**ne uticu direktno** na zakljucak pravila. On je definisam mat. f-jom. 
-Oni imaju ulogu pondera u kombinovanju zakljucaka pojedinacnih delova.
+**ne uticu direktno** na zakljucak pravila. On je definisan mat. f-jom. 
+Oni imaju ulogu pondera u kombinovanju zakljucaka svakog pojedinacnog uslova (antecedenta) pravila.
 
 Za jedan uslov se izracuna apsolutna vrednost razlike stepena pripadnosti preseka fuzzy skupova koji su definisani u uslovu i crisp vrednosti
 (svaka crisp vrednost "sece" odgovarajuci fuzzy skup nekog uslova i u toj tacki dobijamo pripadnost). 
 Time se dobija jedan ponder (ponder == umnozak necega)
 
-Za svaki uslov dobijemo ponder. Preracuna rezultat funkcije `z` za dato pravilo i pondira (pomnozi) sa odgovaraujcim ponderom. Te proizvode sumiramo i
-podelimo sa zbirom svih ponderam. Time se dobija konacan rezulat
+Za svaki uslov dobijemo ponder. Preracuna se rezultat funkcije `z` za dato pravilo i pondira (pomnozi) sa odgovaraujcim ponderom. Te proizvode sumiramo i
+podelimo sa zbirom svih pondera. Time se dobija konacan rezulat zakljucivanja.
 
 Formula kojom dobijamo stepen tacnosti zakljucka `z`:
 ```
@@ -94,14 +94,14 @@ Zakljucivanje se vrsi slicno kao u Mandanijevoj tehnici
 
 Malo podseca na kombinaciju Mandanijeve i Sugeno tehnike
 
-Odsecanje se vrsi na isti nacin kao i kod Mandanijeve tehnike. Te dobijene pripadnosti (`w1`, `w2`, ...) koje kod Mamdanijeve tehnice 
+Odsecanje se vrsi na isti nacin kao i kod Mandanijeve tehnike. Te dobijene pripadnosti (`w1`, `w2`, ...) koje kod Mamdanijeve tehnike 
 dele fuzzy skup zakljucka na 2 dela sada preseca funkciju koja se koristi umesto tog skupa. 
 
 Od te tacke preseka se povlaci normala na osu koja sadrzi vrednosti univerzalnog skupa i time se dobija rezultat, npr. `z1` 
 
-To se uradi za svako pravilo i nakon toga te rezultate (`z1`, `z2`, ...) spajamo time sto vrsimo ponderisanje (sa `w1`, `w2`, ...)
+To se uradi za svako pravilo i onda te rezultate (`z1`, `z2`, ...) spajamo tako sto vrsimo ponderisanje (sa `w1`, `w2`, ...)
 
 Formula:
 ```
-z = (w1*z1+w2*z2) / (w1+w2)
+z = (w1*z1 + w2*z2) / (w1+w2)
 ```

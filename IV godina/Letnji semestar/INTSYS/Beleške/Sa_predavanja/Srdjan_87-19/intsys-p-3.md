@@ -93,16 +93,38 @@ Ako postoji samo 1 takva vrednost onda je ona rezultat
 defazifikaciju, a ukoliko ih ima vise onda se trazi
 prosecna vrednost svih tih tacaka
 
+Kada fuzzy skup nije simetrican daje istu vrednost nakon defazifikacije
+kao i metode koje "vuku" ka centru
+
 ## Centroid (Center Of Gravity - COG)
 
-Koristi se kada fazi skup moze da se podeli na vise figura
-za koje mozemo lako da nadjemo teziste
+Racunamo tako sto radimo odredjeni integral od jedog dela fuzzy skupa
+do drugog (od tacke do tacke za svaki deo), u sustini za svaku figuru
+koja ga cini. Unutar integrala se nalazi `x * df`, gde je `df` dobijena
+funkcija koja predstavlja dati deo fuzzy skupa (uglavnom su to
+prave linije, kose ili paralelne sa osom univerzalnog skupa, pa 
+mozemo da dodjemo do njihove funkcije koriscenjem jednacine prave
+sa 2 tacke). Mi u sustini imamo fuzzy skup koji mozemo da posmatramo kao 
+funkciju i onda tu funkciju podelimo na delove (po jednostavnim figurama)
+i onda integraljenjem tih delova funkcije dobijamo citavu povrsinu ispod
+tog dela.
 
+Formula:  
+Z<sup>*</sup> = integral_za_svakog_dela(x * df(x) * dx)
+/ 
+integral_za_svakog_dela(df(x) * dx)
 
+---
+
+Pojednostavljena verzija:  
 Z<sup>*</sup> = 
 zbir proizvoda tezista i povrsine svake figure 
 /
 zbir povrsina svake figure
+
+
+Ova verzija se koristi **samo** kada fazi skup moze da se podeli na vise figura
+za koje mozemo lako da nadjemo teziste
 
 
 ## Metoda ponderisanog proseka (Weighted Average Method)
