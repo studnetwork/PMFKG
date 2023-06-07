@@ -3,7 +3,7 @@ matrica (zbog dimenzija). Ako dodje mi mozemo da je transponujemo i time
 dobijemo odgovarajucu dimenziju za tu operaciju (nije neko pravilo vec 
 se samo napominje kao mogucnost)
 
-Relacija implikacije u fazi logici se definise isto kao kao i klasicna relacija.
+Relacija implikacije u fazi logici se definise isto kao i klasicna relacija.
 
 
 # Predstavljanej fazi pravila preko fazi relacija
@@ -22,6 +22,8 @@ Fazi relacija implikacije se moze definisati sa:
 R = (A x B) u (!A x Y)
 ```
 
+`u` predstavlja uniju
+
 Stepen pripadnosti za ovaj fuzzy skup (implikaciju) se racuna sa:
 ```
 mi_R(x,y) = max[mi_A(x) ^ mi_B(y), 1 - mi_A(x)]
@@ -34,12 +36,17 @@ mi_R(x,y) = max[mi_A(x) ^ mi_B(y), 1 - mi_A(x)]
 `C` je definisano nad skupom `Y`
 
 ```
-IF x is A THEN y is B else y is C
+IF x is A THEN y is B ELSE y is C
 ```
 
 Fazi relacija implikacije se u ovom slucaju moze definisati sa:
 ```
 R = (A x B) u (!A x C)
+```
+
+Stepen pripadnosti za ovaj fuzzy skup (implikaciju) se racuna sa:
+```
+mi_R(x,y) = max[mi_A(x) ^ mi_B(y), (1 - mi_A(x)) ^ mi_C(y)]
 ```
 
 # Kreiranje fazi implikacije i zakljucivanje
@@ -54,7 +61,7 @@ onda mozemo da iscitamo stepen vazenja implikacije za svaku kombinaciju
 elemenata iz `A` i `B` (u celiji koja se nalazi u njihovom preseku
 se nalazi ta vrednost)
 
-Na osnovu te matrice implikacije dalje mozemo da rezunujemo.
+Na osnovu te matrice implikacije dalje mozemo da rezonujemo.
 U ovom slucaju u kome se na osnovu `A` implicira `B` mozemo da
 definisemo drugi fazi skup nad `A` i da onda vrsimo nekakvu
 predikciju odnosno zakljucivanje.

@@ -1,6 +1,6 @@
 core, support i boundary su klasicni skupovi
 
-> fuzzy skupove koristimo da bi smo definisali lingvisticke vrednosti
+> fuzzy skupove koristimo da bismo definisali lingvisticke vrednosti
 
 # Zakljucivanje
 

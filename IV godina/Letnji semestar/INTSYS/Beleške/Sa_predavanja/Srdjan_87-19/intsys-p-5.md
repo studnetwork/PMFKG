@@ -87,7 +87,7 @@ Relacije se mogu prikazati na 3 nacina, kao:
 Ovaj metod izvodjenja kompozicije lici na postupak mnozenja matrica, s tim sto 
 se umesto mnozenja trazi minimum izmedju tih vrednosti, a umesto sabiranja
 se trazi maksimum tih minimuma. Ta vrednost se na kraju pise na odgovarajuce
-mesto u rezultujucom matrici, isto kao i kod mnozenja matrica.
+mesto u rezultujucoj matrici, isto kao i kod mnozenja matrica.
 
 
 Ovo dodje i kao neka tranzitivnost, sto moze bolje da se primeti na prikazu
@@ -109,9 +109,13 @@ mi_AxB(x,y) = min(mi_A(x), mi_B(y))
 ```
 
 odnosno, kao minimum izmedju stepena pripadnosti svakog elementa n-torke
-njegovom domenu, tj. fuzzy skup kome pripada.
+njegovom domenu (fuzzy skup kome pripada).
 
 Fuzzy skupovi se uvek mogu zapisati u matricnom obliku.
+
+Izmedju svakog elementa skupa `A` i svakog elementa skupa `B` se trazi
+minimum (npr. `min(a1, b1)`, `min(a1, b2)`, `min(a2, b1)`, ...) i od 
+tih rezultata formira matrica koja predstavlja Dekartov proizvod.
 
 Definisanjem Dekartovog proizvoda fuzzy skupa mi dobijamo u stvari fuzzy relaciju.
 
@@ -149,3 +153,10 @@ Y_cxd     # matrica `Y` sa `c` vrsta i `d` kolona
 
 mora da vazi: b == c
 ```
+
+# Ukratko - lakse pamcenje operacija kod fazi skupova
+
+Dekartov proizvod i kompozicija fazi skupova deluju slcino. Evo sta ih razlikuje:
+
+Dekartov proizvod => minimum izmedju 2 (samo to)  
+Kompozicija => vrste sa kolonama (max-min)
