@@ -19,7 +19,7 @@ Takvi algoritmi (inspirisani prirodom) za optimizaciju se
 nazivaju **metaheuristickim algoritmima**.
 
 
-Tvorac: Dzon Holand (John Holland) i njegov tim
+Tvorac: **Dzon Holand (John Holland)** i njegov tim
 
 Ideja je da se radi sa nekom kolekcijom kandidata za 
 resavanje problema.
@@ -169,7 +169,7 @@ Sada se vraca na pocetak kako bi se ocenila prilagodjenost
 nove generacije i sve tako u krug.
 
 Koraci:
-1. generisanje slucajno odabranih (?) jedinki
+1. generisanje pocetne populacije jedinki na slucajan nacin
 2. odredjivanje fitnesa
 3. selekcija
 4. ukrstanje
@@ -266,9 +266,15 @@ Ovakva selekcija se naziva **roulette wheel** selekcija.
 Kod ovog nacina izbora prostoji problem ukoliko sve 
 jedinke imaju relativno iste vrednosti fitnesa.
 
-To se resava rangiranjem na osnovu fitnesa. Time oni 
-koji imaju veci rang ce imati vecu verovatnocu za 
-ulazak u proces ukrstanja.
+To se resava rangiranjem na osnovu fitnesa, tj.
+**rank selection**-om. Time oni koji imaju veci rang ce 
+imati vecu verovatnocu za ulazak u proces ukrstanja.
+Rangiraju se prema fitnesu, a one jedinke kojie imaju
+veci rang ce se smatrati pozeljnijim u odnosu na nize 
+rangirane.
+
+Ovaj nacin izbora moze da radi i sa **negativnim vrednostima**
+za fitnes.
 
 Pored ove 2 selekcije postoji i **turnir selekcija**.
 Funkcionise kao turnir. Dve jedinke se "sukobljavaju" i
@@ -305,13 +311,20 @@ Ovaj crossover (ukrstanje) ne radi kod realnih hromozoma.
 
 Pored tog ukrstanja postoji i **uniformno ukrstanje**. 
 Ono podrazumeva da se za svaki gen razmotri od kog 
-roditelja ce biti uzet.
+roditelja ce biti uzet. Tacnije, za svaki par gena
+se verovatnocom odlucuje od kog roditelja ce ga uzeti.
+Oba roditelja mogu da imaju jednake sanse, a moze 
+i jedan da ima vecu sansu.
 
 ### Mutacija
 
 Obezbedjuje raznolikost populacije i to da ne dodje do
 zaustavljanja u lokalnim minimuma.
 
+Stopa mutacije je obicno jako mala i zavisi od duzine
+hromozoma.
+
+Bit flip mutacija se koristi kod binarno kodiranih hromozoma.
 
 Pored bit flip mutacije postoji i **swap mutacija**. Ona 
 se koristi kod permutacijskih hromozoma jer mozemo da 

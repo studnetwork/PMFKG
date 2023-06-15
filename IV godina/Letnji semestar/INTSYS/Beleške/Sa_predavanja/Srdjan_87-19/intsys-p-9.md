@@ -9,7 +9,7 @@ Funkcija cilja je za pojedine probleme isto sto i fitness funkcija, a za
 neke nije.
 
 Funkcija cilja govori o tome koliko smo blizu resenju problema. Trudimo se
-da je minimizujemo ili maksimizujemo kako bi smo dosli do resenja. 
+da je minimizujemo ili maksimizujemo kako bismo dosli do resenja. 
 
  
 Do sada smo radili sistematicno pretrazivanje prostora pretrage. Kod njih 
@@ -21,7 +21,7 @@ bitno da znamo koji smo tok resavanja imali, vec samo sta je konacno resenje.
 Pocetno stanje ne mora da bude odredjeno. Zelimo da nadjemo samo jedno resenje.
 
 "Imate probleme koji nemaju tacno jedno resenje, vec imaju masu dobrih resenja, a
-vas zanima da pronadjete samo 1. A vas zanima da pronadjete samo 1."
+vas zanima da pronadjete samo 1."
 
 Ciljna funkcija je funkcija koja procenjuje kvalitet resenja, tj. koliko je
 dobro to nase resenje. 
@@ -57,7 +57,7 @@ preko nekog kompromisnog resenja.
 
  
 
-Jedan od najjednostavnijih problema koji moze da se resi genetskim algoritmo je
+Jedan od najjednostavnijih problema koji moze da se resi genetskim algoritam je
 max-one problem u kome zelimo da odredimo maksimalan broj jedinica u binarnom
 stringu. Najcesce se koristi za testiranje implementacije genetskog algoritma.
 
