@@ -32,7 +32,7 @@ Folder `lib` sadrzi `.jar` fajlove. Mi cemo u njega smestiti JDBC konektor.
 
 Za stvari koje su potrebne oko konektovanja na bazu kreiramo interfjes `IProvider`.
 U njemu definisemo promenljivu za driver (konektor), npr.
-`String DRIVER = "com.mysql.jdbc.Driver";`.
+`String DRIVER = "com.mysql.jdbc.Driver";` (ili `com.mysql.cj.jdbc.Driver` za Connector-J).
 
 Ove podatke nije bas zgodno cuvati u klasama vec je bolje da se nalaze u nekom
 delu koji se ne build-uje, kao sto je neki `.xml` fajli. Time ne bi morali ponovo
@@ -83,13 +83,16 @@ Obicno se za fajlove koji predstavljaju stranice (`.jsp`) pravi paket
 u kome ce se nalaziti, `pages`, i on se nalazi u `WebContent` paketu.
 
 
-U `.jsp` fajlovima java kod mozemo da pisemo unutar `<%` i `%>` tagova, tj.
+U `.jsp` fajlovima Java kod mozemo da pisemo unutar `<%` i `%>` tagova, tj.
 ```Java
 <%
     String s = "Java kod";
     // ...
 %>
 ```
+
+Ukoliko zelimo da ukljucimo vrednost neke promenljive u sam HTML koristimo:
+`<%= promenljiva %>`
 
 
 Forma:
@@ -154,7 +157,12 @@ Primer:
     }
 %>
 ```
- 
+
+
+**NAPOMENA**: ukoliko se `name` input tag-a ne poklapa sa nazivom u
+klasi nece doci do mapiranja!
+
+
 `<jsp:include page="uspesna_registracija.html"></jsp:include>` predstavlja redirekciju na
 datu stranicu.
 
@@ -181,8 +189,6 @@ Dodavanje biblioteke (Eclipse):
 
 Na drugoj strani:
 ```
-
-```
 <%
     String role = (String) session.getAttribute("role");
     
@@ -197,4 +203,12 @@ Na drugoj strani:
     }
 %>
 ```
+
+---
+
+Redirekcija se moze obaviti na sledeci nacin:
+```Java
+%>
+    response.sendRedirect("https://imi.pmf.kg.ac.rs/oglasna-tabla");
+<%
 ```

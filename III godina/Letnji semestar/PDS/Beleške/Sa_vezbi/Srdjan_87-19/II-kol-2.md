@@ -138,18 +138,11 @@ aktivirali licencu koja ga ukljucuje mogu da reaktiviraju licencu i preko studen
 email-a i da tako dobiju ponovo pristup.
 
 
-Kada se otvori IDEA Intellj biramo JavaEE ili Maven Archetype. Za archetype se bira
+Kada se otvori IDEA Intellj biramo JakartaEE ili Maven Archetype.
+Za archetype se bira
 `org.apache.maven.archetypes:maven-archetype-webapp`
 
-`pom.xml`
-```
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>4.0.1</version>
-    <scope>provided</scope>
-</dependency>
-```
+Zavisnosti treba dodati u `pom.xml`. Svi se nalaze u fajlu [`dependencies.txt`](./dependencies.txt)
 
 Za Tomcat:
-`Run > Edit Configurations > + > Tomcat Server`
+`Run > Edit Configurations > + > Tomcat Server > local`
