@@ -14,7 +14,7 @@ Folder namenjen za sve što se tiče vežbi i predavanja kao što su rešenja za
 ## Domaći
 Rešenja domaćih zadataka po godinama
 
-[//]: # ([Link ka folderu Domaći][domaći])
+[Link ka folderu Domaći][domaći]  
 
 ## Beleške
 Folder sa beleškama i materijalom koji može biti od koristi tokom učenja i spremanja kolokvijuma ili ispita. Mogu se naći i neki dodaci sa detaljnijim informacijama
