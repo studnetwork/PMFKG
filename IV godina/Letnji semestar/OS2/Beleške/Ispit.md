@@ -12,13 +12,13 @@
 
 ## Status
 
-- Trenutna verzija: `0.1.0`
+- Trenutna verzija: `0.2.0`
 - Pokriveno gradivo za verziju `1.0.0` (kompletiranje svog gradiva na minimalnom upotrebljivom nivou):
     - [X] I/O control & Disk scheduling
-    - [ ] _**IN PROGRESS**_ - File Systems
-    - [ ] CPU scheduling
-    - [ ] Distributed systems, Client-server & Clusters
-    - [ ] Virtualization
+    - [X] File Systems _(SSD deo nije pokriven skroz)_
+    - [X] CPU scheduling _(nedostaju neki delovi)_
+    - [X] Distributed systems, Client-server & Clusters
+    - [X] Virtualization
     - [ ] Cloud Computing + Docker
     - [ ] Distributed process scheduling + Network FS
     - [ ] Security and safety of computer systems
@@ -340,7 +340,7 @@ Kreiranje fajla `/foo/bar` i pisanje:
 
 ### Mogući scenariji kod pada sistema
 
-_Metapodaci se ne slažu => _
+_Metapodaci se ne slažu => Stanje nije konzistentno_
 
 Prilikom pisanja (1 uspesna operacija):
 - Samo su novi data blokovi upisani na disk
@@ -418,7 +418,360 @@ _Ponovo korišćenje bloka (???)_
 
 ## Solid State Drive (SSD)
 
-- TODO
+> SSD je fleš uz određenu inteligenciju.
+>
+> &mdash; _Miloš Ivanović_
+
+- SSD poseduje kontrolerski čip i RAM
+- Politike rasporedjivanja diska nisu bitne ovde zbog performansi, SSD sam vodi računa
+
+Tipovi ćelija:
+- Single Level Cell (SLC)
+- Multi Level Cell (MLC)
+- Triple Level Cell (TLC)
+
+Jedinice:
+- Page
+- Block
+- Plane
+- Chip
+
+
+Operacije niskog nivoa koje fleš čip podržava:
+- Čitanje stranice - Čitanje bilo koje stranice (stranica je npr. 2 ili 4 KB)
+- Brisanje bloka - Sadržaj bloka se uništava postavljanjem svih bitova na vrednost `1`
+- Programiranje stranice - Može se izvršiti samo nakon što je blok u kome se nalazi stranica obrisan (postavljeni bitovi na `1`). Kako bi se dobila željena vrednost stranice, operacijom _programiranje_ se upisuju `0` na potrebnim bitovima.
+
+Karakteristike SSD-ova:
+- Bits per cell (više bitova => Veci prostor i manja cena, manje bitova => Vece performanse i izdrzljivost)
+- P/E (Program/Erase) Cycles - 100000 (SLC)
+- Read Time - 25&#181;s (SLC)
+- Program Time - 300&#181;s (SLC)
+- Erase Time - 2ms (SLC)
+
+## Flash Translation Layer (FTL)
+
+_Običan fleš, koji može biti sporiji i od HDD-a, čini izuzetno brzim._
+
+- Podaci se upisuju redom u stranice, a brisanje se izbegava u širokom luku
+- Radi se _wear leveling_
+- Poseduje nekakav _garbage collector_ -
+
+PerformanseOverprovisioning
+> Budite sigurni da SSD koji kupite ima više prostora nego što piše na njemu.
+>
+> &mdash; _Miloš Ivanović_
+
+- TODO - Nedostaju neki delovi
+
+
+# CPU Scheduling - Jednoprocesorsko
+
+##
+
+Vrste rasporedjivanja:
+- Dugoročno - Kreiranje i uništavanje procesa
+- Srednjeročno - Menjanje statusa procesa koji miruju
+- Kratkoročno - Menjanje statusa aktivnih procesa
+- Raspoređivanje I/O - Koji I/O zahtev će I/O uređaj da opsluži?
+
+## Kratkoročno raspoređivanje
+
+_Kratkoročni raspoređivač (Short-term scheduler), tj. Dispečer-_
+
+Proces se može izbaciti iz stanja Running:
+- Ako dođe do događaja koji proces dovodi u blokirano stanje (npr. I/O događaj)
+- Dispečer prekine proces u korist nekog drugog procesa
+
+Prekidni događaji u sistemu:
+- Prekidi generatora takta (_clock_-a)
+- I/O prekidi
+- Prekidi OS-a
+- Signali (npr. semafori)
+
+### Algoritmi raspoređivanja
+
+Kriterijumi:
+- Orjentisani ka korisniku
+    - Vreme prolaska zadatka - Vreme od podnošenja do završetka posla
+    - Odzivno vreme - Od podnošenja do početka izvršavanja posla
+    - Rokovi
+    - Predvidljivost
+- Orjentisani ka sistemu
+    - Propusna moć - Broj završenih poslova u jedinici vremena
+    - Iskorišćenje procesora - Procenat vremena u kome je CPU zauzet (bitno je da na bleji besposlen)
+    - Pravičnost
+    - Primena prioriteta
+    - Isključiti starwing efekat
+    - Uravnoteženje resursa
+
+Prioriteti:
+- Unix - Što je manji _broj prioriteta_ to je veći prioritet
+- Windows - Što je manji _broj prioriteta_ to je manji prioritet
+- Najjednostavniji način korišćenja prioriteta: Kada se isprazni red čekanja za procese sa prioritetom Pi, onda se može krenuti sa izvršavanjem procesa iz reda Pi+1
+
+Parametri koje koriste politike raspoređivanja:
+- Funkcija izbora - Parametri na osnovu kojih algoritmi (uglavnom) donose sud:
+    - **_w_** - Vreme provedeno u sistemu (čekanje + izvršavanje) - TurnAround Time, TAT (`Tr`) ???
+    - **_e_** - Vreme provedeno u izvršavanju - `Ts` ???
+    - **_s_** - Vreme usluživanja koje zahteva proces
+- Režim izbora
+    - Bez prekidanja - Izvršava se sve dok se sam ne blokira za I/O, ili dok se ne završi
+    - Sa prekidanjem - OS može da prekine proces i stavi neki drugi na izvršavanje
+
+Politike raspoređivanja:
+- Neprekidne
+    - First Come First Served (FCFS) - Mali procesi bezveze cekaju duge procese (umesto da se na kratko prekine dugi i izvrsi taj kratak)
+    - Shortest Process Next (SPN) - Kao sledeći proces uzima onaj sa najkraćim procenjenim ukupnim vremenom (`s`), gde bi funkcija izbora bila `f = 1/s`. Prati se realno vreme izvršavanja (`Ts`) i nakon svakog računa novo srednje procenjeno vreme (`S`). Po tome se pretpostavlja koliko će se izvršavati sledeći put. Načini računanja srednjeg vremena:
+        - Aritmetička stredina. `S_n' = (S_n * n + T_n') / n'`
+        - Eksponencijalno usrednjavanje - Faktor `q` (`<1`). Formula: `S_new = Ts_n' * q + S_n * (1 - q)`. Rezultat: Brze se menja od aritmeticke sredine
+- Prekidne
+    - Round Robin (RR) - Time Slicing. Kruzno dodeljivanje. Bira se neko vreme, ne previše dugo (loša responzivnost) i ne previše kratko (previse režije)
+    - Virtual Round Robin - RR ali prepoznaje procese koji zahtevaju puno interakcije. Od procesa koji su izašli iz blokade formira poseban red čekanja i daje im prednost.
+    - Shortest Remaining Time - Prekidna varijanta SPN-a. Bira se proces sa najkracim preostalim vremenom obrade (i dalje se racuna srednje ocekivano vreme izracunavanja)
+    - Highest Response Ratio Next (HRRN) - Prioritet procesa se racuna kao `R = (w+s)/s`. Za razliku od SPN-a (tj. SRT-a) HRRN uzima u obzir ukupno vreme koje je proces proveo u sistemu (`w`). (?? Kad se razdvoji razlomak ispada `w/s + 1`, 1 je konstanta, da li onda ispada da formula moze da bude `R=w/s`?)
+    - FeedBack Scheduling - Umesto da procenjujemo koliko ce da bude `s`, mozemo da "kaznimo" procese koji su se već dugo izvršavali smeštanjem takvog u red čekanja nižeg prioriteta (ima više nivoa takvih redova, svaki sa manjim prioritetom od prethodnog). Pošto izvršavanje takvih procesa zbog ovakvih redova može da se otegne onda procesi iz nižih redova dobijaju veći _time slice_ (za red `Qi` time slice bi bio `2^i`.
+
+
+Poisson-ove formule: TODO???
+
+## Srednjeročno raspoređivanje
+
+### Fairshare Scheduling
+
+TODO
+
+### Klasično Unix raspoređivanje
+
+- Osnova + CPU(i) + nice
+
+
+# Multiprocesorsko raspoređivanje
+
+_Multiprocesorsko = Multijezgarno_
+
+Kategorije multiprocesorskih sistema:
+- Labavo spregnuti (npr. Klaster)
+- Specijalizovani (npr. I/O proc.)
+- Čvrsto spregnuti (npr. PC CPU)
+
+_Bavimo se poslednjom kategorijom._
+
+Granularnost. Paralelizam:
+- Nezavisni - Nema sinhronizacije između procesa, svaki je nezavisna aplikacije/posao.
+- Grube granulacije - Sinhronizacija na opštem planu.
+- Srednje granulacije - Paralelizam eksplicitno uređuje korisnik.
+- Fine granulacije - Još uvek u fazi istraživanja (???)
+
+Pitanja projektovanja:
+- Dodeljivanje procesa procesorima
+- Upotreba multiprogramiranja na pojedinačnim procesima
+- Stvarno raspoređivanje procesa
+
+## Dodeljivanje procesa procesorima
+
+Vrste dodeljivanja:
+- **Statičko** - Red čekanja za svaki procesor. Prednost: Manje rezije u zameni procesa. Mana: Procesor može da bude pesposlen.
+- **Dinamičko** - Procesi se mogu pomerti između redova čekanja različitih procesora.
+
+Modeli scheduling-a:
+- Master-slave - Na jednom procesoru se izvršavaju kernel i scheduler, a na ostalima korisnički procesi
+- Ravnopravnost- Svi procesi mogu da se izvršavaju na svim procesorima
+
+## Upotreba multiprogramiranja na pojedinačnim procesima
+
+Šta bismo sve uzeli u obzir:
+- Postavlja se pitanje da li uopšte treba da se multiprogramira na procesoru kome je proces statički dodeljen.
+- Za aplikacije grube granularnosti procesor treba da menja procese
+- Za aplikacije srednje granularnosti kada je na raspolaganju mnogo procesora nije cilj da pojedinacni procesor bude što iskorišćeniji nego da se proces izvrši što brže
+- Višenitna aplikacija može loše da radi ako joj nisu sve niti raspoložive za istovremeno izvršavanje
+
+## Stvarno raspoređivanje procesa
+
+- Algoritmi koji se okriste za raspoređivanje procesa mogu biti nepotrebni ili kontraproduktivni u multiprocesorkom sistemu.
+
+## Raspoređivanje niti
+
+Opšti pristupi (politike) raspoređivanju niti:
+- **Deljenje opterecenja** - Svaki procesor kad je besposlen bira nit iz zajednickog reda
+- **Grupno rasporedjivanje** - Skup poezanih niti se u isto vreme rasporedjuje na vise procesora
+- **Namenska dodela procesora** - Procesu se dodeljuje skup procesora jednak njegovom broju niti
+- **Dinamicko rasporedjivanje** - Broj niti u procesu se menja u toku izvrsenja procesa
+
+### Deljenje opterećenja
+
+Prednosti:
+- Ravnomerna raspodela opterećenja po procesorima
+- Scheduler se izvršava na bilo kom slobodnom procesoru
+- Primenjuje se bilo koja šema ili varijacija šema iz **Jednoprocesorskog raspoređivanja**
+
+Mane:
+- Zajednički red čekanja u sistemu sa mnogo procesora može da bude usko grlo (mutex za red čekanja)
+- Mala verovatnoća da će grupa povezanih niti dobiti procesore istovremeno
+- Nije verovatno da će se obrađivanje prekinute niti nastaviti na istom procesoru (keš je problem)
+
+### Grupno raspoređivanje
+
+Prednosti:
+- Blisko povezane niti se izvršavaju istovremeno
+- Režija se smanjuje jer jedna odluka utiče na više niti
+- Komutacije procesa su minimizovane
+
+Mane:
+- Moguće da neki procesori ostanu besposleni iako ima procesa koji čekaju u redu. Ali protraćeno procesorsko vreme se može smanjiti u nekoj meri.
+
+### Namenska dodela procesora
+
+- Ekstremni oblik grupnog raspoređivanja. Procesori ostaju dedeljeni aplikaciji dok njeno izvršavanje traje
+- Može dosta da **poveća performanse ako ima dosta procesora**, ali **ako ih ima malo** ovo je krajnje **rasipnički pristup**
+
+### Dinamičko raspoređivanje
+
+- I OS i aplikacija su uključeni u donošenje odluke o raspoređivanju procesa
+- OS se brine o realnom raspoređivanju niti
+- A aplikacija brine koji skup niti će se trenutno izvršavati (npr. pomoću rutina biblioteka)
+- Cena režije i kompleksnost ovakvog pristupa može da poništi prednosti
+
+## Raspoređivanje u realnom vremenu
+
+_Valjanost rezultata ne zavisi samo od logičkog rezultata proračuna, već i od vremena u kome je rezultat proizveden._
+
+Primeri: Embeded sistemi, IoT, robotika, automobilska industrija, itd.
+
+Vrste zadataka u realnom vremenu:
+- Po roku
+    - Čvrst zadatak - Rok mora da se ispoštuje
+    - Labav zadatak - Rok je poželjno ispoštovati
+- Po ponavljanju
+    - Aperiodičan zadatak
+    - Periodičan zadatak
+
+_ISR - Interupt Service Routine_
+
+Osobine real-time sistema:
+- **Determinizam** - Stepen bliskosti trenutka nastanka i trenutka početka obrade prekida
+- **Odzivnost** - Stepen bliskosti trenutka potvrde i izvršenja ISR-a prekida
+- **Korisničko upravljanje** - Određivanje prioriteta i čvrstih i labavih zadataka
+- **Nedozvoljen potpun otkaz sistema**
+- **Održati konzistentnost po svaku cenu** (???)
+
+Standardne osobine real-time sistema:
+- Brza komutacija procesa i niti
+- Minimalna veličina
+- Brz odziv na spoljne prekide
+- Multiprogramiranje
+- Akumulacija podataka velikom brzinom
+- Prioritetna šema procesa
+- Minimizacija intervala u kome su prekidi onemogućeni
+- Specijalni alarmi i pauze (???)
+
+
+### Kratkoročni scheduler
+
+_Cilj je ispoštovati rokove čvrstih zadataka i da proše što više labavih zadataka._
+
+Statički pristupi (za periodične zadatke):
+- **Pomoću tabela** - Primenljivo na periodične zadatke. Razvija se raspored.
+- **Na osnovu prioriteta** - Prioritet se povezuje s vremenskim ograničenjima. Npr. **RMS**
+
+Dinamički pristupi (za aperiodične zadatke):
+- **Zasnovano na planiranju** - Pomoću nekih heuristika, pokušava da ispoštuje rokove.
+- **"Najbolje što može"** - Mnogi današnji OS-evi koriste. OS daje prioritet na osnovu karakteristika.
+
+
+### Raspoređivanje na osnovu roka
+
+_Aplikacije u realnom vremenu - **Započinjanje** i **završavanje** poslova u određenim **rokovima**._
+
+Raspoređivači:
+- **Earliest deadline scheduling using completion deadlines** - Ako imamo _completion deadlines_
+
+TODO: Ima još
+
+### Neograničena inverzija prioriteta
+
+_Inverzija prioriteta (Ok je) - Pojava da zadatak višeg prioriteta čeka zadatak nižeg prioriteata (da završi rad sa nekim deljenim resursom)._
+
+_Neograničena inverzija prioriteta (nije Ok) - Pojava da trajenje inverzije prioriteta zavisi dodatno i od neki spoljnih okolnosti._
+
+_Nasleđivanje prioriteta (rešenje za neograničenu inverziju) - Zadatak nižeg prioriteta nasleđuje prioritet zadatka višeg prioriteta koji traži resurs koji oni dele._
+
+
+# Distribuirani sistemi, Klijent/Server i Klasteri
+
+Klijent/Server račnarstvo:
+- Aplikacija je na serveru, preuzima se na klijent
+- Klijent app logic i Serve app logic
+- Pametna realizacija protoka podataka
+- Troslojna arhitektura (sa Middleware-om) - Unificirani endpoint
+- Konzistentnost keša - Klijent traži podatke u svom kešu, onda na disku, onda na serveru (Ovde može doći do nekonzistentnosti)
+
+_Computing Grid - Nekakva preteča Cloud-u_
+
+Slanje poruka u distribuiranom okruženju:
+- Uglavnom **TCP/IP** ili **UDP/IP**
+- _Remote Procedure Call (RPC)_
+
+_Service Oriented Architecture (SOA)_
+- Provajder, Korisnik i Service Broker
+- Microservices
+
+## Klasteri
+
+_Symetric Multi Processing (SPM) systems - Bilo koj računar sa više procesorksih jezgara._
+
+_Klaster - Skup međusobno povezanih potpunih račuanra koji rade zajedno kao ujedinjeni resurs, stvarajući iluziju kao da su jedan računar._
+
+Klasteri i disk:
+- Bez deljenog diska
+- Sa deljenim diskom - Diskovi povezani u RAID. Svi klasteri vide sve, ili svako ima svoj deo
+
+HP-ova kategorijzacija klastera
+- Po ulozi
+    - **Passive Standby** - Backup server
+    - **Active Secondary** - Sekundarni se koriste za procesiranje
+- Po konfiguraciji diskova
+    - **Separate Servers** - Svaki server ima svoje diskove. Podaci na sekundarnim se sinronizuju sa glavnim (kopiraju se)
+    - **Servers Connected to Disks** - Svi povezani na sve diskove ali koriste svoje. Preuziamju duđe prilikom pada servera.
+    - **Servers Share Disks** - Simultano koriste iste diskove
+
+_Povezani High-Sepeed mrežom._
+
+_Paralelizovani: kompajler/jezik, aplikacije. Parametarsko izračunavanje._
+
+
+# Virtuelizacija
+
+- _Virtuelizacija u užem smislu - Operativni sistem na operativnom sistemu._
+- _Virtual Server_
+- _Load Balancing_
+- _VM Migration_
+
+Tehnike virtuelizacije:
+- Full - Svi uređaji sa svojim detaljima su emulirani
+- Paravirtualization (OS assisted) - Uprošćava uređaje, ne emulira sve detalje (jer je nepotrebno), radi brže
+- Hardware assisted - Posebne CPU instrukcije za virtuelizaciju
+
+Hipervizori:
+- Type 1 - Hipervizor umesto OS-a
+- Type 2 - Hipervizor preko ili unutar (kao deo) OS-a
+
+# Cloud Computing
+
+_Cloud može da postoji i bez virtuelizacije, ali je ekstremno nefleksibilno i teško za rad._
+
+## Kategorijzacija
+
+Po uslizi:
+- SaaS
+- PaaS
+- IaaS
+
+Po vlasnistvu resursa:
+- Javni
+- Privatni
+- Hibridni
+- Community
 
 
 # Dodatno
