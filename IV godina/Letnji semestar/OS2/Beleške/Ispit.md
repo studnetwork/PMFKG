@@ -10,9 +10,13 @@
 - Po prirodi stvari, skripta je uvek u statusu `work in progress`, ne postoji definitivna finalna verzija, ali je ideja da se svakom novom verzijom poveća vrednost koju skripta pruža studentima na predmetu _OS2_.
 - Verzionisanje skripte: `[kompletiranje_celine] . [unapredjenje_sadrzaja] . [ispravka_greske]`
 
+## Konvencije
+
+- Delovi označeni sa tri upitnika "???" zahtevaju proveru tačnosti i/ili dalje objašnjenje.
+
 ## Status
 
-- Trenutna verzija: `0.2.0`
+- Trenutna verzija: `0.3.0`
 - Pokriveno gradivo za verziju `1.0.0` (kompletiranje svog gradiva na minimalnom upotrebljivom nivou):
     - [X] I/O control & Disk scheduling
     - [X] File Systems _(SSD deo nije pokriven skroz)_
@@ -530,7 +534,7 @@ Politike raspoređivanja:
     - Virtual Round Robin - RR ali prepoznaje procese koji zahtevaju puno interakcije. Od procesa koji su izašli iz blokade formira poseban red čekanja i daje im prednost.
     - Shortest Remaining Time - Prekidna varijanta SPN-a. Bira se proces sa najkracim preostalim vremenom obrade (i dalje se racuna srednje ocekivano vreme izracunavanja)
     - Highest Response Ratio Next (HRRN) - Prioritet procesa se racuna kao `R = (w+s)/s`. Za razliku od SPN-a (tj. SRT-a) HRRN uzima u obzir ukupno vreme koje je proces proveo u sistemu (`w`). (?? Kad se razdvoji razlomak ispada `w/s + 1`, 1 je konstanta, da li onda ispada da formula moze da bude `R=w/s`?)
-    - FeedBack Scheduling - Umesto da procenjujemo koliko ce da bude `s`, mozemo da "kaznimo" procese koji su se već dugo izvršavali smeštanjem takvog u red čekanja nižeg prioriteta (ima više nivoa takvih redova, svaki sa manjim prioritetom od prethodnog). Pošto izvršavanje takvih procesa zbog ovakvih redova može da se otegne onda procesi iz nižih redova dobijaju veći _time slice_ (za red `Qi` time slice bi bio `2^i`.
+    - FeedBack Scheduling - Umesto da procenjujemo koliko ce da bude `s`, mozemo da "kaznimo" procese koji su se već dugo izvršavali smeštanjem takvog u red čekanja nižeg prioriteta (ima više nivoa takvih redova, svaki sa manjim prioritetom od prethodnog). Pošto izvršavanje takvih procesa zbog ovakvih redova može da se otegne onda procesi iz nižih redova dobijaju veći _time slice_ (za red `Qi` time slice bi bio `2^i`).
 
 
 Poisson-ove formule: TODO???
@@ -671,7 +675,7 @@ Standardne osobine real-time sistema:
 _Cilj je ispoštovati rokove čvrstih zadataka i da proše što više labavih zadataka._
 
 Statički pristupi (za periodične zadatke):
-- **Pomoću tabela** - Primenljivo na periodične zadatke. Razvija se raspored.
+- **Pomoću tabela** - Razvija se raspored
 - **Na osnovu prioriteta** - Prioritet se povezuje s vremenskim ograničenjima. Npr. **RMS**
 
 Dinamički pristupi (za aperiodične zadatke):
@@ -772,6 +776,52 @@ Po vlasnistvu resursa:
 - Privatni
 - Hibridni
 - Community
+
+
+# Network File System (NFS)
+
+_source: Summary by ChatGPT_
+
+- Deljenje fajlova preko mreže
+- Server deli foldere (izvozi), klijenti ih mount-uju.
+- Efekat je korišćenje istog fajla na različitim računarima. Promene se sinhronizuju real-time, omogućavajući timski rad.
+- Koristi se za efikasnu saradnju, centralno skladište fajlova i olakšavanje pristupa i deljenja informacija između računara.
+
+
+# Bezbednost računarskih sistema
+
+Zahtevi bezbednosti:
+- Raspoloživost, napad: Prekid
+- Poverljivost, napad: Presretanje
+- Integritet, napad: Menjanje
+- Autentičnost, napad: Fabrikacija
+
+## Napadi na komunikacione linije mreže
+
+Pasivni
+- Analiza saobraćaja
+- Preuzimanje sadržaja poruka
+
+Aktivni
+- Izmena poruka
+- Denial of service
+
+## Zaštita
+
+Šta se deli u multiprogramiranom sistemu:
+- Memorija
+- I/O uređaji
+- Programi
+- Podaci
+
+Tipovi deljenja objekata (???):
+- Bez zaštite
+- Izolacija
+- Deljenje svega ili deljenje ničega
+- Deljenje putem ograničenog pristupa
+- Dinamičko deljenje
+- Ograničena upotreba objekata
+
 
 
 # Dodatno
