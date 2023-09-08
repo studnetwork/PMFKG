@@ -4,10 +4,11 @@ U ovom fajlu se nalaze linkovi ka resursima koji su vezani za ovaj predmet
 ## Koristan materijal
 
 ### Šabloni
-[Šablon (ods)][ods] - u ovom fajlu se definisane promenljive kojima mogu da se dodele vrednosti.
-U LibreOffice-u mogu da se set-uju sa: `Insert > Field > More Fields > Variables`. Naravno, moguće je
-i ne koristiti varijable. U tom slučaju mogu samo da se obrišu (tekst sive boje predstavlja varijablu)
-i zamene nekim drugim sadržajem.
+[Šablon (ods)][ods] - u ovom fajlu se definisane promenljive (tekst sive boje predstavlja promenljivu) kojima mogu da se dodele vrednosti.
+U LibreOffice-u mogu da se set-uju: 
+1. Klikom na neku od njih i unosom vrednosti u polje `Value`
+2. `Insert > Field > More Fields > Variables`. 
+Naravno, moguće je i ne koristiti promenljive. U tom slučaju mogu samo da se obrišu i zamene nekim drugim sadržajem.
 
 ### Linkovi ka korisnim resursima
 
