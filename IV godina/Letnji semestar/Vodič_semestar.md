@@ -7,6 +7,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 [Inteligentni sistem][intsys]  
 [Internet stvari][iot]  
 [Operativni sistemi 2][os2]  
+[Završni rad][zr]  
 
 # Korisni linkovi
 
@@ -28,6 +29,7 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 [intsys]: ./INTSYS/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [iot]: ./IOT/Vodi%C4%8D_predmet.md#vodi%C4%8D
 [os2]: ./OS2/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[zr]: ./ZR/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )
