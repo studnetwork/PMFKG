@@ -1,0 +1,8 @@
+# Site settings
+title: StudNetwork PMFKG
+description: >
+  Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu
+  u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja 
+  zadataka i materijal koji je kreiran od strane studenata.
+baseurl: ""
+url: "https://studnetwork.github.io/pmfkg"
