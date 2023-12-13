@@ -32,10 +32,19 @@ Treća   | [III-Z][treca-zimski]   | [III-L][treca-letnji]
 
 
 # Korisni linkovi
+
+## Povezani projekti
+
+[**IMI Open Educational Resources**][imioer] - kolekcija besplatnih i otvorenih materijala sa kurseva na fakultetu
+
+[**ITEG**][iteg] - Lista igrica učenje koncepata i unapređivanja veština potrebnih za IT
+
+## Opšte
+
 [Stranica fakulteta][stranica fakulteta]  
 [Stranica instituta za matematiku i informatiku][imi stranica]  
 
-[Lista igrica učenje koncepata i unapređivanja veština potrebnih za IT](https://github.com/studnetwork/ITEG/blob/master/README.sr.md)
+## Ostalo
 
 GitHub Client: [Windows ili macOS][gh client official] | [Linux][gh client linux]
 
@@ -108,6 +117,8 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 
 [//]: # (Korisni likovi reference)
 
+[imioer]: https://github.com/imioer
+[iteg]: https://github.com/studnetwork/ITEG/blob/master/README.sr.md
 [imi stranica]: https://imi.pmf.kg.ac.rs/
 [stranica fakulteta]: https://www.pmf.kg.ac.rs/
 [gh client official]: https://desktop.github.com/ 
