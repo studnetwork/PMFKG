@@ -29,6 +29,7 @@ Prva    | [I-Z][prva-zimski]    | [I-L][prva-letnji]
 Druga   | [II-Z][druga-zimski]   | [II-L][druga-letnji]  
 Treća   | [III-Z][treca-zimski]   | [III-L][treca-letnji] 
 Četvrta | [IV-Z][cetvrta-zimski] | [IV-L][cetvrta-letnji] 
+MAS Prva | [MAS-I-Z][mas-prva-zimski] | 
 
 
 # Korisni linkovi
@@ -114,6 +115,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [cetvrta-zimski]: ./IV%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 [cetvrta-letnji]: ./IV%20godina/Letnji%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
+[mas-prva-zimski]: ./MAS%20I%20godina/Zimski%20semestar/Vodi%C4%8D_semestar.md#vodi%C4%8D
 
 [//]: # (Korisni likovi reference)
 
