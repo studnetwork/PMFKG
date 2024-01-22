@@ -5,9 +5,11 @@ Sadrzaj:
   * [t-testovi](#t-testovi)
     * [Studentov t-test](#studentov-t-test)
     * [Nezavisni t-test](#nezavisni-t-test)
+    * [Upareni t-test](#upareni-t-test)
     * [Man-Vitnijev test](#man-vitnijev-test)
-    * [Pomocni testovi](#pomocni-testovi)
-      * [Levinov test](#levinov-test)
+    * [Vilkoksonov test](#vilkoksonov-test)
+  * [Pomocni testovi](#pomocni-testovi)
+    * [Levinov test](#levinov-test)
 
 ---    
 
@@ -91,18 +93,25 @@ $$
 t_{n-1} = \frac {\bar{x_{n}} - m_{0}} {\displaystyle\frac {\hat{S_{n}}} {\sqrt{n}}}
 $$
 
-$n$ je obim uzorka.
+Ima Studentovu $t$ raspodelu sa $n-1$ stepenom slobode.
+
+|  Kriticna oblast                                                   | Alternativna hipoteza |
+|:------------------------------------------------------------------:|:---------------------:|
+| $C = (- \infty, -t_{n-1, \alpha}) \cup (t_{n-1, \alpha}, +\infty)$ | $H_{1}(m \ne 0)$      |
+| $C = (t_{n-1, 2\alpha}, +\infty)$                                  | $H_{1}(m > 0)$        |
+| $C = (- \infty, -t_{n-1, 2\alpha})$                                | $H_{1}(m < 0)$        |
 
 ### Nezavisni t-test
 
-* Parametarski test (njegova neparametarska alternativa je: [Mann-Whitney test](#mann-whitney-test)).
-* Testira da li je sredina populacije neki odredjeni broj
+* parametarska alternativa za [Man-Vitnijev test](#man-vitnijev-test)
+* testira da li postoji razlika izmedju 2 populacije (jednake sredine) za dato obelezje
 
 ---
 
 Uslovi:
-* **po** 1 neprekidno obelezje iz 2 uzorka (grupe)
-* posmatrano obelezje ima normalnu raspodelu
+* **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
+* posmatrano obelezje **ima** normalnu raspodelu
+* **(opciono, ali pozeljno)** homogenost varijanse
 
 ---
 
@@ -133,9 +142,123 @@ t =
     }
 $$
 
+Ima Studentovu $t$ raspodelu sa $n_{1} + n_{2} - 2$ stepenom slobode.
+
+|  Kriticna oblast                                                   | Alternativna hipoteza |
+|:------------------------------------------------------------------:|:---------------------:|
+| $C = (- \infty, -t_{n_{1} + n_{2} - 2, \alpha}) \cup (t_{n_{1} + n_{2} - 2, \alpha}, +\infty)$ | $H_{1}(m \ne 0)$      |
+| $C = (t_{n_{1} + n_{2} - 2, 2\alpha}, +\infty)$                                  | $H_{1}(m > 0)$        |
+| $C = (- \infty, -t_{n_{1} + n_{2} - 2, 2\alpha})$                                | $H_{1}(m < 0)$        |
+
+
+### Upareni t-test
+
+* parametarska alternativa za [Vilkoksonov test](#vilkoksonov-test)
+* testira da li postoji razlika izmedju 2 merenja (jednake sredine) za dato obelezje
+
+---
+
+Uslovi:
+* 2 merenja nad **istom** populacijom
+* 1 neprekidno obelezje u oba merenju
+* obelezje ima **normalnu raspodelu** u **oba** merenja
+
+Nulta hipoteza - sredina u prvom merenju je jednaka sredinu u drugom (sredine u merenjima 
+su jednake):
+
+$$
+\begin{gather*}
+H_{0}(D=0) \\
+ili \\
+H_{0}(m_{1} = m_{2})
+\end{gather*}
+$$
+
+$D = m_{1} - m_{2}$ uvedena nova oznaka radi izbegavanja preklapanja oznaka
+
+Test statistika:
+
+$$
+t_{n-1} = \frac {\bar{D_{n}}} {\displaystyle\frac {\hat{S_{n}}} {\sqrt{n}}} 
+$$
+
+Ima Studentovu $t$ raspodelu sa $n - 1$ stepenom slobode.
+
+|  Kriticna oblast                                                   | Alternativna hipoteza |
+|:------------------------------------------------------------------:|:---------------------:|
+| $C = (- \infty, -t_{n-1, \alpha}) \cup (t_{n-1, \alpha}, +\infty)$ | $H_{1}(m \ne 0)$      |
+| $C = (t_{n-1, 2\alpha}, +\infty)$                                  | $H_{1}(m > 0)$        |
+| $C = (- \infty, -t_{n-1, 2\alpha})$                                | $H_{1}(m < 0)$        |
+
 ### Man-Vitnijev test
 
-### Pomocni testovi
+* neparametarska alternativa za [Nezavisni t-test](#nezavisni-t-test)
+* testira da li postoji razlika izmedju 2 populacije (jednake medijane) za dato obelezje
 
-#### Levinov test
+---
 
+Uslovi:
+* **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
+
+
+Nulta hipoteza - nema razlike izmedju medijana:
+
+$$
+\begin{gather*}
+H_{0}(M = 0) \\
+ili \\
+H_{0}(M_{1} = M_{2})
+\end{gather*}
+$$
+
+gde je $M_{1}$ medijana jednog uzorka, a $M_{2}$ medijana drugog, a $M = M_{1} - M_{2}$.
+
+Test statistika:
+
+$$
+T_{n_{1}} = \displaystyle\sum_{k=1}^{n_1} r_{x_{k}}
+$$
+
+gde je $(x_{1}, x_{2}, \dots,  x_{n_{1}})$ uzorak koji ima **manji obim**, 
+$n_{1}$ njegov obim, a $r_{k}$ rang `k`. clana tog uzorka.
+
+|  Kriticna oblast                                                 | Alternativna hipoteza |
+|:----------------------------------------------------------------:|:---------------------:|
+| $C = (0, T_{n_{1}, n_{2}}^a) \cup (T_{n_{1}, n_{2}}^b, +\infty)$ | $H_{1}(M \ne 0)$      |
+
+### Vilkoksonov test
+
+* neparametarska alternativa za [Upareni t-test](#upareni-t-test)
+* testira da li postoji razlika izmedju 2 merenja (jednake medijane) za dato obelezje
+
+---
+
+Uslovi:
+* **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
+
+Nulta hipoteza - medijane su po merenjima jednake:
+
+$$
+H_{0}(M=0)
+$$
+
+
+Test statistika:
+
+$$
+\min\left(\sum{\text{pozitivni rangovi}}, \;  \left| \sum{\text{negativni rangovi}} \right| \right)
+$$
+
+
+## Pomocni testovi
+
+### Levinov test
+
+* ispituje homogenost varijansi
+* koristi se pri izboru nezavisnog t-testa
+
+Nulta hipoteza - varijanse su jednake u obe populacije:
+
+$$
+H_{0}(\sigma_{1}^2 = \sigma_{2}^2)
+$$
