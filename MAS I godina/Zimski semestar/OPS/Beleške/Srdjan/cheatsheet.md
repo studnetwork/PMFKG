@@ -1,3 +1,16 @@
+Sadrzaj:
+* [Legenda](#legenda)
+* [Testovi](#testovi)
+  * [Zakljucivanje](#zakljucivanje)
+  * [t-testovi](#t-testovi)
+    * [Studentov t-test](#studentov-t-test)
+    * [Nezavisni t-test](#nezavisni-t-test)
+    * [Man-Vitnijev test](#man-vitnijev-test)
+    * [Pomocni testovi](#pomocni-testovi)
+      * [Levinov test](#levinov-test)
+
+---    
+
 # Legenda
 
 | Oznaka          | Opis                                        | Formula                                                               |
@@ -51,7 +64,7 @@ Zakljucivanje (rucno testiranje):
 
 ## t-testovi
 
-### One-Sample t-test
+### Studentov t-test
 
 * Parametarski test.
 * Testira da li je sredina populacije neki odredjeni broj
@@ -118,7 +131,7 @@ t =
     }
 $$
 
-### Mann-Whitney test
+### Man-Vitnijev test
 
 ### Pomocni testovi
 
