@@ -88,7 +88,7 @@ $$
 Test statistika:
 
 $$
-t_{n-1} = \frac {\bar{x_{n}} - m_{0}} {\displaystyle\frac {\bar{S_{n}}} {\sqrt{n-1}}}
+t_{n-1} = \frac {\bar{x_{n}} - m_{0}} {\displaystyle\frac {\hat{S_{n}}} {\sqrt{n}}}
 $$
 
 $n$ je obim uzorka.
@@ -109,9 +109,11 @@ Uslovi:
 Nulta hipoteza - sredine u obe grupe su jednake:
 
 $$
+\begin{gather*}
 H_{0}(m = 0) \\
 ili \\
 H_{0}(m_{1} = m_{2})
+\end{gather*}
 $$
 
 gde je $m_{1}$ sredina jednog uzorka, a $m_{2}$ sredina drugog, a $m = m_{1} - m_{2}$.
@@ -123,7 +125,7 @@ Test statistika:
 $$
 t = 
 \frac 
-    {\bar{X}_{n_{1}} - \bar{X}_{n_{2}}}
+    {\bar{X_{n_{1}}} - \bar{X_{n_{2}}}}
     {\displaystyle\sqrt {
       \displaystyle\frac {(n_{1}-1)\hat{S_{1}^2} + (n_{2}-1)\hat{S_{2}^2}} {n_{1}+n_{2}-2} 
       \left(\frac {1} {n_{1}} + \frac {1} {n_{2}}\right)
