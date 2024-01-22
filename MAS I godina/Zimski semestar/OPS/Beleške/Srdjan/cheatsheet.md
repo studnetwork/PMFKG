@@ -19,9 +19,9 @@ Pri testiranju imamo sledece vrednosti:
   * na osnovu poredjenja sa alfa (nivo znacajnosti) biramo odgovarajucu hipotezu
 * `vrednost test statistike`: broj koji predstavlja rezultat test statistike
   * koristimo je kada rucno vrsimo racun
-  * proverav se da li se nalazi u kriticnom regionu i na osnovu toga biramo hipotezu
+  * proverava se da li se nalazi u kriticnom regionu i na osnovu toga biramo hipotezu
 * `vrednost za odgovarajucu tehniku`: vrednost koja predstavlja neku osobinu ili zakljucak
-  * koristimo je nakon sto zakljucakom testa potvrdimo da postoji ta neka osobina
+  * koristimo je nakon sto zakljuckom testa potvrdimo da postoji ta neka osobina
   * primer: korelacija izmedju neka 2 obelezja
 
 
