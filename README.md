@@ -20,9 +20,30 @@
 </br>
 
 # O projektu
-Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
+Projekat je kreiran od strane studenata Prirodno-matematičkog fakulteta u Kragujevcu u svrhu poboljšanja produktivnosti i međusobne saradnje. 
+Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studenata.
+
+# Saradnja
+
+Svako može da se priključi, čak i neko ko nije student fakulteta! Materijal možete dodati:
+* slanjem Pull request-a, 
+* <b style='color: red'>[maintainer mora da vam da pristup]</b> dodavanjem pomoću [Git](https://sr.wikipedia.org/wiki/Git)-a,
+* <b style='color: red'>[maintainer mora da vam da pristup]</b> GitHub-a (nisu sve mogućnosti funkcionalnosti podržane), ili 
+* slanjem nekom ko je već dodavao materijal (Contributors).
+
+Poslednja opcija može da bude korisna ukoliko neko želi anonimno da doprinese ili ukoliko još ne zna kako da se uključi.
+
+Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju, posetite [uputstva za saradnju][saradnja] koja sadrže konvencije projekta i instrukcije 
+kako nešto može da se odradi. Poželjno je da se ispoštuju konvencije radi jednostavnijeg održavanja i konzistentnosti, ali nije uslovno jer je cilj pre svega 
+razvoj projekta i kreiranje vrednosti za korisnike projekta.
+
+Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
+
+Neki od tipova tema o kojima se može diskutovati:  
+![Kategorije diskusija][categories]
 
 # Linkovi ka materijalu
+
 Godina  | Zimski semestar        | Letnji semestar
 :------:|:----------------------:|:------------------------------:
 Prva    | [I-Z][prva-zimski]    | [I-L][prva-letnji]
@@ -55,15 +76,6 @@ GitHub Client: [Windows ili macOS][gh client official] | [Linux][gh client linux
 [Anki tutorial (YT)][anki tut yt] | [Anki tutorial (Invidious)][anki tut invidious]
 
 [Mastering Markdown][mastering markdown] | [Markdown Cheatsheet][markdown cheatsheet] | [Markdown Editor][markdown editor]
-
-# Saradnja
-Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju posetite ovaj [link][saradnja].
-
-Takođe, ukoliko želite da započnete diskusiju o nekoj temi koja je vezana za projekat i studije, to možete učiniti u sekciji [Discussions][discussions].
-
-
-Neke od kategorija:  
-![Kategorije diskusija][categories]
 
 # Kontakt
 Ukoliko želite da nas kontaktirate to možete učiniti na nekom od sledećih linkova:
