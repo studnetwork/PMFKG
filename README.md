@@ -11,9 +11,9 @@
 <p align="center">
 <span style="font-size: 25px">Prečice</span></br>
 <a href="#o-projektu" alt="O projektu">O projektu</a>&nbsp;&nbsp;
+<a href="#saradnja" alt="Saradnja">Saradnja</a>&nbsp;&nbsp;
 <a href="#linkovi-ka-materijalu" alt="Linkovi ka materijalu">Linkovi ka materijalu</a>&nbsp;&nbsp;
 <a href="#korisni-linkovi" alt="Korisni linkovi">Korisni linkovi</a>&nbsp;&nbsp;
-<a href="#saradnja" alt="Saradnja">Saradnja</a>&nbsp;&nbsp;
 <a href="#kontakt" alt="Kontakt">Kontakt</a>&nbsp;&nbsp;
 <a href="#licenca" alt="Licenca">Licenca</a>
 </p>
@@ -27,11 +27,15 @@ Projekat sadrži rešenja zadataka i materijal koji je kreiran od strane studena
 
 Svako može da se priključi, čak i neko ko nije student fakulteta! Materijal možete dodati:
 * slanjem Pull request-a, 
-* <b style='color: red'>[maintainer mora da vam da pristup]</b> dodavanjem pomoću [Git](https://sr.wikipedia.org/wiki/Git)-a,
-* <b style='color: red'>[maintainer mora da vam da pristup]</b> GitHub-a (nisu sve mogućnosti funkcionalnosti podržane), ili 
-* slanjem nekom ko je već dodavao materijal (Contributors).
+* 🚩
+ $\color[RGB]{255,0,0} \text{maintainer mora da vam da pristup}$
+🚩 dodavanjem pomoću [Git](https://sr.wikipedia.org/wiki/Git)-a ,
+* 🚩
+ $\color[RGB]{255,0,0} \text{maintainer mora da vam da pristup}$
+🚩 GitHub-a (nisu sve funkcionalnosti podržane), ili 
+* slanjem nekome ko je već dodavao materijal (Contributors).
 
-Poslednja opcija može da bude korisna ukoliko neko želi anonimno da doprinese ili ukoliko još ne zna kako da se uključi.
+Poslednja opcija može da bude korisna ukoliko neko želi **anonimno** da doprinese ili ukoliko još **ne zna kako da se uključi**.
 
 Ukoliko želite da doprinesete projektu i učestvujete u njegovom razvoju, posetite [uputstva za saradnju][saradnja] koja sadrže konvencije projekta i instrukcije 
 kako nešto može da se odradi. Poželjno je da se ispoštuju konvencije radi jednostavnijeg održavanja i konzistentnosti, ali nije uslovno jer je cilj pre svega 
