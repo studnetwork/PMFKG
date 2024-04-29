@@ -154,7 +154,7 @@ Detaljnije informacije o MIT licenci možete naći na sledećem [linku][licenca]
 [//]: # (Kontakt reference)
 
 [fb]: https://www.facebook.com/groups/988381171505906
-[discord]: https://discord.gg/by9wC55xJ7
+[discord]: https://discord.com/invite/865FJCqmTJ
 [moodle chat]: https://imi.pmf.kg.ac.rs/moodle/message/index.php?contactsfirst=1
 [matrix room qr]: ./Resursi/Slike/matrix-room-qr.png
 [matrix room link]: https://matrix.to/#/#cekaonica:kde.org
