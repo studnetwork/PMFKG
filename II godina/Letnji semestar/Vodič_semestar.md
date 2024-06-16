@@ -5,19 +5,19 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 [Softversko inženjerstvo][raspored-si]  
 
 # Lista predmeta
+[Baze podataka 1][bp1]  
 [Računarske mreže][rm]  
-[Objektno-orjentisano programiranje][oop]  
 [Praktikum iz objektno-orjentisanog programiranja][pioop]  
 [Praktikum iz operativnih sistema][pios]  
 [Klijentske Web tehnologije][kwt]    
 
 # Meeting linkovi
+  
+[Baze podataka 1 - Predavanje][meeting-bp1-p]  
+[Baze podataka 1 - Vežbe][meeting-bp1-v]  
 
 [Računarske mreže - Predavanje][meeting-rm-p]  
-[Računarske mreže - Vežbe][meeting-rm-v]  
-  
-[Objektno-orjentisano programiranje - Predavanje][meeting-oop-p]  
-[Objektno-orjentisano programiranje - Vežbe (potrebna prijava)][meeting-oop-v]  
+[Računarske mreže - Vežbe][meeting-rm-v]   
 
 [Praktikum iz operativnih sistema (potrebna prijava)][meeting-pios]
 
@@ -47,9 +47,9 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 
 [//]: # ( Lista predmeta reference )
 
-[rm]: ./RM/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[bp1]: ./BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[oop]: ./OOP/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[rm]: ./RM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [pioop]: ./PiOOP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
@@ -61,13 +61,14 @@ U ovom fajlu se nalaze informacije o letnjem semestru
 
 [//]: # ( Meeting reference )
 
+
+[meeting-bp1-p]: https://bbb.pmf.kg.ac.rs/b/ana-h6e-wsh-kfa
+
+[meeting-bp1-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=9173
+
 [meeting-rm-p]: http://bbb.pmf.kg.ac.rs/b/mil-6d3-ua2
 
 [meeting-rm-v]: https://imi.pmf.kg.ac.rs/oglasi/14053-racunarske-mreze-i-mrezne-tehnologije-vezbe
-
-[meeting-oop-p]: http://bbb.pmf.kg.ac.rs/b/ana-kff-7tq
-
-[meeting-oop-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=10138
 
 [meeting-pios]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=10116
 

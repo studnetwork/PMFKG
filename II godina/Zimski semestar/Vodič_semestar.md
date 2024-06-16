@@ -2,18 +2,19 @@
 U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 # Lista predmeta
+[Objektno-orjentisano programiranje][oop]  
 [Operativni sistemi 1][os1]  
-[Baze podataka 1][bp1]  
-[Strukture podataka i algoritmi 2][spa2]  
 [Osnovi preduzetničkog menadžmenta][opm]  
+[Strukture podataka i algoritmi 2][spa2]  
 [Vizualizacija i analiza podataka][vap]  
 
 # Meeting linkovi
+  
+[Objektno-orjentisano programiranje - Predavanje][meeting-oop-p]  
+[Objektno-orjentisano programiranje - Vežbe (potrebna prijava)][meeting-oop-v]  
+
 [Operativni sistemi 1 - Predavanje][meeting-os1-p]  
 [Operativni sistemi 1 - Vežbe][meeting-os1-v]
-  
-[Baze podataka 1 - Predavanje][meeting-bp1-p]  
-[Baze podataka 1 - Vežbe][meeting-bp1-v]  
 
 [Osnovi preduzetničkog menadžmenta][meeting-opm]  
 
@@ -35,18 +36,28 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
+[oop]: ./OOP/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
 [os1]: ./OS1/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
-[bp1]: ./BP1/Vodi%C4%8D_predmet.md#vodi%C4%8D
+[opm]: ./OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [spa2]: ./SPA2/Vodi%C4%8D_predmet.md#vodi%C4%8D
-
-[opm]: ./OPM/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 [vap]: ./VAP/Vodi%C4%8D_predmet.md#vodi%C4%8D
 
 
 [//]: # ( Meeting reference )
+
+[meeting-oop-p]: http://bbb.pmf.kg.ac.rs/b/ana-kff-7tq
+
+[meeting-oop-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=10138
+
+
+[meeting-os1-p]: http://bbb.pmf.kg.ac.rs/b/mil-mb4-qvc-l5u
+
+[meeting-os1-v]: https://bbb.pmf.kg.ac.rs/b/fil-lu5-kjk-fag
+
 
 [meeting-opm]: http://bbb.pmf.kg.ac.rs/b/sne-1um-5tv-wsg
 
@@ -54,17 +65,6 @@ U ovom fajlu se nalaze informacije o zimskom semestru i predmetima
 [meeting-spa2-p]: http://bbb.pmf.kg.ac.rs/b/bob-yyt-4xc
 
 [meeting-spa2-v]: https://classroom.google.com/c/MTQ5NzI1MzI3MzIw
-
-
-[meeting-bp1-p]: https://bbb.pmf.kg.ac.rs/b/ana-h6e-wsh-kfa
-
-[meeting-bp1-v]: https://imi.pmf.kg.ac.rs/moodle/mod/bigbluebuttonbn/view.php?id=9173
-
-
-[meeting-os1-p]: http://bbb.pmf.kg.ac.rs/b/mil-mb4-qvc-l5u
-
-[meeting-os1-v]: https://bbb.pmf.kg.ac.rs/b/fil-lu5-kjk-fag
-
 
 
 [//]: # ( Korisni linkovi reference )
